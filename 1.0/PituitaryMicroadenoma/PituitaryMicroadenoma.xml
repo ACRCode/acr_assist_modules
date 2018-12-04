@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Pituitary Microadenoma</Label>
+		<ID>Pituitary Microadenoma_Nodes</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Pituitary Microadenoma</Description>
+			
+			<References>
+				<Citation Url="http://radlex.org/"> CDE URL </Citation>
+			</References>
+			
+			<Diagrams>
+				<Diagram>
+					<Location></Location>
+					<Label></Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>Pituitary Microadenoma</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+	
+	<DataElements>
+
+		<GlobalValue Id="conditionConst">10</GlobalValue>
+		<ChoiceDataElement Id="focalmass" DisplaySequence="1" IsRequired="true">
+			<Label>Focal Mass</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="Borders" DisplaySequence="2" IsRequired="true">
+			<Label>Borders</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>welldefined</Value>
+					<Label>Well defined</Label>
+				</Choice>
+				<Choice>
+					<Value>III defined</Value>
+					<Label>III defined</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<IntegerDataElement Id="Maximumdimension" IsRequired="true" DisplaySequence="3">
+			<Label>Maximum dimension (in mm)</Label>
+			<Minimum>1</Minimum>
+			<maximum>1000</maximum>
+		</IntegerDataElement>		
+	
+		<ChoiceDataElement Id="sidedness" IsRequired="true" DisplaySequence="4">
+			<Label>Sidedness</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>left</Value>
+					<Label>Left</Label>
+					
+				</Choice>
+				<Choice>
+					<Value>right</Value>
+					<Label>Right</Label>
+				</Choice>
+				<Choice>
+					<Value>central</Value>
+					<Label>Central</Label>
+				</Choice>
+				
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="t1hyperintensity" IsRequired="false" DisplaySequence="5">
+			<Label>T1 Hyperinsensitivity</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yeshyperintense-fat</Value>
+					<Label>Hyperintense-fat</Label>
+					
+				</Choice>
+				<Choice>
+					<Value>yeshyperintense-nonfat</Value>
+					<Label>Hyperintense-non fat</Label>
+				</Choice>
+				<Choice>
+					<Value>yesheterogeneous</Value>
+					<Label>Heterogeneous</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="t2hyperintensity" IsRequired="false" DisplaySequence="6">
+			<Label>T2 Hyperinsensitivity</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>	
+				<Choice>
+					<Value>heterogeneous</Value>
+					<Label>Heterogeneous</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+			<ChoiceDataElement Id="t1signalpostcontrast" IsRequired="true" DisplaySequence="7">
+			<Label>T1 signal postcontrast</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>hypoenhancing</Value>
+					<Label>Hypoenhancing</Label>
+				</Choice>	
+				<Choice>
+					<Value>isointense</Value>
+					<Label>Isointense</Label>
+				</Choice>
+				<Choice>
+					<Value>hyperenhancing</Value>
+					<Label>Hyperenhancing</Label>
+				</Choice>
+				<Choice>
+					<Value>heterogeneous</Value>
+					<Label>Heterogeneous</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+
+		<ChoiceDataElement Id="locationofinfundibulum" DisplaySequence="8" IsRequired="true">
+			<Label>Location of Infundibulum</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>midline</Value>
+					<Label>Midline</Label>
+				</Choice>
+				<Choice>
+					<Value>left</Value>
+					<Label>Left</Label>
+				</Choice>
+				<Choice>
+					<Value>anterior</Value>
+					<Label>Anterior</Label>
+				</Choice>
+				<Choice>
+					<Value>posterior</Value>
+					<Label>Posterior</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>			
+		
+		<ChoiceDataElement Id="Presenceofposteriorhypophysisbrightspot" DisplaySequence="9" IsRequired="true">
+			<Label>Presence of posterior hypophysis bright spot</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+				
+	</DataElements>
+
+	<Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>
+		
+	</Rules>
+
+	<EndPoints>
+		<EndPoint Id="macroEndpoint">
+			
+		</EndPoint>
+	</EndPoints>
+
+</ReportingModule>
