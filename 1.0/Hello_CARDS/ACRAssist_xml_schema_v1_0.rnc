@@ -1,0 +1,370 @@
+# 1.	changed PowerScribeCategory to ApplicableExamCategory
+# 2.	ApplicableExamCategory is now part of ApplicableExams
+# 3.	added new attribute CdeId ( CommonDataElement Id) under baseDataElement
+# 4.	element Minimum and Maximum has been uncommented under NumericDataElement and IntegerDataElement
+# 5.	removed some of Tarik's comments
+
+start = ReportingModule
+ReportingModule = element ReportingModule { Metadata, DataElements, Rules, EndPoints }
+# ? - needs revisit
+Metadata =
+    element Metadata {
+        element Label { text },
+        element ID { text },
+        element SchemaVersion { text },
+        element RuleVersion { text },
+        element Info {
+            element Description { text }?,
+            element References { Citation+ }?,
+            element Diagrams {
+                element Diagram {
+                    attribute KeyDiagram { "true" | "false" }?,
+                    attribute DisplaySequence { xsd:integer }?,
+                    imageElements
+                }+
+            }?,
+            element HelpText { text }?,
+            element Contact {
+                element Name { text },
+                element Email { text },
+                element Institution { text }?
+            }?
+        }?,
+        element ReportCitationText { text },
+        element Ontology {
+            element AnatomicRegions {
+                attribute codingSystemAttr { text }?,
+                element Region {
+                    attribute Code { token },
+                    text
+                }+
+            }*,
+            element PossibleDiagnoses { codingSystemAttr?, Diagnosis+ }*
+        }?,
+        element ApplicableExams {
+            element ApplicableExamCategory {
+                attribute Axis { "Modality" | "Anatomy" },
+                text
+            }+
+        }?,
+        element ApplicableSexes {
+            attribute Value { "Male" | "Female" | "Both" },
+            empty
+        },
+        element ApplicableAgeGroups {
+            element MinimumAge { xsd:nonNegativeInteger }?,
+            element MaximumAge { xsd:nonNegativeInteger }?
+        }?,
+        element TextCues {
+            element ContextPhrases {
+                element ContextPhrase { text }+
+            }?,
+            element KeyWords {
+                element KeyWord { text }+
+            },
+            element NegationPhrases {
+                element NegationPhrase { text }+
+            }?,
+            element Regex { text }?
+        }?,
+        element VoiceActivation {
+            element VoiceCommandPhrase { text }+
+        }?
+    }
+Citation = element Citation {
+        attribute PubmedId { xsd:token }?,
+        attribute Url { xsd:anyURI }?,
+        text
+    }+
+# definitions for other parts of the schema
+codingSystemAttr = attribute CodingSystem { text }
+codeAttrs =
+    codingSystemAttr?,
+    attribute Code { xsd:token }
+Diagnosis = element Diagnosis { codeAttrs, text }
+# Exam = element Exam { codeAttrs, text } #this is not being used anywhere, but should be used in Followup Exams
+Modality = element Modality { codeAttrs }
+BodyRegion = element BodyRegion { codeAttrs }
+imageElements =
+    element imageElements { xsd:anyURI },
+    element Label { text }?
+# start of the next Section Data Elements
+
+DataElements = element DataElements { DataElementTypes+ }
+DataElementTypes =
+    ChoiceDataElement
+    | NumericDataElement
+    | IntegerDataElement
+    | MultiChoiceDataElement
+    | GlobalValue
+    | ComputedElement
+GlobalValue =
+    element GlobalValue {
+        attribute Id { xsd:ID },
+        text
+    }
+diagrams =
+    element Diagrams {
+        element Diagram {
+            element Location { text },
+            element Label { text },
+            attribute DisplaySequence { xsd:integer }?,
+            attribute KeyDiagram { "true" | "false" }?
+        }+
+    }
+DisplaySequence = attribute DisplaySequence {
+        xsd:integer { minInclusive = "0" }
+    }
+baseElementContents =
+    attribute Id { xsd:ID },
+    attribute CdeId { xsd:token }?,
+    attribute IsRequired { "true" | "false" }?,
+    DisplaySequence?,
+    element Label { text },
+    element Hint { text }?,
+    diagrams?,
+    element VoiceCommand { text }?
+    
+computedValue =
+    element ArithmeticExpression { text }
+    | element TextExpression { (text | InsertValue)* }
+    
+valueBranches =
+    element Branch { ConditionType, (computedValue | valueDecisionPoint) }+,
+    element DefaultBranch { computedValue | valueDecisionPoint }?
+valueDecisionPoint = element DecisionPoint { valueBranches }
+
+ComputedElement =
+    element ComputedElement {
+        attribute Id { xsd:ID },
+        DisplaySequence?,
+        attribute ShowValue { xsd:boolean }?,
+        element Label { text }?,
+        element Hint { text }?,
+        diagrams?,
+        (computedValue | valueDecisionPoint)
+    }
+    
+NumericDataElement =
+    element NumericDataElement {
+        (baseElementContents,
+         element Minimum { xsd:decimal }?,
+         element Maximum { xsd:decimal }?)
+        
+    }
+IntegerDataElement =
+    element IntegerDataElement {
+        (baseElementContents,
+         element Minimum { xsd:decimal }?,
+         element Maximum { xsd:decimal }?)
+        
+    }
+Choice =
+    element Choice {
+        element Value { xsd:token },
+        element Label { text },
+        element Hint { text }?,
+        element VoiceCommand { text }?,
+        attribute Default { "true" | "false" }?,
+        element ReportText { text }?
+    }
+ChoiceInfo =
+    element ChoiceInfo {
+        Choice,
+        Choice+
+    }
+imageMapStyleAttributes =
+    attribute Outline { text }?,
+    attribute HoverFill { text }?,
+    attribute SelectedFill { text }?
+ImageMap =
+    element ImageMap {
+        imageElements,
+        element DrawStyle { imageMapStyleAttributes, empty }?,
+        element Map {
+            element Area {
+                attribute Shape { "rect" | "poly" | "circle" },
+                attribute Coords { text },
+                attribute ChoiceValue { xsd:token },
+                imageMapStyleAttributes,
+                empty
+            }+
+        }
+    }
+ChoiceDataElement = element ChoiceDataElement { baseElementContents, ChoiceInfo, ImageMap? }
+MultiChoiceDataElement = element MultiChoiceDataElement { baseElementContents, ChoiceInfo, ImageMap? }
+
+# Start of next section (RULES)
+ConditionType = AndCondition | OrCondition | NotCondition
+ConditionType |= EqualCondition | GreaterThanCondition | LessThanCondition
+ConditionType |= GreaterThanOrEqualsCondition | LessThanOrEqualsCondition
+ConditionType |= ContainsCondition | HasAnyNChoicesCondition
+AndCondition = element AndCondition { ConditionType, ConditionType+ }
+OrCondition = element OrCondition { ConditionType, ConditionType+ }
+NotCondition = element NotCondition { ConditionType+ }
+dataElementIdAttribute = attribute DataElementId { xsd:IDREF }
+comparisonConditionContents =
+    dataElementIdAttribute,
+    attribute ComparisonValue { xsd:token }
+EqualCondition = element EqualCondition { comparisonConditionContents }
+GreaterThanCondition = element GreaterThanCondition { comparisonConditionContents }
+LessThanCondition = element LessThanCondition { comparisonConditionContents }
+GreaterThanOrEqualsCondition = element GreaterThanOrEqualsCondition { comparisonConditionContents }
+LessThanOrEqualsCondition = element LessThanOrEqualsCondition { comparisonConditionContents }
+HasAnyNChoicesCondition =
+    element HasAnyNChoicesCondition {
+        dataElementIdAttribute,
+        attribute MinimumChoices { xsd:positiveInteger }
+    }
+ContainsCondition =
+    element ContainsCondition {
+        dataElementIdAttribute,
+        attribute ComparisonValue { xsd:token }
+    }
+Rules = element Rules { DecisionPoint }
+# { branchModifiers, DecisionPoint }
+DataElementRef =
+    element DataElementRef {
+        attribute DataElementId { xsd:IDREF },
+        empty
+    }
+ChoiceRef =
+    element ChoiceRef {
+        attribute DataElementId { xsd:IDREF },
+        attribute ChoiceValue { xsd:token },
+        empty
+    }
+branchModifiers =
+    # element RequiredDataElements { DataElementRef+ }?, 
+    element NotRelevantDataElements { DataElementRef+ }?
+# element RelevantDataElements { DataElementRef+ }?,
+# element NotValidChoices { ChoiceRef+ }?
+DecisionPoint =
+    element DecisionPoint {
+        element Label { text },
+        element Description { text }?,
+        # HtmlContent -> text
+        # element DescriptionImage { imageElements }?,
+        element Branch {
+            element Label { text }?,
+            branchModifiers,
+            ConditionType,
+            (EndPointRef | DecisionPoint)
+        }+,
+        element DefaultBranch {
+            element Label { text }?,
+            branchModifiers,
+            (EndPointRef | DecisionPoint)
+        }?
+    }
+# Begin ENDPOINTS Section
+EndPointRef =
+    element EndPointRef {
+        attribute EndPointId { xsd:IDREF },
+        element Label { text }?,
+        element Description { text }?
+    }
+EndPoints =
+    element EndPoints {
+        element TemplatePartial {
+            attribute Id { xsd:ID },
+            TextTemplateContent 
+            
+        }*,
+        element EndPoint {
+            attribute Id { xsd:ID },
+            element Label { text }?,
+            # (element ErrorMessage { text } | 
+            #  (         
+            Diagnosis?,
+            ReportTexts,
+            ActionableFinding?,
+            element ImagingFollowup { Exam+ }?
+        }+
+    }
+ReportTexts = element ReportTexts { ReportText+ }
+ReportText = element ReportText { sectionIdAttr, TextTemplateContent }+
+sectionIdAttr =
+    attribute SectionId {
+        "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation"
+    }
+recommendationBase =
+    element ClinicalCondition { text }?,
+    element References { Citation+ }?,
+    element EvidenceLevel { codingSystemAttr, xsd:token }?
+timeFrame =
+    element RecommendedTimeFrame {
+        attribute Earliest { xsd:duration },
+        attribute Latest { xsd:duration }?,
+        empty
+    }
+ExternalAction =
+    element ExternalRecommendation {
+        recommendationBase,
+        element Action { text },
+        timeFrame
+    }
+ImagingFollowup =
+    element ImagingFollowup {
+        recommendationBase,
+        element PreferredImagingExam { codeAttrs, text },
+        element AcceptableImagingExams { Exam+ },
+        element IndicationForFollowup { codeAttrs, text },
+        timeFrame
+    }
+LaboratoryFollowup =
+    element Recommendation {
+        recommendationBase,
+        element LaboratoryTest { codeAttrs, text }+,
+        element IndicationForFollowup { codeAttrs, text }?,
+        timeFrame
+    }
+ActionableFinding =
+    element ActionableFinding {
+        attribute Category { text },
+        empty
+    }
+Exam =
+    element Exam {
+        attribute Code { text },
+        attribute CodeSystem { text },
+        attribute Modality { text },
+        attribute BodyRegion { text },
+        text
+    }
+TextTemplateContent = (text | templateTags)*
+templateTags =
+    InsertValue | InsertPartial | SectionIf | SectionIfNot | SectionIfValue | SectionIfValueNot
+InsertValue =
+    element InsertValue {
+        attribute DataElementId { xsd:IDREF },
+        attribute SignificantDigits { xsd:integer }?,
+        empty
+    }
+InsertPartial =
+    element InsertPartial {
+        attribute PartialId { xsd:IDREF },
+        empty
+    }
+SectionIf =
+    element SectionIf {
+        attribute DataElementId { xsd:IDREF },
+        TextTemplateContent
+    }
+SectionIfValue =
+    element SectionIfValue {
+        attribute DataElementId { xsd:IDREF },
+        attribute ComparisonValue { xsd:token },
+        TextTemplateContent
+    }
+SectionIfNot =
+    element SectionIfNot {
+        attribute DataElementId { xsd:IDREF },
+        TextTemplateContent
+    }
+SectionIfValueNot =
+    element SectionIfValueNot {
+        attribute DataElementId { xsd:IDREF },
+        attribute ComparisonValue { xsd:token },
+        TextTemplateContent
+    }
