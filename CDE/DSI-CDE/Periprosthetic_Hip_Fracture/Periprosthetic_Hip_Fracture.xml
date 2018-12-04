@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Periprosthetic Hip Fracture</Label>
+      <ID>Periprosthetic_Hip_Fracture</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the Common Data elements and Macros forPeriprosthetic Hip Fracture</Description>
+         <References>
+            <Citation Url="http://radelement.org/">CDE URL</Citation>
+            <Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Reviewer1 test</Name>
+            <Email>reviewer1@yopmail.com</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+      <MultiChoiceDataElement Id="Periprostheticfracture" IsRequired="true" DisplaySequence="1">
+         <Label>Periprosthetic fracture</Label>
+         <Hint>Detect if periprosthetic fracture is present</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0-Unknown</Value>
+               <Label>0-Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1-Fracturepresent</Value>
+               <Label>1-Fracture present</Label>
+            </Choice>
+            <Choice>
+               <Value>2-Fractureabsent</Value>
+               <Label>2-Fracture absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </MultiChoiceDataElement>
+  
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>

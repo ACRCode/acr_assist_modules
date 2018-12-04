@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Pituitary Microadenoma</Label>
+		<ID>PituitaryMicroadenoma_Nodes</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Pituitary Microadenoma</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation>
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Pituitary Microadenoma key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>Pituitary Microadenoma</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+	
+	<DataElements>
+
+		<GlobalValue Id="conditionConst">10</GlobalValue>
+		<ChoiceDataElement Id="focalmass" DisplaySequence="1" IsRequired="true" CdeId="100">
+			<Label>Focal Mass</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="sidedness" IsRequired="true" DisplaySequence="2" CdeId="100">
+			<Label>Sidedness</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>left</Value>
+					<Label>left</Label>
+					
+				</Choice>
+				<Choice>
+					<Value>right</Value>
+					<Label>right</Label>
+				</Choice>
+				<Choice>
+					<Value>central</Value>
+					<Label>central</Label>
+				</Choice>
+				
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<IntegerDataElement Id="Maximumdimension" IsRequired="true" DisplaySequence="3" CdeId="100">
+			<Label>Maximum dimension (in mm)</Label>
+			<Minimum>1</Minimum>
+			<Maximum>1000</Maximum>
+		</IntegerDataElement>		
+		
+		
+		<ChoiceDataElement Id="BoCdeIdrs" DisplaySequence="4" IsRequired="true" CdeId="100">
+			<Label>Borders</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>welldefined</Value>
+					<Label>well defined</Label>
+				</Choice>
+				<Choice>
+					<Value>IIIdefined</Value>
+					<Label>iII defined</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+
+
+		
+		<ChoiceDataElement Id="t1hyperintensity" IsRequired="false" DisplaySequence="5" CdeId="100">
+			<Label>T1 Hyperinsensitivity</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yeshyperintense-fat</Value>
+					<Label>hyperintense-fat</Label>
+					
+				</Choice>
+				<Choice>
+					<Value>isointense</Value>
+					<Label>isointense</Label>
+					
+				</Choice>
+				<Choice>
+					<Value>yeshyperintense-nonfat</Value>
+					<Label>hyperintense-non fat</Label>
+				</Choice>
+				<Choice>
+					<Value>yesheterogeneous</Value>
+					<Label>heterogeneous</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<!--<ChoiceDataElement Id="t2hyperintensity" IsRequired="false" DisplaySequence="6" CdeId="100">
+			<Label>T2 Hyperinsensitivity</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>	
+				<Choice>
+					<Value>heterogeneous</Value>
+					<Label>Heterogeneous</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>-->
+		
+			<ChoiceDataElement Id="t1signalpostcontrast" IsRequired="true" DisplaySequence="7" CdeId="100">
+			<Label>T1 signal postcontrast</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>hypoenhancing</Value>
+					<Label>hypoenhancing</Label>
+				</Choice>	
+				<Choice>
+					<Value>isointense</Value>
+					<Label>isointense</Label>
+				</Choice>
+				<Choice>
+					<Value>hyperenhancing</Value>
+					<Label>hyperenhancing</Label>
+				</Choice>
+				<Choice>
+					<Value>heterogeneous</Value>
+					<Label>heterogeneous</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+
+		<ChoiceDataElement Id="locationofinfundibulum" DisplaySequence="8" IsRequired="true" CdeId="100">
+			<Label>Location of Infundibulum</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>midline</Value>
+					<Label>midline</Label>
+				</Choice>
+				<Choice>
+					<Value>left</Value>
+					<Label>left</Label>
+				</Choice>
+				<Choice>
+					<Value>anterior</Value>
+					<Label>anterior</Label>
+				</Choice>
+				<Choice>
+					<Value>posterior</Value>
+					<Label>posterior</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="InfundibulumMorphology" DisplaySequence="9" IsRequired="true" CdeId="100">
+			<Label>Infundibulum Morphology</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>normal</Label>
+				</Choice>
+				<Choice>
+					<Value>enlarged</Value>
+					<Label>enlarged</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="Infundibulumenhancement" DisplaySequence="10" IsRequired="true" CdeId="100">
+			<Label>Infundibulum enhancement</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="Presenceofposteriorhypophysisbrightspot" DisplaySequence="11" IsRequired="true" CdeId="100">
+			<Label>Presence of posterior hypophysis bright spot</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="confidenceindiagnosis" DisplaySequence="12" IsRequired="true" CdeId="100">
+			<Label>Confidence in diagnosis</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>veryconfident</Value>
+					<Label>1-Very Confident</Label>
+				</Choice>
+				<Choice>
+					<Value>somewhatconfident</Value>
+					<Label>2-Somewhat confident</Label>
+				</Choice>
+				<Choice>
+					<Value>probable</Value>
+					<Label>3-probable</Label>
+				</Choice>
+				<Choice>
+					<Value>somewhatlikely</Value>
+					<Label>4-Somewhat likely</Label>
+				</Choice>	
+				<Choice>
+					<Value>possible</Value>
+					<Label>5-Possible</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+				
+	</DataElements>
+
+	<Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>
+		
+	</Rules>
+
+	<EndPoints>
+	 <TemplatePartial Id ="ExamPartial">
+	    EXAMINATION:  CT NECK WITH CONTRAST
+		EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT
+		INDICATION: neck swelling
+		COMPARISON: None available.
+	 </TemplatePartial>
+	 
+		<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		 <ReportTexts>
+				<ReportText SectionId="findings">	
+				
+				&amp;nbsp;
+				CDE Report text
+				&amp;nbsp;
+				&amp;nbsp;
+				
+					<SectionIf DataElementId="focalmass">&amp;nbsp;
+					A focal mass is&amp;nbsp;<SectionIfValue DataElementId="focalmass" ComparisonValue="no"> not&amp;nbsp;</SectionIfValue>present at the&amp;nbsp;	</SectionIf>				
+					<SectionIf DataElementId="sidedness"><InsertValue DataElementId="sidedness"/>&amp;nbsp;aspect of the pituitary.</SectionIf>
+					
+					<SectionIf DataElementId="Maximumdimension">&amp;nbsp;
+					Maximum dimension is&amp;nbsp;<InsertValue DataElementId="Maximumdimension">&amp;nbsp;mm.</InsertValue></SectionIf> 
+					
+					<SectionIf DataElementId="BoCdeIdrs">&amp;nbsp;
+					The lesion borders are&amp;nbsp;<InsertValue DataElementId="BoCdeIdrs">.</InsertValue></SectionIf>
+					
+					<SectionIf DataElementId="t1hyperintensity">&amp;nbsp;
+					Without contrast, relative to the normal pituitary, the lesion is T1&amp;nbsp;<InsertValue DataElementId="t1hyperintensity"></InsertValue></SectionIf>
+				
+					<SectionIf DataElementId="t1signalpostcontrast">&amp;nbsp;
+					Following infusion of contrast, the lesion relative to the normal pituitary is&amp;nbsp;<InsertValue DataElementId="t1signalpostcontrast">.</InsertValue></SectionIf>
+					
+					<SectionIf DataElementId="locationofinfundibulum">&amp;nbsp;
+					The infundibulum is&amp;nbsp;<InsertValue DataElementId="locationofinfundibulum"/></SectionIf>&amp;nbsp;<SectionIf DataElementId="InfundibulumMorphology"> and size is&amp;nbsp;<InsertValue DataElementId="InfundibulumMorphology">.</InsertValue></SectionIf> 
+					
+					<SectionIf DataElementId="Infundibulumenhancement">&amp;nbsp;
+					The infundibulum <SectionIfValue DataElementId="Infundibulumenhancement" ComparisonValue="yes">&amp;nbsp;enhances.</SectionIfValue>
+					<SectionIfValue DataElementId="Infundibulumenhancement" ComparisonValue="no">&amp;nbsp;does not enhance.</SectionIfValue></SectionIf>&amp;nbsp;
+					
+					<SectionIf DataElementId="Presenceofposteriorhypophysisbrightspot">&amp;nbsp;
+					The posterior neurohypophysis bright spot is&amp;nbsp; <SectionIfValue DataElementId="Presenceofposteriorhypophysisbrightspot" ComparisonValue="no">not present.&amp;nbsp;</SectionIfValue><SectionIfValue DataElementId="Presenceofposteriorhypophysisbrightspot" ComparisonValue="yes">present.&amp;nbsp;</SectionIfValue></SectionIf>
+					
+					<SectionIf DataElementId="confidenceindiagnosis">&amp;nbsp;
+					Confidence in diagnosis is:&amp;nbsp; <InsertValue DataElementId="confidenceindiagnosis">.</InsertValue></SectionIf>
+				
+					
+				</ReportText>
+				
+					<!--
+					<ReportText SectionId="impression">	
+					 Pituitary microadenoma as described below.   
+
+					TECHNIQUE: MR imaging of the sella/brain was obtained before and after administration of intravenous contrast (    cc of Gadavist).
+					
+				</ReportText>	
+				
+				 -->	
+			</ReportTexts>	
+		</EndPoint>
+	</EndPoints>
+
+</ReportingModule>
