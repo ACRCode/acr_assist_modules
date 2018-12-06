@@ -1,0 +1,90 @@
+start = Metadata
+Metadata =
+    element Metadata {
+        element Label { text },
+        element ID { text },
+        element SchemaVersion { text },
+        element ModuleVersion { text },
+        element CreatedDate { xsd:date},
+        element LastModifiedDate {xsd:date},
+        element ApprovedBy{ text }?,
+        element ReviewedBy{ text }?,
+        element DevelopedBy{ text }?,
+		element RadElementSetID { text }?,
+        element Info {
+            element Description { text }?,
+            element References { Citation+ }?,
+            Diagrams?,
+            element HelpText { text }?,
+            element Contact {
+                element Name { text },
+                element Email { text },
+                element Institution { text }?
+            }?
+        }?,
+        element ReportCitationText { text },
+        element Ontology {
+            element AnatomicRegions {
+                attribute CodingSystem { text }?,
+                element Region {
+                    attribute Code { token },
+                    text
+                }+
+            }*,
+            element PossibleDiagnoses { codingSystemAttr?, Diagnosis+ }*
+        }?,
+        element ApplicableExams {
+            element ApplicableExamCategory {
+                attribute Axis { "Modality" | "Anatomy" },
+                text
+            }+
+        }?,
+        element ApplicableSexes {
+            attribute Value { "Male" | "Female" | "Both" },
+            empty
+        },
+        element ApplicableAgeGroups {
+            element MinimumAge { xsd:nonNegativeInteger }?,
+            element MaximumAge { xsd:nonNegativeInteger }?
+        }?,
+        element TextCues {
+            element ContextPhrases {
+                element ContextPhrase { text }+
+            }?,
+            element KeyWords {
+                element KeyWord { text }+
+            },
+            element NegationPhrases {
+                element NegationPhrase { text }+
+            }?,
+            element Regex { text }?
+        }?,
+        element VoiceActivation {
+            element VoiceCommandPhrase { text }+
+        }?		
+    }
+    
+    Diagrams =
+    element Diagrams {
+        element Diagram {
+            element Location { text },
+            element Label { text },
+            attribute DisplaySequence { xsd:integer }?,
+            attribute IsKeyDiagram { "true" | "false" }?
+        }+
+    }
+    
+    Citation =
+    element Citation {
+        attribute PubmedId { xsd:token }?,
+        attribute Url { xsd:anyURI }?,
+        text
+    }+
+    
+    Diagnosis = element Diagnosis { codeAttrs, text }
+    
+    codingSystemAttr = attribute CodingSystem { text }
+    
+    codeAttrs =
+    codingSystemAttr?,
+    attribute Code { xsd:token }

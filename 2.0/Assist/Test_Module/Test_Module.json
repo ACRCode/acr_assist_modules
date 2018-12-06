@@ -1,0 +1,2105 @@
+{
+  'id': 'Unique Id of Test case document',
+  'description': 'Unique Id of Test case document',
+  'moduleId': 'ACR Hello Assist',
+  'moduleName': 'ACR Hello Assist',
+  'schemaVersion': '1.0',
+  'moduleVersion': '1.0',
+  'testCases': [
+    {
+      'testCaseId': 'HA-1',
+	  'endpointId': 'LRtreatedEp',
+	  'endpointlabel': 'LR-Treated',
+      'inputs': [
+	  
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'treatedObservation'
+        }
+		
+      ]
+
+    },
+    {
+      'testCaseId': 'HA-2',
+      'endpointId': 'LR1Ep',
+	  'endpointlabel': 'LR-1',
+      'inputs': [
+	   
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'definitelyBenign'
+        }
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-3',
+      'endpointId': 'LR2Ep',
+	  'endpointlabel': 'LR-2',
+      'inputs': [
+	   
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'probablyBenign'
+        }
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-4',
+	  'endpointId': 'LRmEp',
+	  'endpointlabel': 'LR-M',
+      'inputs': [
+	   
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notspecificforLR'
+        }
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-5',
+	  'endpointId': 'LR5vEp',
+	  'endpointlabel': 'LR-5V',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'tumorInVein'
+        }
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-6',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-7',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-8',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+	
+	{
+      'testCaseId': 'HA-9',
+      'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	
+		
+	{
+      'testCaseId': 'HA-10',
+      'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-11',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-12',
+      'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-13',
+      'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-14',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-15',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+
+{
+      'testCaseId': 'HA-16',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },	
+	
+	{
+      'testCaseId': 'HA-17',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-18',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-19',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+
+	{
+      'testCaseId': 'HA-20',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '25'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hypoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-21',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-22',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-23',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	
+	
+	{
+      'testCaseId': 'HA-24',
+      'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	
+		
+	{
+      'testCaseId': 'HA-25',
+       'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-26',
+       'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-27',
+       'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-28',
+       'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-29',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-30',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+
+		{
+      'testCaseId': 'HA-31',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'isoEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-32',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-33',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-34',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-35',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-36',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+		{
+      'testCaseId': 'HA-37',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-38',
+      'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-39',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-40',
+	  'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '9'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-41',
+	  'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-42',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-43',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-44',
+	  'endpointId': 'LR4_5',
+	  'endpointlabel': 'LR-4/LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	
+	{
+      'testCaseId': 'HA-45',
+	  'endpointId': 'LR4_5',
+	  'endpointlabel': 'LR-4/LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-46',
+	  'endpointId': 'LR4_5',
+	  'endpointlabel': 'LR-4/LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '10'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-47',
+	  'endpointId': 'LR3Ep',
+	  'endpointlabel': 'LR-3',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-48',
+	  'endpointId': 'LR4_5',
+	  'endpointlabel': 'LR-4/LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-49',
+	  'endpointId': 'LR4_5',
+	  'endpointlabel': 'LR-4/LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-50',
+	  'endpointId': 'LR4_5',
+	  'endpointlabel': 'LR-4/LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-51',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-52',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-53',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-54',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '19'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+	{
+      'testCaseId': 'HA-55',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },	
+		{
+      'testCaseId': 'HA-56',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-57',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-58',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+			{
+      'testCaseId': 'HA-59',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'yes'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+			{
+      'testCaseId': 'HA-60',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'yes'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    },
+		{
+      'testCaseId': 'HA-61',
+	  'endpointId': 'LR5Ep',
+	  'endpointlabel': 'LR-5',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'yes'
+        },
+      ]
+
+    },
+			{
+      'testCaseId': 'HA-62',
+	  'endpointId': 'LR4Ep',
+	  'endpointlabel': 'LR-4',
+      'inputs': [
+
+	    {   
+          'dataElementId': 'ObservationCharacter',
+          'dataElementValue': 'notDefProbBenign'
+        },
+		{
+          'dataElementId': 'diameter',
+          'dataElementValue': '20'
+        },
+		{
+          'dataElementId': 'washout',
+          'dataElementValue': 'no'
+        },
+		{
+          'dataElementId': 'capsule',
+          'dataElementValue': 'no'
+        },
+
+		{
+          'dataElementId': 'ArterialEnhancement',
+          'dataElementValue': 'hyperEnhancing'
+        },
+
+		{
+          'dataElementId': 'thresholdgrowth',
+          'dataElementValue': 'no'
+        },
+      ]
+
+    }
+	
+	
+	
+  ]
+}

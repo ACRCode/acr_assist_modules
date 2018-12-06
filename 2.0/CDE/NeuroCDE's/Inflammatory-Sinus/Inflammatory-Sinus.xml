@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Inflammatory Sinus</Label>
+		<ID>Inflammatory_Sinus</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Inflammatory Sinus</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.png</Location>
+					<Label>Inflammatory Sinus key image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" >
+					<Location>algorithm for morphologic classification.png</Location>
+					<Label>Algorithm for morphologic classification</Label>
+				</Diagram>
+				<Diagram DisplaySequence="3" >
+					<Location>supporting.jpg</Location>
+					<Label>Supporting</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>Inflammatory Sinus</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+	
+	<DataElements>
+
+		<GlobalValue Id="conditionConst">10</GlobalValue>
+		<ChoiceDataElement Id="laterallamella" DisplaySequence="1" IsRequired="true"  CdeId = "100">
+			<Label>Lateral Lamella</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>left</Value>
+					<Label>Left</Label>
+				</Choice>
+				<Choice>
+					<Value>right</Value>
+					<Label>Right</Label>
+				</Choice>
+
+				<Choice>
+					<Value>bilateral</Value>
+					<Label>Bilateral</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="lateralpositions" DisplaySequence="2" IsRequired="true" CdeId = "100">
+			<Label>Lateral Positions</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal in position</Label>
+				</Choice>
+				<Choice>
+					<Value>elongated</Value>
+					<Label>Elongated</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="kerosclass" DisplaySequence="3" IsRequired="true" CdeId = "100">
+			<Label>Keros Class</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>none</Value>
+					<Label>None</Label>
+				</Choice>
+				<Choice>
+					<Value>I</Value>
+					<Label>I</Label>
+				</Choice>
+				<Choice>
+					<Value>II</Value>
+					<Label>II</Label>
+				</Choice>
+				<Choice>
+					<Value>III</Value>
+					<Label>III</Label>
+				</Choice>
+				<Choice>
+					<Value>IV</Value>
+					<Label>IV</Label>
+				</Choice>
+				<Choice>
+					<Value>V</Value>
+					<Label>V</Label>
+				</Choice>
+				<Choice>
+					<Value>VI</Value>
+					<Label>VI</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="ethmoidarteries" DisplaySequence="4" IsRequired="true" CdeId = "100">
+			<Label>Ethmoid arteries</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>exposed</Value>
+					<Label>Exposed</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<IntegerDataElement Id="maxillarysinuses" IsRequired="true" DisplaySequence="5" CdeId="100">
+			<Label>Maxillary sinuses</Label>
+			<Minimum>1</Minimum>
+			<Maximum>1000</Maximum>
+		</IntegerDataElement>	
+		
+		<ChoiceDataElement Id="uncinateprocesses" DisplaySequence="6" IsRequired="true" CdeId = "100">
+			<Label>Uncinate Processes</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>lateralized</Value>
+					<Label>Lateralized</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+			
+		<IntegerDataElement Id="maxillaryinfundibulum" IsRequired="true" DisplaySequence="7" CdeId="100">
+			<Label>Maxillary Infundibulum</Label>
+			<Minimum>1</Minimum>
+			<Maximum>1000</Maximum>
+		</IntegerDataElement>	
+		<IntegerDataElement Id="osteomeatalunits" IsRequired="true" DisplaySequence="8" CdeId="100">
+			<Label>Osteomeatalunits</Label>
+			<Minimum>1</Minimum>
+			<Maximum>1000</Maximum>
+		</IntegerDataElement>	
+		
+		<IntegerDataElement Id="sphenoethmoidalrecesses" IsRequired="true" DisplaySequence="9" CdeId="100">
+			<Label>Sphenoethmoidal recesses</Label>
+			<Minimum>1</Minimum>
+			<Maximum>1000</Maximum>
+		</IntegerDataElement>
+		
+		
+		<IntegerDataElement Id="sphenoidsinuses" IsRequired="true" DisplaySequence="10" CdeId="100">
+			<Label>Sphenoid sinuses</Label>
+			<Minimum>1</Minimum>
+			<Maximum>1000</Maximum>
+		</IntegerDataElement>	
+			
+	</DataElements>
+
+	<Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>
+		
+	</Rules>
+
+	<EndPoints>
+	 <TemplatePartial Id ="ExamPartial">
+		EXAM TYPE: BRAIN MRI W/WO CONTRAST
+		EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT
+		INDICATION: r/o demyelinating disease 
+		COMPARISON: NONE
+	 </TemplatePartial>
+	 
+		<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		 <ReportTexts>
+				<ReportText SectionId="findings">	
+					
+					&amp;nbsp;
+					CDE Report text
+					&amp;nbsp;
+					&amp;nbsp;
+				<!--				
+					The frontal sinuses are \nop0 Frontal sinus\nop0.\
+					The frontoethmoidal recesses are \nop0 Frontalethmoidal recess\nop0.
+					The ethmoid sinuses \nop0 ethmoid sinuses\nop0 .   -->								
+					
+					
+					<SectionIf DataElementId="laterallamella">The&amp;nbsp; <InsertValue DataElementId="laterallamella"/>
+					&amp;nbsp;lateral lamella are&amp;nbsp;
+					<SectionIf DataElementId="lateralpositions"><InsertValue DataElementId="lateralpositions"/></SectionIf> &amp;nbsp;with Keros class&amp;nbsp; 
+					<SectionIf DataElementId="kerosclass"><InsertValue DataElementId="kerosclass">.</InsertValue></SectionIf></SectionIf>
+					
+					<SectionIf DataElementId="ethmoidarteries">&amp;nbsp;
+					The anterior ethmoid arteries are&amp;nbsp; <InsertValue DataElementId="ethmoidarteries">.</InsertValue></SectionIf>  &amp;nbsp;
+					
+					<SectionIf DataElementId="maxillarysinuses">&amp;nbsp;
+					The maxillary sinuses are&amp;nbsp; <InsertValue DataElementId="maxillarysinuses">.</InsertValue></SectionIf>  &amp;nbsp;
+					
+					<SectionIf DataElementId="uncinateprocesses">&amp;nbsp;
+					The uncinate processes are&amp;nbsp;<InsertValue DataElementId="uncinateprocesses">.</InsertValue></SectionIf>  &amp;nbsp;
+					
+					<SectionIf DataElementId="maxillaryinfundibulum">&amp;nbsp;
+					The maxillary infundibulum are&amp;nbsp; <InsertValue DataElementId="maxillaryinfundibulum">.</InsertValue></SectionIf>  &amp;nbsp;
+					
+					<SectionIf DataElementId="osteomeatalunits">&amp;nbsp;
+					The osteomeatal units are&amp;nbsp; <InsertValue DataElementId="osteomeatalunits">.</InsertValue></SectionIf>  &amp;nbsp;
+					
+					<SectionIf DataElementId="sphenoethmoidalrecesses">&amp;nbsp;
+					The sphenoethmoidal recesses are&amp;nbsp; <InsertValue DataElementId="sphenoethmoidalrecesses">.</InsertValue></SectionIf>  &amp;nbsp;
+					
+					<SectionIf DataElementId="sphenoidsinuses">&amp;nbsp;
+					The sphenoid sinuses are&amp;nbsp;  <InsertValue DataElementId="sphenoidsinuses">.</InsertValue></SectionIf>  &amp;nbsp;
+					
+					<!--
+					Sinus variants: \nop0 Sinus Variants\nop0  \nop0 Sinus variant details\nop0 .\par
+					There is \nop0 Osteoneogenesis\nop0 osteoneogenesis.  
+					The nasal septum is \nop0 Nasal septum\nop0 . 
+					The mastoid air cells are \nop0 Mastoid air cells\nop0 . 
+					The non-enhanced nasopharyngeal mucosal surfaces are \nop0 Nasopharynx\nop0 . 
+					The temporal mandibular articulations are  \nop0 TMJ\nop0 
+					The maxillary dentition demonstrates \nop0 Maxillary teeth\nop0  abnormal periapical lucencies extending into the floor of the maxillary sinus.
+					-->
+					
+
+				</ReportText>
+		 	<!--
+				<ReportText SectionId="impression">	
+				 
+					 Findings compatible with multiple sclerosis.
+
+					 TECHNIQUE: MR imaging of the brain was obtained with and without intravenous contrast (Gadovist 10ml)
+					
+					
+				</ReportText>	-->			
+			</ReportTexts>	
+		</EndPoint>
+	</EndPoints>
+
+</ReportingModule>

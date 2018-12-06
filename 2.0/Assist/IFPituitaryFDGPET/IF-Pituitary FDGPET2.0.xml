@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>IF-Pituitary FDG-PET</Label>
+		<ID>ACR_IF-PituitaryFDG-PET</ID>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<CreatedDate>2018-06-20</CreatedDate>
+    	<LastModifiedDate>2018-11-30</LastModifiedDate>
+    	<ApprovedBy>Sujth</ApprovedBy>
+    	<ReviewedBy>Deepak</ReviewedBy>
+    	<DevelopedBy>Smita</DevelopedBy>
+		<RadElementSetID>MID2244</RadElementSetID>
+		<Info>
+			<Description>IF-Pituitary Findings for FDG PET</Description>
+			<References>
+
+			</References>
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keyimage.PNG</Location>
+					<Label>IF-PituitaryCTMRI</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>keyimage1.PNG</Location>
+					<Label>IF-PituitaryFDGPET</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>IF Pituitary</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+
+	</Metadata>
+	
+	<DataElements>
+		
+		<GlobalValue Id="conditionConst">10</GlobalValue>		
+		
+		<ChoiceDataElement Id="abletoevaluatecomposition" IsRequired="true" DisplaySequence="2" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+			<Label>Can composition, size and mass effect be evaluated?</Label>
+			   <CodableConcept Name="Composition">
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>    				
+    			</Coding>
+    		</CodableConcept>	
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>	
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="type" IsRequired="true" DisplaySequence="3" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+			<Label>Type</Label>
+			<CodableConcept Name="type">
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>    				
+    			</Coding>
+    		</CodableConcept>	
+			<ChoiceInfo>
+				<Choice>
+					<Value>limited</Value>
+					<Label>Limited life expectancy or severe comorbidies</Label>	
+				</Choice>
+				<Choice>
+					<Value>general</Value>
+					<Label>General population</Label>	
+				</Choice>
+			</ChoiceInfo>
+			
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="yes"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			 </ConditionalProperties> 
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="4" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+			<Label>Composition of Cyst</Label>
+			<CodableConcept Name="typeofcyst">
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>    				
+    			</Coding>
+    		</CodableConcept>	
+			<Hint> If the composition of the lesion cannot be determined, it should be managed as if solid</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>simplecyst</Value>
+					<Label>Simple Cyst</Label>	
+				</Choice>
+				<Choice>
+					<Value>mixed</Value>
+					<Label>Mixed-Solid Cystitc</Label>
+				</Choice>
+			</ChoiceInfo>
+			
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="5" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+			<Label>Size of Mixed-Solid Cyst</Label>
+			<CodableConcept Name="mixedcystsize">
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>    				
+    			</Coding>
+    		</CodableConcept>	
+			<ChoiceInfo>
+				<Choice>
+					<Value>lessthan5mm</Value>
+					<Label>Less than 5mm</Label>	
+				</Choice>
+				<Choice>
+					<Value>between5and10mm</Value>
+					<Label>5-10mm</Label>	
+				</Choice>
+				<Choice>
+					<Value>greaterthan10mm</Value>
+					<Label>Greater than 10mm</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>					
+					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>					
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/> 
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>	
+		
+		
+		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="6" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+			<Label>Has Mass Effect?</Label>
+			<CodableConcept Name="masseffect">
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>    				
+    			</Coding>
+    		</CodableConcept>	
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>
+				<OrCondition>
+					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm"/> 
+					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm"/> 					
+				</OrCondition>	
+				<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="invasion" IsRequired="true" DisplaySequence="7" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+			<Label>Has Invasion into surrounding structures?</Label>
+			<CodableConcept Name="invasion">
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>
+    			<Coding>
+    				<System Value="Test"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDETest"></Code>
+    				<Display Value="Test"></Display>    				
+    			</Coding>
+    		</CodableConcept>	
+			<Hint>Invasion into surrounding Structures include Optic Chiasm, Optic Nerve and Cavernous Sinus</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>
+				<OrCondition>
+					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm"/> 
+					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm"/> 					
+				</OrCondition>	
+				<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<!-- <ConditionalProperty>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/> 
+					<IsReleveant>false</IsReleveant>
+				</ConditionalProperty -->
+			</ConditionalProperties>
+		</ChoiceDataElement>	
+		
+		
+	</DataElements>	
+	
+    <Rules>
+	
+	<DecisionPoint Id="incidentalpituitarylesion">
+     <Label>Incidental</Label>
+     
+     <Branch>
+		 <Label>unable</Label>			  
+				  <EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
+                  <DecisionPoint Id="unableto">	 
+				  <Label>unable</Label>
+					<Branch>
+					   <Label>unable limited</Label>
+						 <EqualCondition DataElementId="type" ComparisonValue="limited"/>
+						 <EndPointRef EndPointId="Nofurtherevaluation" ></EndPointRef>		
+					</Branch>
+					<Branch>
+					 <Label>unable general</Label>
+						 <EqualCondition DataElementId="type" ComparisonValue="general"/>
+						 <EndPointRef EndPointId="general" ></EndPointRef>		
+					</Branch>
+				  </DecisionPoint>
+	 </Branch>
+			 
+			 
+	    <Branch>
+		 <Label>able to</Label>		   	
+		   <EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="yes"/>
+		   <DecisionPoint Id="simple">
+		    <Label>simple1</Label>
+			      <Branch>
+					<Label>Simple</Label>
+					<!-- <NotRelevantDataElements>
+							  <DataElementRef DataElementId="mixedcystsize"/>
+					</NotRelevantDataElements> -->
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/>
+					
+					<DecisionPoint Id="Simple">
+					 <Label>Simple nomass</Label>
+					   <Branch>
+						<Label>Simple no mass</Label>
+						<OrCondition>
+							<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+							<EqualCondition DataElementId="invasion" ComparisonValue="no"/>
+						</OrCondition>
+						<EndPointRef EndPointId="Nofurtherevaluation"></EndPointRef>
+						</Branch>
+
+						  <Branch>
+							<Label>Simple cyst yes mass</Label>
+							<OrCondition>
+								<EqualCondition DataElementId="masseffect" ComparisonValue="yes"/>
+								<EqualCondition DataElementId="invasion" ComparisonValue="yes"/>
+							</OrCondition>	
+								<EndPointRef EndPointId="referral"></EndPointRef>
+						  </Branch>
+					  </DecisionPoint>
+					</Branch>
+
+			 <Branch>
+				 <Label>Mixed</Label>
+
+						<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/>
+						
+						 <DecisionPoint Id="mixedsize">
+						   <Label>Mixed size</Label>
+							  <Branch>
+								<Label>Mixed yes mass</Label>
+								<NotRelevantDataElements>
+									  <DataElementRef DataElementId="masseffect"/>
+									  <DataElementRef DataElementId="invasion"/>
+								</NotRelevantDataElements>
+									<EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm"/>
+									<EndPointRef EndPointId="Nofurtherimgaing"></EndPointRef>
+							  </Branch>
+							  
+							  <Branch>
+								<Label>Mixed no mass</Label>
+								<NotRelevantDataElements>
+									  <DataElementRef DataElementId="masseffect"/>
+									  <DataElementRef DataElementId="invasion"/>
+								</NotRelevantDataElements>
+									<EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm"/>
+									<EndPointRef EndPointId="Nofurtherimgaingabove5"></EndPointRef>
+							  </Branch>
+							  
+							  <Branch>
+								<Label>Mixed with mass</Label>
+								   <AndCondition>
+									<EqualCondition DataElementId="mixedcystsize" ComparisonValue="greaterthan10mm"/>
+									<EqualCondition DataElementId="masseffect" ComparisonValue="yes"/>
+								   </AndCondition>
+									<EndPointRef EndPointId="referral"></EndPointRef>
+							  </Branch>
+							  
+							  
+							  <Branch>
+								<Label>Mixed with no mass</Label>
+								   <AndCondition>
+									<EqualCondition DataElementId="mixedcystsize" ComparisonValue="greaterthan10mm"/>
+									<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+								   </AndCondition>
+									<EndPointRef EndPointId="recommend"></EndPointRef>
+							  </Branch>
+						 
+			             </DecisionPoint>
+             </Branch>		 
+	        </DecisionPoint> 
+	  
+	    </Branch>
+	  
+
+	  </DecisionPoint>
+		
+	</Rules>
+	
+	
+	<EndPoints>
+	
+		
+	   <EndPoint Id="Nofurtherevaluation">
+		<Label>Not Further evaluation</Label>
+		  <ReportTexts>
+			<ReportText SectionId="findings">No Further Evaluation</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="general">
+		<Label>general</Label>
+		  <ReportTexts>
+			<ReportText SectionId="findings">Characterize with pituitary MRI</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="referral">
+		<Label>Referral</Label>
+		  <ReportTexts>
+			<ReportText SectionId="findings">Referral for endocrine and/or neurosurgical management</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="Nofurtherimgaing">
+		<Label>Nofurtherimgaing</Label>
+		  <ReportTexts>
+			<ReportText SectionId="findings">No further imaging &amp;&nbsp; Correlate with history of pituitary hypersecretion.</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+	   <EndPoint Id="Nofurtherimgaingabove5">
+		<Label>Nofurtherimgaingabove5</Label>
+		  <ReportTexts>
+			<ReportText SectionId="findings">No further imaging &amp;&nbsp; Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+	   <EndPoint Id="recommend">
+		<Label>recommend</Label>
+		  <ReportTexts>
+			<ReportText SectionId="findings">Recommend endocrine function tests &amp;&nbsp; 6-12 month follow-up pituitary MRI.</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		
+	</EndPoints>
+	
+	
+	
+	</ReportingModule>

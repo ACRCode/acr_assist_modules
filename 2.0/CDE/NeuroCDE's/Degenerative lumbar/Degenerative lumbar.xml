@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Degenerative Lumbar</Label>
+		<ID>Degenerative_Lumbar</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Degenerative Lumbar</Description>
+			
+			<References>
+				<Citation Url="http://radlex.org/"> CDE URL </Citation>
+			</References>
+			
+			<Diagrams>
+				<Diagram>
+					<Location></Location>
+					<Label></Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText/>
+		<ApplicableSexes Value="Both"/>
+		
+	</Metadata>
+	
+	<DataElements>
+
+		<GlobalValue Id="conditionConst">10</GlobalValue>
+		<ChoiceDataElement Id="vertebralalignment" DisplaySequence="1" IsRequired="true" RDE="100">
+			<Label>Vertebral Alignment</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>scoliosis</Value>
+					<Label>Scoliosis</Label>
+				</Choice>
+				<Choice>
+					<Value>spondylolisthesis</Value>
+					<Label>Spondylolisthesis</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="vertebrae" DisplaySequence="2" IsRequired="true" RDE="100">
+			<Label>Vertebrae</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>signalchangesinmarrow</Value>
+					<Label>Signal changes in marrow</Label>
+				</Choice>
+				<Choice>
+					<Value>configuration/height</Value>
+					<Label>Configuration/height</Label>
+				</Choice>
+				<Choice>
+					<Value>endplates</Value>
+					<Label>Endplates</Label>
+				</Choice>
+				<Choice>
+					<Value>enhancement</Value>
+					<Label>Enhancement?</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="intervertebraldiscs" DisplaySequence="3" IsRequired="true" RDE="100">
+			<Label>Intervertebral discs</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>disc space narrowing</Value>
+					<Label>Disc space narrowing</Label>
+				</Choice>
+				<Choice>
+					<Value>signal changes in disc</Value>
+					<Label>Signal changes in disc</Label>
+				</Choice>
+				<Choice>
+					<Value>bulging</Value>
+					<Label>Bulging</Label>
+				</Choice>
+				<Choice>
+					<Value>herniation</Value>
+					<Label>herniation</Label>
+				</Choice>
+				<Choice>
+					<Value>enhancement</Value>
+					<Label>Enhancement</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="vertebralcanal" DisplaySequence="4" IsRequired="true" RDE="100">
+			<Label>Vertebral canal:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>narrowed</Value>
+					<Label>Narrowed(stenotic)</Label>
+				</Choice>
+				<Choice>
+					<Value>Cause</Value>
+					<Label>Cause(Congenital, Degenerative)</Label>
+				</Choice>
+				</ChoiceInfo>
+		</ChoiceDataElement>
+				
+	
+			
+		<ChoiceDataElement Id="intervertebralforamina" IsRequired="true" DisplaySequence="5" RDE="100">
+			<Label>Intervertebral Foramina</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>narrowed/stenotic–cause(disc,osteophyte)</Value>
+					<Label>Narrowed/stenotic – cause (disc, osteophyte)</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="lateralrecesses"  DisplaySequence="6" IsRequired="true" RDE="100">
+			<Label>Lateral Recesses</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>stenotic-cause</Value>
+					<Label>Stenotic - Cause</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="conusmedullaris"  DisplaySequence="7" IsRequired="true" RDE = "100">
+			<Label>Conus Medullaris</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>low-lying</Value>
+					<Label>Low-Lying</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+
+		<ChoiceDataElement Id="caudaequina" DisplaySequence="8" IsRequired="true" RDE = "100">
+			<Label>Cauda Equina)</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>clumped/adherent to the cal sac margins</Value>
+					<Label>Clumped/adherent to the cal sac margins</Label>
+				</Choice>
+				<Choice>
+					<Value>enhancement</Value>
+					<Label>Enhancement</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>			
+		
+		<ChoiceDataElement Id="Intradural/subarachnoidspace" DisplaySequence="9" IsRequired="false" RDE = "100">
+			<Label>Intradural/subarachnoidspace</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>mass</Value>
+					<Label>Mass</Label>
+				</Choice>
+				<Choice>
+					<Value>enhancement</Value>
+					<Label>Enhancement</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="Facets/facetjoints" DisplaySequence="10" IsRequired="true" RDE = "100">
+			<Label>Facets/facet joints</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>hypertrophied</Value>
+					<Label>Hypertrophied</Label>
+				</Choice>
+				<Choice>
+					<Value>erosions;</Value>
+					<Label>Erosions</Label>
+				</Choice>
+				<Choice>
+					<Value>enhancement</Value>
+					<Label>Enhancement</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="Nerveroots" DisplaySequence="11" IsRequired="true" RDE = "100">
+			<Label>Nerve roots</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>compressed/displaced – cause</Value>
+					<Label>Compressed/displaced – cause</Label>
+				</Choice>
+				<Choice>
+					<Value>enhancement</Value>
+					<Label>Enhancement</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="posteriormusculature" DisplaySequence="12" IsRequired="true" RDE = "100">
+			<Label>Posterior musculature (multifidus, erector spina)</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>normal</Value>
+					<Label>Normal</Label>
+				</Choice>
+				<Choice>
+					<Value>atrophic;</Value>
+					<Label>Atrophic;</Label>
+				</Choice>
+				<Choice>
+					<Value>scarred;</Value>
+					<Label>Scarred</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+	</DataElements>
+
+	<Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>
+		
+	</Rules>
+
+	<EndPoints>
+		<EndPoint Id="macroEndpoint">
+			
+		</EndPoint>
+	</EndPoints>
+
+</ReportingModule>

@@ -1,0 +1,544 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+  <Metadata>
+    <Label> Adrenal CT</Label>
+    <ID>ACR_Adrenal_CT_2_0</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+	<CreatedDate>2018-12-31</CreatedDate>
+    <LastModifiedDate>2018-12-25</LastModifiedDate>
+    <ApprovedBy>Sujth</ApprovedBy>
+    <ReviewedBy>Deepak</ReviewedBy>
+    <DevelopedBy>Smita</DevelopedBy>
+	<RadElementSetID>5689</RadElementSetID>
+    <Info>
+	<Description>This is a xml for adrenal CT XML </Description>
+            <References>          
+                <Citation Url="https://nrdr.acr.org/lirads/">
+                ACR LI-RADS</Citation>
+                <Citation Url="https://www.acr.org/Practice-Management-Quality-Informatics/Informatics/Structured-Content">
+                ACR Assist</Citation>
+            </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keyimage.PNG</Location>
+          <Label>Adrenal CT</Label>
+        </Diagram>
+      </Diagrams>
+    </Info>
+    <ReportCitationText>Adrenal CT</ReportCitationText>
+    <ApplicableSexes Value="Both"></ApplicableSexes>
+
+  </Metadata>
+  <DataElements>
+
+    <ChoiceDataElement Id="imagefeatures" DisplaySequence="1" IsRequired="true">
+      <Label>Imaging Features</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Diagnostic</Value>
+          <Label>Diagnostic Benign</Label>
+        </Choice>
+        <Choice>
+          <Value>Indeterminate</Value>
+          <Label>Indeterminate</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+
+
+    <ChoiceDataElement Id="diagimagfeatures" DisplaySequence="2" IsRequired="true">
+      <Label>Diagnostic Imaging Features</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>myelolipoma</Value>
+          <Label>Myelolipoma, No enhancement, Ca</Label>
+        </Choice>
+        <Choice>
+          <Value>signalonCSMR</Value>
+          <Label>≤10 HU or Signal on CS-MR</Label>
+        </Choice>
+      </ChoiceInfo>
+	   <ConditionalProperties>
+				<ConditionalProperty>
+					<GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="1"/> 
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>					
+				  <OrCondiion>
+				  <DataElementRef DataElementId="priorimaging"ComparisonValue="yes"/>
+				  <DataElementRef DataElementId="priorimaging" ComparisonValue="no"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>	
+				<OrCondiion>
+				  <DataElementRef DataElementId="cancerhx"ComparisonValue="yes"/>
+				  <DataElementRef DataElementId="cancerhx" ComparisonValue="no"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>	
+				<OrCondiion>
+				  <DataElementRef DataElementId="imgenlarge"ComparisonValue="stablemorethan1year"/>
+				  <DataElementRef DataElementId="imgenlarge" ComparisonValue="stablemorethan1year"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>	
+				<OrCondiion>
+				  <DataElementRef DataElementId="ncct"ComparisonValue="lessthan10"/>
+				  <DataElementRef DataElementId="ncct" ComparisonValue="greaterthan10"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>	
+				<OrCondiion>
+				  <DataElementRef DataElementId="washout"ComparisonValue="noenhancement"/>
+				  <DataElementRef DataElementId="washout" ComparisonValue="greaterthan60"/>
+				  <DataElementRef DataElementId="washout" ComparisonValue="lessthan60"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>				
+	   </ConditionalProperties>	
+	  
+    </ChoiceDataElement>
+
+    <IntegerDataElement Id="adrenalmass" DisplaySequence="3" IsRequired="true">
+      <Label>Adrenal Mass</Label>
+      <Minimum>1</Minimum>
+	  <Maximum>10</Maximum>
+	     <ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>
+					<IsRelevant>true</IsRelevant>    
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="treatedObservation"/>						
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="notspecificforLR"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="tumorInVein"/>
+					</OrCondition>
+					<IsRelevant>true</IsRelevant>    
+					<IsRequired>true</IsRequired>
+					<DisplaySequence>1</DisplaySequence>
+					<Minimum>15</Minimum>
+					<Maximum>20</Maximum>
+				</ConditionalProperty>
+			</ConditionalProperties>	
+	  
+	  
+	  
+    </IntegerDataElement>
+
+    <ChoiceDataElement Id="priorimaging" DisplaySequence="4" IsRequired="true">
+      <Label>Prior Imaging</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>yes</Value>
+          <Label>Yes</Label>
+        </Choice>
+        <Choice>
+          <Value>no</Value>
+          <Label>No</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+
+
+    <ChoiceDataElement Id="imgenlarge" DisplaySequence="5" IsRequired="true">
+      <Label>Imaging enlarge</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>stablemorethan1year</Value>
+          <Label>Stable  ≥ 1 year</Label>
+        </Choice>
+        <Choice>
+          <Value>Neworenlarging</Value>
+          <Label>New or enlarging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+
+
+    <ChoiceDataElement Id="cancerhx" DisplaySequence="6" IsRequired="true">
+      <Label>Cancer Hx</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Yes</Value>
+          <Label>Yes</Label>
+        </Choice>
+        <Choice>
+          <Value>No</Value>
+          <Label>No</Label>
+        </Choice>
+      </ChoiceInfo>
+	   <ConditionalProperties>
+				<ConditionalProperty>
+					<LessThanConditionThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="4"/> 
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>					
+				  <OrCondiion>
+				  <DataElementRef DataElementId="priorimaging"ComparisonValue="yes"/>
+				  <DataElementRef DataElementId="priorimaging" ComparisonValue="no"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>	
+				<OrCondiion>
+				  <DataElementRef DataElementId="imgenlarge"ComparisonValue="stablemorethan1year"/>
+				  <DataElementRef DataElementId="imgenlarge" ComparisonValue="stablemorethan1year"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>	
+				<OrCondiion>
+				  <DataElementRef DataElementId="ncct"ComparisonValue="lessthan10"/>
+				  <DataElementRef DataElementId="ncct" ComparisonValue="greaterthan10"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>	
+				<OrCondiion>
+				  <DataElementRef DataElementId="washout"ComparisonValue="noenhancement"/>
+				  <DataElementRef DataElementId="washout" ComparisonValue="greaterthan60"/>
+				  <DataElementRef DataElementId="washout" ComparisonValue="lessthan60"/>
+				  </OrCondiion>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>				
+	   </ConditionalProperties>	
+
+    </ChoiceDataElement>
+
+
+    <ChoiceDataElement Id="ncct" DisplaySequence="7" IsRequired="true">
+      <Label>Reduced dose NCCT</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>lessthan10</Value>
+          <Label>≤10 HU</Label>
+        </Choice>
+        <Choice>
+          <Value>greaterthan10</Value>
+          <Label> >10 HU</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+
+
+    <ChoiceDataElement Id="washout" DisplaySequence="8" IsRequired="true">
+      <Label>Adrenal CT washout</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>noenhancement</Value>
+          <Label>No enhancement (&lt; 10 HU) = cyst or hemorrhage </Label>
+        </Choice>
+        <Choice>
+          <Value>greaterthan60</Value>
+          <Label>APW/RPW ≥60/40%</Label>
+        </Choice>
+        <Choice>
+          <Value>lessthan60</Value>
+          <Label>APW/RPW &lt;60/40%</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+
+  </DataElements>
+  <Rules>
+
+    <DecisionPoint Id="AdernalMassDetected">
+      <Label>Incidental, Asymptomatic Adrenal Mass Detected on any CT or MR exam </Label>
+      <Branch>
+	  <Label>Diagnostic Benign Imaging Features</Label>
+
+        <EqualCondition DataElementId="imagefeatures" ComparisonValue="Diagnostic"/>
+
+
+        <DecisionPoint Id="DiagnosticImagingFeatures">
+          <Label>Diagnostic Imaging Features </Label>
+          <Branch>
+		  <Label>Myelolipoma, No enhancement,Ca++</Label>
+            <EqualCondition DataElementId="diagimagfeatures" ComparisonValue="myelolipoma"/>
+            <EndPointRef EndPointId="benignnoFU" ></EndPointRef>
+          </Branch>
+          <Branch>
+		   <Label>≤10 HU or signal on CS-MR</Label>
+            <EqualCondition DataElementId="diagimagfeatures" ComparisonValue="signalonCSMR"/>
+            <EndPointRef EndPointId="benignadenoma" ></EndPointRef>
+          </Branch>
+        </DecisionPoint>
+
+      </Branch>
+      <Branch>
+	   <Label>Indeterminate Imaging features</Label>
+        <NotRelevantDataElements>
+          <DataElementRef DataElementId="diagimagfeatures"/>
+
+        </NotRelevantDataElements>
+        <EqualCondition DataElementId="imagefeatures" ComparisonValue="Indeterminate"/>
+
+        <DecisionPoint Id="IndeterminateImagingDP">
+          <Label>Adrenal Mass</Label>
+          <Branch>
+		  <Label>4 cm</Label>
+
+            <GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="4"/>
+            <DecisionPoint Id="Intermediategreaterthan4">
+              <Label>Cancer Hx</Label>
+              <Branch>
+			  <Label>No</Label>
+                <EqualCondition DataElementId="cancerhx" ComparisonValue="No"/>
+                <EndPointRef EndPointId="considerresection"></EndPointRef>
+              </Branch>
+              <Branch>
+			  <Label>Yes</Label>
+                <EqualCondition DataElementId="cancerhx" ComparisonValue="Yes"/>
+                <EndPointRef EndPointId="considerBX"></EndPointRef>
+              </Branch>
+            </DecisionPoint>
+          </Branch>
+
+
+          <Branch>
+		   <Label>1-4cm</Label>
+            <AndCondition>
+              <GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="1"/>
+              <LessThanCondition DataElementId="adrenalmass" ComparisonValue="4"/>
+            </AndCondition>
+            <DecisionPoint Id="priorimagingDP">
+              <Label>Prior Imaging</Label>
+              <Branch>
+			  <Label>Yes</Label>
+                <NotRelevantDataElements>
+                  <DataElementRef DataElementId="ncct"/>
+                  <DataElementRef DataElementId="washout"/>
+                </NotRelevantDataElements>
+                <EqualCondition DataElementId="priorimaging" ComparisonValue="yes"/>
+                <DecisionPoint Id="imgenlargeDP">
+                  <Label>Image Enlarge DP</Label>
+                  <Branch>
+				  <Label>Stable >= 1 year</Label>
+                    <NotRelevantDataElements>
+                      <DataElementRef DataElementId="cancerhx"/>
+                    </NotRelevantDataElements>
+                    <EqualCondition DataElementId="imgenlarge" ComparisonValue="stablemorethan1year"/>
+                    <EndPointRef EndPointId="benignnoFU"></EndPointRef>
+                  </Branch>
+                  <Branch>
+				  <Label>New or enlarging</Label>
+                    <EqualCondition DataElementId="imgenlarge" ComparisonValue="Neworenlarging"/>
+                    <DecisionPoint Id="PICancerDP">
+                      <Label> Cancer Hx</Label>
+                      <Branch>
+					  <Label>No</Label>
+                        <EqualCondition DataElementId="cancerhx" ComparisonValue="No"/>
+                        <EndPointRef EndPointId="consider12"></EndPointRef>
+                      </Branch>
+                      <Branch>
+					  <Label>Yes</Label>
+                        <EqualCondition DataElementId="cancerhx" ComparisonValue="Yes"/>
+                        <EndPointRef EndPointId="considerBX"></EndPointRef>
+                      </Branch>
+                    </DecisionPoint>
+                  </Branch>
+                </DecisionPoint>
+              </Branch>
+
+
+              <Branch>
+			  <Label>No</Label>
+                <NotRelevantDataElements>
+                  <DataElementRef DataElementId="imgenlarge"/>
+                </NotRelevantDataElements>
+                <EqualCondition DataElementId="priorimaging" ComparisonValue="no"/>
+                <DecisionPoint Id="nopriorimagingDP">
+                  <Label>Cancer Hx</Label>
+                  <Branch>
+				  <Label>Yes</Label>
+                    <EqualCondition DataElementId="cancerhx" ComparisonValue="Yes"/>
+                    <DecisionPoint Id="CancerYsNcctDP">
+                      <Label>NCCT DP</Label>
+                      <Branch>
+                        <NotRelevantDataElements>
+                          <DataElementRef DataElementId="washout"/>
+                        </NotRelevantDataElements>
+						<Label>less than 10</Label>
+                        <EqualCondition DataElementId="ncct" ComparisonValue="lessthan10"/>
+                        <EndPointRef EndPointId="benignadenoma"></EndPointRef>
+                      </Branch>
+                      <Branch>
+					  <Label>greater than 10</Label>
+                        <EqualCondition DataElementId="ncct" ComparisonValue="greaterthan10"/>
+                        <DecisionPoint Id="CancerYswashoutDP">
+                          <Label>Washout DP</Label>
+                          <Branch>
+						  <Label>no enhancement</Label>
+                            <EqualCondition DataElementId="washout" ComparisonValue="noenhancement"/>
+                            <EndPointRef EndPointId="benignnoFU"></EndPointRef>
+                          </Branch>
+                          <Branch>
+						  <Label>Greater than 60%</Label>
+                            <EqualCondition DataElementId="washout" ComparisonValue="greaterthan60"/>
+                            <EndPointRef EndPointId="benignadenoma"></EndPointRef>
+                          </Branch>
+                          <Branch>
+						   <Label>Less than 60%</Label>
+                            <EqualCondition DataElementId="washout" ComparisonValue="lessthan60"/>
+                            <EndPointRef EndPointId="ImagingFU"></EndPointRef>
+                          </Branch>
+                        </DecisionPoint>
+                      </Branch>
+                    </DecisionPoint>
+                  </Branch>
+                  <Branch>
+				  <Label>No </Label>
+                    <EqualCondition DataElementId="cancerhx" ComparisonValue="No"/>
+                    <DecisionPoint Id="nocancerhxDP">
+                      <Label>AdrenalMass</Label>
+                      <Branch>
+                        <NotRelevantDataElements>
+                          <DataElementRef DataElementId="ncct"/>
+                          <DataElementRef DataElementId="washout"/>
+                        </NotRelevantDataElements>
+						<Label>1-2cm</Label>
+                        <AndCondition>
+                          <GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="1"/>
+                          <LessThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="2"/>
+                        </AndCondition>
+                        <EndPointRef EndPointId="consider12probBenign"></EndPointRef>
+                      </Branch>
+                      <Branch>
+					  <Label>greater than 2 and less than 4</Label>
+                        <AndCondition>
+                          <GreaterThanCondition DataElementId="adrenalmass" ComparisonValue="2"/>
+                          <LessThanCondition DataElementId="adrenalmass" ComparisonValue="4"/>
+                        </AndCondition>
+                        <DecisionPoint Id="ncctDP">
+                          <Label>NCCT DP</Label>
+                          <Branch>
+						  <Label>less than 10</Label>
+                            <NotRelevantDataElements>
+                              <DataElementRef DataElementId="washout"/>
+                            </NotRelevantDataElements>
+                            <EqualCondition DataElementId="ncct" ComparisonValue="lessthan10"/>
+                            <EndPointRef EndPointId="benignadenoma"></EndPointRef>
+                          </Branch>
+                          <Branch>
+						  <Label>greater than 10</Label>
+                            <EqualCondition DataElementId="ncct" ComparisonValue="greaterthan10"/>
+                            <DecisionPoint Id="washoutDP">
+                              <Label>Washout DP</Label>
+                              <Branch>
+							  <Label>no enhancement</Label>
+                                <EqualCondition DataElementId="washout" ComparisonValue="noenhancement"/>
+                                <EndPointRef EndPointId="benignnoFU"></EndPointRef>
+                              </Branch>
+                              <Branch>
+							   <Label>Greater than 60%</Label>
+                                <EqualCondition DataElementId="washout" ComparisonValue="greaterthan60"/>
+                                <EndPointRef EndPointId="benignadenoma"></EndPointRef>
+                              </Branch>
+                              <Branch>
+							  <Label>Less than 60%</Label>
+                                <EqualCondition DataElementId="washout" ComparisonValue="lessthan60"/>
+                                <EndPointRef EndPointId="ImagingFU"></EndPointRef>
+                              </Branch>
+                            </DecisionPoint>
+                          </Branch>
+                        </DecisionPoint>
+                      </Branch>
+
+                    </DecisionPoint>
+                  </Branch>
+
+                </DecisionPoint>
+
+
+
+              </Branch>
+
+
+
+
+            </DecisionPoint>
+          </Branch>
+        </DecisionPoint>
+
+
+      </Branch>
+
+    </DecisionPoint>
+
+
+
+  </Rules>
+  <EndPoints>
+    <EndPoint Id="benignadenoma">
+	<Label>Benign adenoma, no F/U</Label>
+      <ReportTexts >
+        <ReportText SectionId="findings">Benign adenoma, no F/U</ReportText>
+      </ReportTexts>
+    </EndPoint>
+    <EndPoint Id="considerresection">
+	<Label>Consider resection</Label>
+      <ReportTexts>
+        <ReportText SectionId="findings">
+          Consider resection
+        </ReportText>
+      </ReportTexts>
+    </EndPoint>
+    <EndPoint Id="considerBX">
+	<Label>Consider Bx or PET-CT</Label>
+      <ReportTexts>
+        <ReportText SectionId="findings">
+          Consider Bx or PET-CT
+        </ReportText>
+      </ReportTexts>
+    </EndPoint>
+    <EndPoint Id="benignnoFU">
+	<Label>Benign, no F/U</Label>
+      <ReportTexts>
+        <ReportText SectionId="findings">
+          Benign, no F/U
+        </ReportText>
+      </ReportTexts>
+    </EndPoint>
+
+    <EndPoint Id="consider12">
+	<Label>Consider 12 month F/U adrenal CT or resection</Label>
+      <ReportTexts>
+        <ReportText SectionId="findings">
+          Consider 12 months F/U adrenal CT or resection.
+        </ReportText>
+      </ReportTexts>
+    </EndPoint>
+    <EndPoint Id="consider12probBenign">
+	 <Label>Probably benign Consider 12 month F/U adrenal CT</Label>
+      <ReportTexts>
+        <ReportText SectionId="findings">
+          Probably benign Consider 12 months F/U adrenal CT or resection.
+        </ReportText>
+      </ReportTexts>
+    </EndPoint>
+
+
+    <EndPoint Id="ImagingFU">
+	<Label>Imaging F/U, Bx, PET-CT,or resection depending on clinical scenario</Label>
+      <ReportTexts>
+        <ReportText SectionId="findings">
+          Imaging F/U, Bx, PET-CT, or resection depending on clinical scenario.
+        </ReportText>
+      </ReportTexts>
+    </EndPoint>
+
+
+  </EndPoints>
+</ReportingModule>
