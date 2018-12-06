@@ -1,0 +1,128 @@
+<ReportingModule>
+  <Metadata>
+    <Label>Pulmonary Veins Mapping Preablation</Label>
+    <ID>Pulmonary_Veins_Mapping_Preablation</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <Info>
+      <Diagrams></Diagrams>
+      <Description>This module describes the Common Data elements and Macros forPulmonary Veins Mapping Preablation</Description>
+      <References>
+        <Citation
+          Url="http://radelement.org/"> CDE URL </Citation>
+        <Citation
+          Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">
+              CDE google sheet </Citation>
+      </References>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Email>jmeyer@acr.org</Email>
+        <Institution>ACR</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement
+      Id="PulmonaryVeinDiameter"
+      IsRequired="true"
+      DisplaySequence="1">
+      <Label>Pulmonary Vein Diameter</Label>
+      <Hint>Diameter of pulmonary vein (mm)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="InteratrialSeptalThickness"
+      IsRequired="true"
+      DisplaySequence="2">
+      <Label>Interatrial Septal Thickness</Label>
+      <Hint>Interatrial septal thickness (mm)</Hint>
+    </NumericDataElement>
+    <ChoiceDataElement
+      Id="Presenceofatrialthrombus"
+      IsRequired="true"
+      DisplaySequence="3">
+      <Label>Presence of atrial thrombus</Label>
+      <Hint>Determine the presence of atrial thrombus</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0-Unknown</Value>
+          <Label>0-Unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>1-Present</Value>
+          <Label>1-Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2-Absent</Value>
+          <Label>2-Absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement
+      Id="PresenceofValvularCalcifications"
+      IsRequired="true"
+      DisplaySequence="4">
+      <Label>Presence of Valvular Calcifications</Label>
+      <Hint>Determine the presence of valvular calcifications</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0-Unknown</Value>
+          <Label>0-Unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>1-Present</Value>
+          <Label>1-Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2-Absent</Value>
+          <Label>2-Absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <NumericDataElement
+      Id="Veinostiaproximitytoesophagus"
+      IsRequired="true"
+      DisplaySequence="5">
+      <Label>Vein ostia proximity to esophagus</Label>
+      <Hint>Measure the distance between the vein ostia and esophagus (cm)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="Veinostiaproximitytoaorta"
+      IsRequired="true"
+      DisplaySequence="6">
+      <Label>Vein ostia proximity to aorta</Label>
+      <Hint>Measure the distance between the vein ostia and aorta (cm)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="Likelihoodofablationsuccess"
+      IsRequired="false"
+      DisplaySequence="7">
+      <Label>Likelihood of ablation success</Label>
+      <Hint>Estimate the probability of ablation success. 0=Unsuccessful; 1=Successful</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </NumericDataElement>
+  </DataElements>
+  <Rules>
+    <DecisionPoint
+      Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition
+          DataElementId="conditionConst"
+          ComparisonValue="10" />
+        <EndPointRef
+          EndPointId="macroEndpoint"></EndPointRef>
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <EndPoint
+      Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportTexts>
+        <ReportText
+          SectionId="findings">	Sample Report Text</ReportText>
+      </ReportTexts>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>
