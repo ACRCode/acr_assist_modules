@@ -8,9 +8,9 @@
 		<ModuleVersion>1.0</ModuleVersion>
 		<CreatedDate>2018-12-31</CreatedDate>
     	<LastModifiedDate>2018-11-26</LastModifiedDate>
-    	<ApprovedBy>Sujth</ApprovedBy>
-    	<ReviewedBy>Tony</ReviewedBy>
-    	<DevelopedBy>Deepak</DevelopedBy>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<Info>
 			<Description>TI-RADS level determination</Description>
 			<References>
@@ -228,8 +228,9 @@
       <ReportTexts >
         <ReportText SectionId="findings">TR3:&amp;nbsp;
 		Mildly Suspicious&amp;nbsp; 
-		FNA if &gt;= 2.5cm&amp;nbsp; 
-		Follow if &gt;= 1.5cm</ReportText>
+		<SectionIfValue DataElementId="diameter" ComparisonValue=">=2.5"> cm FNA 
+		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1.5"> cm Follow
+        </ReportText>
       </ReportTexts>
       </EndPoint>	
 	  	 <EndPoint Id="ReporttextTR4">
@@ -237,8 +238,9 @@
       <ReportTexts >
         <ReportText SectionId="findings">TR4:&amp;nbsp;
 		Moderately Suspicious&amp;nbsp;
-		FNA if &gt;= 1.5cm&amp;nbsp;
-		Follow if &gt;= 1cm</ReportText>
+		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1.5"> cm FNA 
+		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1"> cm Follow
+        </ReportText>
       </ReportTexts>
       </EndPoint>	
 	  	 <EndPoint Id="ReporttextTR5">
@@ -246,8 +248,9 @@
       <ReportTexts >
         <ReportText SectionId="findings">TR5:&amp;nbsp;
 		Highly Suspicious&amp;nbsp;
-		FNA if &gt;= 1cm&amp;nbsp;
-		Follow if &gt;= 0.5cm</ReportText>
+		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1"> cm FNA 
+		<SectionIfValue DataElementId="diameter" ComparisonValue=">=0.5"> cm Follow
+        </ReportText>
       </ReportTexts>
       </EndPoint>	
 	</EndPoints>

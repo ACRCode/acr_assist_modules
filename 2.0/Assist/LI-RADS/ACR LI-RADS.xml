@@ -8,9 +8,9 @@
 		<ModuleVersion>2.0</ModuleVersion>
 		<CreatedDate>2018-12-31</CreatedDate>
 		<LastModifiedDate>2018-11-26</LastModifiedDate>
-		<ApprovedBy>Sujth</ApprovedBy>
-		<ReviewedBy>Tony Jepson</ReviewedBy>
-		<DevelopedBy>Deepak Kumar</DevelopedBy>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<RadElementSetID>5689</RadElementSetID>
 		<Info>
 			<Description>This module can be used for characterizing liver lesion for
@@ -2916,68 +2916,15 @@
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="pretreatmentsize"/>
-				Pretreatment size: <InsertValue DataElementId="pretreatmentsize"/> mm
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="irregularattheperiphery"><!-- if any value present -->
-				</SectionIf>
-				Enhancement in a nodular or mass like pattern: <InsertValue DataElementId="irregularattheperiphery"/>
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="irregularattheperiphery"><!-- if any value present -->
-				</SectionIf>
-				Enhancement in a nodular or mass like pattern: <InsertValue DataElementId="irregularattheperiphery"/>
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="sizeoftheenhancementComponents"><!-- if any value present -->					
-				</SectionIf>	
-				Size of largest enhancing component: <InsertValue DataElementId="sizeoftheenhancementComponents"/> mm
-			</Branch>
-				
-			<Branch>
-				<SectionIf DataElementId="patternofenhancement"></SectionIf>
-				Enhancement characteristics:
-				Arterial phase hyperenhancement: 
-				<Branch>
-					<NotCondition>
-						<EqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>
-					</NotCondition>				
-					Yes				
-				</Branch>
-				<Branch>					
-					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>									
-					No				
-				</Branch>
-				<Branch>
-					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
-					Washout appearance: Yes
-				</Branch>				
-				<Branch>
-					<NotCondition>
-						<EqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
-					</NotCondition>
-					Washout appearance: No
-				</Branch>
-				<Branch>
-					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"/>
-					Other: Enhancement similar to pretreatment	
-				</Branch>
-			</Branch>
-		</Branch>
-			
-			<!--<SectionIf DataElementId="pretreatmentsize">
+			<SectionIf DataElementId="pretreatmentsize">
 			Pretreatment size: <InsertValue DataElementId="pretreatmentsize"/> mm
-			</SectionIf>-->
-			<!--<SectionIf DataElementId="irregularattheperiphery"><!-\- if any value present -\->Enhancement in a nodular or mass like pattern: <InsertValue DataElementId="irregularattheperiphery"/>
-			</SectionIf>-->
-			<!--<SectionIf DataElementId="sizeoftheenhancementComponents"><!-\- if any value present -\->
+			</SectionIf>
+			<SectionIf DataElementId="irregularattheperiphery">Enhancement in a nodular or mass like pattern: <InsertValue DataElementId="irregularattheperiphery"/>
+			</SectionIf>
+			<SectionIf DataElementId="sizeoftheenhancementComponents"><!-\- if any value present -\->
 			Size of largest enhancing component: <InsertValue DataElementId="sizeoftheenhancementComponents"/> mm
-			</SectionIf>-->
-			<!--<SectionIf DataElementId="patternofenhancement">
+			</SectionIf>
+			<SectionIf DataElementId="patternofenhancement">
 				Enhancement characteristics:
 				        Arterial phase hyperenhancement: <SectionIfValue DataElementId="patternofenhancement" ComparisonValue="aphe">Yes</SectionIfValue><SectionIfValueNot DataElementId="patternofenhancement" ComparisonValue="aphe">No</SectionIfValueNot>
 				        Washout appearance: <SectionIfValue DataElementId="patternofenhancement" ComparisonValue="washout">Yes
@@ -2986,7 +2933,69 @@
 				<SectionIfValue DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment">
 				        Other: Enhancement similar to pretreatment	
 				</SectionIfValue>
-			</SectionIf>-->
+			</SectionIf>
+			</Branch>
+			
+			<!--
+			<Branch>
+				<SectionIf DataElementId="pretreatmentsize"/>
+				Pretreatment size: <InsertValue DataElementId="pretreatmentsize"/> mm
+			</Branch>
+			
+			<Branch>
+				<SectionIf DataElementId="irregularattheperiphery">
+				</SectionIf>
+				Enhancement in a nodular or mass like pattern: <InsertValue DataElementId="irregularattheperiphery"/>
+			</Branch>
+			
+			<Branch>
+				<SectionIf DataElementId="irregularattheperiphery">
+				</SectionIf>
+				Enhancement in a nodular or mass like pattern: <InsertValue DataElementId="irregularattheperiphery"/>
+			</Branch>
+			
+			<Branch>
+				<SectionIf DataElementId="sizeoftheenhancementComponents">				
+				</SectionIf>	
+				Size of largest enhancing component: <InsertValue DataElementId="sizeoftheenhancementComponents"/> mm
+			</Branch>
+				
+			<Branch>
+				<SectionIf DataElementId="patternofenhancement"></SectionIf>
+				Enhancement characteristics:
+				<Branch>
+				 <Branch>
+					<NotCondition>
+						<EqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>
+					</NotCondition>				
+				    Arterial phase hyperenhancement: No				
+					</Branch>
+					<Branch>					
+					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>									
+				    Arterial phase hyperenhancement: Yes			
+				    </Branch>
+				</Branch>
+				
+				<Branch>
+				  <Branch>
+					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
+					Washout appearance: Yes
+				 </Branch>				
+				 <Branch>
+					<NotCondition>
+						<EqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
+					</NotCondition>
+					Washout appearance: No
+				 </Branch>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"/>
+					Other: Enhancement similar to pretreatment	
+				</Branch>
+			</Branch> -->
+		</Branch>
+			
+
 		</TemplatePartial>
 		
 		

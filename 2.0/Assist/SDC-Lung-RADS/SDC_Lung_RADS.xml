@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Lung Cancer Screening Reporting Template</Label>
+		<ID>ACR_LDCT_Lung_RADS</ID>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>2.0</ModuleVersion>
+		<CreatedDate>2018-12-31</CreatedDate>
+		<LastModifiedDate>2018-11-26</LastModifiedDate>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<RadElementSetID>5689</RadElementSetID>		
+		<Info>
+			<Description>LDCT Lung Screening Pilot ver 1.1</Description>
+			<References>
+				<Citation Url="https://nrdr.acr.org/lirads/"> ACR LI-RADS demostrator </Citation>
+				<Citation Url="https://nrdr.acr.org/liradsapp/"> </Citation>
+			</References>
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>KeyDiagram.png</Location>
+					<Label>ACR LI-RADS</Label>
+				</Diagram>		
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText/>
+		<ApplicableSexes Value="Both"/>
+	</Metadata>
+	
+	<DataElements>
+		<!-- Age, Gender, Smoking status, Previous Cancer?-->
+
+		<IntegerDataElement Id="clinicalinformation" IsRequired="true" DisplaySequence="1">
+			<Label>Clinical Information</Label>
+		</IntegerDataElement>		
+		
+		<ChoiceDataElement Id="reasonforexam" IsRequired="true" DisplaySequence="2" >
+			<Label>Reason for Exam</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>baselinescan</Value>
+					<Label>Baseline scan</Label>	
+				</Choice>
+				<Choice>
+					<Value>12month</Value>
+					<Label>12 month recall</Label>
+				</Choice>
+				<Choice>
+					<Value>6month</Value>
+					<Label>6 month follow-up</Label>
+				</Choice>
+				<Choice>
+					<Value>3month</Value>
+					<Label>3 month follow-up</Label>
+				</Choice>
+				<Choice>
+					<Value>Other</Value>
+					<Label>Other follow-up</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<!-- Need to add the Dates to schema or allow text!-->
+		<ChoiceDataElement Id="comparisonstudy" IsRequired="true" DisplaySequence="3">
+			<Label>Comparison Study</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>none</Value>
+					<Label>None Available</Label>	
+				</Choice>
+				<Choice>
+					<Value>previousctexam</Value>
+					<Label>Previous CT exam(s)</Label>	
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<DateTimeDataElement Id="comparisonStudy_CTExam" IsRequired="true" DisplaySequence="4">
+			<Label>Previous CT exam date</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<EqualCondition DataElementId="comparisonstudy" ComparisonValue="none"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>				
+			</ConditionalProperties>
+		</DateTimeDataElement>
+		
+		<ChoiceDataElement Id="overallimagequality" IsRequired="true" DisplaySequence="5">
+			<Label>Overall image quality:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>adequate</Value>
+					<Label>Adequate</Label>	
+				</Choice>
+				<Choice>
+					<Value>suboptimal</Value>
+					<Label>Suboptimal</Label>	
+				</Choice>
+				<Choice>
+					<Value>nondiagnostic</Value>
+					<Label>Non-diagnostic</Label>	
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>		
+		
+		<!-- Need to allow free text to other option!-->
+		<ChoiceDataElement Id="procedureprotocol" IsRequired="true" DisplaySequence="6" AllowFreetext="true">
+			<Label>Procedure protocol:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>studyprotocol</Value>
+					<Label>LDCT Study Protocol</Label>	
+				</Choice>
+				<!--<Choice>
+					<Value>other</Value>
+					<Label>Other</Label>	
+				</Choice>-->
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="allmeasurentsobtained" IsRequired="true" DisplaySequence="7">
+			<Label>All measurements obtained on axial CT lung reconstruction series?:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>	
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		
+		<IntegerDataElement Id="totnumberoflungnodulespresent" IsRequired="true" DisplaySequence="8">
+			<Label>Number of lung nodules present in total (any size):</Label>
+			<Hint>Any size. If more than 10 nodules please enter"11" The 10 most worrisome nodules (≥ 4 mm) need to be measured.</Hint>
+		</IntegerDataElement>
+		
+				
+		<NumericDataElement Id="numberofnodules" IsRequired="true" DisplaySequence="9" >
+			<Label>Number of nodule(s)  4mm:</Label>
+		</NumericDataElement>
+		
+		
+		<IntegerDataElement Id="image" IsRequired="true" DisplaySequence="10">
+			<Label>Image:</Label>
+			<Hint>Image</Hint>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>	
+		</IntegerDataElement>
+		
+		
+		<ChoiceDataElement Id="lobe" IsRequired="true" DisplaySequence="11">
+			<Label>Lobe:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>RUL</Value>
+					<Label>RUL</Label>	
+				</Choice>
+				<Choice>
+					<Value>RML</Value>
+					<Label>RML</Label>	
+				</Choice>
+				<Choice>
+					<Value>RLL</Value>
+					<Label>RLL</Label>	
+				</Choice>
+				<Choice>
+					<Value>LUL</Value>
+					<Label>LUL</Label>	
+				</Choice>
+				<Choice>
+					<Value>Lingula</Value>
+					<Label>Lingula</Label>	
+				</Choice>
+				<Choice>
+					<Value>LLL</Value>
+					<Label>LLL</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="location" IsRequired="true" DisplaySequence="12">
+			<Label>Location:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>parenchymal</Value>
+					<Label>Parenchymal</Label>	
+				</Choice>
+				<Choice>
+					<Value>subpleural</Value>
+					<Label>Subpleural</Label>	
+				</Choice>
+				<Choice>
+					<Value>fissural</Value>
+					<Label>Fissural</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>		
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="attenuation" IsRequired="true" DisplaySequence="13">
+			<Label>Attenuation:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>solid</Value>
+					<Label>Solid</Label>	
+				</Choice>
+				<Choice>
+					<Value>part-solid</Value>
+					<Label>Part-solid</Label>	
+				</Choice>
+				<Choice>
+					<Value>puregroundglass</Value>
+					<Label>Pure Ground Glass</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>		
+		
+		<NumericDataElement Id="solidmeandia" IsRequired="true" DisplaySequence="14" Unit="mm">
+    		<Label>Mean Diameter</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					</NotCondition>
+				</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+		<NumericDataElement Id="solidlength" IsRequired="true" DisplaySequence="15" Unit="mm">
+    		<Label>Length</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+						<NotCondition>
+							<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+						</NotCondition>					
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+				
+		<NumericDataElement Id="solidwidth" IsRequired="true" DisplaySequence="16" Unit="mm">
+    		<Label>Width</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>										
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+						<NotCondition>
+							<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+						</NotCondition>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+		<NumericDataElement Id="oversizemeandia" IsRequired="true" DisplaySequence="17" Unit="mm">
+    		<Label>Overall size: Mean Diameter</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+						<NotCondition>
+							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+						</NotCondition>					
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+		<NumericDataElement Id="oversizelength" IsRequired="true" DisplaySequence="18" Unit="mm">
+    		<Label>Length</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+						<NotCondition>
+							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+						</NotCondition>					
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+				
+		<NumericDataElement Id="oversizewidth" IsRequired="true" DisplaySequence="19" Unit="mm">
+    		<Label>Width</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+						<NotCondition>
+							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+						</NotCondition>					
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+		<NumericDataElement Id="sizeofsolid" IsRequired="true" DisplaySequence="20" Unit="mm">
+    		<Label>Size of Solid component:Mean Diameter</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+						<NotCondition>
+							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+						</NotCondition>					
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+		<NumericDataElement Id="sizeoflength" IsRequired="true" DisplaySequence="21" Unit="mm">
+    		<Label>Length</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+						<NotCondition>
+							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+						</NotCondition>					
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+				
+		<NumericDataElement Id="sizeofwidth" IsRequired="true" DisplaySequence="22" Unit="mm">
+    		<Label>Width</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>				
+		
+		<NumericDataElement Id="puregroundglassmeandia" IsRequired="true" DisplaySequence="22" Unit="mm">
+    		<Label>Mean Diameter</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<NotCondition>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="1"/>							
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					</NotCondition>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+		<NumericDataElement Id="puregroundglasslength" IsRequired="true" DisplaySequence="23" Unit="mm">
+    		<Label>Length</Label>   
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<NotCondition>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="1"/>							
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					</NotCondition>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+				
+		<NumericDataElement Id="puregroundglasswidth" IsRequired="true" DisplaySequence="24" Unit="mm">
+    		<Label>Width</Label>  
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<NotCondition>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="1"/>							
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+					</NotCondition>
+					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					</NotCondition>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+        <ChoiceDataElement Id="comparison" IsRequired="true" DisplaySequence="25">
+			<Label>Comparison:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>none</Value>
+					<Label>None</Label>	
+				</Choice>
+				<Choice>
+					<Value>stablenodule</Value>
+					<Label>Stable nodule</Label>	
+				</Choice>
+				<Choice>
+					<Value>newnodule</Value>
+					<Label>New nodule</Label>	
+				</Choice>
+				<Choice>
+					<Value>intervalincrease</Value>
+					<Label>Interval increase – Compared to:</Label>	
+				</Choice>
+				<Choice>
+					<Value>intervaldecrease</Value>
+					<Label>Interval decrease - Compared to:</Label>	
+				</Choice>
+			</ChoiceInfo>
+        	<ConditionalProperties>				
+        		<ConditionalProperty>
+        			<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+        			<IsRelevant>false</IsRelevant>
+        		</ConditionalProperty>
+        	</ConditionalProperties>
+		</ChoiceDataElement>
+	
+		<NumericDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="26" Unit="mm">
+    		<Label>Interval Increase</Label> 
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>
+		
+		<NumericDataElement Id="intervaldecreasesolidnodule" IsRequired="true" DisplaySequence="27"  Unit="mm">
+    		<Label>Solid nodule: Previous mean diameter:</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>
+	
+		<NumericDataElement Id="partsolidnodulesize" IsRequired="true" DisplaySequence="28"  Unit="mm">
+    		<Label>Overall size: Previous mean diameter:</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>	
+		
+		<NumericDataElement Id="partsolidnodulesolid" IsRequired="true" DisplaySequence="29" Unit="mm">
+    		<Label>Solid component: Previous mean diameter:</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>
+
+		<NumericDataElement Id="puregroundglass" IsRequired="true" DisplaySequence="30" Unit="mm">
+    		<Label>Pure ground glass nodule: Previous mean diameter:</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>
+					
+		<NumericDataElement Id="intervaldecrease" IsRequired="true" DisplaySequence="31" Unit="mm">
+    		<Label>Interval Decrease</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+    	</NumericDataElement>
+		
+		<ChoiceDataElement Id="margins" IsRequired="true" DisplaySequence="32">
+			<Label>Margins:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>spiculated</Value>
+					<Label>Spiculated</Label>	
+				</Choice>
+				<Choice>
+					<Value>smooth</Value>
+					<Label>Smooth</Label>	
+				</Choice>
+				<Choice>
+					<Value>lobulated</Value>
+					<Label>Lobulated</Label>	
+				</Choice>
+				<Choice>
+					<Value>polygonal</Value>
+					<Label>Polygonal</Label>	
+				</Choice>
+				<Choice>
+					<Value>halo</Value>
+					<Label>Halo</Label>	
+				</Choice>
+				
+				<Choice>
+					<Value>obscured</Value>
+					<Label>Obscured</Label>	
+				</Choice>				
+			</ChoiceInfo>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="calcification" IsRequired="true" DisplaySequence="33">
+			<Label>Calcification:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>none</Value>
+					<Label>None</Label>	
+				</Choice>
+				<Choice>
+					<Value>benignpattern</Value>
+					<Label>Benign Pattern</Label>	
+				</Choice>
+				<Choice>
+					<Value>indeterminate</Value>
+					<Label>Indeterminate</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="othercharacteristics" IsRequired="true" DisplaySequence="34">
+			<Label>Other characteristics:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>none</Value>
+					<Label>None</Label>	
+				</Choice>
+				<Choice>
+					<Value>fat</Value>
+					<Label>Fat</Label>	
+				</Choice>
+				<Choice>
+					<Value>cavitation</Value>
+					<Label>Cavitation</Label>	
+				</Choice>
+				<Choice>
+					<Value>other</Value>
+					<Label>Other:</Label>	
+				</Choice>				
+			</ChoiceInfo>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<IntegerDataElement Id="other" IsRequired="true" DisplaySequence="35">
+			<Label>Other comments:</Label>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</IntegerDataElement>
+	</DataElements>	
+	
+<Rules>
+		<DecisionPoint Id="Nodules">
+		  <Label>Number of nodule(s) less than 1mm</Label>
+		  <Branch>
+			<Label>O or Not Defined</Label>	
+		  	<OrCondition>
+		  		<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+		  		<NotCondition>
+		  			<EqualCondition DataElementId = "numberofnodules" ComparisonValue="1"/>							
+			  	</NotCondition>
+		  		<NotCondition>
+		  			<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
+		  		</NotCondition>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
+		  		<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>
+		  		<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+		  		<NotCondition>
+		  			<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
+		  		</NotCondition>
+		  		<NotCondition>
+		  			<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+		  		</NotCondition>
+		  	</OrCondition>
+			 <EndPointRef EndPointId="noduleEndpoint" ></EndPointRef>
+		  </Branch>
+	</DecisionPoint>	   
+</Rules>
+	
+<EndPoints>
+		<EndPoint Id="noduleEndpoint">
+		<Label>Not ready</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">Need to define</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+</EndPoints>
+	
+</ReportingModule>

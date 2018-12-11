@@ -8,9 +8,9 @@
         <ModuleVersion>1.5</ModuleVersion>
     	<CreatedDate>2018-12-31</CreatedDate>
     	<LastModifiedDate>2018-11-26</LastModifiedDate>
-    	<ApprovedBy>Sujth</ApprovedBy>
-    	<ReviewedBy>Tony</ReviewedBy>
-    	<DevelopedBy>Deepak</DevelopedBy>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<RadElementSetID>5689</RadElementSetID>
         <Info>
             <Description>This is a sample xml for ACR Assist based on LI-RADS (characterizing liver lesion for MRI)</Description>
@@ -149,7 +149,7 @@
         </ChoiceDataElement> 
         
     	<ChoiceDataElement Id="ArterialEnhancement" IsRequired="true" DisplaySequence="2" Editable="true" Hasprefilled="false" Output="false">
-		<CodableConcept Name="ArterialEnhancement">
+			<CodableConcept Name="ArterialEnhancement">
     			<Coding>
     				<System Value="RadElement"></System>
     				<Version Value="1.0"></Version>
@@ -790,33 +790,8 @@
     	<EndPoint Id="LR1Ep">
             <Label>LR-1</Label>
             <ReportTexts>
-                <!--<ReportText SectionId="findings">[LR-1] Imaging features diagnostic of a benign entity or definite spontaneous disappearance at follow up.
-                	
-                </ReportText>-->
-            	<ReportText SectionId="findings">             		
-            		[LR-1] Imaging features diagnostic of a benign entity or definite spontaneous disappearance at follow up.
-            		<SectionIfValue DataElementId="pretreatmentCategory" ComparisonValue="Unknown" >
-						(pretreatment unknown)
-					</SectionIfValue>
-					<SectionIfValueNot DataElementId="pretreatmentCategory" ComparisonValue="Unknown"> 
-						(pretreatment&amp;nbsp;<InsertValue DataElementId="pretreatmentCategory"/>,&amp;nbsp;<InsertValue DataElementId="pretreatmentsize"/>&amp;nbsp;mm)
-					</SectionIfValueNot>            		         
-            		
-            		<!--<ReportConditions>
-            			<ReportCondition>
-            				<ReportTextOrCondition>
-            					<SectionIfValue DataElementId="ObservationCharacter" ComparisonValue="treatedObservation"/>
-            					<SectionIfValue DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>					
-            				</ReportTextOrCondition>	
-            				<Text>(test treatment)</Text>
-            			</ReportCondition>	
-            			
-            			<ReportCondition>
-            				<SectionIfValue DataElementId="ObservationCharacter" ComparisonValue="tumorInVein"/>
-            				<Text>(pretreatment test tumor)</Text>
-            			</ReportCondition>
-            		</ReportConditions>   -->         		
-            	</ReportText>            	
+                <ReportText SectionId="findings">[LR-1] Imaging features diagnostic of a benign entity or definite spontaneous disappearance at follow up.                	
+                </ReportText>
             </ReportTexts>
         </EndPoint>
 	

@@ -3,15 +3,14 @@
   "description": "Unique Id of Test case document",
   "moduleId": "ACR AdrenalCT",
   "moduleName": "ACR AdrenalCT",
-  "schemaVersion": "1.0",
-  "moduleVersion": "2.0",
+  "schemaVersion": "2.0",
+  "moduleVersion": "1.0",
   "testCases": [
     {
       "testCaseId": "AdrenalCT_1",
-	  "endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
+      "endpointId": "benignnoFU",
+      "endpointlabel": "Benign, no F/U",
       "inputs": [
-	   
         {
           "dataElementId": "imagefeatures",
           "dataElementValue": "Diagnostic"
@@ -23,866 +22,842 @@
       ]
     },
     {
-        "testCaseId": "AdrenalCT_2",
-	   "endpointId": "benignadenoma",
-	   "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Diagnostic"
-          },
-          {
-            "dataElementId": "diagimagfeatures",
-            "dataElementValue": "signalonCSMR"
-          }
-        ]
-      },
-
-      {
-        "testCaseId": "AdrenalCT_3",
+      "testCaseId": "AdrenalCT_2",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Diagnostic"
+        },
+        {
+          "dataElementId": "diagimagfeatures",
+          "dataElementValue": "signalonCSMR"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_3",
       "endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "1"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "stablemorethan1year"
-          }        
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_4",
-	  "endpointId": "considerBX",
-	  "endpointlabel": "Consider Bx or PET-CT",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "1"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "Neworenlarging"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1",
+          "range": {
+            "minimum": 1,
+            "maximum": 3
           }
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_5",
-	   "endpointId": "consider12",
-	  "endpointlabel": "Consider 12 month F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "1"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "Neworenlarging"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "imgenlarge",
+          "dataElementValue": "stablemorethan1year"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_4",
+      "endpointId": "considerBX",
+      "endpointlabel": "Consider Bx or PET-CT",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1",
+          "range": {
+            "minimum": 1,
+            "maximum": 3
           }
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_6",
-	  "endpointId": "consider12probBenign",
-	  "endpointlabel": "Probably benign Consider 12 months F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "1"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "imgenlarge",
+          "dataElementValue": "Neworenlarging"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_5",
+      "endpointId": "consider12",
+      "endpointlabel": "Consider 12 month F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1",
+          "range": {
+            "minimum": 1,
+            "maximum": 3
           }
-         
-        ]
-      }, 
-      {
-        "testCaseId": "AdrenalCT_7",
-	   "endpointId": "benignadenoma",
-	   "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "1"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "lessthan10"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "imgenlarge",
+          "dataElementValue": "Neworenlarging"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "No"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_6",
+      "endpointId": "consider12probBenign",
+      "endpointlabel": "Probably benign Consider 12 months F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1",
+          "range": {
+            "minimum": 1,
+            "maximum": 2
           }
-        ]
-      },
-             
-      {
-        "testCaseId": "AdrenalCT_8",
-	  "endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "1"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "noenhancement"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "No"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_7",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1",
+          "range": {
+            "minimum": 1,
+            "maximum": 2
           }
-        ]
-       },
-
-          {
-            "testCaseId": "AdrenalCT_9",
-		"endpointId": "benignadenoma",
-	    "endpointlabel": "Benign, no F/U",
-            "inputs": [
-             
-              {
-                "dataElementId": "imagefeatures",
-                "dataElementValue": "Indeterminate"
-              },
-              {
-                "dataElementId": "adrenalmass",
-                "dataElementValue": "1"
-              },
-              {
-                "dataElementId": "priorimaging",
-                "dataElementValue": "no"
-              },
-              {
-                "dataElementId": "cancerhx",
-                "dataElementValue": "Yes"
-              },
-              {
-                "dataElementId": "ncct",
-                "dataElementValue": "greaterthan10"
-              },
-              {
-                "dataElementId": "washout",
-                "dataElementValue": "greaterthan60"
-              }                 
-        ]
-      },
-
-      {
-        "testCaseId": "AdrenalCT_10",
-		"endpointId": "ImagingFU",
-	    "endpointlabel": "Imaging FU",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "1"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "lessthan60"
-          }                 
-        ]
-       },
-       {
-        "testCaseId": "AdrenalCT_11",
-	  "endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "2"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "stablemorethan1year"
-          }        
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_12",
-	  "endpointId": "considerBX",
-	  "endpointlabel": "Consider Bx or PET-CT",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "2"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "Neworenlarging"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "lessthan10"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_8",
+      "endpointId": "benignnoFU",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "noenhancement"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_9",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "greaterthan60"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_10",
+      "endpointId": "ImagingFU",
+      "endpointlabel": "Imaging FU",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "lessthan60"
+        }
+      ]
+    },
+    // {
+    //   "testCaseId": "AdrenalCT_11",
+    //   "endpointId": "benignnoFU",
+    //   "endpointlabel": "Benign, no F/U",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "2"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "yes"
+    //     },
+    //     {
+    //       "dataElementId": "imgenlarge",
+    //       "dataElementValue": "stablemorethan1year"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "testCaseId": "AdrenalCT_12",
+    //   "endpointId": "considerBX",
+    //   "endpointlabel": "Consider Bx or PET-CT",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "2"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "yes"
+    //     },
+    //     {
+    //       "dataElementId": "imgenlarge",
+    //       "dataElementValue": "Neworenlarging"
+    //     },
+    //     {
+    //       "dataElementId": "cancerhx",
+    //       "dataElementValue": "Yes"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "testCaseId": "AdrenalCT_13",
+    //   "endpointId": "consider12",
+    //   "endpointlabel": "Consider 12 month F/U",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "2"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "yes"
+    //     },
+    //     {
+    //       "dataElementId": "imgenlarge",
+    //       "dataElementValue": "Neworenlarging"
+    //     },
+    //     {
+    //       "dataElementId": "cancerhx",
+    //       "dataElementValue": "No"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "testCaseId": "AdrenalCT_14",
+    //   "endpointId": "consider12probBenign",
+    //   "endpointlabel": "Probably benign Consider 12 months F/U",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "2"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "no"
+    //     },
+    //     {
+    //       "dataElementId": "cancerhx",
+    //       "dataElementValue": "No"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "testCaseId": "AdrenalCT_15",
+    //   "endpointId": "benignadenoma",
+    //   "endpointlabel": "Benign, no F/U",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "2"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "no"
+    //     },
+    //     {
+    //       "dataElementId": "cancerhx",
+    //       "dataElementValue": "Yes"
+    //     },
+    //     {
+    //       "dataElementId": "ncct",
+    //       "dataElementValue": "lessthan10"
+    //     }
+    //   ]
+    // },
+    {
+      "testCaseId": "AdrenalCT_11",
+      "endpointId": "benignnoFU",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "2"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "noenhancement"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_12",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "2"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "greaterthan60"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_13",
+      "endpointId": "ImagingFU",
+      "endpointlabel": "Imaging FU",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "2"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "lessthan60"
+        }
+      ]
+    },
+    // {
+    //   "testCaseId": "AdrenalCT_19",
+    //   "endpointId": "benignnoFU",
+    //   "endpointlabel": "Benign, no F/U",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "3"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "yes"
+    //     },
+    //     {
+    //       "dataElementId": "imgenlarge",
+    //       "dataElementValue": "stablemorethan1year"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "testCaseId": "AdrenalCT_20",
+    //   "endpointId": "considerBX",
+    //   "endpointlabel": "Consider Bx or PET-CT",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "3"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "yes"
+    //     },
+    //     {
+    //       "dataElementId": "imgenlarge",
+    //       "dataElementValue": "Neworenlarging"
+    //     },
+    //     {
+    //       "dataElementId": "cancerhx",
+    //       "dataElementValue": "Yes"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "testCaseId": "AdrenalCT_21",
+    //   "endpointId": "consider12",
+    //   "endpointlabel": "Consider 12 month F/U",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "3"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "yes"
+    //     },
+    //     {
+    //       "dataElementId": "imgenlarge",
+    //       "dataElementValue": "Neworenlarging"
+    //     },
+    //     {
+    //       "dataElementId": "cancerhx",
+    //       "dataElementValue": "No"
+    //     }
+    //   ]
+    // },
+    {
+      "testCaseId": "AdrenalCT_14",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "3"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "No"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "lessthan10"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_15",
+      "endpointId": "benignnoFU",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "3"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "No"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "noenhancement"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_16",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "3"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "No"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "greaterthan60"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_17",
+      "endpointId": "ImagingFU",
+      "endpointlabel": "Imaging FU",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "3"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "No"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "lessthan60"
+        }
+      ]
+    },
+    // {
+    //   "testCaseId": "AdrenalCT_26",
+    //   "endpointId": "benignadenoma",
+    //   "endpointlabel": "Benign, no F/U",
+    //   "inputs": [
+    //     {
+    //       "dataElementId": "imagefeatures",
+    //       "dataElementValue": "Indeterminate"
+    //     },
+    //     {
+    //       "dataElementId": "adrenalmass",
+    //       "dataElementValue": "3"
+    //     },
+    //     {
+    //       "dataElementId": "priorimaging",
+    //       "dataElementValue": "no"
+    //     },
+    //     {
+    //       "dataElementId": "cancerhx",
+    //       "dataElementValue": "Yes"
+    //     },
+    //     {
+    //       "dataElementId": "ncct",
+    //       "dataElementValue": "lessthan10"
+    //     }
+    //   ]
+    // },
+    {
+      "testCaseId": "AdrenalCT_18",
+      "endpointId": "benignnoFU",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "3"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "noenhancement"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_19",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "3"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "greaterthan60"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_20",
+      "endpointId": "ImagingFU",
+      "endpointlabel": "Imaging FU",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "3"
+        },
+        {
+          "dataElementId": "priorimaging",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        },
+        {
+          "dataElementId": "ncct",
+          "dataElementValue": "greaterthan10"
+        },
+        {
+          "dataElementId": "washout",
+          "dataElementValue": "lessthan60"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_21",
+      "endpointId": "considerBX",
+      "endpointlabel": "Consider Bx or PET-CT",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "4"
+		   "range": {
+            "minimum": 4,
+            "maximum": 100
           }
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_13",
-	 "endpointId": "consider12",
-	  "endpointlabel": "Consider 12 month F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "2"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "Neworenlarging"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "Yes"
+        }
+      ]
+    },
+    {
+      "testCaseId": "AdrenalCT_22",
+      "endpointId": "considerresection",
+      "endpointlabel": "Consider resection",
+      "inputs": [
+        {
+          "dataElementId": "imagefeatures",
+          "dataElementValue": "Indeterminate"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "4"
+		    "range": {
+            "minimum": 4,
+            "maximum": 100
           }
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_14",
-	  "endpointId": "consider12probBenign",
-	  "endpointlabel": "Probably benign Consider 12 months F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "2"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
-          }
-         
-        ]
-      }, 
-      {
-        "testCaseId": "AdrenalCT_15",
-		"endpointId": "benignadenoma",
-	    "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "2"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "lessthan10"
-          }
-        ]
-      },
-             
-      {
-        "testCaseId": "AdrenalCT_16",
-	  "endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "2"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "noenhancement"
-          }
-        ]
-       },
-
-          {
-            "testCaseId": "AdrenalCT_17",
-					"endpointId": "benignadenoma",
-	    "endpointlabel": "Benign, no F/U",
-            "inputs": [
-             
-              {
-                "dataElementId": "imagefeatures",
-                "dataElementValue": "Indeterminate"
-              },
-              {
-                "dataElementId": "adrenalmass",
-                "dataElementValue": "2"
-              },
-              {
-                "dataElementId": "priorimaging",
-                "dataElementValue": "no"
-              },
-              {
-                "dataElementId": "cancerhx",
-                "dataElementValue": "Yes"
-              },
-              {
-                "dataElementId": "ncct",
-                "dataElementValue": "greaterthan10"
-              },
-              {
-                "dataElementId": "washout",
-                "dataElementValue": "greaterthan60"
-              }                 
-        ]
-      },
-
-      {
-        "testCaseId": "AdrenalCT_18",
-				"endpointId": "ImagingFU",
-	    "endpointlabel": "Imaging FU",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "2"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "lessthan60"
-          }                 
-        ]
-       },
-       {
-        "testCaseId": "AdrenalCT_19",
-			  "endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "stablemorethan1year"
-          }        
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_20",
-		"endpointId": "considerBX",
-	  "endpointlabel": "Consider Bx or PET-CT",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "Neworenlarging"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          }
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_21",
-		"endpointId": "consider12",
-	  "endpointlabel": "Consider 12 month F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "yes"
-          },
-          {
-            "dataElementId": "imgenlarge",
-            "dataElementValue": "Neworenlarging"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
-          }
-        ]
-      },
-      {
-        "testCaseId": "AdrenalCT_22",
-		"endpointId": "benignadenoma",
-	    "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
-          },
-         {
-            "dataElementId": "ncct",
-            "dataElementValue": "lessthan10"
-          }
-        ]
-      }, 
-	  {
-        "testCaseId": "AdrenalCT_23",
-		"endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
-          },
-         {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "noenhancement"
-          }
-        ]
-      }, 
-	  {
-        "testCaseId": "AdrenalCT_24",
-		"endpointId": "benignadenoma",
-	    "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
-          },
-         {
-                "dataElementId": "ncct",
-                "dataElementValue": "greaterthan10"
-              },
-              {
-                "dataElementId": "washout",
-                "dataElementValue": "greaterthan60"
-              }
-        ]
-      }, 
-	  {
-        "testCaseId": "AdrenalCT_25",
-		"endpointId": "ImagingFU",
-	    "endpointlabel": "Imaging FU",	
-	
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
-          },
-         {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "lessthan60"
-          } 
-        ]
-      }, 
-	 
-      {
-        "testCaseId": "AdrenalCT_26",
-		"endpointId": "benignadenoma",
-	    "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "lessthan10"
-          }
-        ]
-      },
-             
-      {
-        "testCaseId": "AdrenalCT_27",
-		"endpointId": "benignnoFU",
-	  "endpointlabel": "Benign, no F/U",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "noenhancement"
-          }
-        ]
-       },
-
-          {
-            "testCaseId": "AdrenalCT_28",
-		"endpointId": "benignadenoma",
-	    "endpointlabel": "Benign, no F/U",
-            "inputs": [
-             
-              {
-                "dataElementId": "imagefeatures",
-                "dataElementValue": "Indeterminate"
-              },
-              {
-                "dataElementId": "adrenalmass",
-                "dataElementValue": "3"
-              },
-              {
-                "dataElementId": "priorimaging",
-                "dataElementValue": "no"
-              },
-              {
-                "dataElementId": "cancerhx",
-                "dataElementValue": "Yes"
-              },
-              {
-                "dataElementId": "ncct",
-                "dataElementValue": "greaterthan10"
-              },
-              {
-                "dataElementId": "washout",
-                "dataElementValue": "greaterthan60"
-              }                 
-        ]
-      },
-
-      {
-        "testCaseId": "AdrenalCT_29",
-		"endpointId": "ImagingFU",
-	    "endpointlabel": "Imaging FU",	
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "3"
-          },
-          {
-            "dataElementId": "priorimaging",
-            "dataElementValue": "no"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          },
-          {
-            "dataElementId": "ncct",
-            "dataElementValue": "greaterthan10"
-          },
-          {
-            "dataElementId": "washout",
-            "dataElementValue": "lessthan60"
-          }                 
-        ]
-       },
-       {
-        "testCaseId": "AdrenalCT_30",
-		"endpointId": "considerBX",
-	  "endpointlabel": "Consider Bx or PET-CT",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "4"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "Yes"
-          }
-                       
-        ]
-       },
-       {
-        "testCaseId": "AdrenalCT_31",
-		"endpointId": "considerresection",
-	  "endpointlabel": "Consider resection",
-        "inputs": [
-         
-          {
-            "dataElementId": "imagefeatures",
-            "dataElementValue": "Indeterminate"
-          },
-          {
-            "dataElementId": "adrenalmass",
-            "dataElementValue": "4"
-          },
-          {
-            "dataElementId": "cancerhx",
-            "dataElementValue": "No"
-          }
-                       
-        ]
-       } 
-    ]
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "No"
+        }
+      ]
+    }
+  ]
 }
-      
-
-        
-      
-
-      
