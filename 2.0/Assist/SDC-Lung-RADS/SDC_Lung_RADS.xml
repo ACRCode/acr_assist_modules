@@ -748,12 +748,142 @@
 </Rules>
 	
 <EndPoints>
-		<EndPoint Id="noduleEndpoint">
-		<Label>Not ready</Label>
+
+	
+		<TemplatePartial Id="pulmonarynodulesummaryReporttext">			
+			<Branch>
+				Image : <InsertValue DataElementId="image"/> 
+				Lobe : <InsertValue DataElementId="lobe"/> 
+				Location : <InsertValue DataElementId="location"/> 
+				Attenuation : <InsertValue DataElementId="attenuation"/>
+				 Solid  : <InsertValue DataElementId="solidmeandia"/> mm &amp;nbsp;  <InsertValue DataElementId="Solidlength"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="Solidwidth"/> mm
+				 Part-Solid  : 
+				      Overall Size  :    <InsertValue DataElementId="Oversizemeandia"/> mm &amp;nbsp; <InsertValue DataElementId="Oversizelength"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="Oversizewidth"/> mm &amp;nbsp; &amp; 
+					  Size of Solid component  : <InsertValue DataElementId="Sizeofsolid"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="Sizeoflength"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="Sizeofwidth"/> mm 
+				 Pure ground Glass  : 	<InsertValue DataElementId="Puregroundglassmeandia"/> mm &amp;nbsp; &amp; 	<InsertValue DataElementId="Puregroundglasslength"/> mm &amp;nbsp; &amp; 	<InsertValue DataElementId="Puregroundglasswidth"/> mm &amp;nbsp; &amp; 	
+				Comparison : <InsertValue DataElementId="comparison"/> &amp;nbsp; 
+			     Interval increase  : <InsertValue DataElementId="Intervaldecreasesolidnodule"/> &amp;nbsp; <InsertValue DataElementId="Intervaldecreasesolidnodule"/> &amp;nbsp; <InsertValue DataElementId="Intervaldecreasesolidnodule"/> &amp;nbsp; 
+				 Interval decrease  : <InsertValue DataElementId="Intervaldecrease"/> &amp;nbsp;
+				Margins : <InsertValue DataElementId="diameter"/>
+				Calcification : <InsertValue DataElementId="diameter"/>
+				Other Characteristics : <InsertValue DataElementId="diameter"/>
+				Margins : <InsertValue DataElementId="diameter"/>
+				Other comments : <InsertValue DataElementId="diameter"/>
+			</Branch>
+		</TemplatePartial>
+		
+		
+		<EndPoint Id="nodule1">
+		<Label>Nodule 1</Label>
 		  <ReportTexts >
-			<ReportText SectionId="findings">Need to define</ReportText>
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
 		  </ReportTexts>
 		</EndPoint>
+		
+		<EndPoint Id="nodule2">
+		<Label>Nodule 2</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule3">
+		<Label>Nodule 3</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule4">
+		<Label>Nodule 4</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule5">
+		<Label>Nodule 5</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule6">
+		<Label>Nodule 6</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		
+		<EndPoint Id="nodule7">
+		<Label>Nodule 7</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule8">
+		<Label>Nodule 8</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+	  <EndPoint Id="nodule9">
+		<Label>Nodule 9</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule10">
+		<Label>Nodule 10</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
 </EndPoints>
 	
 </ReportingModule>

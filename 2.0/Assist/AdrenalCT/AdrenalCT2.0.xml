@@ -3,7 +3,7 @@
 <ReportingModule>
   <Metadata>
     <Label> Adrenal CT</Label>
-    <ID>ACR_Adrenal_CT_2_0</ID>
+    <ID>ACR_Adrenal_CT_2.0</ID>
     <SchemaVersion>2.0</SchemaVersion>
     <ModuleVersion>2.0</ModuleVersion>
 	  <CreatedDate>2018-12-31</CreatedDate>
@@ -93,7 +93,7 @@
         </Choice>
       </ChoiceInfo>
 	  <ConditionalProperties>
-		  <ConditionalProperty>
+		<ConditionalProperty>
 			 <EqualCondition DataElementId="imagefeatures" ComparisonValue="Diagnostic"/>
 			   <IsRelevant>false</IsRelevant>	
 		</ConditionalProperty>  
@@ -223,11 +223,14 @@
 			 <IsRelevant>false</IsRelevant>
 		</ConditionalProperty>
 	  
-        <ConditionalProperty>
-        <AndCondition>
-                  <GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="1"/>
+        <Conditional	Property>
                   <LessThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="2"/>
-        </AndCondition>  
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		
+			  
+        <ConditionalProperty>
+                  <GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="1"/>
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 		
@@ -237,14 +240,12 @@
         </ConditionalProperty>
 		
         <ConditionalProperty>
-
           <GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="4"/>
-
         <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+		
 	  <ConditionalProperty>
 			 <EqualCondition DataElementId="ncct" ComparisonValue="lessthan10"/>
- 
 		   <IsRelevant>false</IsRelevant>	
 		</ConditionalProperty> 
 

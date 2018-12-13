@@ -143,12 +143,12 @@
 			</ChoiceInfo>
 		</MultiChoiceDataElement>
 		
-		<IntegerDataElement Id="diameter" IsRequired="true" DisplaySequence="6" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="6" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
 		   <Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-		</IntegerDataElement>	
+			<Hint>Use 0-5 scale</Hint>
+			<Minimum>0.5</Minimum>
+			<Maximum>5</Maximum>
+		</NumericDataElement>	
 		
 	
 		<ComputedDataElement Id="addtr1">
@@ -228,8 +228,8 @@
       <ReportTexts >
         <ReportText SectionId="findings">TR3:&amp;nbsp;
 		Mildly Suspicious&amp;nbsp; 
-		<SectionIfValue DataElementId="diameter" ComparisonValue=">=2.5"> cm FNA 
-		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1.5"> cm Follow
+		<SectionIfValue DataElementId="diameter" ComparisonValue="2.5"> FNA </SectionIfValue>
+		<SectionIfValue DataElementId="diameter" ComparisonValue="1.5"> Follow</SectionIfValue>
         </ReportText>
       </ReportTexts>
       </EndPoint>	
@@ -238,8 +238,8 @@
       <ReportTexts >
         <ReportText SectionId="findings">TR4:&amp;nbsp;
 		Moderately Suspicious&amp;nbsp;
-		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1.5"> cm FNA 
-		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1"> cm Follow
+		<SectionIfValue DataElementId="diameter" ComparisonValue="1.5"> FNA </SectionIfValue>
+		<SectionIfValue DataElementId="diameter" ComparisonValue="1"> Follow</SectionIfValue>
         </ReportText>
       </ReportTexts>
       </EndPoint>	
@@ -248,8 +248,8 @@
       <ReportTexts >
         <ReportText SectionId="findings">TR5:&amp;nbsp;
 		Highly Suspicious&amp;nbsp;
-		<SectionIfValue DataElementId="diameter" ComparisonValue=">=1"> cm FNA 
-		<SectionIfValue DataElementId="diameter" ComparisonValue=">=0.5"> cm Follow
+		<SectionIfValue DataElementId="diameter" ComparisonValue="1"> FNA </SectionIfValue>
+		<SectionIfValue DataElementId="diameter" ComparisonValue="0.5"> Follow</SectionIfValue>
         </ReportText>
       </ReportTexts>
       </EndPoint>	
