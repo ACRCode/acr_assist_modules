@@ -31,7 +31,7 @@
     },
    {
       "testCaseId": "PituitaryFDGPET_2",
-      "endpointId": "Referralforendocrineand/orneurosurgicalmanagement",
+      "endpointId": "referral",
       "endpointlabel": "Referral for endocrine and/or neurosurgical management",
       "inputs": [
 
@@ -51,7 +51,7 @@
     },
    {
       "testCaseId": "PituitaryFDGPET_3",
-      "endpointId": "Nofurtherimagingcorrelatewithhistoryofpituitaryhypersecretion",
+      "endpointId": "Nofurtherimgaing",
       "endpointlabel": "No further imaging Correlate with history of pituitary hypersecretion",
       "inputs": [
 
@@ -68,7 +68,7 @@
     },
 	{
       "testCaseId": "PituitaryFDGPET_4",
-      "endpointId": "Nofurtherimagingcorrelatewithhistoryofpituitaryhypersecretionandconsiderendocrinefunctiontests",
+      "endpointId": "Nofurtherimgaingabove5",
       "endpointlabel": "No further imaging Correlate with history of pituitary hypersecretion and consider endocrine function tests",
       "inputs": [
 
@@ -84,7 +84,7 @@
     },
 	{
       "testCaseId": "PituitaryFDGPET_5",
-      "endpointId": "Recommendendocrinefunctiontests6-12monthfollow-uppituitaryMRI",
+      "endpointId": "recommend",
       "endpointlabel": "Recommend endocrine function tests &amp;&nbsp; 6-12 month follow-up pituitary MRI",
       "inputs": [
 
@@ -99,12 +99,16 @@
 		{
           "dataElementId": "masseffect",
           "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "no"
         }
       ]
     },
 	{
       "testCaseId": "PituitaryFDGPET_6",
-      "endpointId": "Referralforendocrineand/orneurosurgicalmanagement",
+      "endpointId": "referral",
       "endpointlabel": "Referral for endocrine and/or neurosurgical management",
       "inputs": [
 
@@ -119,6 +123,10 @@
 		{
           "dataElementId": "masseffect",
           "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "no"
         }
       ]
     }

@@ -249,23 +249,12 @@
 		
 		<NumericDataElement Id="solidmeandia" IsRequired="true" DisplaySequence="14" Unit="mm">
     		<Label>Mean Diameter</Label>
-			<ConditionalProperties>				
+			<ConditionalProperties>		
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-					<NotCondition>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
-					</NotCondition>
-				</OrCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
@@ -276,19 +265,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-						<NotCondition>
-							<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
-						</NotCondition>					
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -300,19 +278,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>										
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-						<NotCondition>
-							<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
-						</NotCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -324,19 +291,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-						<NotCondition>
-							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-						</NotCondition>					
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -348,19 +304,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-						<NotCondition>
-							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-						</NotCondition>					
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -372,19 +317,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-						<NotCondition>
-							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-						</NotCondition>					
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -396,19 +330,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-						<NotCondition>
-							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-						</NotCondition>					
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -420,19 +343,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-						<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>									
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="3"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="4"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="5"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="6"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="7"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="8"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="9"/>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="10"/>	
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
-						<NotCondition>
-							<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-						</NotCondition>					
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -443,7 +355,10 @@
     		<Label>Width</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<OrCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
@@ -454,19 +369,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
-					<NotCondition>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="1"/>							
-					</NotCondition>
-					<NotCondition>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
-					</NotCondition>
-					<NotCondition>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-					</NotCondition>
-					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
-					</NotCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -478,19 +382,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
-					<NotCondition>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="1"/>							
-					</NotCondition>
-					<NotCondition>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
-					</NotCondition>
-					<NotCondition>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-					</NotCondition>
-					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
-					</NotCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -502,19 +395,8 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
-					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
-					<NotCondition>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="1"/>							
-					</NotCondition>
-					<NotCondition>
-						<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
-					</NotCondition>
-					<NotCondition>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>							
-					</NotCondition>
-					<NotCondition>
+						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
-					</NotCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -563,11 +445,19 @@
 			</ConditionalProperties>
     	</NumericDataElement>
 		
-		<NumericDataElement Id="intervaldecreasesolidnodule" IsRequired="true" DisplaySequence="27"  Unit="mm">
+		<NumericDataElement Id="intervalincreasesolidnodule" IsRequired="true" DisplaySequence="27"  Unit="mm">
     		<Label>Solid nodule: Previous mean diameter:</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesize"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesolid"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
@@ -580,6 +470,13 @@
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="intervalincreasesolidnodule"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
 			</ConditionalProperties>
     	</NumericDataElement>	
 		
@@ -588,6 +485,13 @@
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="intervalincreasesolidnodule"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
@@ -600,6 +504,15 @@
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="intervalincreasesolidnodule"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesize"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesolid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
 			</ConditionalProperties>
     	</NumericDataElement>
 					
@@ -742,18 +655,158 @@
 		  			<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 		  		</NotCondition>
 		  	</OrCondition>
-			 <EndPointRef EndPointId="noduleEndpoint" ></EndPointRef>
+		  	<EndPointRef EndPointId="nodule1" ></EndPointRef>
 		  </Branch>
 	</DecisionPoint>	   
 </Rules>
 	
 <EndPoints>
-		<EndPoint Id="noduleEndpoint">
-		<Label>Not ready</Label>
+	
+<!--	<EndPoint Id="nodule1">
+		<Label>Nodule 1</Label>
+		<ReportTexts >
+			<ReportText SectionId="findings">
+				<Branch>
+					Testing
+				</Branch>
+			</ReportText>
+		</ReportTexts>
+	</EndPoint>-->
+	
+		<TemplatePartial Id="pulmonarynodulesummaryReporttext">			
+			<Branch>
+				Image : <InsertValue DataElementId="image"/> 
+				Lobe : <InsertValue DataElementId="lobe"/> 
+				Location : <InsertValue DataElementId="location"/> 
+				Attenuation : <InsertValue DataElementId="attenuation"/>
+				Solid  : <InsertValue DataElementId="solidmeandia"/> mm &amp;nbsp;  <InsertValue DataElementId="solidlength"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="solidwidth"/> mm
+				 Part-Solid  : 
+				 Overall Size  :    <InsertValue DataElementId="oversizemeandia"/> mm &amp;nbsp; <InsertValue DataElementId="oversizelength"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="oversizewidth"/> mm &amp;nbsp; &amp; 
+					  Size of Solid component  : <InsertValue DataElementId="sizeofsolid"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="sizeoflength"/> mm &amp;nbsp; &amp; <InsertValue DataElementId="sizeofwidth"/> mm 
+				Pure ground Glass  : 	<InsertValue DataElementId="puregroundglassmeandia"/> mm &amp;nbsp; &amp; 	<InsertValue DataElementId="puregroundglasslength"/> mm &amp;nbsp; &amp; 	<InsertValue DataElementId="puregroundglasswidth"/> mm &amp;nbsp; &amp; 	
+				Comparison : <InsertValue DataElementId="comparison"/> &amp;nbsp; 
+			     Interval increase  : <InsertValue DataElementId="intervaldecreasesolidnodule"/> &amp;nbsp; <InsertValue DataElementId="intervaldecreasesolidnodule"/> &amp;nbsp; <InsertValue DataElementId="intervaldecreasesolidnodule"/> &amp;nbsp; 
+				 Interval decrease  : <InsertValue DataElementId="intervaldecrease"/> &amp;nbsp;
+				<!--Margins : <InsertValue DataElementId="diameter"/>
+				Calcification : <InsertValue DataElementId="diameter"/>
+				Other Characteristics : <InsertValue DataElementId="diameter"/>
+				Margins : <InsertValue DataElementId="diameter"/>
+				Other comments : <InsertValue DataElementId="diameter"/>-->
+			</Branch>
+		</TemplatePartial>
+		
+		
+		<EndPoint Id="nodule1">
+		<Label>Nodule 1</Label>
 		  <ReportTexts >
-			<ReportText SectionId="findings">Need to define</ReportText>
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
 		  </ReportTexts>
 		</EndPoint>
+		
+		<EndPoint Id="nodule2">
+		<Label>Nodule 2</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule3">
+		<Label>Nodule 3</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule4">
+		<Label>Nodule 4</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule5">
+		<Label>Nodule 5</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule6">
+		<Label>Nodule 6</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		
+		<EndPoint Id="nodule7">
+		<Label>Nodule 7</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule8">
+		<Label>Nodule 8</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+	  <EndPoint Id="nodule9">
+		<Label>Nodule 9</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
+		<EndPoint Id="nodule10">
+		<Label>Nodule 10</Label>
+		  <ReportTexts >
+			<ReportText SectionId="findings">
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
+			</ReportText>
+		  </ReportTexts>
+		</EndPoint>
+		
 </EndPoints>
 	
 </ReportingModule>
