@@ -271,19 +271,19 @@
     <DecisionPoint Id="AdernalMassDetected">
       <Label>Incidental, Asymptomatic Adrenal Mass Detected on any CT or MR exam </Label>
       <Branch>
-	  <Label>Diagnostic Benign Imaging Features</Label>
+	      <Label>Diagnostic Benign Imaging Features</Label>
         <EqualCondition DataElementId="imagefeatures" ComparisonValue="Diagnostic"/>
         <DecisionPoint Id="DiagnosticImagingFeatures">
           <Label>Diagnostic Imaging Features </Label>
           <Branch>
-		  <Label>Myelolipoma, No enhancement,Ca++</Label>
-            <EqualCondition DataElementId="diagimagfeatures" ComparisonValue="myelolipoma"/>
-            <EndPointRef EndPointId="benignnoFU" ></EndPointRef>
+		          <Label>Myelolipoma, No enhancement,Ca++</Label>
+              <EqualCondition DataElementId="diagimagfeatures" ComparisonValue="myelolipoma"/>
+              <EndPointRef EndPointId="benignnoFU" ></EndPointRef>
           </Branch>
           <Branch>
-		   <Label>≤10 HU or signal on CS-MR</Label>
-            <EqualCondition DataElementId="diagimagfeatures" ComparisonValue="signalonCSMR"/>
-            <EndPointRef EndPointId="benignadenoma" ></EndPointRef>
+	        	   <Label>≤10 HU or signal on CS-MR</Label>
+               <EqualCondition DataElementId="diagimagfeatures" ComparisonValue="signalonCSMR"/>
+               <EndPointRef EndPointId="benignadenoma" ></EndPointRef>
           </Branch>
         </DecisionPoint>
 
@@ -470,7 +470,7 @@
   <EndPoints>
     <EndPoint Id="benignadenoma">
 	<Label>Benign adenoma, no F/U</Label>
-      <ReportTexts >
+      <ReportTexts>
         <ReportText SectionId="findings">Benign adenoma, no F/U</ReportText>
       </ReportTexts>
     </EndPoint>
@@ -492,7 +492,7 @@
     </EndPoint>
     
     <EndPoint Id="benignnoFU">
-	<Label>Benign, no F/U</Label>
+	   <Label>Benign, no F/U</Label>
       <ReportTexts>
         <ReportText SectionId="findings">
           Benign, no F/U

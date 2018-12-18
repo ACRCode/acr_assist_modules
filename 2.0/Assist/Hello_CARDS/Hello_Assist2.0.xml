@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>	
+    <Metadata>   
+        <Label>Hello Assist</Label>
+        <ID>Hello_Assist_1_0</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.5</ModuleVersion>
+    	<CreatedDate>2018-12-31</CreatedDate>
+    	<LastModifiedDate>2018-11-26</LastModifiedDate>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<RadElementSetID>5689</RadElementSetID>
+        <Info>
+            <Description>This is a sample xml for ACR Assist based on LI-RADS (characterizing liver lesion for MRI)</Description>
+            <References>          
+                <Citation Url="https://nrdr.acr.org/lirads/">
+                ACR LI-RADS</Citation>
+                <Citation Url="https://www.acr.org/Practice-Management-Quality-Informatics/Informatics/Structured-Content">
+                ACR Assist</Citation>
+            </References>
+            <Diagrams>  
+                <Diagram DisplaySequence="1" IsKeyDiagram="true">
+                	<Location>LIRADS.png</Location>
+                    <Label>ACR Hello Assist</Label>  
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>ACR Assist</Name>
+            	<Email>acr-assist@acr.org</Email>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <ReportCitationText/>
+        <Ontology>
+            <AnatomicRegions CodingSystem="http://radelement.org/">
+                <Region Code="RID58"></Region>
+            </AnatomicRegions>
+            <PossibleDiagnoses>
+                <Diagnosis Code="RID4271">Hepatocellular carcinoma</Diagnosis>
+            </PossibleDiagnoses>
+        </Ontology>
+        <ApplicableExams>
+	    <ApplicableExamCategory Axis="Modality">MRI </ApplicableExamCategory>
+	    <ApplicableExamCategory Axis="Anatomy"> LIver </ApplicableExamCategory>
+           
+        </ApplicableExams>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+        <ApplicableAgeGroups>
+            <MinimumAge>1</MinimumAge>
+        </ApplicableAgeGroups>
+        <TextCues>
+            <ContextPhrases>
+                <ContextPhrase></ContextPhrase>
+            </ContextPhrases>
+            <KeyWords>
+                <KeyWord>LIRADS Liver lesion</KeyWord>  
+            </KeyWords>
+            <NegationPhrases>
+                <NegationPhrase></NegationPhrase>
+            </NegationPhrases>
+            <Regex/>           
+        </TextCues>
+        <VoiceActivation>
+        	<VoiceCommandPhrase>LIRADS</VoiceCommandPhrase>
+        	<VoiceCommandPhrase>Liver lesion</VoiceCommandPhrase>
+        	<VoiceCommandPhrase>American College of Radiology</VoiceCommandPhrase> 
+        </VoiceActivation>
+    </Metadata>
+	
+    <DataElements>
+    	
+		<GlobalValue Id="DiameterSmall">10</GlobalValue>
+    	
+        <GlobalValue Id="DiameterLarge">20</GlobalValue>    	
+    	      
+    	<ChoiceDataElement Id="ObservationCharacter" IsRequired="true" DisplaySequence="1" Editable="true" Hasprefilled="false" Output="false">        	
+    		<CodableConcept Name="ObservationCharacter">
+    			<Coding>
+    				<System Value="RadElement"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDE65"></Code>
+    				<Display Value="RDE65"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>    			
+    		</CodableConcept>		
+    		
+    		<Label>Observation in high risk patient</Label>
+    		<Hint>Observation : Area with imaging features that differ from those of adjacent liver parenchyma high risk patient:in whom the incidence of LR is sufficient to justify screening or surveillance according to AASLD guidelines  </Hint>
+    		<Diagrams>
+    			<Diagram>
+    				<Location>observation.png</Location>
+    				<Label>observation</Label>
+    			</Diagram>
+    		</Diagrams>
+    		
+    		<VoiceCommand> Observation in high risk patient </VoiceCommand>    		
+            <ChoiceInfo>
+            	<Choice>
+            		<Value>treatedObservation</Value>
+            		<Label>Treated observation</Label>
+            		<Hint>An observation that has undergone loco-regional treatment</Hint>
+            	</Choice>
+            	<Choice>
+            		<Value>definitelyBenign</Value>
+            		<Label>Definitely benign</Label>
+            		<Hint> Cyst
+            			Hemangioma
+            			Vascular anomaly
+            			Perfusion alteration
+            			Hepatic fat deposition or sparing
+            			Hypertrophic pseudomass
+            			Confluent fibrosis
+            			Focal scar
+            			Observation that spontaneously disappears at follow-up</Hint>
+            	</Choice>
+            	<Choice>
+            		<Value>probablyBenign</Value>
+            		<Label>Probably benign</Label>
+            		<Hint>Probable benign entities (examples)
+            			Probable:
+            			Cyst
+            			Hemangioma
+            			Vascular anomaly
+            			Perfusion alteration
+            			Hepatic fat deposition or sparing
+            			Hypertrophic pseudomass
+            			Confluent fibrosis
+            			Focal scar
+            			LR-2 cirrhosis associated nodule
+            		</Hint>
+            	</Choice>
+                <Choice>
+                    <Value>notDefProbBenign</Value>
+                    <Label>Neither definite nor probable benign</Label>
+                </Choice>
+            	<Choice>
+            		<Value>notspecificforLR</Value>
+            		<Label>Probable malignancy, not specific for LR</Label>
+            		<Hint>Observation is probably malignant, but imaging features are not specific for LR</Hint>
+            	</Choice>
+            	<Choice>
+            		<Value>tumorInVein</Value>
+            		<Label>Tumor in vein</Label>
+            		<Hint>Presence of tumor in vein lumen.</Hint>
+            	</Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement> 
+        
+    	<ChoiceDataElement Id="ArterialEnhancement" IsRequired="true" DisplaySequence="2" Editable="true" Hasprefilled="false" Output="false">
+			<CodableConcept Name="ArterialEnhancement">
+    			<Coding>
+    				<System Value="RadElement"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDE86"></Code>
+    				<Display Value="RDE86"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>    			
+    		</CodableConcept>	
+            <Label>Arterial phase enhancement</Label>
+    		<Hint>Enhancement in the arterial phase that is less than that of liver.</Hint>
+    		<Diagrams>
+    			<Diagram>
+    				<Location>Arterialphase1.png</Location>
+    				<Label>Arterial phase</Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>Arterialphase2.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>Arterialphase3.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>Arterialphase4.png</Location>
+    				<Label>Arterial phase</Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>Arterialphase5.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>Arterialphase6.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    		</Diagrams>
+    		
+    		<VoiceCommand>Arterial phase enhancement</VoiceCommand>
+            <ChoiceInfo>
+            	<Choice>
+            		<Value>hypoEnhancing</Value>
+            		<Label>Hypo-enhancement</Label>  
+            	</Choice>
+                <Choice>
+                    <Value>isoEnhancing</Value>
+                    <Label>Iso-enhancement</Label>
+                </Choice>
+                <Choice>
+                    <Value>hyperEnhancing</Value>
+                    <Label>Hyper-enhancement</Label>  
+                </Choice>
+            </ChoiceInfo>
+    		
+    		<ConditionalProperties>    			
+    			<ConditionalProperty>
+    				<OrCondition>
+					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="treatedObservation"/>
+					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="probablyBenign"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notspecificforLR"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="tumorInVein"/>
+    				</OrCondition>    				
+    				<IsRelevant>false</IsRelevant>    				
+    			</ConditionalProperty>		
+    		</ConditionalProperties>	
+        </ChoiceDataElement>
+        
+    	<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="3" Editable="true" Hasprefilled="false" Output="false" Unit="mm">
+    		<CodableConcept Name="diameter">
+    			<Coding>
+    				<System Value="RadElement"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDE81"></Code>
+    				<Display Value="RDE81"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>    			
+    		</CodableConcept>
+			<Label>Diameter </Label>    		
+    		<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
+    		<Diagrams>
+    			<Diagram>
+    				<Location>diameter1.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>diameter2.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>diameter3.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>diameter4.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    			<Diagram>
+    				<Location>diameter5.png</Location>
+    				<Label></Label>
+    			</Diagram>
+    		</Diagrams>
+    		<Minimum>10</Minimum>
+    		<Maximum>12</Maximum>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<OrCondition>
+					    <EqualCondition DataElementId="ObservationCharacter" 
+							ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="treatedObservation"/>						
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="notspecificforLR"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="tumorInVein"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>	
+    	</NumericDataElement>
+        
+    	<ChoiceDataElement Id="washout" IsRequired="true" DisplaySequence="4" Editable="true" Hasprefilled="false" Output="false">
+            <CodableConcept Name="washout">
+    			<Coding>
+    				<System Value="RadElement"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDE85"></Code>
+    				<Display Value="RDE85"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>    			
+    		</CodableConcept>
+			<Label>Washout</Label>
+    		<Hint>Visually assessed temporal reduction in enhancement relative to liver from an earlier to a later phase resulting in portal venous phase hypoenhancement or delayed phase hypoenhancement.</Hint>
+            <ChoiceInfo>
+			   <Choice>
+				  <Value>yes</Value>
+				  <Label>Yes</Label>
+			   </Choice>
+			   <Choice>
+				  <Value>no</Value>
+				  <Label>No</Label>
+			   </Choice>
+			</ChoiceInfo>
+            <ImageMap>
+            	<Location>washoutImages.png</Location>
+                <Map>
+                     <Area Shape="rect" Coords="0,462,800,623" ChoiceValue="no"/>
+                    <Area Shape="rect" Coords="0,0,799,463" ChoiceValue="yes"/>
+                </Map>
+            </ImageMap>
+    		<ConditionalProperties>
+    			<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="treatedObservation"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="notspecificforLR"/>
+						<EqualCondition DataElementId="ObservationCharacter"
+							ComparisonValue="tumorInVein"/>
+					</OrCondition>
+    				<IsRelevant>false</IsRelevant>        				
+    			</ConditionalProperty>		
+    		</ConditionalProperties>	
+        </ChoiceDataElement>
+		       
+    	<ChoiceDataElement Id="capsule" IsRequired="true" DisplaySequence="5">
+		 <CodableConcept Name="capsule">
+    			<Coding>
+    				<System Value="RadElement"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDE83"></Code>
+    				<Display Value="RDE83"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>    			
+    		</CodableConcept>
+            <Label>Capsule</Label>
+    		<Hint>Peripheral rim of smooth hyper-enhancement in the portal venous phase or delayed phase that unequivocally is thicker or more conspicuous than the rims surrounding background nodule.</Hint>
+            <ChoiceInfo>
+			   <Choice>
+				  <Value>yes</Value>
+				  <Label>Yes</Label>
+			   </Choice>
+			   <Choice>
+				  <Value>no</Value>
+				  <Label>No</Label>
+			   </Choice>
+			</ChoiceInfo>
+            <ImageMap>
+            	<Location>capsuleImages.png</Location>
+                <Map>
+                     <Area Shape="rect" Coords="0,462,800,623" ChoiceValue="no"/>
+                    <Area Shape="rect" Coords="0,0,799,463" ChoiceValue="yes"/>
+                </Map>
+            </ImageMap>
+    		<ConditionalProperties>
+    			<ConditionalProperty>
+    				<OrCondition>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="treatedObservation"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="probablyBenign"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notspecificforLR"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="tumorInVein"/>    					
+    				</OrCondition>
+    				<IsRelevant>false</IsRelevant>    	    				
+    			</ConditionalProperty>		
+    		</ConditionalProperties>	
+        </ChoiceDataElement>
+        
+    	<ChoiceDataElement Id="thresholdgrowth" IsRequired="true" DisplaySequence="6" Unit="mm">
+		 <CodableConcept Name="thresholdgrowth">
+    			<Coding>
+    				<System Value="RadElement"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDE84"></Code>
+    				<Display Value="RDE84"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>    			
+    		</CodableConcept>
+            <Label>Threshold Growth</Label>
+    		<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND depending on the time interval between examinations, by the following amounts: less than or equal to 6 months: >50% diameter increase greater than 6 months: >100% diameter increase
+    		</Hint>
+            <ChoiceInfo>
+			   <Choice>
+				  <Value>yes</Value>
+				  <Label>Yes</Label>
+			   </Choice>
+			   <Choice>
+				  <Value>no</Value>
+				  <Label>No</Label>
+			   </Choice>
+			</ChoiceInfo>
+             <ImageMap>
+             	<Location>thresholdImages.png</Location>
+                <Map>
+                     <Area Shape="rect" Coords="0,462,800,623" ChoiceValue="no"/>
+                    <Area Shape="rect" Coords="0,0,799,463" ChoiceValue="yes"/>
+                </Map>
+            </ImageMap>
+    		<ConditionalProperties>
+    			<ConditionalProperty>
+    				<OrCondition>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="treatedObservation"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="probablyBenign"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notspecificforLR"/>
+    					<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="tumorInVein"/>    					
+    				</OrCondition>
+    				<IsRelevant>false</IsRelevant>        				
+    			</ConditionalProperty>		
+    		</ConditionalProperties>
+        </ChoiceDataElement>
+    </DataElements> 
+	
+    <Rules>
+        <DecisionPoint Id="ObservationDp">
+        	<Label> Observation in high-risk patient </Label>
+            <Branch>
+            	<Label>Treated Observation</Label>			
+            	<OrCondition>
+            		<EqualCondition DataElementId="ObservationCharacter"
+            			ComparisonValue="treatedObservation"/>						
+            		<EqualCondition DataElementId="ObservationCharacter"
+            			ComparisonValue="tumorInVein"/>            		
+            	</OrCondition>
+            	<EndPointRef EndPointId="LRtreatedEp"></EndPointRef>
+            </Branch>
+			<Branch>
+				<Label>Definitely Benign</Label>			
+                <EqualCondition DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>
+                <EndPointRef EndPointId="LR1Ep"></EndPointRef>
+            </Branch>
+			<Branch>
+				<Label>Probably Benign</Label>				
+                <EqualCondition DataElementId="ObservationCharacter" ComparisonValue="probablyBenign"/>
+				<EndPointRef EndPointId="LR2Ep"/>
+            </Branch>  
+			<Branch>
+				<Label>Probable malignancy, not specific for LR</Label>				
+                <EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notspecificforLR"/>
+				<EndPointRef EndPointId="LRmEp"></EndPointRef>
+            </Branch>         
+			<Branch>
+				<Label>Tumor in vein</Label>				
+                <EqualCondition DataElementId="ObservationCharacter" ComparisonValue="tumorInVein"/>
+                <EndPointRef EndPointId="LR5vEp"></EndPointRef>
+            </Branch>       
+            <Branch>
+                <Label>Neither definite nor probable benign</Label>
+            		<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>                
+            	<DecisionPoint Id="ArterialphaseDp ">
+                    <Label>Arterial phase enhancement</Label>
+                    <Branch>
+                        <Label>Hyper-enhancement</Label>  <!-- Hyper-enhancement -->
+                        <EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
+                    	<DecisionPoint Id="diameterDp">
+                            <Label>Diameter</Label>
+                            <Branch>
+                                <Label>&lt; 10</Label>   <!-- Diameter < 10 -->
+                                <LessThanCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+                            	<DecisionPoint Id="wasoutCapsultThreDp1">
+                                    <Label>Washout/Capsule/Thresholdgrowth</Label>  
+                                    <Branch>
+                                        <Label>None</Label>  <!-- None / Zero Y's -->
+                                        <AndCondition>
+                                            <EqualCondition DataElementId="washout" ComparisonValue="no"/>
+                                            <EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+                                            <EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+                                        </AndCondition>
+                                        <EndPointRef EndPointId="LR3Ep"></EndPointRef>
+                                    </Branch>
+									<Branch>
+                                        <Label>One</Label>  <!-- One / One Y -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+                                        <EndPointRef EndPointId="LR4Ep"></EndPointRef>
+                                    </Branch>
+									<Branch>
+                                        <Label>Two or More</Label>  <!-- Two / Two or more Y's -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+                                        <EndPointRef EndPointId="LR4Ep"></EndPointRef>
+                                    </Branch>
+                                </DecisionPoint>
+                            </Branch>
+							<Branch>
+                                <Label>10-19</Label>  <!-- 10 <= Diameter <= 19 -->
+								<AndCondition>
+									<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+									<LessThanOrEqualsCondition DataElementId="diameter" ComparisonValue="19"/>
+								</AndCondition>
+								<DecisionPoint Id="wasoutCapsultThreDp2">
+                                    <Label>Washout/Capsule/Thresholdgrowth</Label>  
+                                    <Branch>
+                                        <Label>None</Label>  <!-- None / Zero Y's -->
+                                        <AndCondition>
+                                            <EqualCondition DataElementId="washout" ComparisonValue="no"/>
+                                            <EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+                                            <EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+                                        </AndCondition>
+                                    	<EndPointRef EndPointId="LR3Ep"></EndPointRef>
+                                    </Branch>
+									<Branch>
+                                        <Label>One</Label>  <!-- One / One Y -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+                                        <EndPointRef EndPointId="LR4_5"></EndPointRef>
+                                    </Branch>
+									<Branch>
+                                        <Label>Two or More</Label>  <!-- Two / Two or more Y's -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+                                        <EndPointRef EndPointId="LR5Ep"></EndPointRef>
+                                    </Branch>
+                                </DecisionPoint>
+                            </Branch>
+                            <Branch>
+                                <Label>&gt;= 20</Label>  <!-- Diameter >= 20 -->
+                                <GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+                            	<DecisionPoint Id="wasoutCapsultThreDp3">
+                                    <Label>Washout/Capsule/Thresholdgrowth</Label>  
+                                    <Branch>
+                                        <Label>None</Label>  <!-- None / Zero Y's -->
+                                        <AndCondition>
+                                            <EqualCondition DataElementId="washout" ComparisonValue="no"/>
+                                            <EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+                                            <EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+                                        </AndCondition>
+                                        <EndPointRef EndPointId="LR4Ep"></EndPointRef>
+                                    </Branch>
+									<Branch>
+                                        <Label>One</Label>  <!-- One / One Y -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+                                        <EndPointRef EndPointId="LR5Ep"></EndPointRef>
+                                    </Branch>
+									<Branch>
+                                        <Label>Two or More</Label>  <!-- Two / Two or more Y's -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+                                        <EndPointRef EndPointId="LR5Ep"></EndPointRef>
+                                    </Branch>
+                                </DecisionPoint>
+                            </Branch>
+                        </DecisionPoint>
+                    </Branch>
+					<Branch>
+						<Label>Hypo/Iso-enhancing</Label>  <!-- Hypo/Iso-enhancement -->
+						<OrCondition>
+							<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hypoEnhancing"/>
+							<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="isoEnhancing"/>
+						</OrCondition>
+						<DecisionPoint Id="DiameterDp2">
+							<Label>Diameter</Label>
+							<Branch>
+								<Label>&lt; 20</Label>   <!-- Diameter < 20 -->
+								<LessThanCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+								<DecisionPoint Id="wasoutCapsultThreDp4">
+									<Label>Washout/Capsule/Thresholdgrowth</Label>  
+									<Branch>
+										<Label>None</Label>  <!-- None / Zero Y's -->
+										<AndCondition>
+											<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+											<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+											<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+										</AndCondition>
+										<EndPointRef EndPointId="LR3Ep"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>One</Label>  <!-- One / One Y -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+										<EndPointRef EndPointId="LR3Ep"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>Two or More</Label>  <!-- Two / Two or more Y's -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+										<EndPointRef EndPointId="LR4Ep"></EndPointRef>
+									</Branch>
+								</DecisionPoint>
+							</Branch>
+							<Branch>
+								<Label>&gt;= 20</Label>  <!-- Diameter >= 20 -->
+								<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+								<DecisionPoint Id="wasoutCapsultThreDp5">
+									<Label>Washout/Capsule/Thresholdgrowth</Label>  
+									<Branch>
+										<Label>None</Label>  <!-- None / Zero Y's -->
+										<AndCondition>
+											<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+											<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+											<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+										</AndCondition>
+										<EndPointRef EndPointId="LR3Ep"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>One</Label>  <!-- One / One Y -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+										<EndPointRef EndPointId="LR4Ep"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>Two or More</Label>  <!-- Two / Two or more Y's -->
+										<OrCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="no"/>  <!-- Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+											<AndCondition>
+												<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
+												<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+											</AndCondition>
+										</OrCondition>
+										<EndPointRef EndPointId="LR4Ep"></EndPointRef>
+									</Branch>
+								</DecisionPoint>
+							</Branch>
+						</DecisionPoint>
+					</Branch>
+                </DecisionPoint>
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    
+    <EndPoints>   	
+    	<EndPoint Id="LR1Ep">
+            <Label>LR-1</Label>
+            <ReportTexts>
+                <ReportText SectionId="findings">[LR-1] Imaging features diagnostic of a benign entity or definite spontaneous disappearance at follow up.                	
+                </ReportText>
+            </ReportTexts>
+        </EndPoint>
+	
+    	<EndPoint Id="LR2Ep">
+            <Label>LR-2</Label>
+           <ReportTexts>
+               <ReportText SectionId="findings">[LR-2] Observation with imaging features suggestive but not diagnostic of a benign entity.
+               	
+               </ReportText>
+           </ReportTexts>
+        </EndPoint>
+ 
+    	<EndPoint Id="LR3Ep">
+            <Label>LR-3</Label>
+			
+            <ReportTexts>
+                <ReportText SectionId="findings">[LR-3] Observation that does not meet unequivocal criteria for other LI-RADS categories.
+                	
+                </ReportText>  
+            </ReportTexts>
+        </EndPoint>
+ 
+		<EndPoint Id="LR4Ep">
+            <Label>LR-4</Label>
+            <ReportTexts>
+                <ReportText SectionId="findings">[LR-4] Observation with imaging features suggestive but not diagnostic of LR. 
+                	
+                </ReportText>
+            </ReportTexts>
+        </EndPoint>
+        
+        <EndPoint Id="LR5Ep">
+            <Label>LR-5</Label>
+            <ReportTexts>
+                <ReportText SectionId="findings">[LR-5] Observation with imaging features diagnostic of LR.
+                	
+                </ReportText>
+            </ReportTexts>
+        </EndPoint>        
+        
+    	<EndPoint Id="LR5vEp">
+            <Label>LR-5V</Label>
+            <ReportTexts>
+                <ReportText SectionId="findings">[LR-5V] Presence of tumor in vein lumen.
+                	
+                </ReportText>
+            </ReportTexts>
+        </EndPoint>
+		
+		<EndPoint Id="LRmEp">
+            <Label>LR-M</Label>
+            <ReportTexts>
+                <ReportText SectionId="findings">[LR-M] Observation with one or more imaging features that favor non-LR malignancy 
+                	
+                </ReportText>
+            </ReportTexts>
+        </EndPoint>
+		
+        <EndPoint Id="LRtreatedEp">
+            <Label>LR-Treated</Label>
+           <ReportTexts>
+                <ReportText SectionId="findings">[LR-Treated] An observation that has undergone loco-regional treatment.
+                </ReportText>
+            </ReportTexts>        	
+        </EndPoint>
+       
+        <EndPoint Id="LR4_5">
+            <Label>LR-4/LR-5</Label>
+            <ReportTexts>
+                <ReportText SectionId="findings">[LR-4/LR-5] Refers to a cell in the LI-RADS table where observations may be considered LR-4, LR-5us, or LR-5g
+                	
+                </ReportText>  
+            </ReportTexts>
+        </EndPoint>           
+    </EndPoints>
+    
+</ReportingModule>
