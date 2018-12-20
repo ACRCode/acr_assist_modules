@@ -15,7 +15,10 @@
 		<Info>
 			<Description>IF-Pituitary Findings for FDG PET</Description>
 			<References>
-
+			    <Citation Url="IF-Pituitary CT MRI">
+                IF-Pituitary CT MRI</Citation>
+                <Citation Url="https://www.jacr.org/article/S1546-1440(18)30379-X/fulltext">
+                ACR Assist</Citation>
 			</References>
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
@@ -42,7 +45,7 @@
 		
 		<GlobalValue Id="conditionConst">10</GlobalValue>		
 		
-		<ChoiceDataElement Id="abletoevaluatecomposition" IsRequired="true" DisplaySequence="2" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="abletoevaluatecomposition" IsRequired="true" DisplaySequence="2" CdeId="RDE65">
 			<Label>Can composition, size and mass effect be evaluated?</Label>
 			   <CodableConcept Name="Composition">
     			<Coding>
@@ -71,7 +74,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="type" IsRequired="true" DisplaySequence="3" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="type" IsRequired="true" DisplaySequence="3" CdeId="RDE65">
 			<Label>Type</Label>
 			<CodableConcept Name="type">
     			<Coding>
@@ -107,7 +110,7 @@
 			 </ConditionalProperties> 
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="4" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="4" CdeId="RDE65">
 			<Label>Composition of Cyst</Label>
 			<CodableConcept Name="typeofcyst">
     			<Coding>
@@ -145,7 +148,7 @@
 			
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="5" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="5" CdeId="RDE65">
 			<Label>Size of Mixed-Solid Cyst</Label>
 			<CodableConcept Name="mixedcystsize">
     			<Coding>
@@ -189,7 +192,7 @@
 		</ChoiceDataElement>	
 		
 		
-		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="6" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="6" CdeId="RDE65">
 			<Label>Has Mass Effect?</Label>
 			<CodableConcept Name="masseffect">
     			<Coding>
@@ -231,7 +234,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="invasion" IsRequired="true" DisplaySequence="7" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="invasion" IsRequired="true" DisplaySequence="7" CdeId="RDE65">
 			<Label>Has Invasion into surrounding structures?</Label>
 			<CodableConcept Name="invasion">
     			<Coding>
@@ -271,10 +274,6 @@
 				</OrCondition>	
 				<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-				<!-- <ConditionalProperty>
-					<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/> 
-					<IsReleveant>false</IsReleveant>
-				</ConditionalProperty -->
 			</ConditionalProperties>
 		</ChoiceDataElement>	
 		
@@ -312,9 +311,6 @@
 		    <Label>simple1</Label>
 			      <Branch>
 					<Label>Simple</Label>
-					<!-- <NotRelevantDataElements>
-							  <DataElementRef DataElementId="mixedcystsize"/>
-					</NotRelevantDataElements> -->
 					<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/>
 					
 					<DecisionPoint Id="Simple">
@@ -403,42 +399,42 @@
 	   <EndPoint Id="Nofurtherevaluation">
 		<Label>Not Further evaluation</Label>
 		  <ReportTexts>
-			<ReportText SectionId="findings">No Further Evaluation</ReportText>
+			<ReportText SectionId="findings">No Further Evaluation.</ReportText>
 		  </ReportTexts>
 		</EndPoint>
 		
 		<EndPoint Id="general">
 		<Label>general</Label>
 		  <ReportTexts>
-			<ReportText SectionId="findings">Characterize with pituitary MRI</ReportText>
+			<ReportText SectionId="findings">Characterize with pituitary MRI.</ReportText>
 		  </ReportTexts>
 		</EndPoint>
 		
 		<EndPoint Id="referral">
 		<Label>Referral</Label>
 		  <ReportTexts>
-			<ReportText SectionId="findings">Referral for endocrine and/or neurosurgical management</ReportText>
+			<ReportText SectionId="findings">Referral for endocrine and/or neurosurgical management.</ReportText>
 		  </ReportTexts>
 		</EndPoint>
 		
 		<EndPoint Id="Nofurtherimgaing">
 		<Label>Nofurtherimgaing</Label>
 		  <ReportTexts>
-			<ReportText SectionId="findings">No further imaging &amp;nbsp; Correlate with history of pituitary hypersecretion.</ReportText>
+			<ReportText SectionId="findings">No further imaging. Correlate with history of pituitary hypersecretion.</ReportText>
 		  </ReportTexts>
 		</EndPoint>
 		
 	   <EndPoint Id="Nofurtherimgaingabove5">
 		<Label>Nofurtherimgaingabove5</Label>
 		  <ReportTexts>
-			<ReportText SectionId="findings">No further imaging &amp;nbsp; Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+			<ReportText SectionId="findings">No further imaging. Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
 		  </ReportTexts>
 		</EndPoint>
 		
 	   <EndPoint Id="recommend">
 		<Label>recommend</Label>
 		  <ReportTexts>
-			<ReportText SectionId="findings">Recommend endocrine function tests &amp;nbsp; 6-12 month follow-up pituitary MRI.</ReportText>
+			<ReportText SectionId="findings">Recommend endocrine function tests. 6-12 month follow-up pituitary MRI.</ReportText>
 		  </ReportTexts>
 		</EndPoint>
 		
