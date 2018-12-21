@@ -257,41 +257,6 @@
     },
 	    {
       "testCaseId": "TI-RADS_8",
-      "endpointId": "ReporttextTR2",
-      "endpointlabel": "Not Suspicious no FNA",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": ["0","1"]
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "1",
-		            "range": {
-            "minimum": 1,
-            "maximum": 5
-          }
-        }
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_9",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -327,7 +292,7 @@
       ]
     },
 	    {
-      "testCaseId": "TI-RADS_10",
+      "testCaseId": "TI-RADS_9",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -363,7 +328,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_11",
+      "testCaseId": "TI-RADS_10",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -399,7 +364,7 @@
       ]
     },
 	    {
-      "testCaseId": "TI-RADS_12",
+      "testCaseId": "TI-RADS_11",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -435,7 +400,7 @@
       ]
     },
 		    {
-      "testCaseId": "TI-RADS_13",
+      "testCaseId": "TI-RADS_12",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
@@ -454,6 +419,42 @@
 		{
           "dataElementId": "margin",
           "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+				{
+          "dataElementId": "diameter",
+          "dataElementValue": "1.5",
+		            "range": {
+            "minimum": 1.5,
+            "maximum": 2.4
+          }
+        }
+		
+      ]
+    },
+		    {
+      "testCaseId": "TI-RADS_13",
+      "endpointId": "ReporttextTR6",
+      "endpointlabel": "TR3 Mildly Suspicious Follow",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "0"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "3"
         },
 		{
           "dataElementId": "echogenicfoci",
@@ -489,42 +490,6 @@
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": ["0"]
-        },
-				{
-          "dataElementId": "diameter",
-          "dataElementValue": "1.5",
-		            "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        }
-		
-      ]
-    },
-		    {
-      "testCaseId": "TI-RADS_15",
-      "endpointId": "ReporttextTR6",
-      "endpointlabel": "TR3 Mildly Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
           "dataElementValue": "0"
         },
 		{
@@ -542,7 +507,7 @@
       ]
     },
 		    {
-      "testCaseId": "TI-RADS_16",
+      "testCaseId": "TI-RADS_15",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
@@ -578,7 +543,7 @@
       ]
     },
     {
-      "testCaseId": "TI-RADS_17",
+      "testCaseId": "TI-RADS_16",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
@@ -614,7 +579,7 @@
       ]
     },
 		    {
-      "testCaseId": "TI-RADS_18",
+      "testCaseId": "TI-RADS_17",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
@@ -639,42 +604,6 @@
           "dataElementValue": ["0"]
         },
 		{
-          "dataElementId": "diameter",
-          "dataElementValue": "1.5",
-		            "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        }
-		
-      ]
-    },
-		    {
-      "testCaseId": "TI-RADS_19",
-      "endpointId": "ReporttextTR6",
-      "endpointlabel": "TR3 Mildly Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": ["0"]
-        },
-				{
           "dataElementId": "diameter",
           "dataElementValue": "1.5",
 		            "range": {
@@ -686,7 +615,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_20",
+      "testCaseId": "TI-RADS_18",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
@@ -722,7 +651,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_21",
+      "testCaseId": "TI-RADS_19",
       "endpointId": "ReporttextTR9",
       "endpointlabel": "TR4 Moderately Suspicious FNA",
       "inputs": [
@@ -758,7 +687,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_22",
+      "testCaseId": "TI-RADS_20",
       "endpointId": "ReporttextTR9",
       "endpointlabel": "TR4 Moderately Suspicious FNA",
       "inputs": [
@@ -794,7 +723,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_23",
+      "testCaseId": "TI-RADS_21",
       "endpointId": "ReporttextTR9",
       "endpointlabel": "TR4 Moderately Suspicious FNA",
       "inputs": [
@@ -830,7 +759,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_24",
+      "testCaseId": "TI-RADS_22",
       "endpointId": "ReporttextTR9",
       "endpointlabel": "TR4 Moderately Suspicious FNA",
       "inputs": [
@@ -867,7 +796,7 @@
     },
 	
 	{
-      "testCaseId": "TI-RADS_25",
+      "testCaseId": "TI-RADS_23",
       "endpointId": "ReporttextTR9",
       "endpointlabel": "TR4 Moderately Suspicious FNA",
       "inputs": [
@@ -903,7 +832,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_25",
+      "testCaseId": "TI-RADS_24",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -939,7 +868,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_26",
+      "testCaseId": "TI-RADS_25",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -975,7 +904,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_27",
+      "testCaseId": "TI-RADS_26",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -1011,7 +940,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_28",
+      "testCaseId": "TI-RADS_27",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -1047,7 +976,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_29",
+      "testCaseId": "TI-RADS_28",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -1083,7 +1012,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_30",
+      "testCaseId": "TI-RADS_29",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -1120,7 +1049,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_31",
+      "testCaseId": "TI-RADS_30",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -1157,7 +1086,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_32",
+      "testCaseId": "TI-RADS_31",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious Follow",
       "inputs": [
@@ -1193,7 +1122,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_33",
+      "testCaseId": "TI-RADS_32",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious Follow",
       "inputs": [
@@ -1229,7 +1158,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_34",
+      "testCaseId": "TI-RADS_33",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious Follow",
       "inputs": [
@@ -1264,10 +1193,8 @@
 		
       ]
     },
-	
-	
 	{
-      "testCaseId": "TI-RADS_35",
+      "testCaseId": "TI-RADS_34",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious Follow",
       "inputs": [
@@ -1304,7 +1231,7 @@
     },
 	
 	{
-      "testCaseId": "TI-RADS_36",
+      "testCaseId": "TI-RADS_35",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1340,7 +1267,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_37",
+      "testCaseId": "TI-RADS_36",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1376,7 +1303,7 @@
       ]
     },
 			{
-      "testCaseId": "TI-RADS_38",
+      "testCaseId": "TI-RADS_37",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1412,7 +1339,7 @@
       ]
     },
 			{
-      "testCaseId": "TI-RADS_39",
+      "testCaseId": "TI-RADS_38",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1448,7 +1375,7 @@
       ]
     },
 			{
-      "testCaseId": "TI-RADS_40",
+      "testCaseId": "TI-RADS_39",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1484,7 +1411,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_41",
+      "testCaseId": "TI-RADS_40",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1520,7 +1447,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_42",
+      "testCaseId": "TI-RADS_41",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1557,7 +1484,7 @@
     },
     
 	{
-      "testCaseId": "TI-RADS_43",
+      "testCaseId": "TI-RADS_42",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "Evaluation Incomplete",
       "inputs": [
@@ -1568,6 +1495,42 @@
         {
           "dataElementId": "echogenicity",
           "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },		
+	{
+      "testCaseId": "TI-RADS_43",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "Evaluation Incomplete",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "0"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "1"
         },
 		{
           "dataElementId": "shape",
@@ -1603,11 +1566,11 @@
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "1"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "shape",
-          "dataElementValue": "0"
+          "dataElementValue": "1"
         },
 		{
           "dataElementId": "margin",
@@ -1630,42 +1593,6 @@
     },		
 	{
       "testCaseId": "TI-RADS_45",
-      "endpointId": "ReporttextTR12",
-      "endpointlabel": "Evaluation Incomplete",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": ["0"]
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "1",
-		            "range": {
-            "minimum": 1,
-            "maximum": 5
-          }
-        }
-		
-      ]
-    },		
-	{
-      "testCaseId": "TI-RADS_46",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "Evaluation Incomplete",
       "inputs": [
