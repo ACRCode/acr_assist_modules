@@ -10,7 +10,8 @@ Metadata =
         element ApprovedBy{ text }?,
         element ReviewedBy{ text }?,
         element DevelopedBy{ text }?,
-		element RadElementSetID { text }?,
+		#$element RadElementSetID { text }?,
+		CodableConcept?,
         element Info {
             element Description { text }?,
             element References { Citation+ }?,
@@ -88,3 +89,16 @@ Metadata =
     codeAttrs =
     codingSystemAttr?,
     attribute Code { xsd:token }
+    
+    CodableConcept = element CodableConcept{
+    attribute Name {text } ,
+    Coding+
+    }
+    
+    Coding = element Coding{
+         element System { attribute Value{"RadElement" | "Loinc" | "SnomedCT" } },
+         element Version { attribute Value{text}},
+         element Code { attribute Value{xsd:token}},
+         element Display { attribute Value{text}},
+         element UserSelected { attribute Value{"true" | "false"}} ?
+    }+
