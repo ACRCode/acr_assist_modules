@@ -39,25 +39,10 @@
 	
 	<DataElements>
 		
-		<GlobalValue Id="conditionConst">10</GlobalValue>
+		
 	
-		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="1" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="1" CdeId="RDE65">
 			<Label>Composition of Cyst</Label>
-			<CodableConcept Name="typeofcyst">
-    			<Coding>
-    				<System Value="Test"></System>
-    				<Version Value="1.0"></Version>
-    				<Code Value="RDETest"></Code>
-    				<Display Value="Test"></Display>
-    				<UserSelected Value="true"></UserSelected>
-    			</Coding>
-    			<Coding>
-    				<System Value="Test"></System>
-    				<Version Value="1.0"></Version>
-    				<Code Value="RDETest"></Code>
-    				<Display Value="Test"></Display>    				
-    			</Coding>
-    		</CodableConcept>
 			<Hint> If the composition of the lesion cannot be determined, it should be managed as if solid</Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -71,23 +56,8 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="2" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="2" CdeId="RDE65">
 			<Label>Size of Mixed-Solid Cyst</Label>
-			<CodableConcept Name="mixedcystsize">
-    			<Coding>
-    				<System Value="Test"></System>
-    				<Version Value="1.0"></Version>
-    				<Code Value="RDETest"></Code>
-    				<Display Value="Test"></Display>
-    				<UserSelected Value="true"></UserSelected>
-    			</Coding>
-    			<Coding>
-    				<System Value="Test"></System>
-    				<Version Value="1.0"></Version>
-    				<Code Value="RDETest"></Code>
-    				<Display Value="Test"></Display>    				
-    			</Coding>
-    		</CodableConcept>	
 			<Hint>COnsider the possibility of a pseudolesion given the lesion's size. Pseudolesions require no further management.</Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -115,23 +85,8 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>	
 		
-		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="3" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="3" CdeId="RDE65">
 			<Label>Has Mass Effect?</Label>
-			<CodableConcept Name="masseffect">
-    			<Coding>
-    				<System Value="Test"></System>
-    				<Version Value="1.0"></Version>
-    				<Code Value="RDETest"></Code>
-    				<Display Value="Test"></Display>
-    				<UserSelected Value="true"></UserSelected>
-    			</Coding>
-    			<Coding>
-    				<System Value="Test"></System>
-    				<Version Value="1.0"></Version>
-    				<Code Value="RDETest"></Code>
-    				<Display Value="Test"></Display>    				
-    			</Coding>
-    		</CodableConcept>	
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -157,7 +112,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="invasion" IsRequired="true" DisplaySequence="4" CdeId="RDE65" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="invasion" IsRequired="true" DisplaySequence="4" CdeId="RDE65">
 			<Label>Has Invasion into surrounding structures?</Label>
 			<Hint>Invasion into surrounding Structures include Optic Chiasm, Optic Nerve and Cavernous Sinus</Hint>
 			<ChoiceInfo>
