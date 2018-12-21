@@ -29,7 +29,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 		{
           "dataElementId": "diameter",
@@ -64,11 +64,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
+          "dataElementValue": ["0","1"]
         },
 		{
           "dataElementId": "diameter",
@@ -103,7 +99,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
+          "dataElementValue": ["1"]
         },
 			{
           "dataElementId": "diameter",
@@ -139,7 +135,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 		{
           "dataElementId": "diameter",
@@ -175,11 +171,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
+          "dataElementValue": ["0","1"]
         },
 		{
           "dataElementId": "diameter",
@@ -214,7 +206,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "2"
+          "dataElementValue": ["2"]
         },
 		{
           "dataElementId": "diameter",
@@ -250,7 +242,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 		{
           "dataElementId": "diameter",
@@ -265,45 +257,6 @@
     },
 	    {
       "testCaseId": "TI-RADS_8",
-      "endpointId": "ReporttextTR2",
-      "endpointlabel": "Not Suspicious no FNA",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
-        },
-				{
-          "dataElementId": "diameter",
-          "dataElementValue": "1",
-		            "range": {
-            "minimum": 1,
-            "maximum": 5
-          }
-        }
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_9",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -325,13 +278,9 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0","1"]
         },
 		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
-        },
-				{
           "dataElementId": "diameter",
           "dataElementValue": "2.5",
 		            "range": {
@@ -343,7 +292,7 @@
       ]
     },
 	    {
-      "testCaseId": "TI-RADS_10",
+      "testCaseId": "TI-RADS_9",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -365,7 +314,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -379,7 +328,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_11",
+      "testCaseId": "TI-RADS_10",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -401,7 +350,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -415,7 +364,7 @@
       ]
     },
 	    {
-      "testCaseId": "TI-RADS_12",
+      "testCaseId": "TI-RADS_11",
       "endpointId": "ReporttextTR7",
       "endpointlabel": "TR3 Mildly Suspicious FNA",
       "inputs": [
@@ -437,7 +386,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -451,7 +400,7 @@
       ]
     },
 		    {
-      "testCaseId": "TI-RADS_13",
+      "testCaseId": "TI-RADS_12",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
@@ -473,7 +422,43 @@
         },
 		{
           "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+				{
+          "dataElementId": "diameter",
+          "dataElementValue": "1.5",
+		            "range": {
+            "minimum": 1.5,
+            "maximum": 2.4
+          }
+        }
+		
+      ]
+    },
+		    {
+      "testCaseId": "TI-RADS_13",
+      "endpointId": "ReporttextTR6",
+      "endpointlabel": "TR3 Mildly Suspicious Follow",
+      "inputs": [
+        {
+          "dataElementId": "composition",
           "dataElementValue": "0"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -505,13 +490,13 @@
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "3"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["1","2"]
         },
-				{
+		{
           "dataElementId": "diameter",
           "dataElementValue": "1.5",
 		            "range": {
@@ -519,7 +504,6 @@
             "maximum": 2.4
           }
         }
-		
       ]
     },
 		    {
@@ -545,46 +529,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
-        },
-	    {
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "2"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "1.5",
-		            "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        }
-      ]
-    },
-		    {
-      "testCaseId": "TI-RADS_16",
-      "endpointId": "ReporttextTR6",
-      "endpointlabel": "TR3 Mildly Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "3"
+          "dataElementValue": ["3"]
         },
 		{
           "dataElementId": "diameter",
@@ -598,17 +543,53 @@
       ]
     },
     {
+      "testCaseId": "TI-RADS_16",
+      "endpointId": "ReporttextTR6",
+      "endpointlabel": "TR3 Mildly Suspicious Follow",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "2"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "1.5",
+		            "range": {
+            "minimum": 1.5,
+            "maximum": 2.4
+          }
+        }
+		
+      ]
+    },
+		    {
       "testCaseId": "TI-RADS_17",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "1"
+          "dataElementValue": "0"
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "0"
+          "dataElementValue": "3"
         },
 		{
           "dataElementId": "shape",
@@ -616,11 +597,11 @@
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "2"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 		{
           "dataElementId": "diameter",
@@ -633,85 +614,13 @@
 		
       ]
     },
-		    {
+	{
       "testCaseId": "TI-RADS_18",
       "endpointId": "ReporttextTR6",
       "endpointlabel": "TR3 Mildly Suspicious Follow",
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "1.5",
-		            "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        }
-		
-      ]
-    },
-		    {
-      "testCaseId": "TI-RADS_19",
-      "endpointId": "ReporttextTR6",
-      "endpointlabel": "TR3 Mildly Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
-        },
-				{
-          "dataElementId": "diameter",
-          "dataElementValue": "1.5",
-		            "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_20",
-      "endpointId": "ReporttextTR6",
-      "endpointlabel": "TR3 Mildly Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
           "dataElementValue": "2"
         },
         {
@@ -728,7 +637,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
+          "dataElementValue": ["1"]
         },
 				{
           "dataElementId": "diameter",
@@ -742,7 +651,7 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_21",
+      "testCaseId": "TI-RADS_19",
       "endpointId": "ReporttextTR9",
       "endpointlabel": "TR4 Moderately Suspicious FNA",
       "inputs": [
@@ -764,7 +673,79 @@
         },
 		{
           "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+				{
+          "dataElementId": "diameter",
+          "dataElementValue": "1.5",
+		            "range": {
+            "minimum": 1.5,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },
+	{
+      "testCaseId": "TI-RADS_20",
+      "endpointId": "ReporttextTR9",
+      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "shape",
           "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+				{
+          "dataElementId": "diameter",
+          "dataElementValue": "1.5",
+		            "range": {
+            "minimum": 1.5,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },
+	{
+      "testCaseId": "TI-RADS_21",
+      "endpointId": "ReporttextTR9",
+      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "1"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "2"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -788,78 +769,6 @@
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
-        },
-				{
-          "dataElementId": "diameter",
-          "dataElementValue": "1.5",
-		            "range": {
-            "minimum": 1.5,
-            "maximum": 5
-          }
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_23",
-      "endpointId": "ReporttextTR9",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "2"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
-        },
-				{
-          "dataElementId": "diameter",
-          "dataElementValue": "1.5",
-		            "range": {
-            "minimum": 1.5,
-            "maximum": 5
-          }
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_24",
-      "endpointId": "ReporttextTR9",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "echogenicity",
           "dataElementValue": "1"
         },
 		{
@@ -872,7 +781,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -887,7 +796,7 @@
     },
 	
 	{
-      "testCaseId": "TI-RADS_25",
+      "testCaseId": "TI-RADS_23",
       "endpointId": "ReporttextTR9",
       "endpointlabel": "TR4 Moderately Suspicious FNA",
       "inputs": [
@@ -909,7 +818,7 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -923,7 +832,7 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_25",
+      "testCaseId": "TI-RADS_24",
       "endpointId": "ReporttextTR10",
       "endpointlabel": "TR4 Moderately Suspicious Follow",
       "inputs": [
@@ -945,9 +854,45 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0"]
         },
 				{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 1.4
+          }
+        }
+		
+      ]
+    },
+		{
+      "testCaseId": "TI-RADS_25",
+      "endpointId": "ReporttextTR10",
+      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "2"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "2"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["1"]
+        },
+		{
           "dataElementId": "diameter",
           "dataElementValue": "1",
 		            "range": {
@@ -965,11 +910,11 @@
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "2"
+          "dataElementValue": "1"
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "3"
+          "dataElementValue": "2"
         },
 		{
           "dataElementId": "shape",
@@ -977,13 +922,13 @@
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "2"
+          "dataElementValue": "3"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
+          "dataElementValue": ["0"]
         },
-		{
+				{
           "dataElementId": "diameter",
           "dataElementValue": "1",
 		            "range": {
@@ -1013,13 +958,13 @@
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "3"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["1","2"]
         },
-				{
+		{
           "dataElementId": "diameter",
           "dataElementValue": "1",
 		            "range": {
@@ -1037,11 +982,11 @@
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "1"
+          "dataElementValue": "0"
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "2"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "shape",
@@ -1053,13 +998,9 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
+          "dataElementValue": ["2","3"]
         },
 		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "2"
-        },
-				{
           "dataElementId": "diameter",
           "dataElementValue": "1",
 		            "range": {
@@ -1077,46 +1018,6 @@
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "2"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "3"
-        },
-				{
-          "dataElementId": "diameter",
-          "dataElementValue": "1",
-		            "range": {
-            "minimum": 1,
-            "maximum": 1.4
-          }
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_30",
-      "endpointId": "ReporttextTR10",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
           "dataElementValue": "1"
         },
         {
@@ -1133,7 +1034,44 @@
         },
 		{
           "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+				{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 1.4
+          }
+        }
+        
+		
+      ]
+    },
+		{
+      "testCaseId": "TI-RADS_30",
+      "endpointId": "ReporttextTR10",
+      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "2"
+        },
+        {
+          "dataElementId": "echogenicity",
           "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "2"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -1149,8 +1087,8 @@
     },
 		{
       "testCaseId": "TI-RADS_31",
-      "endpointId": "ReporttextTR10",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "TR5 Highly Suspicious Follow",
       "inputs": [
         {
           "dataElementId": "composition",
@@ -1158,11 +1096,11 @@
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "0"
+          "dataElementValue": "2"
         },
 		{
           "dataElementId": "shape",
-          "dataElementValue": "3"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "margin",
@@ -1170,17 +1108,16 @@
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["1"]
         },
-				{
+		{
           "dataElementId": "diameter",
-          "dataElementValue": "1",
+          "dataElementValue": "0.5",
 		            "range": {
-            "minimum": 1,
-            "maximum": 1.4
+            "minimum": 0.5,
+            "maximum": 0.9
           }
         }
-        
 		
       ]
     },
@@ -1195,42 +1132,6 @@
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "2"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "2"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "0.5",
-		            "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_33",
-      "endpointId": "ReporttextTR12",
-      "endpointlabel": "TR5 Highly Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "2"
-        },
-        {
-          "dataElementId": "echogenicity",
           "dataElementValue": "1"
         },
 		{
@@ -1243,7 +1144,43 @@
         },
 		{
           "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "0.5",
+		            "range": {
+            "minimum": 0.5,
+            "maximum": 0.9
+          }
+        }
+		
+      ]
+    },
+	{
+      "testCaseId": "TI-RADS_33",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "TR5 Highly Suspicious Follow",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "2"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "margin",
           "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
         },
 		{
           "dataElementId": "diameter",
@@ -1263,11 +1200,11 @@
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "2"
+          "dataElementValue": "0"
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "3"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "shape",
@@ -1275,11 +1212,11 @@
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "0"
+          "dataElementValue": "3"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["2"]
         },
 		{
           "dataElementId": "diameter",
@@ -1292,47 +1229,9 @@
 		
       ]
     },
-	
 	
 	{
       "testCaseId": "TI-RADS_35",
-      "endpointId": "ReporttextTR12",
-      "endpointlabel": "TR5 Highly Suspicious Follow",
-      "inputs": [
-        {
-          "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "2"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "0.5",
-		            "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-        }
-		
-      ]
-    },
-	
-	{
-      "testCaseId": "TI-RADS_36",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
       "inputs": [
@@ -1354,11 +1253,43 @@
         },
 		{
           "dataElementId": "echogenicfoci",
+          "dataElementValue": ["1","2"]
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },
+	{
+      "testCaseId": "TI-RADS_36",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "TR5 Highly Suspicious FNA",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "2"
+        },
+        {
+          "dataElementId": "echogenicity",
           "dataElementValue": "1"
         },
 		{
-          "dataElementId": "echogenicfoci",
+          "dataElementId": "shape",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "margin",
           "dataElementValue": "2"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -1371,7 +1302,7 @@
 		
       ]
     },
-	{
+			{
       "testCaseId": "TI-RADS_37",
       "endpointId": "ReporttextTR12",
       "endpointlabel": "TR5 Highly Suspicious FNA",
@@ -1386,17 +1317,17 @@
         },
 		{
           "dataElementId": "shape",
-          "dataElementValue": "3"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "2"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["1","3"]
         },
-				{
+		{
           "dataElementId": "diameter",
           "dataElementValue": "1",
 		            "range": {
@@ -1414,29 +1345,25 @@
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "2"
+          "dataElementValue": "0"
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "1"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "shape",
-          "dataElementValue": "0"
+          "dataElementValue": "3"
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "echogenicfoci",
           "dataElementValue": "3"
         },
-				{
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["2","3"]
+        },
+		{
           "dataElementId": "diameter",
           "dataElementValue": "1",
 		            "range": {
@@ -1454,46 +1381,6 @@
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "0"
-        },
-        {
-          "dataElementId": "echogenicity",
-          "dataElementValue": "0"
-        },
-		{
-          "dataElementId": "shape",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "margin",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "2"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "3"
-        },
-				{
-          "dataElementId": "diameter",
-          "dataElementValue": "1",
-		            "range": {
-            "minimum": 1,
-            "maximum": 5
-          }
-        }
-		
-      ]
-    },
-			{
-      "testCaseId": "TI-RADS_40",
-      "endpointId": "ReporttextTR12",
-      "endpointlabel": "TR5 Highly Suspicious FNA",
-      "inputs": [
-        {
-          "dataElementId": "composition",
           "dataElementValue": "2"
         },
         {
@@ -1510,7 +1397,43 @@
         },
 		{
           "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+				{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },
+	{
+      "testCaseId": "TI-RADS_40",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "TR5 Highly Suspicious FNA",
+      "inputs": [
+        {
+          "dataElementId": "composition",
           "dataElementValue": "0"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "2"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "3"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "2"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
         },
 				{
           "dataElementId": "diameter",
@@ -1530,11 +1453,11 @@
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "0"
+          "dataElementValue": "2"
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "2"
+          "dataElementValue": "3"
         },
 		{
           "dataElementId": "shape",
@@ -1542,13 +1465,13 @@
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "2"
+          "dataElementValue": "3"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "0"
+          "dataElementValue": ["0","1","2","3"]
         },
-				{
+		{
           "dataElementId": "diameter",
           "dataElementValue": "1",
 		            "range": {
@@ -1559,42 +1482,31 @@
 		
       ]
     },
+    
 	{
       "testCaseId": "TI-RADS_42",
       "endpointId": "ReporttextTR12",
-      "endpointlabel": "TR5 Highly Suspicious FNA",
+      "endpointlabel": "Evaluation Incomplete",
       "inputs": [
         {
           "dataElementId": "composition",
-          "dataElementValue": "2"
+          "dataElementValue": "1"
         },
         {
           "dataElementId": "echogenicity",
-          "dataElementValue": "3"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "shape",
-          "dataElementValue": "3"
+          "dataElementValue": "0"
         },
 		{
           "dataElementId": "margin",
-          "dataElementValue": "3"
-        },
-		{
-          "dataElementId": "echogenicfoci",
           "dataElementValue": "0"
         },
 		{
           "dataElementId": "echogenicfoci",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "2"
-        },		
-		{
-          "dataElementId": "echogenicfoci",
-          "dataElementValue": "3"
+          "dataElementValue": ["0"]
         },
 		{
           "dataElementId": "diameter",
@@ -1606,6 +1518,114 @@
         }
 		
       ]
-    }	
+    },		
+	{
+      "testCaseId": "TI-RADS_43",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "Evaluation Incomplete",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "0"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "1"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },		
+	{
+      "testCaseId": "TI-RADS_44",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "Evaluation Incomplete",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "0"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "1"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["0"]
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },		
+	{
+      "testCaseId": "TI-RADS_45",
+      "endpointId": "ReporttextTR12",
+      "endpointlabel": "Evaluation Incomplete",
+      "inputs": [
+        {
+          "dataElementId": "composition",
+          "dataElementValue": "0"
+        },
+        {
+          "dataElementId": "echogenicity",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "shape",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "margin",
+          "dataElementValue": "0"
+        },
+		{
+          "dataElementId": "echogenicfoci",
+          "dataElementValue": ["1"]
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "1",
+		            "range": {
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+		
+      ]
+    },		
   ]
 }

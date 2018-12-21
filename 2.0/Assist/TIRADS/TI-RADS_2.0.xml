@@ -36,7 +36,7 @@
 	<DataElements>		
 		<GlobalValue Id="conditionConst">10</GlobalValue>	
 		
-        <ChoiceDataElement Id="composition" IsRequired="true" DisplaySequence="1" Editable="true" Hasprefilled="false" Output="false">
+        <ChoiceDataElement Id="composition" IsRequired="true" DisplaySequence="1">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -58,7 +58,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-	     <ChoiceDataElement Id="echogenicity" IsRequired="true" DisplaySequence="2"  Editable="true" Hasprefilled="false" Output="false">
+	     <ChoiceDataElement Id="echogenicity" IsRequired="true" DisplaySequence="2">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -80,7 +80,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="shape" IsRequired="true" DisplaySequence="3" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="shape" IsRequired="true" DisplaySequence="3">
 			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -99,7 +99,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 		
-		<ChoiceDataElement Id="margin" IsRequired="true" DisplaySequence="4" Editable="true" Hasprefilled="false" Output="false">
+		<ChoiceDataElement Id="margin" IsRequired="true" DisplaySequence="4">
 			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -121,7 +121,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 		
-		<MultiChoiceDataElement Id="echogenicfoci" IsRequired="true" DisplaySequence="5" Editable="true" Hasprefilled="false" Output="false">
+		<MultiChoiceDataElement Id="echogenicfoci" IsRequired="true" DisplaySequence="5">
 			<Label>Echogenic Foci</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -143,7 +143,7 @@
 			</ChoiceInfo>
 		</MultiChoiceDataElement>
 		
-		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="6" Editable="true" Hasprefilled="false" Output="false">
+		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="6">
 		   <Label>Diameter</Label>
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
@@ -293,6 +293,15 @@
         		<EndPointRef EndPointId="ReporttextTR14"></EndPointRef>
         	</Branch>
         	
+			<Branch>
+        		<Label>1 points</Label>
+        		<AndCondition>
+        			<EqualsCondition DataElementId="addtr1" ComparisonValue="1"/>
+        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="0.5"/>
+        		</AndCondition>
+        		<EndPointRef EndPointId="ReporttextTR15"></EndPointRef>
+        	</Branch>
+			
 		<!--  <Branch>
 			  <Label>4 points TR4</Label>
 			  <OrCondition>
@@ -315,25 +324,25 @@
 	 <EndPoint Id="ReporttextTR1">
 	  	<Label>Benign noFNA</Label>
       		<ReportTexts >
-        		<ReportText SectionId="findings">TR1:&amp;nbsp;
-		 		Benign no FNA</ReportText>
+        		<ReportText SectionId="findings">TR1:
+Benign no FNA</ReportText>
       		</ReportTexts>
       </EndPoint>
 		
 	  <EndPoint Id="ReporttextTR2">
 	 	<Label>NotSuspicious noFNA</Label>
 	    	<ReportTexts>
-	        	<ReportText SectionId="findings">TR2:&amp;nbsp;
-					Not Suspicious&amp;nbsp;
-					no FNA</ReportText>
+	        	<ReportText SectionId="findings">TR2:
+Not Suspicious
+no FNA</ReportText>
 	      		</ReportTexts>
 	    </EndPoint>
 		
 		<EndPoint Id="ReporttextTR6">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR3:&amp;nbsp;
-					Mildly Suspicious&amp;nbsp; Follow
+				<ReportText SectionId="findings">TR3:
+Mildly Suspicious Follow
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -341,8 +350,8 @@
 		<EndPoint Id="ReporttextTR7">
 			<Label>Mildly Suspicious FNA</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR3:&amp;nbsp;
-					Mildly Suspicious&amp;nbsp; FNA
+				<ReportText SectionId="findings">TR3:
+Mildly Suspicious FNA
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -350,8 +359,8 @@
 		<EndPoint Id="ReporttextTR8">
 			<Label>Mildly Suspicious</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR3:&amp;nbsp;
-					Mildly Suspicious
+				<ReportText SectionId="findings">TR3:
+Mildly Suspicious
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -359,8 +368,8 @@
 		<EndPoint Id="ReporttextTR9">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR4:&amp;nbsp;
-					Moderately Suspicious&amp;nbsp; FNA 
+				<ReportText SectionId="findings">TR4:
+Moderately Suspicious FNA 
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -368,8 +377,8 @@
 		<EndPoint Id="ReporttextTR10">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR4:&amp;nbsp;
-					Moderately Suspicious&amp;nbsp; Follow 
+				<ReportText SectionId="findings">TR4:
+Moderately Suspicious Follow 
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -377,8 +386,8 @@
 		<EndPoint Id="ReporttextTR11">
 			<Label>Moderately Suspicious</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR4:&amp;nbsp;
-					Moderately Suspicious 
+				<ReportText SectionId="findings">TR4:
+Moderately Suspicious 
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -386,8 +395,8 @@
 		<EndPoint Id="ReporttextTR12">
 			<Label>Highly FNA</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR5:&amp;nbsp;
-					Highly Suspicious&amp;nbsp; FNA 						
+				<ReportText SectionId="findings">TR5:
+Highly Suspicious FNA 						
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -395,8 +404,8 @@
 		<EndPoint Id="ReporttextTR13">
 			<Label>Highly Follow</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR5:&amp;nbsp;
-					Highly Suspicious&amp;nbsp; Follow 						
+				<ReportText SectionId="findings">TR5:
+Highly Suspicious Follow 						
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
@@ -404,11 +413,20 @@
 		<EndPoint Id="ReporttextTR14">
 			<Label>Highly Suspicious</Label>
 			<ReportTexts >
-				<ReportText SectionId="findings">TR5:&amp;nbsp;
-					Highly Suspicious&amp;nbsp; 						
+				<ReportText SectionId="findings">TR5:
+Highly Suspicious 						
 				</ReportText>
 			</ReportTexts>
 		</EndPoint>
+		
+		<EndPoint Id="ReporttextTR15">
+			<Label>Evaluation Incomplete</Label>
+			<ReportTexts >
+				<ReportText SectionId="findings">Evaluation Incomplete				
+				</ReportText>
+			</ReportTexts>
+		</EndPoint>
+		
 	</EndPoints>
 	
 </ReportingModule>
