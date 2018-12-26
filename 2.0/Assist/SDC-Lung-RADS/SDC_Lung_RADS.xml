@@ -447,7 +447,7 @@
         	</ConditionalProperties>
 		</ChoiceDataElement>
 	
-		<NumericDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="26" Unit="mm">
+		<!--<NumericDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="26" Unit="mm">
     		<Label>Interval Increase</Label> 
 			<ConditionalProperties>				
 				<ConditionalProperty>
@@ -464,7 +464,40 @@
 				<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>
+    	</NumericDataElement>-->
+		
+		<ChoiceDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="13">
+			<Label>intervalincrease:</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>solid</Value>
+					<Label>Solid</Label>	
+				</Choice>
+				<Choice>
+					<Value>part-solid</Value>
+					<Label>Part-solid</Label>	
+				</Choice>
+				<Choice>
+					<Value>puregroundglass</Value>
+					<Label>Pure Ground Glass</Label>	
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>	
 		
 		<NumericDataElement Id="intervalincreasesolidnodule" IsRequired="true" DisplaySequence="27"  Unit="mm">
     		<Label>Solid nodule: Previous mean diameter:</Label>
@@ -475,8 +508,8 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesize"/>
-						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesolid"/>
+<!--						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesize"/>-->
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="part-solid"/>
 						<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -502,7 +535,7 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="intervalincrease" ComparisonValue="intervalincreasesolidnodule"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -528,7 +561,7 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="intervalincrease" ComparisonValue="intervalincreasesolidnodule"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="solid"/>
 						<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -555,9 +588,8 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="intervalincrease" ComparisonValue="intervalincreasesolidnodule"/>
-						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesize"/>
-						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesolid"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="intervalincrease" ComparisonValue="part-solid"/>						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -713,149 +745,81 @@
 </Rules>
 	
 <EndPoints>
+<TemplatePartial Id="pulmonarynodulesummaryReporttext">
+	<Branch>
+		<SectionIf DataElementId="image">
+			Image : <InsertValue DataElementId="image"/> 
+		</SectionIf>
+		
+		<SectionIf DataElementId="lobe">
+			Lobe : <InsertValue DataElementId="lobe"/> 
+		</SectionIf>
+		
+		<SectionIf DataElementId="location">
+			Location : <InsertValue DataElementId="location"/> 	
+		</SectionIf>
+		
+		<SectionIf DataElementId="attenuation">
+			Attenuation : <InsertValue DataElementId="attenuation"/>
+		</SectionIf>
+		
+		<SectionIfValue DataElementId="attenuation" ComparisonValue="solid">
+			 Solid  : 	<InsertValue DataElementId="solidmeandia"/> mm <InsertValue DataElementId="solidlength"/> mm <InsertValue DataElementId="solidwidth"/> mm 
+		</SectionIfValue>
+		
+		<SectionIfValue DataElementId="attenuation" ComparisonValue="part-solid">
+			Part-Solid- Overall Size  :    <InsertValue DataElementId="oversizemeandia"/> mm <InsertValue DataElementId="oversizelength"/> mm <InsertValue DataElementId="oversizewidth"/> mm  
+			Part-Solid- Size of Solid component  : <InsertValue DataElementId="sizeofsolid"/> mm  <InsertValue DataElementId="sizeoflength"/> mm  <InsertValue DataElementId="sizeofwidth"/> mm 
+		</SectionIfValue>
+		
+		<SectionIfValue DataElementId="attenuation" ComparisonValue="puregroundglass">
+				Pure ground Glass  :  <InsertValue DataElementId="puregroundglassmeandia"/> mm 	<InsertValue DataElementId="puregroundglasslength"/> mm <InsertValue DataElementId="puregroundglasswidth"/> mm  
+		</SectionIfValue>	
+		
+		<SectionIf DataElementId="comparison">
+			Comparison : <InsertValue DataElementId="comparison"/>
+		</SectionIf>
+		
+		<SectionIf DataElementId="intervalincrease">
+			Interval increase  : <InsertValue DataElementId="intervalincrease"/> 
+		</SectionIf>
+		
+		<SectionIf DataElementId="intervaldecrease">
+			Interval decrease  : <InsertValue DataElementId="intervaldecrease"/> 
+		</SectionIf>
+		
+		<SectionIf DataElementId="margins">
+			Margins : <InsertValue DataElementId="margins"/>
+		</SectionIf>
+		
+		<SectionIf DataElementId="calcification">
+			Calcification : <InsertValue DataElementId="calcification"/>
+		</SectionIf>
+		
+		<SectionIf DataElementId="othercharacteristics">
+			Other Characteristics : <InsertValue DataElementId="othercharacteristics"/>
+		</SectionIf>
+		
+		<SectionIf DataElementId="othercharacteristics">
+			Other comments : <InsertValue DataElementId="other"/>
+		</SectionIf>
+		
+   </Branch>
 	
-<!--	<EndPoint Id="nodule1">
+</TemplatePartial>
+		
+		
+	<EndPoint Id="nodule1">
 		<Label>Nodule 1</Label>
-		<ReportTexts >
+		  <ReportTexts>
 			<ReportText SectionId="findings">
-				<Branch>
-					Testing
-				</Branch>
+			  <Branch>
+			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
+			  </Branch>
 			</ReportText>
-		</ReportTexts>
-	</EndPoint>-->
+		  </ReportTexts>
+		</EndPoint>
 	
-		<TemplatePartial Id="pulmonarynodulesummaryReporttext">			
-			<Branch>
-	Image : <InsertValue DataElementId="image"/> 
-	Lobe : <InsertValue DataElementId="lobe"/> 
-	Location : <InsertValue DataElementId="location"/> 
-	Attenuation : <InsertValue DataElementId="attenuation"/>
-	Solid  : 	<InsertValue DataElementId="solidmeandia"/> mm <InsertValue DataElementId="solidlength"/> mm <InsertValue DataElementId="solidwidth"/> mm 
-	Part-Solid- Overall Size  :    <InsertValue DataElementId="oversizemeandia"/> mm <InsertValue DataElementId="oversizelength"/> mm <InsertValue DataElementId="oversizewidth"/> mm  
-	Part-Solid- Size of Solid component  : <InsertValue DataElementId="sizeofsolid"/> mm  <InsertValue DataElementId="sizeoflength"/> mm  <InsertValue DataElementId="sizeofwidth"/> mm 
-	Pure ground Glass  :  <InsertValue DataElementId="puregroundglassmeandia"/> mm 	<InsertValue DataElementId="puregroundglasslength"/> mm <InsertValue DataElementId="puregroundglasswidth"/> mm  
-	Comparison : <InsertValue DataElementId="comparison"/> 
-	Interval increase  : <InsertValue DataElementId="intervaldecreasesolidnodule"/>  <InsertValue DataElementId="intervaldecreasesolidnodule"/>  <InsertValue DataElementId="intervaldecreasesolidnodule"/> 
-	Interval decrease  : <InsertValue DataElementId="intervaldecrease"/> 
-	Margins : <InsertValue DataElementId="margins"/>
-	Calcification : <InsertValue DataElementId="calcification"/>
-	Other Characteristics : <InsertValue DataElementId="othercharacteristics"/>
-	Other comments : <InsertValue DataElementId="other"/>
-			</Branch>
-		</TemplatePartial>
-		
-		
-		<EndPoint Id="nodule1">
-		<Label>Nodule 1</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="nodule2">
-		<Label>Nodule 2</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="nodule3">
-		<Label>Nodule 3</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="nodule4">
-		<Label>Nodule 4</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="nodule5">
-		<Label>Nodule 5</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="nodule6">
-		<Label>Nodule 6</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		
-		<EndPoint Id="nodule7">
-		<Label>Nodule 7</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="nodule8">
-		<Label>Nodule 8</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-	  <EndPoint Id="nodule9">
-		<Label>Nodule 9</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="nodule10">
-		<Label>Nodule 10</Label>
-		  <ReportTexts >
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
-		</EndPoint>
 		
 </EndPoints>
 	
