@@ -756,73 +756,73 @@
 <TemplatePartial Id="pulmonarynodulesummaryReporttext">
 	<Branch>
 		<SectionIf DataElementId="image">
-			Image : <InsertValue DataElementId="image"/> 
+Image : <InsertValue DataElementId="image"/> 
 		</SectionIf>
 		
 		<SectionIf DataElementId="lobe">
-			Lobe : <InsertValue DataElementId="lobe"/> 
+Lobe : <InsertValue DataElementId="lobe"/> 
 		</SectionIf>
 		
 		<SectionIf DataElementId="location">
-			Location : <InsertValue DataElementId="location"/> 	
+Location : <InsertValue DataElementId="location"/> 	
 		</SectionIf>
 		
 		<SectionIf DataElementId="attenuation">
-			Attenuation : <InsertValue DataElementId="attenuation"/>
+Attenuation : <InsertValue DataElementId="attenuation"/>
 		</SectionIf>
 		
 		<SectionIfValue DataElementId="attenuation" ComparisonValue="solid">
-			 Solid  : 	<InsertValue DataElementId="solidmeandia"/> mm <InsertValue DataElementId="solidlength"/> mm <InsertValue DataElementId="solidwidth"/> mm 
+Solid  : 	<InsertValue DataElementId="solidmeandia"/> mm <InsertValue DataElementId="solidlength"/> mm <InsertValue DataElementId="solidwidth"/> mm 
 		</SectionIfValue>
 		
 		<SectionIfValue DataElementId="attenuation" ComparisonValue="part-solid">
-			Part-Solid- Overall Size  :    <InsertValue DataElementId="oversizemeandia"/> mm <InsertValue DataElementId="oversizelength"/> mm <InsertValue DataElementId="oversizewidth"/> mm  
-			Part-Solid- Size of Solid component  : <InsertValue DataElementId="sizeofsolid"/> mm  <InsertValue DataElementId="sizeoflength"/> mm  <InsertValue DataElementId="sizeofwidth"/> mm 
+Part-Solid- Overall Size  :    <InsertValue DataElementId="oversizemeandia"/> mm <InsertValue DataElementId="oversizelength"/> mm <InsertValue DataElementId="oversizewidth"/> mm  
+Part-Solid- Size of Solid component  : <InsertValue DataElementId="sizeofsolid"/> mm  <InsertValue DataElementId="sizeoflength"/> mm  <InsertValue DataElementId="sizeofwidth"/> mm 
 		</SectionIfValue>
 		
 		<SectionIfValue DataElementId="attenuation" ComparisonValue="puregroundglass">
-				Pure ground Glass  :  <InsertValue DataElementId="puregroundglassmeandia"/> mm 	<InsertValue DataElementId="puregroundglasslength"/> mm <InsertValue DataElementId="puregroundglasswidth"/> mm  
+Pure ground Glass  :  <InsertValue DataElementId="puregroundglassmeandia"/> mm 	<InsertValue DataElementId="puregroundglasslength"/> mm <InsertValue DataElementId="puregroundglasswidth"/> mm  
 		</SectionIfValue>	
 		
 		<SectionIf DataElementId="comparison">
-			Comparison : <InsertValue DataElementId="comparison"/>
+Comparison : <InsertValue DataElementId="comparison"/>
 		</SectionIf>
 		
-		<SectionIf DataElementId="comparison">
-			Interval increase  : <InsertValue DataElementId="intervalincrease"/> 
+		<SectionIf DataElementId="intervalincrease">
+Interval increase  : <InsertValue DataElementId="intervalincrease"/> 
 		</SectionIf>
 		
 		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="solid">
-			 Solid  : 	<InsertValue DataElementId="intervalincreasesolidnodule"/> mm 
+Solid  : 	<InsertValue DataElementId="intervalincreasesolidnodule"/> mm 
 		</SectionIfValue>
 		
 		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="part-solid">
-			Part-Solid- Overall Size  :    <InsertValue DataElementId="partsolidnodulesize"/> mm 
-			Part-Solid- Size of Solid component  : <InsertValue DataElementId="partsolidnodulesolid"/> mm  
+Part-Solid- Overall Size  :    <InsertValue DataElementId="partsolidnodulesize"/> mm 
+Part-Solid- Size of Solid component  : <InsertValue DataElementId="partsolidnodulesolid"/> mm  
 		</SectionIfValue>
 		
 		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="puregroundglass">
-				Pure ground Glass  :  <InsertValue DataElementId="puregroundglass"/> mm 	
+Pure ground Glass  :  <InsertValue DataElementId="puregroundglass"/> mm 	
 		</SectionIfValue>
 		
 		<SectionIf DataElementId="intervaldecrease">
-			Interval decrease  : <InsertValue DataElementId="intervaldecrease"/> 
+Interval decrease  : <InsertValue DataElementId="intervaldecrease"/> 
 		</SectionIf>
 		
 		<SectionIf DataElementId="margins">
-			Margins : <InsertValue DataElementId="margins"/>
+Margins : <InsertValue DataElementId="margins"/>
 		</SectionIf>
 		
 		<SectionIf DataElementId="calcification">
-			Calcification : <InsertValue DataElementId="calcification"/>
+Calcification : <InsertValue DataElementId="calcification"/>
 		</SectionIf>
 		
 		<SectionIf DataElementId="othercharacteristics">
-			Other Characteristics : <InsertValue DataElementId="othercharacteristics"/>
+Other Characteristics : <InsertValue DataElementId="othercharacteristics"/>
 		</SectionIf>
 		
 		<SectionIf DataElementId="other">
-			Other comments : <InsertValue DataElementId="other"/>
+Other comments : <InsertValue DataElementId="other"/>
 		</SectionIf>
 		
    </Branch>
