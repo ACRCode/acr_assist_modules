@@ -21,8 +21,16 @@
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
 					<Location>KeyDiagram.png</Location>
-					<Label>ACR LI-RADS</Label>
-				</Diagram>		
+					<Label>ACR LDCT-RADS</Label>
+				</Diagram>	
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>KeyDiagram1.png</Location>
+					<Label>ACR LDCT-RADS1</Label>
+				</Diagram>	
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Location>KeyDiagram2.png</Location>
+					<Label>ACR LDCT-RADS2</Label>
+				</Diagram>	
 			</Diagrams>
 			<Contact>
 				<Name>ACR Assist</Name>
@@ -466,8 +474,8 @@
 			</ConditionalProperties>
     	</NumericDataElement>-->
 		
-		<ChoiceDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="13">
-			<Label>intervalincrease:</Label>
+		<ChoiceDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="26">
+			<Label>Interval Increase:</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>solid</Value>
@@ -606,8 +614,8 @@
 			</ConditionalProperties>
     	</NumericDataElement>
 					
-		<NumericDataElement Id="intervaldecrease" IsRequired="true" DisplaySequence="31" Unit="mm">
-    		<Label>Interval Decrease</Label>
+		<DateTimeDataElement Id="intervaldecrease" IsRequired="true" DisplaySequence="31" Unit="mm">
+    		<Label>Interval Decrease - Compared to:</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
@@ -623,7 +631,7 @@
 				<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>
+    	</DateTimeDataElement>
 		
 		<ChoiceDataElement Id="margins" IsRequired="true" DisplaySequence="32">
 			<Label>Margins:</Label>
@@ -780,9 +788,22 @@
 			Comparison : <InsertValue DataElementId="comparison"/>
 		</SectionIf>
 		
-		<SectionIf DataElementId="intervalincrease">
+		<SectionIf DataElementId="comparison">
 			Interval increase  : <InsertValue DataElementId="intervalincrease"/> 
 		</SectionIf>
+		
+		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="solid">
+			 Solid  : 	<InsertValue DataElementId="intervalincreasesolidnodule"/> mm 
+		</SectionIfValue>
+		
+		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="part-solid">
+			Part-Solid- Overall Size  :    <InsertValue DataElementId="partsolidnodulesize"/> mm 
+			Part-Solid- Size of Solid component  : <InsertValue DataElementId="partsolidnodulesolid"/> mm  
+		</SectionIfValue>
+		
+		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="puregroundglass">
+				Pure ground Glass  :  <InsertValue DataElementId="puregroundglass"/> mm 	
+		</SectionIfValue>
 		
 		<SectionIf DataElementId="intervaldecrease">
 			Interval decrease  : <InsertValue DataElementId="intervaldecrease"/> 
@@ -800,7 +821,7 @@
 			Other Characteristics : <InsertValue DataElementId="othercharacteristics"/>
 		</SectionIf>
 		
-		<SectionIf DataElementId="othercharacteristics">
+		<SectionIf DataElementId="other">
 			Other comments : <InsertValue DataElementId="other"/>
 		</SectionIf>
 		
