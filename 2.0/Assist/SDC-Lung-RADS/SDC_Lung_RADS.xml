@@ -694,7 +694,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="othercharacteristics" IsRequired="true" DisplaySequence="34">
+		<ChoiceDataElement Id="othercharacteristics" IsRequired="true" DisplaySequence="34" AllowFreetext="true">
 			<Label>Other characteristics:</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -708,10 +708,6 @@
 				<Choice>
 					<Value>cavitation</Value>
 					<Label>Cavitation</Label>	
-				</Choice>
-				<Choice>
-					<Value>other</Value>
-					<Label>Other:</Label>	
 				</Choice>				
 			</ChoiceInfo>
 			<ConditionalProperties>				
