@@ -33,8 +33,14 @@
         <ApplicableSexes Value="Both"></ApplicableSexes>
 	</Metadata>
 	
-	<DataElements>				
-        <ChoiceDataElement Id="composition" IsRequired="true" DisplaySequence="1">
+	<DataElements>		
+
+		<NumericDataElement  Id="noofnodules" IsRequired="true" DisplaySequence="1">
+			<Label>No of Nodules</Label>
+			<Minimum>1</Minimum>
+		</NumericDataElement>
+
+		<ChoiceDataElement IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules" Id="composition" IsRequired="true" DisplaySequence="1">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -56,7 +62,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-	     <ChoiceDataElement Id="echogenicity" IsRequired="true" DisplaySequence="2">
+		<ChoiceDataElement IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules" Id="echogenicity" IsRequired="true" DisplaySequence="2">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -78,7 +84,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="shape" IsRequired="true" DisplaySequence="3">
+		<ChoiceDataElement IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules" Id="shape" IsRequired="true" DisplaySequence="3">
 			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -97,7 +103,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 		
-		<ChoiceDataElement Id="margin" IsRequired="true" DisplaySequence="4">
+		<ChoiceDataElement IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules" Id="margin" IsRequired="true" DisplaySequence="4">
 			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -119,7 +125,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 		
-		<MultiChoiceDataElement Id="echogenicfoci" IsRequired="true" DisplaySequence="5">
+		<MultiChoiceDataElement IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules" Id="echogenicfoci" IsRequired="true" DisplaySequence="5">
 			<Label>Echogenic Foci</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -141,7 +147,7 @@
 			</ChoiceInfo>
 		</MultiChoiceDataElement>
 		
-		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="6">
+		<NumericDataElement IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules" Id="diameter" IsRequired="true" DisplaySequence="6">
 		   <Label>Diameter</Label>
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
@@ -175,12 +181,12 @@
           <Branch>
 			  <Label>0 points TR1</Label>
 			  <EqualCondition DataElementId="addtr1" ComparisonValue="0"/>
-			  <EndPointRef EndPointId="ReporttextTR1"></EndPointRef>
+          	<EndPointRef EndPointId="ReporttextTR1" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
           </Branch>
 		  <Branch>
 			  <Label>2 points TR2</Label>
 			  <EqualCondition DataElementId="addtr1" ComparisonValue="2"/>
-			  <EndPointRef EndPointId="ReporttextTR2"></EndPointRef>
+		  	<EndPointRef EndPointId="ReporttextTR2" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
           </Branch>
 		  <Branch>
 			  <Label>3 points TR3 FNA</Label>
@@ -190,7 +196,7 @@
 		  	  			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="2.5"/>
 		  	  		</AndCondition>	
 		  	  </AndCondition>			  
-		  	<EndPointRef EndPointId="ReporttextTR7"></EndPointRef>
+		  	<EndPointRef EndPointId="ReporttextTR7" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
           </Branch>
         	
         	<Branch>
@@ -202,7 +208,7 @@
         				<LessThanCondition DataElementId="diameter" ComparisonValue="2.5"></LessThanCondition>
         			</AndCondition>	
         		</AndCondition>			  
-        		<EndPointRef EndPointId="ReporttextTR6"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR6" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
         	
         	<Branch>
@@ -213,7 +219,7 @@
         				<LessThanCondition DataElementId="diameter" ComparisonValue="1.5"></LessThanCondition>
         			</AndCondition>	
         		</AndCondition>			  
-        		<EndPointRef EndPointId="ReporttextTR8"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR8" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
         	
         	<Branch>
@@ -226,7 +232,7 @@
 	        		</OrCondition>
         			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
         		</AndCondition>
-        		<EndPointRef EndPointId="ReporttextTR9"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR9" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
         	
         	<Branch>
@@ -242,7 +248,7 @@
         				<LessThanCondition DataElementId="diameter" ComparisonValue="1.5"></LessThanCondition>
         			</AndCondition>
         		</AndCondition>
-        		<EndPointRef EndPointId="ReporttextTR10"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR10" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
         	
         	<Branch>
@@ -255,11 +261,8 @@
         			</OrCondition>
         				<LessThanCondition DataElementId="diameter" ComparisonValue="1"></LessThanCondition>
         		</AndCondition>
-        		<EndPointRef EndPointId="ReporttextTR11"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR11" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
-        	
-        	
-        	
         	
         	<Branch>
         		<Label>7 points TR5 FNA</Label>
@@ -267,7 +270,7 @@
         			<GreaterThanOrEqualsCondition DataElementId="addtr1" ComparisonValue="7"/>
         			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="1"/>
         		</AndCondition>
-        		<EndPointRef EndPointId="ReporttextTR12"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR12" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
         	
         	<Branch>
@@ -279,7 +282,7 @@
         				<LessThanCondition DataElementId="diameter" ComparisonValue="1"></LessThanCondition>
         			</AndCondition>
         		</AndCondition>
-        		<EndPointRef EndPointId="ReporttextTR13"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR13" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
         	
         	<Branch>
@@ -288,142 +291,152 @@
         			<GreaterThanOrEqualsCondition DataElementId="addtr1" ComparisonValue="7"/>
         			<LessThanCondition DataElementId="diameter" ComparisonValue="0.5"></LessThanCondition>
         		</AndCondition>
-        		<EndPointRef EndPointId="ReporttextTR14"></EndPointRef>
+        		<EndPointRef EndPointId="ReporttextTR14" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
         	
 			<Branch>
         		<Label>1 points</Label>
         		<AndCondition>
-        			<EqualsCondition DataElementId="addtr1" ComparisonValue="1"/>
+        			<EqualCondition DataElementId="addtr1" ComparisonValue="1"/>
         			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="0.5"/>
         		</AndCondition>
-        		<EndPointRef EndPointId="ReporttextTR15"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15" IsRepeatable="true" RepeatGroup="Nodule" RepeatCount="noofnodules"></EndPointRef>
         	</Branch>
-			
-		<!--  <Branch>
-			  <Label>4 points TR4</Label>
-			  <OrCondition>
-				<EqualCondition DataElementId="addtr1" ComparisonValue="4"/>
-				<EqualCondition DataElementId="addtr1" ComparisonValue="5"/>
-				<EqualCondition DataElementId="addtr1" ComparisonValue="6"/>	
-			  </OrCondition>
-			  <EndPointRef EndPointId="ReporttextTR4"></EndPointRef>
-          </Branch>
-          
-		  <Branch>
-			  <Label>5 points TR5</Label>
-			  <GreaterThanOrEqualsCondition DataElementId="addtr1" ComparisonValue="7"/>
-			  <EndPointRef EndPointId="ReporttextTR5"></EndPointRef>
-		  </Branch>-->
         </DecisionPoint> 		
 	</Rules>	
 	
 	<EndPoints>
 	 <EndPoint Id="ReporttextTR1">
 	  	<Label>Benign noFNA</Label>
-      		<ReportTexts >
-        		<ReportText SectionId="findings">TR1:
-Benign no FNA</ReportText>
-      		</ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR1: Benign no FNA"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
       </EndPoint>
-		
-	  <EndPoint Id="ReporttextTR2">
-	 	<Label>NotSuspicious noFNA</Label>
-	    	<ReportTexts>
-	        	<ReportText SectionId="findings">TR2:
-Not Suspicious
-no FNA</ReportText>
-	      		</ReportTexts>
-	    </EndPoint>
-		
-		<EndPoint Id="ReporttextTR6">
-			<Label>Mildly Suspicious Follow</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR3:
-Mildly Suspicious Follow
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR7">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR3:
-Mildly Suspicious FNA
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR8">
-			<Label>Mildly Suspicious</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR3:
-Mildly Suspicious
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR9">
-			<Label>Moderately Suspicious FNA</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR4:
-Moderately Suspicious FNA 
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR10">
-			<Label>Moderately Suspicious Follow</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR4:
-Moderately Suspicious Follow 
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR11">
-			<Label>Moderately Suspicious</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR4:
-Moderately Suspicious 
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR12">
-			<Label>Highly FNA</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR5:
-Highly Suspicious FNA 						
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR13">
-			<Label>Highly Follow</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR5:
-Highly Suspicious Follow 						
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR14">
-			<Label>Highly Suspicious</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">TR5:
-Highly Suspicious 						
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
-		
-		<EndPoint Id="ReporttextTR15">
-			<Label>Evaluation Incomplete</Label>
-			<ReportTexts >
-				<ReportText SectionId="findings">Evaluation Incomplete				
-				</ReportText>
-			</ReportTexts>
-		</EndPoint>
+
+  	 <EndPoint Id="ReporttextTR2">
+	  	<Label>NotSuspicious noFNA</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR2: Not Suspicious no FNA"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+
+	 <EndPoint Id="ReporttextTR6">
+	  	<Label>Mildly Suspicious Follow</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR3: Mildly Suspicious Follow"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+
+	 <EndPoint Id="ReporttextTR7">
+	  	<Label>Mildly Suspicious FNA</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR3: Mildly Suspicious FNA"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	
+	 <EndPoint Id="ReporttextTR8">
+	  	<Label>Mildly Suspicious</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR3: Mildly Suspicious"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	  
+	  <EndPoint Id="ReporttextTR9">
+	  	<Label>Moderately Suspicious FNA</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR4: Moderately Suspicious FNA"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+
+	  <EndPoint Id="ReporttextTR10">
+	  	<Label>Moderately Suspicious Follow</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR4: Moderately Suspicious Follow"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	
+	  <EndPoint Id="ReporttextTR11">
+	  	<Label>Moderately Suspicious</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR4: Moderately Suspicious"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	  
+	  <EndPoint Id="ReporttextTR12">
+	  	<Label>Highly Suspicious FNA</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR5: Highly Suspicious FNA"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	  
+	  <EndPoint Id="ReporttextTR13">
+	  	<Label>Highly Suspicious Follow</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR5: Highly Suspicious Follow"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	  
+	  <EndPoint Id="ReporttextTR14">
+	  	<Label>Highly Suspicious</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="TR5: Highly Suspicious"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	
+	  <EndPoint Id="ReporttextTR15">
+	  	<Label>Evaluation Incomplete</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText" Value="Evaluation Incomplete"></ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
 		
 	</EndPoints>
 	
