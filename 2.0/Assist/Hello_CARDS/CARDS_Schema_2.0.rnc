@@ -301,10 +301,8 @@ DecisionPoint =
         Branch,
         element DefaultBranch {
             element Label { text }?,
-            (EndPointRef
-            #| 
-            #DecisionPoint
-            )
+           # branchModifiers,
+            (EndPointRef | DecisionPoint)
         }?
     }
     
@@ -316,8 +314,8 @@ DecisionPoint =
             #TextTemplateContent |
             ReportText
             #Text
-            )?
-            #Branch?
+            )?,
+            Branch?
         }+  
         
 # Begin ENDPOINTS Section
@@ -352,7 +350,7 @@ EndPoints =
  ReportSection = element ReportSection { sectionIdAttr, Branch }
  
  ReportText = element ReportText {
-     attribute Type { "PlainText" | "InsertPartialTemplate" |  "InsertDataElementValue" | "Newline" | "Tab" },
+     attribute Type { "PlainText" | "InsertPartialTemplate" |  "InsertDataElementValue" | "Newline" | "Tab" | "Space"},
      attribute Value { text }?,
      text
  }+
