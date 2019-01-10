@@ -8,9 +8,9 @@
 		<ModuleVersion>2.0</ModuleVersion>
 		<CreatedDate>2018-12-31</CreatedDate>
 		<LastModifiedDate>2018-11-26</LastModifiedDate>
-		<ApprovedBy>Sujth</ApprovedBy>
-		<ReviewedBy>Tony Jepson</ReviewedBy>
-		<DevelopedBy>Deepak Kumar</DevelopedBy>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
 <!--		<RadElementSetID>5689</RadElementSetID>-->
 		<Info>
 			<Description>This module can be used for characterizing liver lesion for
@@ -36,6 +36,18 @@
 					<Location>lr4_5.PNG</Location>
 					<Label>TIV</Label>
 				</Diagram>
+				<Diagram DisplaySequence="5">
+					<Location>Figure 1b - corrected.PNG</Location>
+					<Label>threshold</Label>
+				</Diagram>
+				<Diagram DisplaySequence="5">
+					<Location>Diagonal cell.PNG</Location>
+					<Label>threshold</Label>
+				</Diagram>
+				<Diagram DisplaySequence="5">
+					<Location>Split cell.PNG</Location>
+					<Label>threshold</Label>
+				</Diagram>
 			</Diagrams>
 			<Contact>
 				<Name>ACR Assist</Name>
@@ -55,7 +67,7 @@
 		<ApplicableExams>
 			<ApplicableExamCategory Axis="Modality">MRI </ApplicableExamCategory>
 			<ApplicableExamCategory Axis="Anatomy"> LIver </ApplicableExamCategory>
-
+			
 		</ApplicableExams>
 		<ApplicableSexes Value="Both"/>
 		<ApplicableAgeGroups>
@@ -79,6 +91,7 @@
 			<VoiceCommandPhrase>American College of Radiology</VoiceCommandPhrase>
 		</VoiceActivation>
 	</Metadata>
+	
 	
 	<DataElements>
 
@@ -176,8 +189,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="observationinPatient" IsRequired="true" DisplaySequence="6">
-	
+		<ChoiceDataElement Id="observationinPatient" IsRequired="true" DisplaySequence="6">	
 			<Label>Observation in high-risk patient</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -523,8 +535,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 	
-		<ChoiceDataElement Id="arterialEnhancement" IsRequired="true" DisplaySequence="15">
-	
+		<ChoiceDataElement Id="arterialEnhancement" IsRequired="true" DisplaySequence="15">	
 			<Label>Nonrim arterial phase hyperenhancement</Label>
 			<Hint>Enhancement in the arterial phase that is less than that of liver.</Hint>
 			<Diagrams>
@@ -564,8 +575,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="16">
-		
+		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="16">		
 			<Label>Observation size (mm)</Label>
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
@@ -583,8 +593,7 @@
 			</ConditionalProperties>
 		</NumericDataElement>
 
-		<ChoiceDataElement Id="washout" IsRequired="true" DisplaySequence="17">
-		
+		<ChoiceDataElement Id="washout" IsRequired="true" DisplaySequence="17">		
 			<Label>Nonperipheral "washout"</Label>
 			<Hint>Visually assessed temporal reduction in enhancement relative to liver from an
 				earlier to a later phase resulting in portal venous phase hypoenhancement or delayed
@@ -620,8 +629,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="capsule" IsRequired="true" DisplaySequence="18">
-		
+		<ChoiceDataElement Id="capsule" IsRequired="true" DisplaySequence="18">		
 			<Label>Enhancing "capsule"</Label>
 			<Hint>Peripheral rim of smooth hyper-enhancement in the portal venous phase or delayed
 				phase that unequivocally is thicker or more conspicuous than the rims surrounding
@@ -662,7 +670,6 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="thresholdgrowth" IsRequired="true" DisplaySequence="19">
-
 			<Label>Threshold growth</Label>
 			<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND
 				depending on the time interval between examinations, by the following amounts: less
@@ -932,8 +939,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</ChoiceDataElement>	
-		
-		
+				
 		<ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="25">
 			<Label>Is there lesional enhancement?</Label>
 			<ChoiceInfo>
@@ -2339,7 +2345,7 @@
 																			<Branch>
 																				<Label>Yes</Label>
 																				<EqualCondition DataElementId="HistoryofVisibilityonUS" ComparisonValue="yes"/>
-																				<EndPointRef EndPointId="LR5us"></EndPointRef> 
+																				<EndPointRef EndPointId="LR5"></EndPointRef> 
 																			</Branch>
 																			<Branch>
 																				<Label>No</Label>
@@ -2359,7 +2365,7 @@
 																			<Branch>
 																				<Label>Yes</Label>
 																				<EqualCondition DataElementId="sixeincreatein6months" ComparisonValue="yes"/>
-																				<EndPointRef EndPointId="LR5g"></EndPointRef>
+																				<EndPointRef EndPointId="LR5"></EndPointRef>
 																			</Branch>
 																			<Branch>
 																				<Label>No</Label>
@@ -3235,7 +3241,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-NC (Noncategorizable) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-NC (noncategorizable) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>	
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3282,7 +3288,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-1] (Definitely benign) in segment [</ReportText>
+					<ReportText Type="PlainText">[LR-1] (definitely benign) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3329,7 +3335,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-2] (Probably benign) in segment [</ReportText>
+					<ReportText Type="PlainText">[LR-2] (probably benign) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3371,7 +3377,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-3] (Intermediate probability of malignancy) in segment [</ReportText>
+					<ReportText Type="PlainText">[LR-3] (intermediate probability of malignancy) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3412,7 +3418,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-4] (Probably HCC) in segment [</ReportText>
+					<ReportText Type="PlainText">[LR-4] (probably HCC) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3453,7 +3459,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-5] (Definitely HCC) in segment [</ReportText>
+					<ReportText Type="PlainText">[LR-5] (definitely HCC) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3491,7 +3497,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-TIV] (Etiology uncertain) in segment [</ReportText>
+					<ReportText Type="PlainText">[LR-TIV] (etiology uncertain) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3529,7 +3535,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-TIV] (Probably due to HCC) in segment [</ReportText>
+					<ReportText Type="PlainText">[LR-TIV] (probably due to HCC) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3567,7 +3573,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText" >[LR-TIV] (May be due to non-HCC malignancy) in segment [</ReportText>
+					<ReportText Type="PlainText" >[LR-TIV] (may be due to non-HCC malignancy) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText" >]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3605,7 +3611,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText" >[LR-TIV] (Definitely due to HCC) in segment [</ReportText>
+					<ReportText Type="PlainText" >[LR-TIV] (definitely due to HCC) in segment [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
@@ -3692,7 +3698,7 @@
 		</EndPoint>
 		 -->
 		 
-		<EndPoint Id="LR5g">
+	<!--	<EndPoint Id="LR5g">
 			<Label>LR-5g</Label>
 			<ReportSections>
 			<ReportSection SectionId="findings">
@@ -3714,7 +3720,7 @@
 				</Branch>
 			</ReportSection>
 		</ReportSections>
-      </EndPoint>
+      </EndPoint>-->
 		
 		<!-- 
 		<EndPoint Id="LR5us">
@@ -3735,7 +3741,7 @@
 		</EndPoint>
 		 -->
 		 
-		<EndPoint Id="LR5us">
+		<!--<EndPoint Id="LR5us">
 			<Label>LR-5us</Label>
 			<ReportSections>
 			<ReportSection SectionId="findings">
@@ -3757,7 +3763,7 @@
 				</Branch>
 			</ReportSection>
 		</ReportSections>
-      </EndPoint>
+      </EndPoint>-->
 
 		<!-- Untreated Endpoints end -->
 		
