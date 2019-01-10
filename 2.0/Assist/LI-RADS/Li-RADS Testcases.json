@@ -8,6 +8,8 @@
   "testCases": [
     {
       "testCaseId": "li_rads_1",
+	  "endpointId": "LR-NC",
+      "endpointlabel": "LR-NC,Noncategorizable",
       "inputs": [
 	   
         {
@@ -41,6 +43,8 @@
     },
     {
       "testCaseId": "li_rads_2",
+	  "endpointId": "LR-1",
+      "endpointlabel": "LR-1, Definitely benign",
       "inputs": [
 	   
         {
@@ -77,6 +81,8 @@
     },
 	{
       "testCaseId": "li_rads_3",
+	  "endpointId": "LR-2",
+      "endpointlabel": "LR-2, Probably benign",
       "inputs": [
 	   
         {
@@ -113,6 +119,8 @@
     },
 	{
       "testCaseId": "li_rads_4",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	   
         {
@@ -146,7 +154,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -169,6 +181,8 @@
     },
 	{
       "testCaseId": "li_rads_5",
+	   "endpointId": "LR-3",
+       "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -202,7 +216,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -225,6 +243,8 @@
     },
 	{
       "testCaseId": "li_rads_6",
+	   "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -258,7 +278,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -281,6 +305,8 @@
     },
 	{
       "testCaseId": "li_rads_7",
+	   "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -314,7 +340,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -337,6 +367,8 @@
     },
 	{
       "testCaseId": "li_rads_8",
+	   "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -370,7 +402,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -393,6 +429,8 @@
     },
 	{
       "testCaseId": "li_rads_9",
+	   "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -426,7 +464,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -449,6 +491,8 @@
     },
 	{
       "testCaseId": "li_rads_10",
+	   "endpointId": "LR-3",
+       "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -482,7 +526,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -505,6 +553,8 @@
     },
 	{
       "testCaseId": "li_rads_11",
+	   "endpointId": "LR-3",
+       "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -538,7 +588,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -561,6 +615,8 @@
     },
 	{
       "testCaseId": "li_rads_12",
+	   "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -594,7 +650,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+                  "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -617,6 +677,8 @@
     },
 	{
       "testCaseId": "li_rads_13",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -650,7 +712,12 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
+          
         },
 		{
           "dataElementId": "washout",
@@ -673,6 +740,8 @@
     },
 	{
       "testCaseId": "li_rads_14",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -706,7 +775,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -729,6 +802,8 @@
     },
 	{
       "testCaseId": "li_rads_15",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -762,7 +837,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "19"
+          "dataElementValue": "19",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -785,6 +864,8 @@
     },
 	{
       "testCaseId": "li_rads_16",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -818,7 +899,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -841,6 +926,8 @@
     },
 	{
       "testCaseId": "li_rads_17",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -874,7 +961,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -897,6 +988,8 @@
     },
 	{
       "testCaseId": "li_rads_18",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -930,7 +1023,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -953,6 +1050,8 @@
     },
 	{
       "testCaseId": "li_rads_19",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -986,7 +1085,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1009,6 +1112,8 @@
     },
 	{
       "testCaseId": "li_rads_20",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1042,7 +1147,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1065,6 +1174,8 @@
     },
 	{
       "testCaseId": "li_rads_21",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1098,7 +1209,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1121,6 +1236,8 @@
     },
 	{
       "testCaseId": "li_rads_22",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1154,7 +1271,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1177,6 +1298,8 @@
     },
 	{
       "testCaseId": "li_rads_23",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1210,7 +1333,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1233,6 +1360,8 @@
     },
 	{
       "testCaseId": "li_rads_24",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1266,7 +1395,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1289,6 +1422,8 @@
     },
 	{
       "testCaseId": "li_rads_25",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1322,7 +1457,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1345,6 +1484,8 @@
     },
 	{
       "testCaseId": "li_rads_26",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1378,7 +1519,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1401,6 +1546,8 @@
     },
 	{
       "testCaseId": "li_rads_27",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1434,7 +1581,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1457,6 +1608,8 @@
     },
 	{
       "testCaseId": "li_rads_28",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1490,7 +1643,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1513,6 +1670,8 @@
     },
 	{
       "testCaseId": "li_rads_29",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1546,7 +1705,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1569,6 +1732,8 @@
     },
 	{
       "testCaseId": "li_rads_30",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1602,7 +1767,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1625,6 +1794,8 @@
     },
 	{
       "testCaseId": "li_rads_31",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1658,7 +1829,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1681,6 +1856,8 @@
     },
 	{
       "testCaseId": "li_rads_32",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1714,7 +1891,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1737,6 +1918,8 @@
     },
 	{
       "testCaseId": "li_rads_33",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1770,7 +1953,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1793,6 +1980,8 @@
     },
 	{
       "testCaseId": "li_rads_34",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1826,7 +2015,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1849,6 +2042,8 @@
     },
 	{
       "testCaseId": "li_rads_35",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1882,7 +2077,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1905,6 +2104,8 @@
     },
 	{
       "testCaseId": "li_rads_36",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1938,7 +2139,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -1961,6 +2166,8 @@
     },
 	{
       "testCaseId": "li_rads_37",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -1994,7 +2201,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2021,6 +2232,8 @@
     },
 	{
       "testCaseId": "li_rads_38",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -2054,7 +2267,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2077,6 +2294,8 @@
     },
 	{
       "testCaseId": "li_rads_39",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -2110,7 +2329,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2137,6 +2360,8 @@
     },
 	{
       "testCaseId": "li_rads_40",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -2170,7 +2395,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2193,6 +2422,8 @@
     },
 	{
       "testCaseId": "li_rads_41",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 	  
         {
@@ -2226,7 +2457,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2249,6 +2484,8 @@
     },
 	{
       "testCaseId": "li_rads_42",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2282,7 +2519,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2305,6 +2546,8 @@
     },
 	{
       "testCaseId": "li_rads_43",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2338,7 +2581,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2361,6 +2608,8 @@
     },
 	{
       "testCaseId": "li_rads_44",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2394,7 +2643,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2417,6 +2670,8 @@
     },
 	{
       "testCaseId": "li_rads_45",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2450,7 +2705,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2473,6 +2732,8 @@
     },
 	{
       "testCaseId": "li_rads_46",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2506,7 +2767,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2529,6 +2794,8 @@
     },
 	{
       "testCaseId": "li_rads_47",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2562,7 +2829,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2585,6 +2856,8 @@
     },
 	{
       "testCaseId": "li_rads_48",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2618,7 +2891,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2641,6 +2918,8 @@
     },
 	{
       "testCaseId": "li_rads_49",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2674,7 +2953,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2697,6 +2980,8 @@
     },
 	{
       "testCaseId": "li_rads_50",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2730,7 +3015,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2753,6 +3042,8 @@
     },
 	{
       "testCaseId": "li_rads_51",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2786,7 +3077,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2809,6 +3104,8 @@
     },
 	{
       "testCaseId": "li_rads_52",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2842,7 +3139,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2865,6 +3166,8 @@
     },
 	{
       "testCaseId": "li_rads_53",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2898,7 +3201,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2921,6 +3228,8 @@
     },
 	{
       "testCaseId": "li_rads_54",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -2954,7 +3263,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -2977,6 +3290,8 @@
     },
 	{
       "testCaseId": "li_rads_55",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -3010,7 +3325,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -3033,6 +3352,8 @@
     },
 	{
       "testCaseId": "li_rads_56",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -3066,7 +3387,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -3089,6 +3414,8 @@
     },
 	{
       "testCaseId": "li_rads_57",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -3122,7 +3449,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -3145,6 +3476,8 @@
     },
 	{
       "testCaseId": "li_rads_58",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -3178,7 +3511,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -3201,6 +3538,8 @@
     },
 	{
       "testCaseId": "li_rads_59",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 	  
         {
@@ -3234,7 +3573,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -3257,6 +3600,8 @@
     },
 	{
       "testCaseId": "li_rads_60",
+	  "endpointId": "LR-TIV",
+      "endpointlabel": "LR-TIV, Etiology uncertain",
       "inputs": [
 	  
         {
@@ -3292,6 +3637,8 @@
     },
 	{
       "testCaseId": "li_rads_61",
+	  "endpointId": "LR-TIV",
+      "endpointlabel": "LR-TIV, Etiology uncertain",
       "inputs": [
 	  
         {
@@ -3342,6 +3689,8 @@
     },
 	{
       "testCaseId": "li_rads_62",
+	  "endpointId": "LR-TIV",
+      "endpointlabel": "LR-TIV, Etiology uncertain",
       "inputs": [
 	  
         {
@@ -3381,6 +3730,8 @@
     },
 	{
       "testCaseId": "li_rads_63",
+	  "endpointId": "LR-TIV",
+      "endpointlabel": "LR-TIV, Etiology uncertain",
       "inputs": [
 	  
         {
@@ -3427,6 +3778,8 @@
     },
 	{
       "testCaseId": "li_rads_64",
+	  "endpointId": "LR-TIV",
+      "endpointlabel": "LR-TIV, Etiology uncertain",
       "inputs": [
 
         {
@@ -3477,6 +3830,8 @@
     },
 	{
       "testCaseId": "li_rads_65",
+	  "endpointId": "LR-TIV",
+      "endpointlabel": "LR-TIV, Etiology uncertain",
       "inputs": [
 
         {
@@ -3521,6 +3876,8 @@
     },
 	{
       "testCaseId": "li_rads_66",
+	  "endpointId": "LR-M",
+      "endpointlabel": "LR-M, Probably or definitely malignant but not HCC specific",
       "inputs": [
 
         {
@@ -3564,6 +3921,8 @@
     },
 	{
       "testCaseId": "li_rads_67",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -3597,7 +3956,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -3624,6 +3987,8 @@
     },
 	{
       "testCaseId": "li_rads_68",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -3657,7 +4022,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "10"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
         },
 		{
           "dataElementId": "washout",
@@ -3684,6 +4053,8 @@
     },
 	{
       "testCaseId": "li_rads_69",
+	  "endpointId": "LR-TR Nonevaluable",
+      "endpointlabel": "LR-TR Nonevaluable",
       "inputs": [
 	    
         {
@@ -3728,6 +4099,8 @@
     },
 	{
       "testCaseId": "li_rads_70",
+	  "endpointId": "LR-TR Nonevaluable",
+      "endpointlabel": "LR-TR Nonevaluable",
       "inputs": [
 	    
         {
@@ -3784,6 +4157,8 @@
     },
 	{
       "testCaseId": "li_rads_71",
+	  "endpointId": "LR-TR Nonviable",
+      "endpointlabel": "LR-TR Nonviable",
       "inputs": [
 	    
         {
@@ -3833,6 +4208,8 @@
     },
 	{
       "testCaseId": "li_rads_72",
+	  "endpointId": "LR-TR Equivocal",
+      "endpointlabel": "LR-TR Equivocal",
       "inputs": [
 	    
         {
@@ -3893,6 +4270,8 @@
     },
 	{
       "testCaseId": "li_rads_73",
+	  "endpointId": "LR-TR Equivocal",
+      "endpointlabel": "LR-TR Equivocal",
       "inputs": [
 	    
         {
@@ -3945,6 +4324,8 @@
     },
 	{
       "testCaseId": "li_rads_74",
+	  "endpointId": "LR-TR Equivocal",
+      "endpointlabel": "LR-TR Equivocal",
       "inputs": [
 	    
         {
@@ -4005,6 +4386,8 @@
     },
 	{
       "testCaseId": "li_rads_75",
+	  "endpointId": "LR-TR Viable",
+      "endpointlabel": "LR-TR Viable",
       "inputs": [
 	    
         {
@@ -4069,6 +4452,8 @@
     },
 	{
       "testCaseId": "li_rads_76",
+	  "endpointId": "LR-TR Viable",
+      "endpointlabel": "LR-TR Viable",
       "inputs": [
 	    
         {
@@ -4133,6 +4518,8 @@
     },
 	{
       "testCaseId": "li_rads_77",
+	  "endpointId": "LR-TR Viable",
+      "endpointlabel": "LR-TR Viable",
       "inputs": [
 	    
         {
@@ -4197,6 +4584,8 @@
     },
 	{
       "testCaseId": "li_rads_78",
+	  "endpointId": "LR-TR Viable",
+      "endpointlabel": "LR-TR Viable",
       "inputs": [
 	    
         {
@@ -4261,6 +4650,8 @@
     },
 	{
       "testCaseId": "li_rads_79",
+	  "endpointId": "LR-TR Viable",
+      "endpointlabel": "LR-TR Viable",
       "inputs": [
 	    
         {
@@ -4325,6 +4716,8 @@
     },
 	{
       "testCaseId": "li_rads_80",
+	  "endpointId": "LR-TR Viable",
+      "endpointlabel": "LR-TR Viable",
       "inputs": [
 	    
         {
@@ -4389,6 +4782,8 @@
     },
 	{
       "testCaseId": "li_rads_81",
+	  "endpointId": "LR-TR Viable",
+      "endpointlabel": "LR-TR Viable",
       "inputs": [
 	    
         {
@@ -4453,6 +4848,8 @@
     },
 	{
       "testCaseId": "li_rads_82",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	    
         {
@@ -4509,6 +4906,8 @@
     },
 	{
       "testCaseId": "li_rads_83",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -4565,6 +4964,8 @@
     },
 	{
       "testCaseId": "li_rads_84",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -4621,6 +5022,8 @@
     },
 	{
       "testCaseId": "li_rads_85",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -4677,6 +5080,8 @@
     },
 	{
       "testCaseId": "li_rads_86",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -4733,6 +5138,8 @@
     },
 	{
       "testCaseId": "li_rads_87",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -4789,6 +5196,8 @@
     },
 	{
       "testCaseId": "li_rads_88",
+	  "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -4845,6 +5254,8 @@
     },
 	{
       "testCaseId": "li_rads_89",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -4901,6 +5312,8 @@
     },
 	{
       "testCaseId": "li_rads_90",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -4957,6 +5370,8 @@
     },
 	{
       "testCaseId": "li_rads_91",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5013,6 +5428,8 @@
     },
 	{
       "testCaseId": "li_rads_92",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5069,6 +5486,8 @@
     },
 	{
       "testCaseId": "li_rads_93",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5125,6 +5544,8 @@
     },
 	{
       "testCaseId": "li_rads_94",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5181,6 +5602,8 @@
     },
 	{
       "testCaseId": "li_rads_95",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5237,6 +5660,8 @@
     },
 	{
       "testCaseId": "li_rads_96",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5293,6 +5718,8 @@
     },
 	{
       "testCaseId": "li_rads_97",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5349,6 +5776,8 @@
     },
 	{
       "testCaseId": "li_rads_98",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5405,6 +5834,8 @@
     },
 	{
       "testCaseId": "li_rads_99",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5465,6 +5896,8 @@
     },
 	{
       "testCaseId": "li_rads_100",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5521,6 +5954,8 @@
     },
 	{
       "testCaseId": "li_rads_101",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5577,6 +6012,8 @@
     },
 	{
       "testCaseId": "li_rads_102",
+	  "endpointId": "LR-4",
+      "endpointlabel": "LR-4, Probably HCC",
       "inputs": [
 
         {
@@ -5633,6 +6070,8 @@
     },
 	{
       "testCaseId": "li_rads_103",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -5689,6 +6128,8 @@
     },
 	{
       "testCaseId": "li_rads_104",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -5745,6 +6186,8 @@
     },
 	{
       "testCaseId": "li_rads_105",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -5801,6 +6244,8 @@
     },
 	{
       "testCaseId": "li_rads_106",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -5857,6 +6302,8 @@
     },
 	{
       "testCaseId": "li_rads_107",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -5913,6 +6360,8 @@
     },
 	{
       "testCaseId": "li_rads_108",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -5969,6 +6418,8 @@
     },
 	{
       "testCaseId": "li_rads_109",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6025,6 +6476,8 @@
     },
 	{
       "testCaseId": "li_rads_110",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6085,6 +6538,8 @@
     },
 	{
       "testCaseId": "li_rads_111",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6153,6 +6608,8 @@
     },
 	{
       "testCaseId": "li_rads_112",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6221,6 +6678,8 @@
     },
 	{
       "testCaseId": "li_rads_113",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6289,6 +6748,8 @@
     },
 	{
       "testCaseId": "li_rads_114",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6357,6 +6818,8 @@
     },
 	{
       "testCaseId": "li_rads_115",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6425,6 +6888,8 @@
     },
 	{
       "testCaseId": "li_rads_116",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6493,6 +6958,8 @@
     },
 	{
       "testCaseId": "li_rads_117",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -6561,6639 +7028,8 @@
     },
 	{
       "testCaseId": "li_rads_118",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	
-	
-  
-
-{
-  "id": "Unique Id of Test case document",
-  "description": "Unique Id of Test case document",
-  "moduleId": "ACR LI-RADS",
-  "moduleName": "ACR LI - RADS",
-  "schemaVersion": "1.0",
-  "moduleVersion": "1.0",
-  "testCases": [
-    {
-      "testCaseId": "li_rads_1",
-      "inputs": [
-	   
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "notcategorized"
-        }
-		
-      ]
-
-    },
-    {
-      "testCaseId": "li_rads_2",
-      "inputs": [
-	   
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "definitelyBenign"
-        },
-		{
-          "dataElementId": "LR1Features",
-          "dataElementValue": "Cyst"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_3",
-      "inputs": [
-	   
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "probablyBenign"
-        },
-		{
-          "dataElementId": "LR2features",
-          "dataElementValue": "Cyst"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_4",
-      "inputs": [
-	   
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_5",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_6",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_7",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_8",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_9",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_10",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_11",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_12",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_13",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_14",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_15",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_16",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_17",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_18",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_19",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_20",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_21",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_22",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_23",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_24",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_25",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_26",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_27",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_28",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_29",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_30",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_31",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_32",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_33",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_34",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_35",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_36",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_37",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_38",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_39",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sixeincreatein6months",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_40",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_41",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_42",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_43",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_44",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_45",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_46",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_47",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_48",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_49",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_50",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_51",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_52",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_53",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_54",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_55",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_56",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_57",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_58",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_59",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_60",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "tumorInVein"
-        },
-		{
-          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
-          "dataElementValue": "no"
-        }
-      ]
-    },
-	{
-      "testCaseId": "li_rads_61",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "tumorInVein"
-        },
-		{
-          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "Isparenchymalmassinfiltrative",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "Isparenchymalmasstargetoid",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "IsparenchymalmassLR4",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "IsparenchymalmassLR5",
-          "dataElementValue": "no"
-        }
-      ]
-    },
-	{
-      "testCaseId": "li_rads_62",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "tumorInVein"
-        },
-		{
-          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "Isparenchymalmassinfiltrative",
-          "dataElementValue": "yes"
-        }
-      ]
-    },
-	{
-      "testCaseId": "li_rads_63",
-      "inputs": [
-	  
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "tumorInVein"
-        },
-		{
-          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "Isparenchymalmassinfiltrative",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "Isparenchymalmasstargetoid",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "IsparenchymalmassLR4",
-          "dataElementValue": "yes"
-        }
-      ]
-    },
-	{
-      "testCaseId": "li_rads_64",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "tumorInVein"
-        },
-		{
-          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "Isparenchymalmassinfiltrative",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "Isparenchymalmasstargetoid",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "IsparenchymalmassLR4",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "IsparenchymalmassLR5",
-          "dataElementValue": "yes"
-        }
-      ]
-    },
-	{
-      "testCaseId": "li_rads_65",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "tumorInVein"
-        },
-		{
-          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "Isparenchymalmassinfiltrative",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "Isparenchymalmasstargetoid",
-          "dataElementValue": "yes"
-        }
-		      
-      ]
-    },
-	{
-      "testCaseId": "li_rads_66",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "malignantbutnothcc"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "5"
-        },
-		{
-          "dataElementId": "lrmtargetoidmass",
-          "dataElementValue": "Rim_APHE"
-        },
-		{
-          "dataElementId": "lrmnontargetoidmass",
-          "dataElementValue": "Infiltrative_appearance"
-        }
-      ]
-    },
-	{
-      "testCaseId": "li_rads_67",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sixeincreatein6months",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_68",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_69",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "LRTRNonevaluable"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_70",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "yes"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_71",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "no"
-        }
-		
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_72",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "no"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_73",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "equivocal"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_74",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "Path-HCC"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "11"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_75",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "patternofenhancement",
-          "dataElementValue": "aphe"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_76",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "patternofenhancement",
-          "dataElementValue": "washout"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_77",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "patternofenhancement",
-          "dataElementValue": "similar_to_pretreatment"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_78",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "patternofenhancement",
-          "dataElementValue": ["aphe", "washout"]
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_79",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "patternofenhancement",
-          "dataElementValue": ["washout","similar_to_pretreatment"]
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_80",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "patternofenhancement",
-          "dataElementValue": ["aphe","similar_to_pretreatment"]
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_81",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "treated"
-        },
-		{
-          "dataElementId": "TreatmentMethod",
-          "dataElementValue": "RF_ablation"
-        },
-		{
-          "dataElementId": "pretreatmentCategory",
-          "dataElementValue": "LR-1"
-        },
-		{
-          "dataElementId": "pretreatmentsize",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "treatedobservation",
-          "dataElementValue": "otherwise"
-        },
-		{
-          "dataElementId": "lesionalenhancement",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "sizeoftheenhancementComponents",
-          "dataElementValue": "4"
-        },
-		{
-          "dataElementId": "enhancementisexpectedpattern",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "irregularattheperiphery",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "patternofenhancement",
-          "dataElementValue": ["aphe","washout","similar_to_pretreatment"]
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_82",
-      "inputs": [
-	    
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_83",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_84",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_85",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_86",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_87",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_88",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_89",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "19"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_90",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_91",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_92",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_93",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_94",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_95",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "noaphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_96",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_97",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_98",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "9"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_99",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_100",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_101",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_102",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_103",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_104",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_105",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_106",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_107",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_108",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "20"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_109",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "21"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_110",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "No"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_111",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Upgradetohcc2"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_112",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": ["US_visibility_as_discrete_nodule","Subthreshold_growth","Corona_enhancement"]
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": ["Size_stability_≥_2_years","Size_reduction"]
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Upgradetohcc3"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_113",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Upgradetohcc4"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_114",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc4"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_115",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc3"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_116",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc2"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_117",
-      "inputs": [
-
-        {
-          "dataElementId": "observationnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "seriesnumber",
-          "dataElementValue": "1"
-        },
-        {
-          "dataElementId": "imagenumber",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "segmentlocation",
-          "dataElementValue": "I"
-        },
-		
-		{
-          "dataElementId": "observationinPatient",
-          "dataElementValue": "untreated"
-        },
-		{
-          "dataElementId": "untreatedobservation",
-          "dataElementValue": "nonofabove"
-        },
-		{
-          "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
-        },
-		{
-          "dataElementId": "diameter",
-          "dataElementValue": "10"
-        },
-		{
-          "dataElementId": "washout",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "capsule",
-          "dataElementValue": "no"
-        },
-		{
-          "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
-        },
-		{
-          "dataElementId": "HistoryofVisibilityonUS",
-          "dataElementValue": "yes"
-        },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
-		{
-          "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc1"
-        }
-      ]
-
-    },
-	{
-      "testCaseId": "li_rads_118",
+	  "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -13260,9 +7096,9 @@
       ]
 
     }
+
+  
+  
   ]
 }
 	
-]
-
-}
