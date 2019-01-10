@@ -223,38 +223,64 @@
 	<EndPoints>
 		
 		<EndPoint Id="NoFurtherEvaluation">
-		<Label>NoFurtherEvaluation</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">No Further Evaluation</ReportText>
-		  </ReportTexts>
+		 <Label>NoFurtherEvaluation</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No Further Evaluation</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 		<EndPoint Id="referral">
 		<Label>Referral</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">Referral for endocrine and/or neurosurgical management</ReportText>
-		  </ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Referral for endocrine and/or neurosurgical management</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 		<EndPoint Id="Nofurtherimgaing">
 		<Label>Nofurtherimgaing</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">No further imaging &amp;nbsp; Correlate with history of pituitary hypersecretion.</ReportText>
-		  </ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No further imaging</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Correlate with history of pituitary hypersecretion.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 	   <EndPoint Id="Nofurtherimgaingabove5">
 		<Label>Nofurtherimgaingabove5</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">No further imaging &amp;nbsp; Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
-		  </ReportTexts>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No further imaging</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 	   <EndPoint Id="recommend">
 		<Label>recommend</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">Recommend endocrine function tests &amp;nbsp; 6-12 month follow-up pituitary MRI.</ReportText>
-		  </ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Recommend endocrine function tests</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">6-12 month follow-up pituitary MRI.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 	</EndPoints>

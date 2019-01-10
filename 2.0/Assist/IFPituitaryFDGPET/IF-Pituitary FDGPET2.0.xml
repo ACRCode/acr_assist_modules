@@ -233,19 +233,13 @@
 					 <Label>Simple nomass</Label>
 					   <Branch>
 						<Label>Simple no mass</Label>
-						<OrCondition>
 							<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
-							<EqualCondition DataElementId="invasion" ComparisonValue="no"/>
-						</OrCondition>
 						<EndPointRef EndPointId="Nofurtherevaluation"></EndPointRef>
 						</Branch>
 
 						  <Branch>
 							<Label>Simple cyst yes mass</Label>
-							<OrCondition>
 								<EqualCondition DataElementId="masseffect" ComparisonValue="yes"/>
-								<EqualCondition DataElementId="invasion" ComparisonValue="yes"/>
-							</OrCondition>	
 								<EndPointRef EndPointId="referral"></EndPointRef>
 						  </Branch>
 					  </DecisionPoint>
@@ -260,20 +254,20 @@
 						   <Label>Mixed size</Label>
 							  <Branch>
 								<Label>Mixed yes mass</Label>
-								<NotRelevantDataElements>
+								<!--<NotRelevantDataElements>
 									  <DataElementRef DataElementId="masseffect"/>
 									  <DataElementRef DataElementId="invasion"/>
-								</NotRelevantDataElements>
+								</NotRelevantDataElements> -->
 									<EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm"/>
 									<EndPointRef EndPointId="Nofurtherimgaing"></EndPointRef>
 							  </Branch>
 							  
 							  <Branch>
 								<Label>Mixed no mass</Label>
-								<NotRelevantDataElements>
+								<!--<NotRelevantDataElements>
 									  <DataElementRef DataElementId="masseffect"/>
 									  <DataElementRef DataElementId="invasion"/>
-								</NotRelevantDataElements>
+								</NotRelevantDataElements> -->
 									<EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm"/>
 									<EndPointRef EndPointId="Nofurtherimgaingabove5"></EndPointRef>
 							  </Branch>
@@ -314,44 +308,74 @@
 		
 	   <EndPoint Id="Nofurtherevaluation">
 		<Label>Not Further evaluation</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">No Further Evaluation.</ReportText>
-		  </ReportTexts>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No Further Evaluation</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 		<EndPoint Id="general">
 		<Label>general</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">Characterize with pituitary MRI.</ReportText>
-		  </ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Characterize with pituitary MRI</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 		<EndPoint Id="referral">
 		<Label>Referral</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">Referral for endocrine and/or neurosurgical management.</ReportText>
-		  </ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Referral for endocrine and/or neurosurgical management</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 		<EndPoint Id="Nofurtherimgaing">
 		<Label>Nofurtherimgaing</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">No further imaging. Correlate with history of pituitary hypersecretion.</ReportText>
-		  </ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No further imaging</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Correlate with history of pituitary hypersecretion.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 	   <EndPoint Id="Nofurtherimgaingabove5">
 		<Label>Nofurtherimgaingabove5</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">No further imaging. Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
-		  </ReportTexts>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No further imaging</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 	   <EndPoint Id="recommend">
 		<Label>recommend</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">Recommend endocrine function tests. 6-12 month follow-up pituitary MRI.</ReportText>
-		  </ReportTexts>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Recommend endocrine function tests</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">6-12 month follow-up pituitary MRI.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
 		</EndPoint>
 		
 		
