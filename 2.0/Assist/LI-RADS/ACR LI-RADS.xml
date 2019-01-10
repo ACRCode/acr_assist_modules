@@ -2909,7 +2909,7 @@
 		<!-- treatedFindingsReporttext template modification start  -->
 		<TemplatePartial Id="treatedFindingsReporttext">
 			<Branch>
-				<ReportText Type="PlainText">Treated observation#: </ReportText>
+				<ReportText Type="PlainText">Observation#: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"/>
 				
@@ -3022,7 +3022,7 @@
 		<!-- treatedimpressiontext template modification start  -->	
 		<TemplatePartial Id="treatedimpressiontext">
 			<Branch>
-				<ReportText Type="PlainText">Treated observation#: </ReportText>
+				<ReportText Type="PlainText">Observation#: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
