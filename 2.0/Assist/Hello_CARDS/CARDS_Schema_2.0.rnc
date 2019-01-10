@@ -29,7 +29,6 @@ DataElementTypes =
     | GlobalValue
     | ComputedDataElement
     | DateTimeDataElement
-   #| DurationDataElement
     | TimeSpanDataElement
      
 GlobalValue =
@@ -53,6 +52,9 @@ DisplaySequence =
     
 baseElementContents =
     attribute Id { xsd:ID },
+    attribute IsRepeatable { "true" | "false" }?,
+    attribute RepeatGroup { text }?,
+    attribute RepeatCount { text }?,
    # attribute CdeId { xsd:token }?,
     attribute IsRequired { "true" | "false" }?,
     DisplaySequence?,
@@ -310,7 +312,9 @@ DecisionPoint =
             ConditionType?,
             (EndPointRef | DecisionPoint | 
             #TextTemplateContent |
-            Text)?,
+            ReportText
+            #Text
+            )?,
             Branch?
         }+  
         
@@ -318,9 +322,12 @@ DecisionPoint =
 EndPointRef =
     element EndPointRef {
         attribute EndPointId { xsd:IDREF },
+        attribute IsRepeatable { "true" | "false" }?,
+        attribute RepeatGroup { text }?,
+        attribute RepeatCount { text }?,
         element Label { text }?,
-        element Description { text }?
-    }
+        element Description { text }?       
+        }
  
 EndPoints = 
     element EndPoints {
@@ -332,14 +339,24 @@ EndPoints =
             attribute Id { xsd:ID },
             element Label { text }?,              
             Diagnosis?,
-            ReportTexts,
+            #ReportTexts,
+            ReportSections,
             ActionableFinding?,
             ImagingFollowup?
          }+
     }
+    
+ ReportSections = element ReportSections { ReportSection+ }
+ ReportSection = element ReportSection { sectionIdAttr, Branch }
+ 
+ ReportText = element ReportText {
+     attribute Type { "PlainText" | "InsertPartialTemplate" |  "InsertDataElementValue" | "Newline" | "Tab" | "Space"},
+     attribute Value { text }?,
+     text
+ }+
 
-ReportTexts = element ReportTexts { ReportText+ }
-ReportText = element ReportText { sectionIdAttr, Branch }+
+#ReportTexts = element ReportTexts { ReportText+ }
+#ReportText = element ReportText { sectionIdAttr, Branch }+
 
 sectionIdAttr =
     attribute SectionId {
@@ -377,7 +394,7 @@ Exam =
         text
     } 
 
-Text = element Text { TextTemplateContent }
+#Text = element Texts { element Text {TextTemplateContent}+ }
 
 TextTemplateContent = (text | templateTags)*
 
@@ -387,6 +404,7 @@ templateTags =
    InsertValue | InsertPartial | PlainText | NewLine
 
 PlainText = element PlainText{ text }
+
 InsertValue =
     element InsertValue {
         attribute DataElementId { xsd:IDREF },
