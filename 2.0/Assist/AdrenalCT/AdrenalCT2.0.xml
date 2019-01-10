@@ -306,7 +306,7 @@
                 <EndPointRef EndPointId="considerresection"></EndPointRef>
               </Branch>
               <Branch>
-			          <Label>Yes</Label>
+			    <Label>Yes</Label>
                 <EqualCondition DataElementId="cancerhx" ComparisonValue="Yes"/>
                 <EndPointRef EndPointId="considerBX"></EndPointRef>
               </Branch>
@@ -470,61 +470,86 @@
   <EndPoints>
     <EndPoint Id="benignadenoma">
 	<Label>Benign adenoma, no F/U</Label>
-      <ReportTexts>
-        <ReportText SectionId="findings">Benign adenoma, no F/U</ReportText>
-      </ReportTexts>
+	 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Benign adenoma, no F/U.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
     </EndPoint>
+	
     <EndPoint Id="considerresection">
 	<Label>Consider resection</Label>
-      <ReportTexts>
-        <ReportText SectionId="findings">
-          Consider resection
-        </ReportText>
-      </ReportTexts>
+	 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No Cancer Hx:</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Consider resection</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
     </EndPoint>
+	
     <EndPoint Id="considerBX">
 	     <Label>Consider Bx or PET-CT</Label>
-      <ReportTexts>
-        <ReportText SectionId="findings">
-          Consider Bx or PET-CT
-        </ReportText>
-      </ReportTexts>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Cancer Hx:</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Consider Bx or PET-CT</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
     </EndPoint>
     
     <EndPoint Id="benignnoFU">
 	   <Label>Benign, no F/U</Label>
-      <ReportTexts>
-        <ReportText SectionId="findings">
-          Benign, no F/U
-        </ReportText>
-      </ReportTexts>
+	   	 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Benign, no F/U</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
     </EndPoint>
 
     <EndPoint Id="consider12">
 	<Label>Consider 12 month F/U adrenal CT or resection</Label>
-      <ReportTexts>
-        <ReportText SectionId="findings">
-          Consider 12 months F/U adrenal CT or resection.
-        </ReportText>
-      </ReportTexts>
+	  <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No Cancer Hx:</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Consider 12 months F/U adrenal CT or resection</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
     </EndPoint>
+	
     <EndPoint Id="consider12probBenign">
 	 <Label>Probably benign Consider 12 month F/U adrenal CT</Label>
-      <ReportTexts>
-        <ReportText SectionId="findings">
-          Probably benign Consider 12 months F/U adrenal CT or resection.
-        </ReportText>
-      </ReportTexts>
+	 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Probably benign Consider 12 months F/U adrenal CT or resection.</ReportText>
+				</Branch>
+			</ReportSection>
+	 </ReportSections>
     </EndPoint>
 
 
     <EndPoint Id="ImagingFU">
 	<Label>Imaging F/U, Bx, PET-CT,or resection depending on clinical scenario</Label>
-      <ReportTexts>
-        <ReportText SectionId="findings">
-          Imaging F/U, Bx, PET-CT, or resection depending on clinical scenario.
-        </ReportText>
-      </ReportTexts>
+	   <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Imaging F/U, Bx, PET-CT, or resection depending on clinical scenario</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
     </EndPoint>
 
 
