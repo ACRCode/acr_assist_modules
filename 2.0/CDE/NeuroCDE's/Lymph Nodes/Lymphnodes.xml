@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Lymph Nodes</Label>
+		<ID>Lymph_Nodes</ID>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>2.0</ModuleVersion>
+		<CreatedDate>2018-12-31</CreatedDate>
+		<LastModifiedDate>2018-11-26</LastModifiedDate>
+			<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<RadElementSetID>5689</RadElementSetID>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Lymph Nodes</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+				<Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841"> CDE google sheet </Citation>
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Key Diagram</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" >
+					<Location>lymphnodessupportingdiagram.jpg</Location>
+					<Label>lymph nodes supporting diagram</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>Lymph Nodes</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+	
+	<DataElements>
+
+		<GlobalValue Id="conditionConst">10</GlobalValue>
+		<ChoiceDataElement Id="singlemultiple" DisplaySequence="1" IsRequired="true">
+			<CodableConcept Name="singlemultiple">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>	
+			<Label>Number of nodes</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>single</Value>
+					<Label>single</Label>
+				</Choice>
+				<Choice>
+					<Value>multiple</Value>
+					<Label>multiple</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="laterality" DisplaySequence="2" IsRequired="true">
+			<CodableConcept Name="laterality">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>	
+			<Label>Laterality</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>left</Value>
+					<Label>unilateral-left</Label>
+				</Choice>
+				<Choice>
+					<Value>right</Value>
+					<Label>unilateral-right</Label>
+				</Choice>
+				<Choice>
+					<Value>bilateral</Value>
+					<Label>bilateral</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<IntegerDataElement Id="sizeoflargestcluster" IsRequired="true" DisplaySequence="3">
+			<CodableConcept Name="sizeoflargestcluster">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>
+			<Label>size of largest cluster(in mm)</Label>
+			<Hint>Use longest dimension (improved clinical-radiologic correlation and adherence to staging systems)</Hint>
+			<Minimum>1</Minimum>
+		</IntegerDataElement>		
+	
+		<MultiChoiceDataElement Id="levelsinvolved" IsRequired="true" DisplaySequence="4">
+			<CodableConcept Name="levelsinvolved">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>
+			<Label>Which levels involved?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>1</Label>
+					
+				</Choice>
+				<Choice>
+					<Value>2a</Value>
+					<Label>2a</Label>
+				</Choice>
+				<Choice>
+					<Value>2b</Value>
+					<Label>2b</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3</Label>
+				</Choice>
+				<Choice>
+					<Value>4</Value>
+					<Label>4</Label>
+				</Choice>
+				<Choice>
+					<Value>5a</Value>
+					<Label>5a</Label>
+				</Choice>
+				<Choice>
+					<Value>5b</Value>
+					<Label>5b</Label>
+				</Choice>
+			</ChoiceInfo>
+		</MultiChoiceDataElement>
+		
+		<ChoiceDataElement Id="degreeofcertainty"  DisplaySequence="6">
+			<CodableConcept Name="degreeofcertainty">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>
+			<Label>ECS (degree of certainty)</Label>
+			<Hint>Read with high specificity -- only call "definite" if uneqivocal</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>definite</Value>
+					<Label>definite</Label>
+				</Choice>
+				<Choice>
+					<Value>possible</Value>
+					<Label>possible</Label>
+				</Choice>
+				<Choice>
+					<Value>absent</Value>
+					<Label>absent</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="enhancement_pattern"  DisplaySequence="7" IsRequired="false">
+			<CodableConcept Name="enhancement_pattern">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>
+			<Label>Pattern of enhancement</Label>
+			<Hint>threshold: 20% or more cystic by volume</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>cystic</Value>
+					<Label>cystic</Label>
+				</Choice>
+				<Choice>
+					<Value>solid</Value>
+					<Label>solid</Label>
+				</Choice>
+				<Choice>
+					<Value>necrotic</Value>
+					<Label>necrotic</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="drainagepattern" DisplaySequence="8" IsRequired="false">
+			<CodableConcept Name="drainagepattern">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>
+			<Label>Are these nodes in expected drainage pattern?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="invasion_of_critical_structures" DisplaySequence="9" IsRequired="true">
+			<CodableConcept Name="invasion_of_critical_structures">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>
+			<Label>Invasion of critical structures (carotid, prevertebral)</Label>
+			<Hint>rule of thumb: percentage of circumferential arterial contact = likelihood of invasion</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>probable</Value>
+					<Label>probable</Label>
+				</Choice>
+				<Choice>
+					<Value>possible</Value>
+					<Label>possible</Label>
+				</Choice>
+				<Choice>
+					<Value>negative</Value>
+					<Label>negative (or percentage chance)</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="degreeofcertaintyforinvolvement" DisplaySequence="10" IsRequired="true">
+			<CodableConcept Name="degreeofcertaintyforinvolvement">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="100"></Code>
+					<Display Value="100"></Display>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>    			
+			</CodableConcept>
+			<Label>Degree of certainty for involvement (NIRADS)</Label>
+			<Hint>1 = negative; 2 = low likelihood; 3 = high likelihood; 4 = definite disease </Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>1</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3</Label>
+				</Choice>
+				<Choice>
+					<Value>4</Value>
+					<Label>4</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>			
+				
+	</DataElements>
+
+	<Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>
+		
+	</Rules>
+
+	<EndPoints>
+	 	 <TemplatePartial Id ="ExamPartial">
+			EXAMINATION:  CT NECK WITH CONTRAST
+			EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT
+			INDICATION: neck swelling
+			COMPARISON: None available.
+	     </TemplatePartial>
+		<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+			<ReportTexts>
+				<ReportText SectionId="findings">	
+				    <!--<InsertPartial PartialId="ExamPartial">  </InsertPartial> -->
+					
+					&amp;nbsp;
+					CDE Report text
+					&amp;nbsp;
+					&amp;nbsp;
+					
+					<SectionIf DataElementId="singlemultiple">
+					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="single">A single pathologic lymph node is&amp;nbsp;</SectionIfValue>
+					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="multiple">Multiple pathologic lymph nodes are&amp;nbsp;</SectionIfValue>				
+					<SectionIf DataElementId="laterality">present in the
+					<SectionIfValue DataElementId="laterality" ComparisonValue="right">&amp;nbsp;right</SectionIfValue>
+					<SectionIfValue DataElementId="laterality" ComparisonValue="left">&amp;nbsp;left</SectionIfValue>
+					<SectionIfValue DataElementId="laterality" ComparisonValue="bilateral">&amp;nbsp;bilateral</SectionIfValue>
+					<SectionIf DataElementId="singlemultiple">&amp;nbsp;neck.</SectionIf>
+					</SectionIf></SectionIf>
+					
+					<SectionIf DataElementId="sizeoflargestcluster">&amp;nbsp;
+					The largest 
+					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="Single"><SectionIf DataElementId="sizeoflargestcluster">&amp;nbsp;node&amp;nbsp;</SectionIf></SectionIfValue>
+					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="Multiple">&amp;nbsp;nodal cluster&amp;nbsp;</SectionIfValue>
+						<SectionIf DataElementId="sizeoflargestcluster">measures&amp;nbsp; <InsertValue DataElementId="sizeoflargestcluster">&amp;nbsp;mm in long axis.</InsertValue></SectionIf>				
+					</SectionIf>
+					
+					<SectionIf DataElementId="levelsinvolved">&amp;nbsp; 
+					The involved surgical levels include:&amp;nbsp;<InsertValue DataElementId="levelsinvolved">.</InsertValue></SectionIf>
+					
+					<SectionIf DataElementId="degreeofcertainty">&amp;nbsp;
+					There is&amp;nbsp; 
+					<SectionIfValue DataElementId="degreeofcertainty" ComparisonValue="possible">no&amp;nbsp;</SectionIfValue>
+					<SectionIfValue DataElementId="degreeofcertainty" ComparisonValue="absent">no&amp;nbsp;</SectionIfValue>
+					<SectionIf DataElementId="degreeofcertainty">definite radiologic evidence of extracapsular spread.</SectionIf>
+					</SectionIf>
+
+					<SectionIf DataElementId="enhancement_pattern">&amp;nbsp;
+					There is&amp;nbsp; 
+					<SectionIfValueNot DataElementId="enhancement_pattern" ComparisonValue="necrotic">no&amp;nbsp;</SectionIfValueNot>  
+					evidence of central necrosis.
+					
+					<SectionIfValueNot DataElementId="enhancement_pattern" ComparisonValue="necrotic">&amp;nbsp;
+					The enhancement pattern is&amp;nbsp; 
+						<SectionIfValue DataElementId="enhancement_pattern" ComparisonValue="cystic">predominantly cystic.</SectionIfValue>
+						<SectionIfValue DataElementId="enhancement_pattern" ComparisonValue="solid">predominantly solid.</SectionIfValue>
+					</SectionIfValueNot>&amp;nbsp;
+					</SectionIf>
+					<SectionIf DataElementId="drainagepattern">&amp;nbsp;
+					These nodes are&amp;nbsp; 
+					<SectionIfValue DataElementId="drainagepattern" ComparisonValue="no">not&amp;nbsp;</SectionIfValue> <SectionIf DataElementId="drainagepattern">in the expected drainage pattern of the primary tumor.</SectionIf>
+					</SectionIf>
+					
+					<SectionIf DataElementId="invasion_of_critical_structures">&amp;nbsp;
+					There is&amp;nbsp;
+					<SectionIfValue DataElementId="invasion_of_critical_structures" ComparisonValue="negative">no evidence of invasion of critical structures.&amp;nbsp;</SectionIfValue>
+					<SectionIfValue DataElementId="invasion_of_critical_structures" ComparisonValue="possible">possible invasion of the carotid artery.&amp;nbsp;</SectionIfValue>
+					<SectionIfValue DataElementId="invasion_of_critical_structures" ComparisonValue="probable">probable invasion of the prevertebral space.&amp;nbsp;</SectionIfValue>&amp;nbsp;
+					</SectionIf>
+					<SectionIf DataElementId="degreeofcertaintyforinvolvement">&amp;nbsp;
+					NIRADS category&amp;nbsp;
+					<InsertValue DataElementId="degreeofcertaintyforinvolvement"></InsertValue>
+					</SectionIf>
+				</ReportText>
+			</ReportTexts>
+		</EndPoint>
+	</EndPoints>
+
+</ReportingModule>
