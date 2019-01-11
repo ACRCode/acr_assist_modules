@@ -500,7 +500,7 @@ that increases the suspicion of malignancy</Hint>
   
     <EndPoints>
         <TemplatePartial Id="multipleNodulesTp">
-            Multiple pulmonary nodules.
+			<ReportText Type="PlainText">Multiple pulmonary nodules. </ReportText>
         </TemplatePartial>
 
         <TemplatePartial Id="identifiedOrDominantTp"><SectionIfValue DataElementId="singleOrMultiple" ComparisonValue="multiple">category-determining</SectionIfValue><SectionIfValueNot DataElementId="singleOrMultiple" ComparisonValue="multiple">identified</SectionIfValueNot></TemplatePartial>
