@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
     <Metadata>
         <Label>Lung-RADS Cancer Screening</Label>
@@ -11,7 +11,7 @@
 		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
-        <RadElementSetID>5689</RadElementSetID>
+		<!-- <RadElementSetID>5689</RadElementSetID>-->
         <Info>
             <Description>Lung-RADS-based cancer screening on CT</Description>
             <References>
@@ -500,421 +500,865 @@ that increases the suspicion of malignancy</Hint>
   
     <EndPoints>
         <TemplatePartial Id="multipleNodulesTp">
-			<ReportText Type="PlainText">Multiple pulmonary nodules. </ReportText>
+            <Branch>
+				<ReportText Type="PlainText" >Multiple pulmonary nodules. </ReportText>
+            </Branch>
+        </TemplatePartial>
+		
+        <TemplatePartial Id="identifiedOrDominantTp">            
+           <Branch>
+				<EqualCondition DataElementId="singleOrMultiple" ComparisonValue="multiple"></EqualCondition>
+                <ReportText Type="PlainText">category-determining</ReportText>
+            </Branch>
+			<Branch>
+				<NotEqualCondition DataElementId="singleOrMultiple" ComparisonValue="multiple"></NotEqualCondition>
+                <ReportText Type="PlainText">identified</ReportText>
+            </Branch>			
+        </TemplatePartial>
+		
+        <TemplatePartial Id="noduleBenignCalcificationsTp">            
+           <Branch>
+				<EqualCondition DataElementId="singleOrMultiple" ComparisonValue="multiple"></EqualCondition>
+                <ReportText Type="PlainText">nodules have benign calcifications.</ReportText>
+            </Branch>
+			<Branch>
+				<NotEqualCondition DataElementId="singleOrMultiple" ComparisonValue="multiple"></NotEqualCondition>
+                <ReportText Type="PlainText">nodule has benign calcification.</ReportText>
+            </Branch>			
         </TemplatePartial>
 
-        <TemplatePartial Id="identifiedOrDominantTp"><SectionIfValue DataElementId="singleOrMultiple" ComparisonValue="multiple">category-determining</SectionIfValue><SectionIfValueNot DataElementId="singleOrMultiple" ComparisonValue="multiple">identified</SectionIfValueNot></TemplatePartial>
+        <TemplatePartial Id="cat0ManagementTp">
+            <Branch>
+			 <ReportText Type="PlainText">Additional lung cancer screening CT images and/or comparison to prior chest CT examination.</ReportText>
+            </Branch>
+		</TemplatePartial>
         
-        <TemplatePartial Id="noduleBenignCalcificationsTp"><SectionIfValue DataElementId="singleOrMultiple" ComparisonValue="multiple">nodules have benign calcifications.</SectionIfValue><SectionIfValueNot DataElementId="singleOrMultiple" ComparisonValue="multiple">nodule has benign calcification.</SectionIfValueNot>
+        <TemplatePartial Id="cat12ManagementTp">
+            <Branch>
+			<ReportText Type="PlainText">Continue annual screening with low-dose chest CT in 12 months.</ReportText>
+            </Branch>
+		</TemplatePartial>
+        
+        <TemplatePartial Id="cat3ManagementTp">
+            <Branch>
+			<ReportText Type="PlainText">Follow up low-dose chest CT in 6 months.</ReportText>	
+            </Branch>
+		</TemplatePartial>
+        
+        <TemplatePartial Id="cat4AManagementTp">
+            <Branch>
+			<ReportText Type="PlainText">Follow-up low dose chest CT in 3 months or (for nodules with solid component 8 mm or larger) PET/CT.</ReportText>
+            </Branch>
+		</TemplatePartial>
+
+        <TemplatePartial Id="cat4ASuspiciousTp">
+            <Branch>
+			<ReportText Type="PlainText">suspicious for malignancy (probability 5-15%)</ReportText>
+            </Branch>
+		</TemplatePartial>
+
+        <TemplatePartial Id="cat4BSuspiciousTp">
+            <Branch>
+			<ReportText Type="PlainText">suspicious for malignancy (probability greater than 15%)</ReportText>
+            </Branch>
+		</TemplatePartial>
+
+        <TemplatePartial Id="cat4BXManagementTp">
+            <Branch>
+			<ReportText Type="PlainText">Tissue sampling, chest CT with or without contrast, or (for nodules with solid component 8 mm or larger) PET/CT.</ReportText>
+            </Branch>
         </TemplatePartial>
-
-        <TemplatePartial Id="cat0ManagementTp">Additional lung cancer screening CT images and/or comparison to prior chest CT examination.</TemplatePartial>
         
-        <TemplatePartial Id="cat12ManagementTp">Continue annual screening with low-dose chest CT in 12 months.</TemplatePartial>
-        
-        <TemplatePartial Id="cat3ManagementTp">Follow up low-dose chest CT in 6 months.</TemplatePartial>
-        
-        <TemplatePartial Id="cat4AManagementTp">Follow-up low dose chest CT in 3 months or (for nodules with solid component 8 mm or larger) PET/CT.</TemplatePartial>
-
-        <TemplatePartial Id="cat4ASuspiciousTp">suspicious for malignancy (probability 5-15%)</TemplatePartial>
-
-        <TemplatePartial Id="cat4BSuspiciousTp">suspicious for malignancy (probability greater than 15%)</TemplatePartial>
-
-        <TemplatePartial Id="cat4BXManagementTp">Tissue sampling, chest CT with or without contrast, or (for nodules with solid component 8 mm or larger) PET/CT.</TemplatePartial>
         
         <!-- A -->
         <EndPoint Id="cat0NoPriorsEp">
             <Label>A</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-The prior chest CT examination is being located for comparison.</ReportText>
-                <ReportText SectionId="recommendation">Comparison to prior chest CT examination.
-				</ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-The prior chest CT examination is being located for comparison. 
-<InsertValue DataElementId="significantAdditionalFindingsText"/>
-<InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: Comparison to prior chest CT examination.</ReportText>
-            </ReportTexts>
+            <ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                            <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+							<ReportText Type="Newline"></ReportText>
+							<ReportText Type="PlainText">The prior chest CT examination is being located for comparison.</ReportText>
+                            <ReportText Type="Newline"></ReportText>
+                        </Branch>
+                    </ReportSection>
+                
+                <ReportSection SectionId="recommendation">
+                    <Branch>
+                           <ReportText Type="PlainText">Comparison to prior chest CT examination.</ReportText>
+                    </Branch>
+                </ReportSection>
+                    
+                <ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> The prior chest CT examination is being located for comparison.</ReportText>
+						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText">Recommendation: Comparison to prior chest CT examination.</ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>    
         </EndPoint>
-
-        <!-- B -->
+                    
+      <!-- B -->
         <EndPoint Id="cat0NoEvaluationEp">
             <Label>B</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-Part or all of the lungs cannot be evaluated. 
-<InsertValue DataElementId="significantAdditionalFindingsText"/>
-<InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation">Additional lung cancer screening CT images.</ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-Part or all of the lungs cannot be evaluated. 
-<InsertValue DataElementId="significantAdditionalFindingsText"/> 
-<InsertValue DataElementId="historyLungCancerText"/> 
-Recommendation: Additional lung cancer screening CT images.
-                </ReportText>
-            </ReportTexts>
+			 <ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                            <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+							<ReportText Type="Newline"></ReportText>
+						    <ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
+                            <ReportText Type="Newline"></ReportText>
+							<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                            <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        </Branch>
+                    </ReportSection>
+					
+					<ReportSection SectionId="recommendation">
+						<Branch>
+							   <ReportText Type="PlainText"> Additional lung cancer screening CT images.</ReportText>
+						</Branch>
+                    </ReportSection>
+					
+				<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation: Additional lung cancer screening CT images.</ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>    
         </EndPoint>
+				
       
         <!-- C -->
         <EndPoint Id="cat1NoLungNodulesEp">
             <Label>C</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-Negative study as there are no nodules present. The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/> 
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat12ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-Negative study as there are no nodules present.
-The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/> 
-                    <InsertValue DataElementId="historyLungCancerText"/> 
-Recommendation: <InsertPartial PartialId="cat12ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                            <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+							<ReportText Type="Newline"></ReportText>
+						    <ReportText Type="PlainText"> Negative study as there are no nodules present. The probability of malignancy is less than 1%. </ReportText>
+                            <ReportText Type="Newline"></ReportText>
+							<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                            <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        </Branch>
+                    </ReportSection>
+			
+                    <ReportSection SectionId="recommendation">
+						<Branch>
+							<ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+						</Branch>
+                    </ReportSection>
+					
+					<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+                        <ReportText Type="PlainText"> Negative study as there are no nodules present.</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText"> The probability of malignancy is less than 1%.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>
         
         <!-- D -->
         <EndPoint Id="cat1NoduleSpecificEp">
             <Label>D</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-Negative study as the identified <InsertPartial PartialId="noduleBenignCalcificationsTp"/> The probability of malignancy is less than 1%.  
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat12ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-Negative study as the identified <InsertPartial PartialId="noduleBenignCalcificationsTp"/> The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/> 
-                    <InsertValue DataElementId="historyLungCancerText"/> 
-Recommendation: <InsertPartial PartialId="cat12ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+			 <ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+							<ReportText Type="PlainText"> Negative study as the identified</ReportText>
+							<ReportText Type="InsertPartialTemplate" Value="noduleBenignCalcificationsTp"></ReportText>
+							<ReportText Type="PlainText"> The probability of malignancy is less than 1%.</ReportText>
+						    <ReportText Type="Newline"></ReportText>
+							<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                            <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        </Branch>
+                    </ReportSection>
+			
+                    <ReportSection SectionId="recommendation">
+						<Branch>
+							   <ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+						</Branch>
+                    </ReportSection>
+			
+					<ReportSection SectionId="impressionRecommendation">
+						<Branch>
+							<ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+							<ReportText Type="PlainText"> Negative study as the identified</ReportText>
+							<ReportText Type="InsertPartialTemplate" Value="noduleBenignCalcificationsTp"></ReportText>
+							<ReportText Type="PlainText"> The probability of malignancy is less than 1%.</ReportText>
+							<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+							<ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+							<ReportText Type="Newline"></ReportText>
+							<ReportText Type="PlainText"> Recommendation:</ReportText>
+							<ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+						</Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>
 
         <!-- E -->
         <EndPoint Id="cat2SolidNoduleEp">
             <Label>E</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>.
-					<SectionIfValue DataElementId="singleOrMultiple" ComparisonValue="multiple">
-						<InsertPartial PartialId="multipleNodulesTp"/>
-					</SectionIfValue>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule has a very low likelihood of becoming a clinically active cancer, due to size and/or lack of growth.
-The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat12ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>. 
-					<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule has a very low likelihood of becoming a clinically active cancer, due to size and/or lack of growth.
-The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/> 
-                    <InsertValue DataElementId="historyLungCancerText"/> 
-Recommendation: <InsertPartial PartialId="cat12ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
-      
+					<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<EqualCondition DataElementId="singleOrMultiple" ComparisonValue="multiple"></EqualCondition>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>
+					
+					<Branch>							
+						<ReportText Type="PlainText">The </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule has a very low likelihood of becoming a clinically active cancer, due to size and/or lack of growth.</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">The probability of malignancy is less than 1%.</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        </Branch>
+                    </ReportSection>
+			
+				  <ReportSection SectionId="recommendation">
+                    <Branch>
+					   <ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+				</ReportSection>
+							
+							
+				<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule has a very low likelihood of becoming a clinically active cancer, due to size and/or lack of growth. The probability of malignancy is less than 1%.  </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>			
+					
+				
         <!-- F -->
         <EndPoint Id="cat2PartSolidNoduleEp">
             <Label>F</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/> 
-				<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> partly-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size.
-The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation">Follow up low dose Chest CT in 12 months is recommended.</ReportText>
-                <ReportText SectionId="impressionRecommendation">Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/> 
-				<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> partly-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size.
-The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat12ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+			
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> partly-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size. The probability of malignancy is less than 1%. </ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+						
+				 <ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="PlainText"> Follow up low dose Chest CT in 12 months is recommended.</ReportText>
+                    </Branch>
+                 </ReportSection>
+			
+			   	<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> partly-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size.
+													The probability of malignancy is less than 1%.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>	
+			
+			
 
         <!-- G -->
         <EndPoint Id="cat2NonSolidNoduleEp">
             <Label>G</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/> 
-				<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> non-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size or lack of growth.
-The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat12ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/> 
-				<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> non-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size or lack of growth.
-The probability of malignancy is less than 1%. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat12ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+			  <ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> non-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size or lack of growth.
+								The probability of malignancy is less than 1%. </ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+			
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+			
+			 	<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> non-solid nodule has a very low likelihood of becoming a clinically active cancer, due to size or lack of growth. The probability of malignancy is less than 1%.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>	
+			
+			
 
         <!-- H -->
         <EndPoint Id="cat2NodulesUnchangedEp">
             <Label>H</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/> 
-					<InsertPartial PartialId="multipleNodulesTp"/>
-In view of the stability of findings for 3 months, the nodule has reverted to category 2 with very low likelihood of becoming a clinically active cancer, due to lack of growth.
-The probability of malignancy is less than 1%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat12ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-					<InsertPartial PartialId="multipleNodulesTp"/> 
-In view of the stability of findings for 3 months, the nodule has reverted to category 2 with very low likelihood of becoming a clinically active cancer, due to lack of growth.
-The probability of malignancy is less than 1%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat12ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> In view of the stability of findings for 3 months, the nodule has reverted to category 2 with very low likelihood of becoming a clinically active cancer, due to lack of growth.
+The probability of malignancy is less than 1%.</ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+            
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+
+				 <ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> In view of the stability of findings for 3 months, the nodule has reverted to category 2 with very low likelihood of becoming a clinically active cancer, due to lack of growth.
+The probability of malignancy is less than 1%.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat12ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>	
+				 
 
         <!-- I -->
         <EndPoint Id="cat3SolidNoduleEp">
             <Label>I</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-					<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
-The probability of malignancy is 1-2%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat3ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-					<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
-The probability of malignancy is 1-2%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat3ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
-
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
+The probability of malignancy is 1-2%.</ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+			
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat3ManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+			
+				 <ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
+The probability of malignancy is 1-2%.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat3ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>	
+			
+			
         <!-- J -->
         <EndPoint Id="cat3PartSolidNoduleEp">
             <Label>J</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-					<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> partly solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
-The probability of malignancy is 1-2%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat3ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-					<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> partly solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
-The probability of malignancy is 1-2%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat3ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+			
+			<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> partly solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
+The probability of malignancy is 1-2%.</ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+				
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat3ManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+			
+				
+				
+				<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> partly solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
+The probability of malignancy is 1-2%.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat3ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>	
+				
+				
 
         <!-- K -->
         <EndPoint Id="cat3NonSolidNoduleEp">
             <Label>K</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-					<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> non-solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
-The probability of malignancy is 1-2%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat3ManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-					<InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> non-solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
-The probability of malignancy is 1-2%.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat3ManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+			  <ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> non-solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
+The probability of malignancy is 1-2%.</ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+			
+			
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat3ManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+			
+				<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> non-solid nodule is probably benign, with a low likelihood of becoming a clinically active cancer.
+The probability of malignancy is 1-2%.</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat3ManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>	
+			
 
         <!-- L -->
         <EndPoint Id="cat4ASolidNoduleEp">
             <Label>L</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule is <InsertPartial PartialId="cat4ASuspiciousTp"/>. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat4AManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule is <InsertPartial PartialId="cat4ASuspiciousTp"/>. 
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat4AManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+			
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4AManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+				 
+				 
+				 <ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat4AManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>	
+
       
         <!-- M -->
         <EndPoint Id="cat4APartSolidNoduleEp">
             <Label>M</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> part-solid nodule is <InsertPartial PartialId="cat4ASuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat4AManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> part-solid nodule is <InsertPartial PartialId="cat4ASuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat4AManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> part-solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+			
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4AManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+				 
+				 
+				 <ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> part-solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat4AManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>
+
 
         <!-- N -->
         <EndPoint Id="cat4AEndobronchialNoduleEp">
             <Label>N</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> endobronchial nodule is <InsertPartial PartialId="cat4ASuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat4AManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> endobronchial nodule is <InsertPartial PartialId="cat4ASuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat4AManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> endobronchial nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+            
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4AManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+				 
+				<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> endobronchial nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat4AManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>
+				 
+				 
 
         <!-- O -->
         <EndPoint Id="cat4BSolidNoduleEp">
             <Label>O</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule is <InsertPartial PartialId="cat4BSuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat4BXManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> solid nodule is <InsertPartial PartialId="cat4BSuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat4BXManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
-        
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4BSuspiciousTp"></ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+				
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4BXManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+				
+				
+				<ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat4BSuspiciousTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>
+				
+				       
         <!-- P -->
         <EndPoint Id="cat4BPartSolidNoduleEp">
             <Label>P</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> part-solid nodule is <InsertPartial PartialId="cat4ASuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat4BXManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> part-solid nodule is <InsertPartial PartialId="cat4BSuspiciousTp"/>.
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/>
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat4BXManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> part-solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+			
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4BXManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+				 
+				 
+				 <ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> part-solid nodule is</ReportText>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4ASuspiciousTp"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat4BSuspiciousTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>
+			
+			
+			
 
         <!-- Q -->
         <EndPoint Id="cat4XMalignancyEp">
             <Label>Q</Label>
-            <ReportTexts>
-                <ReportText SectionId="impression">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/> 
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> nodule demonstrates additional features or imaging findings that increase the suspicion for malignancy (probability greater than 15%).
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/> 
-                    <InsertValue DataElementId="historyLungCancerText"/>
-                </ReportText>
-                <ReportText SectionId="recommendation"><InsertPartial PartialId="cat4BXManagementTp"/></ReportText>
-                <ReportText SectionId="impressionRecommendation">
-                    Lung-RADS Category: <InsertValue DataElementId="categoryWithModifiers"/>
-                    <InsertPartial PartialId="multipleNodulesTp"/>
-The <InsertPartial PartialId="identifiedOrDominantTp"/> nodule demonstrates additional features or imaging findings that increase the suspicion for malignancy (probability greater than 15%).
-                    <InsertValue DataElementId="significantAdditionalFindingsText"/> 
-                    <InsertValue DataElementId="historyLungCancerText"/>
-Recommendation: <InsertPartial PartialId="cat4BXManagementTp"/>
-                </ReportText>
-            </ReportTexts>
-        </EndPoint>
-
+				<ReportSections>                 
+                    <ReportSection SectionId="impression">
+                        <Branch>
+                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+					   </Branch>
+					
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> nodule demonstrates additional features or imaging findings that increase the suspicion for malignancy (probability greater than 15%).</ReportText>
+					    <ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                     </Branch>
+                </ReportSection>
+			
+				<ReportSection SectionId="recommendation">
+                    <Branch>
+						 <ReportText Type="InsertPartialTemplate" Value="cat4BXManagementTp"></ReportText>
+                    </Branch>
+                 </ReportSection>
+				 
+				 
+				 <ReportSection SectionId="impressionRecommendation">
+                    <Branch>
+                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
+						<ReportText Type="PlainText"> The</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
+						<ReportText Type="PlainText"> nodule demonstrates additional features or imaging findings that increase the suspicion for malignancy (probability greater than 15%).</ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsText"></ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="historyLungCancerText"></ReportText>
+                        <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="PlainText"> Recommendation:</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="cat4BXManagementTp"></ReportText>
+                    </Branch>
+                </ReportSection>
+               </ReportSections>  
+	        </EndPoint>
     </EndPoints>
   
 </ReportingModule>
