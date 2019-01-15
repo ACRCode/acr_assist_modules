@@ -1015,7 +1015,10 @@
 					<AndCondition>
 						<EqualCondition DataElementId="washout" ComparisonValue="no"/>
 						<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-						<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+						<OrCondition>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+						</OrCondition>	
 					</AndCondition>
 					<TextExpression>none</TextExpression>
 				</Branch>
@@ -1230,7 +1233,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 			
-		<ChoiceDataElement Id="IsparenchymalmassLR4" IsRequired="true" DisplaySequence="26">
+		<!--<ChoiceDataElement Id="IsparenchymalmassLR4" IsRequired="true" DisplaySequence="26">
 			<Label>Is parenchymal mass LR-4?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1253,7 +1256,7 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement>-->
 		
 		<ChoiceDataElement Id="IsparenchymalmassLR5" IsRequired="true" DisplaySequence="27">
 			<Label>Is parenchymal mass LR-5?</Label>
@@ -2084,7 +2087,7 @@
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																				<EndPointRef EndPointId="LR5"/>
+																				<EndPointRef EndPointId="LR4"/>
 																			</Branch>
 																			
 																			<Branch>
@@ -2100,32 +2103,7 @@
 																	</Branch>
 																</DecisionPoint>																
 															</Branch>
-														</DecisionPoint>
-														<!--<DecisionPoint Id="IsparenchymalmassLR4Dp">
-															<Label>Is parenchymal mass LR-4?</Label>
-															<Branch>
-																<Label>Yes</Label>
-																<EqualCondition DataElementId="IsparenchymalmassLR4" ComparisonValue="yes"/>
-																<EndPointRef EndPointId="LRTIV_proabably_hcc"></EndPointRef>
-															</Branch>
-															<Branch>
-																<Label>No</Label>
-																<EqualCondition DataElementId="IsparenchymalmassLR4" ComparisonValue="no"/>
-																<DecisionPoint Id="IsparenchymalmassLR5Dp">
-																	<Label>Is parenchymal mass LR-5?</Label>
-																	<Branch>
-																		<Label>Yes</Label>
-																		<EqualCondition DataElementId="IsparenchymalmassLR5" ComparisonValue="yes"/>
-																		<EndPointRef EndPointId="LRTIV_def_hcc"></EndPointRef>
-																	</Branch>
-																	<Branch>
-																		<Label>No</Label>
-																		<EqualCondition DataElementId="IsparenchymalmassLR5" ComparisonValue="no"/>
-																		<EndPointRef EndPointId="LRTIV_Etiology_uncertain"></EndPointRef>
-																	</Branch>
-																</DecisionPoint>
-															</Branch>
-														</DecisionPoint>-->
+														</DecisionPoint>														
 													</Branch>
 												</DecisionPoint>
 											</Branch>
@@ -2178,10 +2156,6 @@
 									<Label>Observation size (mm)</Label>
 									<Branch>
 										<Label>&lt; 10</Label>
-										<!--<NotRelevantDataElements>
-											<DataElementRef DataElementId="HistoryofVisibilityonUS"/>
-											<DataElementRef DataElementId="sixeincreatein6months"/>
-										</NotRelevantDataElements>-->
 										<!-- Diameter < 10 -->
 										<LessThanCondition DataElementId="diameter"
 											ComparisonValue="diameterSmall"/>
