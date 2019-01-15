@@ -2027,7 +2027,7 @@
 																	<Branch>
 																		<Label>Greater than 20</Label>
 																		<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
-																		<DecisionPoint Id="washoutcapsulethresholdNone">
+																		<DecisionPoint Id="washoutcapsulethresholdNoneGreaterThan20">
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
@@ -2051,12 +2051,12 @@
 															<Branch>
 																<Label>No</Label>
 																<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe" />
-																<DecisionPoint Id="arterialEnhancemenNoAphe">
+																<DecisionPoint Id="arterialEnhancemenHasNoAphe">
 																	<Label>arterialEnhancemenNoAphe</Label>
 																	<Branch>
 																		<Label>Less than 10</Label>
 																		<LessThanCondition DataElementId="diameter" ComparisonValue="10"/>
-																		<DecisionPoint Id="washoutcapsulethresholdNone">
+																		<DecisionPoint Id="washoutcapsulethresholdNoneLessThan10">
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
@@ -2081,7 +2081,7 @@
 																			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
 																			<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
 																		</AndCondition>																		
-																		<DecisionPoint Id="washoutcapsulethresholdNone">
+																		<DecisionPoint Id="washoutcapsulethresholdNoneBetween10and20">
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
@@ -2116,7 +2116,7 @@
 																		<AndCondition>
 																			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
 																		</AndCondition>																		
-																		<DecisionPoint Id="washoutcapsulethresholdNone">
+																		<DecisionPoint Id="washoutcapsulethresholdNoneDiameterGreaterThan20">
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
