@@ -1050,6 +1050,16 @@
 					</OrCondition>
 					<TextExpression>one</TextExpression>
 				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIfNot DataElementID="washout" />
+						<SectionIfNot DataElementID="capsule" />
+						<SectionIfNot DataElementID="thresholdgrowth" />
+					</AndCondition>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				
 				<DefaultBranch>
 					<TextExpression>twoormore</TextExpression>
 				</DefaultBranch>
