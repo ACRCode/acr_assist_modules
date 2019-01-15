@@ -1013,11 +1013,20 @@
 			<DecisionPoint>
 				<Branch>
 					<AndCondition>
-						<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-						<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+						<OrCondition>
+							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="washout" />
+						</OrCondition>
+						
+						<OrCondition>
+							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="capsule" />
+						</OrCondition>						
+						
 						<OrCondition>
 							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
 							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+							<SectionIfNot DataElementId="thresholdgrowth" />
 						</OrCondition>	
 					</AndCondition>
 					<TextExpression>none</TextExpression>
@@ -1026,25 +1035,39 @@
 					<OrCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>
 							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
 								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
 								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
 							 </OrCondition>	
 						</AndCondition>
 						
 						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
 							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>							
 							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
 								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
 								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
 							 </OrCondition>	
 						</AndCondition>
 						
 						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>							
 							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
 						</AndCondition>
 					</OrCondition>
@@ -1053,9 +1076,9 @@
 				
 				<Branch>
 					<AndCondition>
-						<SectionIfNot DataElementID="washout" />
-						<SectionIfNot DataElementID="capsule" />
-						<SectionIfNot DataElementID="thresholdgrowth" />
+						<SectionIfNot DataElementId="washout" />
+						<SectionIfNot DataElementId="capsule" />
+						<SectionIfNot DataElementId="thresholdgrowth" />
 					</AndCondition>
 					<TextExpression>none</TextExpression>
 				</Branch>
