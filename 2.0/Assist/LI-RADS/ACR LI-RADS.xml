@@ -119,8 +119,7 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>I</Value>
-					<Label>I</Label>
-					
+					<Label>I</Label>					
 				</Choice>
 				<Choice>
 					<Value>II</Value>
@@ -208,7 +207,7 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>Ablation_Type_Unknown</Value>
-					<Label>Ablation - type not specified</Label>
+					<Label>Ablation - type unknown</Label>
 				</Choice>
 				<Choice>
 					<Value>RF_ablation</Value>
@@ -228,7 +227,7 @@
 				</Choice>
 				<Choice>
 					<Value>embolization_Type_unknown</Value>
-					<Label>Embolization - type not specified</Label>
+					<Label>Embolization - type unknown</Label>
 				</Choice>
 				<Choice>
 					<Value>Chemoembolization</Value>	 
@@ -404,6 +403,10 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
+		
+	<!--	<NumericDataElement Id="notcatogerizedreason" DisplaySequence="12">
+			<Label>Please specify the reason</Label>
+		</NumericDataElement>-->
 
 		<ChoiceDataElement Id="treatedobservation" IsRequired="true" DisplaySequence="12">
 			<Label>Treated observation features</Label>
@@ -672,10 +675,17 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient"/>
+						<SectionIf DataElementId="observationinPatient"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-				<ConditionalProperty>
+				<!--<ConditionalProperty>
+					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>-->
+			<!--	<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="notcategorized"/>
@@ -687,12 +697,12 @@
 							ComparisonValue="probablyBenign"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
+				</ConditionalProperty>-->
+			<!--	<ConditionalProperty>
 					<LessThanCondition DataElementId="diameter" ComparisonValue="{diameterSmall}"/>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
+				</ConditionalProperty>-->
+			<!--	<ConditionalProperty>
 					<AndCondition>
 						<EqualCondition DataElementId="washout" ComparisonValue="no"/>
 						<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
@@ -702,20 +712,20 @@
 						</OrCondition>
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
+				</ConditionalProperty>-->
+			<!--	<ConditionalProperty>
 					<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
+				</ConditionalProperty>-->
+				<!--<ConditionalProperty>
 					<OrCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<!-- Washout = Yes, Capsule = Yes -->
+							<!-\- Washout = Yes, Capsule = Yes -\->
 							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
 							<OrCondition>
 								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
@@ -725,27 +735,27 @@
 						</AndCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<!-- Washout = Yes, Thresholdgrowth = Yes -->
+							<!-\- Washout = Yes, Thresholdgrowth = Yes -\->
 							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
 							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
 						</AndCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-							<!-- Capsule = Yes, Thresholdgrowth = Yes -->
+							<!-\- Capsule = Yes, Thresholdgrowth = Yes -\->
 							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
 							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
 						</AndCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
+							<!-\- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -\->
 							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
 							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
 						</AndCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+				</ConditionalProperty>-->
 				
-				<ConditionalProperty>
+				<!--<ConditionalProperty>
 					<GreaterThanOrEqualsCondition DataElementId="diameter"
 						ComparisonValue="diameterLarge"/>
 					<IsRelevant>false</IsRelevant>
@@ -758,14 +768,14 @@
 							ComparisonValue="No"/>
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+				</ConditionalProperty>-->
 				
-				<ConditionalProperty>
+				<!--<ConditionalProperty>
 					<NotCondition>
 						<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"/>
 					</NotCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+				</ConditionalProperty>-->
 			</ConditionalProperties>	
 		</ChoiceDataElement>	
 				
@@ -802,7 +812,7 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="enhancementisexpectedpattern" IsRequired="true" DisplaySequence="18">
-			<Label>Enhancement in an expected  treatment-specific pattern?</Label>
+			<Label>Enhancement in an expected treatment-specific pattern?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>no</Value>
@@ -1291,7 +1301,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>-->
 		
-		<ChoiceDataElement Id="IsparenchymalmassLR5" IsRequired="true" DisplaySequence="27">
+		<!--<ChoiceDataElement Id="IsparenchymalmassLR5" IsRequired="true" DisplaySequence="27">
 			<Label>Is parenchymal mass LR-5?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1343,7 +1353,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>								
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement>-->
 		
 		<MultiChoiceDataElement Id="lrmtargetoidmass" IsRequired="true" DisplaySequence="28">
 			<Label>Targetoid mass (any of the following)</Label>
@@ -1394,6 +1404,7 @@
 							ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="nonofabove"/>
+						<SectionIf DataElementId="lrmnontargetoidmass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>				
@@ -1442,6 +1453,7 @@
 							ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="nonofabove"/>
+						<SectionIf DataElementId="lrmtargetoidmass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -1688,7 +1700,17 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 			
@@ -1791,7 +1813,17 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
 		
@@ -1846,7 +1878,17 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>		
 	</DataElements>
@@ -1859,7 +1901,7 @@
 				<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 						
 				<DecisionPoint Id="treatedObservationDp">
-					<Label>Treated observation features</Label>
+					<Label>Features</Label>
 					<Branch>
 						<Label>If treatment response cannot be evaluated due image degradation or omission</Label>						
 						<EqualCondition DataElementId="treatedobservation"
@@ -2051,12 +2093,12 @@
 															<Branch>
 																<Label>No</Label>
 																<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe" />
-																<DecisionPoint Id="arterialEnhancemenHasNoAphe">
+																<DecisionPoint Id="arterialEnhancementWithNoAphe">
 																	<Label>arterialEnhancemenNoAphe</Label>
 																	<Branch>
 																		<Label>Less than 10</Label>
 																		<LessThanCondition DataElementId="diameter" ComparisonValue="10"/>
-																		<DecisionPoint Id="washoutcapsulethresholdNoneLessThan10">
+																		<DecisionPoint Id="washoutcapsulethresholdNoneLessthan10">
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
@@ -2113,9 +2155,9 @@
 																	
 																	<Branch>
 																		<Label>Greater than 20</Label>
-																		<AndCondition>
+<!--																		<AndCondition>-->
 																			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
-																		</AndCondition>																		
+																		<!--</AndCondition>-->																		
 																		<DecisionPoint Id="washoutcapsulethresholdNoneDiameterGreaterThan20">
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
@@ -2916,52 +2958,53 @@
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"/>
 				
-				<ReportText Type="PlainText">Treatment modality: [</ReportText>
+				<ReportText Type="PlainText">Treatment method: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="TreatmentMethod"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
 				<ReportText Type="PlainText">Location: Segment </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-				<ReportText Type="PlainText"> (image # [</ReportText>
+				<ReportText Type="PlainText"> (image # </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
-				<ReportText Type="PlainText">], series [</ReportText>
+				<ReportText Type="PlainText">, series </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
-				<ReportText Type="PlainText">])</ReportText>
+				<ReportText Type="PlainText">)</ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
-				<ReportText Type="PlainText">Pretreatment category: [</ReportText>				
-				<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>
+				<ReportText Type="PlainText">Pretreatment category: </ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"></ReportText>				
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			<Branch>
 				<SectionIf DataElementId="pretreatmentsize"></SectionIf>
-				<ReportText Type="PlainText">Pretreatment size: [</ReportText>
+				<ReportText Type="PlainText">Pretreatment size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-				<ReportText Type="PlainText">] [mm]</ReportText>
+				<ReportText Type="PlainText"> mm</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="irregularattheperiphery"></SectionIf>
-				<ReportText Type="PlainText">Enhancement in a nodular, mass-like or thick irregular pattern: [</ReportText>
+				<ReportText Type="PlainText">Enhancement in a nodular, mass-like or thick irregular pattern: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="irregularattheperiphery"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIfNot DataElementId="sizeoftheenhancementComponents"></SectionIfNot>
-				<ReportText Type="PlainText">Size of enhancing component: [N/A]</ReportText>
+				<ReportText Type="PlainText">Size of enhancing component: N/A</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
-				<ReportText Type="PlainText">Size of enhancing component: [</ReportText>
+				<AndCondition>					
+					<NotEqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"></NotEqualCondition>
+					<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
+				</AndCondition>
+				
+				<ReportText Type="PlainText">Size of enhancing component: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
-				<ReportText Type="PlainText"> [mm]]</ReportText>
+				<ReportText Type="PlainText"> mm</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -2976,7 +3019,7 @@
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"></EqualCondition>
 				</AndCondition>
-				<ReportText Type="PlainText">Arterial phase hyperenhancement: [Yes]</ReportText>
+				<ReportText Type="PlainText">Arterial phase hyperenhancement: Yes</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -2985,7 +3028,7 @@
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"></NotEqualCondition>
 				</AndCondition>
-				<ReportText Type="PlainText">Arterial phase hyperenhancement: [No]</ReportText>
+				<ReportText Type="PlainText">Arterial phase hyperenhancement: No</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -2994,7 +3037,7 @@
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"></EqualCondition>
 				</AndCondition>
-				<ReportText Type="PlainText">Washout appearance: [Yes]</ReportText>
+				<ReportText Type="PlainText">Washout appearance: Yes</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -3003,7 +3046,7 @@
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"></NotEqualCondition>
 				</AndCondition>
-				<ReportText Type="PlainText">Washout appearance: [No]</ReportText>
+				<ReportText Type="PlainText">Washout appearance: No</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -3012,7 +3055,7 @@
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"></EqualCondition>
 				</AndCondition>				
-				<ReportText Type="PlainText">Other: [Enhancement similar to pretreatment]</ReportText>
+				<ReportText Type="PlainText">Other: Enhancement similar to pretreatment</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			<Branch>
@@ -3020,7 +3063,7 @@
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"></NotEqualCondition>
 				</AndCondition>				
-				<ReportText Type="PlainText">Other: [NA]</ReportText>
+				<ReportText Type="PlainText">Other: NA</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 		</TemplatePartial>
@@ -3033,23 +3076,27 @@
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>		
-				<ReportText Type="PlainText"> [</ReportText>
+				<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
 				<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
-				<ReportText Type="PlainText">] [mm]</ReportText>
+				<ReportText Type="PlainText"> mm</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 		</TemplatePartial>
 
 		<TemplatePartial Id="untreatedimpressiontext">
 			<Branch>
-				<SectionIf DataElementId="pretreatmentsize"></SectionIf>
-				<ReportText Type="PlainText">Observation# [</ReportText>
+				<!--<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+				<ReportText Type="PlainText">Observation #: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
-				<ReportText Type="PlainText" >]: </ReportText>
+				<ReportText Type="PlainText" >: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
-				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="Newline"></ReportText>-->
+				
+				<SectionIf DataElementId="observationnumber"></SectionIf>
+				<ReportText Type="PlainText">Observation </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
+				<ReportText Type="PlainText">: </ReportText>				
 			</Branch>
 		</TemplatePartial>
 		
@@ -3066,20 +3113,19 @@
 			
 			<Branch>
 				<SectionIf DataElementId="diameter"></SectionIf>
-				<ReportText Type="PlainText">Size: [</ReportText>
+				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>
-				<ReportText Type="PlainText"> [mm] (image # [</ReportText>
+				<ReportText Type="PlainText"> mm (image # </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
-				<ReportText Type="PlainText">], series [</ReportText>
+				<ReportText Type="PlainText">, series </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
-				<ReportText Type="PlainText">])</ReportText>
+				<ReportText Type="PlainText">)</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>				
 				<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
-				<ReportText Type="PlainText">Tumor in Vein: [Yes</ReportText>				
+				<ReportText Type="PlainText">Tumor in Vein: Yes</ReportText>				
 			</Branch>
 			
 			
@@ -3088,13 +3134,13 @@
 				<SectionIf DataElementId="WhichVein"></SectionIf>
 				<ReportText Type="PlainText"> (</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
-				<ReportText Type="PlainText">)]</ReportText>
+				<ReportText Type="PlainText">)</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>				
 				<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
-				<ReportText Type="PlainText">Tumor in Vein: [No]</ReportText>
+				<ReportText Type="PlainText">Tumor in Vein: No</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -3103,7 +3149,7 @@
 					<SectionIfNot DataElementId="lrmtargetoidmass"></SectionIfNot>
 					<SectionIfNot DataElementId="lrmnontargetoidmass"></SectionIfNot>
 				</AndCondition>
-				<ReportText Type="PlainText">LR-M features: [None] </ReportText>
+				<ReportText Type="PlainText">LR-M features: None</ReportText>
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
 			
@@ -3112,7 +3158,7 @@
 					<SectionIf DataElementId="lrmtargetoidmass"></SectionIf>
 					<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
 				</OrCondition>
-				<ReportText Type="PlainText">LR-M features: [</ReportText>
+				<ReportText Type="PlainText">LR-M features: </ReportText>
 			</Branch>
 			
 			<Branch>
@@ -3123,7 +3169,7 @@
 				<ReportText Type="InsertDataElementValue" Value="lrmtargetoidmass"></ReportText>
 				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="lrmnontargetoidmass"></ReportText>
-				<ReportText Type="PlainText">] </ReportText>
+				<ReportText Type="PlainText"> </ReportText>
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
 			
@@ -3133,7 +3179,7 @@
 					<SectionIfNot DataElementId="lrmnontargetoidmass"></SectionIfNot>
 				</AndCondition>
 				<ReportText Type="InsertDataElementValue" Value="lrmtargetoidmass"></ReportText>
-				<ReportText Type="PlainText">] </ReportText>
+				<ReportText Type="PlainText"> </ReportText>
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
 			
@@ -3143,72 +3189,83 @@
 					<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
 				</AndCondition>
 				<ReportText Type="InsertDataElementValue" Value="lrmnontargetoidmass"></ReportText>
-				<ReportText Type="PlainText">] </ReportText>
+				<ReportText Type="PlainText"> </ReportText>
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="arterialEnhancement"></SectionIf>
-				<ReportText Type="PlainText">Nonrim AP hyperenhancement: [</ReportText>				
+				<ReportText Type="PlainText">Nonrim AP hyperenhancement: </ReportText>				
 				<ReportText Type="InsertDataElementValue" Value="arterialEnhancement"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>		
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="thresholdgrowth"></SectionIf>
-				<ReportText Type="PlainText">Threshold growth: [</ReportText>
+				<ReportText Type="PlainText">Threshold growth: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="thresholdgrowth"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="washout"></SectionIf>
-				<ReportText Type="PlainText">Nonperipheral washout appearance: [</ReportText>				
+				<ReportText Type="PlainText">Nonperipheral washout appearance: </ReportText>				
 				<ReportText Type="InsertDataElementValue" Value="washout"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>		
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="capsule"></SectionIf>
-				<ReportText Type="PlainText">Enhancing capsule appearance: [</ReportText>
+				<ReportText Type="PlainText">Enhancing capsule appearance: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="capsule"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>	
 			
 			<Branch>
+				<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
 				<ReportText Type="PlainText">Ancillary features:</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
-				<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
-				<ReportText Type="PlainText">Favoring benignity: [None]</ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+				</AndCondition>				
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Favoring benignity: None</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="ancillaryFavoringBenignity" />
-				<ReportText Type="PlainText">Favoring benignity: [</ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					<SectionIf DataElementId="ancillaryFavoringBenignity" />	
+				</AndCondition>				
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Favoring benignity: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringBenignity"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>		
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
-				<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
-				<ReportText Type="PlainText">Favoring malignancy: [None]</ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+				</AndCondition>				
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Favoring malignancy: None</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="ancillaryFavoringMalignancy" />
-				<ReportText Type="PlainText">Favoring malignancy: [</ReportText>
+				<AndCondition>
+					<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+				</AndCondition>				
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Favoring malignancy: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringMalignancy"></ReportText>
-				<ReportText Type="PlainText">]</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -3224,7 +3281,7 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-NC]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-NC</ReportText>
 					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
@@ -3232,9 +3289,8 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-NC (noncategorizable) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-NC (noncategorizable) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>	
-					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3247,7 +3303,7 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-1]</ReportText>					
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-1</ReportText>					
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="LR1Features"/>
@@ -3261,9 +3317,8 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-1] (definitely benign) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-1 (definitely benign) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3276,7 +3331,7 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-2]</ReportText>					
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-2</ReportText>					
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="LR2features"/>
@@ -3290,9 +3345,8 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-2] (probably benign) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-2 (probably benign) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3305,7 +3359,7 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-3]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-3</ReportText>
 					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
@@ -3313,9 +3367,8 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-3] (intermediate probability of malignancy) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3328,7 +3381,7 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-4]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-4</ReportText>
 					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
@@ -3336,9 +3389,8 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-4] (probably HCC) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-4 (probably HCC) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3351,19 +3403,28 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-5]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-5</ReportText>
 					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-5] (definitely HCC) in segment [</ReportText>
-					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
-					<ReportText Type="Newline"></ReportText>
+					<SectionIf DataElementId="diameter"></SectionIf>
+					<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
+				
+				<Branch>
+<!--					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>-->
+					<ReportText Type="PlainText">LR-5 (definitely HCC)</ReportText>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="segmentlocation" />
+					<ReportText Type="PlainText" > in segment </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
+				</Branch>				
 			</ReportSection>
 		</ReportSections>
       </EndPoint>
@@ -3374,16 +3435,15 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-TIV]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-TIV] (etiology uncertain) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-TIV (etiology uncertain) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3396,16 +3456,15 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-TIV]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-TIV] (probably due to HCC) in segment [</ReportText>
+					<ReportText Type="PlainText">LR-TIV (probably due to HCC) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3418,16 +3477,15 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-TIV]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText" >[LR-TIV] (may be due to non-HCC malignancy) in segment [</ReportText>
+					<ReportText Type="PlainText" >LR-TIV (may be due to non-HCC malignancy) in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText" >]</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3440,17 +3498,19 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: [LR-TIV]</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Catogery: LR-TIV (Tumor in vein), (definitely due to HCC)</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText" >[LR-TIV] (definitely due to HCC) in segment [</ReportText>
-					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
-					<ReportText Type="Newline"></ReportText>
+					<ReportText Type="PlainText" >LR-TIV (Tumor in vein), (definitely due to HCC)</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="segmentlocation" />
+					<ReportText Type="PlainText">, in segment </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>					
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -3462,7 +3522,7 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText" >LI-RADS v2018 Category: [LR-M]</ReportText>
+					<ReportText Type="PlainText" >LI-RADS v2018 Category: LR-M</ReportText>
 					<ReportText Type="Newline"></ReportText>
 					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
 					<ReportText Type="Newline"></ReportText>		
@@ -3470,11 +3530,20 @@
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
+					<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
+					<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">[LR-M] (Probably or definitely malignant but not HCC specific) in segment [</ReportText>
-					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="PlainText">]</ReportText>
-					<ReportText Type="Newline"></ReportText>
+					<ReportText Type="PlainText">LR-M (Probably or definitely malignant, not HCC specific) </ReportText>
+					<!--<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
+					<ReportText Type="Newline"></ReportText>-->
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="segmentlocation" />
+					<ReportText Type="PlainText" > in segment </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -3486,42 +3555,45 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="treatedFindingsReporttext"></ReportText>
-					<ReportText Type="PlainText">Category: LR-TR [Nonevaluable] </ReportText>
+					<ReportText Type="PlainText">Category: LR-TR Nonevaluable </ReportText>
 				</Branch>
 				<Branch>
 					<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
-					<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
+					<ReportText Type="PlainText">(Pretreatment unknown)</ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 				<Branch>
 					<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-					<ReportText Type="PlainText">(pretreatment [</ReportText>
+					<ReportText Type="PlainText">(Pretreatment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-					<ReportText Type="PlainText" >] [</ReportText>
 					<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-					<ReportText Type="PlainText" >] [mm]) </ReportText>
+					<ReportText Type="PlainText" > mm) </ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText"> LR-TR [Nonevaluable] </ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>-->
+					<ReportText Type="PlainText"> LR-TR Nonevaluable </ReportText>
 				</Branch>
 				<Branch>
 					<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
-					<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
+					<ReportText Type="PlainText">(Pretreatment unknown) </ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 				<Branch>
 					<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-					<ReportText Type="PlainText">(pretreatment [</ReportText>
-					<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-					<ReportText Type="PlainText" >] [</ReportText>
+					<ReportText Type="PlainText">(Pretreatment </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+					<ReportText Type="PlainText">, </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-					<ReportText Type="PlainText" >] [mm]) </ReportText>
-					<ReportText Type="Newline"></ReportText>
+					<ReportText Type="PlainText" > mm)</ReportText>
 				</Branch>				
+				<Branch>
+					<SectionIf DataElementId="segmentlocation" />
+					<ReportText Type="PlainText" > in segment </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
+				</Branch>
 			</ReportSection>
 		</ReportSections>
       </EndPoint>
@@ -3532,7 +3604,7 @@
 				<ReportSection SectionId="findings">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="treatedFindingsReporttext"></ReportText>
-						<ReportText Type="PlainText">Category: LR-TR [Nonviable] </ReportText>
+						<ReportText Type="PlainText">Category: LR-TR Nonviable </ReportText>
 					</Branch>
 					<Branch>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
@@ -3541,33 +3613,37 @@
 					</Branch>
 					<Branch>
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-						<ReportText Type="PlainText">(pretreatment [</ReportText>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-						<ReportText Type="PlainText" >] [</ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" >] [mm]) </ReportText>
+						<ReportText Type="PlainText"> mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>				
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>
-						<ReportText Type="PlainText">LR-TR [Nonviable] </ReportText>
+<!--						<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>-->
+						<ReportText Type="PlainText">LR-TR Nonviable </ReportText>
 					</Branch>
 					<Branch>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
-						<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
-						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">(Pretreatment unknown) </ReportText>
+<!--						<ReportText Type="Newline"></ReportText>-->
 					</Branch>
 					<Branch>
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-						<ReportText Type="PlainText">(pretreatment [</ReportText>
-						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-						<ReportText Type="PlainText" >] [</ReportText>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" >] [mm]) </ReportText>
-						<ReportText Type="Newline"></ReportText>
-					</Branch>				
+						<ReportText Type="PlainText" > mm)</ReportText>
+					</Branch>
+					
+					<Branch>
+						<SectionIf DataElementId="segmentlocation" />
+						<ReportText Type="PlainText" > in segment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
+					</Branch>		
 				</ReportSection>			
 			</ReportSections>
       </EndPoint>
@@ -3578,42 +3654,48 @@
 				<ReportSection SectionId="findings">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="treatedFindingsReporttext"></ReportText>
-						<ReportText Type="PlainText">Category: LR-TR [Equivocal] </ReportText>
+						<ReportText Type="PlainText">Category: LR-TR Equivocal </ReportText>
 					</Branch>
 					<Branch>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
-						<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
+						<ReportText Type="PlainText">(Pretreatment unknown)</ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
 					<Branch>
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-						<ReportText Type="PlainText">(pretreatment [</ReportText>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-						<ReportText Type="PlainText" >] [</ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" >] [mm]) </ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>				
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>
-						<ReportText Type="PlainText">LR-TR [Equivocal] </ReportText>
+<!--						<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>-->
+						<ReportText Type="PlainText">LR-TR Equivocal </ReportText>
 					</Branch>
+				
 					<Branch>
-						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
-						<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
-						<ReportText Type="Newline"></ReportText>
+						<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
+						<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
+						<ReportText Type="PlainText"> mm </ReportText>
 					</Branch>
+					
 					<Branch>
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-						<ReportText Type="PlainText">(pretreatment [</ReportText>
-						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-						<ReportText Type="PlainText" >] [</ReportText>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" >] [mm]) </ReportText>
-						<ReportText Type="Newline"></ReportText>
-					</Branch>				
+						<ReportText Type="PlainText" > mm)</ReportText>
+					</Branch>
+					
+					<Branch>
+						<SectionIf DataElementId="segmentlocation" />
+						<ReportText Type="PlainText" > in segment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
+					</Branch>			
 				</ReportSection>			
 			</ReportSections>			
 		</EndPoint>
@@ -3629,38 +3711,47 @@
 					</Branch>
 					<Branch>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
-						<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
+						<ReportText Type="PlainText">(Pretreatment unknown)</ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
 					<Branch>
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-						<ReportText Type="PlainText">(pretreatment [</ReportText>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-						<ReportText Type="PlainText" >] [</ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" >] [mm]) </ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>				
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>
+<!--						<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>-->
 						<ReportText Type="PlainText">LR-TR Viable </ReportText>
 					</Branch>
 					<Branch>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
-						<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
-						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">(Pretreatment unknown) </ReportText>
 					</Branch>
 					<Branch>
+						<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
+						<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
+						<ReportText Type="PlainText"> mm </ReportText>
+					</Branch>
+					
+					<Branch>
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
-						<ReportText Type="PlainText">(pretreatment [</ReportText>
-						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-						<ReportText Type="PlainText" >] [</ReportText>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" >] [mm]) </ReportText>
-						<ReportText Type="Newline"></ReportText>
-					</Branch>				
+						<ReportText Type="PlainText" > mm)</ReportText>
+					</Branch>
+					
+					<Branch>
+						<SectionIf DataElementId="segmentlocation" />
+						<ReportText Type="PlainText" > in segment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
+					</Branch>					
 				</ReportSection>			
 			</ReportSections>			
 		 </EndPoint>
