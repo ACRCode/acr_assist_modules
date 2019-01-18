@@ -435,6 +435,33 @@
 			</ConditionalProperties>		
 		</ChoiceDataElement>
 		
+		<ChoiceDataElement Id="treatednonevaluable" DisplaySequence="13" AllowFreetext="true">
+			<Label>Reason cannot be evaluated</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Sample1</Value>
+					<Label>Sample 1</Label>
+				</Choice>
+				<Choice>
+					<Value>Sample2</Value>
+					<Label>Sample 2</Label>
+				</Choice>
+				<Choice>
+					<Value>Sample</Value>
+					<Label>Sample 3</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+						<EqualCondition DataElementId="treatedobservation" ComparisonValue="otherwise"></EqualCondition>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+		
 		<ChoiceDataElement Id="LR1Features" IsRequired="false" DisplaySequence="13" AllowFreetext="true">
 			<Label>LR-1 diagnosis</Label>
 			<ChoiceInfo>
@@ -2061,7 +2088,7 @@
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LR4"/>
+																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																			</Branch>
 																		</DecisionPoint>
 																	</Branch>
@@ -2078,12 +2105,12 @@
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																				<EndPointRef EndPointId="LR4"/>
+																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																			</Branch>
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LR4"/>
+																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																			</Branch>
 																		</DecisionPoint>
 																	</Branch>
@@ -2107,12 +2134,12 @@
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																				<EndPointRef EndPointId="LR4"/>
+																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																			</Branch>
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LR4"/>
+																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																			</Branch>
 																		</DecisionPoint>
 																	</Branch>
@@ -2135,7 +2162,7 @@
 																					<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
 																					<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
 																				</AndCondition>																				
-																				<EndPointRef EndPointId="LR4"/>
+																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																			</Branch>
 																			
 																			<Branch>
@@ -2143,12 +2170,12 @@
 																					<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
 																					<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
 																				</AndCondition>																				
-																				<EndPointRef EndPointId="LR5"/>
+																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
 																			</Branch>
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LR5"/>
+																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
 																			</Branch>
 																		</DecisionPoint>
 																	</Branch>
@@ -2162,17 +2189,17 @@
 																			<Label>washoutcapsulethreshold None</Label>
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																				<EndPointRef EndPointId="LR4"/>
+																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																			</Branch>
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																				<EndPointRef EndPointId="LR5"/>
+																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
 																			</Branch>
 																			
 																			<Branch>
 																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LR5"/>
+																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
 																			</Branch>
 																		</DecisionPoint>
 																	</Branch>
@@ -3082,25 +3109,8 @@
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 		</TemplatePartial>
-
-		<TemplatePartial Id="untreatedimpressiontext">
-			<Branch>
-				<!--<SectionIf DataElementId="pretreatmentsize"></SectionIf>
-				<ReportText Type="PlainText">Observation #: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
-				<ReportText Type="PlainText" >: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-				<ReportText Type="PlainText"> mm</ReportText>
-				<ReportText Type="Newline"></ReportText>-->
-				
-				<SectionIf DataElementId="observationnumber"></SectionIf>
-				<ReportText Type="PlainText">Observation </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
-				<ReportText Type="PlainText">: </ReportText>				
-			</Branch>
-		</TemplatePartial>
 		
-		<TemplatePartial Id="untreatreporttext">
+		<TemplatePartial Id="tivreporttextifparenchymalmassisyes">
 			<Branch>
 				<ReportText Type="PlainText" >Observation #: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
@@ -3111,8 +3121,53 @@
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
+			<Branch>				
+				<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+				<ReportText Type="PlainText">Tumor in Vein: Yes;</ReportText>				
+			</Branch>	
+			
+			<Branch>				
+				<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
+				<ReportText Type="PlainText">Tumor in Vein: No</ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+					<SectionIf DataElementId="WhichVein"></SectionIf>
+				</AndCondition>				
+				<ReportText Type="PlainText"> involves the </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no" />
+				</AndCondition>
+				<ReportText Type="PlainText">Parenchymal mass: No</ReportText>	
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes" />
+				</AndCondition>
+				<ReportText Type="PlainText">Parenchymal mass: Yes</ReportText>	
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<ReportText Type="PlainText">Imaging features of the parenchymal mass:</ReportText>	
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
 			<Branch>
 				<SectionIf DataElementId="diameter"></SectionIf>
+				<ReportText Type="Tab"/>			
 				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
 				<ReportText Type="PlainText"> mm (image # </ReportText>
@@ -3123,32 +3178,12 @@
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
-			<Branch>				
-				<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
-				<ReportText Type="PlainText">Tumor in Vein: Yes</ReportText>				
-			</Branch>
-			
-			
-			
-			<Branch>
-				<SectionIf DataElementId="WhichVein"></SectionIf>
-				<ReportText Type="PlainText"> (</ReportText>
-				<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
-				<ReportText Type="PlainText">)</ReportText>
-				<ReportText Type="Newline"></ReportText>
-			</Branch>
-			
-			<Branch>				
-				<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
-				<ReportText Type="PlainText">Tumor in Vein: No</ReportText>
-				<ReportText Type="Newline"></ReportText>
-			</Branch>
-			
 			<Branch>
 				<AndCondition>
 					<SectionIfNot DataElementId="lrmtargetoidmass"></SectionIfNot>
 					<SectionIfNot DataElementId="lrmnontargetoidmass"></SectionIfNot>
 				</AndCondition>
+				<ReportText Type="Tab"/>	
 				<ReportText Type="PlainText">LR-M features: None</ReportText>
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
@@ -3158,6 +3193,7 @@
 					<SectionIf DataElementId="lrmtargetoidmass"></SectionIf>
 					<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
 				</OrCondition>
+				<ReportText Type="Tab"/>	
 				<ReportText Type="PlainText">LR-M features: </ReportText>
 			</Branch>
 			
@@ -3193,29 +3229,210 @@
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
 			
-			<Branch>
+			<Branch>							
 				<SectionIf DataElementId="arterialEnhancement"></SectionIf>
+				<ReportText Type="Tab"/>	
 				<ReportText Type="PlainText">Nonrim AP hyperenhancement: </ReportText>				
 				<ReportText Type="InsertDataElementValue" Value="arterialEnhancement"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
-			<Branch>
+			<Branch>					
+				<SectionIf DataElementId="washout"></SectionIf>
+				<ReportText Type="Tab"/>	
+				<ReportText Type="PlainText">Nonperipheral washout appearance: </ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="washout"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>								
 				<SectionIf DataElementId="thresholdgrowth"></SectionIf>
+				<ReportText Type="Tab"/>	
 				<ReportText Type="PlainText">Threshold growth: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="thresholdgrowth"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="washout"></SectionIf>
+				<SectionIf DataElementId="capsule"></SectionIf>
+				<ReportText Type="Tab"/>	
+				<ReportText Type="PlainText">Enhancing capsule appearance: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="capsule"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+		</TemplatePartial>
+
+		<TemplatePartial Id="untreatedimpressiontext">
+			<Branch>
+				<!--<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+				<ReportText Type="PlainText">Observation #: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
+				<ReportText Type="PlainText" >: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
+				<ReportText Type="PlainText"> mm</ReportText>
+				<ReportText Type="Newline"></ReportText>-->
+				
+				<SectionIf DataElementId="observationnumber"></SectionIf>
+				<ReportText Type="PlainText">Observation </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
+				<ReportText Type="PlainText">: </ReportText>				
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="untreatreporttext">
+			<Branch>
+				<ReportText Type="PlainText" >Observation #: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">Location: Segment </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>					
+					<SectionIf DataElementId="diameter"></SectionIf>
+				</AndCondition>
+				<ReportText Type="PlainText">Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
+				<ReportText Type="PlainText"> mm (image # </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
+				<ReportText Type="PlainText">, series </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
+				<ReportText Type="PlainText">)</ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>				
+				<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+				<ReportText Type="PlainText">Tumor in Vein: Yes;</ReportText>				
+			</Branch>	
+			
+			<Branch>				
+				<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
+				<ReportText Type="PlainText">Tumor in Vein: No</ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+					<SectionIf DataElementId="WhichVein"></SectionIf>
+				</AndCondition>				
+				<ReportText Type="PlainText"> involves the </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no" />
+				</AndCondition>
+				<ReportText Type="PlainText">Parenchymal mass: No</ReportText>	
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes" />
+				</AndCondition>
+				<ReportText Type="PlainText">Parenchymal mass: Yes</ReportText>	
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
+					<SectionIfNot DataElementId="lrmtargetoidmass"></SectionIfNot>
+					<SectionIfNot DataElementId="lrmnontargetoidmass"></SectionIfNot>
+				</AndCondition>
+				<ReportText Type="PlainText">LR-M features: None</ReportText>
+				<ReportText Type="Newline"></ReportText>						
+			</Branch>
+			
+			<Branch>
+				<OrCondition>
+					<SectionIf DataElementId="lrmtargetoidmass"></SectionIf>
+					<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
+				</OrCondition>
+				<ReportText Type="PlainText">LR-M features: </ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
+					<SectionIf DataElementId="lrmtargetoidmass"></SectionIf>
+					<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
+				</AndCondition>
+				<ReportText Type="InsertDataElementValue" Value="lrmtargetoidmass"></ReportText>
+				<ReportText Type="PlainText">, </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lrmnontargetoidmass"></ReportText>
+				<ReportText Type="PlainText"> </ReportText>
+				<ReportText Type="Newline"></ReportText>						
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
+					<SectionIf DataElementId="lrmtargetoidmass"></SectionIf>
+					<SectionIfNot DataElementId="lrmnontargetoidmass"></SectionIfNot>
+				</AndCondition>
+				<ReportText Type="InsertDataElementValue" Value="lrmtargetoidmass"></ReportText>
+				<ReportText Type="PlainText"> </ReportText>
+				<ReportText Type="Newline"></ReportText>						
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>
+					<SectionIfNot DataElementId="lrmtargetoidmass"></SectionIfNot>
+					<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
+				</AndCondition>
+				<ReportText Type="InsertDataElementValue" Value="lrmnontargetoidmass"></ReportText>
+				<ReportText Type="PlainText"> </ReportText>
+				<ReportText Type="Newline"></ReportText>						
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>				
+					<SectionIf DataElementId="arterialEnhancement"></SectionIf>
+				</AndCondition>				
+				<ReportText Type="PlainText">Nonrim AP hyperenhancement: </ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="arterialEnhancement"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>				
+					<SectionIf DataElementId="thresholdgrowth"></SectionIf>
+				</AndCondition>		
+				<ReportText Type="PlainText">Threshold growth: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="thresholdgrowth"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>				
+					<SectionIf DataElementId="washout"></SectionIf>
+				</AndCondition>	
 				<ReportText Type="PlainText">Nonperipheral washout appearance: </ReportText>				
 				<ReportText Type="InsertDataElementValue" Value="washout"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="capsule"></SectionIf>
+				<AndCondition>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></NotEqualCondition>				
+					<SectionIf DataElementId="capsule"></SectionIf>
+				</AndCondition>	
 				<ReportText Type="PlainText">Enhancing capsule appearance: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="capsule"></ReportText>
 				<ReportText Type="Newline"></ReportText>
@@ -3434,17 +3651,32 @@
 			<ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes"></EqualCondition>
+					<ReportText Type="InsertPartialTemplate" Value="tivreporttextifparenchymalmassisyes"/>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"></EqualCondition>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV</ReportText>
+				</Branch>
+				<Branch>					
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV (Tumor in vein), etiology uncertain</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-TIV (etiology uncertain) in segment </ReportText>
+					<ReportText Type="PlainText">LR-TIV (Tumor in vein), etiology uncertain,</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="segmentlocation" />
+					<ReportText Type="PlainText"> in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="WhichVein"></SectionIf>
+					<ReportText Type="PlainText"> involving the </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -3455,17 +3687,32 @@
 			<ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes"></EqualCondition>
+					<ReportText Type="InsertPartialTemplate" Value="tivreporttextifparenchymalmassisyes"/>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"></EqualCondition>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV</ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV (Tumor in vein), probably due to HCC</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-TIV (probably due to HCC) in segment </ReportText>
+					<ReportText Type="PlainText">LR-TIV (Tumor in vein), probably due to HCC,</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="segmentlocation" />
+					<ReportText Type="PlainText"> in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="WhichVein"></SectionIf>
+					<ReportText Type="PlainText"> involving the </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -3476,17 +3723,32 @@
 			<ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes"></EqualCondition>
+					<ReportText Type="InsertPartialTemplate" Value="tivreporttextifparenchymalmassisyes"/>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"></EqualCondition>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV</ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-TIV (Tumor in vein), may be due to non-HCC malignancy</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText" >LR-TIV (may be due to non-HCC malignancy) in segment </ReportText>
+					<ReportText Type="PlainText" >LR-TIV (Tumor in vein), may be due to non-HCC malignancy,</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="segmentlocation" />
+					<ReportText Type="PlainText"> in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="WhichVein"></SectionIf>
+					<ReportText Type="PlainText"> involving the </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -3497,20 +3759,32 @@
 			<ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes"></EqualCondition>
+					<ReportText Type="InsertPartialTemplate" Value="tivreporttextifparenchymalmassisyes"/>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"></EqualCondition>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Catogery: LR-TIV (Tumor in vein), (definitely due to HCC)</ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">LI-RADS v2018 Catogery: LR-TIV (Tumor in vein), definitely due to HCC</ReportText>
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText" >LR-TIV (Tumor in vein), (definitely due to HCC)</ReportText>
+					<ReportText Type="PlainText" >LR-TIV (Tumor in vein), definitely due to HCC,</ReportText>
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText">, in segment </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>					
+					<ReportText Type="PlainText"> in segment </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="WhichVein"></SectionIf>
+					<ReportText Type="PlainText"> involving the </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="WhichVein"></ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -3525,7 +3799,7 @@
 					<ReportText Type="PlainText" >LI-RADS v2018 Category: LR-M</ReportText>
 					<ReportText Type="Newline"></ReportText>
 					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
-					<ReportText Type="Newline"></ReportText>		
+<!--					<ReportText Type="Newline"></ReportText>		-->
 				</Branch>
 			</ReportSection>
 			<ReportSection SectionId="impression">
@@ -3593,6 +3867,11 @@
 					<SectionIf DataElementId="segmentlocation" />
 					<ReportText Type="PlainText" > in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="treatednonevaluable" />
+					<ReportText Type="PlainText" > due to </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="treatednonevaluable" />
 				</Branch>
 			</ReportSection>
 		</ReportSections>
