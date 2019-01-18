@@ -38,8 +38,6 @@
 	</Metadata>
 	
 	<DataElements>
-		
-		
 	
 		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="1" CdeId="RDE65">
 			<Label>Composition of Cyst</Label>
@@ -152,29 +150,38 @@
       <Label>IncidentalCTMRI</Label>
       <Branch>
 		<Label>Simple</Label>
-
 		<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/>
 		
 		<DecisionPoint Id="Simple">
 		 <Label>Simple nomass</Label>
 		   <Branch>
-		    <Label>Simple no mass</Label>
-				<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
-			<EndPointRef EndPointId="NoFurtherEvaluation"></EndPointRef>
+				<Label>Simple no mass</Label>	
+				<AndCondition>									
+					<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+					<OrCondition>			
+						<EqualCondition DataElementId="invasion" ComparisonValue="no"/>
+						<EqualCondition DataElementId="invasion" ComparisonValue="yes"/>
+					</OrCondition>
+				</AndCondition>	
+				<EndPointRef EndPointId="NoFurtherEvaluation"></EndPointRef>
 	        </Branch>
 
-     		  <Branch>
-				<Label>Simple cyst yes mass</Label>
+     		<Branch>
+				<Label>Simple cyst yes mass</Label>		
+				<AndCondition>					
 					<EqualCondition DataElementId="masseffect" ComparisonValue="yes"/>
-					<EndPointRef EndPointId="referral"></EndPointRef>
-			  </Branch>
-	      </DecisionPoint>
-		</Branch>
-		  
+					<OrCondition>			
+						<EqualCondition DataElementId="invasion" ComparisonValue="no"/>
+						<EqualCondition DataElementId="invasion" ComparisonValue="yes"/>
+					</OrCondition>
+				</AndCondition>	
+				<EndPointRef EndPointId="referral"></EndPointRef>
+			</Branch>
+	    </DecisionPoint>
+	  </Branch>		  
 		  
 	  <Branch>
 		<Label>Mixed yes mass</Label>
-
 		   <AndCondition>
 			<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/>
 			<EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm"/>
@@ -197,28 +204,30 @@
 			<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/>
 			<EqualCondition DataElementId="mixedcystsize" ComparisonValue="greaterthan10mm"/>
 			<EqualCondition DataElementId="masseffect" ComparisonValue="yes"/>
+			<OrCondition>			
+				<EqualCondition DataElementId="invasion" ComparisonValue="no"/>
+				<EqualCondition DataElementId="invasion" ComparisonValue="yes"/>
+			</OrCondition>
            </AndCondition>
 			<EndPointRef EndPointId="referral"></EndPointRef>
-	  </Branch>
-	  
+	  </Branch>	  
 	  
 	  <Branch>
 		<Label>Mixed with no mass</Label>
 		   <AndCondition>
 			<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/>
-			<EqualCondition DataElementId="mixedcystsize" ComparisonValue="greaterthan10mm"/>
+			<EqualCondition DataElementId="mixedcystsize" ComparisonValue="greaterthan10mm"/>		
 			<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+			<OrCondition>			
+				<EqualCondition DataElementId="invasion" ComparisonValue="no"/>
+				<EqualCondition DataElementId="invasion" ComparisonValue="yes"/>
+			</OrCondition>
            </AndCondition>
 			<EndPointRef EndPointId="recommend"></EndPointRef>
-	  </Branch>
-	 
-	  
+	  </Branch>	 	  
 	</DecisionPoint>
-		
 	
-	
-	</Rules>
-	
+	</Rules>	
 	
 	<EndPoints>
 		
@@ -283,6 +292,5 @@
 		</ReportSections>
 		</EndPoint>
 		
-	</EndPoints>
-	
+	</EndPoints>	
 	</ReportingModule>
