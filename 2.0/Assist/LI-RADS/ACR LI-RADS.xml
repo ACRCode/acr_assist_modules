@@ -567,244 +567,6 @@
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</ChoiceDataElement>
-	
-	
-		<ChoiceDataElement Id="sixeincreatein6months" IsRequired="true" DisplaySequence="15">
-			<Label>Was there ≥50% size increase in ≤6 months?</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>
-				</Choice>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>						
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<LessThanCondition DataElementId="diameter" ComparisonValue="{diameterSmall}"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="washout"
-							ComparisonValue="no"/>
-						<EqualCondition DataElementId="capsule"
-							ComparisonValue="no"/>
-						<OrCondition>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-						</OrCondition>
-					</AndCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout"
-								ComparisonValue="yes"/>
-							<!-- Washout = Yes, Capsule = Yes -->
-							<EqualCondition DataElementId="capsule"
-								ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-							</OrCondition>
-						</AndCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout"
-								ComparisonValue="yes"/>
-							<!-- Washout = Yes, Thresholdgrowth = Yes -->
-							<EqualCondition DataElementId="capsule"
-								ComparisonValue="no"/>
-							<EqualCondition DataElementId="thresholdgrowth"
-								ComparisonValue="yes"/>
-						</AndCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout"
-								ComparisonValue="no"/>
-							<!-- Capsule = Yes, Thresholdgrowth = Yes -->
-							<EqualCondition DataElementId="capsule"
-								ComparisonValue="yes"/>
-							<EqualCondition DataElementId="thresholdgrowth"
-								ComparisonValue="yes"/>
-						</AndCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout"
-								ComparisonValue="yes"/>
-							<!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
-							<EqualCondition DataElementId="capsule"
-								ComparisonValue="yes"/>
-							<EqualCondition DataElementId="thresholdgrowth"
-								ComparisonValue="yes"/>
-						</AndCondition>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<GreaterThanOrEqualsCondition DataElementId="diameter"
-						ComparisonValue="diameterLarge"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="arterialEnhancement"	ComparisonValue="noaphe"/>
-						<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"/>
-					</AndCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<NotCondition>
-						<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"/>
-					</NotCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</ChoiceDataElement>
-		
-		<ChoiceDataElement Id="HistoryofVisibilityonUS" DisplaySequence="16" IsRequired="true">
-			<Label>Was the observation visible as a discrete nodule on screening ultrasound?</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>
-				</Choice>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="observationinPatient"/>
-						<SectionIf DataElementId="observationinPatient"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<!--<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-			<!--	<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="notcategorized"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="tumorInVein"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="probablyBenign"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-			<!--	<ConditionalProperty>
-					<LessThanCondition DataElementId="diameter" ComparisonValue="{diameterSmall}"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-			<!--	<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-						<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-						<OrCondition>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-						</OrCondition>
-					</AndCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-			<!--	<ConditionalProperty>
-					<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-				<!--<ConditionalProperty>
-					<OrCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<!-\- Washout = Yes, Capsule = Yes -\->
-							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"
-								/>
-							</OrCondition>
-						</AndCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<!-\- Washout = Yes, Thresholdgrowth = Yes -\->
-							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
-						</AndCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-							<!-\- Capsule = Yes, Thresholdgrowth = Yes -\->
-							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
-						</AndCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<!-\- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -\->
-							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
-						</AndCondition>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-				
-				<!--<ConditionalProperty>
-					<GreaterThanOrEqualsCondition DataElementId="diameter"
-						ComparisonValue="diameterLarge"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="noaphe"/>
-						<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-							ComparisonValue="No"/>
-					</AndCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-				
-				<!--<ConditionalProperty>
-					<NotCondition>
-						<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"/>
-					</NotCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>-->
-			</ConditionalProperties>	
-		</ChoiceDataElement>	
 				
 		<ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="17">
 			<Label>Is there lesional enhancement?</Label>
@@ -1637,7 +1399,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="thresholdgrowth" IsRequired="true" DisplaySequence="34">
-			<Label>Threshold growth</Label>
+			<Label>Threshold growth (≥50% size increase in ≤6 months?)</Label>
 			<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND
 				depending on the time interval between examinations, by the following amounts: less
 				than or equal to 6 months: >50% diameter increase greater than 6 months: >100%
@@ -1679,9 +1441,8 @@
 				</ConditionalProperty>
 			</ConditionalProperties>		
 		</ChoiceDataElement>
-			
-	
-		<ChoiceDataElement Id="adjustcategorybasedonAncillary" DisplaySequence="35">
+				
+		<!--<ChoiceDataElement Id="adjustcategorybasedonAncillary" DisplaySequence="35">
 			<Label>Do you want to adjust category based on ancillary features? </Label>
 			<Diagrams>
 				<Diagram>
@@ -1739,9 +1500,8 @@
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>	
-		</ChoiceDataElement>
+		</ChoiceDataElement>-->
 			
-	
 		<MultiChoiceDataElement Id="ancillaryFavoringMalignancy" DisplaySequence="36">
 			<Label>Are there ancillary features favoring malignancy? </Label>
 			<Diagrams>
@@ -1845,8 +1605,8 @@
 					<OrCondition>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>-->
+<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -1910,8 +1670,8 @@
 					<OrCondition>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+					<!--	<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -2015,16 +1775,8 @@
 				</DecisionPoint>
 			</Branch>
 			<Branch>
-				<Label>Untreated observation</Label>
-				<!--<NotRelevantDataElements>
-					<DataElementRef DataElementId="treatedobservation"/>
-					<DataElementRef DataElementId="pretreatmentsize"/>
-					<DataElementRef DataElementId="pretreatmentCategory"/>
-					<DataElementRef DataElementId="TreatmentMethod"/>
-				</NotRelevantDataElements>-->
-
+				<Label>Untreated observation</Label>				
 				<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
-
 				<DecisionPoint Id="untreatedObservationDp">
 					<Label> Untreated observation without pathologic proof in patient at high-risk
 						for HCC </Label>
@@ -2223,14 +1975,70 @@
 						<Label>Definitely benign</Label>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="definitelyBenign"/>
-						<EndPointRef EndPointId="LR1"/>
+						<DecisionPoint Id="decision_definitelyBenign">
+							<Label>Definitely benign</Label>
+							<Branch>
+								<OrCondition>
+									<AndCondition>
+										<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+										<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+									</AndCondition>
+									<AndCondition>
+										<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+										<SectionIf DataElementId="ancillaryFavoringBenignity" />
+									</AndCondition>
+									<AndCondition>
+										<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+										<SectionIf DataElementId="ancillaryFavoringBenignity" />
+									</AndCondition>
+								</OrCondition>
+								<EndPointRef EndPointId="LR1"/>
+							</Branch>
+							<Branch>
+								<AndCondition>
+									<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+									<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+								</AndCondition>
+								<EndPointRef EndPointId="LR2"/>	
+							</Branch>
+						</DecisionPoint>
 					</Branch>
 
 					<Branch>
 						<Label>Probably benign</Label>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="probablyBenign"/>
-						<EndPointRef EndPointId="LR2"/>
+<!--						<EndPointRef EndPointId="LR2"/>-->
+						<DecisionPoint Id="decision_probablyBenign">
+							<Label>Definitely benign</Label>
+							<Branch>
+								<OrCondition>
+									<AndCondition>
+										<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+										<SectionIf DataElementId="ancillaryFavoringBenignity" />
+									</AndCondition>
+									<AndCondition>
+										<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+										<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+									</AndCondition>
+								</OrCondition>
+								<EndPointRef EndPointId="LR2"/>	
+							</Branch>
+							<Branch>
+								<AndCondition>
+									<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+									<SectionIf DataElementId="ancillaryFavoringBenignity" />
+								</AndCondition>							
+								<EndPointRef EndPointId="LR1"/>	
+							</Branch>
+							<Branch>
+								<AndCondition>
+									<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+									<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+								</AndCondition>							
+								<EndPointRef EndPointId="LR3"/>	
+							</Branch>
+						</DecisionPoint>
 					</Branch>
 
 					<Branch>
@@ -2243,715 +2051,616 @@
 					<Branch>
 						<Label>Otherwise</Label>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>
-						
 						<DecisionPoint Id="ArterialphaseDp">
 							<Label>Nonrim arterial phase hyperenhancement</Label>
 							<Branch>
-								<Label>APHE</Label>
-								<!-- NO APHE -->
-								<AndCondition>
-								<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
-								<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"/>
-								</AndCondition>
-								
-								<DecisionPoint Id="diameterDp">
-									<Label>Observation size (mm)</Label>
-									<Branch>
-										<Label>&lt; 10</Label>
-										<!-- Diameter < 10 -->
-										<LessThanCondition DataElementId="diameter"
-											ComparisonValue="diameterSmall"/>
-										<DecisionPoint Id="wasoutCapsultThreDp1">
-											<Label>Washout/Capsule/Thresholdgrowth</Label>
-											<Branch>
-												<Label>None</Label>
-												<!-- None / Zero Y's -->
-												<AndCondition>
-												<EqualCondition DataElementId="washout"	ComparisonValue="no"/>
-												<EqualCondition DataElementId="capsule"	ComparisonValue="no"/>
-												<OrCondition>
-													<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-													<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-												</OrCondition>
-												</AndCondition>
-												<EndPointRef EndPointId="LR3"/>
-											</Branch>
-											<Branch>
-												<Label>One </Label>
-												<!-- One / One Y -->
-												<OrCondition>
-													<AndCondition>
-														<EqualCondition DataElementId="washout"	ComparisonValue="yes"/>
-														<!-- Washout = Yes -->
-														<EqualCondition DataElementId="capsule"	ComparisonValue="no"/>
-															<OrCondition>
-																<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-																<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-															</OrCondition>
-													</AndCondition>
-													<AndCondition>
-														<EqualCondition DataElementId="washout"
-														ComparisonValue="no"/>
-														<!-- Capsule = Yes -->
-														<EqualCondition DataElementId="capsule"
-														ComparisonValue="yes"/>
-															<OrCondition>
-																<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-																<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-															</OrCondition>
-													</AndCondition>
-													<AndCondition>
-														<EqualCondition DataElementId="washout"
-														ComparisonValue="no"/>
-														<!-- Thresholdgrowth = Yes -->
-														<EqualCondition DataElementId="capsule"
-														ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth"
-														ComparisonValue="yes"/>
-													</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR4"/>
-											</Branch>
-											<Branch>
-												<Label>Two or More</Label>
-												<!-- Two / Two or more Y's -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
+								<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="noaphe" />
+								<DecisionPoint Id="arterialEnhancemenNoApheotherwise">
+								<Label>arterialEnhancemenNoAphe</Label>
+								<Branch>
+									<Label>Less than 20</Label>
+									<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
+									<DecisionPoint Id="washoutcapsulethresholdNoneotherwise">
+										<Label>washoutcapsulethreshold None</Label>
+										<Branch>
+											<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+<!--											<EndPointRef EndPointId="LR3"/>-->
+											<DecisionPoint Id="decision_otherwise">
+												<Label>Definitely benign</Label>
+												<Branch>
 													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+														<AndCondition>													
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>													
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
 													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR4"/>
+													<EndPointRef EndPointId="LR3"/>	
+												</Branch>
+												<Branch>
+													<AndCondition>
+														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>							
+													<EndPointRef EndPointId="LR2"/>	
+												</Branch>												
+												<Branch>
+													<AndCondition>
+														<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>
+													<EndPointRef EndPointId="LR4"/>	
+												</Branch>
+											</DecisionPoint>
+										</Branch>										
+										<Branch>
+											<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+<!--											<EndPointRef EndPointId="LR3"/>-->
+											<DecisionPoint Id="decision_otherwise_one">
+												<Label>Definitely benign</Label>
+												<Branch>
+													<OrCondition>
+														<AndCondition>													
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>													
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+													</OrCondition>
+													<EndPointRef EndPointId="LR3"/>	
+												</Branch>
+												<Branch>
+													<AndCondition>
+														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>							
+													<EndPointRef EndPointId="LR2"/>	
+												</Branch>	
+												<Branch>
+													<AndCondition>
+														<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>
+													<EndPointRef EndPointId="LR4"/>	
+												</Branch>												
+											</DecisionPoint>
+										</Branch>										
+										<Branch>
+											<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+											<DecisionPoint Id="decisionpoint_one">
+												<Label>decisionpoint_one</Label>
+												<Branch>
+													<OrCondition>
+														<AndCondition>													
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>													
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+													</OrCondition>
+													<EndPointRef EndPointId="LR4"/>
+												</Branch>
+												<Branch>
+													<AndCondition>
+														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>
+													<EndPointRef EndPointId="LR3"/>
+												</Branch>
+											</DecisionPoint>										
+										</Branch>
+									</DecisionPoint>
+								</Branch>
+								
+								<Branch>
+									<Label>Greater than 20</Label>
+									<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
+									<DecisionPoint Id="washoutcapsulethresholdNoneGreaterThan20otherwise">
+										<Label>washoutcapsulethreshold None</Label>
+										<Branch>
+											<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+											<!--<EndPointRef EndPointId="LR3"/>-->
+											<DecisionPoint Id="decision_otherwise_none">
+												<Label>Definitely benign</Label>
+												<Branch>
+													<OrCondition>
+														<AndCondition>													
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>													
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+													</OrCondition>
+													<EndPointRef EndPointId="LR3"/>	
+												</Branch>
+												<Branch>
+													<AndCondition>
+														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>							
+													<EndPointRef EndPointId="LR2"/>	
+												</Branch>												
+												<Branch>
+													<AndCondition>
+													<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+													<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>
+													<EndPointRef EndPointId="LR4"/>	
+												</Branch>
+											</DecisionPoint>
+										</Branch>
+										
+										<Branch>
+											<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>											
+											<DecisionPoint Id="decisionpoint_one_washoutcapsulethreshold">
+												<Label>decisionpoint_one</Label>
+												<Branch>
+													<OrCondition>
+														<AndCondition>													
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>													
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+													</OrCondition>
+													<EndPointRef EndPointId="LR4"/>
+												</Branch>
+												<Branch>
+													<AndCondition>
+														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>
+													<EndPointRef EndPointId="LR3"/>
+												</Branch>
+											</DecisionPoint>	
+										</Branch>
+										
+										<Branch>
+											<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+											<DecisionPoint Id="decisionpoint_one_washoutcapsulethreshold1">
+												<Label>decisionpoint_one</Label>
+												<Branch>
+													<OrCondition>
+														<AndCondition>													
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>													
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<AndCondition>
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+													</OrCondition>
+													<EndPointRef EndPointId="LR4"/>
+												</Branch>
+												<Branch>
+													<AndCondition>
+														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+													</AndCondition>
+													<EndPointRef EndPointId="LR3"/>
+												</Branch>
+											</DecisionPoint>	
+										</Branch>
+									</DecisionPoint>
+								</Branch>
+							</DecisionPoint>
+							</Branch>
+							<Branch>
+								<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe" />
+								<DecisionPoint Id="arterialEnhancementWithNoApheotherwise">
+									<Label>arterialEnhancemenNoAphe</Label>
+									<Branch>
+										<Label>Less than 10</Label>
+										<LessThanCondition DataElementId="diameter" ComparisonValue="10"/>
+										<DecisionPoint Id="washoutcapsulethresholdNoneLessthan10otherwise">
+											<Label>washoutcapsulethreshold None</Label>
+											<Branch>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+<!--												<EndPointRef EndPointId="LR3"/>-->
+												<DecisionPoint Id="decision_otherwise_washoutcapsulethreshold">
+													<Label>Definitely benign</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR3"/>	
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>							
+														<EndPointRef EndPointId="LR2"/>	
+													</Branch>												
+													<Branch>
+														<AndCondition>
+															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR4"/>	
+													</Branch>
+												</DecisionPoint>
+											</Branch>
+											
+											<Branch>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+												<DecisionPoint Id="decisionpoint_one_washoutcapsulethreshold_one">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR3"/>
+													</Branch>
+												</DecisionPoint>	
+											</Branch>
+											
+											<Branch>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+												<DecisionPoint Id="decisionpoint_one_washoutcapsulethreshold_twoormore">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR3"/>
+													</Branch>
+												</DecisionPoint>	
 											</Branch>
 										</DecisionPoint>
 									</Branch>
+									
 									<Branch>
-										<Label>10-19</Label>
-										<!-- 10 <= Diameter <= 19 -->
+										<Label>Between 10 and 20</Label>
 										<AndCondition>
-											<GreaterThanOrEqualsCondition DataElementId="diameter"
-												ComparisonValue="diameterSmall"/>
-											<LessThanOrEqualsCondition DataElementId="diameter"
-												ComparisonValue="19"/>
-										</AndCondition>
-										<DecisionPoint Id="wasoutCapsultThreDp2">
-											<Label>Washout/Capsule/Thresholdgrowth</Label>
+											<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
+											<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
+										</AndCondition>																		
+										<DecisionPoint Id="washoutcapsulethresholdNoneBetween10and20otherwise">
+											<Label>washoutcapsulethreshold None</Label>
 											<Branch>
-												<Label>None</Label>
-												<!--<NotRelevantDataElements>
-													<DataElementRef DataElementId="HistoryofVisibilityonUS"/>
-													<DataElementRef DataElementId="sixeincreatein6months"/>
-												</NotRelevantDataElements>-->
-												<!-- None / Zero Y's -->
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<EndPointRef EndPointId="LR3"/>
-											</Branch>
-											<Branch>
-												<Label>One</Label>
-												<!-- One / One Y -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												
-												<DecisionPoint Id="lr4_5deciderDp">
-													<Label>APHE Present?</Label>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+<!--												<EndPointRef EndPointId="LR3"/>-->
+												<DecisionPoint Id="decision_otherwise_washoutcapsulethreshold_diameter_none">
+													<Label>Definitely benign</Label>
 													<Branch>
-														<Label>Yes</Label>
-														<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
-														<DecisionPoint Id="aphefeatures">
-															<Label>washout / capsule / thresholdgrowth</Label>
+														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+														<DecisionPoint Id="decision_otherwise_ancillaryFavoringMalignancy">
+															<Label>Definitely benign</Label>
 															<Branch>
-																<Label>More than two</Label>
-																<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"/>
-																<EndPointRef EndPointId="LR5"></EndPointRef>
+																<OrCondition>
+																	<AndCondition>													
+																		<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																		<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																	</AndCondition>
+																	<AndCondition>													
+																		<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																		<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																	</AndCondition>
+																</OrCondition>
+																<EndPointRef EndPointId="LR3"/>	
 															</Branch>
 															<Branch>
-																<Label> Only 1 Major features present</Label>
-																<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"/>
-																<DecisionPoint Id="OnemajorfeaturepresentDp">
-																	<Label>Which feature present?</Label>
-																	<Branch>
-																		<Label>Washout</Label>
-																		<!--<NotRelevantDataElements>
-																			<DataElementRef DataElementId="sixeincreatein6months"></DataElementRef>
-																		</NotRelevantDataElements>-->
-																		<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-																		<DecisionPoint Id="historyofvisibilityDp">
-																			<Label>Was the observation visible as a discrete nodule on screening ultrasound?</Label>
-																			<Branch>
-																				<Label>Yes</Label>
-																				<EqualCondition DataElementId="HistoryofVisibilityonUS" ComparisonValue="yes"/>
-																				<EndPointRef EndPointId="LR5"></EndPointRef> 
-																			</Branch>
-																			<Branch>
-																				<Label>No</Label>
-																				<EqualCondition DataElementId="HistoryofVisibilityonUS" ComparisonValue="no"/>
-																				<EndPointRef EndPointId="LR4"></EndPointRef> 
-																			</Branch>
-																		</DecisionPoint>
-																	</Branch>
-																	<Branch>
-																		<Label>Thresholdgrowth present</Label>
-																		<!--<NotRelevantDataElements>
-																			<DataElementRef DataElementId="HistoryofVisibilityonUS"></DataElementRef>
-																		</NotRelevantDataElements>-->
-																		<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
-																		<DecisionPoint Id="thresholdgrowthDp">
-																			<Label>Was there ≥50% size increase in ≤6 months?</Label>
-																			<Branch>
-																				<Label>Yes</Label>
-																				<EqualCondition DataElementId="sixeincreatein6months" ComparisonValue="yes"/>
-																				<EndPointRef EndPointId="LR5"></EndPointRef>
-																			</Branch>
-																			<Branch>
-																				<Label>No</Label>
-																				<EqualCondition DataElementId="sixeincreatein6months" ComparisonValue="no"/>
-																				<EndPointRef EndPointId="LR4"></EndPointRef>
-																			</Branch>
-																		</DecisionPoint>
-																	</Branch>
-																	
-																	<Branch>
-																		<Label>Capsule present</Label>
-																	<!--	<NotRelevantDataElements>
-																			<DataElementRef DataElementId="HistoryofVisibilityonUS"/>
-																			<DataElementRef DataElementId="sixeincreatein6months"/>
-																		</NotRelevantDataElements>-->
-																		<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-																		<EndPointRef EndPointId="LR4"></EndPointRef>
-																	</Branch>
-																</DecisionPoint>
+																<AndCondition>
+																	<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																	<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																</AndCondition>							
+																<EndPointRef EndPointId="LR2"/>	
+															</Branch>												
+															<Branch>
+																<AndCondition>
+																	<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																	<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																</AndCondition>
+																<EndPointRef EndPointId="LR4"/>	
 															</Branch>
 														</DecisionPoint>
 													</Branch>
+													<Branch>
+														<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+														<DecisionPoint Id="decisionpoint_one_ancillaryFavoringMalignancy">
+															<Label>decisionpoint_one</Label>
+															<Branch>
+																<OrCondition>
+																	<AndCondition>													
+																		<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																		<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																	</AndCondition>
+																	<AndCondition>													
+																		<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																		<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																	</AndCondition>
+																	<AndCondition>
+																		<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																		<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																	</AndCondition>
+																</OrCondition>
+																<EndPointRef EndPointId="LR4"/>
+															</Branch>
+															<Branch>
+																<AndCondition>
+																	<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																	<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																</AndCondition>
+																<EndPointRef EndPointId="LR3"/>
+															</Branch>
+														</DecisionPoint>	
+													</Branch>
 												</DecisionPoint>
-												
 											</Branch>
+											
 											<Branch>
-												<Label>Two or More</Label>
-											<!--	<NotRelevantDataElements>
-													<DataElementRef DataElementId="HistoryofVisibilityonUS"/>
-													<DataElementRef DataElementId="sixeincreatein6months"/>
-												</NotRelevantDataElements>-->
-												<!-- Two / Two or more Y's -->
-												<OrCondition>
 												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
+													<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+													<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												</AndCondition>																				
+												<DecisionPoint Id="decisionpoint_one_capsule">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR3"/>
+													</Branch>
+												</DecisionPoint>
+											</Branch>
+											
+											<Branch>
 												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR5"/>
+													<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+													<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+												</AndCondition>																				
+<!--												<EndPointRef EndPointId="LR5"/>-->
+												<DecisionPoint Id="decisionpoint_one_cap">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR5"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+												</DecisionPoint>	
+											</Branch>
+											
+											<Branch>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+												<DecisionPoint Id="decisionpoint_one_washoutcapsulethreshold_twoormore1">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR5"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+												</DecisionPoint>	
 											</Branch>
 										</DecisionPoint>
-									</Branch>
-									<Branch>
-										<Label>&gt;= 20</Label>
-									<!--	<NotRelevantDataElements>
-											<DataElementRef DataElementId="HistoryofVisibilityonUS"/>
-											<DataElementRef DataElementId="sixeincreatein6months"/>
-										</NotRelevantDataElements>-->
-										<!-- Diameter >= 20 -->
-										<GreaterThanOrEqualsCondition DataElementId="diameter"
-											ComparisonValue="diameterLarge"/>
-										<DecisionPoint Id="wasoutCapsultThreDp3">
-											<Label>Washout/Capsule/Thresholdgrowth</Label>
-											<Branch>
-												<Label>None</Label>
-												<!-- None / Zero Y's -->
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<EndPointRef EndPointId="LR4"/>
-											</Branch>
-											<Branch>
-												<Label>One</Label>
-												<!-- One / One Y -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR5"/>
-											</Branch>
-											<Branch>
-												<Label>Two or More</Label>
-												<!-- Two / Two or more Y's -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR5"/>
-											</Branch>
-										</DecisionPoint>
-									</Branch>
-								</DecisionPoint>
-							</Branch>
-							<Branch>
-								<Label>NO APHE</Label>
-							<!--	<NotRelevantDataElements>
-									<DataElementRef DataElementId="sixeincreatein6months"/>
-									<DataElementRef DataElementId="HistoryofVisibilityonUS"/>
-								</NotRelevantDataElements>-->
-								<!-- Hypo/Iso-enhancement -->
-								<AndCondition>
-									<EqualCondition DataElementId="arterialEnhancement"	ComparisonValue="noaphe"/>
-									<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"/>
-								</AndCondition>
-								
-								<DecisionPoint Id="DiameterDp2">
-									<Label>Observation size (mm)</Label>
-									<Branch>
-										<Label>&lt; 20</Label>
-										<!-- Diameter < 20 -->
-										<LessThanCondition DataElementId="diameter"
-											ComparisonValue="diameterLarge"/>
-										<DecisionPoint Id="wasoutCapsultThreDp4">
-											<Label>Washout/Capsule/Thresholdgrowth</Label>
-											<Branch>
-												<Label>None</Label>
-												<!-- None / Zero Y's -->
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<EndPointRef EndPointId="LR3"/>
-											</Branch>
-											<Branch>
-												<Label>One</Label>
-												<!-- One / One Y -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR3"/>
-											</Branch>
-											<Branch>
-												<Label>Two or More</Label>
-												<!-- Two / Two or more Y's -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR4"/>
-											</Branch>
-										</DecisionPoint>
-									</Branch>
-									<Branch>
-										<Label>&gt;= 20</Label>
-										<!-- Diameter >= 20 -->
-										<GreaterThanOrEqualsCondition DataElementId="diameter"
-											ComparisonValue="diameterLarge"/>
-										<DecisionPoint Id="wasoutCapsultThreDp5">
-											<Label>Washout/Capsule/Thresholdgrowth</Label>
-											<Branch>
-												<Label>None</Label>
-												<!-- None / Zero Y's -->
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<EndPointRef EndPointId="LR3"/>
-											</Branch>
-											<Branch>
-												<Label>One</Label>
-												<!-- One / One Y -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR4"/>
-											</Branch>
-											<Branch>
-												<Label>Two or More</Label>
-												<!-- Two / Two or more Y's -->
-												<OrCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-													<OrCondition>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-														<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-													</OrCondition>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="no"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="no"/>
-												<!-- Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												<AndCondition>
-												<EqualCondition DataElementId="washout"
-												ComparisonValue="yes"/>
-												<!-- Washout = Yes, Capsule = Yes, Thresholdgrowth = Yes -->
-												<EqualCondition DataElementId="capsule"
-												ComparisonValue="yes"/>
-												<EqualCondition DataElementId="thresholdgrowth"
-												ComparisonValue="yes"/>
-												</AndCondition>
-												</OrCondition>
-												<EndPointRef EndPointId="LR4"/>
-											</Branch>
-										</DecisionPoint>
-									</Branch>
-								</DecisionPoint>
-							</Branch>
-							<Branch>
-								<Label> Adjust category</Label>
-								<!--<NotRelevantDataElements>
-									<DataElementRef DataElementId="sixeincreatein6months"/>
-									<DataElementRef DataElementId="HistoryofVisibilityonUS"/>
-								</NotRelevantDataElements>-->
-								<NotCondition>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"/>
-								</NotCondition>
-								
-								<DecisionPoint Id="AdjustcategoryDp">
-									<Label>Adjust category</Label>
-									<Branch>
-									<Label>Upgrade to LR-2</Label>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-											ComparisonValue="Upgradetohcc2"/>
-										<EndPointRef EndPointId="LR2"/>
-									</Branch>
-									<Branch>
-									<Label>Upgrade to LR-3</Label>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-											ComparisonValue="Upgradetohcc3"/>
-										<EndPointRef EndPointId="LR3"/>
-									</Branch>
-									<Branch>
-									<Label>Upgrade to LR-4</Label>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-											ComparisonValue="Upgradetohcc4"/>
-										<EndPointRef EndPointId="LR4"/>
-									</Branch>
-									<Branch>
-									<Label>Downgrade to LR-4</Label>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-											ComparisonValue="Downgradetohcc4"/>
-										<EndPointRef EndPointId="LR4"/>
-									</Branch>
-									<Branch>
-										<Label>Downgrade to LR-3</Label>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-											ComparisonValue="Downgradetohcc3"/>
-										<EndPointRef EndPointId="LR3"/>
-									</Branch>
-									<Branch>
-										<Label>Downgrade to LR-2</Label>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-											ComparisonValue="Downgradetohcc2"/>
-										<EndPointRef EndPointId="LR2"/>
-									</Branch>
-									<Branch>
-										<Label>Downgrade to LR-1</Label>
-										<EqualCondition DataElementId="adjustcategorybasedonAncillary"
-											ComparisonValue="Downgradetohcc1"/>
-										<EndPointRef EndPointId="LR1"/>
 									</Branch>
 									
+									<Branch>
+										<Label>Greater than 20</Label>
+										<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>			
+										<DecisionPoint Id="washoutcapsulethresholdNoneDiameterGreaterThan20otherwise">
+											<Label>washoutcapsulethreshold None</Label>
+											<Branch>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+												<DecisionPoint Id="decisionpoint_one_none">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR3"/>
+													</Branch>
+												</DecisionPoint>	
+											</Branch>
+											
+											<Branch>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+												<DecisionPoint Id="decisionpoint_one_1">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR5"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+												</DecisionPoint>	
+											</Branch>
+											
+											<Branch>
+												<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+												<DecisionPoint Id="decisionpoint_one_two">
+													<Label>decisionpoint_one</Label>
+													<Branch>
+														<OrCondition>
+															<AndCondition>													
+																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>													
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+															<AndCondition>
+																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															</AndCondition>
+														</OrCondition>
+														<EndPointRef EndPointId="LR5"/>
+													</Branch>
+													<Branch>
+														<AndCondition>
+															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
+															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														</AndCondition>
+														<EndPointRef EndPointId="LR4"/>
+													</Branch>
+												</DecisionPoint>	
+											</Branch>
+										</DecisionPoint>
+									</Branch>
 								</DecisionPoint>
 							</Branch>
 						</DecisionPoint>
+						
+						
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2959,7 +2668,7 @@
 	</Rules>
 
 	<EndPoints>
-		<TemplatePartial Id="adjustcategorytext">
+		<!--<TemplatePartial Id="adjustcategorytext">
 			<Branch>
 				<AndCondition>
 					<NotEqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="No"></NotEqualCondition>
@@ -2977,7 +2686,7 @@
 				<ReportText Type="PlainText">LR category has been adjusted based on the selected Ancillary features favoring Benignity </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringBenignity"></ReportText>				
 		</Branch>
-		</TemplatePartial>
+		</TemplatePartial>-->
 
 		<TemplatePartial Id="treatedFindingsReporttext">
 			<Branch>
@@ -3439,14 +3148,22 @@
 			</Branch>	
 			
 			<Branch>
-				<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+				<OrCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+				</OrCondition>
 				<ReportText Type="PlainText">Ancillary features:</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
 				<AndCondition>
-					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					</OrCondition>
 					<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
 				</AndCondition>				
 				<ReportText Type="Tab" />
@@ -3456,7 +3173,11 @@
 			
 			<Branch>
 				<AndCondition>
-					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					</OrCondition>
 					<SectionIf DataElementId="ancillaryFavoringBenignity" />	
 				</AndCondition>				
 				<ReportText Type="Tab" />
@@ -3467,7 +3188,11 @@
 			
 			<Branch>
 				<AndCondition>
-					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					</OrCondition>
 					<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 				</AndCondition>				
 				<ReportText Type="Tab" />
@@ -3478,7 +3203,11 @@
 			<Branch>
 				<AndCondition>
 					<SectionIf DataElementId="ancillaryFavoringMalignancy" />
-					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove" />
+					</OrCondition>
 				</AndCondition>				
 				<ReportText Type="Tab" />
 				<ReportText Type="PlainText">Favoring malignancy: </ReportText>
@@ -3499,7 +3228,7 @@
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
 					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-NC</ReportText>
-					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
 			</ReportSection>
@@ -3520,14 +3249,14 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-1</ReportText>					
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-1 </ReportText>					
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="LR1Features"/>
 					<ReportText Type="InsertDataElementValue" Value="LR1Features"></ReportText>
 				</Branch>
 				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>
 				</Branch>				
 			</ReportSection>
@@ -3555,7 +3284,7 @@
 					<ReportText Type="InsertDataElementValue" Value="LR2features"></ReportText>
 				</Branch>
 				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>
 				</Branch>				
 			</ReportSection>
@@ -3577,7 +3306,7 @@
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
 					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-3</ReportText>
-					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
@@ -3599,7 +3328,7 @@
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
 					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-4</ReportText>
-					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
@@ -3621,7 +3350,7 @@
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
 					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-5</ReportText>
-					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>					
 				</Branch>				
 			</ReportSection>
@@ -3798,7 +3527,7 @@
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
 					<ReportText Type="PlainText" >LI-RADS v2018 Category: LR-M</ReportText>
 					<ReportText Type="Newline"></ReportText>
-					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>
+<!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 <!--					<ReportText Type="Newline"></ReportText>		-->
 				</Branch>
 			</ReportSection>
