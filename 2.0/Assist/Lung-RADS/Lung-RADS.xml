@@ -317,37 +317,25 @@
             </DecisionPoint>
         </ComputedDataElement>
         
-        <ComputedDataElement Id="categoryWithSModifier">
+		<ComputedDataElement Id="significantAdditionalFindingsModifier">
             <DecisionPoint>
                 <Branch>
                     <EqualCondition DataElementId="significantAdditionalFindings" ComparisonValue="yes"/>
-                    <TextExpression>{consolidatedCategory}/S</TextExpression>
+                    <TextExpression> S</TextExpression>
                 </Branch>
-                <DefaultBranch>
-                    <TextExpression>{consolidatedCategory}</TextExpression>
-                </DefaultBranch>
             </DecisionPoint>
         </ComputedDataElement>
-        
-        <ComputedDataElement Id="categoryWithModifiers">
+		
+		<ComputedDataElement Id="historyLungCancerModifier">
             <DecisionPoint>
                 <Branch>
-                    <EqualCondition DataElementId="historyLungCancer" ComparisonValue="yes"/>
-                    <DecisionPoint>
-                        <Branch>
-                            <EqualCondition DataElementId="significantAdditionalFindings" ComparisonValue="yes"/>
-                            <TextExpression>{categoryWithSModifier}C</TextExpression>
-                        </Branch>
-                        <DefaultBranch>
-                            <TextExpression>{categoryWithSModifier}/C</TextExpression>
-                        </DefaultBranch>
-                    </DecisionPoint>
+					<EqualCondition DataElementId="historyLungCancer" ComparisonValue="yes"/>
+					<TextExpression> C</TextExpression>
                 </Branch>
-                <DefaultBranch>
-                    <TextExpression>{categoryWithSModifier}</TextExpression>
-                </DefaultBranch>
+               
             </DecisionPoint>
         </ComputedDataElement>
+
     </DataElements>
   
     <Rules>
@@ -477,6 +465,17 @@
     </Rules>
   
     <EndPoints>
+		<TemplatePartial Id="CategoryTp">
+            <Branch>
+				<ReportText Type="PlainText">Lung-RADS Category: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="consolidatedCategory"></ReportText>
+				<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindingsModifier"></ReportText>
+				<ReportText Type="InsertDataElementValue" Value="historyLungCancerModifier"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+            </Branch>
+        </TemplatePartial>
+		
+		
         <TemplatePartial Id="multipleNodulesTp">
             <Branch>
 				<EqualCondition DataElementId="singleOrMultiple" ComparisonValue="multiple"></EqualCondition>
@@ -555,9 +554,7 @@
             <ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                            <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="PlainText">The prior chest CT examination is being located for comparison.</ReportText>
                             <ReportText Type="Newline"></ReportText>
                         </Branch>						
@@ -581,9 +578,7 @@
                     
                 <ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
                         <ReportText Type="PlainText"> The prior chest CT examination is being located for comparison.</ReportText>
 						<ReportText Type="Newline"></ReportText>
                     </Branch>
@@ -610,9 +605,7 @@
 			 <ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                            <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						    <ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
 							<ReportText Type="Newline"></ReportText>
                         </Branch>
@@ -636,9 +629,7 @@
 					
 				<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
                         <ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
                         <ReportText Type="Newline"></ReportText>
                     </Branch>
@@ -665,9 +656,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                            <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                           <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						    <ReportText Type="PlainText"> Negative study as there are no nodules present.</ReportText>
 							<ReportText Type="Newline"></ReportText>
 						    <ReportText Type="PlainText"> The probability of malignancy is less than 1%.</ReportText>
@@ -693,9 +682,7 @@
 					
 					<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                       <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
                         <ReportText Type="PlainText"> Negative study as there are no nodules present.</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText"> The probability of malignancy is less than 1%.</ReportText>
@@ -725,9 +712,7 @@
 			 <ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                           <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="PlainText"> Negative study as the identified </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="noduleBenignCalcificationsTp"></ReportText>							
 							<ReportText Type="Newline"></ReportText>
@@ -754,9 +739,7 @@
 			
 					<ReportSection SectionId="impression Recommendation">
 						<Branch>
-							<ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>							
-							<ReportText Type="Newline"></ReportText>
+							<ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="PlainText"> Negative study as the identified </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="noduleBenignCalcificationsTp"></ReportText>							
 							<ReportText Type="Newline"></ReportText>
@@ -787,9 +770,7 @@
 					<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>	
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>	
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>						
 							<ReportText Type="PlainText">The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -819,9 +800,7 @@
 							
 				<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                       <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -855,9 +834,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>							
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -886,9 +863,7 @@
 			
 			   	<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>						
-					    <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -921,9 +896,7 @@
 			  <ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -952,9 +925,7 @@
 			
 			 	<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -987,9 +958,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>	
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> In view of the stability of findings for 3 months, the nodule has reverted to category 2 with very low likelihood of becoming a clinically active cancer, due to lack of growth.</ReportText>
 							<ReportText Type="Newline"></ReportText>
@@ -1016,9 +985,7 @@
 
 				 <ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                       <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> In view of the stability of findings for 3 months, the nodule has reverted to category 2 with very low likelihood of becoming a clinically active cancer, due to lack of growth.</ReportText>
 						<ReportText Type="Newline"></ReportText>
@@ -1049,9 +1016,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                           <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1080,9 +1045,7 @@
 			
 				 <ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1115,9 +1078,7 @@
 			<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1146,9 +1107,7 @@
 				
 				<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						 <ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1181,9 +1140,7 @@
 			  <ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                           <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1212,9 +1169,7 @@
 			
 				<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1247,9 +1202,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1277,9 +1230,7 @@
 				 
 				 <ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>						
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1311,9 +1262,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1341,9 +1290,7 @@
 				 
 				 <ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1375,9 +1322,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                           <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1405,9 +1350,7 @@
 				 
 				<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1439,9 +1382,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1469,9 +1410,7 @@
 				
 				<ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1503,9 +1442,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-							<ReportText Type="Newline"></ReportText>
+                            <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1533,9 +1470,7 @@
 				 
 				 <ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1567,9 +1502,7 @@
 				<ReportSections>                 
                     <ReportSection SectionId="impression">
                         <Branch>
-                            <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-							<ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>							
-							<ReportText Type="Newline"></ReportText>
+                           <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 							<ReportText Type="PlainText"> The </ReportText>
 							<ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
@@ -1596,9 +1529,7 @@
 				 
 				 <ReportSection SectionId="impression Recommendation">
                     <Branch>
-                        <ReportText Type="PlainText">Lung-RADS Category: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="categoryWithModifiers"></ReportText>
-						<ReportText Type="Newline"></ReportText>
+                        <ReportText Type="InsertPartialTemplate" Value="CategoryTp"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp"></ReportText>
 						<ReportText Type="PlainText"> The </ReportText>
 					    <ReportText Type="InsertPartialTemplate" Value="identifiedOrDominantTp"></ReportText>
