@@ -148,11 +148,19 @@
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_1" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_1" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>6</DisplaySequence>
+				</ConditionalProperty>
+			</ConditionalProperties>			
 		</NumericDataElement>		
 				
-		<ComputedDataElement Id="addtr1_1">
-
-		
+		<ComputedDataElement Id="addtr1_1">		
 			<DecisionPoint>
 				<Branch>
 					<AndCondition>
@@ -334,7 +342,15 @@
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-			</ConditionalProperties>	
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_2" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_2" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>13</DisplaySequence>
+				</ConditionalProperty>
+			</ConditionalProperties>			
 		</NumericDataElement>			
 		
 		<ComputedDataElement Id="addtr1_2">		
@@ -523,6 +539,14 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_3" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_3" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>20</DisplaySequence>
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</NumericDataElement>			
@@ -714,6 +738,14 @@
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_4" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_4" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>27</DisplaySequence>
+				</ConditionalProperty>
 			</ConditionalProperties>	
 		</NumericDataElement>			
 			
@@ -903,6 +935,14 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_5" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_5" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>34</DisplaySequence>
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</NumericDataElement>			
@@ -1580,7 +1620,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR1: Benign</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1593,7 +1633,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR1: Benign</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1606,7 +1646,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1619,7 +1659,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1717,7 +1757,9 @@
 		<ReportSections>
 			<ReportSection SectionId="Nodule 1 - Findings">
 				<Branch>
-					<ReportText Type="PlainText">TR5: Highly Suspicious Follow</ReportText>
+					<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Follow</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1754,7 +1796,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR1: Benign</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1767,7 +1809,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1865,7 +1907,9 @@
 		<ReportSections>
 			<ReportSection SectionId="Nodule 2 - Findings">
 				<Branch>
-					<ReportText Type="PlainText">TR5: Highly Suspicious Follow</ReportText>
+					<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Follow</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1902,7 +1946,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR1: Benign</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -1915,7 +1959,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -2013,7 +2057,9 @@
 		<ReportSections>
 			<ReportSection SectionId="Nodule 3 - Findings">
 				<Branch>
-					<ReportText Type="PlainText">TR5: Highly Suspicious Follow</ReportText>
+					<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Follow</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -2050,7 +2096,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR1: Benign</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -2063,7 +2109,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -2161,7 +2207,9 @@
 		<ReportSections>
 			<ReportSection SectionId="Nodule 4 - Findings">
 				<Branch>
-					<ReportText Type="PlainText">TR5: Highly Suspicious Follow</ReportText>
+					<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Follow</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -2198,7 +2246,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR1: Benign</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -2211,7 +2259,7 @@
 				<Branch>
 					<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">no FNA</ReportText>
+					<ReportText Type="PlainText">No FNA</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
@@ -2309,7 +2357,9 @@
 		<ReportSections>
 			<ReportSection SectionId="Nodule 5 - Findings">
 				<Branch>
-					<ReportText Type="PlainText">TR5: Highly Suspicious Follow</ReportText>
+					<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Follow</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
