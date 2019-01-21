@@ -189,7 +189,7 @@
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice IsDefault="true">
+				<Choice>
 					<Value>no</Value>
 					<Label>No</Label>
 				</Choice>
@@ -381,7 +381,7 @@
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice IsDefault="true">
+				<Choice>
 					<Value>no</Value>
 					<Label>No</Label>
 				</Choice>
@@ -416,8 +416,11 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-					<IsRelevant>false</IsRelevant>					
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
@@ -444,7 +447,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -468,7 +474,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -496,7 +505,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -524,7 +536,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -537,7 +552,10 @@
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -579,14 +597,17 @@
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice IsDefault="true">
+				<Choice >
 					<Value>no</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
 			</ConditionalProperties>	
@@ -614,7 +635,11 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -642,7 +667,11 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -666,7 +695,11 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -694,7 +727,11 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -722,7 +759,11 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -735,7 +776,11 @@
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -777,14 +822,18 @@
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice IsDefault="true">
+				<Choice>
 					<Value>no</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
 			</ConditionalProperties>	
@@ -812,7 +861,12 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -840,7 +894,12 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -864,7 +923,12 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -892,7 +956,12 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -920,7 +989,12 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -933,7 +1007,12 @@
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
 				<ConditionalProperty>
