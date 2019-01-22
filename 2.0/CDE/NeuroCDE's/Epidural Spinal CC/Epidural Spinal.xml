@@ -4,8 +4,13 @@
 	<Metadata>
 		<Label>Epidural Spinal</Label>
 		<ID>EpiduralSpinal</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>2.0</ModuleVersion>
+		<CreatedDate>2018-12-31</CreatedDate>
+		<LastModifiedDate>2018-11-26</LastModifiedDate>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<Info>
 			<Description>This module describes the Common Data elements and Macros for IEpidural Spinal</Description>
 			
@@ -41,7 +46,7 @@
 				<Maximum>20</Maximum>
 			</IntegerDataElement>-->
 			
-		<ChoiceDataElement Id="spinallevel" IsRequired="true" DisplaySequence="1" CdeId = "100">
+		<ChoiceDataElement Id="spinallevel" IsRequired="true" DisplaySequence="1">
 		<Label>Spinal Level</Label>
 		<ChoiceInfo>
 			<Choice>
@@ -106,7 +111,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="LOCATION" DisplaySequence="2" IsRequired="true" CdeId = "100">
+		<ChoiceDataElement Id="LOCATION" DisplaySequence="2" IsRequired="true">
 			<Label>LOCATION</Label>
 
 			<ChoiceInfo>
@@ -129,7 +134,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="LESIONQUALITY" DisplaySequence="3" IsRequired="true" CdeId = "100">
+		<ChoiceDataElement Id="LESIONQUALITY" DisplaySequence="3" IsRequired="true">
 			<Label>LESION QUALITY</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -147,7 +152,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="ALIGNMENT" DisplaySequence="4" IsRequired="true" CdeId = "100">
+		<ChoiceDataElement Id="ALIGNMENT" DisplaySequence="4" IsRequired="true">
 			<Label>ALIGNMENT</Label>
 
 			<ChoiceInfo>
@@ -170,7 +175,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="COLLAPSE" DisplaySequence="5" IsRequired="true" CdeId = "100">
+		<ChoiceDataElement Id="COLLAPSE" DisplaySequence="5" IsRequired="true">
 			<Label>COLLAPSE</Label>
 
 			<ChoiceInfo>
@@ -190,7 +195,7 @@
 		</ChoiceDataElement>		
 	
 	
-		<ChoiceDataElement Id="POSTERIORELEMENTS" IsRequired="true" DisplaySequence="6" CdeId = "100">
+		<ChoiceDataElement Id="POSTERIORELEMENTS" IsRequired="true" DisplaySequence="6">
 			<Label>POSTERIOR ELEMENTS</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -232,7 +237,7 @@
 		</ChoiceDataElement>-->
 		
 		
-		<ChoiceDataElement Id="levelofgreatestcompression" IsRequired="true" DisplaySequence="7" CdeId = "100">
+		<ChoiceDataElement Id="levelofgreatestcompression" IsRequired="true" DisplaySequence="7">
 		<Label>Level of greatest compression</Label>
 		<ChoiceInfo>
 			<Choice>
@@ -296,7 +301,7 @@
 			</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="CompressionGrade" IsRequired="true" DisplaySequence="8" CdeId = "100">
+		<ChoiceDataElement Id="CompressionGrade" IsRequired="true" DisplaySequence="8">
 			<Label>Compression grade</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -328,56 +333,100 @@
 				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
 				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
 			</Branch>
-		</DecisionPoint>
-		
+		</DecisionPoint>		
 	</Rules>
 
-	<EndPoints>
-	 <TemplatePartial Id ="ExamPartial">
-	EXAM TYPE: MR THORACIC SPINE W/O CONTRAST
-	EXAM DATE AND TIME: 5/9/2018 6:31 PM EDT
-	INDICATION: leg weakness 
-	COMPARISON: NONE
-	 </TemplatePartial>
-	 
+	<EndPoints>	 
 		<EndPoint Id="macroEndpoint">
 		<Label>A</Label>
-		 <ReportTexts>
-				<ReportText SectionId="findings">
-					&amp;nbsp;
-					CDE Report text
-					&amp;nbsp;
-					&amp;nbsp;
-					
-					<SectionIf DataElementId="spinallevel">&amp;nbsp;
-					Spinal Level:&amp;nbsp;<InsertValue DataElementId="spinallevel"/>&amp;nbsp;
-					</SectionIf>
-					<SectionIf DataElementId="LOCATION">&amp;nbsp;
-					LOCATION:&amp;nbsp;<InsertValue DataElementId="LOCATION"/>&amp;nbsp;
-					</SectionIf>
-					<SectionIf DataElementId="LESIONQUALITY">&amp;nbsp;
-					LESION QUALITY:&amp;nbsp;<InsertValue DataElementId="LESIONQUALITY"/></SectionIf>&amp;nbsp;
-					<SectionIf DataElementId="ALIGNMENT">&amp;nbsp;
-					ALIGNMENT:&amp;nbsp;<InsertValue DataElementId="ALIGNMENT"/></SectionIf>  &amp;nbsp;
-					<SectionIf DataElementId="COLLAPSE">&amp;nbsp;
-					COLLAPSE:&amp;nbsp;<InsertValue DataElementId="COLLAPSE"/></SectionIf>  &amp;nbsp;
-					<SectionIf DataElementId="POSTERIORELEMENTS">&amp;nbsp;
-					POSTERIOR ELEMENTS:&amp;nbsp;<InsertValue DataElementId="POSTERIORELEMENTS"/></SectionIf>  &amp;nbsp;
-					<SectionIf DataElementId="levelofgreatestcompression">&amp;nbsp;
-					Level of greatest compression:&amp;nbsp;<InsertValue DataElementId="levelofgreatestcompression"/></SectionIf>  &amp;nbsp;
-					<SectionIf DataElementId="CompressionGrade">&amp;nbsp;
-					Compression grade:&amp;nbsp;<InsertValue DataElementId="CompressionGrade"/></SectionIf>  &amp;nbsp;
-				</ReportText>		
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<SectionIf DataElementId="spinallevel"/>
+					<ReportText Type="PlainText">Spinal Level: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="spinallevel"></ReportText>	
+					<ReportText Type="Newline"></ReportText>
+				</Branch>
 				
-		<!-- 	<ReportText SectionId="impression">	
-				 <InsertPartial PartialId="ExamPartial">  </InsertPartial>
-					 IMPRESSION: Metastatic spinal cord compression as described.
-
-					TECHNIQUE: MR imaging of the thoracic spine was performed without contrast.
+				<Branch>
+					<SectionIf DataElementId="LOCATION"/>
+					<ReportText Type="PlainText">Location: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="LOCATION"></ReportText>	
+					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="LESIONQUALITY"/>
+					<ReportText Type="PlainText">Lesion quality: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="LESIONQUALITY"></ReportText>
+					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="ALIGNMENT"/>
+					<ReportText Type="PlainText">Alignment: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="ALIGNMENT"></ReportText>
+					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="COLLAPSE"/>
+					<ReportText Type="PlainText">Collapse: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="COLLAPSE"></ReportText>
+					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="POSTERIORELEMENTS"/>
+					<ReportText Type="PlainText">Posterior elements: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="POSTERIORELEMENTS"></ReportText>
+					<ReportText Type="Newline"></ReportText>
+				</Branch>				
+				
+				<Branch>
+					<SectionIf DataElementId="levelofgreatestcompression"/>
+					<ReportText Type="PlainText">Level of greatest compression: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="levelofgreatestcompression"></ReportText>
+					<ReportText Type="Newline"></ReportText>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="CompressionGrade"/>
+					<ReportText Type="PlainText">Compression grade: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="CompressionGrade"></ReportText>
+				</Branch>				
+			</ReportSection> 
+		</ReportSections>
+			
+		 <!--<ReportTexts>
+				<ReportText SectionId="findings">					
+				<!-\-	<SectionIf DataElementId="spinallevel">&amp;nbsp;
+					Spinal Level:&amp;nbsp;<InsertValue DataElementId="spinallevel"/>&amp;nbsp;
+					</SectionIf>-\->
 					
+					<!-\-<SectionIf DataElementId="LOCATION">&amp;nbsp;
+					LOCATION:&amp;nbsp;<InsertValue DataElementId="LOCATION"/>&amp;nbsp;
+					</SectionIf>-\->
 					
-				</ReportText>	 -->				
-			</ReportTexts>	
+					<!-\-<SectionIf DataElementId="LESIONQUALITY">&amp;nbsp;
+					LESION QUALITY:&amp;nbsp;<InsertValue DataElementId="LESIONQUALITY"/></SectionIf>&amp;nbsp;-\->
+					
+					<!-\-<SectionIf DataElementId="ALIGNMENT">&amp;nbsp;
+					ALIGNMENT:&amp;nbsp;<InsertValue DataElementId="ALIGNMENT"/></SectionIf>  &amp;nbsp;-\->
+					
+				<!-\-	<SectionIf DataElementId="COLLAPSE">&amp;nbsp;
+					COLLAPSE:&amp;nbsp;<InsertValue DataElementId="COLLAPSE"/></SectionIf>  &amp;nbsp;-\->
+					
+					<!-\-<SectionIf DataElementId="POSTERIORELEMENTS">&amp;nbsp;
+					POSTERIOR ELEMENTS:&amp;nbsp;<InsertValue DataElementId="POSTERIORELEMENTS"/></SectionIf>  &amp;nbsp;-\->
+					
+					<!-\-<SectionIf DataElementId="levelofgreatestcompression">&amp;nbsp;
+					Level of greatest compression:&amp;nbsp;<InsertValue DataElementId="levelofgreatestcompression"/></SectionIf>  &amp;nbsp;-\->
+					
+				<!-\-	<SectionIf DataElementId="CompressionGrade">&amp;nbsp;
+					Compression grade:&amp;nbsp;<InsertValue DataElementId="CompressionGrade"/></SectionIf>  &amp;nbsp;-\->
+				</ReportText>					
+			</ReportTexts>	-->
 		</EndPoint>
 	</EndPoints>
 
