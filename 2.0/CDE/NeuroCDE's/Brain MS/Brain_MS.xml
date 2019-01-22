@@ -6,6 +6,11 @@
 		<ID>Brain_MS</ID>
 		<SchemaVersion>1.0</SchemaVersion>
 		<ModuleVersion>1.0</ModuleVersion>
+		<CreatedDate>2018-12-31</CreatedDate>
+		<LastModifiedDate>2018-11-26</LastModifiedDate>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<Info>
 			<Description>This module describes the Common Data elements and Macros for Brain MS</Description>
 			
@@ -35,7 +40,7 @@
 
 		<GlobalValue Id="conditionConst">10</GlobalValue>
 		
-		<IntegerDataElement Id="supratentoriallesionnumber" IsRequired="true" DisplaySequence="2" CdeId = "100">
+		<IntegerDataElement Id="supratentoriallesionnumber" IsRequired="true" DisplaySequence="2">
 			<Label>Supratentorial lesion Number</Label>
 			<Hint>Use 0-10 scale</Hint>
 		    <Minimum>1</Minimum>
@@ -61,7 +66,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>-->
 		
-		<MultiChoiceDataElement Id="supratentoriallesionlocations" DisplaySequence="4" IsRequired="true" CdeId = "100">
+		<MultiChoiceDataElement Id="supratentoriallesionlocations" DisplaySequence="4" IsRequired="true">
 			<Label>Supratentorial lesion Locations</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -79,7 +84,7 @@
 			</ChoiceInfo>
 		</MultiChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="lesionlocationsubtype" DisplaySequence="5" IsRequired="true" CdeId = "100">
+		<MultiChoiceDataElement Id="lesionlocationsubtype" DisplaySequence="5" IsRequired="true">
 			<Label>Lesion location subtype</Label>
 			<Hint>DIS criteria</Hint>
 			<ChoiceInfo>
@@ -99,14 +104,14 @@
 		</MultiChoiceDataElement>
 		
 		
-		<IntegerDataElement Id="infratentoriallesionnumber" IsRequired="true" DisplaySequence="6" CdeId = "100">
+		<IntegerDataElement Id="infratentoriallesionnumber" IsRequired="true" DisplaySequence="6">
 			<Label>Infratentorial lesion Number</Label>
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
 		</IntegerDataElement>	
 		
-		<MultiChoiceDataElement Id="infratentoriallocations" DisplaySequence="7" IsRequired="true" CdeId = "100">
+		<MultiChoiceDataElement Id="infratentoriallocations" DisplaySequence="7" IsRequired="true">
 			<Label>Infratentorial Locations</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -164,7 +169,7 @@
 		</ChoiceDataElement>-->
 		
 		
-		<ChoiceDataElement Id="cervico-medullary" DisplaySequence="9" IsRequired="true" CdeId = "100">
+		<ChoiceDataElement Id="cervico-medullary" DisplaySequence="9" IsRequired="true">
 			<Label>Cervico-medullary</Label>
 
 			<ChoiceInfo>
@@ -179,7 +184,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 	
-		<ChoiceDataElement Id="masseffect" DisplaySequence="10" IsRequired="true" CdeId = "100">
+		<ChoiceDataElement Id="masseffect" DisplaySequence="10" IsRequired="true">
 			<Label>Mass Effect</Label>
 
 			<ChoiceInfo>
@@ -194,7 +199,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement> 
 		
-		<ChoiceDataElement Id="BlackHolesT1hypointense" IsRequired="true" DisplaySequence="11" CdeId = "100">
+		<ChoiceDataElement Id="BlackHolesT1hypointense" IsRequired="true" DisplaySequence="11">
 			<Label>Black Holes T1 hypointense?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -558,8 +563,7 @@
 					<Label>Solid</Label>
 				</Choice>
 			</ChoiceInfo>
-		</ChoiceDataElement>	-->
-				
+		</ChoiceDataElement>	-->				
 	</DataElements>
 
 	<Rules>
@@ -569,69 +573,134 @@
 				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
 				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
 			</Branch>
-		</DecisionPoint>
-		
+		</DecisionPoint>		
 	</Rules>
 
-	<EndPoints>
-		
+<EndPoints>		
 	 <TemplatePartial Id ="ExamPartial">
-		EXAM TYPE: BRAIN MRI W/WO CONTRAST
-		EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT
-		INDICATION: r/o demyelinating disease 
-		COMPARISON: NONE
+	 	<Branch>
+	 		<ReportText Type="Tab" />
+	 		<ReportText Type="PlainText">EXAM TYPE: BRAIN MRI W/WO CONTRAST</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="Tab" />
+	 		<ReportText Type="PlainText">EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="Tab"/>
+	 		<ReportText Type="PlainText">INDICATION: r/o demyelinating disease </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="Tab"/>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 	</Branch>
 	 </TemplatePartial>
 	 
-		<EndPoint Id="macroEndpoint">
+	<EndPoint Id="macroEndpoint">
 		<Label>A</Label>
-		 <ReportTexts>
-				<ReportText SectionId="findings">	
-					<!-- 	<InsertPartial PartialId="ExamPartial">  </InsertPartial> -->
-					&amp;nbsp;
-					CDE Report text
-					&amp;nbsp;
-					&amp;nbsp;
-					<SectionIf DataElementId="supratentoriallesionnumber">&amp;nbsp;
-					Supratentorially, there are&amp;nbsp;<InsertValue DataElementId="supratentoriallesionnumber"/></SectionIf>&amp;nbsp;<SectionIf DataElementId="supratentoriallesionnumber">T2/FLAIR hyperintensites in cerebral white matter including both&amp;nbsp;<InsertValue DataElementId="supratentoriallesionlocations">&amp;nbsp;lobes.</InsertValue></SectionIf>
-					
-					<SectionIf DataElementId="lesionlocationsubtype">&amp;nbsp;
-					These lesions are primarily&amp;nbsp; <InsertValue DataElementId="lesionlocationsubtype">.</InsertValue>
-					</SectionIf>
-					
-					<SectionIf DataElementId="infratentoriallesionnumber">&amp;nbsp;
-					Infratentorially, there are&amp;nbsp; <InsertValue DataElementId="infratentoriallesionnumber"/></SectionIf>&amp;nbsp;<SectionIf DataElementId="infratentoriallocations">T2/FLAIR hyperintensities in brainstem including&amp;nbsp;
-					<InsertValue DataElementId="infratentoriallocations">.</InsertValue></SectionIf>
-					
-					<SectionIf DataElementId="cervico-medullary">&amp;nbsp;
-					Additional lesions are&amp;nbsp;<SectionIfValue DataElementId="cervico-medullary" ComparisonValue="no">not&amp;nbsp;</SectionIfValue></SectionIf><SectionIf DataElementId="cervico-medullary">visualized in the upper cervical spinal cord.
-					</SectionIf> 
-					
-					<SectionIf DataElementId="masseffect">&amp;nbsp;
-					There is&amp;nbsp;<SectionIfValue DataElementId="masseffect" ComparisonValue="no">no&amp;nbsp;</SectionIfValue></SectionIf><SectionIf DataElementId="masseffect">associated mass effect.
-					</SectionIf>
-					
-					<SectionIf DataElementId="BlackHolesT1hypointense">&amp;nbsp;
-					There are &amp;nbsp;</SectionIf><SectionIfValue DataElementId="BlackHolesT1hypointense" ComparisonValue="no">no&amp;nbsp;</SectionIfValue>
-					<SectionIf DataElementId="BlackHolesT1hypointense">black holes present in the parietal white matter.
-					</SectionIf>
-					
-					
-					
-					<!--<InsertValue DataElementId="blackholelocations"/>											-->
-				</ReportText>
-				<!-- 
-				<ReportText SectionId="impression">	
-				 <InsertPartial PartialId="ExamPartial">  </InsertPartial>
-					 Findings compatible with multiple sclerosis.
-
-					 TECHNIQUE: MR imaging of the brain was obtained with and without intravenous contrast (Gadovist 10ml)
-					
-					</ReportText>		 
-				-->			
-		</ReportTexts>	
-			
-		
-		</EndPoint>
-	</EndPoints>
-
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">CDE Report text : </ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="supratentoriallesionnumber"/>
+					<ReportText Type="PlainText">Supratentorially, there are </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="supratentoriallesionnumber"></ReportText>
+					<ReportText Type="PlainText"> T2/FLAIR hyperintensites in cerebral white matter including both </ReportText>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="supratentoriallesionlocations" />	
+						<SectionIf DataElementId="supratentoriallesionnumber"/>
+					</AndCondition>					
+					<ReportText Type="InsertDataElementValue" Value="supratentoriallesionlocations"></ReportText>
+					<ReportText Type="PlainText"> lobes.</ReportText>					
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="lesionlocationsubtype"/>		
+					<ReportText Type="PlainText">These lesions are primarily </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lesionlocationsubtype"></ReportText>
+					<ReportText Type="PlainText">.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="infratentoriallesionnumber"/>
+					<ReportText Type="PlainText">Infratentorially, there are </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="infratentoriallesionnumber"></ReportText>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="infratentoriallocations"/>
+					<ReportText Type="PlainText"> T2/FLAIR hyperintensities in brainstem including </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="infratentoriallocations"></ReportText>
+					<ReportText Type="PlainText">.</ReportText>					
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIfNot DataElementId="infratentoriallocations"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="cervico-medullary"/>
+						<EqualCondition DataElementId="cervico-medullary" ComparisonValue="no"></EqualCondition>
+					</AndCondition>					
+					<ReportText Type="PlainText">Additional lesions are not visualized in the upper cervical spinal cord.</ReportText>					
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="cervico-medullary"/>
+						<NotEqualCondition DataElementId="cervico-medullary" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">Additional lesions are visualized in the upper cervical spinal cord.</ReportText>					
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="masseffect"/>
+						<EqualCondition DataElementId="masseffect" ComparisonValue="no"></EqualCondition>
+					</AndCondition>					
+					<ReportText Type="PlainText">There is no associated mass effect.</ReportText>
+				</Branch>
+				
+				<Branch>					
+					<AndCondition>
+						<SectionIf DataElementId="masseffect"/>
+						<NotEqualCondition DataElementId="masseffect" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">There is associated mass effect.</ReportText>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="BlackHolesT1hypointense"/>
+						<EqualCondition DataElementId="BlackHolesT1hypointense" ComparisonValue="no"></EqualCondition>
+					</AndCondition>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">There are no black holes present in the parietal white matter.</ReportText>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="BlackHolesT1hypointense"/>
+						<NotEqualCondition DataElementId="BlackHolesT1hypointense" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">There are black holes present in the parietal white matter.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+</EndPoints>
 </ReportingModule>
