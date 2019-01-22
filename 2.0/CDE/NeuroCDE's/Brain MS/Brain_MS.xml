@@ -643,11 +643,6 @@
 				</Branch>
 				
 				<Branch>
-					<SectionIfNot DataElementId="infratentoriallocations"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
 					<AndCondition>
 						<SectionIf DataElementId="cervico-medullary"/>
 						<EqualCondition DataElementId="cervico-medullary" ComparisonValue="no"></EqualCondition>
