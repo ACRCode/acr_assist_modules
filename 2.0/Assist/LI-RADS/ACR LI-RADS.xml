@@ -3081,7 +3081,6 @@
 				<ReportText Type="InsertDataElementValue" Value="lrmtargetoidmass"></ReportText>
 				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="lrmnontargetoidmass"></ReportText>
-				<ReportText Type="PlainText"> </ReportText>
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
 			
@@ -3092,8 +3091,7 @@
 					<SectionIfNot DataElementId="lrmnontargetoidmass"></SectionIfNot>
 				</AndCondition>
 				<ReportText Type="InsertDataElementValue" Value="lrmtargetoidmass"></ReportText>
-				<ReportText Type="PlainText"> </ReportText>
-				<ReportText Type="Newline"></ReportText>						
+				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
 			<Branch>
@@ -3103,7 +3101,6 @@
 					<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
 				</AndCondition>
 				<ReportText Type="InsertDataElementValue" Value="lrmnontargetoidmass"></ReportText>
-				<ReportText Type="PlainText"> </ReportText>
 				<ReportText Type="Newline"></ReportText>						
 			</Branch>
 			
@@ -3277,7 +3274,7 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-2</ReportText>					
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-2 </ReportText>					
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="LR2features"/>

@@ -5,7 +5,12 @@
 		<Label>CT Stroke</Label>
 		<ID>CT_Stroke</ID>
 		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
+		<ModuleVersion>2.0</ModuleVersion>
+		<CreatedDate>2018-12-31</CreatedDate>
+		<LastModifiedDate>2018-11-26</LastModifiedDate>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<Info>
 			<Description>This module describes the Common Data elements and Macros for CT stroke</Description>
 			
@@ -30,14 +35,11 @@
 			</Contact>
 		</Info>
 		<ReportCitationText>CT Stroke</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
+        <ApplicableSexes Value="Both"></ApplicableSexes>		
 	</Metadata>
 	
 	<DataElements>
-
-		<GlobalValue Id="conditionConst">10</GlobalValue>
-		
+		<GlobalValue Id="conditionConst">10</GlobalValue>		
 		<ChoiceDataElement Id="Hyperacutesigns" DisplaySequence="1" IsRequired="true">
 			<Label>Hyperacute signs</Label>
 			<ChoiceInfo>
@@ -521,58 +523,135 @@
 				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
 				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
 			</Branch>
-		</DecisionPoint>
-		
+		</DecisionPoint>		
 	</Rules>
 
-	<EndPoints>
-	 <TemplatePartial Id ="ExamPartial">
-		EXAMINATION:  CT BRAIN W/O CONTRAST
-		EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT
-		INDICATION: weakness
-		COMPARISON: None available.
-	 </TemplatePartial>
-	 
+	<EndPoints>	 
 		<EndPoint Id="macroEndpoint">
 		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="Hyperacutesigns"/>
+						<EqualCondition DataElementId="Hyperacutesigns" ComparisonValue="no"></EqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no loss of grey/white matter discrimination in the </ReportText>	
+				</Branch>
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="Hyperacutesigns"/>
+						<NotEqualCondition DataElementId="Hyperacutesigns" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is loss of grey/white matter discrimination in the </ReportText>	
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="anatomiclocation"></SectionIf>
+					<ReportText Type="InsertDataElementValue" Value="anatomiclocation"></ReportText>
+					<ReportText Type="PlainText" >lobe(s) </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="vascularterritory"/>
+					<ReportText Type="PlainText" >in the </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="vascularterritory"></ReportText>
+					<ReportText Type="PlainText" > distribution</ReportText>
+				</Branch>	
+				
+				<Branch>					
+					<ReportText Type="Newline"/>
+					<AndCondition>
+						<SectionIf DataElementId="hemorrhagicconversion"/>
+						<EqualCondition DataElementId="hemorrhagicconversion" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="PlainText" >There is no hemorrhagic conversion.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>					
+					<ReportText Type="Newline"/>
+					<AndCondition>
+						<SectionIf DataElementId="hemorrhagicconversion"/>
+						<NotEqualCondition DataElementId="hemorrhagicconversion" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="PlainText" >There is hemorrhagic conversion.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="masseffect"/>
+						<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no mass effect.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="masseffect"/>
+						<NotEqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="PlainText">There is mild mass effect.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="vascularmechanismpattern"/>					
+					<ReportText Type="PlainText">The ischemic pattern is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="vascularmechanismpattern"></ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="midlineshift"/>
+					<ReportText Type="PlainText">There is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="midlineshift"/>
+					<ReportText Type="PlainText"> mm midline shift.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="Herniation"/>
+					<ReportText Type="PlainText">There is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Herniation"/>
+					<ReportText Type="PlainText"> herniation.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hyperdense"/>
+						<EqualCondition DataElementId="hyperdense" ComparisonValue="no"></EqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no hyperdense right.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hyperdense"/>
+						<NotEqualCondition DataElementId="hyperdense" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is hyperdense right.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hyperdense"/>
+						<SectionIf DataElementId="hyperdensesign"/>
+					</AndCondition>
+					<ReportText Type="InsertDataElementValue" Value="hyperdensesign"/>					
+					<ReportText Type="PlainText"> sign.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				
+			</ReportSection>
+		</ReportSections>	
+			
 		 <ReportTexts>
-				<ReportText SectionId="findings">	
-						
-					<!--Ventricles and sulci are normal in size and configuration. No extra axial collection.-->  
-								
-								
-					&amp;nbsp;
-					CDE Report text
-					&amp;nbsp;
-					&amp;nbsp;
-
-					<SectionIf DataElementId="Hyperacutesigns">&amp;nbsp;
-					There is &amp;nbsp;<SectionIfValue DataElementId="Hyperacutesigns" ComparisonValue="no">no &amp;nbsp;</SectionIfValue><SectionIf DataElementId="Hyperacutesigns">loss of grey/white matter discrimination in the</SectionIf></SectionIf>&amp;nbsp;<InsertValue DataElementId="anatomiclocation"/>&amp;nbsp;<SectionIf DataElementId="anatomiclocation">lobe(s)</SectionIf><SectionIf DataElementId="vascularterritory">&amp;nbsp;in the&amp;nbsp;<InsertValue DataElementId="vascularterritory"></InsertValue></SectionIf>&amp;nbsp;<SectionIf DataElementId="vascularterritory">distribution.</SectionIf>
-						
-					<SectionIf DataElementId="hemorrhagicconversion">&amp;nbsp;
-					There is&amp;nbsp;<SectionIfValue DataElementId="hemorrhagicconversion" ComparisonValue="no">no&amp;nbsp;</SectionIfValue><SectionIf DataElementId="hemorrhagicconversion">hemorrhagic conversion.
-					</SectionIf></SectionIf>
-					
-					<SectionIf DataElementId="masseffect">&amp;nbsp;
-					There is&amp;nbsp;<SectionIfValue DataElementId="masseffect" ComparisonValue="no">no mass effect.&amp;nbsp;</SectionIfValue>
-					<SectionIfValue DataElementId="masseffect" ComparisonValue="yes">mild mass effect.&amp;nbsp;</SectionIfValue>
-					</SectionIf>
-					<SectionIf DataElementId="vascularmechanismpattern">&amp;nbsp;
-					The ischemic pattern is&amp;nbsp; <InsertValue DataElementId="vascularmechanismpattern">.</InsertValue>
-					</SectionIf>
-					
-					<SectionIf DataElementId="midlineshift">&amp;nbsp;
-						There&amp;nbsp;<InsertValue DataElementId="midlineshift">&amp;nbsp;mm midline shift.</InsertValue>
-					</SectionIf>
-					
-					<SectionIf DataElementId="Herniation">&amp;nbsp;
-						There is&amp;nbsp;<InsertValue DataElementId="Herniation">&amp;nbsp;herniation.</InsertValue>
-					</SectionIf>
-					
-					<SectionIf DataElementId="hyperdense">&amp;nbsp;
-					There is &amp;nbsp;<SectionIfValue DataElementId="hyperdense" ComparisonValue="no">no&amp;nbsp;</SectionIfValue><SectionIf DataElementId="hyperdense">hyperdense right</SectionIf>&amp;nbsp;<SectionIf DataElementId="hyperdensesign"><InsertValue DataElementId="hyperdensesign">&amp;nbsp;sign.</InsertValue></SectionIf>
-					</SectionIf>
-					
+				<ReportText SectionId="findings">
 					<SectionIf DataElementId="arterialcalcification">&amp;nbsp;
 					There is&amp;nbsp;<SectionIfValue DataElementId="arterialcalcification" ComparisonValue="no">no&amp;nbsp;</SectionIfValue><SectionIf DataElementId="arterialcalcification">arterial calcification at the skull base.</SectionIf>
 					</SectionIf>
