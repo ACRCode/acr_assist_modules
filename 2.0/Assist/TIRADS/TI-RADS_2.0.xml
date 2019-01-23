@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 	<Metadata>
 		<Label>ACR TI-RADS</Label>
@@ -36,7 +36,25 @@
 	<DataElements>
 
 		<!-- Nodule 1 dataelements -->
-		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="1">
+		
+		<NumericDataElement Id="diameter_1" IsRequired="true" DisplaySequence="1">		
+		   <Label>Diameter</Label>
+			<Hint>Use 0-10 scale</Hint>
+			<Minimum>1</Minimum>
+			<Maximum>10</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_1" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_1" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>6</DisplaySequence>
+				</ConditionalProperty>
+			</ConditionalProperties>			
+		</NumericDataElement>	
+		
+		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="2">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -58,7 +76,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="2">
+		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="3">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -80,7 +98,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="shape_1" IsRequired="true" DisplaySequence="3">
+		<ChoiceDataElement Id="shape_1" IsRequired="true" DisplaySequence="4">
 			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -99,7 +117,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 		
-		<ChoiceDataElement Id="margin_1" IsRequired="true" DisplaySequence="4">
+		<ChoiceDataElement Id="margin_1" IsRequired="true" DisplaySequence="5">
 			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -121,7 +139,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 		
-		<MultiChoiceDataElement Id="echogenicfoci_1" IsRequired="true" DisplaySequence="5">
+		<MultiChoiceDataElement Id="echogenicfoci_1" IsRequired="true" DisplaySequence="6">
 			<Label>Echogenic Foci</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -143,22 +161,7 @@
 			</ChoiceInfo>
 		</MultiChoiceDataElement>
 		
-		<NumericDataElement Id="diameter_1" IsRequired="true" DisplaySequence="6">		
-		   <Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_1" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_1" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>6</DisplaySequence>
-				</ConditionalProperty>
-			</ConditionalProperties>			
-		</NumericDataElement>		
+	
 				
 		<ComputedDataElement Id="addtr1_1">		
 			<DecisionPoint>
@@ -181,22 +184,44 @@
 		</ComputedDataElement>				
 
 		<!-- Nodule 2 dataelements -->
-		
-		<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="7">
+				<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="7">
 			<Label>Are there any other nodule(s) present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>no</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
+				
+		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="8">
+		   <Label>Diameter</Label>
+			<Hint>Use 0-10 scale</Hint>
+			<Minimum>1</Minimum>
+			<Maximum>10</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_2" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_2" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>13</DisplaySequence>
+				</ConditionalProperty>
+			</ConditionalProperties>			
+		</NumericDataElement>	
 		
-		<ChoiceDataElement Id="composition_2" IsRequired="true" DisplaySequence="8">
+
+		
+		<ChoiceDataElement Id="composition_2" IsRequired="true" DisplaySequence="9">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -224,7 +249,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_2" IsRequired="true" DisplaySequence="9">
+		<ChoiceDataElement 	Id="echogenicity_2" IsRequired="true" DisplaySequence="10">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -252,7 +277,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="shape_2" IsRequired="true" DisplaySequence="10">
+		<ChoiceDataElement Id="shape_2" IsRequired="true" DisplaySequence="11">
 			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -276,7 +301,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>		
 		
-		<ChoiceDataElement Id="margin_2" IsRequired="true" DisplaySequence="11">
+		<ChoiceDataElement Id="margin_2" IsRequired="true" DisplaySequence="12">
 			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -304,7 +329,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>		
 		
-		<MultiChoiceDataElement Id="echogenicfoci_2" IsRequired="true" DisplaySequence="12">
+		<MultiChoiceDataElement Id="echogenicfoci_2" IsRequired="true" DisplaySequence="13">
 			<Label>Echogenic Foci</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -332,26 +357,6 @@
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
 		
-		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="13">
-		   <Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_2" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_2" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>13</DisplaySequence>
-				</ConditionalProperty>
-			</ConditionalProperties>			
-		</NumericDataElement>			
 		
 		<ComputedDataElement Id="addtr1_2">		
 			<DecisionPoint>
@@ -374,14 +379,14 @@
 		</ComputedDataElement>
 	
 		<!-- nodule 3 dataelements -->
-		<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="14">
+				<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="14">
 			<Label>Are there any other nodule(s) present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+                <Choice IsDefault="true">
 					<Value>no</Value>
 					<Label>No</Label>
 				</Choice>
@@ -394,7 +399,33 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="composition_3" IsRequired="true" DisplaySequence="15">
+		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="15">
+		   <Label>Diameter</Label>
+			<Hint>Use 0-10 scale</Hint>
+			<Minimum>1</Minimum>
+			<Maximum>10</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="addtr1_3" ComparisonValue="0"/>
+						<EqualCondition DataElementId="addtr1_3" ComparisonValue="2"/>
+					</OrCondition>
+					<IsRequired>false</IsRequired>
+					<DisplaySequence>20</DisplaySequence>
+				</ConditionalProperty>
+			</ConditionalProperties>	
+		</NumericDataElement>
+		
+
+		
+		<ChoiceDataElement Id="composition_3" IsRequired="true" DisplaySequence="16">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -425,7 +456,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_3" IsRequired="true" DisplaySequence="16">
+		<ChoiceDataElement 	Id="echogenicity_3" IsRequired="true" DisplaySequence="17">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -456,7 +487,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="shape_3" IsRequired="true" DisplaySequence="17">
+		<ChoiceDataElement Id="shape_3" IsRequired="true" DisplaySequence="18">
 			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -483,7 +514,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>		
 		
-		<ChoiceDataElement Id="margin_3" IsRequired="true" DisplaySequence="18">
+		<ChoiceDataElement Id="margin_3" IsRequired="true" DisplaySequence="19">
 			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -514,7 +545,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>		
 		
-		<MultiChoiceDataElement Id="echogenicfoci_3" IsRequired="true" DisplaySequence="19">
+		<MultiChoiceDataElement Id="echogenicfoci_3" IsRequired="true" DisplaySequence="20">
 			<Label>Echogenic Foci</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -545,29 +576,7 @@
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
 		
-		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="20">
-		   <Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_3" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_3" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>20</DisplaySequence>
-				</ConditionalProperty>
-			</ConditionalProperties>	
-		</NumericDataElement>			
+			
 			
 		<ComputedDataElement Id="addtr1_3">		
 			<DecisionPoint>
@@ -590,14 +599,15 @@
 		</ComputedDataElement>
 	
 		<!-- nodule 4 dataelements -->
-		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="21">
+		
+				<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="21">
 			<Label>Are there any other nodule(s) present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice >
+				<Choice IsDefault="true">
 					<Value>no</Value>
 					<Label>No</Label>
 				</Choice>
@@ -613,163 +623,8 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="composition_4" IsRequired="true" DisplaySequence="22">
-			<Label>Composition</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>0</Value>
-					<Label>0-Cystic or almost completely cystic</Label>	
-				</Choice>
-				<Choice>
-					<Value>0</Value>
-					<Label>0-Spongiform</Label>
-				</Choice>
-				<Choice>
-					<Value>1</Value>
-					<Label>1-Mixed cystic and solid</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>2-Solid or almost completely solid</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>	
-		</ChoiceDataElement>
-
-		<ChoiceDataElement 	Id="echogenicity_4" IsRequired="true" DisplaySequence="23">
-			<Label>Echogenicity</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>0</Value>
-					<Label>0-Anechoic</Label>	
-				</Choice>
-				<Choice>
-					<Value>1</Value>
-					<Label>1-Hyperechoic or isoechoic</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>2-Hypoechoic</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>3-Very hypoechoic</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>	
-		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="shape_4" IsRequired="true" DisplaySequence="24">
-			<Label>Shape</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>0</Value>
-					<Label>0-Wider-than-tall</Label>	
-				</Choice>
-				<Choice>
-					<Value>1</Value>
-					<Label>1-Hyperechoic or isoechoic</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>3-Taller-than-wide</Label>
-				</Choice>			
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>
-		</ChoiceDataElement>		
-		
-		<ChoiceDataElement Id="margin_4" IsRequired="true" DisplaySequence="25">
-			<Label>Margin</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>0</Value>
-					<Label>0-Smooth</Label>	
-				</Choice>
-				<Choice>
-					<Value>0</Value>
-					<Label>0-Ill-defined</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>2-Lobulated or irregular</Label>
-				</Choice>
-				<Choice>
-				    <Value>3</Value>
-					<Label>3-Extra-thyroidal extension</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>	
-		</ChoiceDataElement>		
-		
-		<MultiChoiceDataElement Id="echogenicfoci_4" IsRequired="true" DisplaySequence="26">
-			<Label>Echogenic Foci</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>0</Value>
-					<Label>0-None or large comet-tail artifacts</Label>	
-				</Choice>
-				<Choice>
-					<Value>1</Value>
-					<Label>1-Macrocalcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>2-Peripheral rim calcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>3-Punctate echogenic focci</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>	
-		</MultiChoiceDataElement>
-		
-		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="27">
+		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="22">
 		   <Label>Diameter</Label>
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
@@ -792,54 +647,11 @@
 					<DisplaySequence>27</DisplaySequence>
 				</ConditionalProperty>
 			</ConditionalProperties>	
-		</NumericDataElement>			
-			
-		<ComputedDataElement Id="addtr1_4">			
-			<DecisionPoint>
-				<Branch>
-					<AndCondition>
-						<GreaterThanOrEqualsCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<GreaterThanOrEqualsCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
-						<GreaterThanOrEqualsCondition DataElementId="shape_4" ComparisonValue="0"/>
-						<GreaterThanOrEqualsCondition DataElementId="margin_4" ComparisonValue="0"/>
-						<OrCondition>
-							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="0"/>
-							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="1"/>
-							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="2"/>						
-							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="3"/>
-						</OrCondition>
-					</AndCondition>
-					<ArithmeticExpression>{composition_4} + {echogenicity_4} + {shape_4} + {margin_4} + {echogenicfoci_4}</ArithmeticExpression>
-				</Branch>
-			</DecisionPoint>
-		</ComputedDataElement>	
-
-		<!-- nodule 5 dataelements -->
-		<ChoiceDataElement Id="nodulequestion_5" IsRequired="true" DisplaySequence="28">
-			<Label>Are there any other nodule(s) present?</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>	
-				</Choice>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>
-			</ConditionalProperties>	
-		</ChoiceDataElement>
+		</NumericDataElement>	
 		
-		<ChoiceDataElement Id="composition_5" IsRequired="true" DisplaySequence="29">
+
+		
+		<ChoiceDataElement Id="composition_4" IsRequired="true" DisplaySequence="23">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -865,14 +677,13 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_5" IsRequired="true" DisplaySequence="30">
+		<ChoiceDataElement 	Id="echogenicity_4" IsRequired="true" DisplaySequence="24">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -898,14 +709,13 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="shape_5" IsRequired="true" DisplaySequence="31">
+		<ChoiceDataElement Id="shape_4" IsRequired="true" DisplaySequence="25">
 			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -927,14 +737,13 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>		
 		
-		<ChoiceDataElement Id="margin_5" IsRequired="true" DisplaySequence="32">
+		<ChoiceDataElement Id="margin_4" IsRequired="true" DisplaySequence="26">
 			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -960,14 +769,13 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>		
 		
-		<MultiChoiceDataElement Id="echogenicfoci_5" IsRequired="true" DisplaySequence="33">
+		<MultiChoiceDataElement Id="echogenicfoci_4" IsRequired="true" DisplaySequence="27">
 			<Label>Echogenic Foci</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -993,14 +801,60 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
 		
-		<NumericDataElement Id="diameter_5" IsRequired="true" DisplaySequence="34">
+		
+			
+		<ComputedDataElement Id="addtr1_4">			
+			<DecisionPoint>
+				<Branch>
+					<AndCondition>
+						<GreaterThanOrEqualsCondition DataElementId="composition_4" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="shape_4" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="margin_4" ComparisonValue="0"/>
+						<OrCondition>
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="0"/>
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="1"/>
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="2"/>						
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="3"/>
+						</OrCondition>
+					</AndCondition>
+					<ArithmeticExpression>{composition_4} + {echogenicity_4} + {shape_4} + {margin_4} + {echogenicfoci_4}</ArithmeticExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>	
+
+		<!-- nodule 5 dataelements -->
+				<ChoiceDataElement Id="nodulequestion_5" IsRequired="true" DisplaySequence="28">
+			<Label>Are there any other nodule(s) present?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice IsDefault="true">
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="diameter_5" IsRequired="true" DisplaySequence="29">
 		   <Label>Diameter</Label>
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
@@ -1024,7 +878,172 @@
 					<DisplaySequence>34</DisplaySequence>
 				</ConditionalProperty>
 			</ConditionalProperties>	
-		</NumericDataElement>			
+		</NumericDataElement>	
+		
+
+		
+		<ChoiceDataElement Id="composition_5" IsRequired="true" DisplaySequence="30">
+			<Label>Composition</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Cystic or almost completely cystic</Label>	
+				</Choice>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Spongiform</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Mixed cystic and solid</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Solid or almost completely solid</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+
+		<ChoiceDataElement 	Id="echogenicity_5" IsRequired="true" DisplaySequence="31">
+			<Label>Echogenicity</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Anechoic</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Hyperechoic or isoechoic</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Hypoechoic</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Very hypoechoic</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="shape_5" IsRequired="true" DisplaySequence="32">
+			<Label>Shape</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Wider-than-tall</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Hyperechoic or isoechoic</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Taller-than-wide</Label>
+				</Choice>			
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>		
+		
+		<ChoiceDataElement Id="margin_5" IsRequired="true" DisplaySequence="33">
+			<Label>Margin</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Smooth</Label>	
+				</Choice>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Ill-defined</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Lobulated or irregular</Label>
+				</Choice>
+				<Choice>
+				    <Value>3</Value>
+					<Label>3-Extra-thyroidal extension</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>		
+		
+		<MultiChoiceDataElement Id="echogenicfoci_5" IsRequired="true" DisplaySequence="34">
+			<Label>Echogenic Foci</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-None or large comet-tail artifacts</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Macrocalcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Peripheral rim calcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Punctate echogenic focci</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</MultiChoiceDataElement>
+		
+		
 			
 		<ComputedDataElement Id="addtr1_5">			
 			<DecisionPoint>
