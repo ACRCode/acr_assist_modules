@@ -8,18 +8,18 @@
 		<ModuleVersion>2.0</ModuleVersion>
 		<CreatedDate>2018-12-31</CreatedDate>
 		<LastModifiedDate>2018-11-26</LastModifiedDate>
-			<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<RadElementSetID>5689</RadElementSetID>
 		<Info>
 			<Description>This module describes the Common Data elements and Macros for Lymph Nodes</Description>
-			
+
 			<References>
 				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
 				<Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841"> CDE google sheet </Citation>
 			</References>
-			
+
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
 					<Location>keydiagram.jpg</Location>
@@ -37,21 +37,21 @@
 			</Contact>
 		</Info>
 		<ReportCitationText>Lymph Nodes</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
+		<ApplicableSexes Value="Both"/>
+
 	</Metadata>
-	
+
 	<DataElements>
 
 		<GlobalValue Id="conditionConst">10</GlobalValue>
 		<ChoiceDataElement Id="singlemultiple" DisplaySequence="1" IsRequired="true">
 			<CodableConcept Name="singlemultiple">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>	
 			<Label>Number of nodes</Label>
@@ -66,15 +66,15 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
+
 		<ChoiceDataElement Id="laterality" DisplaySequence="2" IsRequired="true">
 			<CodableConcept Name="laterality">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>	
 			<Label>Laterality</Label>
@@ -93,30 +93,30 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
+
 		<IntegerDataElement Id="sizeoflargestcluster" IsRequired="true" DisplaySequence="3">
 			<CodableConcept Name="sizeoflargestcluster">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
 			<Label>size of largest cluster(in mm)</Label>
 			<Hint>Use longest dimension (improved clinical-radiologic correlation and adherence to staging systems)</Hint>
 			<Minimum>1</Minimum>
 		</IntegerDataElement>		
-	
+
 		<MultiChoiceDataElement Id="levelsinvolved" IsRequired="true" DisplaySequence="4">
 			<CodableConcept Name="levelsinvolved">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
 			<Label>Which levels involved?</Label>
@@ -124,7 +124,7 @@
 				<Choice>
 					<Value>1</Value>
 					<Label>1</Label>
-					
+
 				</Choice>
 				<Choice>
 					<Value>2a</Value>
@@ -152,15 +152,15 @@
 				</Choice>
 			</ChoiceInfo>
 		</MultiChoiceDataElement>
-		
+
 		<ChoiceDataElement Id="degreeofcertainty"  DisplaySequence="6">
 			<CodableConcept Name="degreeofcertainty">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
 			<Label>ECS (degree of certainty)</Label>
@@ -180,15 +180,15 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
+
 		<ChoiceDataElement Id="enhancement_pattern"  DisplaySequence="7" IsRequired="false">
 			<CodableConcept Name="enhancement_pattern">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
 			<Label>Pattern of enhancement</Label>
@@ -208,15 +208,15 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
+
 		<ChoiceDataElement Id="drainagepattern" DisplaySequence="8" IsRequired="false">
 			<CodableConcept Name="drainagepattern">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
 			<Label>Are these nodes in expected drainage pattern?</Label>
@@ -231,15 +231,15 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
+
 		<ChoiceDataElement Id="invasion_of_critical_structures" DisplaySequence="9" IsRequired="true">
 			<CodableConcept Name="invasion_of_critical_structures">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
 			<Label>Invasion of critical structures (carotid, prevertebral)</Label>
@@ -259,15 +259,15 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>	
-		
+
 		<ChoiceDataElement Id="degreeofcertaintyforinvolvement" DisplaySequence="10" IsRequired="true">
 			<CodableConcept Name="degreeofcertaintyforinvolvement">
 				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
-					<UserSelected Value="true"></UserSelected>
+					<System Value="RadElement"/>
+					<Version Value="1.0"/>
+					<Code Value="100"/>
+					<Display Value="100"/>
+					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
 			<Label>Degree of certainty for involvement (NIRADS)</Label>
@@ -291,7 +291,7 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>			
-				
+
 	</DataElements>
 
 	<Rules>
@@ -299,86 +299,162 @@
 			<Label>Macro Banch</Label>
 			<Branch>
 				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+				<EndPointRef EndPointId="macroEndpoint"/>
 			</Branch>
 		</DecisionPoint>
-		
+
 	</Rules>
 
 	<EndPoints>
-	 	 <TemplatePartial Id ="ExamPartial">
-			EXAMINATION:  CT NECK WITH CONTRAST
-			EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT
-			INDICATION: neck swelling
-			COMPARISON: None available.
-	     </TemplatePartial>
-		<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-			<ReportTexts>
-				<ReportText SectionId="findings">	
-				    <!--<InsertPartial PartialId="ExamPartial">  </InsertPartial> -->
-					
-					&amp;nbsp;
-					CDE Report text
-					&amp;nbsp;
-					&amp;nbsp;
-					
-					<SectionIf DataElementId="singlemultiple">
-					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="single">A single pathologic lymph node is&amp;nbsp;</SectionIfValue>
-					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="multiple">Multiple pathologic lymph nodes are&amp;nbsp;</SectionIfValue>				
-					<SectionIf DataElementId="laterality">present in the
-					<SectionIfValue DataElementId="laterality" ComparisonValue="right">&amp;nbsp;right</SectionIfValue>
-					<SectionIfValue DataElementId="laterality" ComparisonValue="left">&amp;nbsp;left</SectionIfValue>
-					<SectionIfValue DataElementId="laterality" ComparisonValue="bilateral">&amp;nbsp;bilateral</SectionIfValue>
-					<SectionIf DataElementId="singlemultiple">&amp;nbsp;neck.</SectionIf>
-					</SectionIf></SectionIf>
-					
-					<SectionIf DataElementId="sizeoflargestcluster">&amp;nbsp;
-					The largest 
-					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="Single"><SectionIf DataElementId="sizeoflargestcluster">&amp;nbsp;node&amp;nbsp;</SectionIf></SectionIfValue>
-					<SectionIfValue DataElementId="singlemultiple" ComparisonValue="Multiple">&amp;nbsp;nodal cluster&amp;nbsp;</SectionIfValue>
-						<SectionIf DataElementId="sizeoflargestcluster">measures&amp;nbsp; <InsertValue DataElementId="sizeoflargestcluster">&amp;nbsp;mm in long axis.</InsertValue></SectionIf>				
-					</SectionIf>
-					
-					<SectionIf DataElementId="levelsinvolved">&amp;nbsp; 
-					The involved surgical levels include:&amp;nbsp;<InsertValue DataElementId="levelsinvolved">.</InsertValue></SectionIf>
-					
-					<SectionIf DataElementId="degreeofcertainty">&amp;nbsp;
-					There is&amp;nbsp; 
-					<SectionIfValue DataElementId="degreeofcertainty" ComparisonValue="possible">no&amp;nbsp;</SectionIfValue>
-					<SectionIfValue DataElementId="degreeofcertainty" ComparisonValue="absent">no&amp;nbsp;</SectionIfValue>
-					<SectionIf DataElementId="degreeofcertainty">definite radiologic evidence of extracapsular spread.</SectionIf>
-					</SectionIf>
 
-					<SectionIf DataElementId="enhancement_pattern">&amp;nbsp;
-					There is&amp;nbsp; 
-					<SectionIfValueNot DataElementId="enhancement_pattern" ComparisonValue="necrotic">no&amp;nbsp;</SectionIfValueNot>  
-					evidence of central necrosis.
-					
-					<SectionIfValueNot DataElementId="enhancement_pattern" ComparisonValue="necrotic">&amp;nbsp;
-					The enhancement pattern is&amp;nbsp; 
-						<SectionIfValue DataElementId="enhancement_pattern" ComparisonValue="cystic">predominantly cystic.</SectionIfValue>
-						<SectionIfValue DataElementId="enhancement_pattern" ComparisonValue="solid">predominantly solid.</SectionIfValue>
-					</SectionIfValueNot>&amp;nbsp;
-					</SectionIf>
-					<SectionIf DataElementId="drainagepattern">&amp;nbsp;
-					These nodes are&amp;nbsp; 
-					<SectionIfValue DataElementId="drainagepattern" ComparisonValue="no">not&amp;nbsp;</SectionIfValue> <SectionIf DataElementId="drainagepattern">in the expected drainage pattern of the primary tumor.</SectionIf>
-					</SectionIf>
-					
-					<SectionIf DataElementId="invasion_of_critical_structures">&amp;nbsp;
-					There is&amp;nbsp;
-					<SectionIfValue DataElementId="invasion_of_critical_structures" ComparisonValue="negative">no evidence of invasion of critical structures.&amp;nbsp;</SectionIfValue>
-					<SectionIfValue DataElementId="invasion_of_critical_structures" ComparisonValue="possible">possible invasion of the carotid artery.&amp;nbsp;</SectionIfValue>
-					<SectionIfValue DataElementId="invasion_of_critical_structures" ComparisonValue="probable">probable invasion of the prevertebral space.&amp;nbsp;</SectionIfValue>&amp;nbsp;
-					</SectionIf>
-					<SectionIf DataElementId="degreeofcertaintyforinvolvement">&amp;nbsp;
-					NIRADS category&amp;nbsp;
-					<InsertValue DataElementId="degreeofcertaintyforinvolvement"></InsertValue>
-					</SectionIf>
-				</ReportText>
-			</ReportTexts>
+		<EndPoint Id="macroEndpoint">
+			<Label>A</Label>
+			<ReportSections>    
+				<ReportSection SectionId="findings">
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="singlemultiple"/>
+							<SectionIf DataElementId="laterality"/>							
+							<EqualCondition DataElementId="singlemultiple" ComparisonValue="single"/>
+						</AndCondition>
+						<ReportText Type="PlainText">A single pathologic lymph node is present in the </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="laterality"/>
+						<ReportText Type="PlainText"> neck.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="singlemultiple"/>
+							<SectionIf DataElementId="laterality"/>							
+							<EqualCondition DataElementId="singlemultiple" ComparisonValue="multiple"/>
+						</AndCondition>
+						<ReportText Type="PlainText">Multiple pathologic lymph node is present in the </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="laterality"/>
+						<ReportText Type="PlainText"> neck.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="sizeoflargestcluster"/>						
+							<EqualCondition DataElementId="singlemultiple" ComparisonValue="single"/>
+						</AndCondition>
+						<ReportText Type="PlainText">The largest node measures </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="sizeoflargestcluster"/>
+						<ReportText Type="PlainText"> mm in long axis.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="sizeoflargestcluster"/>						
+							<EqualCondition DataElementId="singlemultiple" ComparisonValue="multiple"/>
+						</AndCondition>
+						<ReportText Type="PlainText">The largest nodal cluster measures </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="sizeoflargestcluster"/>
+						<ReportText Type="PlainText"> mm in long axis.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<SectionIf DataElementId="levelsinvolved"/>
+						<ReportText Type="PlainText">The involved surgical levels include: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="levelsinvolved"/>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="degreeofcertainty"/>
+							<EqualCondition DataElementId="degreeofcertainty" ComparisonValue="possible"/>
+						</AndCondition>
+						<ReportText Type="PlainText">There is no definite radiologic evidence of extracapsular spread.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="degreeofcertainty"/>
+							<EqualCondition DataElementId="degreeofcertainty" ComparisonValue="absent"/>
+						</AndCondition>
+						<ReportText Type="PlainText">There is no definite radiologic evidence of extracapsular spread.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="enhancement_pattern"/>
+							<NotEqualCondition DataElementId="enhancement_pattern" ComparisonValue="necrotic"/>
+						</AndCondition>
+						<ReportText Type="PlainText">There is no evidence of central necrosis. </ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="enhancement_pattern"/>
+							<EqualCondition DataElementId="enhancement_pattern" ComparisonValue="cystic"/>
+						</AndCondition>
+						<ReportText Type="PlainText">The enhancement pattern is predominantly cystic. </ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="enhancement_pattern"/>
+							<EqualCondition DataElementId="enhancement_pattern" ComparisonValue="solid"/>
+						</AndCondition>
+						<ReportText Type="PlainText">The enhancement pattern is predominantly solid. </ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="drainagepattern"/>
+							<EqualCondition DataElementId="drainagepattern" ComparisonValue="no"/>
+						</AndCondition>
+						<ReportText Type="PlainText">These nodes are not in the expected drainage pattern of the primary tumor.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="invasion_of_critical_structures"/>
+							<EqualCondition DataElementId="invasion_of_critical_structures" ComparisonValue="negative"/>
+						</AndCondition>
+						<ReportText Type="PlainText">There is no evidence of invasion of critical structures.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="invasion_of_critical_structures"/>
+							<EqualCondition DataElementId="invasion_of_critical_structures" ComparisonValue="possible"/>
+						</AndCondition>
+						<ReportText Type="PlainText">There is possible invasion of the carotid artery.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<AndCondition>
+							<SectionIf DataElementId="invasion_of_critical_structures"/>
+							<EqualCondition DataElementId="invasion_of_critical_structures" ComparisonValue="probable"/>
+						</AndCondition>
+						<ReportText Type="PlainText">There is probable invasion of the prevertebral space.</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+					<Branch>
+						<SectionIf DataElementId="degreeofcertaintyforinvolvement"/>
+						<ReportText Type="PlainText">NIRADS category </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="degreeofcertaintyforinvolvement"/>
+						<ReportText Type="Newline"/>
+					</Branch>
+
+				</ReportSection>
+			</ReportSections>
 		</EndPoint>
 	</EndPoints>
-
 </ReportingModule>
