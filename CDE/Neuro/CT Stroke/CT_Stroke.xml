@@ -5,12 +5,7 @@
 		<Label>CT Stroke</Label>
 		<ID>CT_Stroke</ID>
 		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>2.0</ModuleVersion>
-		<CreatedDate>2018-12-31</CreatedDate>
-		<LastModifiedDate>2018-11-26</LastModifiedDate>
-		<ApprovedBy>American College of Radiology</ApprovedBy>
-		<ReviewedBy>American College of Radiology</ReviewedBy>
-		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<ModuleVersion>1.0</ModuleVersion>
 		<Info>
 			<Description>This module describes the Common Data elements and Macros for CT stroke</Description>
 			
@@ -35,11 +30,14 @@
 			</Contact>
 		</Info>
 		<ReportCitationText>CT Stroke</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>		
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
 	</Metadata>
 	
 	<DataElements>
-		<GlobalValue Id="conditionConst">10</GlobalValue>		
+
+		<GlobalValue Id="conditionConst">10</GlobalValue>
+		
 		<ChoiceDataElement Id="Hyperacutesigns" DisplaySequence="1" IsRequired="true">
 			<Label>Hyperacute signs</Label>
 			<ChoiceInfo>
@@ -54,7 +52,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="2">
+		<MultiChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="2" CdeId = "100">
 			<Label>Location</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -93,7 +91,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement> -->
 		
-		<ChoiceDataElement Id="vascularterritory" DisplaySequence="3" IsRequired="true">
+		<ChoiceDataElement Id="vascularterritory" DisplaySequence="3" IsRequired="true" CdeId = "100">
 			<Label>Vascular Territory</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -137,7 +135,7 @@
 			</ChoiceInfo>			
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="hemorrhagicconversion" DisplaySequence="4" IsRequired="true">
+		<ChoiceDataElement Id="hemorrhagicconversion" DisplaySequence="4" IsRequired="true" CdeId = "100">
 			<Label>Hemorrhagic conversion</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -151,7 +149,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="masseffect" DisplaySequence="5" IsRequired="true">
+		<ChoiceDataElement Id="masseffect" DisplaySequence="5" IsRequired="true" CdeId = "100">
 			<Label>Mass effect</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -166,7 +164,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="vascularmechanismpattern" DisplaySequence="6" IsRequired="true">
+		<ChoiceDataElement Id="vascularmechanismpattern" DisplaySequence="6" IsRequired="true" CdeId = "100">
 			<Label>Vascular Mechanism/Pattern</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -185,13 +183,13 @@
 		</ChoiceDataElement>
 	
 	
-		<IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7">
+		<IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7" CdeId = "100">
 			<Label>midlineshift in mm</Label>
 			<Hint>Measurement</Hint>
 			<Minimum>1</Minimum>
 		</IntegerDataElement>	
 		
-		<ChoiceDataElement Id="Herniation" IsRequired="true" DisplaySequence="8">
+		<ChoiceDataElement Id="Herniation" IsRequired="true" DisplaySequence="8" CdeId = "100">
 			<Label>Herniation</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -211,7 +209,7 @@
 
 		
 		
-		<ChoiceDataElement Id="hyperdense" IsRequired="true" DisplaySequence="9">
+		<ChoiceDataElement Id="hyperdense" IsRequired="true" DisplaySequence="9" CdeId = "100">
 			<Label>Hyperdense vessel?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -227,7 +225,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="hyperdensesign" DisplaySequence="10" IsRequired="true">
+		<ChoiceDataElement Id="hyperdensesign" DisplaySequence="10" IsRequired="true" CdeId = "100">
 			<Label>Hyperdense Sign</Label>
 
 			<ChoiceInfo>
@@ -250,7 +248,7 @@
 				</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="arterialcalcification" DisplaySequence="11" IsRequired="true">
+		<ChoiceDataElement Id="arterialcalcification" DisplaySequence="11" IsRequired="true" CdeId = "100">
 			<Label>Arterial calcification</Label>
 			
 			<ChoiceInfo>
@@ -267,7 +265,7 @@
 		
 		
 		
-		<ChoiceDataElement Id="venousthrombus" DisplaySequence="12" IsRequired="true">
+		<ChoiceDataElement Id="venousthrombus" DisplaySequence="12" IsRequired="true" CdeId = "100">
 			<Label>Venous thrombus</Label>
 			
 			<ChoiceInfo>
@@ -296,7 +294,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="hydrocephalus" DisplaySequence="14" IsRequired="true">
+		<ChoiceDataElement Id="hydrocephalus" DisplaySequence="14" IsRequired="true" CdeId = "100">
 			<Label>Hydrocephalus</Label>
 			
 			<ChoiceInfo>
@@ -311,10 +309,209 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<IntegerDataElement Id="ASPECTSclassification" DisplaySequence="15" IsRequired="true">
+		<IntegerDataElement Id="ASPECTSclassification" DisplaySequence="15" IsRequired="true" CdeId = "100">
 			<Label>ASPECTS classification</Label>
 				<Hint>Score 1 to 10</Hint>
-		</IntegerDataElement>
+		</IntegerDataElement>	
+	
+
+		
+	<!--
+		
+		
+
+		
+		<ChoiceDataElement Id="contrast"  DisplaySequence="13" IsRequired="true" CdeId = "100">
+			<Label>contrast</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>IntravascularEnhancementvascularstasis</Value>
+					<Label>Intravascular Enhancement (vascular stasis)</Label>
+				</Choice>
+				<Choice>
+					<Value>ParenchymalEnhancement(luxuryperfusion)</Value>
+					<Label>Parenchymal Enhancement (luxury perfusion)</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="hemorrhagiccomplication"  DisplaySequence="14" IsRequired="true" CdeId = "100">
+			<Label>Hemorrhagic Complications</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>reperfusion</Value>
+					<Label>Reperfusion</Label>
+				</Choice>
+				<Choice>
+					<Value>infarcttransformation</Value>
+					<Label>Infarct Transformation</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>			
+		
+		<ChoiceDataElement Id="hemorrhagiclocation"  DisplaySequence="15" IsRequired="true" CdeId = "100">
+			<Label>Hemorrhagic Location</Label>
+            <ChoiceInfo>
+				<Choice>
+					<Value>Frontal-parietal-temporal-occipitallobe</Value>
+					<Label>Frontal-parietal-temporal-occipital lobe</Label>
+				</Choice>
+				<Choice>
+					<Value>basalganglia</Value>
+					<Label>Basal Ganglia</Label>
+				</Choice>
+				<Choice>
+					<Value>midbrain-pons</Value>
+					<Label>Midbrain-pons</Label>
+				</Choice>
+				<Choice>
+					<Value>cerebellum</Value>
+					<Label>Cerebellum</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="Hemorrhagictype"  DisplaySequence="16" IsRequired="true" CdeId = "100">
+			<Label>Hemorrhagic Type</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>SAH</Value>
+					<Label>SAH</Label>
+				</Choice>
+				<Choice>
+					<Value>IPH-petechiae</Value>
+					<Label>IPH - petechiae</Label>
+				</Choice>
+				<Choice>
+					<Value>confluent/parenchymalversuscontraststaining</Value>
+					<Label>confluent/parenchymal versus contrast staining</Label>
+				</Choice>
+				</ChoiceInfo>
+		</ChoiceDataElement>	
+
+		<ChoiceDataElement Id="ECASS3classification"  DisplaySequence="17" IsRequired="true" CdeId = "100">
+			<Label>ECASS 3 classification</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>ClassificationHI-1</Value>
+					<Label>Classification HI-1</Label>
+				</Choice>
+				<Choice>
+					<Value>HI-2</Value>
+					<Label>HI-2</Label>
+				</Choice>
+				<Choice>
+					<Value>PH-1</Value>
+					<Label>PH-1</Label>
+				</Choice>
+				<Choice>
+					<Value>PH-2</Value>
+					<Label>PH-2</Label>
+				</Choice>
+				</ChoiceInfo>
+		</ChoiceDataElement>	
+
+		<IntegerDataElement Id="hemorrhgicsizevolume" IsRequired="true" DisplaySequence="18" CdeId = "100">
+			<Label>Hemorrhgic size/volume</Label>
+			<Hint>AP x Trans x CC Measurements</Hint>
+			<Minimum>1</Minimum>
+		</IntegerDataElement>	
+		
+		<ChoiceDataElement Id="neuroVascularthromboembolicocclusion"  DisplaySequence="19" IsRequired="true" CdeId = "100">
+			<Label>NeuroVascular Thromboembolic Occlusion</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>hypeCdeIdnseartery </Value>
+					<Label>HypeCdeIdnse artery </Label>
+				</Choice>
+				<Choice>
+					<Value>duralvenoussinus</Value>
+					<Label>dural venous sinus</Label>
+				</Choice>		
+				<Choice>
+					<Value>calcified embolus</Value>
+					<Label>Calcified embolus</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="contrast2"  DisplaySequence="20" IsRequired="true" CdeId = "100">
+			<Label>Contrast</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>fillingdefects</Value>
+					<Label>Filling defects</Label>
+				</Choice>
+				<Choice>
+					<Value>cord/empty deltal signs</Value>
+					<Label>Cord/empty deltal signs</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>	
+		
+		
+		<ChoiceDataElement Id="neurovascularseverity" DisplaySequence="21" IsRequired="true" CdeId = "100">
+			<Label>NeuroVascular Severity</Label>
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>mild</Value>
+					<Label>Mild</Label>
+				</Choice>
+				<Choice>
+					<Value>moderate</Value>
+					<Label>Moderate</Label>
+				</Choice>
+				<Choice>
+					<Value>severe</Value>
+					<Label>Severe</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>			
+
+		<ChoiceDataElement Id="neurovascularlocation" DisplaySequence="22" IsRequired="true" CdeId = "100">
+			<Label>NeuroVascular Location</Label>
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>cavernous/supraclinoidICA</Value>
+					<Label>cavernous/supraclinoid ICA</Label>
+				</Choice>
+				<Choice>
+					<Value>A1-A2 ACA</Value>
+					<Label>A1-A2 ACA</Label>
+				</Choice>
+				<Choice>
+					<Value>M1-M2 MCA</Value>
+					<Label>M1-M2 MCA</Label>
+				</Choice>
+				<Choice>
+					<Value>V4 VA-BA</Value>
+					<Label>V4 VA-BA</Label>
+				</Choice>
+				<Choice>
+					<Value>P1-P2 PCA</Value>
+					<Label>P1-P2 PCA</Label>
+				</Choice>
+				</ChoiceInfo>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="chronicsignsvolumeloss" DisplaySequence="23" IsRequired="true" CdeId = "100">
+			<Label>Chronic Signs Volume Loss</Label>
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>encephalomalacia/gliosis</Value>
+					<Label>Encephalomalacia/gliosis</Label>
+				</Choice>
+				<Choice>
+					<Value>ex-vacuoventriculardilatation</Value>
+					<Label>Ex-vacuo ventricular dilatation</Label>
+				</Choice>
+				</ChoiceInfo>
+		</ChoiceDataElement>-->
+		
+				
 	</DataElements>
 
 	<Rules>
@@ -324,201 +521,86 @@
 				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
 				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
 			</Branch>
-		</DecisionPoint>		
+		</DecisionPoint>
+		
 	</Rules>
 
-	<EndPoints>	 
+	<EndPoints>
+	 <TemplatePartial Id ="ExamPartial">
+		EXAMINATION:  CT BRAIN W/O CONTRAST
+		EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT
+		INDICATION: weakness
+		COMPARISON: None available.
+	 </TemplatePartial>
+	 
 		<EndPoint Id="macroEndpoint">
 		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="Hyperacutesigns"/>
-						<EqualCondition DataElementId="Hyperacutesigns" ComparisonValue="no"></EqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is no loss of grey/white matter discrimination in the </ReportText>	
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="Hyperacutesigns"/>
-						<NotEqualCondition DataElementId="Hyperacutesigns" ComparisonValue="no"></NotEqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is loss of grey/white matter discrimination in the </ReportText>	
-				</Branch>
-				<Branch>
-					<SectionIf DataElementId="anatomiclocation"></SectionIf>
-					<ReportText Type="InsertDataElementValue" Value="anatomiclocation"></ReportText>
-					<ReportText Type="PlainText" >lobe(s) </ReportText>
-				</Branch>
-				<Branch>
-					<SectionIf DataElementId="vascularterritory"/>
-					<ReportText Type="PlainText" >in the </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="vascularterritory"></ReportText>
-					<ReportText Type="PlainText" > distribution</ReportText>
-				</Branch>	
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="hemorrhagicconversion"/>
-						<EqualCondition DataElementId="hemorrhagicconversion" ComparisonValue="no"/>
-					</AndCondition>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText" >There is no hemorrhagic conversion.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="hemorrhagicconversion"/>
-						<NotEqualCondition DataElementId="hemorrhagicconversion" ComparisonValue="no"/>
-					</AndCondition>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText" >There is hemorrhagic conversion.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="masseffect"/>
-						<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
-					</AndCondition>
-					<ReportText Type="PlainText">There is no mass effect.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="masseffect"/>
-						<NotEqualCondition DataElementId="masseffect" ComparisonValue="no"/>
-					</AndCondition>
-					<ReportText Type="PlainText">There is mild mass effect.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<SectionIf DataElementId="vascularmechanismpattern"/>					
-					<ReportText Type="PlainText">The ischemic pattern is </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="vascularmechanismpattern"></ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<SectionIf DataElementId="midlineshift"/>
-					<ReportText Type="PlainText">There is </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="midlineshift"/>
-					<ReportText Type="PlainText"> mm midline shift.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<SectionIf DataElementId="Herniation"/>
-					<ReportText Type="PlainText">There is </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Herniation"/>
-					<ReportText Type="PlainText"> herniation.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="hyperdense"/>
-						<EqualCondition DataElementId="hyperdense" ComparisonValue="no"></EqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is no hyperdense right.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="hyperdense"/>
-						<NotEqualCondition DataElementId="hyperdense" ComparisonValue="no"></NotEqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is hyperdense right.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="hyperdense"/>
-						<SectionIf DataElementId="hyperdensesign"/>
-					</AndCondition>
-					<ReportText Type="InsertDataElementValue" Value="hyperdensesign"/>					
-					<ReportText Type="PlainText"> sign.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="arterialcalcification"/>
-						<EqualCondition DataElementId="arterialcalcification" ComparisonValue="no"></EqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is no arterial calcification at the skull base.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="arterialcalcification"/>
-						<NotEqualCondition DataElementId="arterialcalcification" ComparisonValue="no"></NotEqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is arterial calcification at the skull base.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="venousthrombus"/>
-						<EqualCondition DataElementId="venousthrombus" ComparisonValue="no"></EqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is no dense thrombus </ReportText>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="venousthrombus"/>
-						<NotEqualCondition DataElementId="venousthrombus" ComparisonValue="no"></NotEqualCondition>
-					</AndCondition>
-					<ReportText Type="PlainText">There is dense thrombus </ReportText>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="venousthrombus"/>
-						<SectionIf DataElementId="sinuslocation"/>						
-					</AndCondition>
-					<ReportText Type="PlainText"> in </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="sinuslocation"/>
-					<ReportText Type="PlainText">.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="hydrocephalus"/>
-						<EqualCondition DataElementId="hydrocephalus" ComparisonValue="no"></EqualCondition>
-						<SectionIf DataElementId="hydrocephalus"/>
-					</AndCondition>
-					<ReportText Type="PlainText">There is no hydrocephalus.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="hydrocephalus"/>
-						<NotEqualCondition DataElementId="hydrocephalus" ComparisonValue="no"></NotEqualCondition>
-						<SectionIf DataElementId="hydrocephalus"/>
-					</AndCondition>
-					<ReportText Type="PlainText">There is hydrocephalus.</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<SectionIf DataElementId="ASPECTSclassification"/>
-					<ReportText Type="PlainText">The ASPECTS score is estimated to be </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="ASPECTSclassification"/>
-				</Branch>
-			</ReportSection>
-		</ReportSections>				
-	</EndPoint>
-</EndPoints>
+		 <ReportTexts>
+				<ReportText SectionId="findings">	
+						
+					<!--Ventricles and sulci are normal in size and configuration. No extra axial collection.-->  
+								
+								
+					&amp;nbsp;
+					CDE Report text
+					&amp;nbsp;
+					&amp;nbsp;
+
+					<SectionIf DataElementId="Hyperacutesigns">&amp;nbsp;
+					There is &amp;nbsp;<SectionIfValue DataElementId="Hyperacutesigns" ComparisonValue="no">no &amp;nbsp;</SectionIfValue><SectionIf DataElementId="Hyperacutesigns">loss of grey/white matter discrimination in the</SectionIf></SectionIf>&amp;nbsp;<InsertValue DataElementId="anatomiclocation"/>&amp;nbsp;<SectionIf DataElementId="anatomiclocation">lobe(s)</SectionIf><SectionIf DataElementId="vascularterritory">&amp;nbsp;in the&amp;nbsp;<InsertValue DataElementId="vascularterritory"></InsertValue></SectionIf>&amp;nbsp;<SectionIf DataElementId="vascularterritory">distribution.</SectionIf>
+						
+					<SectionIf DataElementId="hemorrhagicconversion">&amp;nbsp;
+					There is&amp;nbsp;<SectionIfValue DataElementId="hemorrhagicconversion" ComparisonValue="no">no&amp;nbsp;</SectionIfValue><SectionIf DataElementId="hemorrhagicconversion">hemorrhagic conversion.
+					</SectionIf></SectionIf>
+					
+					<SectionIf DataElementId="masseffect">&amp;nbsp;
+					There is&amp;nbsp;<SectionIfValue DataElementId="masseffect" ComparisonValue="no">no mass effect.&amp;nbsp;</SectionIfValue>
+					<SectionIfValue DataElementId="masseffect" ComparisonValue="yes">mild mass effect.&amp;nbsp;</SectionIfValue>
+					</SectionIf>
+					<SectionIf DataElementId="vascularmechanismpattern">&amp;nbsp;
+					The ischemic pattern is&amp;nbsp; <InsertValue DataElementId="vascularmechanismpattern">.</InsertValue>
+					</SectionIf>
+					
+					<SectionIf DataElementId="midlineshift">&amp;nbsp;
+						There&amp;nbsp;<InsertValue DataElementId="midlineshift">&amp;nbsp;mm midline shift.</InsertValue>
+					</SectionIf>
+					
+					<SectionIf DataElementId="Herniation">&amp;nbsp;
+						There is&amp;nbsp;<InsertValue DataElementId="Herniation">&amp;nbsp;herniation.</InsertValue>
+					</SectionIf>
+					
+					<SectionIf DataElementId="hyperdense">&amp;nbsp;
+					There is &amp;nbsp;<SectionIfValue DataElementId="hyperdense" ComparisonValue="no">no&amp;nbsp;</SectionIfValue><SectionIf DataElementId="hyperdense">hyperdense right</SectionIf>&amp;nbsp;<SectionIf DataElementId="hyperdensesign"><InsertValue DataElementId="hyperdensesign">&amp;nbsp;sign.</InsertValue></SectionIf>
+					</SectionIf>
+					
+					<SectionIf DataElementId="arterialcalcification">&amp;nbsp;
+					There is&amp;nbsp;<SectionIfValue DataElementId="arterialcalcification" ComparisonValue="no">no&amp;nbsp;</SectionIfValue><SectionIf DataElementId="arterialcalcification">arterial calcification at the skull base.</SectionIf>
+					</SectionIf>
+					
+					<SectionIf DataElementId="venousthrombus">&amp;nbsp;
+					There is&amp;nbsp;<SectionIfValue DataElementId="venousthrombus" ComparisonValue="no">no&amp;nbsp;</SectionIfValue><SectionIf DataElementId="venousthrombus">dense thrombus in</SectionIf>&amp;nbsp;<SectionIf DataElementId="sinuslocation"><InsertValue DataElementId="sinuslocation">.</InsertValue>
+					</SectionIf></SectionIf>
+					
+					<SectionIf DataElementId="hydrocephalus">&amp;nbsp;
+					There&amp;nbsp;<SectionIfValue DataElementId="hydrocephalus" ComparisonValue="no">is no&amp;nbsp;</SectionIfValue><SectionIfValue DataElementId="hydrocephalus" ComparisonValue="yes">is&amp;nbsp;</SectionIfValue><SectionIf DataElementId="hydrocephalus">hydrocephalus.</SectionIf>
+					</SectionIf>
+					
+					<SectionIf DataElementId="ASPECTSclassification">&amp;nbsp;
+						The ASPECTS score is estimated to be&amp;nbsp; <InsertValue DataElementId="ASPECTSclassification">.</InsertValue>&amp;nbsp;
+					</SectionIf>
+					<!--Visualized paranasal sinuses are well aerated. Calvarium is unremarkable.-->
+				</ReportText>
+			
+			<!-- 
+				<ReportText SectionId="impression">	
+				 
+					 Acute MCA infarction as described.
+
+					TECHNIQUE: Multiple axial CT images of the head were obtained without contrast.
+					
+				</ReportText>			 -->	
+			</ReportTexts>	
+		</EndPoint>
+	</EndPoints>
+
 </ReportingModule>
