@@ -2048,14 +2048,7 @@
 									</AndCondition>
 								</OrCondition>
 								<EndPointRef EndPointId="LR1"/>
-							</Branch>						
-							<!--<Branch>
-								<OrCondition>
-									<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></EqualCondition>
-									<SectionIfNot DataElementId="adjustcategorybasedonAncillary"></SectionIfNot>									
-								</OrCondition>
-								<EndPointRef EndPointId="LR1"/>
-							</Branch>-->
+							</Branch>	
 							<Branch>
 								<AndCondition>
 									<SectionIf DataElementId="ancillaryFavoringMalignancy" />
@@ -2086,13 +2079,6 @@
 								</OrCondition>
 								<EndPointRef EndPointId="LR2"/>	
 							</Branch>
-							<!--<Branch>
-								<OrCondition>
-									<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></EqualCondition>
-									<SectionIfNot DataElementId="adjustcategorybasedonAncillary"></SectionIfNot>									
-								</OrCondition>
-								<EndPointRef EndPointId="LR2"/>
-							</Branch>-->
 							<Branch>
 								<AndCondition>
 									<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
