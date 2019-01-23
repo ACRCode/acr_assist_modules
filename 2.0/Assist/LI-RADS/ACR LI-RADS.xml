@@ -2033,7 +2033,7 @@
 						<DecisionPoint Id="decision_definitelyBenign">
 							<Label>Definitely benign</Label>
 							<Branch>
-								<OrCondition>
+								<OrCondition>									
 									<AndCondition>
 										<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 										<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
@@ -2046,6 +2046,13 @@
 										<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 										<SectionIf DataElementId="ancillaryFavoringBenignity" />
 									</AndCondition>
+								</OrCondition>
+								<EndPointRef EndPointId="LR1"/>
+							</Branch>						
+							<Branch>
+								<OrCondition>
+									<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></EqualCondition>
+									<SectionIfNot DataElementId="adjustcategorybasedonAncillary"></SectionIfNot>									
 								</OrCondition>
 								<EndPointRef EndPointId="LR1"/>
 							</Branch>
@@ -2078,6 +2085,13 @@
 									</AndCondition>
 								</OrCondition>
 								<EndPointRef EndPointId="LR2"/>	
+							</Branch>
+							<Branch>
+								<OrCondition>
+									<EqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></EqualCondition>
+									<SectionIfNot DataElementId="adjustcategorybasedonAncillary"></SectionIfNot>									
+								</OrCondition>
+								<EndPointRef EndPointId="LR2"/>
 							</Branch>
 							<Branch>
 								<AndCondition>
