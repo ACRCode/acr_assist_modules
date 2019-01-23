@@ -40,13 +40,14 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<IntegerDataElement Id="adrenalmass" DisplaySequence="2" IsRequired="true">
-			<Label>Enter the nodule size in cm</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-		</IntegerDataElement>
+		<NumericDataElement Id="adrenalmass" DisplaySequence="2" IsRequired="true">
+			<Label>Size</Label>
+			<Hint>Enter the nodule size in cm</Hint>
+			<Minimum>1.0</Minimum>
+			<Maximum>10.0</Maximum>
+		</NumericDataElement>
 
-		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="4" IsRequired="true">
+		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="3" IsRequired="true">
 			<Label>Diagnostic Imaging Features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -88,8 +89,8 @@
 			</ChoiceInfo>  
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="imgenlarge" DisplaySequence="6" IsRequired="true">
-			<Label>Imaging enlarge</Label>
+		<ChoiceDataElement Id="imgenlarge" DisplaySequence="4" IsRequired="false">
+			<Label>Enlarging</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>nopriorimaging</Value>
@@ -117,10 +118,10 @@
 		</ChoiceDataElement>
 
 
-		<ChoiceDataElement Id="cancerhx" DisplaySequence="7" IsRequired="true">
+		<ChoiceDataElement Id="cancerhx" DisplaySequence="5" IsRequired="false">
 			<Label>Cancer Hx</Label>
 			<ChoiceInfo>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>unknown</Value>
 					<Label>Unknown</Label>
 				</Choice>
@@ -310,8 +311,6 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-						<ReportText Type="PlainText">No Cancer Hx:</ReportText>
-						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Consider resection</ReportText>
 					</Branch>
 				</ReportSection>
@@ -323,8 +322,6 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-						<ReportText Type="PlainText">Cancer Hx:</ReportText>
-						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Consider Bx or PET-CT</ReportText>
 					</Branch>
 				</ReportSection>
@@ -347,8 +344,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-						<ReportText Type="PlainText">No Cancer Hx:</ReportText>
-						<ReportText Type="Newline"/>
+
 						<ReportText Type="PlainText">Consider 12 months F/U adrenal CT or resection</ReportText>
 					</Branch>
 				</ReportSection>
