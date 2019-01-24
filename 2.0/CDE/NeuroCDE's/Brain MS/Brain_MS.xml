@@ -579,17 +579,14 @@
 <EndPoints>		
 	 <TemplatePartial Id ="ExamPartial">
 	 	<Branch>
-	 		<ReportText Type="Tab" />
 	 		<ReportText Type="PlainText">EXAM TYPE: BRAIN MRI W/WO CONTRAST</ReportText>
 	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="Tab" />
 	 		<ReportText Type="PlainText">EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT</ReportText>
 	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="Tab"/>
 	 		<ReportText Type="PlainText">INDICATION: r/o demyelinating disease </ReportText>
 	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="Tab"/>
 	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
 	 	</Branch>
 	 </TemplatePartial>
 	 
@@ -600,7 +597,7 @@
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
 					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">CDE Report text : </ReportText>
+					<ReportText Type="PlainText">CDE Report text: </ReportText>
 					<ReportText Type="Newline"/>
 				</Branch>
 				<Branch>
@@ -666,6 +663,7 @@
 						<EqualCondition DataElementId="masseffect" ComparisonValue="no"></EqualCondition>
 					</AndCondition>					
 					<ReportText Type="PlainText">There is no associated mass effect.</ReportText>
+					<ReportText Type="Newline"/>
 				</Branch>
 				
 				<Branch>					
@@ -673,17 +671,17 @@
 						<SectionIf DataElementId="masseffect"/>
 						<NotEqualCondition DataElementId="masseffect" ComparisonValue="no"></NotEqualCondition>
 					</AndCondition>
-					<ReportText Type="Newline"/>
 					<ReportText Type="PlainText">There is associated mass effect.</ReportText>
+					<ReportText Type="Newline"/>
 				</Branch>
 				
 				<Branch>
 					<AndCondition>
 						<SectionIf DataElementId="BlackHolesT1hypointense"/>
 						<EqualCondition DataElementId="BlackHolesT1hypointense" ComparisonValue="no"></EqualCondition>
-					</AndCondition>
-					<ReportText Type="Newline"/>
+					</AndCondition>					
 					<ReportText Type="PlainText">There are no black holes present in the parietal white matter.</ReportText>
+					<ReportText Type="Newline"/>
 				</Branch>
 				
 				<Branch>
@@ -691,8 +689,9 @@
 						<SectionIf DataElementId="BlackHolesT1hypointense"/>
 						<NotEqualCondition DataElementId="BlackHolesT1hypointense" ComparisonValue="no"></NotEqualCondition>
 					</AndCondition>
-					<ReportText Type="Newline"/>
+					
 					<ReportText Type="PlainText">There are black holes present in the parietal white matter.</ReportText>
+					<ReportText Type="Newline"/>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
