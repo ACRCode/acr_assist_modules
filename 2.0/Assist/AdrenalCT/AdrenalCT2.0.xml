@@ -59,16 +59,16 @@
 					<Label>Myelolipoma</Label>
 				</Choice>
 				<Choice>
-				  <Value>myelolipoma</Value>
+				  <Value>noenhancement</Value>
 				  <Label>No enhancement</Label>
 				</Choice>
 			   <Choice>
-				  <Value>myelolipoma</Value>
+				  <Value>benigncalcification</Value>
 				  <Label>Benign Calcification</Label>
 				</Choice>
 				
 				<Choice>
-				  <Value>signalonCSMR</Value>
+				  <Value>lessthan10HU</Value>
 				  <Label>≤10 HU</Label>
 				</Choice>
 				
@@ -157,16 +157,30 @@
 				<DecisionPoint Id="DiagnosticImagingFeatures">
 					<Label>Diagnostic Imaging Features </Label>
 					<Branch>
-						<Label>Myelolipoma, No enhancement,Ca++</Label>
+						<Label>Myelolipoma</Label>
 						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="myelolipoma"/>
 						<EndPointRef EndPointId="benignnoFU" ></EndPointRef>
 					</Branch>
 					<Branch>
-						<Label>≤10 HU or signal on CS-MR</Label>
+						<Label>No enhancement</Label>
+						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="noenhancement"/>
+						<EndPointRef EndPointId="benignnoFU" ></EndPointRef>
+					</Branch>
+					<Branch>
+						<Label>Ca++</Label>
+						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="benigncalcification"/>
+						<EndPointRef EndPointId="benignnoFU" ></EndPointRef>
+					</Branch>
+					<Branch>
+						<Label>≤10 HU</Label>
+						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="lessthan10HU"/>
+						<EndPointRef EndPointId="benignadenoma" ></EndPointRef>
+					</Branch>
+					<Branch>
+						<Label>signal on CS-MR</Label>
 						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="signalonCSMR"/>
 						<EndPointRef EndPointId="benignadenoma" ></EndPointRef>
 					</Branch>
-					
 					<Branch>
 						<Label>greaterthan60</Label>
 						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="greaterthan60"/>
