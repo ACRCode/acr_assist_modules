@@ -433,34 +433,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>				
 			</ConditionalProperties>		
-		</ChoiceDataElement>
-		
-		<ChoiceDataElement Id="treatednonevaluable" DisplaySequence="13" AllowFreetext="true">
-			<Label>Reason cannot be evaluated</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>Sample1</Value>
-					<Label>Sample 1</Label>
-				</Choice>
-				<Choice>
-					<Value>Sample2</Value>
-					<Label>Sample 2</Label>
-				</Choice>
-				<Choice>
-					<Value>Sample</Value>
-					<Label>Sample 3</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
-						<EqualCondition DataElementId="treatedobservation" ComparisonValue="otherwise"></EqualCondition>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>				
-			</ConditionalProperties>	
-		</ChoiceDataElement>
+		</ChoiceDataElement>		
 		
 		<ChoiceDataElement Id="LR1Features" IsRequired="false" DisplaySequence="13" AllowFreetext="true">
 			<Label>LR-1 diagnosis</Label>
@@ -3786,11 +3759,6 @@
 					<SectionIf DataElementId="segmentlocation" />
 					<ReportText Type="PlainText" > in segment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
-				</Branch>
-				<Branch>
-					<SectionIf DataElementId="treatednonevaluable" />
-					<ReportText Type="PlainText" > due to </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="treatednonevaluable" />
 				</Branch>
 			</ReportSection>
 		</ReportSections>
