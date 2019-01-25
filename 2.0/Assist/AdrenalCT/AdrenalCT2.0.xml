@@ -297,6 +297,24 @@
 											</Branch>
 										</DecisionPoint>
 									</Branch>
+									
+									<Branch>
+										<Label>Yes </Label>
+										<EqualCondition DataElementId="cancerhx" ComparisonValue="yes"/>
+										<DecisionPoint Id="yescancerhxDP">
+											<Label>AdrenalMass</Label>
+											<Branch>
+												<Label>1-2cm</Label>
+												<AndCondition>
+													<GreaterThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="1"/>
+													<LessThanOrEqualsCondition DataElementId="adrenalmass" ComparisonValue="3"/>
+												</AndCondition>
+												<EndPointRef EndPointId="benignadenoma"></EndPointRef>
+											</Branch>
+										</DecisionPoint>
+									</Branch>
+									
+									
 								</DecisionPoint>
 							</Branch>
 						</DecisionPoint>

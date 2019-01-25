@@ -244,10 +244,36 @@
         }
       ]
     },
- 
+	{
+      "testCaseId": "AdrenalCT_12",
+      "endpointId": "benignadenoma",
+      "endpointlabel": "Benign adenoma, no F/U",
+      "inputs": [
+        {
+          "dataElementId": "diagimagfeatures",
+          "dataElementValue": "none"
+        },
+        {
+          "dataElementId": "adrenalmass",
+          "dataElementValue": "2",
+          "range": {
+            "minimum": 1,
+            "maximum": 3
+          }
+        },
+        {
+          "dataElementId": "imgenlarge",
+          "dataElementValue": "nopriorimaging"
+        },
+        {
+          "dataElementId": "cancerhx",
+          "dataElementValue": "yes"
+        }
+      ]
+    },
     
     {
-      "testCaseId": "AdrenalCT_12",
+      "testCaseId": "AdrenalCT_13",
       "endpointId": "considerBX",
       "endpointlabel": "Consider Bx or PET-CT",
       "inputs": [
@@ -270,7 +296,7 @@
       ]
     },
     {
-      "testCaseId": "AdrenalCT_13",
+      "testCaseId": "AdrenalCT_14",
       "endpointId": "considerresection",
       "endpointlabel": "Consider resection",
       "inputs": [
