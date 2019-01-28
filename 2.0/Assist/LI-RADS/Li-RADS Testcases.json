@@ -2226,10 +2226,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "no"
         },
-		 //{
-          // "dataElementId": "HistoryofVisibilityonUS",
-          // "dataElementValue": "no"
-         //},
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
           "dataElementValue": "no"
@@ -2354,10 +2351,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "yes"
         },
-		// {
-        //   "dataElementId": "sixeincreatein6months",
-        //   "dataElementValue": "no"
-        // },
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
           "dataElementValue": "no"
@@ -3038,7 +3032,7 @@
         },
 		{
           "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
@@ -3639,13 +3633,17 @@
 		{
           "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
           "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
         }
       ]
     },
 	{
       "testCaseId": "li_rads_61",
-	  "endpointId": "LR-TIV",
-      "endpointlabel": "LR-TIV, Etiology uncertain",
+	  "endpointId": "LRTIV_def_hcc",
+      "endpointlabel": "LR-TIV, Definitely due to HCC",
       "inputs": [
 	  
         {
@@ -3672,6 +3670,10 @@
           "dataElementId": "untreatedobservation",
           "dataElementValue": "tumorInVein"
         },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
+        },
 		{
           "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
           "dataElementValue": "yes"
@@ -3683,21 +3685,38 @@
 		{
           "dataElementId": "Isparenchymalmasstargetoid",
           "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "arterialEnhancement",
+          "dataElementValue": "aphe"
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
+        },
+		{
+          "dataElementId": "washout",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "capsule",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "thresholdgrowth",
+          "dataElementValue": "yes"
         }
-		//{
-        //  "dataElementId": "IsparenchymalmassLR4",
-        //  "dataElementValue": "no"
-        //},
-		//{
-        //  "dataElementId": "IsparenchymalmassLR5",
-        //  "dataElementValue": "no"
-        //}
+
       ]
     },
 	{
       "testCaseId": "li_rads_62",
-	  "endpointId": "LR-TIV",
-      "endpointlabel": "LR-TIV, Etiology uncertain",
+	  "endpointId": "LRTIV_proabably_hcc",
+      "endpointlabel": "LR-TIV, Probably due to HCC",
       "inputs": [
 	  
         {
@@ -3732,13 +3751,17 @@
 		{
           "dataElementId": "Isparenchymalmassinfiltrative",
           "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
         }
       ]
     },
 	{
       "testCaseId": "li_rads_63",
-	  "endpointId": "LR-TIV",
-      "endpointlabel": "LR-TIV, Etiology uncertain",
+      "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 	  
         {
@@ -3777,16 +3800,37 @@
           "dataElementId": "Isparenchymalmasstargetoid",
           "dataElementValue": "no"
         },
-		//{
-        //  "dataElementId": "IsparenchymalmassLR4",
-        //  "dataElementValue": "yes"
-        //}
+        {
+          "dataElementId": "arterialEnhancement",
+          "dataElementValue": "noaphe"
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "19"
+        },
+		{
+          "dataElementId": "washout",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "capsule",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "thresholdgrowth",
+          "dataElementValue": "na"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
+        }
+
       ]
     },
 	{
       "testCaseId": "li_rads_64",
-	  "endpointId": "LR-TIV",
-      "endpointlabel": "LR-TIV, Etiology uncertain",
+	  "endpointId": "LRTIV_proabably_hcc",
+      "endpointlabel": "LR-TIV, Probably due to HCC",
       "inputs": [
 
         {
@@ -3824,21 +3868,37 @@
 		{
           "dataElementId": "Isparenchymalmasstargetoid",
           "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "arterialEnhancement",
+          "dataElementValue": "noaphe"
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "10"
+        },
+		{
+          "dataElementId": "washout",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "capsule",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "thresholdgrowth",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
         }
-		//{
-        //  "dataElementId": "IsparenchymalmassLR4",
-        //  "dataElementValue": "no"
-        //},
-		//{
-        //  "dataElementId": "IsparenchymalmassLR5",
-        //  "dataElementValue": "yes"
-        //}
       ]
     },
 	{
       "testCaseId": "li_rads_65",
-	  "endpointId": "LR-TIV",
-      "endpointlabel": "LR-TIV, Etiology uncertain",
+	  "endpointId": "LRTIV_non_hcc",
+      "endpointlabel": "LR-TIV, May be due to non-HCC malignancy",
       "inputs": [
 
         {
@@ -3877,6 +3937,10 @@
 		{
           "dataElementId": "Isparenchymalmasstargetoid",
           "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
         }
 		      
       ]
@@ -3981,10 +4045,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "yes"
         },
-		// {
-        //   "dataElementId": "sixeincreatein6months",
-        //   "dataElementValue": "yes"
-        // },
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
           "dataElementValue": "no"
@@ -4047,10 +4108,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "no"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
           "dataElementValue": "no"
@@ -5841,8 +5899,8 @@
     },
 	{
       "testCaseId": "li_rads_99",
-	  "endpointId": "LR-4",
-      "endpointlabel": "LR-4, Probably HCC",
+      "endpointId": "LR-5",
+      "endpointlabel": "LR-5, Definitely HCC",
       "inputs": [
 
         {
@@ -5890,10 +5948,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "no"
-        /// },
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
           "dataElementValue": "no"
@@ -6532,10 +6587,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
           "dataElementValue": "no"
@@ -6592,23 +6644,20 @@
         },
 		{
           "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
+          "dataElementValue": "yes"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
+
 		{
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
+          "dataElementValue": ["US_visibility_as_discrete_nodule"]
         },
 		{
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
+          "dataElementValue":[ "Size_stability_≥_2_years"]
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
         }
       ]
 
@@ -6664,10 +6713,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
+
 		{
           "dataElementId": "ancillaryFavoringMalignancy",
           "dataElementValue": ["US_visibility_as_discrete_nodule","Subthreshold_growth","Corona_enhancement"]
@@ -6678,7 +6724,7 @@
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
         }
       ]
 
@@ -6728,27 +6774,24 @@
         },
 		{
           "dataElementId": "capsule",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
         },
 		{
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
+
 		{
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
+          "dataElementValue": ["US_visibility_as_discrete_nodule"]
         },
 		{
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
+          "dataElementValue": ["Size_stability_≥_2_years"]
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
         }
       ]
 
@@ -6804,21 +6847,11 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
+
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc4"
+          "dataElementValue": "no"
         }
       ]
 
@@ -6874,21 +6907,11 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
+
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc3"
+          "dataElementValue": "no"
         }
       ]
 
@@ -6944,21 +6967,11 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
+
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc2"
+          "dataElementValue": "no"
         }
       ]
 
@@ -7014,21 +7027,10 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "Downgradetohcc1"
+          "dataElementValue": "no"
         }
       ]
 
@@ -7084,18 +7086,7 @@
           "dataElementId": "thresholdgrowth",
           "dataElementValue": "na"
         },
-		/// {
-        ///   "dataElementId": "HistoryofVisibilityonUS",
-        ///   "dataElementValue": "yes"
-        /// },
-		{
-          "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "US_visibility_as_discrete_nodule"
-        },
-		{
-          "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_stability_≥_2_years"
-        },
+
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
           "dataElementValue": "no"
@@ -7144,7 +7135,7 @@
         },
 	   {
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "Subthreshold_growth"
+          "dataElementValue": ["Subthreshold_growth"]
         }
 		
 		
@@ -7192,7 +7183,7 @@
         },
 	   {
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "Subthreshold_growth"
+          "dataElementValue": ["Subthreshold_growth"]
         }
       ]
 
@@ -7238,7 +7229,7 @@
         },
 	   {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         }
       ]
 
@@ -7285,11 +7276,11 @@
         },
 	   {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         },
 	   {
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "Subthreshold_growth"
+          "dataElementValue": ["Subthreshold_growth"]
         }
       ]
 
@@ -7356,7 +7347,7 @@
         },
 	    {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         }
 		
       ]
@@ -7424,7 +7415,7 @@
         },
 	    {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         }
 		
       ]
@@ -7492,7 +7483,7 @@
         },
 	    {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         }
 		
       ]
@@ -7560,7 +7551,7 @@
         },
 	   {
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "Subthreshold_growth"
+          "dataElementValue": ["Subthreshold_growth"]
         }
 		
       ]
@@ -7627,7 +7618,7 @@
         },
 	   {
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "Subthreshold_growth"
+          "dataElementValue": ["Subthreshold_growth"]
         }
 		
       ]
@@ -7694,7 +7685,7 @@
         },
 	   {
           "dataElementId": "ancillaryFavoringMalignancy",
-          "dataElementValue": "Subthreshold_growth"
+          "dataElementValue": ["Subthreshold_growth"]
         }
 		
       ]
@@ -7761,7 +7752,7 @@
         },
 	    {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         }
 		
       ]
@@ -7828,7 +7819,7 @@
         },
 	    {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         }
 		
       ]
@@ -7895,7 +7886,7 @@
         },
 	    {
           "dataElementId": "ancillaryFavoringBenignity",
-          "dataElementValue": "Size_reduction"
+          "dataElementValue": ["Size_reduction"]
         }
 		
       ]
