@@ -3091,7 +3091,7 @@
         },
 		{
           "dataElementId": "thresholdgrowth",
-          "dataElementValue": "no"
+          "dataElementValue": "na"
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
@@ -5985,7 +5985,7 @@
         },
 		{
           "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
+          "dataElementValue": "no"
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
@@ -6031,11 +6031,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "9"
         },
 		{
           "dataElementId": "washout",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
         },
 		{
           "dataElementId": "capsule",
@@ -6898,8 +6898,8 @@
     },
 	{
       "testCaseId": "li_rads_116",
-	  "endpointId": "LR-5",
-      "endpointlabel": "LR-5, Definitely HCC",
+	  "endpointId": "LR3_adjusted",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -6929,7 +6929,7 @@
         },
 		{
           "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
+          "dataElementValue": "noaphe"
         },
 		{
           "dataElementId": "diameter",
@@ -6945,7 +6945,7 @@
         },
 		{
           "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
+          "dataElementValue": "no"
         },
 
 
@@ -6958,8 +6958,8 @@
     },
 	{
       "testCaseId": "li_rads_117",
-	  "endpointId": "LR-5",
-      "endpointlabel": "LR-5, Definitely HCC",
+	  "endpointId": "LR3_adjusted",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -6989,7 +6989,7 @@
         },
 		{
           "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
+          "dataElementValue": "noaphe"
         },
 		{
           "dataElementId": "diameter",
@@ -6997,7 +6997,7 @@
         },
 		{
           "dataElementId": "washout",
-          "dataElementValue": "yes"
+          "dataElementValue": "no"
         },
 		{
           "dataElementId": "capsule",
@@ -7017,8 +7017,8 @@
     },
 	{
       "testCaseId": "li_rads_118",
-	  "endpointId": "LR-5",
-      "endpointlabel": "LR-5, Definitely HCC",
+	  "endpointId": "LR3_adjusted",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -7048,7 +7048,7 @@
         },
 		{
           "dataElementId": "arterialEnhancement",
-          "dataElementValue": "aphe"
+          "dataElementValue": "noaphe"
         },
 		{
           "dataElementId": "diameter",
@@ -7056,7 +7056,7 @@
         },
 		{
           "dataElementId": "washout",
-          "dataElementValue": "yes"
+          "dataElementValue": "no"
         },
 		{
           "dataElementId": "capsule",
@@ -7064,7 +7064,7 @@
         },
 		{
           "dataElementId": "thresholdgrowth",
-          "dataElementValue": "na"
+          "dataElementValue": "no"
         },
 
 		{
@@ -7870,7 +7870,232 @@
         }
 		
       ]
+    },
+	{
+      "testCaseId": "li_rads_132",
+      "endpointId": "LR-3",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
+      "inputs": [
+	  
+        {
+          "dataElementId": "observationnumber",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "seriesnumber",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "imagenumber",
+          "dataElementValue": "1"
+        },
+		{
+          "dataElementId": "segmentlocation",
+          "dataElementValue": "I"
+        },
+		{
+          "dataElementId": "observationinPatient",
+          "dataElementValue": "untreated"
+        },
+		{
+          "dataElementId": "untreatedobservation",
+          "dataElementValue": "tumorInVein"
+        },
+		{
+          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "Isparenchymalmassinfiltrative",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "Isparenchymalmasstargetoid",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "arterialEnhancement",
+          "dataElementValue": "noaphe"
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "20",
+		            "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
+
+        },
+		{
+          "dataElementId": "washout",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "capsule",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "thresholdgrowth",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
+        }
+
+      ]
+    },
+	
+		{
+      "testCaseId": "li_rads_133",
+	  "endpointId": "LRTIV_proabably_hcc",
+      "endpointlabel": "LR-TIV, Probably due to HCC",
+      "inputs": [
+	  
+        {
+          "dataElementId": "observationnumber",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "seriesnumber",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "imagenumber",
+          "dataElementValue": "1"
+        },
+		{
+          "dataElementId": "segmentlocation",
+          "dataElementValue": "I"
+        },
+		{
+          "dataElementId": "observationinPatient",
+          "dataElementValue": "untreated"
+        },
+		{
+          "dataElementId": "untreatedobservation",
+          "dataElementValue": "tumorInVein"
+        },
+		{
+          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "Isparenchymalmassinfiltrative",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "Isparenchymalmasstargetoid",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "arterialEnhancement",
+          "dataElementValue": "noaphe"
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "20",
+		            "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
+
+        },
+		{
+          "dataElementId": "washout",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "capsule",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "thresholdgrowth",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
+        }
+
+      ]
+    },
+	
+		{
+      "testCaseId": "li_rads_134",
+	  "endpointId": "LRTIV_proabably_hcc",
+      "endpointlabel": "LR-TIV, Probably due to HCC",
+      "inputs": [
+	  
+        {
+          "dataElementId": "observationnumber",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "seriesnumber",
+          "dataElementValue": "1"
+        },
+        {
+          "dataElementId": "imagenumber",
+          "dataElementValue": "1"
+        },
+		{
+          "dataElementId": "segmentlocation",
+          "dataElementValue": "I"
+        },
+		{
+          "dataElementId": "observationinPatient",
+          "dataElementValue": "untreated"
+        },
+		{
+          "dataElementId": "untreatedobservation",
+          "dataElementValue": "tumorInVein"
+        },
+		{
+          "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "Isparenchymalmassinfiltrative",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "Isparenchymalmasstargetoid",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "arterialEnhancement",
+          "dataElementValue": "noaphe"
+        },
+		{
+          "dataElementId": "diameter",
+          "dataElementValue": "20",
+		            "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
+
+        },
+		{
+          "dataElementId": "washout",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "capsule",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "thresholdgrowth",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "WhichVein",
+          "dataElementValue": "Right_portal_vein"
+        }
+
+      ]
     }
+	
   ]
 }
 	
