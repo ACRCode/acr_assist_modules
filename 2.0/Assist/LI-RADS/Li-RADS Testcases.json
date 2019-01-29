@@ -4490,7 +4490,7 @@
         },
 		{
           "dataElementId": "patternofenhancement",
-          "dataElementValue": "aphe"
+          "dataElementValue": ["aphe"]
         }
       ]
 
@@ -4556,7 +4556,7 @@
         },
 		{
           "dataElementId": "patternofenhancement",
-          "dataElementValue": "washout"
+          "dataElementValue": ["washout"]
         }
       ]
 
@@ -4622,7 +4622,7 @@
         },
 		{
           "dataElementId": "patternofenhancement",
-          "dataElementValue": "similar_to_pretreatment"
+          "dataElementValue": ["similar_to_pretreatment"]
         }
       ]
 
@@ -5566,7 +5566,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "21"
+          "dataElementValue": "21",
+          "range": {
+            "minimum": 21,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -5582,15 +5586,23 @@
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "ancillaryFavoringBenignity",
+          "dataElementValue": ["Size_reduction"]
+        },
+	   {
+          "dataElementId": "ancillaryFavoringMalignancy",
+          "dataElementValue": ["Subthreshold_growth"]
         }
       ]
 
     },
 	{
       "testCaseId": "li_rads_94",
-	  "endpointId": "LR-4",
-      "endpointlabel": "LR-4, Probably HCC",
+      "endpointId": "LR3_adjusted",
+      "endpointlabel": "LR-3, Intermediate probability of malignancy",
       "inputs": [
 
         {
@@ -5624,7 +5636,12 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "20"
+          "dataElementValue": "10",
+          "range": {
+            "minimum": 10,
+            "maximum": 19
+          }
+
         },
 		{
           "dataElementId": "washout",
@@ -5640,7 +5657,11 @@
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "ancillaryFavoringBenignity",
+          "dataElementValue": ["Size_reduction"]
         }
       ]
 
@@ -5740,7 +5761,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "9",
+          "range": {
+            "minimum": 1,
+            "maximum": 9
+          }
         },
 		{
           "dataElementId": "washout",
@@ -5756,7 +5781,11 @@
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "ancillaryFavoringMalignancy",
+          "dataElementValue": ["Subthreshold_growth"]
         }
       ]
 
@@ -5798,7 +5827,11 @@
         },
 		{
           "dataElementId": "diameter",
-          "dataElementValue": "9"
+          "dataElementValue": "20",
+          "range": {
+            "minimum": 20,
+            "maximum": 30
+          }
         },
 		{
           "dataElementId": "washout",
@@ -5814,8 +5847,13 @@
         },
 		{
           "dataElementId": "adjustcategorybasedonAncillary",
-          "dataElementValue": "no"
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "ancillaryFavoringBenignity",
+          "dataElementValue": ["Size_reduction"]
         }
+
       ]
 
     },
