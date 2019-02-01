@@ -32,16 +32,19 @@
 					<Location>tiv.png</Location>
 					<Label>TIV</Label>
 				</Diagram>
-
 				<Diagram DisplaySequence="4">
+					<Location>lr4_5.PNG</Location>
+					<Label>TIV</Label>
+				</Diagram>
+				<Diagram DisplaySequence="5">
 					<Location>Figure1b-corrected.jpg</Location>
 					<Label>threshold</Label>
 				</Diagram>
-				<Diagram DisplaySequence="5">
+				<Diagram DisplaySequence="6">
 					<Location>Diagonalcell.jpg</Location>
 					<Label>Diagonal</Label>
 				</Diagram>
-				<Diagram DisplaySequence="6">
+				<Diagram DisplaySequence="7">
 					<Location>Splitcell.PNG</Location>
 					<Label>Split cell</Label>
 				</Diagram>
@@ -606,7 +609,7 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="enhancementisexpectedpattern" IsRequired="true" DisplaySequence="18">
-			<Label>Is enhancement in an expected treatment-specific pattern?</Label>
+			<Label>Enhancement in an expected treatment-specific pattern?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>no</Value>
@@ -657,8 +660,8 @@
 		</ChoiceDataElement>
 		
 		<NumericDataElement Id="sizeoftheenhancementComponents" IsRequired="true" DisplaySequence="19">
-			<Label>Size of largest enhancing nodular component (in mm)</Label>
-
+			<Label>Size of largest enhancing component (in mm)</Label>
+			<Hint>Size of largest enhancing component (in mm)</Hint>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -763,7 +766,7 @@
 		</ChoiceDataElement>
 		
 		<MultiChoiceDataElement Id="patternofenhancement" DisplaySequence="21">
-			<Label>Pattern of enhancement of nodular component</Label>
+			<Label>Pattern of enhancement</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>aphe</Value>
@@ -931,7 +934,7 @@
 		</ComputedDataElement>
 	
 		<ChoiceDataElement Id="WhichVein" IsRequired="true" AllowFreetext="true" DisplaySequence="22">
-		<Label>What vein or veins are involved?</Label>
+		<Label>What vein or veins?</Label>
 		<ChoiceInfo>
 			<Choice>
 				<Value>Main_portal_vein</Value>
@@ -1340,7 +1343,7 @@
 		
 		<ChoiceDataElement Id="arterialEnhancement" IsRequired="true" DisplaySequence="30">	
 			<Label>Nonrim arterial phase hyperenhancement</Label>
-			<Hint>Enhancement in the arterial phase that is greater than that of liver.</Hint>
+			<Hint>Enhancement in the arterial phase that is less than that of liver.</Hint>
 			<Diagrams>
 				<Diagram>
 					<Location>aphenorim.PNG</Location>
@@ -1367,10 +1370,7 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
-						<SectionIfNot DataElementId="untreatedobservation" />	
-						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
-						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
-						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+						<SectionIfNot DataElementId="untreatedobservation" />
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1393,16 +1393,13 @@
 		
 		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="31">		
 			<Label>Observation size (mm)</Label>
-			<!--<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>-->
+			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>	
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
-						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
-						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
-						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1424,9 +1421,9 @@
 			
 		<ChoiceDataElement Id="washout" IsRequired="true" DisplaySequence="32">		
 			<Label>Nonperipheral "washout"</Label>
-			<!--<Hint>Visually assessed temporal reduction in enhancement relative to liver from an
+			<Hint>Visually assessed temporal reduction in enhancement relative to liver from an
 				earlier to a later phase resulting in portal venous phase hypoenhancement or delayed
-				phase hypoenhancement.</Hint>-->
+				phase hypoenhancement.</Hint>
 			<Diagrams>
 				<Diagram>
 					<Location>washout.PNG</Location>
@@ -1448,9 +1445,6 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
-						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
-						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
-						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1474,9 +1468,9 @@
 		
 		<ChoiceDataElement Id="capsule" IsRequired="true" DisplaySequence="33">		
 			<Label>Enhancing "capsule"</Label>
-			<!--<Hint>Peripheral rim of smooth hyper-enhancement in the portal venous phase or delayed
+			<Hint>Peripheral rim of smooth hyper-enhancement in the portal venous phase or delayed
 				phase that unequivocally is thicker or more conspicuous than the rims surrounding
-				background nodule.</Hint>-->
+				background nodule.</Hint>
 			<Diagrams>
 				<Diagram>
 					<Location>capsule.PNG</Location>
@@ -1502,9 +1496,6 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
-						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
-						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
-						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1527,10 +1518,10 @@
 		
 		<ChoiceDataElement Id="thresholdgrowth" IsRequired="true" DisplaySequence="34">
 			<Label>Threshold growth (≥50% size increase in ≤6 months?)</Label>
-			<!--<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND
+			<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND
 				depending on the time interval between examinations, by the following amounts: less
 				than or equal to 6 months: >50% diameter increase greater than 6 months: >100%
-				diameter increase </Hint>-->
+				diameter increase </Hint>
 			<Diagrams>
 				<Diagram>
 					<Location>tg.PNG</Location>
@@ -1556,9 +1547,6 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
-						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
-						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
-						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -2888,8 +2876,8 @@
 					<NotEqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></NotEqualCondition>
 					<SectionIf DataElementId="ancillaryFavoringMalignancy"></SectionIf>
 				</AndCondition>
-				<ReportText Type="PlainText">LR category has been adjusted based on the selected ancillary features favoring malignancy </ReportText>
-				
+				<ReportText Type="PlainText">LR category has been adjusted based on the selected Ancillary features favoring Malignancy </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringMalignancy"></ReportText>
 		</Branch>
 
 			<Branch>
@@ -2897,8 +2885,8 @@
 					<NotEqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></NotEqualCondition>
 					<SectionIf DataElementId="ancillaryFavoringBenignity"></SectionIf>
 				</AndCondition>
-				<ReportText Type="PlainText">LR category has been adjusted based on the selected ancillary features favoring benignity </ReportText>
-							
+				<ReportText Type="PlainText">LR category has been adjusted based on the selected Ancillary features favoring Benignity </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringBenignity"></ReportText>				
 		</Branch>
 		</TemplatePartial>
 
