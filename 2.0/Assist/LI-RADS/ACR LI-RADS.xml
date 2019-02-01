@@ -248,7 +248,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
@@ -296,17 +299,26 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>
 			</ConditionalProperties>	
 		</ChoiceDataElement>
-		
-		
+				
 		<NumericDataElement Id="pretreatmentsize" IsRequired="true" DisplaySequence="10">
 			<Label>What is the pretreatment size in mm?</Label>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>	
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="pretreatmentCategory" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>	
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
@@ -398,16 +410,15 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>									
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-	<!--	<NumericDataElement Id="notcatogerizedreason" DisplaySequence="12">
-			<Label>Please specify the reason</Label>
-		</NumericDataElement>-->
-
 		<ChoiceDataElement Id="treatedobservation" IsRequired="true" DisplaySequence="12">
 			<Label>Treated observation features</Label>
 			<Diagrams>
@@ -429,7 +440,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>				
 			</ConditionalProperties>		
@@ -471,9 +485,16 @@
 					<Label>Focal scar</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>				
+			<ConditionalProperties>
 				<ConditionalProperty>
-					<OrCondition>		
+					<OrCondition>	
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>				
+				<ConditionalProperty>
+					<OrCondition>
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
@@ -526,9 +547,16 @@
 					<Label>Distinctive nodule, less than 20 mm, NO major features, NO LR-M features, NO ancillary features favoring malignancy</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>				
+			<ConditionalProperties>	
 				<ConditionalProperty>
 					<OrCondition>	
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
@@ -560,6 +588,13 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="treatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>						
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
@@ -586,6 +621,15 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="treatedobservation" />
+						<SectionIfNot DataElementId="lesionalenhancement" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<EqualCondition DataElementId="treatedobservation"
 						ComparisonValue="LRTRNonevaluable"/>
@@ -620,6 +664,16 @@
 			<Hint>Size of largest enhancing component (in mm)</Hint>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="treatedobservation" />
+						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
+						<SectionIfNot DataElementId="lesionalenhancement" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<EqualCondition DataElementId="treatedobservation" ComparisonValue="LRTRNonevaluable"/>
 					<IsRelevant>false</IsRelevant>					
@@ -664,22 +718,29 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="treatedobservation"
-						ComparisonValue="LRTRNonevaluable"/>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="treatedobservation" />
+						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
+						<SectionIfNot DataElementId="lesionalenhancement" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<EqualCondition DataElementId="treatedobservation" ComparisonValue="LRTRNonevaluable"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<EqualCondition DataElementId="enhancementisexpectedpattern"
-						ComparisonValue="yes"/>
+					<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
-						<EqualCondition DataElementId="lesionalenhancement"
-							ComparisonValue="equivocal"/>
+						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="equivocal"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -721,6 +782,17 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="treatedobservation" />
+						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
+						<SectionIfNot DataElementId="irregularattheperiphery" />
+						<SectionIfNot DataElementId="lesionalenhancement" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<EqualCondition DataElementId="treatedobservation"
 						ComparisonValue="LRTRNonevaluable"/>
@@ -891,6 +963,14 @@
 		</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>			
 				</ConditionalProperty>	
@@ -928,6 +1008,14 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
 						<EqualCondition DataElementId="observationinPatient"
 							ComparisonValue="treated"/>
 						<EqualCondition DataElementId="untreatedobservation"
@@ -959,6 +1047,15 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+						<SectionIfNot DataElementId="untreatedobservation" />						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>
@@ -1000,16 +1097,20 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
-					<IsRelevant>false</IsRelevant>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
+						<SectionIfNot DataElementId="untreatedobservation" />						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<EqualCondition DataElementId="untreatedobservation"
-						ComparisonValue="notcategorized"/>
+					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-				
+								
 				<ConditionalProperty>
 					<EqualCondition DataElementId="Isparenchymalmassinfiltrative"
 						ComparisonValue="yes"/>
@@ -1024,6 +1125,8 @@
 				
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation"
+							ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="definitelyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation"
@@ -1150,6 +1253,14 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -1199,6 +1310,14 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>				
 				</ConditionalProperty>
@@ -1221,8 +1340,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
-	
-	
+		
 		<ChoiceDataElement Id="arterialEnhancement" IsRequired="true" DisplaySequence="30">	
 			<Label>Nonrim arterial phase hyperenhancement</Label>
 			<Hint>Enhancement in the arterial phase that is less than that of liver.</Hint>
@@ -1248,12 +1366,22 @@
 					<Label>No</Label>
 				</Choice>				
 			</ChoiceInfo>
-			<ConditionalProperties>				
+			<ConditionalProperties>	
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<OrCondition>					
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
-						<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
@@ -1270,12 +1398,22 @@
 			<Label>Observation size (mm)</Label>
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
-			<ConditionalProperties>				
+			<ConditionalProperties>	
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<OrCondition>	
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
-						<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>		
 						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
@@ -1286,8 +1424,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</NumericDataElement>
-		
-	
+			
 		<ChoiceDataElement Id="washout" IsRequired="true" DisplaySequence="32">		
 			<Label>Nonperipheral "washout"</Label>
 			<Hint>Visually assessed temporal reduction in enhancement relative to liver from an
@@ -1310,6 +1447,16 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
 				
 				<ConditionalProperty>
 					<OrCondition>	
@@ -1353,12 +1500,22 @@
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>				
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<OrCondition>	
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
-						<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
@@ -1397,12 +1554,22 @@
 					<Label>NA</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>				
+			<ConditionalProperties>	
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<OrCondition>	
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
-						<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
@@ -1435,6 +1602,14 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
@@ -1442,8 +1617,6 @@
 					<OrCondition>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
-					<!--	<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -1607,19 +1780,27 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
+				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
-<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>-->
-<!--						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adjustcategorybasedonAncillary"/> 
@@ -1684,19 +1865,27 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
 					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
+				
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
-					<!--	<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>-->
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adjustcategorybasedonAncillary"/> 
