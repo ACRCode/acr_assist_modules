@@ -1034,7 +1034,7 @@
 			</ConditionalProperties>
 	</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="Isparenchymalmassinfiltrative" IsRequired="true" DisplaySequence="24">
+		<!--<ChoiceDataElement Id="Isparenchymalmassinfiltrative" IsRequired="true" DisplaySequence="24">
 			<Label>Is parenchymal mass infiltrative</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1081,7 +1081,7 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement>-->
 		
 		<ChoiceDataElement Id="Isparenchymalmasstargetoid" IsRequired="true" DisplaySequence="25">
 			<Label>Is parenchymal mass targetoid?</Label>
@@ -1100,7 +1100,7 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
-						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	
+<!--						<SectionIfNot DataElementId="Isparenchymalmassinfiltrative" />	-->
 						<SectionIfNot DataElementId="untreatedobservation" />						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -1111,11 +1111,11 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 								
-				<ConditionalProperty>
+				<!--<ConditionalProperty>
 					<EqualCondition DataElementId="Isparenchymalmassinfiltrative"
 						ComparisonValue="yes"/>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+				</ConditionalProperty>-->
 				
 				<ConditionalProperty>
 					<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass"
@@ -1383,7 +1383,7 @@
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
-						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>
+<!--						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>-->
 						<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -1411,7 +1411,7 @@
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>		
 						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
-						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>
+<!--						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>-->
 						<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
@@ -1457,7 +1457,7 @@
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
-						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>
+<!--						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>-->
 						<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -1508,7 +1508,7 @@
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
-						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>
+<!--						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>-->
 						<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -1559,7 +1559,7 @@
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
 						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
-						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>
+<!--						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>-->
 						<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -1996,179 +1996,167 @@
 							<DecisionPoint Id="istheretumorinveinDp">
 								<Label>Is TIV contiguous with a parenchymal mass?</Label>
 								<Branch>
-										<Label>Yes</Label>
-										<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes"/>
-										<DecisionPoint Id="IsparenchymalmassinfiltrativeDp">
-											<Label>Is parenchymal mass infiltrative?</Label>
-											<Branch>
-												<Label>Yes</Label>
-												<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>
-												<EndPointRef EndPointId="LRTIV_proabably_hcc"></EndPointRef>
-											</Branch>
-											<Branch>
-												<Label>No</Label>
-												<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="no"/>
-												<DecisionPoint Id="IsparenchymalmasstargetoidDp">
-													<Label>Is parenchymal mass targetoid?</Label>
-													<Branch>
-														<Label>Yes</Label>
-														<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
-														<EndPointRef EndPointId="LRTIV_non_hcc"></EndPointRef>
-													</Branch>
-													<Branch>
-														<Label>No</Label>
-														<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="no"/>
-														<DecisionPoint Id="IsparenchymalmasstargetoidNot">
-															<Label>Is parenchymal mass targetoid not selected</Label>
-															<Branch>
-																<Label>No</Label>
-																<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="noaphe" />
-																<DecisionPoint Id="arterialEnhancemenNoAphe">
-																	<Label>arterialEnhancemenNoAphe</Label>
-																	<Branch>
-																		<Label>Less than 20</Label>
-																		<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
-																		<DecisionPoint Id="washoutcapsulethresholdNone">
-																			<Label>washoutcapsulethreshold None</Label>
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																				<EndPointRef EndPointId="LR3"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																				<EndPointRef EndPointId="LR3"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
-																			</Branch>
-																		</DecisionPoint>
-																	</Branch>
-																	
-																	<Branch>
-																		<Label>Greater than 20</Label>
-																		<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
-																		<DecisionPoint Id="washoutcapsulethresholdNoneGreaterThan20">
-																			<Label>washoutcapsulethreshold None</Label>
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																				<EndPointRef EndPointId="LR3"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
-																			</Branch>
-																		</DecisionPoint>
-																	</Branch>
-																</DecisionPoint>																
-															</Branch>
-															
-															<Branch>
-																<Label>No</Label>
-																<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe" />
-																<DecisionPoint Id="arterialEnhancementWithNoAphe">
-																	<Label>arterialEnhancemenNoAphe</Label>
-																	<Branch>
-																		<Label>Less than 10</Label>
-																		<LessThanCondition DataElementId="diameter" ComparisonValue="10"/>
-																		<DecisionPoint Id="washoutcapsulethresholdNoneLessthan10">
-																			<Label>washoutcapsulethreshold None</Label>
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																				<EndPointRef EndPointId="LR3"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
-																			</Branch>
-																		</DecisionPoint>
-																	</Branch>
-																	
-																	<Branch>
-																		<Label>Between 10 and 20</Label>
-																		<AndCondition>
-																			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
-																			<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
-																		</AndCondition>																		
-																		<DecisionPoint Id="washoutcapsulethresholdNoneBetween10and20">
-																			<Label>washoutcapsulethreshold None</Label>
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																				<EndPointRef EndPointId="LR3"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<AndCondition>
-																					<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																					<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-																				</AndCondition>																				
-																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<AndCondition>
-																					<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																					<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-																				</AndCondition>																				
-																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
-																			</Branch>
-																		</DecisionPoint>
-																	</Branch>
-																	
-																	<Branch>
-																		<Label>Greater than 20</Label>
-<!--																		<AndCondition>-->
-																			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
-																		<!--</AndCondition>-->																		
-																		<DecisionPoint Id="washoutcapsulethresholdNoneDiameterGreaterThan20">
-																			<Label>washoutcapsulethreshold None</Label>
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
-																			</Branch>
-																			
-																			<Branch>
-																				<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
-																				<EndPointRef EndPointId="LRTIV_def_hcc"/>
-																			</Branch>
-																		</DecisionPoint>
-																	</Branch>
-																</DecisionPoint>																
-															</Branch>
-														</DecisionPoint>														
-													</Branch>
-												</DecisionPoint>
-											</Branch>
-										</DecisionPoint>
+									<Label>Yes</Label>
+									<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="yes"/>
+									<DecisionPoint Id="IsparenchymalmasstargetoidDp">
+										<Label>Is parenchymal mass targetoid?</Label>
+										<Branch>
+											<Label>Yes</Label>
+											<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+											<EndPointRef EndPointId="LRTIV_non_hcc"></EndPointRef>
+										</Branch>
+										<Branch>
+											<Label>No</Label>
+											<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="no"/>
+											<DecisionPoint Id="IsparenchymalmasstargetoidNot">
+												<Label>Is parenchymal mass targetoid not selected</Label>
+												<Branch>
+													<Label>No</Label>
+													<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="noaphe" />
+													<DecisionPoint Id="arterialEnhancemenNoAphe">
+														<Label>arterialEnhancemenNoAphe</Label>
+														<Branch>
+															<Label>Less than 20</Label>
+															<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
+															<DecisionPoint Id="washoutcapsulethresholdNone">
+																<Label>washoutcapsulethreshold None</Label>
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+																	<EndPointRef EndPointId="LR3"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+																	<EndPointRef EndPointId="LR3"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
+																</Branch>
+															</DecisionPoint>
+														</Branch>
+														
+														<Branch>
+															<Label>Greater than 20</Label>
+															<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
+															<DecisionPoint Id="washoutcapsulethresholdNoneGreaterThan20">
+																<Label>washoutcapsulethreshold None</Label>
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+																	<EndPointRef EndPointId="LR3"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
+																</Branch>
+															</DecisionPoint>
+														</Branch>
+													</DecisionPoint>																
+												</Branch>
+												
+												<Branch>
+													<Label>No</Label>
+													<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe" />
+													<DecisionPoint Id="arterialEnhancementWithNoAphe">
+														<Label>arterialEnhancemenNoAphe</Label>
+														<Branch>
+															<Label>Less than 10</Label>
+															<LessThanCondition DataElementId="diameter" ComparisonValue="10"/>
+															<DecisionPoint Id="washoutcapsulethresholdNoneLessthan10">
+																<Label>washoutcapsulethreshold None</Label>
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+																	<EndPointRef EndPointId="LR3"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
+																</Branch>
+															</DecisionPoint>
+														</Branch>
+														
+														<Branch>
+															<Label>Between 10 and 20</Label>
+															<AndCondition>
+																<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
+																<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
+															</AndCondition>																		
+															<DecisionPoint Id="washoutcapsulethresholdNoneBetween10and20">
+																<Label>washoutcapsulethreshold None</Label>
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+																	<EndPointRef EndPointId="LR3"/>
+																</Branch>
+																
+																<Branch>
+																	<AndCondition>
+																		<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+																		<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+																	</AndCondition>																				
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
+																</Branch>
+																
+																<Branch>
+																	<AndCondition>
+																		<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+																		<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+																	</AndCondition>																				
+																	<EndPointRef EndPointId="LRTIV_def_hcc"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_def_hcc"/>
+																</Branch>
+															</DecisionPoint>
+														</Branch>
+														
+														<Branch>
+															<Label>Greater than 20</Label>
+															<!--																		<AndCondition>-->
+															<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
+															<!--</AndCondition>-->																		
+															<DecisionPoint Id="washoutcapsulethresholdNoneDiameterGreaterThan20">
+																<Label>washoutcapsulethreshold None</Label>
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_def_hcc"/>
+																</Branch>
+																
+																<Branch>
+																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"></EqualCondition>
+																	<EndPointRef EndPointId="LRTIV_def_hcc"/>
+																</Branch>
+															</DecisionPoint>
+														</Branch>
+													</DecisionPoint>																
+												</Branch>
+											</DecisionPoint>														
+										</Branch>
+									</DecisionPoint>									
 									</Branch>
 								<Branch>
 									<Label>No</Label>
 									<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
-									<EndPointRef EndPointId="LRTIV_Etiology_uncertain"></EndPointRef>
+									<EndPointRef EndPointId="LRTIV_proabably_hcc"></EndPointRef>
 								</Branch>
 							</DecisionPoint>
 					</Branch>
