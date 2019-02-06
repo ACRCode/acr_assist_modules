@@ -3529,8 +3529,10 @@
     },
 	{
       "testCaseId": "li_rads_59",
-	  "endpointId": "LR-TIV",
-      "endpointlabel": "LR-TIV, Etiology uncertain",
+       "endpointId": "LRTIV_proabably_hcc",
+      "endpointlabel": "LR-TIV, Probably due to HCC",
+	 // "endpointId": "LR-TIV",
+     // "endpointlabel": "LR-TIV, Etiology uncertain",
       "inputs": [
 	  
         {
@@ -3674,7 +3676,7 @@
         },
 		{
           "dataElementId": "IsTIVcontiguouswithaparenchymalmass",
-          "dataElementValue": "yes"
+          "dataElementValue": "no"
         },
 		//{
         //  "dataElementId": "Isparenchymalmassinfiltrative",
@@ -3682,7 +3684,7 @@
         //},
         {
           "dataElementId": "WhichVein",
-          "dataElementValue": "Right_portal_vein"
+          "dataElementValue": "Left_portal_vein"
         }
       ]
     },
