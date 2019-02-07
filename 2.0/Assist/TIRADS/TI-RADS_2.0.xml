@@ -100,7 +100,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_1" IsRequired="true" DisplaySequence="4">
+		<MultiChoiceDataElement Id="other_1" DisplaySequence="4">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -146,8 +146,17 @@
 					<AndCondition>
 						<GreaterThanCondition DataElementId="composition_1" ComparisonValue="0"/>
 						<GreaterThanCondition DataElementId="echogenicity_1" ComparisonValue="0"/>
+						<SectionIf DataElementId="other_1"></SectionIf>
 					</AndCondition>
 					<ArithmeticExpression>{composition_1} + {echogenicity_1} + {other_1} </ArithmeticExpression>
+				</Branch>
+				<Branch>
+					<AndCondition>
+						<GreaterThanCondition DataElementId="composition_1" ComparisonValue="0"/>
+						<GreaterThanCondition DataElementId="echogenicity_1" ComparisonValue="0"/>
+						<SectionIfNot DataElementId="other_1"></SectionIfNot>
+					</AndCondition>
+					<ArithmeticExpression>{composition_1} + {echogenicity_1} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -245,7 +254,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_2" IsRequired="true" DisplaySequence="9">
+		<MultiChoiceDataElement Id="other_2" DisplaySequence="9">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -294,8 +303,17 @@
 					<AndCondition>
 						<GreaterThanCondition DataElementId="composition_2" ComparisonValue="0"/>
 						<GreaterThanCondition DataElementId="echogenicity_2" ComparisonValue="0"/>
+						<SectionIf DataElementId="other_2"></SectionIf>
 					</AndCondition>
 					<ArithmeticExpression>{composition_2} + {echogenicity_2} + {other_2} </ArithmeticExpression>
+				</Branch>
+				<Branch>
+					<AndCondition>
+						<GreaterThanCondition DataElementId="composition_2" ComparisonValue="0"/>
+						<GreaterThanCondition DataElementId="echogenicity_2" ComparisonValue="0"/>
+						<SectionIfNot DataElementId="other_2"></SectionIfNot>
+					</AndCondition>
+					<ArithmeticExpression>{composition_2} + {echogenicity_2} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -321,7 +339,7 @@
 		</ChoiceDataElement>
 
 		<!-- Nodule 3 -->
-		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="11">		
+		<NumericDataElement Id="diameter_3" DisplaySequence="11">		
 			<Label>Diameter</Label>
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
@@ -404,7 +422,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_3" IsRequired="true" DisplaySequence="14">
+		<MultiChoiceDataElement Id="other_3" DisplaySequence="14">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -454,8 +472,17 @@
 					<AndCondition>
 						<GreaterThanCondition DataElementId="composition_3" ComparisonValue="0"/>
 						<GreaterThanCondition DataElementId="echogenicity_3" ComparisonValue="0"/>
+						<SectionIf DataElementId="other_3"></SectionIf>
 					</AndCondition>
 					<ArithmeticExpression>{composition_3} + {echogenicity_3} + {other_3} </ArithmeticExpression>
+				</Branch>
+				<Branch>
+					<AndCondition>
+						<GreaterThanCondition DataElementId="composition_3" ComparisonValue="0"/>
+						<GreaterThanCondition DataElementId="echogenicity_3" ComparisonValue="0"/>
+						<SectionIfNot DataElementId="other_3"></SectionIfNot>
+					</AndCondition>
+					<ArithmeticExpression>{composition_3} + {echogenicity_3} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -570,7 +597,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_4" IsRequired="true" DisplaySequence="19">
+		<MultiChoiceDataElement Id="other_4" DisplaySequence="19">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -621,8 +648,17 @@
 					<AndCondition>
 						<GreaterThanCondition DataElementId="composition_4" ComparisonValue="0"/>
 						<GreaterThanCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
+						<SectionIf DataElementId="other_4"></SectionIf>
 					</AndCondition>
 					<ArithmeticExpression>{composition_4} + {echogenicity_4} + {other_4} </ArithmeticExpression>
+				</Branch>
+				<Branch>
+					<AndCondition>
+						<GreaterThanCondition DataElementId="composition_4" ComparisonValue="0"/>
+						<GreaterThanCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
+						<SectionIfNot DataElementId="other_4"></SectionIfNot>
+					</AndCondition>
+					<ArithmeticExpression>{composition_4} + {echogenicity_4} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -741,7 +777,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_5" IsRequired="true" DisplaySequence="23">
+		<MultiChoiceDataElement Id="other_5" DisplaySequence="23">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -793,8 +829,17 @@
 					<AndCondition>
 						<GreaterThanCondition DataElementId="composition_5" ComparisonValue="0"/>
 						<GreaterThanCondition DataElementId="echogenicity_5" ComparisonValue="0"/>
+						<SectionIf DataElementId="other_5"></SectionIf>
 					</AndCondition>
 					<ArithmeticExpression>{composition_5} + {echogenicity_5} + {other_5} </ArithmeticExpression>
+				</Branch>
+				<Branch>
+					<AndCondition>
+						<GreaterThanCondition DataElementId="composition_5" ComparisonValue="0"/>
+						<GreaterThanCondition DataElementId="echogenicity_5" ComparisonValue="0"/>
+						<SectionIfNot DataElementId="other_5"></SectionIfNot>
+					</AndCondition>
+					<ArithmeticExpression>{composition_5} + {echogenicity_5} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
