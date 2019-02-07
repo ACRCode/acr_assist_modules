@@ -42,6 +42,15 @@
 		
 		<IntegerDataElement Id="supratentoriallesionnumber" IsRequired="true" DisplaySequence="2">
 			<Label>Supratentorial lesion Number</Label>
+   		    <CodableConcept Name="supratentoriallesionnumber">
+    			<Coding>
+    				<System Value="RadElement"></System>
+    				<Version Value="1.0"></Version>
+    				<Code Value="RDE143"></Code>
+    				<Display Value="RDE143"></Display>
+    				<UserSelected Value="true"></UserSelected>
+    			</Coding>
+    		</CodableConcept>	
 			<Hint>Use 0-10 scale</Hint>
 		    <Minimum>1</Minimum>
 			<Maximum>10</Maximum>
