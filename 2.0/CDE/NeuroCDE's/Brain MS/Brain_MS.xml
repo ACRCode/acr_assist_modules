@@ -42,15 +42,15 @@
 		
 		<IntegerDataElement Id="supratentoriallesionnumber" IsRequired="true" DisplaySequence="2">
 			<Label>Supratentorial lesion Number</Label>
-   		    <CodableConcept Name="supratentoriallesionnumber">
-    			<Coding>
-    				<System Value="RadElement"></System>
-    				<Version Value="1.0"></Version>
-    				<Code Value="RDE143"></Code>
-    				<Display Value="RDE143"></Display>
-    				<UserSelected Value="true"></UserSelected>
-    			</Coding>
-    		</CodableConcept>	
+         <CodableConcept Name="supratentoriallesionnumber">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE143"></Code>
+            <Display Value="RDE143"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept> 
 			<Hint>Use 0-10 scale</Hint>
 		    <Minimum>1</Minimum>
 			<Maximum>10</Maximum>
@@ -77,6 +77,15 @@
 		
 		<MultiChoiceDataElement Id="supratentoriallesionlocations" DisplaySequence="4" IsRequired="true">
 			<Label>Supratentorial lesion Locations</Label>
+			<CodableConcept Name="supratentoriallesionlocations">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE144"></Code>
+            <Display Value="RDE144"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>frontal</Value>
@@ -95,6 +104,15 @@
 		
 		<MultiChoiceDataElement Id="lesionlocationsubtype" DisplaySequence="5" IsRequired="true">
 			<Label>Lesion location subtype</Label>
+			<CodableConcept Name="lesionlocationsubtype">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE145"></Code>
+            <Display Value="RDE145"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<Hint>DIS criteria</Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -115,6 +133,15 @@
 		
 		<IntegerDataElement Id="infratentoriallesionnumber" IsRequired="true" DisplaySequence="6">
 			<Label>Infratentorial lesion Number</Label>
+			<CodableConcept Name="infratentoriallesionnumber">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE146"></Code>
+            <Display Value="RDE146"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
@@ -122,6 +149,15 @@
 		
 		<MultiChoiceDataElement Id="infratentoriallocations" DisplaySequence="7" IsRequired="true">
 			<Label>Infratentorial Locations</Label>
+			<CodableConcept Name="infratentoriallocations">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE147"></Code>
+            <Display Value="RDE147"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>midbrain</Value>
@@ -180,7 +216,15 @@
 		
 		<ChoiceDataElement Id="cervico-medullary" DisplaySequence="9" IsRequired="true">
 			<Label>Cervico-medullary</Label>
-
+            <CodableConcept Name="cervico-medullary">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE148"></Code>
+            <Display Value="RDE148"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -195,7 +239,15 @@
 	
 		<ChoiceDataElement Id="masseffect" DisplaySequence="10" IsRequired="true">
 			<Label>Mass Effect</Label>
-
+            <CodableConcept Name="masseffect">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE149"></Code>
+            <Display Value="RDE149"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -210,6 +262,15 @@
 		
 		<ChoiceDataElement Id="BlackHolesT1hypointense" IsRequired="true" DisplaySequence="11">
 			<Label>Black Holes T1 hypointense?</Label>
+			<CodableConcept Name="BlackHolesT1hypointense">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE150"></Code>
+            <Display Value="RDE150"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>

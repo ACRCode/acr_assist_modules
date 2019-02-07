@@ -38,17 +38,17 @@
 	
 	<DataElements>
 		<GlobalValue Id="conditionConst">10</GlobalValue>
-		<ChoiceDataElement Id="focalmass" DisplaySequence="1" IsRequired="true">
+		<ChoiceDataElement Id="focalmass" DisplaySequence="1" IsRequired="true">	
+			<Label>Focal Mass</Label>
 			<CodableConcept Name="focalmass">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE174"></Code>
+					<Display Value="RDE174"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
-			</CodableConcept>	
-			<Label>Focal Mass</Label>
+			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -61,17 +61,17 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="sidedness" IsRequired="true" DisplaySequence="2">
+		<ChoiceDataElement Id="sidedness" IsRequired="true" DisplaySequence="2">	
+			<Label>Sidedness</Label>
 			<CodableConcept Name="sidedness">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE175"></Code>
+					<Display Value="RDE175"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
-			</CodableConcept>	
-			<Label>Sidedness</Label>
+			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>left</Value>
@@ -90,33 +90,33 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<IntegerDataElement Id="Maximumdimension" IsRequired="true" DisplaySequence="3">
+		<IntegerDataElement Id="Maximumdimension" IsRequired="true" DisplaySequence="3">	
+			<Label>Maximum dimension (in mm)</Label>
 			<CodableConcept Name="Maximumdimension">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE176"></Code>
+					<Display Value="RDE176"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
-			</CodableConcept>	
-			<Label>Maximum dimension (in mm)</Label>
+			</CodableConcept>
 			<Minimum>1</Minimum>
 			<Maximum>1000</Maximum>
 		</IntegerDataElement>		
 		
 		
 		<ChoiceDataElement Id="BoCdeIdrs" DisplaySequence="4" IsRequired="true">
+			<Label>Borders</Label>
 			<CodableConcept Name="BoCdeIdrs">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE177"></Code>
+					<Display Value="RDE177"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Borders</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>welldefined</Value>
@@ -130,16 +130,16 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="t1hyperintensity" IsRequired="false" DisplaySequence="5">
+			<Label>T1 Hyperinsensitivity</Label>
 			<CodableConcept Name="t1hyperintensity">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE178"></Code>
+					<Display Value="RDE178"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
 			</CodableConcept>
-			<Label>T1 Hyperinsensitivity</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yeshyperintense-fat</Value>
@@ -185,16 +185,16 @@
 		</ChoiceDataElement>-->
 		
 			<ChoiceDataElement Id="t1signalpostcontrast" IsRequired="true" DisplaySequence="7">
-				<CodableConcept Name="t1signalpostcontrast">
+			<Label>T1 signal postcontrast</Label>
+			<CodableConcept Name="t1signalpostcontrast">
 					<Coding>
 						<System Value="RadElement"></System>
 						<Version Value="1.0"></Version>
-						<Code Value="100"></Code>
-						<Display Value="100"></Display>
+						<Code Value="RDE179"></Code>
+						<Display Value="RDE179"></Display>
 						<UserSelected Value="true"></UserSelected>
 					</Coding>    			
 				</CodableConcept>
-			<Label>T1 signal postcontrast</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>hypoenhancing</Value>
@@ -217,16 +217,16 @@
 		
 
 		<ChoiceDataElement Id="locationofinfundibulum" DisplaySequence="8" IsRequired="true">
+			<Label>Location of Infundibulum</Label>
 			<CodableConcept Name="locationofinfundibulum">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE180"></Code>
+					<Display Value="RDE180"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Location of Infundibulum</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>midline</Value>
@@ -248,16 +248,16 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="InfundibulumMorphology" DisplaySequence="9" IsRequired="true">
+			<Label>Infundibulum Morphology</Label>
 			<CodableConcept Name="InfundibulumMorphology">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE181"></Code>
+					<Display Value="RDE181"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Infundibulum Morphology</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>normal</Value>
@@ -271,16 +271,16 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Infundibulumenhancement" DisplaySequence="10" IsRequired="true">
+			<Label>Infundibulum enhancement</Label>
 			<CodableConcept Name="Infundibulumenhancement">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE182"></Code>
+					<Display Value="RDE182"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Infundibulum enhancement</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -294,16 +294,16 @@
 		</ChoiceDataElement>	
 		
 		<ChoiceDataElement Id="Presenceofposteriorhypophysisbrightspot" DisplaySequence="11" IsRequired="true">
+			<Label>Presence of posterior hypophysis bright spot</Label>
 			<CodableConcept Name="Presenceofposteriorhypophysisbrightspot">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE183"></Code>
+					<Display Value="RDE183"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Presence of posterior hypophysis bright spot</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -317,16 +317,16 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="confidenceindiagnosis" DisplaySequence="12" IsRequired="true">
+			<Label>Confidence in diagnosis</Label>
 			<CodableConcept Name="confidenceindiagnosis">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
-					<Code Value="100"></Code>
-					<Display Value="100"></Display>
+					<Code Value="RDE184"></Code>
+					<Display Value="RDE184"></Display>
 					<UserSelected Value="true"></UserSelected>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Confidence in diagnosis</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>veryconfident</Value>

@@ -44,17 +44,17 @@
 	<DataElements>
 
 		<GlobalValue Id="conditionConst">10</GlobalValue>
-		<ChoiceDataElement Id="singlemultiple" DisplaySequence="1" IsRequired="true">
-			<CodableConcept Name="singlemultiple">
-				<Coding>
-					<System Value="RadElement"/>
-					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
-					<UserSelected Value="true"/>
-				</Coding>    			
-			</CodableConcept>	
+		<ChoiceDataElement Id="singlemultiple" DisplaySequence="1" IsRequired="true">	
 			<Label>Number of nodes</Label>
+			<CodableConcept Name="singlemultiple">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE185"></Code>
+			 <Display Value="RDE185"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>single</Value>
@@ -67,17 +67,17 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="laterality" DisplaySequence="2" IsRequired="true">
+		<ChoiceDataElement Id="laterality" DisplaySequence="2" IsRequired="true">	
+			<Label>Laterality</Label>
 			<CodableConcept Name="laterality">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE186"/>
+					<Display Value="186"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
-			</CodableConcept>	
-			<Label>Laterality</Label>
+			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>left</Value>
@@ -95,31 +95,31 @@
 		</ChoiceDataElement>
 
 		<IntegerDataElement Id="sizeoflargestcluster" IsRequired="true" DisplaySequence="3">
+			<Label>size of largest cluster(in mm)</Label>
 			<CodableConcept Name="sizeoflargestcluster">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE187"/>
+					<Display Value="RDE187"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
-			<Label>size of largest cluster(in mm)</Label>
 			<Hint>Use longest dimension (improved clinical-radiologic correlation and adherence to staging systems)</Hint>
 			<Minimum>1</Minimum>
 		</IntegerDataElement>		
 
 		<MultiChoiceDataElement Id="levelsinvolved" IsRequired="true" DisplaySequence="4">
+			<Label>Which levels involved?</Label>
 			<CodableConcept Name="levelsinvolved">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE188"/>
+					<Display Value="RDE188"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Which levels involved?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -154,16 +154,16 @@
 		</MultiChoiceDataElement>
 
 		<ChoiceDataElement Id="degreeofcertainty"  DisplaySequence="6">
+			<Label>ECS (degree of certainty)</Label>
 			<CodableConcept Name="degreeofcertainty">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE189"/>
+					<Display Value="RDE189"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
-			<Label>ECS (degree of certainty)</Label>
 			<Hint>Read with high specificity -- only call "definite" if uneqivocal</Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -182,16 +182,16 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="enhancement_pattern"  DisplaySequence="7" IsRequired="false">
+			<Label>Pattern of enhancement</Label>
 			<CodableConcept Name="enhancement_pattern">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE190"/>
+					<Display Value="RDE190"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Pattern of enhancement</Label>
 			<Hint>threshold: 20% or more cystic by volume</Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -210,16 +210,16 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="drainagepattern" DisplaySequence="8" IsRequired="false">
+			<Label>Are these nodes in expected drainage pattern?</Label>
 			<CodableConcept Name="drainagepattern">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE191"/>
+					<Display Value="RDE191"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Are these nodes in expected drainage pattern?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -233,16 +233,16 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="invasion_of_critical_structures" DisplaySequence="9" IsRequired="true">
+			<Label>Invasion of critical structures (carotid, prevertebral)</Label>
 			<CodableConcept Name="invasion_of_critical_structures">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE192"/>
+					<Display Value="RDE192"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Invasion of critical structures (carotid, prevertebral)</Label>
 			<Hint>rule of thumb: percentage of circumferential arterial contact = likelihood of invasion</Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -261,16 +261,16 @@
 		</ChoiceDataElement>	
 
 		<ChoiceDataElement Id="degreeofcertaintyforinvolvement" DisplaySequence="10" IsRequired="true">
+			<Label>Degree of certainty for involvement (NIRADS)</Label>
 			<CodableConcept Name="degreeofcertaintyforinvolvement">
 				<Coding>
 					<System Value="RadElement"/>
 					<Version Value="1.0"/>
-					<Code Value="100"/>
-					<Display Value="100"/>
+					<Code Value="RDE193"/>
+					<Display Value="193"/>
 					<UserSelected Value="true"/>
 				</Coding>    			
 			</CodableConcept>
-			<Label>Degree of certainty for involvement (NIRADS)</Label>
 			<Hint>1 = negative; 2 = low likelihood; 3 = high likelihood; 4 = definite disease </Hint>
 			<ChoiceInfo>
 				<Choice>

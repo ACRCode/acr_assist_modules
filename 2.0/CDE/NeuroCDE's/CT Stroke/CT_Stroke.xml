@@ -42,6 +42,15 @@
 		<GlobalValue Id="conditionConst">10</GlobalValue>		
 		<ChoiceDataElement Id="Hyperacutesigns" DisplaySequence="1" IsRequired="true">
 			<Label>Hyperacute signs</Label>
+			 <CodableConcept Name="Hyperacutesigns">
+             <Coding>
+             <System Value="RadElement"></System>
+             <Version Value="1.0"></Version>
+             <Code Value="RDE159"></Code>
+             <Display Value="RDE159"></Display>
+             <UserSelected Value="true"></UserSelected>
+             </Coding>
+             </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -56,6 +65,15 @@
 		
 		<MultiChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="2">
 			<Label>Location</Label>
+			 <CodableConcept Name="anatomiclocation">
+             <Coding>
+             <System Value="RadElement"></System>
+             <Version Value="1.0"></Version>
+             <Code Value="RDE160"></Code>
+             <Display Value="RDE160"></Display>
+             <UserSelected Value="true"></UserSelected>
+             </Coding>
+             </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>rightfrontal</Value>
@@ -95,6 +113,15 @@
 		
 		<ChoiceDataElement Id="vascularterritory" DisplaySequence="3" IsRequired="true">
 			<Label>Vascular Territory</Label>
+			 <CodableConcept Name="vascularterritory">
+			<Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE161"></Code>
+			 <Display Value="RDE161"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>ACA</Value>
@@ -139,6 +166,15 @@
 		
 		<ChoiceDataElement Id="hemorrhagicconversion" DisplaySequence="4" IsRequired="true">
 			<Label>Hemorrhagic conversion</Label>
+			 <CodableConcept Name="hemorrhagicconversion">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE162"></Code>
+			 <Display Value="RDE162"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -153,6 +189,15 @@
 		
 		<ChoiceDataElement Id="masseffect" DisplaySequence="5" IsRequired="true">
 			<Label>Mass effect</Label>
+			 <CodableConcept Name="masseffect">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE163"></Code>
+			 <Display Value="RDE163"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -168,6 +213,15 @@
 		
 		<ChoiceDataElement Id="vascularmechanismpattern" DisplaySequence="6" IsRequired="true">
 			<Label>Vascular Mechanism/Pattern</Label>
+			 <CodableConcept Name="vascularmechanismpattern">
+     <Coding>
+     <System Value="RadElement"></System>
+     <Version Value="1.0"></Version>
+     <Code Value="RDE164"></Code>
+     <Display Value="RDE164"></Display>
+     <UserSelected Value="true"></UserSelected>
+     </Coding>
+     </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>embolic</Value>
@@ -187,12 +241,30 @@
 	
 		<IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7">
 			<Label>midlineshift in mm</Label>
+			 <CodableConcept Name="midlineshift">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE165"></Code>
+			 <Display Value="RDE165"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<Hint>Measurement</Hint>
 			<Minimum>1</Minimum>
 		</IntegerDataElement>	
 		
 		<ChoiceDataElement Id="Herniation" IsRequired="true" DisplaySequence="8">
 			<Label>Herniation</Label>
+			 <CodableConcept Name="Herniation">
+     <Coding>
+     <System Value="RadElement"></System>
+     <Version Value="1.0"></Version>
+     <Code Value="RDE166"></Code>
+     <Display Value="RDE166"></Display>
+     <UserSelected Value="true"></UserSelected>
+     </Coding>
+     </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>no</Value>
@@ -213,6 +285,15 @@
 		
 		<ChoiceDataElement Id="hyperdense" IsRequired="true" DisplaySequence="9">
 			<Label>Hyperdense vessel?</Label>
+			 <CodableConcept Name="hyperdense">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE167"></Code>
+			 <Display Value="RDE167"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -229,7 +310,15 @@
 		
 		<ChoiceDataElement Id="hyperdensesign" DisplaySequence="10" IsRequired="true">
 			<Label>Hyperdense Sign</Label>
-
+			<CodableConcept Name="hyperdensesign">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE168"></Code>
+			 <Display Value="RDE168"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>middlecerebral</Value>
@@ -252,7 +341,15 @@
 		
 		<ChoiceDataElement Id="arterialcalcification" DisplaySequence="11" IsRequired="true">
 			<Label>Arterial calcification</Label>
-			
+			 <CodableConcept Name="arterialcalcification">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE169"></Code>
+			 <Display Value="RDE169></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -269,7 +366,15 @@
 		
 		<ChoiceDataElement Id="venousthrombus" DisplaySequence="12" IsRequired="true">
 			<Label>Venous thrombus</Label>
-			
+			 <CodableConcept Name="venousthrombus">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE170"></Code>
+			 <Display Value="RDE170"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -284,6 +389,15 @@
 		
 		<ChoiceDataElement Id="sinuslocation" IsRequired="true" DisplaySequence="13">
 			<Label>Sinus location</Label>
+			 <CodableConcept Name="sinuslocation">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE171"></Code>
+			 <Display Value="RDE171"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>duralvenous</Value>
@@ -298,7 +412,15 @@
 		
 		<ChoiceDataElement Id="hydrocephalus" DisplaySequence="14" IsRequired="true">
 			<Label>Hydrocephalus</Label>
-			
+			 <CodableConcept Name="hydrocephalus">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE172"></Code>
+			 <Display Value="RDE172"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -313,6 +435,15 @@
 		
 		<IntegerDataElement Id="ASPECTSclassification" DisplaySequence="15" IsRequired="true">
 			<Label>ASPECTS classification</Label>
+			 <CodableConcept Name="ASPECTSclassification">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE173"></Code>
+			 <Display Value="RDE173"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
 				<Hint>Score 1 to 10</Hint>
 		</IntegerDataElement>
 	</DataElements>

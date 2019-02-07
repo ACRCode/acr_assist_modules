@@ -48,6 +48,15 @@
 		<GlobalValue Id="conditionConst">10</GlobalValue>
 		<ChoiceDataElement Id="laterallamella" DisplaySequence="1" IsRequired="true" >
 			<Label>Lateral Lamella</Label>
+			<CodableConcept Name="laterallamella">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE133"></Code>
+			 <Display Value="RDE133"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>left</Value>
@@ -67,6 +76,15 @@
 
 		<ChoiceDataElement Id="lateralpositions" DisplaySequence="2" IsRequired="true">
 			<Label>Lateral Positions</Label>
+			<CodableConcept Name="lateralpositions">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE134"></Code>
+			 <Display Value="RDE134"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>normal</Value>
@@ -81,6 +99,15 @@
 
 		<ChoiceDataElement Id="kerosclass" DisplaySequence="3" IsRequired="true">
 			<Label>Keros Class</Label>
+			<CodableConcept Name="kerosclass">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE135"></Code>
+			 <Display Value="RDE135"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>none</Value>
@@ -115,6 +142,15 @@
 
 		<ChoiceDataElement Id="ethmoidarteries" DisplaySequence="4" IsRequired="true">
 			<Label>Ethmoid arteries</Label>
+			<CodableConcept Name="ethmoidarteries">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE136"></Code>
+			 <Display Value="RDE136"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>normal</Value>
@@ -129,12 +165,30 @@
 
 		<IntegerDataElement Id="maxillarysinuses" IsRequired="true" DisplaySequence="5">
 			<Label>Maxillary sinuses</Label>
+			<CodableConcept Name="maxillarysinuses">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE137"></Code>
+			 <Display Value="RDE137"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<Minimum>1</Minimum>
 			<Maximum>1000</Maximum>
 		</IntegerDataElement>	
 
 		<ChoiceDataElement Id="uncinateprocesses" DisplaySequence="6" IsRequired="true">
 			<Label>Uncinate Processes</Label>
+			<CodableConcept Name="uncinateprocesses">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE138"></Code>
+			 <Display Value="RDE138"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>normal</Value>
@@ -149,17 +203,44 @@
 
 		<IntegerDataElement Id="maxillaryinfundibulum" IsRequired="true" DisplaySequence="7">
 			<Label>Maxillary Infundibulum</Label>
+			<CodableConcept Name="maxillaryinfundibulum">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE139"></Code>
+			 <Display Value="RDE139"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<Minimum>1</Minimum>
 			<Maximum>1000</Maximum>
 		</IntegerDataElement>	
 		<IntegerDataElement Id="osteomeatalunits" IsRequired="true" DisplaySequence="8">
 			<Label>Osteomeatalunits</Label>
+			<CodableConcept Name="osteomeatalunits">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE140"></Code>
+			 <Display Value="RDE140"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<Minimum>1</Minimum>
 			<Maximum>1000</Maximum>
 		</IntegerDataElement>	
 
 		<IntegerDataElement Id="sphenoethmoidalrecesses" IsRequired="true" DisplaySequence="9">
 			<Label>Sphenoethmoidal recesses</Label>
+			<CodableConcept Name="sphenoethmoidalrecesses">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE141"></Code>
+			 <Display Value="RDE141"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<Minimum>1</Minimum>
 			<Maximum>1000</Maximum>
 		</IntegerDataElement>
@@ -167,6 +248,15 @@
 
 		<IntegerDataElement Id="sphenoidsinuses" IsRequired="true" DisplaySequence="10">
 			<Label>Sphenoid sinuses</Label>
+			<CodableConcept Name="CompressionGrade">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE142"></Code>
+			 <Display Value="RDE142"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<Minimum>1</Minimum>
 			<Maximum>1000</Maximum>
 		</IntegerDataElement>	
@@ -176,6 +266,15 @@
 	<Rules>
 		<DecisionPoint Id="macrodp">
 			<Label>Macro Banch</Label>
+			<CodableConcept Name="CompressionGrade">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE158"></Code>
+			 <Display Value="RDE158"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<Branch>
 				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
 				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>

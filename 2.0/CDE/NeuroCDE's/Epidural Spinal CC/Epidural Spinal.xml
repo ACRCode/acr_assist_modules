@@ -48,6 +48,15 @@
 			
 		<ChoiceDataElement Id="spinallevel" IsRequired="true" DisplaySequence="1">
 		<Label>Spinal Level</Label>
+			<CodableConcept Name="spinallevel">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE151"></Code>
+			 <Display Value="RDE151"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			</CodableConcept>
 		<ChoiceInfo>
 			<Choice>
 					<Value>T1</Value>
@@ -113,7 +122,15 @@
 		
 		<ChoiceDataElement Id="LOCATION" DisplaySequence="2" IsRequired="true">
 			<Label>LOCATION</Label>
-
+				<CodableConcept Name="LOCATION">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE152"></Code>
+			 <Display Value="RDE152"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>rigidspine</Value>
@@ -136,6 +153,15 @@
 		
 		<ChoiceDataElement Id="LESIONQUALITY" DisplaySequence="3" IsRequired="true">
 			<Label>LESION QUALITY</Label>
+			<CodableConcept Name="LESIONQUALITY">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE153"></Code>
+			 <Display Value="RDE153"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>blastic</Value>
@@ -154,7 +180,15 @@
 		
 		<ChoiceDataElement Id="ALIGNMENT" DisplaySequence="4" IsRequired="true">
 			<Label>ALIGNMENT</Label>
-
+				<CodableConcept Name="ALIGNMENT">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE154"></Code>
+			 <Display Value="RDE154"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>normal</Value>
@@ -177,7 +211,15 @@
 		
 		<ChoiceDataElement Id="COLLAPSE" DisplaySequence="5" IsRequired="true">
 			<Label>COLLAPSE</Label>
-
+				<CodableConcept Name="COLLAPSE">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE155"></Code>
+			 <Display Value="RDE155"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>none</Value>
@@ -197,6 +239,15 @@
 	
 		<ChoiceDataElement Id="POSTERIORELEMENTS" IsRequired="true" DisplaySequence="6">
 			<Label>POSTERIOR ELEMENTS</Label>
+			<CodableConcept Name="POSTERIORELEMENTS">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE156"></Code>
+			 <Display Value="RDE156"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>none</Value>
@@ -239,6 +290,15 @@
 		
 		<ChoiceDataElement Id="levelofgreatestcompression" IsRequired="true" DisplaySequence="7">
 		<Label>Level of greatest compression</Label>
+		<CodableConcept Name="levelofgreatestcompression">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE157"></Code>
+			 <Display Value="RDE157"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 		<ChoiceInfo>
 			<Choice>
 					<Value>T1</Value>
@@ -303,6 +363,15 @@
 		</ChoiceDataElement>
 		<ChoiceDataElement Id="CompressionGrade" IsRequired="true" DisplaySequence="8">
 			<Label>Compression grade</Label>
+			<CodableConcept Name="CompressionGrade">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE158"></Code>
+			 <Display Value="RDE158"></Display>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1a</Value>
