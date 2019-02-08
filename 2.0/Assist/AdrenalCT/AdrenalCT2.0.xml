@@ -64,7 +64,26 @@
 			<Maximum>10.0</Maximum>
 		</NumericDataElement>
 
-		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="3" IsRequired="true">
+		<ChoiceDataElement Id="washout" DisplaySequence="3" IsRequired="true">
+			<Label>washout</Label>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>none</Value>
+					<Label>None</Label>
+				</Choice>				
+				<Choice>
+				  <Value>greaterthan60</Value>
+				  <Label>APW/RPW ≥60/40%</Label>
+				</Choice>
+				
+				<Choice>
+				  <Value>lessthan60</Value>
+				  <Label>APW/RPW &lt;60/40%</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="4" IsRequired="true">
 			<Label>Diagnostic Benign Features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -93,20 +112,16 @@
 				  <Value>signalonCSMR</Value>
 				  <Label>Decreased signal on CS-MR</Label>
 				</Choice>
-				
-				<Choice>
-				  <Value>greaterthan60</Value>
-				  <Label>APW/RPW ≥60/40%</Label>
-				</Choice>
-				
-				<Choice>
-				  <Value>lessthan60</Value>
-				  <Label>APW/RPW &lt;60/40%</Label>
-				</Choice>
-			</ChoiceInfo>  
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="imgenlarge" DisplaySequence="4" IsRequired="false">
+		<ChoiceDataElement Id="imgenlarge" DisplaySequence="5" IsRequired="false">
 			<Label>Stability</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
@@ -124,7 +139,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
+					<OrCondition>
+						<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
+						<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -135,7 +153,7 @@
 		</ChoiceDataElement>
 
 
-		<ChoiceDataElement Id="cancerhx" DisplaySequence="5" IsRequired="false">
+		<ChoiceDataElement Id="cancerhx" DisplaySequence="6" IsRequired="false">
 			<Label>Cancer Hx</Label>
 			<CodableConcept Name="cancerhx">
             <Coding>
@@ -163,7 +181,10 @@
 
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>				
+					<OrCondition>
+						<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
+						<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -177,6 +198,27 @@
 
 		<DecisionPoint Id="AdernalMassDetected">
 			<Label>Incidental, Asymptomatic Adrenal Mass Detected on any CT or MR exam </Label>
+			
+			<Branch>
+				<Label>washout</Label>
+				<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
+				<DecisionPoint Id="washoutFeatures">
+					<Label>washout Imaging Features </Label>
+					<Branch>
+						<Label>greaterthan60</Label>
+						<EqualCondition DataElementId="washout" ComparisonValue="greaterthan60"/>
+						<EndPointRef EndPointId="benignadenoma" ></EndPointRef>
+					</Branch>
+					
+					<Branch>
+						<Label>lessthan60</Label>
+						<EqualCondition DataElementId="washout" ComparisonValue="lessthan60"/>
+						<EndPointRef EndPointId="ImagingFU" ></EndPointRef>
+					</Branch>
+				</DecisionPoint>
+
+			</Branch>
+			
 			<Branch>
 				<Label>Diagnostic Benign Imaging Features</Label>
 				<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
@@ -206,17 +248,6 @@
 						<Label>signal on CS-MR</Label>
 						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="signalonCSMR"/>
 						<EndPointRef EndPointId="benignadenoma" ></EndPointRef>
-					</Branch>
-					<Branch>
-						<Label>greaterthan60</Label>
-						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="greaterthan60"/>
-						<EndPointRef EndPointId="benignadenoma" ></EndPointRef>
-					</Branch>
-					
-					<Branch>
-						<Label>lessthan60</Label>
-						<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="lessthan60"/>
-						<EndPointRef EndPointId="ImagingFU" ></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 
@@ -356,7 +387,7 @@
 		<EndPoint Id="benignadenoma">
 			<Label>Benign adenoma, no F/U</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="Impression">
 					<Branch>
 						<ReportText Type="PlainText">Benign adenoma, no F/U.</ReportText>
 					</Branch>
@@ -367,7 +398,7 @@
 		<EndPoint Id="considerresection">
 			<Label>Consider resection</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="Impression">
 					<Branch>
 						<ReportText Type="PlainText">Consider resection</ReportText>
 					</Branch>
@@ -378,7 +409,7 @@
 		<EndPoint Id="considerBX">
 			<Label>Consider Bx or PET-CT</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="Impression">
 					<Branch>
 						<ReportText Type="PlainText">Consider Bx or PET-CT</ReportText>
 					</Branch>
@@ -389,7 +420,7 @@
 		<EndPoint Id="benignnoFU">
 			<Label>Benign, no F/U</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="Impression">
 					<Branch>
 						<ReportText Type="PlainText">Benign, no F/U</ReportText>
 					</Branch>
@@ -400,7 +431,7 @@
 		<EndPoint Id="consider12">
 			<Label>Consider 12 month F/U adrenal CT or resection</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="Impression">
 					<Branch>
 
 						<ReportText Type="PlainText">Consider 12 months F/U adrenal CT or resection</ReportText>
@@ -412,7 +443,7 @@
 		<EndPoint Id="consider12probBenign">
 			<Label>Probably benign Consider 12 month F/U adrenal CT</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="Impression">
 					<Branch>
 						<ReportText Type="PlainText">Probably benign Consider 12 months F/U adrenal CT or resection.</ReportText>
 					</Branch>
@@ -424,7 +455,7 @@
 		<EndPoint Id="ImagingFU">
 			<Label>Imaging F/U, Bx, PET-CT,or resection depending on clinical scenario</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="Impression">
 					<Branch>
 						<ReportText Type="PlainText">Imaging F/U, Bx, PET-CT, or resection depending on clinical scenario</ReportText>
 					</Branch>
