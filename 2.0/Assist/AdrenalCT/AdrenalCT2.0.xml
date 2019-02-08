@@ -11,7 +11,7 @@
 		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
-		<RadElementSetID>5689</RadElementSetID>
+		<RadElementSetID>RDES3</RadElementSetID>
 		<Info>
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
@@ -28,6 +28,15 @@
 
 		<ChoiceDataElement Id="side" DisplaySequence="1" IsRequired="false">
 			<Label>Side</Label>
+			<CodableConcept Name="side">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE42"></Code>
+            <Display Value="RDE42"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>left</Value>
@@ -42,7 +51,15 @@
 
 		<NumericDataElement Id="adrenalmass" DisplaySequence="2" IsRequired="true">
 			<Label>Size(cm)</Label>
-
+			<CodableConcept Name="adrenalmass">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE41"></Code>
+            <Display Value="RDE41"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<Minimum>1.0</Minimum>
 			<Maximum>10.0</Maximum>
 		</NumericDataElement>
@@ -90,7 +107,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="imgenlarge" DisplaySequence="4" IsRequired="false">
-			<Label>Enlarging</Label>
+			<Label>Stability</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>nopriorimaging</Value>
@@ -120,6 +137,15 @@
 
 		<ChoiceDataElement Id="cancerhx" DisplaySequence="5" IsRequired="false">
 			<Label>Cancer Hx</Label>
+			<CodableConcept Name="cancerhx">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE46"></Code>
+            <Display Value="RDE46"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>unknown</Value>

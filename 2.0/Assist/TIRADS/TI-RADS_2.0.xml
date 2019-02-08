@@ -11,11 +11,12 @@
 		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<RadElementSetID>RDES15</RadElementSetID>
 		<Info>
 			<Description>TI-RADS level determination</Description>
 			<References>
-				<Citation Url="https://nrdr.acr.org/lirads/">
-                ACR LI-RADS</Citation>
+				<Citation Url="http://radelement.org/set/RDES15">
+                ACR Ti-RADS</Citation>
 			</References>
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
@@ -37,9 +38,8 @@
 
 		<!-- Nodule 1 dataelements -->
 
-		<NumericDataElement Id="diameter_1" IsRequired="true" DisplaySequence="1">		
-			<Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
+		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="1">		
+			<Label>Diameter(cm)</Label>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
@@ -56,6 +56,15 @@
 
 		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="2">
 			<Label>Composition</Label>
+			<CodableConcept Name="composition_1">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE125"></Code>
+            <Display Value="RDE126"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
@@ -78,6 +87,15 @@
 
 		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="3">
 			<Label>Echogenicity</Label>
+			<CodableConcept Name="echogenicity_1">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE126"></Code>
+            <Display Value="RDE126"></Display>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
