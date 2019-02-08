@@ -11,7 +11,16 @@
 		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
-		<RadElementSetID>RDES15</RadElementSetID>
+		<!-- <RadElementSetID>RDES15</RadElementSetID> -->
+		<CodableConcept Name="codableConcept_TIRADS">
+			<Coding>
+				<System Value="RadElement"></System>
+				<Version Value="1.0"></Version>
+				<Code Value="RDES15"></Code>
+				<Display Value="RDES15"></Display>
+				<UserSelected Value="false"></UserSelected>
+			</Coding>
+		</CodableConcept>
 		<Info>
 			<Description>TI-RADS level determination</Description>
 			<References>
