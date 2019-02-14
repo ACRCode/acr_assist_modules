@@ -752,7 +752,8 @@
 <TemplatePartial Id="pulmonarynodulesummaryReporttext">
 	<Branch>
 		<SectionIf DataElementId="image">
-Image : <InsertValue DataElementId="image"/> 
+						<ReportText Type="PlainText">Image :</ReportText>
+<InsertValue DataElementId="image"/> 
 		</SectionIf>
 		
 		<SectionIf DataElementId="lobe">
