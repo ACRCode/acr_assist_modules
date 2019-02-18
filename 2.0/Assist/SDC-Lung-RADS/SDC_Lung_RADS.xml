@@ -41,14 +41,14 @@
 		<ReportCitationText/>
 		<ApplicableSexes Value="Both"/>
 	</Metadata>
-	
+
 	<DataElements>
 		<!-- Age, Gender, Smoking status, Previous Cancer?-->
 
 		<IntegerDataElement Id="clinicalinformation" IsRequired="true" DisplaySequence="1">
 			<Label>Clinical Information</Label>
 		</IntegerDataElement>		
-		
+
 		<ChoiceDataElement Id="reasonforexam" IsRequired="true" DisplaySequence="2" >
 			<Label>Reason for Exam</Label>
 			<ChoiceInfo>
@@ -74,7 +74,7 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
+
 		<!-- Need to add the Dates to schema or allow text!-->
 		<ChoiceDataElement Id="comparisonstudy" IsRequired="true" DisplaySequence="3">
 			<Label>Comparison Study</Label>
@@ -89,7 +89,7 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
+
 		<DateTimeDataElement Id="comparisonStudy_CTExam" IsRequired="true" DisplaySequence="4">
 			<Label>Previous CT exam date</Label>
 			<ConditionalProperties>				
@@ -99,7 +99,7 @@
 				</ConditionalProperty>				
 			</ConditionalProperties>
 		</DateTimeDataElement>
-		
+
 		<ChoiceDataElement Id="overallimagequality" IsRequired="true" DisplaySequence="5">
 			<Label>Overall image quality:</Label>
 			<ChoiceInfo>
@@ -117,7 +117,7 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>		
-		
+
 		<!-- Need to allow free text to other option!-->
 		<ChoiceDataElement Id="procedureprotocol" IsRequired="true" DisplaySequence="6" AllowFreetext="true">
 			<Label>Procedure protocol:</Label>
@@ -132,7 +132,7 @@
 				</Choice>-->
 			</ChoiceInfo>
 		</ChoiceDataElement>	
-		
+
 		<ChoiceDataElement Id="allmeasurentsobtained" IsRequired="true" DisplaySequence="7">
 			<Label>All measurements obtained on axial CT lung reconstruction series?:</Label>
 			<ChoiceInfo>
@@ -146,19 +146,19 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>	
-		
-		
+
+
 		<IntegerDataElement Id="totnumberoflungnodulespresent" IsRequired="true" DisplaySequence="8">
 			<Label>Number of lung nodules present in total (any size):</Label>
 			<Hint>Any size. If more than 10 nodules please enter"11" The 10 most worrisome nodules (≥ 4 mm) need to be measured.</Hint>
 		</IntegerDataElement>
-		
-				
+
+
 		<NumericDataElement Id="numberofnodules" IsRequired="true" DisplaySequence="9" >
 			<Label>Number of nodule(s)  4mm:</Label>
 		</NumericDataElement>
-		
-		
+
+
 		<IntegerDataElement Id="image" IsRequired="true" DisplaySequence="10">
 			<Label>Image:</Label>
 			<Hint>Image</Hint>
@@ -169,8 +169,8 @@
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</IntegerDataElement>
-		
-		
+
+
 		<ChoiceDataElement Id="lobe" IsRequired="true" DisplaySequence="11">
 			<Label>Lobe:</Label>
 			<ChoiceInfo>
@@ -254,176 +254,176 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>		
-		
+
 		<NumericDataElement Id="solidmeandia" IsRequired="true" DisplaySequence="14" Unit="mm">
-    		<Label>Mean Diameter</Label>
+			<Label>Mean Diameter</Label>
 			<ConditionalProperties>		
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
+		</NumericDataElement>	
+
 		<NumericDataElement Id="solidlength" IsRequired="true" DisplaySequence="15" Unit="mm">
-    		<Label>Length</Label>
+			<Label>Length</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-				
+		</NumericDataElement>	
+
 		<NumericDataElement Id="solidwidth" IsRequired="true" DisplaySequence="16" Unit="mm">
-    		<Label>Width</Label>
+			<Label>Width</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
+		</NumericDataElement>	
+
 		<NumericDataElement Id="oversizemeandia" IsRequired="true" DisplaySequence="17" Unit="mm">
-    		<Label>Overall size: Mean Diameter</Label>
+			<Label>Overall size: Mean Diameter</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
+		</NumericDataElement>	
+
 		<NumericDataElement Id="oversizelength" IsRequired="true" DisplaySequence="18" Unit="mm">
-    		<Label>Length</Label>
+			<Label>Length</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-				
+		</NumericDataElement>	
+
 		<NumericDataElement Id="oversizewidth" IsRequired="true" DisplaySequence="19" Unit="mm">
-    		<Label>Width</Label>
+			<Label>Width</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
+		</NumericDataElement>	
+
 		<NumericDataElement Id="sizeofsolid" IsRequired="true" DisplaySequence="20" Unit="mm">
-    		<Label>Size of Solid component:Mean Diameter</Label>
+			<Label>Size of Solid component:Mean Diameter</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
+		</NumericDataElement>	
+
 		<NumericDataElement Id="sizeoflength" IsRequired="true" DisplaySequence="21" Unit="mm">
-    		<Label>Length</Label>
+			<Label>Length</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-				
+		</NumericDataElement>	
+
 		<NumericDataElement Id="sizeofwidth" IsRequired="true" DisplaySequence="22" Unit="mm">
-    		<Label>Width</Label>
+			<Label>Width</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>				
-		
+		</NumericDataElement>				
+
 		<NumericDataElement Id="puregroundglassmeandia" IsRequired="true" DisplaySequence="22" Unit="mm">
-    		<Label>Mean Diameter</Label>
+			<Label>Mean Diameter</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
+		</NumericDataElement>	
+
 		<NumericDataElement Id="puregroundglasslength" IsRequired="true" DisplaySequence="23" Unit="mm">
-    		<Label>Length</Label>   
+			<Label>Length</Label>   
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-				
+		</NumericDataElement>	
+
 		<NumericDataElement Id="puregroundglasswidth" IsRequired="true" DisplaySequence="24" Unit="mm">
-    		<Label>Width</Label>  
+			<Label>Width</Label>  
 			<ConditionalProperties>				
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-						<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
-        <ChoiceDataElement Id="comparison" IsRequired="true" DisplaySequence="25">
+		</NumericDataElement>	
+
+		<ChoiceDataElement Id="comparison" IsRequired="true" DisplaySequence="25">
 			<Label>Comparison:</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -447,14 +447,14 @@
 					<Label>Interval decrease - Compared to:</Label>	
 				</Choice>
 			</ChoiceInfo>
-        	<ConditionalProperties>				
-        		<ConditionalProperty>
-        			<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
-        			<IsRelevant>false</IsRelevant>
-        		</ConditionalProperty>
-        	</ConditionalProperties>
+			<ConditionalProperties>				
+				<ConditionalProperty>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
 		</ChoiceDataElement>
-	
+
 		<!--<NumericDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="26" Unit="mm">
     		<Label>Interval Increase</Label> 
 			<ConditionalProperties>				
@@ -473,7 +473,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
     	</NumericDataElement>-->
-		
+
 		<ChoiceDataElement Id="intervalincrease" IsRequired="true" DisplaySequence="26">
 			<Label>Interval Increase:</Label>
 			<ChoiceInfo>
@@ -506,9 +506,9 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>	
-		
+
 		<NumericDataElement Id="intervalincreasesolidnodule" IsRequired="true" DisplaySequence="27"  Unit="mm">
-    		<Label>Solid nodule: Previous mean diameter:</Label>
+			<Label>Solid nodule: Previous mean diameter:</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
@@ -516,26 +516,26 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
-<!--						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesize"/>-->
+						<!--						<EqualCondition DataElementId="intervalincrease" ComparisonValue="partsolidnodulesize"/>-->
 						<EqualCondition DataElementId="intervalincrease" ComparisonValue="part-solid"/>
 						<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-				<OrCondition>
-					<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
-				</OrCondition>
-				<IsRelevant>false</IsRelevant>
+					<OrCondition>
+						<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</NumericDataElement>
-	
+		</NumericDataElement>
+
 		<NumericDataElement Id="partsolidnodulesize" IsRequired="true" DisplaySequence="28"  Unit="mm">
-    		<Label>Overall size: Previous mean diameter:</Label>
+			<Label>Overall size: Previous mean diameter:</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
@@ -549,19 +549,19 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-				<OrCondition>
-					<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
-				</OrCondition>
-				<IsRelevant>false</IsRelevant>
+					<OrCondition>
+						<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>	
 			</ConditionalProperties>
-    	</NumericDataElement>	
-		
+		</NumericDataElement>	
+
 		<NumericDataElement Id="partsolidnodulesolid" IsRequired="true" DisplaySequence="29" Unit="mm">
-    		<Label>Solid component: Previous mean diameter:</Label>
+			<Label>Solid component: Previous mean diameter:</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
@@ -575,20 +575,20 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-				<OrCondition>
-					<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
-				</OrCondition>
-				<IsRelevant>false</IsRelevant>
+					<OrCondition>
+						<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-				
+
 			</ConditionalProperties>
-    	</NumericDataElement>
+		</NumericDataElement>
 
 		<NumericDataElement Id="puregroundglass" IsRequired="true" DisplaySequence="30" Unit="mm">
-    		<Label>Pure ground glass nodule: Previous mean diameter:</Label>
+			<Label>Pure ground glass nodule: Previous mean diameter:</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>	
@@ -602,37 +602,37 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-				<OrCondition>
-					<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
-				</OrCondition>
-				<IsRelevant>false</IsRelevant>
+					<OrCondition>
+						<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="intervaldecrease"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-				
+
 			</ConditionalProperties>
-    	</NumericDataElement>
-					
+		</NumericDataElement>
+
 		<DateTimeDataElement Id="intervaldecrease" IsRequired="true" DisplaySequence="31" Unit="mm">
-    		<Label>Interval Decrease - Compared to:</Label>
+			<Label>Interval Decrease - Compared to:</Label>
 			<ConditionalProperties>				
 				<ConditionalProperty>
 					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
-				<OrCondition>
-					<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
-					<EqualCondition DataElementId="comparison" ComparisonValue="intervalincrease"/>
-				</OrCondition>
-				<IsRelevant>false</IsRelevant>
+					<OrCondition>
+						<EqualCondition DataElementId="comparison" ComparisonValue="none"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="stablenodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="newnodule"/>
+						<EqualCondition DataElementId="comparison" ComparisonValue="intervalincrease"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-    	</DateTimeDataElement>
-		
+		</DateTimeDataElement>
+
 		<ChoiceDataElement Id="margins" IsRequired="true" DisplaySequence="32">
 			<Label>Margins:</Label>
 			<ChoiceInfo>
@@ -656,7 +656,7 @@
 					<Value>halo</Value>
 					<Label>Halo</Label>	
 				</Choice>
-				
+
 				<Choice>
 					<Value>obscured</Value>
 					<Label>Obscured</Label>	
@@ -669,7 +669,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		
+
 		<ChoiceDataElement Id="calcification" IsRequired="true" DisplaySequence="33">
 			<Label>Calcification:</Label>
 			<ChoiceInfo>
@@ -693,7 +693,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		
+
 		<ChoiceDataElement Id="othercharacteristics" IsRequired="true" DisplaySequence="34" AllowFreetext="true">
 			<Label>Other characteristics:</Label>
 			<ChoiceInfo>
@@ -717,7 +717,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		
+
 		<IntegerDataElement Id="other" IsRequired="true" DisplaySequence="35">
 			<Label>Other comments:</Label>
 			<ConditionalProperties>				
@@ -728,117 +728,199 @@
 			</ConditionalProperties>
 		</IntegerDataElement>
 	</DataElements>	
-	
-<Rules>
+
+	<Rules>
 		<DecisionPoint Id="Nodules">
-		  <Label>Number of nodule(s) less than 1mm</Label>
-		  <Branch>
-			<Label>O or Not Defined</Label>	
-		  	<OrCondition>
-		  		<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
-		  		<NotCondition>
-		  			<EqualCondition DataElementId = "numberofnodules" ComparisonValue="1"/>							
-			  	</NotCondition>
-		  		<NotCondition>
-		  			<EqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
-		  		</NotCondition>
-		  	</OrCondition>
-		  	<EndPointRef EndPointId="nodule1" ></EndPointRef>
-		  </Branch>
-	</DecisionPoint>	   
-</Rules>
-	
-<EndPoints>
-<TemplatePartial Id="pulmonarynodulesummaryReporttext">
-	<Branch>
-		<SectionIf DataElementId="image">
-						<ReportText Type="PlainText">Image :</ReportText>
-<InsertValue DataElementId="image"/> 
-		</SectionIf>
-		
-		<SectionIf DataElementId="lobe">
-Lobe : <InsertValue DataElementId="lobe"/> 
-		</SectionIf>
-		
-		<SectionIf DataElementId="location">
-Location : <InsertValue DataElementId="location"/> 	
-		</SectionIf>
-		
-		<SectionIf DataElementId="attenuation">
-Attenuation : <InsertValue DataElementId="attenuation"/>
-		</SectionIf>
-		
-		<SectionIfValue DataElementId="attenuation" ComparisonValue="solid">
-Solid  : <InsertValue DataElementId="solidmeandia"/> mm <InsertValue DataElementId="solidlength"/> mm <InsertValue DataElementId="solidwidth"/> mm 
-		</SectionIfValue>
-		
-		<SectionIfValue DataElementId="attenuation" ComparisonValue="part-solid">
-Part-Solid- Overall Size  :    <InsertValue DataElementId="oversizemeandia"/> mm <InsertValue DataElementId="oversizelength"/> mm <InsertValue DataElementId="oversizewidth"/> mm  
-Part-Solid- Size of Solid component  : <InsertValue DataElementId="sizeofsolid"/> mm  <InsertValue DataElementId="sizeoflength"/> mm  <InsertValue DataElementId="sizeofwidth"/> mm 
-		</SectionIfValue>
-		
-		<SectionIfValue DataElementId="attenuation" ComparisonValue="puregroundglass">
-Pure ground Glass  :  <InsertValue DataElementId="puregroundglassmeandia"/> mm <InsertValue DataElementId="puregroundglasslength"/> mm <InsertValue DataElementId="puregroundglasswidth"/> mm  
-		</SectionIfValue>	
-		
-		<SectionIf DataElementId="comparison">
-Comparison : <InsertValue DataElementId="comparison"/>
-		</SectionIf>
-		
-		<SectionIf DataElementId="intervalincrease">
-Interval increase  : <InsertValue DataElementId="intervalincrease"/> 
-		</SectionIf>
-		
-		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="solid">
-Solid  : <InsertValue DataElementId="intervalincreasesolidnodule"/> mm 
-		</SectionIfValue>
-		
-		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="part-solid">
-Part-Solid- Overall Size  :    <InsertValue DataElementId="partsolidnodulesize"/> mm 
-Part-Solid- Size of Solid component  : <InsertValue DataElementId="partsolidnodulesolid"/> mm  
-		</SectionIfValue>
-		
-		<SectionIfValue DataElementId="intervalincrease" ComparisonValue="puregroundglass">
-Pure ground Glass  :  <InsertValue DataElementId="puregroundglass"/> mm 	
-		</SectionIfValue>
-		
-		<SectionIf DataElementId="intervaldecrease">
-Interval decrease  : <InsertValue DataElementId="intervaldecrease"/> 
-		</SectionIf>
-		
-		<SectionIf DataElementId="margins">
-Margins : <InsertValue DataElementId="margins"/>
-		</SectionIf>
-		
-		<SectionIf DataElementId="calcification">
-Calcification : <InsertValue DataElementId="calcification"/>
-		</SectionIf>
-		
-		<SectionIf DataElementId="othercharacteristics">
-Other Characteristics : <InsertValue DataElementId="othercharacteristics"/>
-		</SectionIf>
-		
-		<SectionIf DataElementId="other">
-Other comments : <InsertValue DataElementId="other"/>
-		</SectionIf>
-		
-   </Branch>
-	
-</TemplatePartial>
-		
-		
-	<EndPoint Id="nodule1">
-		<Label>Nodule 1</Label>
-		  <ReportTexts>
-			<ReportText SectionId="findings">
-			  <Branch>
-			  	<InsertPartial PartialId="pulmonarynodulesummaryReporttext"/>
-			  </Branch>
-			</ReportText>
-		  </ReportTexts>
+			<Label>Number of nodule(s) less than 1mm</Label>
+			<Branch>
+				<Label>O or Not Defined</Label>	
+				<OrCondition>
+					<LessThanCondition DataElementId="numberofnodules" ComparisonValue="1"/>
+					<NotEqualCondition DataElementId="numberofnodules" ComparisonValue="2"/>
+					<NotEqualCondition DataElementId = "numberofnodules" ComparisonValue="1"/>
+				</OrCondition>
+				<EndPointRef EndPointId="nodule1" />
+			</Branch>
+		</DecisionPoint>	   
+	</Rules>
+
+	<EndPoints>
+		<TemplatePartial Id="pulmonarynodulesummaryReporttext">
+
+			<Branch>
+				<SectionIf DataElementId="image" />
+				<ReportText Type="PlainText">Image :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="image"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="image" />
+				<ReportText Type="PlainText">lobe :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="location" />
+				<ReportText Type="PlainText">Location :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="location"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="attenuation" />
+				<ReportText Type="PlainText">Attenuation :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="attenuation"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<EqualCondition DataElementId="attenuation" ComparisonValue="solid" />
+				<ReportText Type="PlainText">Solid :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="solidmeandia"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="solidlength"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="solidwidth"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+			</Branch>
+
+
+			<Branch>
+				<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid" />
+				<ReportText Type="PlainText">Part-Solid- Overall Size  : </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="oversizemeandia"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="oversizelength"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="oversizewidth"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+
+				<ReportText Type="PlainText">Part-Solid- Size of Solid component  :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="sizeofsolid"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="sizeoflength"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="sizeofwidth"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass" />
+				<ReportText Type="PlainText">Pure ground Glass  : </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="puregroundglassmeandia"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="puregroundglasslength"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+
+				<ReportText Type="InsertDataElementValue" Value="puregroundglasswidth"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="comparison" />
+				<ReportText Type="PlainText">Comparison :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="comparison"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="intervalincrease" />
+				<ReportText Type="PlainText">Interval increase :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="intervalincrease"/>
+				<ReportText Type="Newline" />
+			</Branch>		
+
+			<Branch>
+				<EqualCondition DataElementId="intervalincrease" ComparisonValue="solid" />
+				<ReportText Type="PlainText">Solid :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="intervalincreasesolidnodule"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+			</Branch>			
+
+			<Branch>
+				<EqualCondition DataElementId="intervalincrease" ComparisonValue="part-solid" />
+				<ReportText Type="PlainText">Part-Solid- Overall Size  : </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="partsolidnodulesize"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+
+				<ReportText Type="PlainText">Part-Solid- Size of Solid component  :  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="partsolidnodulesolid"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+			</Branch>	
+
+
+			<Branch>
+				<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass" />
+				<ReportText Type="PlainText">Pure ground Glass  :  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="puregroundglass"/>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline" />
+			</Branch>	
+
+			<Branch>
+				<SectionIf DataElementId="intervaldecrease" />
+				<ReportText Type="PlainText">Interval decrease  :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="intervaldecrease"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+
+			<Branch>
+				<SectionIf DataElementId="margins" />
+				<ReportText Type="PlainText">Margins :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="margins"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="calcification" />
+				<ReportText Type="PlainText">Calcification :</ReportText>
+				<ReportText Type="InsertDataElementValue" Value="calcification"/>
+				<ReportText Type="Newline" />
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="othercharacteristics" />
+				<ReportText Type="PlainText">Other Characteristics : </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="othercharacteristics"/>
+				<ReportText Type="Newline" />
+			</Branch>	
+
+			<Branch>
+				<SectionIf DataElementId="other" />
+				<ReportText Type="PlainText">Other comments : </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other"/>
+				<ReportText Type="Newline" />
+			</Branch>
+		</TemplatePartial>
+
+
+		<EndPoint Id="nodule1">
+			<Label>Nodule 1</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="pulmonarynodulesummaryReporttext"></ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
 		</EndPoint>
-	
-		
-</EndPoints>
-	
+	</EndPoints>
+
 </ReportingModule>
