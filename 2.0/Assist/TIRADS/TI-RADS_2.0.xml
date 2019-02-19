@@ -47,8 +47,8 @@
 
 		<!-- Nodule 1 dataelements -->
 
-		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="1">		
-			<Label>Diameter(cm)</Label>
+		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="1" Unit="cm">		
+			<Label>Diameter</Label>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
@@ -205,9 +205,8 @@
 
 		<!-- Nodule 2 dataelements -->
 
-		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="6">		
+		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="6" Unit="cm">		
 			<Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
@@ -366,9 +365,8 @@
 		</ChoiceDataElement>
 
 		<!-- Nodule 3 -->
-		<NumericDataElement Id="diameter_3" DisplaySequence="11">		
+		<NumericDataElement Id="diameter_3" DisplaySequence="11" Unit="cm">		
 			<Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
@@ -538,9 +536,8 @@
 		</ChoiceDataElement>
 
 		<!-- Nodule 4 -->
-		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="16">		
+		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="16" Unit="cm">		
 			<Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
@@ -715,9 +712,8 @@
 		</ChoiceDataElement>
 
 		<!-- Nodule 5 -->
-		<NumericDataElement Id="diameter_5" IsRequired="true" DisplaySequence="21">		
+		<NumericDataElement Id="diameter_5" IsRequired="true" DisplaySequence="21" Unit="cm">		
 			<Label>Diameter</Label>
-			<Hint>Use 0-10 scale</Hint>
 			<Minimum>1</Minimum>
 			<Maximum>10</Maximum>
 			<ConditionalProperties>
@@ -915,9 +911,10 @@
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_1" ComparisonValue="3"/>
-					<AndCondition>        				
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1.5"></LessThanCondition>
-					</AndCondition>	
+					</OrCondition>	
 				</AndCondition>			  
 				<EndPointRef EndPointId="ReporttextTR3_1"></EndPointRef>
 			</Branch>
@@ -959,7 +956,10 @@
 						<EqualCondition DataElementId="addtr1_1" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_1" ComparisonValue="6"/>	
 					</OrCondition>
-					<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR4_1"></EndPointRef>
 			</Branch>
@@ -989,7 +989,10 @@
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_1" ComparisonValue="7"/>
-					<LessThanCondition DataElementId="diameter_1" ComparisonValue="0.5"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_1" ComparisonValue="0.5"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR5_1"></EndPointRef>
 			</Branch>
@@ -1046,9 +1049,10 @@
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_2" ComparisonValue="3"/>
-					<AndCondition>        				
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1.5"></LessThanCondition>
-					</AndCondition>	
+					</OrCondition>	
 				</AndCondition>			  
 				<EndPointRef EndPointId="ReporttextTR3_2"></EndPointRef>
 			</Branch>
@@ -1090,7 +1094,10 @@
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="6"/>	
 					</OrCondition>
-					<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR4_2"></EndPointRef>
 			</Branch>
@@ -1120,7 +1127,10 @@
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_2" ComparisonValue="7"/>
-					<LessThanCondition DataElementId="diameter_2" ComparisonValue="0.5"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_2" ComparisonValue="0.5"></LessThanCondition>
+					</OrCondition>	
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR5_2"></EndPointRef>
 			</Branch>
@@ -1177,9 +1187,10 @@
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_3" ComparisonValue="3"/>
-					<AndCondition>        				
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1.5"></LessThanCondition>
-					</AndCondition>	
+					</OrCondition>	
 				</AndCondition>			  
 				<EndPointRef EndPointId="ReporttextTR3_3"></EndPointRef>
 			</Branch>
@@ -1221,7 +1232,10 @@
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="6"/>	
 					</OrCondition>
-					<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR4_3"></EndPointRef>
 			</Branch>
@@ -1251,7 +1265,10 @@
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_3" ComparisonValue="7"/>
-					<LessThanCondition DataElementId="diameter_3" ComparisonValue="0.5"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_3" ComparisonValue="0.5"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR5_3"></EndPointRef>
 			</Branch>
@@ -1308,9 +1325,10 @@
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_4" ComparisonValue="3"/>
-					<AndCondition>        				
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1.5"></LessThanCondition>
-					</AndCondition>	
+					</OrCondition>
 				</AndCondition>			  
 				<EndPointRef EndPointId="ReporttextTR3_4"></EndPointRef>
 			</Branch>
@@ -1352,7 +1370,10 @@
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="6"/>	
 					</OrCondition>
-					<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR4_4"></EndPointRef>
 			</Branch>
@@ -1382,7 +1403,10 @@
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_4" ComparisonValue="7"/>
-					<LessThanCondition DataElementId="diameter_4" ComparisonValue="0.5"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_4" ComparisonValue="0.5"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR5_4"></EndPointRef>
 			</Branch>
@@ -1439,9 +1463,10 @@
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_5" ComparisonValue="3"/>
-					<AndCondition>        				
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_5"></SectionIfNot>
 						<LessThanCondition DataElementId="diameter_5" ComparisonValue="1.5"></LessThanCondition>
-					</AndCondition>	
+					</OrCondition>
 				</AndCondition>			  
 				<EndPointRef EndPointId="ReporttextTR3_5"></EndPointRef>
 			</Branch>
@@ -1483,7 +1508,10 @@
 						<EqualCondition DataElementId="addtr1_5" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_5" ComparisonValue="6"/>	
 					</OrCondition>
-					<LessThanCondition DataElementId="diameter_5" ComparisonValue="1"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_5"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_5" ComparisonValue="1"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR4_5"></EndPointRef>
 			</Branch>
@@ -1513,7 +1541,10 @@
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_5" ComparisonValue="7"/>
-					<LessThanCondition DataElementId="diameter_5" ComparisonValue="0.5"></LessThanCondition>
+					<OrCondition>  
+						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
+						<LessThanCondition DataElementId="diameter_5" ComparisonValue="0.5"></LessThanCondition>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ReporttextTR5_5"></EndPointRef>
 			</Branch>

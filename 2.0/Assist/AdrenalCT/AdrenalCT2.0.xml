@@ -73,8 +73,8 @@
 			<Maximum>10.0</Maximum>
 		</NumericDataElement>
 
-		<ChoiceDataElement Id="washout" DisplaySequence="3" IsRequired="true">
-			<Label>washout</Label>
+		<ChoiceDataElement Id="washout" DisplaySequence="3" IsRequired="false">
+			<Label>Washout</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>none</Value>
@@ -92,10 +92,10 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="4" IsRequired="true">
+		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="4" IsRequired="false">
 			<Label>Diagnostic Benign Features</Label>
 			<ChoiceInfo>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>none</Value>
 					<Label>None</Label>
 				</Choice>
