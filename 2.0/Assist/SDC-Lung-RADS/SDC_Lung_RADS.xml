@@ -749,41 +749,45 @@
 
 			<Branch>
 				<SectionIf DataElementId="image" />
-				<ReportText Type="PlainText">Image :</ReportText>
+				<ReportText Type="PlainText">Image: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="image"/>
 				<ReportText Type="Newline" />
 			</Branch>
 
 			<Branch>
-				<SectionIf DataElementId="image" />
-				<ReportText Type="PlainText">lobe :</ReportText>
+				<SectionIf DataElementId="lobe" />
+				<ReportText Type="PlainText">Lobe: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="lobe"/>
 				<ReportText Type="Newline" />
 			</Branch>
 
 			<Branch>
 				<SectionIf DataElementId="location" />
-				<ReportText Type="PlainText">Location :</ReportText>
+				<ReportText Type="PlainText">Location: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="location"/>
 				<ReportText Type="Newline" />
 			</Branch>
 
 			<Branch>
 				<SectionIf DataElementId="attenuation" />
-				<ReportText Type="PlainText">Attenuation :</ReportText>
+				<ReportText Type="PlainText">Attenuation: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="attenuation"/>
 				<ReportText Type="Newline" />
 			</Branch>
 
 			<Branch>
-				<EqualCondition DataElementId="attenuation" ComparisonValue="solid" />
-				<ReportText Type="PlainText">Solid :</ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="solid" />
+					<SectionIf DataElementId="solidmeandia" />
+					<SectionIf DataElementId="solidlength" />
+					<SectionIf DataElementId="solidwidth" />
+				</AndCondition>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Mean diameter:</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="solidmeandia"/>
-				<ReportText Type="PlainText"> mm </ReportText>
-
+				<ReportText Type="PlainText"> mm, length: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="solidlength"/>
-				<ReportText Type="PlainText"> mm </ReportText>
-
+				<ReportText Type="PlainText"> mm, width: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="solidwidth"/>
 				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline" />
@@ -791,24 +795,39 @@
 
 
 			<Branch>
-				<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid" />
-				<ReportText Type="PlainText">Part-Solid- Overall Size  : </ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid" />
+					<SectionIf DataElementId="oversizemeandia" />
+					<SectionIf DataElementId="oversizelength" />
+					<SectionIf DataElementId="oversizewidth" />
+				</AndCondition>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Overall Size: mean diameter: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="oversizemeandia"/>
-				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="PlainText"> mm, length: </ReportText>
 
 				<ReportText Type="InsertDataElementValue" Value="oversizelength"/>
-				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="PlainText"> mm, width: </ReportText>
 
 				<ReportText Type="InsertDataElementValue" Value="oversizewidth"/>
 				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline" />
-
-				<ReportText Type="PlainText">Part-Solid- Size of Solid component  :</ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="part-solid" />
+					<SectionIf DataElementId="sizeofsolid" />
+					<SectionIf DataElementId="sizeoflength" />
+					<SectionIf DataElementId="sizeofwidth" />
+				</AndCondition>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Size of Solid component: mean diameter: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="sizeofsolid"/>
-				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="PlainText"> mm, length: </ReportText>
 
 				<ReportText Type="InsertDataElementValue" Value="sizeoflength"/>
-				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="PlainText"> mm, width:</ReportText>
 
 				<ReportText Type="InsertDataElementValue" Value="sizeofwidth"/>
 				<ReportText Type="PlainText"> mm </ReportText>
@@ -816,13 +835,19 @@
 			</Branch>
 
 			<Branch>
-				<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass" />
-				<ReportText Type="PlainText">Pure ground Glass  : </ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="attenuation" ComparisonValue="puregroundglass" />
+					<SectionIf DataElementId="puregroundglassmeandia" />
+					<SectionIf DataElementId="puregroundglasslength" />
+					<SectionIf DataElementId="puregroundglasswidth" />
+				</AndCondition>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Mean diameter: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="puregroundglassmeandia"/>
-				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="PlainText"> mm, length: </ReportText>
 
 				<ReportText Type="InsertDataElementValue" Value="puregroundglasslength"/>
-				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="PlainText"> mm, width: </ReportText>
 
 				<ReportText Type="InsertDataElementValue" Value="puregroundglasswidth"/>
 				<ReportText Type="PlainText"> mm </ReportText>
@@ -844,21 +869,30 @@
 			</Branch>		
 
 			<Branch>
-				<EqualCondition DataElementId="intervalincrease" ComparisonValue="solid" />
-				<ReportText Type="PlainText">Solid :</ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="intervalincrease" ComparisonValue="solid" />
+					<SectionIf DataElementId="intervalincreasesolidnodule" />
+				</AndCondition>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Solid nodule: Previous mean diameter: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="intervalincreasesolidnodule"/>
 				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline" />
 			</Branch>			
 
 			<Branch>
-				<EqualCondition DataElementId="intervalincrease" ComparisonValue="part-solid" />
-				<ReportText Type="PlainText">Part-Solid- Overall Size  : </ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="intervalincrease" ComparisonValue="part-solid" />
+					<SectionIf DataElementId="partsolidnodulesize" />
+					<SectionIf DataElementId="partsolidnodulesolid" />
+				</AndCondition>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Overall size: Previous mean diameter: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsolidnodulesize"/>
 				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline" />
-
-				<ReportText Type="PlainText">Part-Solid- Size of Solid component  :  </ReportText>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Solid component: Previous mean diameter:  </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsolidnodulesolid"/>
 				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline" />
@@ -866,8 +900,12 @@
 
 
 			<Branch>
-				<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass" />
-				<ReportText Type="PlainText">Pure ground Glass  :  </ReportText>
+				<AndCondition>
+					<EqualCondition DataElementId="intervalincrease" ComparisonValue="puregroundglass" />
+					<SectionIf DataElementId="puregroundglass" />
+				</AndCondition>
+				<ReportText Type="Tab" />
+				<ReportText Type="PlainText">Pure ground glass nodule: Previous mean diameter: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="puregroundglass"/>
 				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline" />
@@ -875,7 +913,7 @@
 
 			<Branch>
 				<SectionIf DataElementId="intervaldecrease" />
-				<ReportText Type="PlainText">Interval decrease  :</ReportText>
+				<ReportText Type="PlainText">Interval decrease compared to:</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="intervaldecrease"/>
 				<ReportText Type="Newline" />
 			</Branch>
@@ -883,28 +921,28 @@
 
 			<Branch>
 				<SectionIf DataElementId="margins" />
-				<ReportText Type="PlainText">Margins :</ReportText>
+				<ReportText Type="PlainText">Margins:</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="margins"/>
 				<ReportText Type="Newline" />
 			</Branch>
 
 			<Branch>
 				<SectionIf DataElementId="calcification" />
-				<ReportText Type="PlainText">Calcification :</ReportText>
+				<ReportText Type="PlainText">Calcification:</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="calcification"/>
 				<ReportText Type="Newline" />
 			</Branch>
 
 			<Branch>
 				<SectionIf DataElementId="othercharacteristics" />
-				<ReportText Type="PlainText">Other Characteristics : </ReportText>
+				<ReportText Type="PlainText">Other Characteristics: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="othercharacteristics"/>
 				<ReportText Type="Newline" />
 			</Branch>	
 
 			<Branch>
 				<SectionIf DataElementId="other" />
-				<ReportText Type="PlainText">Other comments : </ReportText>
+				<ReportText Type="PlainText">Other comments: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="other"/>
 				<ReportText Type="Newline" />
 			</Branch>
