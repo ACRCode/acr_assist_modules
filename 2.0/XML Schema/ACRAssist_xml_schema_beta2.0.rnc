@@ -167,8 +167,8 @@ IntegerDataElement =
     
  DateTimeDataElement = 
      element DateTimeDataElement {
-          baseElementContents
-          #element ConditionalProperties { datetimeConditionalProperty+ }?
+          baseElementContents,
+          element ConditionalProperties { datetimeConditionalProperty+ }?
           #element Format { text }
       }
       
@@ -194,7 +194,8 @@ Choice =
         attribute IsDefault { "true" | "false" }?,
         element ReportText { text }?
     }
-ChoiceInfo = element ChoiceInfo { Choice, Choice+ }
+ChoiceInfo = element ChoiceInfo {
+Choice+ }
 imageMapStyleAttributes =
     attribute Outline { text }?,
     attribute HoverFill { text }?,
