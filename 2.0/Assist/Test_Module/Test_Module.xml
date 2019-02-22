@@ -105,19 +105,7 @@
     		</Diagrams>
     		
     		<VoiceCommand>Consultation Date</VoiceCommand>
-			<MinimumDate>2018-11-28</MinimumDate>
-			<MaximumDate>2018-12-20</MaximumDate>
-    		<ConditionalProperties>
-    			<ConditionalProperty>
-    				<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="treatedObservation"/>
-    				<IsRelevant>false</IsRelevant>    
-    				<IsRequired>false</IsRequired>
-    				<DisplaySequence>2</DisplaySequence>				
-    				<ChoiceNotRelevant ChoiceValue="hypoEnhancing"></ChoiceNotRelevant>
-    				<ChoiceNotRelevant ChoiceValue="isoEnhancing"></ChoiceNotRelevant>  
-					<MinimumDate>2018-11-25</MinimumDate>
-					<MaximumDate>2018-12-21</MaximumDate>					
-    			</ConditionalProperty>    			
+    		<ConditionalProperties>    			  			
     			<ConditionalProperty>
     				<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>
     				<IsRelevant>false</IsRelevant>    

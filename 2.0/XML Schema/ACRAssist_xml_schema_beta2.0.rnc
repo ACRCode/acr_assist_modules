@@ -79,7 +79,8 @@ baseElementContents =
          element Version { attribute Value{text}},
          element Code { attribute Value{xsd:token}},
          element Display { attribute Value{text}},
-         element UserSelected { attribute Value{"true" | "false"}} ?
+         element UserSelected { attribute Value{"true" | "false"}} ?,
+         element Url { attribute Value{text}} ?
     }+
     
     Source = element Source{
@@ -118,9 +119,7 @@ integerConditionalProperty = element ConditionalProperty {
 }
 
 datetimeConditionalProperty = element ConditionalProperty {
-      baseConditionalPropertyContents,
-      element MinimumDate {xsd:dateTime}?,
-      element MaximumDate {xsd:dateTime}?	  
+      baseConditionalPropertyContents  
 }
 
 durationConditionalProperty = element ConditionalProperty {
@@ -181,8 +180,8 @@ IntegerDataElement =
 			element MinimumHours {xsd:integer}?,
 			element MaximumHours {xsd:integer}?,
 			element MinimumMinutes {xsd:integer}?,
-			element MaxmimumMinutes {xsd:integer}?
-            #element ConditionalProperties { durationConditionalProperty+ }?
+			element MaxmimumMinutes {xsd:integer}?,
+            element ConditionalProperties { durationConditionalProperty+ }?
         }
     
 Choice =
