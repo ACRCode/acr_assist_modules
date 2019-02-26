@@ -34,9 +34,20 @@
 
 	</Metadata>
 	<DataElements>
+		
+		<IntegerDataElement Id="seriesnumber" IsRequired="true" DisplaySequence="1">
+			<Label>Series</Label>
+			<Minimum>1</Minimum>
+		</IntegerDataElement>
 
-		<ChoiceDataElement Id="side" DisplaySequence="1" IsRequired="false">
+		<IntegerDataElement Id="imagenumber" IsRequired="true" DisplaySequence="2">
+			<Label>Image</Label>
+			<Minimum>1</Minimum>
+		</IntegerDataElement>
+		
+		<ChoiceDataElement Id="side" DisplaySequence="3" IsRequired="true">
 			<Label>Side</Label>
+			<Hint></Hint>
 			<CodableConcept Name="side">
             <Coding>
             <System Value="RadElement"></System>
@@ -59,8 +70,9 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<NumericDataElement Id="adrenalmass" DisplaySequence="2" IsRequired="true">
+		<NumericDataElement Id="adrenalmass" DisplaySequence="4" IsRequired="true">
 			<Label>Size(cm)</Label>
+			<Hint>Enter the nodule size in cm</Hint>
 			<CodableConcept Name="adrenalmass">
             <Coding>
             <System Value="RadElement"></System>
@@ -75,27 +87,29 @@
 			<Maximum>10.0</Maximum>
 		</NumericDataElement>
 
-		<ChoiceDataElement Id="washout" DisplaySequence="3" IsRequired="false">
+		<ChoiceDataElement Id="washout" DisplaySequence="5" IsRequired="false">
 			<Label>Washout</Label>
+			<Hint></Hint>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>none</Value>
 					<Label>None</Label>
 				</Choice>				
 				<Choice>
-				  <Value>greaterthan60</Value>
-				  <Label>APW/RPW ≥60/40%</Label>
+					<Value>greaterthan60</Value>
+					<Label>APW/RPW ≥60/40%</Label>
 				</Choice>
-				
+
 				<Choice>
-				  <Value>lessthan60</Value>
-				  <Label>APW/RPW &lt;60/40%</Label>
+					<Value>lessthan60</Value>
+					<Label>APW/RPW &lt;60/40%</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		
-		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="4" IsRequired="false">
+
+		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="6" IsRequired="false">
 			<Label>Diagnostic Benign Features</Label>
+			<Hint></Hint>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>none</Value>
@@ -106,22 +120,22 @@
 					<Label>Myelolipoma</Label>
 				</Choice>
 				<Choice>
-				  <Value>noenhancement</Value>
-				  <Label>No enhancement</Label>
+					<Value>noenhancement</Value>
+					<Label>No enhancement</Label>
 				</Choice>
-			   <Choice>
-				  <Value>benigncalcification</Value>
-				  <Label>Benign Calcification</Label>
-				</Choice>
-				
 				<Choice>
-				  <Value>lessthan10HU</Value>
-				  <Label>≤10 HU</Label>
+					<Value>benigncalcification</Value>
+					<Label>Benign Calcification</Label>
 				</Choice>
-				
+
 				<Choice>
-				  <Value>signalonCSMR</Value>
-				  <Label>Decreased signal on CS-MR</Label>
+					<Value>lessthan10HU</Value>
+					<Label>≤10 HU</Label>
+				</Choice>
+
+				<Choice>
+					<Value>signalonCSMR</Value>
+					<Label>Decreased signal on CS-MR</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -132,12 +146,13 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="imgenlarge" DisplaySequence="5" IsRequired="false">
+		<ChoiceDataElement Id="imgenlarge" DisplaySequence="7" IsRequired="false">
 			<Label>Stability</Label>
+			<Hint></Hint>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>nopriorimaging</Value>
-					<Label>No Prior Imaging</Label>
+					<Label>Not Relevant prior imaging</Label>
 				</Choice>
 				<Choice>
 					<Value>stablemorethan1year</Value>
@@ -145,7 +160,7 @@
 				</Choice>
 				<Choice>
 					<Value>Neworenlarging</Value>
-					<Label>New or enlarging</Label>
+					<Label>New or Enlarging</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -164,8 +179,9 @@
 		</ChoiceDataElement>
 
 
-		<ChoiceDataElement Id="cancerhx" DisplaySequence="6" IsRequired="false">
+		<ChoiceDataElement Id="cancerhx" DisplaySequence="8" IsRequired="false">
 			<Label>Cancer Hx</Label>
+			<Hint></Hint>
 			<CodableConcept Name="cancerhx">
             <Coding>
             <System Value="RadElement"></System>
@@ -210,7 +226,7 @@
 
 		<DecisionPoint Id="AdernalMassDetected">
 			<Label>Incidental, Asymptomatic Adrenal Mass Detected on any CT or MR exam </Label>
-			
+
 			<Branch>
 				<Label>washout</Label>
 				<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
@@ -221,7 +237,7 @@
 						<EqualCondition DataElementId="washout" ComparisonValue="greaterthan60"/>
 						<EndPointRef EndPointId="benignadenoma" ></EndPointRef>
 					</Branch>
-					
+
 					<Branch>
 						<Label>lessthan60</Label>
 						<EqualCondition DataElementId="washout" ComparisonValue="lessthan60"/>
@@ -230,7 +246,7 @@
 				</DecisionPoint>
 
 			</Branch>
-			
+
 			<Branch>
 				<Label>Diagnostic Benign Imaging Features</Label>
 				<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
@@ -366,7 +382,7 @@
 											</Branch>
 										</DecisionPoint>
 									</Branch>
-									
+
 									<Branch>
 										<Label>Yes </Label>
 										<EqualCondition DataElementId="cancerhx" ComparisonValue="yes"/>
@@ -382,8 +398,8 @@
 											</Branch>
 										</DecisionPoint>
 									</Branch>
-									
-									
+
+
 								</DecisionPoint>
 							</Branch>
 						</DecisionPoint>
