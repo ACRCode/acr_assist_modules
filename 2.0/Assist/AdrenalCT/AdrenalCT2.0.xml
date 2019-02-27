@@ -35,17 +35,9 @@
 	</Metadata>
 	<DataElements>
 		
-		<IntegerDataElement Id="seriesnumber" IsRequired="true" DisplaySequence="1">
-			<Label>Series</Label>
-			<Minimum>1</Minimum>
-		</IntegerDataElement>
-
-		<IntegerDataElement Id="imagenumber" IsRequired="true" DisplaySequence="2">
-			<Label>Image</Label>
-			<Minimum>1</Minimum>
-		</IntegerDataElement>
 		
-		<ChoiceDataElement Id="side" DisplaySequence="3" IsRequired="true">
+		
+		<ChoiceDataElement Id="side" DisplaySequence="1" IsRequired="true">
 			<Label>Side</Label>
 			<Hint></Hint>
 			<CodableConcept Name="side">
@@ -70,7 +62,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<NumericDataElement Id="adrenalmass" DisplaySequence="4" IsRequired="true">
+		<NumericDataElement Id="adrenalmass" DisplaySequence="2" IsRequired="true">
 			<Label>Size(cm)</Label>
 			<Hint>Enter the nodule size in cm</Hint>
 			<CodableConcept Name="adrenalmass">
@@ -87,27 +79,7 @@
 			<Maximum>10.0</Maximum>
 		</NumericDataElement>
 
-		<ChoiceDataElement Id="washout" DisplaySequence="5" IsRequired="false">
-			<Label>Washout</Label>
-			<Hint></Hint>
-			<ChoiceInfo>
-				<Choice IsDefault="true">
-					<Value>none</Value>
-					<Label>None</Label>
-				</Choice>				
-				<Choice>
-					<Value>greaterthan60</Value>
-					<Label>APW/RPW ≥60/40%</Label>
-				</Choice>
-
-				<Choice>
-					<Value>lessthan60</Value>
-					<Label>APW/RPW &lt;60/40%</Label>
-				</Choice>
-			</ChoiceInfo>
-		</ChoiceDataElement>
-
-		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="6" IsRequired="false">
+		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="3" IsRequired="true">
 			<Label>Diagnostic Benign Features</Label>
 			<Hint></Hint>
 			<ChoiceInfo>
@@ -138,15 +110,9 @@
 					<Label>Decreased signal on CS-MR</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="imgenlarge" DisplaySequence="7" IsRequired="false">
+		<ChoiceDataElement Id="imgenlarge" DisplaySequence="4" IsRequired="false">
 			<Label>Stability</Label>
 			<Hint></Hint>
 			<ChoiceInfo>
@@ -165,10 +131,7 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<OrCondition>
-						<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
-						<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
-					</OrCondition>
+					<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -179,7 +142,7 @@
 		</ChoiceDataElement>
 
 
-		<ChoiceDataElement Id="cancerhx" DisplaySequence="8" IsRequired="false">
+		<ChoiceDataElement Id="cancerhx" DisplaySequence="5" IsRequired="false">
 			<Label>Cancer Hx</Label>
 			<Hint></Hint>
 			<CodableConcept Name="cancerhx">
@@ -209,10 +172,7 @@
 
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<OrCondition>
-						<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
-						<NotEqualCondition DataElementId="washout" ComparisonValue="none"/>
-					</OrCondition>
+					<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -221,6 +181,44 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="washout" DisplaySequence="6" IsRequired="false">
+			<Label>Washout</Label>
+			<Hint></Hint>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>none</Value>
+					<Label>None</Label>
+				</Choice>				
+				<Choice>
+					<Value>greaterthan60</Value>
+					<Label>APW/RPW ≥60/40%</Label>
+				</Choice>
+
+				<Choice>
+					<Value>lessthan60</Value>
+					<Label>APW/RPW &lt;60/40%</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<NotEqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<IntegerDataElement Id="seriesnumber" IsRequired="false" DisplaySequence="7">
+			<Label>Series</Label>
+			<Minimum>1</Minimum>
+			<Maximum>10</Maximum>
+		</IntegerDataElement>
+
+		<IntegerDataElement Id="imagenumber" IsRequired="false" DisplaySequence="8">
+			<Label>Image</Label>
+			<Minimum>1</Minimum>
+			<Maximum>10</Maximum>
+		</IntegerDataElement>
 	</DataElements>
 	<Rules>
 
@@ -282,9 +280,12 @@
 			</Branch>
 			<Branch>
 				<Label>Indeterminate Imaging features</Label>
-
-				<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
-
+				
+				<AndCondition>
+					<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
+					<EqualCondition DataElementId="washout" ComparisonValue="none"/>
+				</AndCondition>
+				
 				<DecisionPoint Id="IndeterminateImagingDP">
 					<Label>Adrenal Mass</Label>
 					<Branch>
