@@ -19,21 +19,25 @@
 			</References>
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Id>KeyDiagram</Id>
 					<Location>KeyDiagram.jpg</Location>
 					<Label>Hello Assist</Label>
 				</Diagram>
 				
 				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Id>KeyDiagramBranch_1</Id>
 					<Location>KeyDiagramBranch_1.jpg</Location>
 					<Label>Hello Assist Branch 1</Label>
 				</Diagram>
 				
 				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Id>KeyDiagramBranch_2</Id>
 					<Location>KeyDiagramBranch_2.jpg</Location>
 					<Label>Hello Assist Branch 2</Label>
 				</Diagram>
 				
 				<Diagram DisplaySequence="4" IsKeyDiagram="true">
+					<Id>KeyDiagramBranch_3</Id>
 					<Location>KeyDiagramBranch_3.jpg</Location>
 					<Label>Hello Assist Branch 3</Label>
 				</Diagram>
@@ -74,10 +78,8 @@
 					<Value>4</Value>
 					<Label>4-Lower right quadrant</Label>
 				</Choice>
-
 			</ChoiceInfo>			
 		</ChoiceDataElement>
-
 
 		<ChoiceDataElement Id="Size" IsRequired="true" DisplaySequence="3">
 			<Label>Size</Label>
@@ -90,8 +92,13 @@
 					<Value>2</Value>
 					<Label> &gt;=4mm</Label>
 				</Choice>
-
-			</ChoiceInfo>			
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="Size" ComparisonValue="1"/>
+					<ShowKeyDiagram>KeyDiagramBranch_1</ShowKeyDiagram>					
+				</ConditionalProperty>					
+			</ConditionalProperties>			
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Enhancement" IsRequired="true" DisplaySequence="4">
@@ -104,25 +111,34 @@
 				<Choice>
 					<Value>N</Value>
 					<Label>No</Label>
-				</Choice>
-
+				</Choice>				
 			</ChoiceInfo>
-
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<EqualCondition ComparisonValue="1" DataElementId="Size"/>
 					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="Size" ComparisonValue="2"/>
+						<EqualCondition DataElementId="Enhancement" ComparisonValue="Y"></EqualCondition>
+					</AndCondition>
+					<ShowKeyDiagram>KeyDiagramBranch_2</ShowKeyDiagram>				
 				</ConditionalProperty>
-
-			</ConditionalProperties>			
-
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="Size" ComparisonValue="2"/>
+						<EqualCondition DataElementId="Enhancement" ComparisonValue="N"></EqualCondition>
+					</AndCondition>
+					<ShowKeyDiagram>KeyDiagramBranch_3</ShowKeyDiagram>				
+				</ConditionalProperty>
+			</ConditionalProperties>
 		</ChoiceDataElement>
-
 	</DataElements>	
 
 
 	<Rules>
-		<DecisionPoint Id="Hello Assist">
+		<DecisionPoint Id="HelloAssist">
 			<Label>Hello Assist</Label>
 			<Branch>
 				<Label>No follow-up required</Label>
