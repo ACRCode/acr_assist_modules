@@ -99,7 +99,8 @@ baseConditionalPropertyContents =
       ConditionType,
       element IsRelevant {"true" | "false" }?,
       element IsRequired {"true" | "false" }?,
-      element DisplaySequence {xsd:integer}?
+      element DisplaySequence {xsd:integer}?,
+      element ShowKeyDiagram { text }?
 
 choiceConditionalProperty = element ConditionalProperty { 
         baseConditionalPropertyContents,
