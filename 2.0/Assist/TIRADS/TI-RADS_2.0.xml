@@ -49,8 +49,8 @@
 
 		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="1" Unit="cm">		
 			<Label>Diameter</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
+			<Minimum>0.1</Minimum>
+			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -209,8 +209,8 @@
 
 		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="6" Unit="cm">		
 			<Label>Diameter</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
+			<Minimum>0.1</Minimum>
+			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -369,8 +369,8 @@
 		<!-- Nodule 3 -->
 		<NumericDataElement Id="diameter_3" DisplaySequence="11" Unit="cm">		
 			<Label>Diameter</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
+			<Minimum>0.1</Minimum>
+			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -540,8 +540,8 @@
 		<!-- Nodule 4 -->
 		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="16" Unit="cm">		
 			<Label>Diameter</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
+			<Minimum>0.1</Minimum>
+			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -712,163 +712,6 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-
-		<!-- Nodule 5 -->
-		<NumericDataElement Id="diameter_5" IsRequired="true" DisplaySequence="21" Unit="cm">		
-			<Label>Diameter</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>21</DisplaySequence>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-			</ConditionalProperties>			
-		</NumericDataElement>	
-
-		<ChoiceDataElement Id="composition_5" IsRequired="true" DisplaySequence="22">
-			<Label>Composition</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
-				</Choice>
-				<Choice>
-					<Value>0</Value>
-					<Label>Spongiform</Label>
-				</Choice>
-				<Choice>
-					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>	
-		</ChoiceDataElement>
-
-		<ChoiceDataElement 	Id="echogenicity_5" IsRequired="true" DisplaySequence="23">
-			<Label>Echogenicity</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Hypoechoic</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="composition_5" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>		
-			</ConditionalProperties>
-		</ChoiceDataElement>
-
-		<MultiChoiceDataElement Id="other_5" DisplaySequence="23">
-			<Label>Other features</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
-				</Choice>
-				<Choice>
-					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="composition_5" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</MultiChoiceDataElement>
-
-		<ComputedDataElement Id="addtr1_5">		
-			<DecisionPoint>
-				<Branch>
-					<EqualCondition DataElementId="composition_5" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_5}</ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_5" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_5" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_5"></SectionIf>
-					</AndCondition>
-					<ArithmeticExpression>{composition_5} + {echogenicity_5} + {other_5} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_5" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_5" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_5"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_5} + {echogenicity_5} </ArithmeticExpression>
-				</Branch>
-			</DecisionPoint>
-		</ComputedDataElement>
-
 	</DataElements>	
 
 	<Rules>	
@@ -1423,144 +1266,6 @@
 			</Branch>
 		</DecisionPoint> 
 
-		<!-- Nodule 5 -->
-		<DecisionPoint Id="decisionPointAddtr1_5">
-			<Label>0points</Label>
-			<Branch>
-				<Label>0 points TR1</Label>
-				<EqualCondition DataElementId="addtr1_5" ComparisonValue="0"/>
-				<EndPointRef EndPointId="ReporttextTR1_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>2 points TR2</Label>
-				<EqualCondition DataElementId="addtr1_5" ComparisonValue="2"/>
-				<EndPointRef EndPointId="ReporttextTR2_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>3 points TR3 FNA</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="addtr1_5" ComparisonValue="3"/>
-					<AndCondition>
-						<GreaterThanOrEqualsCondition DataElementId="diameter_5" ComparisonValue="2.5"/>
-					</AndCondition>	
-				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>3 points TR3 Follow</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="addtr1_5" ComparisonValue="3"/>
-					<AndCondition>
-						<GreaterThanOrEqualsCondition DataElementId="diameter_5" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
-						<LessThanCondition DataElementId="diameter_5" ComparisonValue="2.5"></LessThanCondition>
-					</AndCondition>	
-				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>3 points TR3 Mildly Suspicious</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="addtr1_5" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_5"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_5" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>
-				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>4 points TR4 FNA</Label>
-				<AndCondition>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="4"/>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="5"/>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="6"/>	
-					</OrCondition>
-					<GreaterThanOrEqualsCondition DataElementId="diameter_5" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
-				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>4 points TR4 Follow</Label>
-				<AndCondition>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="4"/>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="5"/>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="6"/>	
-					</OrCondition>
-					<AndCondition>
-						<GreaterThanOrEqualsCondition DataElementId="diameter_5" ComparisonValue="1"></GreaterThanOrEqualsCondition>
-						<LessThanCondition DataElementId="diameter_5" ComparisonValue="1.5"></LessThanCondition>
-					</AndCondition>
-				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>4 points TR4 Moderately Suspicious</Label>
-				<AndCondition>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="4"/>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="5"/>
-						<EqualCondition DataElementId="addtr1_5" ComparisonValue="6"/>	
-					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_5"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_5" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
-				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>7 points TR5 FNA</Label>
-				<AndCondition>
-					<GreaterThanOrEqualsCondition DataElementId="addtr1_5" ComparisonValue="7"/>
-					<GreaterThanOrEqualsCondition DataElementId="diameter_5" ComparisonValue="1"/>
-				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>7 points TR5 Follow</Label>
-				<AndCondition>
-					<GreaterThanOrEqualsCondition DataElementId="addtr1_5" ComparisonValue="7"/>
-					<AndCondition>
-						<GreaterThanOrEqualsCondition DataElementId="diameter_5" ComparisonValue="0.5"></GreaterThanOrEqualsCondition>
-						<LessThanCondition DataElementId="diameter_5" ComparisonValue="1"></LessThanCondition>
-					</AndCondition>
-				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>7 points TR5 Highly Suspicious</Label>
-				<AndCondition>
-					<GreaterThanOrEqualsCondition DataElementId="addtr1_5" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_5" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>
-				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_5"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>1 points</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="addtr1_5" ComparisonValue="1"/>
-					<GreaterThanOrEqualsCondition DataElementId="diameter_5" ComparisonValue="0.5"/>
-				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_5"></EndPointRef>
-			</Branch>
-		</DecisionPoint> 		
-
 	</Rules>	
 
 	<EndPoints>
@@ -1569,6 +1274,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR1</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -1586,6 +1294,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR2</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -1603,6 +1314,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1616,6 +1330,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -1631,6 +1348,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -1646,6 +1366,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1659,6 +1382,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -1674,6 +1400,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -1689,6 +1418,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1702,6 +1434,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -1717,6 +1452,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -1732,6 +1470,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1748,6 +1489,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR1</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -1765,6 +1509,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR2</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -1782,6 +1529,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1795,6 +1545,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -1810,6 +1563,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -1825,6 +1581,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1838,6 +1597,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -1853,6 +1615,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -1868,6 +1633,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1881,6 +1649,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -1896,6 +1667,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -1911,6 +1685,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1926,6 +1703,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR1</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -1943,6 +1723,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR2</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -1960,6 +1743,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -1973,6 +1759,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -1988,6 +1777,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -2003,6 +1795,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -2016,6 +1811,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -2031,6 +1829,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -2046,6 +1847,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -2059,6 +1863,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -2074,6 +1881,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -2089,6 +1899,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -2104,6 +1917,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR1</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -2121,6 +1937,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR2</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
@@ -2138,6 +1957,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -2151,6 +1973,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -2166,6 +1991,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR3</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -2181,6 +2009,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -2194,6 +2025,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -2209,6 +2043,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR4</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -2224,6 +2061,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
@@ -2237,6 +2077,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
@@ -2252,6 +2095,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">TR5</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
@@ -2267,184 +2113,9 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<!-- Nodule 5 -->
-
-		<EndPoint Id="ReporttextTR1_5">
-			<Label>Benign noFNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR1</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR2_5">
-			<Label>NotSuspicious noFNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR2</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3_5">
-			<Label>Mildly Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3FNA_5">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_5">
-			<Label>Mildly Suspicious Follow</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR4_5">
-			<Label>Moderately Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR4</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR4FNA_5">
-			<Label>Moderately Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR4</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR4Follow_5">
-			<Label>Moderately Suspicious Follow</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR4</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR5_5">
-			<Label>Highly Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR5</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR5FNA_5">
-			<Label>Highly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR5</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR5Follow_5">
-			<Label>Highly Suspicious Follow</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">TR5</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextIncomplete_5">
-			<Label>Evaluation Incomplete</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 5 - Findings">
-					<Branch>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="Newline"/>
