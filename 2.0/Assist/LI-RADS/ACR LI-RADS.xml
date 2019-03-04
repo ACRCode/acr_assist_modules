@@ -2883,8 +2883,7 @@
 					<NotEqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></NotEqualCondition>
 					<SectionIf DataElementId="ancillaryFavoringMalignancy"></SectionIf>
 				</AndCondition>
-				<ReportText Type="PlainText">LR category has been adjusted based on the selected Ancillary features favoring Malignancy </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringMalignancy"></ReportText>
+				<ReportText Type="PlainText">LR category has been adjusted based on the selected ancillary features favoring malignancy </ReportText>
 		</Branch>
 
 			<Branch>
@@ -2892,8 +2891,7 @@
 					<NotEqualCondition DataElementId="adjustcategorybasedonAncillary" ComparisonValue="no"></NotEqualCondition>
 					<SectionIf DataElementId="ancillaryFavoringBenignity"></SectionIf>
 				</AndCondition>
-				<ReportText Type="PlainText">LR category has been adjusted based on the selected Ancillary features favoring Benignity </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringBenignity"></ReportText>				
+				<ReportText Type="PlainText">LR category has been adjusted based on the selected ancillary features favoring benignity </ReportText>		
 		</Branch>
 		</TemplatePartial>
 
