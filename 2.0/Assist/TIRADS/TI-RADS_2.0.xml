@@ -24,7 +24,7 @@
 		<Info>
 			<Description>TI-RADS level determination</Description>
 			<References>
-				<Citation Url="http://radelement.org/set/RDES15">
+				<Citation Url="https://www.jacr.org/article/S1546-1440(17)30186-2/fulltext">
                 ACR Ti-RADS</Citation>
 			</References>
 			<Diagrams>
@@ -48,7 +48,8 @@
 		<!-- Nodule 1 dataelements -->
 
 		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="1" Unit="cm">		
-			<Label>Diameter</Label>
+			<Label>Diameter (cm)</Label>
+			<Hint>Enter maximum diameter in cm</Hint>
 			<Minimum>0.1</Minimum>
 			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
