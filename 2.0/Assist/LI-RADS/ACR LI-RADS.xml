@@ -124,7 +124,7 @@
 		</IntegerDataElement>
 		
 		<ChoiceDataElement Id="segmentlocation" IsRequired="true" DisplaySequence="5" AllowFreetext="true">
-			<Label>Segment#</Label>
+			<Label>Liver Segment#</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>I</Value>
@@ -317,8 +317,8 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 				
-		<NumericDataElement Id="pretreatmentsize" IsRequired="true" DisplaySequence="10">
-			<Label>What is the pretreatment size in mm?</Label>
+		<NumericDataElement Id="pretreatmentsize" IsRequired="true" DisplaySequence="10" Unit="mm">
+			<Label>Pre-treatment size</Label>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -583,7 +583,7 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="17">
-			<Label>Is there lesional enhancement?</Label>
+			<Label>Post-treatement lesion enhancement</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -724,7 +724,7 @@
 		</NumericDataElement>
 		
 		<ChoiceDataElement Id="irregularattheperiphery" IsRequired="true" DisplaySequence="20">
-			<Label>Is enhancement nodular OR mass-like OR thick irregular at the periphery?</Label>
+			<Label>Post-treatment enhancement pattern</Label>
 			<ChoiceInfo>				
 				<Choice>
 					<Value>yes</Value>
@@ -785,7 +785,7 @@
 		</ChoiceDataElement>
 		
 		<MultiChoiceDataElement Id="patternofenhancement" DisplaySequence="21">
-			<Label>Pattern of enhancement</Label>
+			<Label>Observation pattern of enhancement</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>aphe</Value>
