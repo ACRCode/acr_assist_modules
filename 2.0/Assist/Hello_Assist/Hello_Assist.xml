@@ -90,7 +90,7 @@
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label> &gt;=4mm</Label>
+					<Label> ≥ 4mm</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -145,7 +145,7 @@
 				<AndCondition>
 					<EqualCondition DataElementId="Size" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="NoF/U"></EndPointRef>
+				<EndPointRef EndPointId="NoFU"></EndPointRef>
 			</Branch>
 			<Branch>
 				<Label>Follow-up is recommended in 6 months</Label>
@@ -153,7 +153,7 @@
 					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
 					<EqualCondition DataElementId="Enhancement" ComparisonValue="N"/>
 				</AndCondition>
-				<EndPointRef EndPointId="6moF/U"></EndPointRef>
+				<EndPointRef EndPointId="moFU"></EndPointRef>
 			</Branch> 
 			<Branch>
 				<Label>Schedule an immediate follow-up</Label>
@@ -161,14 +161,14 @@
 					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
 					<EqualCondition DataElementId="Enhancement" ComparisonValue="Y"/>
 				</AndCondition>
-				<EndPointRef EndPointId="mustF/U"></EndPointRef>
+				<EndPointRef EndPointId="mustFU"></EndPointRef>
 			</Branch>
 
 		</DecisionPoint>
 	</Rules>
 
 	<EndPoints>
-		<EndPoint Id="NoF/U">
+		<EndPoint Id="NoFU">
 			<Label>No F/U</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -179,7 +179,7 @@
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="6moF/U">
+		<EndPoint Id="moFU">
 			<Label>F/U in 6mo</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -190,7 +190,7 @@
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="mustF/U">
+		<EndPoint Id="mustFU">
 			<Label>Immediate f/u</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -200,10 +200,11 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-
-
 	</EndPoints>
 
 </ReportingModule>
+
+
+
 
 
