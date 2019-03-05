@@ -2031,12 +2031,12 @@
 																<Label>washoutcapsulethreshold None</Label>
 																<Branch>
 																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																	<EndPointRef EndPointId="LR3"/>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																</Branch>
 																
 																<Branch>
 																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-																	<EndPointRef EndPointId="LR3"/>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																</Branch>
 																
 																<Branch>
@@ -2053,7 +2053,7 @@
 																<Label>washoutcapsulethreshold None</Label>
 																<Branch>
 																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																	<EndPointRef EndPointId="LR3"/>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																</Branch>
 																
 																<Branch>
@@ -2082,7 +2082,7 @@
 																<Label>washoutcapsulethreshold None</Label>
 																<Branch>
 																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																	<EndPointRef EndPointId="LR3"/>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																</Branch>
 																
 																<Branch>
@@ -2107,7 +2107,7 @@
 																<Label>washoutcapsulethreshold None</Label>
 																<Branch>
 																	<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="none"></EqualCondition>
-																	<EndPointRef EndPointId="LR3"/>
+																	<EndPointRef EndPointId="LRTIV_proabably_hcc"/>
 																</Branch>
 																
 																<Branch>
@@ -3959,6 +3959,7 @@
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="Space" /> 
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
 						<ReportText Type="PlainText"> mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
