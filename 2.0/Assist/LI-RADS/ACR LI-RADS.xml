@@ -2897,7 +2897,7 @@
 				<ReportText Type="InsertDataElementValue" Value="TreatmentMethod"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
-				<ReportText Type="PlainText">Location: Segment </ReportText>
+				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				<ReportText Type="PlainText"> (image # </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
@@ -3024,7 +3024,7 @@
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
-				<ReportText Type="PlainText">Location: Segment </ReportText>
+				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
@@ -3194,7 +3194,7 @@
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
-				<ReportText Type="PlainText">Location: Segment </ReportText>
+				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
@@ -3423,7 +3423,8 @@
 			<ReportSection SectionId="findings">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatreporttext"></ReportText>
-					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-NC</ReportText>
+					<ReportText Type="PlainText">LI-RADS v2018 Category: LR-NC. </ReportText>
+					<ReportText Type="PlainText">Cannot be categorized due to image omission/degradation</ReportText>
 <!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
