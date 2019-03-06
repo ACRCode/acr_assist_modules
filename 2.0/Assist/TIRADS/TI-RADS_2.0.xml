@@ -11,16 +11,6 @@
 		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
-		<CodableConcept Name="codableConcept_TIRADS">
-			<Coding>
-				<System Value="RadElement"></System>
-				<Version Value="1.0"></Version>
-				<Code Value="RDES15"></Code>
-				<Display Value="RDES15"></Display>
-				<Url Value="http://radelement.org/set/RDES15"></Url>
-				<UserSelected Value="false"></UserSelected>
-			</Coding>
-		</CodableConcept>
 		<Info>
 			<Description>TI-RADS level determination</Description>
 			<References>
@@ -47,8 +37,8 @@
 
 		<!-- Nodule 1 dataelements -->
 
-		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="1" Unit="cm">		
-			<Label>Diameter (cm)</Label>
+		<NumericDataElement Id="diameter_1" IsRequired="true" DisplaySequence="1" Unit="cm">		
+			<Label>Diameter</Label>
 			<Hint>Enter maximum diameter in cm</Hint>
 			<Minimum>0.1</Minimum>
 			<Maximum>100.0</Maximum>
@@ -66,132 +56,135 @@
 
 		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="2">
 			<Label>Composition</Label>
-			<CodableConcept Name="composition_1">
-            <Coding>
-            <System Value="RadElement"></System>
-            <Version Value="1.0"></Version>
-            <Code Value="RDE125"></Code>
-            <Display Value="RDE126"></Display>
-			<Url Value="http://radelement.org/element/RDE126"></Url>
-            <UserSelected Value="true"></UserSelected>
-            </Coding>
-         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>0-Cystic or almost completely cystic</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>0-Spongiform</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>1-Mixed cystic and solid</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>2-Solid or almost completely solid</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
 		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="3">
 			<Label>Echogenicity</Label>
-			<CodableConcept Name="echogenicity_1">
-            <Coding>
-            <System Value="RadElement"></System>
-            <Version Value="1.0"></Version>
-            <Code Value="RDE126"></Code>
-            <Display Value="RDE126"></Display>
-			<Url Value="http://radelement.org/element/RDE126"></Url>
-            <UserSelected Value="true"></UserSelected>
-            </Coding>
-         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>0-Anechoic</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Label>1-Hyperechoic or isoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Label>2-Hypoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
+					<Label>3-Very hypoechoic</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="0"/>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_1" DisplaySequence="4">
-			<Label>Other features</Label>
+		<ChoiceDataElement Id="shape_1" IsRequired="true" DisplaySequence="4">
+			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>0-Wider-than-tall</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
+					<Label>1-Hyperechoic or isoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
+					<Label>3-Taller-than-wide</Label>
 				</Choice>
+
+			</ChoiceInfo>
+		</ChoiceDataElement>		
+
+		<ChoiceDataElement Id="margin_1" IsRequired="true" DisplaySequence="5">
+			<Label>Margin</Label>
+			<ChoiceInfo>
 				<Choice>
-					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
+					<Value>0</Value>
+					<Label>0-Smooth</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Label>0-Ill-defined</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Lobulated or irregular</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Extra-thyroidal extension</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="0"/>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>
+		</ChoiceDataElement>		
+
+		<MultiChoiceDataElement Id="echogenicfoci_1" IsRequired="true" DisplaySequence="6">
+			<Label>Echogenic Foci</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-None or large comet-tail artifacts</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Macrocalcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Peripheral rim calcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Punctate echogenic focci</Label>
+				</Choice>
+			</ChoiceInfo>
 		</MultiChoiceDataElement>
+
+
 
 		<ComputedDataElement Id="addtr1_1">		
 			<DecisionPoint>
 				<Branch>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_1}</ArithmeticExpression>
-				</Branch>
-				<Branch>
 					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_1" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_1" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_1"></SectionIf>
+						<GreaterThanOrEqualsCondition DataElementId="composition_1" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="echogenicity_1" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="shape_1" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="margin_1" ComparisonValue="0"/>
+						<OrCondition>
+							<ContainsCondition DataElementId="echogenicfoci_1" ComparisonValue="0"/>
+							<ContainsCondition DataElementId="echogenicfoci_1" ComparisonValue="1"/>
+							<ContainsCondition DataElementId="echogenicfoci_1" ComparisonValue="2"/>						
+							<ContainsCondition DataElementId="echogenicfoci_1" ComparisonValue="3"/>
+						</OrCondition>
 					</AndCondition>
-					<ArithmeticExpression>{composition_1} + {echogenicity_1} + {other_1} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_1" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_1" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_1"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_1} + {echogenicity_1} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_1} + {echogenicity_1} + {shape_1} + {margin_1} + {echogenicfoci_1}</ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
-		</ComputedDataElement>
+		</ComputedDataElement>				
 
-		<ChoiceDataElement Id="nodulequestion_1" IsRequired="true" DisplaySequence="5">
+		<!-- Nodule 2 dataelements -->
+		<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="7">
 			<Label>Are there any other nodule(s) present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -205,149 +198,188 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-
-		<!-- Nodule 2 dataelements -->
-
-		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="6" Unit="cm">		
+		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="8" Unit="cm">
 			<Label>Diameter</Label>
+			<Hint>Enter maximum diameter in cm</Hint>
 			<Minimum>0.1</Minimum>
 			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="0"/>
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="2"/>
 					</OrCondition>
 					<IsRequired>false</IsRequired>
-					<DisplaySequence>6</DisplaySequence>
+					<DisplaySequence>8</DisplaySequence>
 				</ConditionalProperty>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
 			</ConditionalProperties>			
 		</NumericDataElement>	
 
-		<ChoiceDataElement Id="composition_2" IsRequired="true" DisplaySequence="7">
+
+
+		<ChoiceDataElement Id="composition_2" IsRequired="true" DisplaySequence="9">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>0-Cystic or almost completely cystic</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>0-Spongiform</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>1-Mixed cystic and solid</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>2-Solid or almost completely solid</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_2" IsRequired="true" DisplaySequence="8">
+		<ChoiceDataElement 	Id="echogenicity_2" IsRequired="true" DisplaySequence="10">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>0-Anechoic</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Label>1-Hyperechoic or isoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Label>2-Hypoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
+					<Label>3-Very hypoechoic</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="composition_2" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
-			</ConditionalProperties>
+			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_2" DisplaySequence="9">
-			<Label>Other features</Label>
+		<ChoiceDataElement Id="shape_2" IsRequired="true" DisplaySequence="11">
+			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>0-Wider-than-tall</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
+					<Label>1-Hyperechoic or isoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
-				</Choice>
+					<Label>3-Taller-than-wide</Label>
+				</Choice>			
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>		
+
+		<ChoiceDataElement Id="margin_2" IsRequired="true" DisplaySequence="12">
+			<Label>Margin</Label>
+			<ChoiceInfo>
 				<Choice>
-					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
+					<Value>0</Value>
+					<Label>0-Smooth</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Label>0-Ill-defined</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Lobulated or irregular</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Extra-thyroidal extension</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="composition_2" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>		
+
+		<MultiChoiceDataElement Id="echogenicfoci_2" IsRequired="true" DisplaySequence="13">
+			<Label>Echogenic Foci</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-None or large comet-tail artifacts</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Macrocalcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Peripheral rim calcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Punctate echogenic focci</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
 		</MultiChoiceDataElement>
+
 
 		<ComputedDataElement Id="addtr1_2">		
 			<DecisionPoint>
 				<Branch>
-					<EqualCondition DataElementId="composition_2" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_2}</ArithmeticExpression>
-				</Branch>
-				<Branch>
 					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_2" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_2" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_2"></SectionIf>
+						<GreaterThanOrEqualsCondition DataElementId="composition_2" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="echogenicity_2" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="shape_2" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="margin_2" ComparisonValue="0"/>
+						<OrCondition>
+							<ContainsCondition DataElementId="echogenicfoci_2" ComparisonValue="0"/>
+							<ContainsCondition DataElementId="echogenicfoci_2" ComparisonValue="1"/>
+							<ContainsCondition DataElementId="echogenicfoci_2" ComparisonValue="2"/>						
+							<ContainsCondition DataElementId="echogenicfoci_2" ComparisonValue="3"/>
+						</OrCondition>
 					</AndCondition>
-					<ArithmeticExpression>{composition_2} + {echogenicity_2} + {other_2} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_2" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_2" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_2"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_2} + {echogenicity_2} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_2} + {echogenicity_2} + {shape_2} + {margin_2} + {echogenicfoci_2}</ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
 
-		<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="10">
+		<!-- nodule 3 dataelements -->
+		<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="14">
 			<Label>Are there any other nodule(s) present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -361,161 +393,214 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>
+				</ConditionalProperty>
+			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<!-- Nodule 3 -->
-		<NumericDataElement Id="diameter_3" DisplaySequence="11" Unit="cm">		
+		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="15" Unit="cm">
 			<Label>Diameter</Label>
+			<Hint>Enter maximum diameter in cm</Hint>
 			<Minimum>0.1</Minimum>
 			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="0"/>
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="2"/>
 					</OrCondition>
 					<IsRequired>false</IsRequired>
-					<DisplaySequence>11</DisplaySequence>
+					<DisplaySequence>15</DisplaySequence>
 				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-			</ConditionalProperties>			
-		</NumericDataElement>	
+			</ConditionalProperties>	
+		</NumericDataElement>
 
-		<ChoiceDataElement Id="composition_3" IsRequired="true" DisplaySequence="12">
+
+
+		<ChoiceDataElement Id="composition_3" IsRequired="true" DisplaySequence="16">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>0-Cystic or almost completely cystic</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>0-Spongiform</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>1-Mixed cystic and solid</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>2-Solid or almost completely solid</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+
+		<ChoiceDataElement 	Id="echogenicity_3" IsRequired="true" DisplaySequence="17">
+			<Label>Echogenicity</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Anechoic</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Hyperechoic or isoechoic</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Hypoechoic</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Very hypoechoic</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_3" IsRequired="true" DisplaySequence="13">
-			<Label>Echogenicity</Label>
+		<ChoiceDataElement Id="shape_3" IsRequired="true" DisplaySequence="18">
+			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Value>0</Value>
+					<Label>0-Wider-than-tall</Label>	
 				</Choice>
 				<Choice>
-					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Value>1</Value>
+					<Label>1-Hyperechoic or isoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
-				</Choice>
+					<Label>3-Taller-than-wide</Label>
+				</Choice>			
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
-					<IsRelevant>false</IsRelevant>
+					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement>		
 
-		<MultiChoiceDataElement Id="other_3" DisplaySequence="14">
-			<Label>Other features</Label>
+		<ChoiceDataElement Id="margin_3" IsRequired="true" DisplaySequence="19">
+			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
+					<Value>0</Value>
+					<Label>0-Smooth</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Label>0-Ill-defined</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Lobulated or irregular</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Extra-thyroidal extension</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>		
+
+		<MultiChoiceDataElement Id="echogenicfoci_3" IsRequired="true" DisplaySequence="20">
+			<Label>Echogenic Foci</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-None or large comet-tail artifacts</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Macrocalcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Peripheral rim calcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Punctate echogenic focci</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
 		</MultiChoiceDataElement>
+
+
 
 		<ComputedDataElement Id="addtr1_3">		
 			<DecisionPoint>
 				<Branch>
-					<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_3}</ArithmeticExpression>
-				</Branch>
-				<Branch>
 					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_3" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_3"></SectionIf>
+						<GreaterThanOrEqualsCondition DataElementId="composition_3" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="echogenicity_3" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="shape_3" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="margin_3" ComparisonValue="0"/>
+						<OrCondition>
+							<ContainsCondition DataElementId="echogenicfoci_3" ComparisonValue="0"/>
+							<ContainsCondition DataElementId="echogenicfoci_3" ComparisonValue="1"/>
+							<ContainsCondition DataElementId="echogenicfoci_3" ComparisonValue="2"/>						
+							<ContainsCondition DataElementId="echogenicfoci_3" ComparisonValue="3"/>
+						</OrCondition>
 					</AndCondition>
-					<ArithmeticExpression>{composition_3} + {echogenicity_3} + {other_3} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_3" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_3"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_3} + {echogenicity_3} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_3} + {echogenicity_3} + {shape_3} + {margin_3} + {echogenicfoci_3}</ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
 
-		<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="15">
+		<!-- nodule 4 dataelements -->
+
+		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="21">
 			<Label>Are there any other nodule(s) present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -530,189 +615,220 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>
+				</ConditionalProperty>
+			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<!-- Nodule 4 -->
-		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="16" Unit="cm">		
+
+		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="22" Unit="cm">
 			<Label>Diameter</Label>
+			<Hint>Enter maximum diameter in cm</Hint>
 			<Minimum>0.1</Minimum>
 			<Maximum>100.0</Maximum>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="0"/>
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="2"/>
 					</OrCondition>
 					<IsRequired>false</IsRequired>
-					<DisplaySequence>16</DisplaySequence>
+					<DisplaySequence>22</DisplaySequence>
 				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-			</ConditionalProperties>			
+			</ConditionalProperties>	
 		</NumericDataElement>	
 
-		<ChoiceDataElement Id="composition_4" IsRequired="true" DisplaySequence="17">
+
+
+		<ChoiceDataElement Id="composition_4" IsRequired="true" DisplaySequence="23">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>0-Cystic or almost completely cystic</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>0-Spongiform</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>1-Mixed cystic and solid</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>2-Solid or almost completely solid</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_4" IsRequired="true" DisplaySequence="18">
+		<ChoiceDataElement 	Id="echogenicity_4" IsRequired="true" DisplaySequence="24">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>0-Anechoic</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Label>1-Hyperechoic or isoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Label>2-Hypoechoic</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
+					<Label>3-Very hypoechoic</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
-					<IsRelevant>false</IsRelevant>
+					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
-			</ConditionalProperties>
+			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_4" DisplaySequence="19">
-			<Label>Other features</Label>
+		<ChoiceDataElement Id="shape_4" IsRequired="true" DisplaySequence="25">
+			<Label>Shape</Label>
 			<ChoiceInfo>
-				<Choice>
-					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
-				</Choice>
-				<Choice>
-					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
-				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Label>0-Wider-than-tall</Label>	
 				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</MultiChoiceDataElement>
-
-		<ComputedDataElement Id="addtr1_4">		
-			<DecisionPoint>
-				<Branch>
-					<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_4}</ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_4"></SectionIf>
-					</AndCondition>
-					<ArithmeticExpression>{composition_4} + {echogenicity_4} + {other_4} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_4"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_4} + {echogenicity_4} </ArithmeticExpression>
-				</Branch>
-			</DecisionPoint>
-		</ComputedDataElement>
-
-		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="20">
-			<Label>Are there any other nodule(s) present?</Label>
-			<ChoiceInfo>
 				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>	
+					<Value>1</Value>
+					<Label>1-Hyperechoic or isoechoic</Label>
 				</Choice>
-				<Choice IsDefault="true">
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Taller-than-wide</Label>
+				</Choice>			
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement>		
+
+		<ChoiceDataElement Id="margin_4" IsRequired="true" DisplaySequence="26">
+			<Label>Margin</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Smooth</Label>	
+				</Choice>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-Ill-defined</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Lobulated or irregular</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Extra-thyroidal extension</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>		
+
+		<MultiChoiceDataElement Id="echogenicfoci_4" IsRequired="true" DisplaySequence="27">
+			<Label>Echogenic Foci</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>0-None or large comet-tail artifacts</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>1-Macrocalcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>2-Peripheral rim calcifications</Label>
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>3-Punctate echogenic focci</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</MultiChoiceDataElement>
+
+
+
+		<ComputedDataElement Id="addtr1_4">			
+			<DecisionPoint>
+				<Branch>
+					<AndCondition>
+						<GreaterThanOrEqualsCondition DataElementId="composition_4" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="shape_4" ComparisonValue="0"/>
+						<GreaterThanOrEqualsCondition DataElementId="margin_4" ComparisonValue="0"/>
+						<OrCondition>
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="0"/>
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="1"/>
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="2"/>						
+							<ContainsCondition DataElementId="echogenicfoci_4" ComparisonValue="3"/>
+						</OrCondition>
+					</AndCondition>
+					<ArithmeticExpression>{composition_4} + {echogenicity_4} + {shape_4} + {margin_4} + {echogenicfoci_4}</ArithmeticExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
 	</DataElements>	
 
 	<Rules>	
@@ -723,13 +839,11 @@
 				<EqualCondition DataElementId="addtr1_1" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_1"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_1" ComparisonValue="2"/>
 				<EndPointRef EndPointId="ReporttextTR2_1"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -738,7 +852,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -750,19 +864,18 @@
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_1" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>	
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -775,7 +888,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -791,7 +904,7 @@
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -802,12 +915,9 @@
 						<EqualCondition DataElementId="addtr1_1" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_1" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -816,7 +926,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_1" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -828,19 +938,16 @@
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_1" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_1" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_1" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -849,11 +956,10 @@
 					<EqualCondition DataElementId="addtr1_1" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_1"></EndPointRef>
 			</Branch>
 		</DecisionPoint> 	
 
-		<!-- Nodule 2 -->
 		<DecisionPoint Id="decisionPointAddtr1_2">
 			<Label>0points</Label>
 			<Branch>
@@ -861,13 +967,11 @@
 				<EqualCondition DataElementId="addtr1_2" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_2"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_2" ComparisonValue="2"/>
 				<EndPointRef EndPointId="ReporttextTR2_2"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -876,7 +980,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -888,19 +992,18 @@
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_2" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>	
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -913,7 +1016,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -929,7 +1032,7 @@
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -940,12 +1043,9 @@
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -954,7 +1054,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_2" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -966,19 +1066,16 @@
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_2" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_2" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>	
+					<LessThanCondition DataElementId="diameter_2" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -987,11 +1084,10 @@
 					<EqualCondition DataElementId="addtr1_2" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_2"></EndPointRef>
 			</Branch>
 		</DecisionPoint> 	
 
-		<!-- Nodule 3 -->
 		<DecisionPoint Id="decisionPointAddtr1_3">
 			<Label>0points</Label>
 			<Branch>
@@ -999,13 +1095,11 @@
 				<EqualCondition DataElementId="addtr1_3" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_3"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_3" ComparisonValue="2"/>
 				<EndPointRef EndPointId="ReporttextTR2_3"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -1014,7 +1108,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1026,19 +1120,18 @@
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_3" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>	
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1051,7 +1144,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1067,7 +1160,7 @@
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1078,12 +1171,9 @@
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1092,7 +1182,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_3" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1104,19 +1194,16 @@
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_3" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_3" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_3" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1125,11 +1212,10 @@
 					<EqualCondition DataElementId="addtr1_3" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_3"></EndPointRef>
 			</Branch>
 		</DecisionPoint> 	
 
-		<!-- Nodule 4 -->
 		<DecisionPoint Id="decisionPointAddtr1_4">
 			<Label>0points</Label>
 			<Branch>
@@ -1137,13 +1223,11 @@
 				<EqualCondition DataElementId="addtr1_4" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_4"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_4" ComparisonValue="2"/>
 				<EndPointRef EndPointId="ReporttextTR2_4"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -1152,7 +1236,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1164,19 +1248,18 @@
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_4" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1189,7 +1272,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1205,7 +1288,7 @@
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1216,12 +1299,9 @@
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1230,7 +1310,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_4" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1242,19 +1322,16 @@
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_4" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_4" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_4" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1263,9 +1340,9 @@
 					<EqualCondition DataElementId="addtr1_4" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_4"></EndPointRef>
 			</Branch>
-		</DecisionPoint> 
+		</DecisionPoint> 	
 
 	</Rules>	
 
@@ -1278,13 +1355,25 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+						<ReportText Type="PlainText">TR1: Benign</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR1_2">
+			<Label>Benign noFNA</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 2 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
+						<ReportText Type="PlainText">TR1: Benign</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">No FNA</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1298,53 +1387,31 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+						<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3_1">
-			<Label>Mildly Suspicious</Label>
+		<EndPoint Id="ReporttextTR2_2">
+			<Label>NotSuspicious noFNA</Label>
 			<ReportSections>
-				<ReportSection SectionId="Nodule 1 - Findings">
+				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+						<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">No FNA</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3FNA_1">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 1 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_1">
+		<EndPoint Id="ReporttextTR6_1">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
@@ -1352,33 +1419,45 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_1">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_1">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">FNA</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_1">
+		<EndPoint Id="ReporttextTR8_1">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 1 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR9_1">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
@@ -1386,17 +1465,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_1">
+		<EndPoint Id="ReporttextTR10_1">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
@@ -1404,33 +1481,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_1">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_1">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_1">
+		<EndPoint Id="ReporttextTR12_1">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
@@ -1438,17 +1511,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_1">
+		<EndPoint Id="ReporttextTR13_1">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
@@ -1456,17 +1527,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_1">
+		<EndPoint Id="ReporttextTR14_1">
+			<Label>Highly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 1 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_1">
 			<Label>Evaluation Incomplete</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
@@ -1475,15 +1558,12 @@
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-
-		<!-- Nodule 2 -->
+		<!-- nodule2 -->
 
 		<EndPoint Id="ReporttextTR1_2">
 			<Label>Benign noFNA</Label>
@@ -1493,13 +1573,9 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+						<ReportText Type="PlainText">TR1: Benign</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1513,53 +1589,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+						<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3_2">
-			<Label>Mildly Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 2 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3FNA_2">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 2 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_2">
+		<EndPoint Id="ReporttextTR6_2">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
@@ -1567,33 +1605,45 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_2">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_2">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">FNA</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_2">
+		<EndPoint Id="ReporttextTR8_2">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 2 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR9_2">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
@@ -1601,17 +1651,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_2">
+		<EndPoint Id="ReporttextTR10_2">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
@@ -1619,33 +1667,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_2">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_2">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_2">
+		<EndPoint Id="ReporttextTR12_2">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
@@ -1653,17 +1697,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_2">
+		<EndPoint Id="ReporttextTR13_2">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
@@ -1671,17 +1713,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_2">
+		<EndPoint Id="ReporttextTR14_2">
+			<Label>Highly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 2 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_2">
 			<Label>Evaluation Incomplete</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
@@ -1690,14 +1744,12 @@
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<!-- Nodule 3 -->
+		<!-- nodule 3 -->
 
 		<EndPoint Id="ReporttextTR1_3">
 			<Label>Benign noFNA</Label>
@@ -1707,13 +1759,9 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+						<ReportText Type="PlainText">TR1: Benign</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1727,53 +1775,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+						<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3_3">
-			<Label>Mildly Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 3 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3FNA_3">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 3 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_3">
+		<EndPoint Id="ReporttextTR6_3">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
@@ -1781,33 +1791,45 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_3">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_3">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">FNA</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_3">
+		<EndPoint Id="ReporttextTR8_3">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 3 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR9_3">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
@@ -1815,17 +1837,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_3">
+		<EndPoint Id="ReporttextTR10_3">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
@@ -1833,33 +1853,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_3">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_3">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_3">
+		<EndPoint Id="ReporttextTR12_3">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
@@ -1867,17 +1883,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_3">
+		<EndPoint Id="ReporttextTR13_3">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
@@ -1885,17 +1899,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_3">
+		<EndPoint Id="ReporttextTR14_3">
+			<Label>Highly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 3 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_3">
 			<Label>Evaluation Incomplete</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
@@ -1904,14 +1930,12 @@
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<!-- Nodule 4 -->
+		<!-- nodule 4 -->
 
 		<EndPoint Id="ReporttextTR1_4">
 			<Label>Benign noFNA</Label>
@@ -1921,13 +1945,9 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+						<ReportText Type="PlainText">TR1: Benign</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1941,53 +1961,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+						<ReportText Type="PlainText">TR2: Not Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3_4">
-			<Label>Mildly Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 4 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3FNA_4">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 4 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_4">
+		<EndPoint Id="ReporttextTR6_4">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
@@ -1995,33 +1977,45 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_4">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_4">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">FNA</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_4">
+		<EndPoint Id="ReporttextTR8_4">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 4 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR3: Mildly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR9_4">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
@@ -2029,17 +2023,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_4">
+		<EndPoint Id="ReporttextTR10_4">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
@@ -2047,33 +2039,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_4">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_4">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR4: Moderately Suspicious</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_4">
+		<EndPoint Id="ReporttextTR12_4">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
@@ -2081,17 +2069,15 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_4">
+		<EndPoint Id="ReporttextTR13_4">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
@@ -2099,17 +2085,29 @@
 						<ReportText Type="PlainText">Point total: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_4">
+		<EndPoint Id="ReporttextTR14_4">
+			<Label>Highly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 4 - Findings">
+					<Branch>
+						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">TR5: Highly Suspicious</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_4">
 			<Label>Evaluation Incomplete</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
@@ -2118,11 +2116,10 @@
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
 						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 	</EndPoints>
+
 </ReportingModule>
