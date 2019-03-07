@@ -11,6 +11,16 @@
 		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<CodableConcept Name="codableConcept_TIRADS">
+			<Coding>
+				<System Value="RadElement"></System>
+				<Version Value="1.0"></Version>
+				<Code Value="RDES15"></Code>
+				<Display Value="RDES15"></Display>
+				<Url Value="http://radelement.org/set/RDES15"></Url>
+				<UserSelected Value="false"></UserSelected>
+			</Coding>
+		</CodableConcept>
 		<Info>
 			<Description>TI-RADS level determination</Description>
 			<References>
@@ -56,6 +66,16 @@
 
 		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="2">
 			<Label>Composition</Label>
+			<CodableConcept Name="composition_1">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE125"></Code>
+            <Display Value="RDE125"></Display>
+			<Url Value="http://radelement.org/element/RDE125"></Url>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
@@ -78,6 +98,16 @@
 
 		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="3">
 			<Label>Echogenicity</Label>
+			<CodableConcept Name="echogenicity_1">
+            <Coding>
+            <System Value="RadElement"></System>
+            <Version Value="1.0"></Version>
+            <Code Value="RDE126"></Code>
+            <Display Value="RDE126"></Display>
+			<Url Value="http://radelement.org/element/RDE126"></Url>
+            <UserSelected Value="true"></UserSelected>
+            </Coding>
+         </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
