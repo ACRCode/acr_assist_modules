@@ -50,13 +50,13 @@
 		
 		
 		<IntegerDataElement Id="number1" IsRequired="false" DisplaySequence="1">
-		<Label>What is the nodule's number?</Label>
+		<Label>What is the nodule number?</Label>
 			<Minimum>1</Minimum>
 			<Maximum>4</Maximum>
         </IntegerDataElement>
 		
 		<ChoiceDataElement Id="lobe1" IsRequired="false" DisplaySequence="2">
-			<Label>which lobe is the nodule located?</Label>
+			<Label>Which lobe in the nodule is located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
@@ -90,8 +90,8 @@
 				</Choice>
 			
 				<Choice>
-					<Value>Right isthmus</Value>
-					<Label>Rightisthmus</Label>	
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
@@ -105,10 +105,9 @@
 		</ChoiceDataElement>
 			
 		<NumericDataElement Id="diameter_1" IsRequired="true" DisplaySequence="4" Unit="cm">		
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -136,23 +135,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Composition cannot be determined</Label>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -176,23 +175,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Anechoic</Label>	
+					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Echogenicity cannot be determined</Label>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -203,11 +202,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Wider-than-tall</Label>	
+					<Label>Wider-than-tall (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Taller-than-wide</Label>
+					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 
 			</ChoiceInfo>
@@ -218,46 +217,46 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Smooth</Label>	
+					<Label>Smooth (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Ill-defined</Label>
+					<Label>Ill-defined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Margin cannot be determined</Label>
+					<Label>Margin cannot be determined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Lobulated or irregular</Label>
+					<Label>Lobulated or irregular (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Extra-thyroidal extension</Label>
+					<Label>Extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>		
 
 		<MultiChoiceDataElement Id="echogenicfoci_1" IsRequired="true" DisplaySequence="9">
-			<Label>Echogenic Foci (rim)</Label>
+			<Label>Echogenic Foci </Label>
 			<Hint>Include all that apply.</Hint>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-None or large comet-tail artifacts</Label>	
+					<Label>None or large comet-tail artifacts (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Punctate echogenic foci</Label>
+					<Label>Punctate echogenic foci (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</MultiChoiceDataElement>
@@ -286,7 +285,7 @@
 
 		<!-- Nodule 2 dataelements -->
 		<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="10">
-			<Label>Are there any other nodule(s) present?</Label>
+			<Label>Are there any other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -300,7 +299,7 @@
 		</ChoiceDataElement>
 		
 		<IntegerDataElement Id="number2" IsRequired="true" DisplaySequence="11">
-		<Label>What is the nodule's number?</Label>
+		<Label>What is the nodule number?</Label>
 			<Minimum>1</Minimum>
 			<Maximum>4</Maximum>
 			<ConditionalProperties>
@@ -312,7 +311,7 @@
         </IntegerDataElement>
 		
 		<ChoiceDataElement Id="lobe2" IsRequired="true" DisplaySequence="12">
-			<Label>which lobe is the nodule located?</Label>
+			<Label>Which lobe in the nodule is located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
@@ -352,8 +351,8 @@
 				</Choice>
 			
 				<Choice>
-					<Value>Right isthmus</Value>
-					<Label>Rightisthmus</Label>	
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
@@ -373,10 +372,9 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="14" Unit="cm">
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
@@ -400,23 +398,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Composition cannot be determined</Label>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -433,23 +431,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Anechoic</Label>	
+					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Echogenicity cannot be determined</Label>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -466,12 +464,12 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Wider-than-tall</Label>	
+					<Label>Wider-than-tall (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Taller-than-wide</Label>
-				</Choice>			
+					<Label>Taller-than-wide (3 points)</Label>
+				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -486,23 +484,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Smooth</Label>	
+					<Label>Smooth (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Ill-defined</Label>
+					<Label>Ill-defined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Margin cannot be determined</Label>
+					<Label>Margin cannot be determined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Lobulated or irregular</Label>
+					<Label>Lobulated or irregular (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Extra-thyroidal extension</Label>
+					<Label>Extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -519,19 +517,19 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-None or large comet-tail artifacts</Label>	
+					<Label>None or large comet-tail artifacts (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Punctate echogenic foci</Label>
+					<Label>Punctate echogenic foci (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -565,7 +563,7 @@
 
 		<!-- nodule 3 dataelements -->
 		<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="20">
-			<Label>Are there any other nodule(s) present?</Label>
+			<Label>Are there any other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -586,7 +584,7 @@
 		
 		
 		<IntegerDataElement Id="number3" IsRequired="true" DisplaySequence="21">
-		<Label>What is the nodule's number?</Label>
+		<Label>What is the nodule number?</Label>
 			<Minimum>1</Minimum>
 			<Maximum>4</Maximum>
 			<ConditionalProperties>
@@ -601,7 +599,7 @@
         </IntegerDataElement>
 		
 		<ChoiceDataElement Id="lobe3" IsRequired="true" DisplaySequence="22">
-			<Label>which lobe is the nodule located?</Label>
+			<Label>Which lobe in the nodule is located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
@@ -644,8 +642,8 @@
 				</Choice>
 			
 				<Choice>
-					<Value>Right isthmus</Value>
-					<Label>Rightisthmus</Label>	
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
@@ -668,10 +666,9 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="24" Unit="cm">
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -698,23 +695,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Composition cannot be determined</Label>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -734,23 +731,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Anechoic</Label>	
+					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Echogenicity cannot be determined</Label>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -770,12 +767,12 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Wider-than-tall</Label>	
+					<Label>Wider-than-tall (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Taller-than-wide</Label>
-				</Choice>			
+					<Label>Taller-than-wide (3 points)</Label>
+				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -793,23 +790,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Smooth</Label>	
+					<Label>Smooth (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Ill-defined</Label>
+					<Label>Ill-defined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Margin cannot be determined</Label>
+					<Label>Margin cannot be determined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Lobulated or irregular</Label>
+					<Label>Lobulated or irregular (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Extra-thyroidal extension</Label>
+					<Label>Extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -829,19 +826,19 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-None or large comet-tail artifacts</Label>	
+					<Label>None or large comet-tail artifacts (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Punctate echogenic foci</Label>
+					<Label>Punctate echogenic foci (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -880,7 +877,7 @@
 		<!-- nodule 4 dataelements -->
 
 		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="30">
-			<Label>Are there any other nodule(s) present?</Label>
+			<Label>Are there any other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -903,7 +900,7 @@
 		</ChoiceDataElement>
 		
 		<IntegerDataElement Id="number4" IsRequired="true" DisplaySequence="31">
-		<Label>What is the nodule's number?</Label>
+		<Label>What is the nodule number?</Label>
 			<Minimum>1</Minimum>
 			<Maximum>4</Maximum>
 			<ConditionalProperties>
@@ -919,7 +916,7 @@
         </IntegerDataElement>
 		
 		<ChoiceDataElement Id="lobe4" IsRequired="true" DisplaySequence="32">
-			<Label>which lobe is the nodule located?</Label>
+			<Label>Which lobe in the nodule is located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
@@ -963,8 +960,8 @@
 				</Choice>
 			
 				<Choice>
-					<Value>Right isthmus</Value>
-					<Label>Rightisthmus</Label>	
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
@@ -989,10 +986,9 @@
 
 
 		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="34" Unit="cm">
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -1020,23 +1016,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Composition cannot be determined</Label>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -1057,23 +1053,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Anechoic</Label>	
+					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Echogenicity cannot be determined</Label>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -1094,12 +1090,13 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Wider-than-tall</Label>	
+					<Label>Wider-than-tall (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Taller-than-wide</Label>
-				</Choice>			
+					<Label>Taller-than-wide (3 points)</Label>
+				</Choice>
+
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -1118,23 +1115,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Smooth</Label>	
+					<Label>Smooth (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Ill-defined</Label>
+					<Label>Ill-defined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-Margin cannot be determined</Label>
+					<Label>Margin cannot be determined (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Lobulated or irregular</Label>
+					<Label>Lobulated or irregular (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Extra-thyroidal extension</Label>
+					<Label>Extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -1155,19 +1152,19 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>0-None or large comet-tail artifacts</Label>	
+					<Label>None or large comet-tail artifacts (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>1-Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>2-Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>3-Punctate echogenic foci</Label>
+					<Label>Punctate echogenic foci (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
