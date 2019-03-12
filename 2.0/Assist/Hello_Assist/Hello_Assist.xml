@@ -88,13 +88,7 @@
 					<Value>2</Value>
 					<Label> ≥ 4mm</Label>
 				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="Size" ComparisonValue="1"/>
-<!--					<ShowKeyDiagram>KeyDiagramBranch_1</ShowKeyDiagram>					-->
-				</ConditionalProperty>					
-			</ConditionalProperties>			
+			</ChoiceInfo>					
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Enhancement" IsRequired="true" DisplaySequence="4">
@@ -113,20 +107,6 @@
 				<ConditionalProperty>
 					<EqualCondition ComparisonValue="1" DataElementId="Size"/>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>				
-				<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="Size" ComparisonValue="2"/>
-						<EqualCondition DataElementId="Enhancement" ComparisonValue="Y"></EqualCondition>
-					</AndCondition>
-<!--					<ShowKeyDiagram>KeyDiagramBranch_2</ShowKeyDiagram>				-->
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="Size" ComparisonValue="2"/>
-						<EqualCondition DataElementId="Enhancement" ComparisonValue="N"></EqualCondition>
-					</AndCondition>
-<!--					<ShowKeyDiagram>KeyDiagramBranch_3</ShowKeyDiagram>				-->
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
@@ -141,7 +121,7 @@
 				<AndCondition>
 					<EqualCondition DataElementId="Size" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="NoFU" DiagramId="KeyDiagram_1"></EndPointRef>
+				<EndPointRef EndPointId="NoFU" DiagramId="KeyDiagramBranch_1"></EndPointRef>
 			</Branch>
 			<Branch>
 				<Label>Follow-up is recommended in 6 months</Label>
