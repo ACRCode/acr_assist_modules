@@ -322,6 +322,7 @@ DecisionPoint =
 EndPointRef =
     element EndPointRef {
         attribute EndPointId { xsd:IDREF },
+        attribute DiagramId { xsd:IDREF }?,
         attribute IsRepeatable { "true" | "false" }?,
         attribute RepeatGroup { text }?,
         attribute RepeatCount { text }?,

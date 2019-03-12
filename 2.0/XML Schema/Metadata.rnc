@@ -81,6 +81,7 @@ Metadata =
     Diagrams =
     element Diagrams {
         element Diagram {
+            attribute Id { xsd:ID }?,
             element Location { text },
             element Label { text },
             attribute DisplaySequence { xsd:integer }?,
