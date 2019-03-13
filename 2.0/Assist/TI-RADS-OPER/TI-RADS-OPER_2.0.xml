@@ -46,12 +46,65 @@
 	<DataElements>
 
 		<!-- Nodule 1 dataelements -->
+		<IntegerDataElement Id="nodulenumber_1" IsRequired="false" DisplaySequence="1">
+			<Label>What is the nodule number?</Label>
+			<Minimum>1</Minimum>
+			<Maximum>4</Maximum>
+		</IntegerDataElement>
 
-		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="1" Unit="cm">		
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+		<ChoiceDataElement Id="lobe_1" IsRequired="false" DisplaySequence="2">
+			<Label>Which lobe in the nodule is located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Rightlobe</Value>
+					<Label>Right lobe</Label>	
+				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Leftlobe</Value>
+					<Label>Left lobe</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="lobe_location_1" IsRequired="false" DisplaySequence="3">
+			<Label>Where in the lobe is the nodule located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Upper</Value>
+					<Label>Upper</Label>	
+				</Choice>
+				<Choice>
+					<Value>Mid</Value>
+					<Label>Mid</Label>
+				</Choice>
+				<Choice>
+					<Value>Lower</Value>
+					<Label>Lower</Label>
+				</Choice>
+
+				<Choice>
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
+				</Choice>
+				<Choice>
+					<Value>Leftisthmus</Value>
+					<Label>Left isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Midlineisthmus</Value>
+					<Label>Midline isthmus</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+
+		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="4" Unit="cm">		
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -64,7 +117,7 @@
 			</ConditionalProperties>			
 		</NumericDataElement>	
 
-		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="2">
+		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="5">
 			<Label>Composition</Label>
 			<CodableConcept Name="composition_1">
             <Coding>
@@ -96,7 +149,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="3">
+		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="6">
 			<Label>Echogenicity</Label>
 			<CodableConcept Name="echogenicity_1">
             <Coding>
@@ -130,7 +183,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_1" DisplaySequence="4">
+		<MultiChoiceDataElement Id="other_1" DisplaySequence="7">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -191,8 +244,8 @@
 			</DecisionPoint>
 		</ComputedDataElement>
 
-		<ChoiceDataElement Id="nodulequestion_1" IsRequired="true" DisplaySequence="5">
-			<Label>Are there any other nodule(s) present?</Label>
+		<ChoiceDataElement Id="nodulequestion_1" IsRequired="true" DisplaySequence="8">
+			<Label>Are there any other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -207,12 +260,84 @@
 
 
 		<!-- Nodule 2 dataelements -->
+		<IntegerDataElement Id="nodulenumber_2" IsRequired="false" DisplaySequence="9">
+			<Label>What is the nodule number?</Label>
+			<Minimum>1</Minimum>
+			<Maximum>4</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</IntegerDataElement>
 
-		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="6" Unit="cm">		
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+		<ChoiceDataElement Id="lobe_2" IsRequired="false" DisplaySequence="10">
+			<Label>Which lobe in the nodule is located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Rightlobe</Value>
+					<Label>Right lobe</Label>	
+				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Leftlobe</Value>
+					<Label>Left lobe</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="lobe_location_2" IsRequired="false" DisplaySequence="11">
+			<Label>Where in the lobe is the nodule located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Upper</Value>
+					<Label>Upper</Label>	
+				</Choice>
+				<Choice>
+					<Value>Mid</Value>
+					<Label>Mid</Label>
+				</Choice>
+				<Choice>
+					<Value>Lower</Value>
+					<Label>Lower</Label>
+				</Choice>
+
+				<Choice>
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
+				</Choice>
+				<Choice>
+					<Value>Leftisthmus</Value>
+					<Label>Left isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Midlineisthmus</Value>
+					<Label>Midline isthmus</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+		
+
+		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="12" Unit="cm">		
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -229,7 +354,7 @@
 			</ConditionalProperties>			
 		</NumericDataElement>	
 
-		<ChoiceDataElement Id="composition_2" IsRequired="true" DisplaySequence="7">
+		<ChoiceDataElement Id="composition_2" IsRequired="true" DisplaySequence="13">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -257,7 +382,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_2" IsRequired="true" DisplaySequence="8">
+		<ChoiceDataElement 	Id="echogenicity_2" IsRequired="true" DisplaySequence="14">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -284,7 +409,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_2" DisplaySequence="9">
+		<MultiChoiceDataElement Id="other_2" DisplaySequence="15">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -348,8 +473,8 @@
 			</DecisionPoint>
 		</ComputedDataElement>
 
-		<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="10">
-			<Label>Are there any other nodule(s) present?</Label>
+		<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="16">
+			<Label>Are there any other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -369,11 +494,93 @@
 		</ChoiceDataElement>
 
 		<!-- Nodule 3 -->
-		<NumericDataElement Id="diameter_3" DisplaySequence="11" Unit="cm">		
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+		<IntegerDataElement Id="nodulenumber_3" IsRequired="false" DisplaySequence="17">
+			<Label>What is the nodule number?</Label>
+			<Minimum>1</Minimum>
+			<Maximum>4</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+	
+		</IntegerDataElement>
+
+		<ChoiceDataElement Id="lobe_3" IsRequired="false" DisplaySequence="18">
+			<Label>Which lobe in the nodule is located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Rightlobe</Value>
+					<Label>Right lobe</Label>	
+				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Leftlobe</Value>
+					<Label>Left lobe</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="lobe_location_3" IsRequired="false" DisplaySequence="19">
+			<Label>Where in the lobe is the nodule located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Upper</Value>
+					<Label>Upper</Label>	
+				</Choice>
+				<Choice>
+					<Value>Mid</Value>
+					<Label>Mid</Label>
+				</Choice>
+				<Choice>
+					<Value>Lower</Value>
+					<Label>Lower</Label>
+				</Choice>
+
+				<Choice>
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
+				</Choice>
+				<Choice>
+					<Value>Leftisthmus</Value>
+					<Label>Left isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Midlineisthmus</Value>
+					<Label>Midline isthmus</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>	
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="diameter_3" DisplaySequence="20" Unit="cm">		
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -385,15 +592,15 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 			</ConditionalProperties>			
 		</NumericDataElement>	
 
-		<ChoiceDataElement Id="composition_3" IsRequired="true" DisplaySequence="12">
+		<ChoiceDataElement Id="composition_3" IsRequired="true" DisplaySequence="21">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -416,15 +623,15 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_3" IsRequired="true" DisplaySequence="13">
+		<ChoiceDataElement 	Id="echogenicity_3" IsRequired="true" DisplaySequence="22">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -444,15 +651,15 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_3" DisplaySequence="14">
+		<MultiChoiceDataElement Id="other_3" DisplaySequence="23">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -484,8 +691,8 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -517,8 +724,8 @@
 			</DecisionPoint>
 		</ComputedDataElement>
 
-		<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="15">
-			<Label>Are there any other nodule(s) present?</Label>
+		<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="24">
+			<Label>Are there any other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -532,8 +739,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -541,7 +748,95 @@
 		</ChoiceDataElement>
 
 		<!-- Nodule 4 -->
-		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="16" Unit="cm">		
+		
+		<IntegerDataElement Id="nodulenumber_4" IsRequired="true" DisplaySequence="31">
+			<Label>What is the nodule number?</Label>
+			<Minimum>1</Minimum>
+			<Maximum>4</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</IntegerDataElement>
+
+		<ChoiceDataElement Id="lobe_4" IsRequired="true" DisplaySequence="32">
+			<Label>Which lobe in the nodule is located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Rightlobe</Value>
+					<Label>Right lobe</Label>	
+				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Leftlobe</Value>
+					<Label>Left lobe</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="lobe_location_4" IsRequired="true" DisplaySequence="33">
+			<Label>Where in the lobe is the nodule located?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Upper</Value>
+					<Label>Upper</Label>	
+				</Choice>
+				<Choice>
+					<Value>Mid</Value>
+					<Label>Mid</Label>
+				</Choice>
+				<Choice>
+					<Value>Lower</Value>
+					<Label>Lower</Label>
+				</Choice>
+
+				<Choice>
+					<Value>Rightisthmus</Value>
+					<Label>Right isthmus</Label>	
+				</Choice>
+				<Choice>
+					<Value>Leftisthmus</Value>
+					<Label>Left isthmus</Label>
+				</Choice>
+				<Choice>
+					<Value>Midlineisthmus</Value>
+					<Label>Midline isthmus</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+
+		
+		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="34" Unit="cm">		
 			<Label>Diameter</Label>
 			<Hint>Enter maximum diameter in cm</Hint>
 			<Minimum>0.1</Minimum>
@@ -557,16 +852,16 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 			</ConditionalProperties>			
 		</NumericDataElement>	
 
-		<ChoiceDataElement Id="composition_4" IsRequired="true" DisplaySequence="17">
+		<ChoiceDataElement Id="composition_4" IsRequired="true" DisplaySequence="35">
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -589,16 +884,16 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement 	Id="echogenicity_4" IsRequired="true" DisplaySequence="18">
+		<ChoiceDataElement 	Id="echogenicity_4" IsRequired="true" DisplaySequence="36">
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -618,7 +913,7 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
@@ -627,7 +922,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<MultiChoiceDataElement Id="other_4" DisplaySequence="19">
+		<MultiChoiceDataElement Id="other_4" DisplaySequence="37">
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -659,9 +954,9 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -693,7 +988,7 @@
 			</DecisionPoint>
 		</ComputedDataElement>
 
-		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="20">
+		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="38">
 			<Label>Are there any other nodule(s) present?</Label>
 			<ChoiceInfo>
 				<Choice>
