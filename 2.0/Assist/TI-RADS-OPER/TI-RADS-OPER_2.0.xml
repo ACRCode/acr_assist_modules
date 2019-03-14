@@ -171,20 +171,20 @@
 					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
+					<Value>2</Value>
+					<Label>Hyperechoic or isoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
-					<Label>Hypoechoic (2 points)</Label>
+					<Value>3</Value>
+					<Label>Hypoechoic (3 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic (3 points)</Label>
+					<Label>Very hypoechoic (4 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -1068,13 +1068,11 @@
 				<EqualCondition DataElementId="addtr1_1" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_1"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_1" ComparisonValue="2"/>
-				<EndPointRef EndPointId="ReporttextTR2_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR1_2"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -1083,7 +1081,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1095,19 +1093,19 @@
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_1"></EndPointRef>
 			</Branch>
+			
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_1" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>	
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1120,7 +1118,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1136,7 +1134,7 @@
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1147,12 +1145,9 @@
 						<EqualCondition DataElementId="addtr1_1" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_1" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1161,7 +1156,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_1" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1173,19 +1168,16 @@
 						<LessThanCondition DataElementId="diameter_1" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_1" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_1"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_1" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_1" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_1"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1194,11 +1186,10 @@
 					<EqualCondition DataElementId="addtr1_1" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_1" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_1"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_1"></EndPointRef>
 			</Branch>
 		</DecisionPoint> 	
 
-		<!-- Nodule 2 -->
 		<DecisionPoint Id="decisionPointAddtr1_2">
 			<Label>0points</Label>
 			<Branch>
@@ -1206,13 +1197,11 @@
 				<EqualCondition DataElementId="addtr1_2" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_2"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_2" ComparisonValue="2"/>
 				<EndPointRef EndPointId="ReporttextTR2_2"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -1221,7 +1210,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1233,19 +1222,18 @@
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_2" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>	
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1258,7 +1246,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1274,7 +1262,7 @@
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1285,12 +1273,9 @@
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_2" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1299,7 +1284,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_2" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1311,19 +1296,16 @@
 						<LessThanCondition DataElementId="diameter_2" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_2" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_2"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_2" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>	
+					<LessThanCondition DataElementId="diameter_2" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_2"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1332,11 +1314,10 @@
 					<EqualCondition DataElementId="addtr1_2" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_2" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_2"></EndPointRef>
 			</Branch>
 		</DecisionPoint> 	
 
-		<!-- Nodule 3 -->
 		<DecisionPoint Id="decisionPointAddtr1_3">
 			<Label>0points</Label>
 			<Branch>
@@ -1344,13 +1325,11 @@
 				<EqualCondition DataElementId="addtr1_3" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_3"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_3" ComparisonValue="2"/>
 				<EndPointRef EndPointId="ReporttextTR2_3"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -1359,7 +1338,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1371,19 +1350,18 @@
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_3" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>	
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1396,7 +1374,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1412,7 +1390,7 @@
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1423,12 +1401,9 @@
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_3" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1437,7 +1412,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_3" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1449,19 +1424,16 @@
 						<LessThanCondition DataElementId="diameter_3" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_3" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_3"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_3" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_3" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_3"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1470,11 +1442,10 @@
 					<EqualCondition DataElementId="addtr1_3" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_3" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_3"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_3"></EndPointRef>
 			</Branch>
 		</DecisionPoint> 	
 
-		<!-- Nodule 4 -->
 		<DecisionPoint Id="decisionPointAddtr1_4">
 			<Label>0points</Label>
 			<Branch>
@@ -1482,13 +1453,11 @@
 				<EqualCondition DataElementId="addtr1_4" ComparisonValue="0"/>
 				<EndPointRef EndPointId="ReporttextTR1_4"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_4" ComparisonValue="2"/>
 				<EndPointRef EndPointId="ReporttextTR2_4"></EndPointRef>
 			</Branch>
-
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
 				<AndCondition>
@@ -1497,7 +1466,7 @@
 						<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="2.5"/>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3FNA_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR7_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1509,19 +1478,18 @@
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="2.5"></LessThanCondition>
 					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3Follow_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR6_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="addtr1_4" ComparisonValue="3"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
+					<AndCondition>        				
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1.5"></LessThanCondition>
-					</OrCondition>
+					</AndCondition>	
 				</AndCondition>			  
-				<EndPointRef EndPointId="ReporttextTR3_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR8_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1534,7 +1502,7 @@
 					</OrCondition>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="1.5"></GreaterThanOrEqualsCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4FNA_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR9_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1550,7 +1518,7 @@
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1.5"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4Follow_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR10_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1561,12 +1529,9 @@
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="5"/>
 						<EqualCondition DataElementId="addtr1_4" ComparisonValue="6"/>	
 					</OrCondition>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR4_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR11_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1575,7 +1540,7 @@
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_4" ComparisonValue="7"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="1"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5FNA_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR12_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1587,19 +1552,16 @@
 						<LessThanCondition DataElementId="diameter_4" ComparisonValue="1"></LessThanCondition>
 					</AndCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5Follow_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR13_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
 				<Label>7 points TR5 Highly Suspicious</Label>
 				<AndCondition>
 					<GreaterThanOrEqualsCondition DataElementId="addtr1_4" ComparisonValue="7"/>
-					<OrCondition>  
-						<SectionIfNot DataElementId="diameter_4"></SectionIfNot>
-						<LessThanCondition DataElementId="diameter_4" ComparisonValue="0.5"></LessThanCondition>
-					</OrCondition>
+					<LessThanCondition DataElementId="diameter_4" ComparisonValue="0.5"></LessThanCondition>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextTR5_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR14_4"></EndPointRef>
 			</Branch>
 
 			<Branch>
@@ -1608,29 +1570,63 @@
 					<EqualCondition DataElementId="addtr1_4" ComparisonValue="1"/>
 					<GreaterThanOrEqualsCondition DataElementId="diameter_4" ComparisonValue="0.5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ReporttextIncomplete_4"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR15_4"></EndPointRef>
 			</Branch>
-		</DecisionPoint> 
+		</DecisionPoint> 	
+
 
 	</Rules>	
 
 	<EndPoints>
+	
+			<TemplatePartial Id="nodule1Findings_1">
+			<Branch>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_1"/>
+				<ReportText Type="Newline"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+		</TemplatePartial>
+		
+		
+		
 		<EndPoint Id="ReporttextTR1_1">
 			<Label>Benign noFNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR1</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
+					
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
@@ -1640,188 +1636,243 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR2</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3_1">
-			<Label>Mildly Suspicious</Label>
+		
+		<!--<EndPoint Id="ReporttextTR2_2">
+			<Label>NotSuspicious noFNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR2</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3FNA_1">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 1 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_1">
+		</EndPoint> -->
+		
+		
+		<EndPoint Id="ReporttextTR6_1">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_1">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_1">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR8_1">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 1 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or Follow-up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_1">
+		<EndPoint Id="ReporttextTR9_1">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_1">
+		<EndPoint Id="ReporttextTR10_1">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_1">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_1">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4 Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or Follow-up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_1">
+		<EndPoint Id="ReporttextTR12_1">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_1">
+		<EndPoint Id="ReporttextTR13_1">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_1">
+		<EndPoint Id="ReporttextTR14_1">
+			<Label>Highly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 1 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5</ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or Follow-up </ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_1">
 			<Label>Evaluation Incomplete</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 1 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_1"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: Evaluation Incomplete</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or Follow-up</ReportText>
 						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1829,21 +1880,51 @@
 
 
 		<!-- Nodule 2 -->
+		
+		<TemplatePartial Id="nodule1Findings_2">
+			<Branch>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_2"/>
+				<ReportText Type="Newline"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+		</TemplatePartial>
+		
 
 		<EndPoint Id="ReporttextTR1_2">
 			<Label>Benign noFNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR1</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
@@ -1855,188 +1936,222 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR2 Not Suspicious</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3_2">
-			<Label>Mildly Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 2 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3FNA_2">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 2 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_2">
+		<EndPoint Id="ReporttextTR6_2">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_2">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_2">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR8_2">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 2 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3 </ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up </ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_2">
+		<EndPoint Id="ReporttextTR9_2">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_2">
+		<EndPoint Id="ReporttextTR10_2">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_2">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_2">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4 </ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_2">
+		<EndPoint Id="ReporttextTR12_2">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_2">
+		<EndPoint Id="ReporttextTR13_2">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_2">
+		<EndPoint Id="ReporttextTR14_2">
+			<Label>Highly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 2 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5</ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_2">
 			<Label>Evaluation Incomplete</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 2 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_2"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: Evaluation Incomplete</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -2044,20 +2159,49 @@
 
 		<!-- Nodule 3 -->
 
+		<TemplatePartial Id="nodule1Findings_3">
+			<Branch>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_3"/>
+				<ReportText Type="Newline"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+		</TemplatePartial>
+
 		<EndPoint Id="ReporttextTR1_3">
 			<Label>Benign noFNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR1 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
@@ -2069,209 +2213,295 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR2 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3_3">
-			<Label>Mildly Suspicious</Label>
+		<!--<EndPoint Id="ReporttextTR2_3">
+			<Label>NotSuspicious noFNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR2 Not Suspicious</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-		</EndPoint>
+		</EndPoint>-->
 
-		<EndPoint Id="ReporttextTR3FNA_3">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 3 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_3">
+		<EndPoint Id="ReporttextTR6_3">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_3">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_3">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR8_3">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 3 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3 Mildly Suspicious</ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_3">
+		<EndPoint Id="ReporttextTR9_3">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_3">
+		<EndPoint Id="ReporttextTR10_3">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_3">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_3">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4 Moderately Suspicious</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_3">
+		<EndPoint Id="ReporttextTR12_3">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_3">
+		<EndPoint Id="ReporttextTR13_3">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_3">
+		<EndPoint Id="ReporttextTR14_3">
+			<Label>Highly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 3 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5 Highly Suspicious</ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up </ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_3">
 			<Label>Evaluation Incomplete</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_3"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: Evaluation Incomplete</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-
+		
 		<!-- Nodule 4 -->
+
+
+		
+		<TemplatePartial Id="nodule1Findings_4">
+			<Branch>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_4"/>
+				<ReportText Type="Newline"/>
+
+
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_4"/>
+				<ReportText Type="Newline"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+		</TemplatePartial>
 
 		<EndPoint Id="ReporttextTR1_4">
 			<Label>Benign noFNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR1</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR1 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
@@ -2283,191 +2513,227 @@
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR2</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR2 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No FNA</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">No Follow-up</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3_4">
-			<Label>Mildly Suspicious</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 4 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
 
-		<EndPoint Id="ReporttextTR3FNA_4">
-			<Label>Mildly Suspicious FNA</Label>
-			<ReportSections>
-				<ReportSection SectionId="Nodule 4 - Findings">
-					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-
-		<EndPoint Id="ReporttextTR3Follow_4">
+		<EndPoint Id="ReporttextTR6_4">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR3</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4_4">
-			<Label>Moderately Suspicious</Label>
+		<EndPoint Id="ReporttextTR7_4">
+			<Label>Mildly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="ReporttextTR8_4">
+			<Label>Mildly Suspicious</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 4 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR3 </ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4FNA_4">
+		<EndPoint Id="ReporttextTR9_4">
 			<Label>Moderately Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR4Follow_4">
+		<EndPoint Id="ReporttextTR10_4">
 			<Label>Moderately Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR4</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5_4">
-			<Label>Highly Suspicious</Label>
+		<EndPoint Id="ReporttextTR11_4">
+			<Label>Moderately Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR4</ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up </ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5FNA_4">
+		<EndPoint Id="ReporttextTR12_4">
 			<Label>Highly Suspicious FNA</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">FNA</ReportText>
-						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextTR5Follow_4">
+		<EndPoint Id="ReporttextTR13_4">
 			<Label>Highly Suspicious Follow</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">TR5</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5 </ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Follow</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: Follow</ReportText>
 						<ReportText Type="Newline"/>
-						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="ReporttextIncomplete_4">
-			<Label>Evaluation Incomplete</Label>
+		<EndPoint Id="ReporttextTR14_4">
+			<Label>Highly Suspicious</Label>
 			<ReportSections>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
-						<ReportText Type="PlainText">Point total: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
 						<ReportText Type="Newline"/>
-						<ReportText Type="PlainText">Evaluation Incomplete</ReportText>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: TR5 </ReportText>
 						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
+
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
+
+		<EndPoint Id="ReporttextTR15_4">
+			<Label>Evaluation Incomplete</Label>
+			<ReportSections>
+				<ReportSection SectionId="Nodule 4 - Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">ACR TI-RADS total points: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="addtr1_4"/>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS risk category: Evaluation Incomplete</ReportText>
+						<ReportText Type="Newline"/>
+
+						<ReportText Type="PlainText">ACR TI-RADS recommendation: FNA</ReportText>
+						<ReportText Type="Newline"/>
+
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
 	</EndPoints>
 </ReportingModule>
