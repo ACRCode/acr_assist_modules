@@ -1,0 +1,311 @@
+<ReportingModule>
+  <Metadata>
+    <Label>Scoliosis</Label>
+    <ID>Scoliosis</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <Info>
+      <Diagrams></Diagrams>
+      <Description>This module describes the Common Data elements and Macros forScoliosis</Description>
+      <References>
+        <Citation
+          Url="http://radelement.org/"> CDE URL </Citation>
+        <Citation
+          Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">
+              CDE google sheet </Citation>
+      </References>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Email>jmeyer@acr.org</Email>
+        <Institution>ACR</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement
+      Id="CobbAngle"
+      IsRequired="true"
+      DisplaySequence="1">
+      <Label>Cobb Angle</Label>
+      <Hint>Measure coronal plane deformity on anteroposterior plane radiographs in the classification of scoliosis (degrees)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="PelvicTilt"
+      IsRequired="true"
+      DisplaySequence="2">
+      <Label>Pelvic Tilt</Label>
+      <Hint>Angle between the iliac crest to the horizontal (degrees)</Hint>
+    </NumericDataElement>
+    <ChoiceDataElement
+      Id="TriradiateCartilage"
+      IsRequired="false"
+      DisplaySequence="4">
+      <Label>Triradiate Cartilage</Label>
+      <Hint>Epiphyseal plate between the ilium, ischium, and pubis to form the acetabulum of the os coxae</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0-Unknown</Value>
+          <Label>0-Unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>1-Open</Value>
+          <Label>1-Open</Label>
+        </Choice>
+        <Choice>
+          <Value>2-Closed</Value>
+          <Label>2-Closed</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement
+      Id="VertebralBodyNumbering"
+      IsRequired="false"
+      DisplaySequence="5">
+      <Label>Vertebral Body Numbering</Label>
+      <Hint>Numbering order of the vertebrae of the human spinal column (pixel identification)</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0-Nonvertebraepixel</Value>
+          <Label>0-Non vertebrae pixel</Label>
+        </Choice>
+        <Choice>
+          <Value>1-C1</Value>
+          <Label>1-C1</Label>
+        </Choice>
+        <Choice>
+          <Value>2-C2</Value>
+          <Label>2-C2</Label>
+        </Choice>
+        <Choice>
+          <Value>3-C3</Value>
+          <Label>3-C3</Label>
+        </Choice>
+        <Choice>
+          <Value>4-C4</Value>
+          <Label>4-C4</Label>
+        </Choice>
+        <Choice>
+          <Value>5-C5</Value>
+          <Label>5-C5</Label>
+        </Choice>
+        <Choice>
+          <Value>6-C6</Value>
+          <Label>6-C6</Label>
+        </Choice>
+        <Choice>
+          <Value>7-C7</Value>
+          <Label>7-C7</Label>
+        </Choice>
+        <Choice>
+          <Value>8-Th1</Value>
+          <Label>8-Th1</Label>
+        </Choice>
+        <Choice>
+          <Value>9-Th2</Value>
+          <Label>9-Th2</Label>
+        </Choice>
+        <Choice>
+          <Value>10-Th3</Value>
+          <Label>10-Th3</Label>
+        </Choice>
+        <Choice>
+          <Value>11-Th4</Value>
+          <Label>11-Th4</Label>
+        </Choice>
+        <Choice>
+          <Value>12-Th5</Value>
+          <Label>12-Th5</Label>
+        </Choice>
+        <Choice>
+          <Value>13-Th6</Value>
+          <Label>13-Th6</Label>
+        </Choice>
+        <Choice>
+          <Value>14-Th7</Value>
+          <Label>14-Th7</Label>
+        </Choice>
+        <Choice>
+          <Value>15-Th8</Value>
+          <Label>15-Th8</Label>
+        </Choice>
+        <Choice>
+          <Value>16-Th9</Value>
+          <Label>16-Th9</Label>
+        </Choice>
+        <Choice>
+          <Value>17-Th10</Value>
+          <Label>17-Th10</Label>
+        </Choice>
+        <Choice>
+          <Value>18-Th11</Value>
+          <Label>18-Th11</Label>
+        </Choice>
+        <Choice>
+          <Value>19-Th12</Value>
+          <Label>19-Th12</Label>
+        </Choice>
+        <Choice>
+          <Value>20-Th13</Value>
+          <Label>20-Th13</Label>
+        </Choice>
+        <Choice>
+          <Value>21-L1</Value>
+          <Label>21-L1</Label>
+        </Choice>
+        <Choice>
+          <Value>22-L2</Value>
+          <Label>22-L2</Label>
+        </Choice>
+        <Choice>
+          <Value>23-L3</Value>
+          <Label>23-L3</Label>
+        </Choice>
+        <Choice>
+          <Value>24-L4</Value>
+          <Label>24-L4</Label>
+        </Choice>
+        <Choice>
+          <Value>25-L5</Value>
+          <Label>25-L5</Label>
+        </Choice>
+        <Choice>
+          <Value>26-L6</Value>
+          <Label>26-L6</Label>
+        </Choice>
+        <Choice>
+          <Value>27-Ossacrum</Value>
+          <Label>27-Os sacrum</Label>
+        </Choice>
+        <Choice>
+          <Value>28-Coccyx</Value>
+          <Label>28-Coccyx</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <NumericDataElement
+      Id="PelvicIncidence"
+      IsRequired="false"
+      DisplaySequence="6">
+      <Label>Pelvic Incidence</Label>
+      <Hint>Angle of incidence is the algebraic sum of 2 complementary angles: pelvic tilt and sacral slope (degrees)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="SagittalVerticalaxis"
+      IsRequired="false"
+      DisplaySequence="7">
+      <Label>Sagittal Vertical axis</Label>
+      <Hint>Sagittal offset of a plumb line dropped from the C7 vertebral body from the posterosuperior corner of the sacral plate (mm)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="ThoracicKyphosisAngle"
+      IsRequired="false"
+      DisplaySequence="8">
+      <Label>Thoracic Kyphosis Angle</Label>
+      <Hint>Thoracic convexity (degrees)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="LumbarLordosisAngle"
+      IsRequired="false"
+      DisplaySequence="9">
+      <Label>Lumbar Lordosis Angle</Label>
+      <Hint>Anterior convexity of the lumbar spine in the midsagittal plane (degrees)</Hint>
+    </NumericDataElement>
+    <ChoiceDataElement
+      Id="ScoliosisType"
+      IsRequired="false"
+      DisplaySequence="10">
+      <Label>Scoliosis Type</Label>
+      <Hint>Classify the scoliosis type, which is required information for ICD-10</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0-Unknown</Value>
+          <Label>0-Unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>1-Congenital</Value>
+          <Label>1-Congenital</Label>
+        </Choice>
+        <Choice>
+          <Value>2-Infantile,idiopathic</Value>
+          <Label>2-Infantile, idiopathic</Label>
+        </Choice>
+        <Choice>
+          <Value>3-Juvenile,idiopathic</Value>
+          <Label>3-Juvenile, idiopathic</Label>
+        </Choice>
+        <Choice>
+          <Value>4-Thoracogenic</Value>
+          <Label>4-Thoracogenic</Label>
+        </Choice>
+        <Choice>
+          <Value>5-Radiationrelated</Value>
+          <Label>5-Radiation related</Label>
+        </Choice>
+        <Choice>
+          <Value>6-Syndromerelated</Value>
+          <Label>6-Syndrome related</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement
+      Id="RisserScore"
+      IsRequired="false"
+      DisplaySequence="10">
+      <Label>Risser Score</Label>
+      <Hint>Grade skeletal maturity based on the level of ossification and fusion of the iliac crest apophyses</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0-Unknown</Value>
+          <Label>0- Unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>1–Stage0:noossificationcenteratthelevelofiliaccrestapophysis</Value>
+          <Label>1–Stage 0: no ossification center at the level of iliac crest apophysis</Label>
+        </Choice>
+        <Choice>
+          <Value>2–Stage1:apophysisalonglessthan25percentoftheiliaccrest</Value>
+          <Label>2–Stage 1: apophysis along less than 25 percent of the iliac crest</Label>
+        </Choice>
+        <Choice>
+          <Value>3–Stage2:apophysisalong25-50percentoftheiliaccrest</Value>
+          <Label>3–Stage 2: apophysis along 25-50 percent of the iliac crest</Label>
+        </Choice>
+        <Choice>
+          <Value>4–Stage3:apophysisalong50-75percentoftheiliaccrest</Value>
+          <Label>4–Stage 3: apophysis along 50-75 percent of the iliac crest</Label>
+        </Choice>
+        <Choice>
+          <Value>5–Stage4:apophysisalonggreaterthan75percentoftheiliaccrest</Value>
+          <Label>5–Stage 4: apophysis along greater than 75 percent of the iliac crest</Label>
+        </Choice>
+        <Choice>
+          <Value>6–Stage5:completeossificationandfusionoftheiliaccrestapophysis</Value>
+          <Label>6–Stage 5: complete ossification and fusion of the iliac crest apophysis</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules>
+    <DecisionPoint
+      Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition
+          DataElementId="conditionConst"
+          ComparisonValue="10" />
+        <EndPointRef
+          EndPointId="macroEndpoint"></EndPointRef>
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <EndPoint
+      Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportTexts>
+        <ReportText
+          SectionId="findings">	Sample Report Text</ReportText>
+      </ReportTexts>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

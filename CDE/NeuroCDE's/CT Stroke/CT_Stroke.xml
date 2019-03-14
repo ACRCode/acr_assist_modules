@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>CT Stroke</Label>
+		<ID>CT_Stroke</ID>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>2.0</ModuleVersion>
+		<CreatedDate>2018-12-31</CreatedDate>
+		<LastModifiedDate>2018-11-26</LastModifiedDate>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<CodableConcept Name="codableConcept_CTStroke">
+			<Coding>
+				<System Value="RadElement"></System>
+				<Version Value="1.0"></Version>
+				<Code Value="RDES22"></Code>
+				<Display Value="RDES22"></Display>				
+				<Url Value="http://radelement.org/set/RDES22"></Url>
+				<UserSelected Value="false"></UserSelected>
+			</Coding> 
+        </CodableConcept>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for CT stroke</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/set/RDES22"> CDE URL </Citation> 
+			</References>
+
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>CT Stroke key image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2">
+					<Location>ctstrokesupportingdiagram.jpg</Location>
+					<Label>CT Stroke supporting diagram</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>CT Stroke</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>		
+	</Metadata>
+	
+	<DataElements>
+		<GlobalValue Id="conditionConst">10</GlobalValue>		
+		<ChoiceDataElement Id="Hyperacutesigns" DisplaySequence="1" IsRequired="true">
+			<Label>Hyperacute signs</Label>
+			 <CodableConcept Name="Hyperacutesigns">
+             <Coding>
+             <System Value="RadElement"></System>
+             <Version Value="1.0"></Version>
+             <Code Value="RDE159"></Code>
+             <Display Value="RDE159"></Display>				
+			 <Url Value="http://radelement.org/element/RDE159"></Url>
+             <UserSelected Value="true"></UserSelected>
+             </Coding>
+             </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<MultiChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="2">
+			<Label>Location</Label>
+			 <CodableConcept Name="anatomiclocation">
+             <Coding>
+             <System Value="RadElement"></System>
+             <Version Value="1.0"></Version>
+             <Code Value="RDE160"></Code>
+             <Display Value="RDE160"></Display>
+			 <Url Value="http://radelement.org/element/RDE160"></Url>
+             <UserSelected Value="true"></UserSelected>
+             </Coding>
+             </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>rightfrontal</Value>
+					<Label>right frontal</Label>
+				</Choice>
+				<Choice>
+					<Value>temporal</Value>
+					<Label>temporal</Label>
+				</Choice>
+				<Choice>
+					<Value>parietal</Value>
+					<Label>parietal</Label>
+				</Choice>
+			</ChoiceInfo>			
+		</MultiChoiceDataElement>	
+		
+		
+		<!--<IntegerDataElement Id="anatomicsizevolume" IsRequired="true" DisplaySequence="4" CdeId = "100">
+			<Label>Anatomic size/volume</Label>
+			<Hint>AP x Trans x CC Measurements</Hint>
+			<Minimum>1</Minimum>
+		</IntegerDataElement>	
+		
+		<ChoiceDataElement Id="vascularlaterality" DisplaySequence="5" IsRequired="true" CdeId = "100">
+			<Label>Vascular Laterality</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>right</Value>
+					<Label>Right</Label>
+				</Choice>
+				<Choice>
+					<Value>left</Value>
+					<Label>Left</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement> -->
+		
+		<ChoiceDataElement Id="vascularterritory" DisplaySequence="3" IsRequired="true">
+			<Label>Vascular Territory</Label>
+			 <CodableConcept Name="vascularterritory">
+			<Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE161"></Code>
+			 <Display Value="RDE161"></Display>
+			 <Url Value="http://radelement.org/element/RDE161"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>ACA</Value>
+					<Label>ACA</Label>
+				</Choice>
+				<Choice>
+					<Value>MCA</Value>
+					<Label>MCA</Label>
+				</Choice>
+
+				<Choice>
+					<Value>PCA</Value>
+					<Label>PCA</Label>
+				</Choice>
+				<Choice>
+					<Value>SCA</Value>
+					<Label>SCA</Label>
+				</Choice>
+
+				<Choice>
+					<Value>AICA</Value>
+					<Label>AICA</Label>
+				</Choice>
+				<Choice>
+					<Value>PICA</Value>
+					<Label>PICA</Label>
+				</Choice>
+				<Choice>
+					<Value>basil perforator</Value>
+					<Label>Basil perforator</Label>
+				</Choice>
+				<Choice>
+					<Value>thalamoperforator</Value>
+					<Label>Thalamoperforator</Label>
+				</Choice>
+				<Choice>
+					<Value>antChoroidal</Value>
+					<Label>AntChoroidal</Label>
+				</Choice>
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="hemorrhagicconversion" DisplaySequence="4" IsRequired="true">
+			<Label>Hemorrhagic conversion</Label>
+			 <CodableConcept Name="hemorrhagicconversion">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE162"></Code>
+			 <Display Value="RDE162"></Display>
+			 <Url Value="http://radelement.org/element/RDE162"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="masseffect" DisplaySequence="5" IsRequired="true">
+			<Label>Mass effect</Label>
+			 <CodableConcept Name="masseffect">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE163"></Code>
+			 <Display Value="RDE163"></Display>
+			 <Url Value="http://radelement.org/element/RDE163"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="vascularmechanismpattern" DisplaySequence="6" IsRequired="true">
+			<Label>Vascular Mechanism/Pattern</Label>
+			 <CodableConcept Name="vascularmechanismpattern">
+     <Coding>
+     <System Value="RadElement"></System>
+     <Version Value="1.0"></Version>
+     <Code Value="RDE164"></Code>
+     <Display Value="RDE164"></Display>
+			 <Url Value="http://radelement.org/element/RDE164"></Url>
+     <UserSelected Value="true"></UserSelected>
+     </Coding>
+     </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>embolic</Value>
+					<Label>embolic</Label>
+				</Choice>
+				<Choice>
+					<Value>perforator</Value>
+					<Label>perforator</Label>
+				</Choice>
+				<Choice>
+					<Value>borderzone</Value>
+					<Label>borderzone ischemia</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+	
+	
+		<IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7">
+			<Label>midlineshift in mm</Label>
+			 <CodableConcept Name="midlineshift">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE165"></Code>
+			 <Display Value="RDE165"></Display>
+			 <Url Value="http://radelement.org/element/RDE165"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<Hint>Measurement</Hint>
+			<Minimum>1</Minimum>
+		</IntegerDataElement>	
+		
+		<ChoiceDataElement Id="Herniation" IsRequired="true" DisplaySequence="8">
+			<Label>Herniation</Label>
+			 <CodableConcept Name="Herniation">
+     <Coding>
+     <System Value="RadElement"></System>
+     <Version Value="1.0"></Version>
+     <Code Value="RDE166"></Code>
+     <Display Value="RDE166"></Display>
+			 <Url Value="http://radelement.org/element/RDE166"></Url>
+     <UserSelected Value="true"></UserSelected>
+     </Coding>
+     </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+				<Choice>
+					<Value>subfalcine</Value>
+					<Label>subfalcine</Label>
+				</Choice>
+				<Choice>
+					<Value>transtentorial</Value>
+					<Label>transtentorial</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+
+		
+		
+		<ChoiceDataElement Id="hyperdense" IsRequired="true" DisplaySequence="9">
+			<Label>Hyperdense vessel?</Label>
+			 <CodableConcept Name="hyperdense">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE167"></Code>
+			 <Display Value="RDE167"></Display>
+			 <Url Value="http://radelement.org/element/RDE167"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+					
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="hyperdensesign" DisplaySequence="10" IsRequired="true">
+			<Label>Hyperdense Sign</Label>
+			<CodableConcept Name="hyperdensesign">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE168"></Code>
+			 <Display Value="RDE168"></Display>
+			 <Url Value="http://radelement.org/element/RDE168"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>middlecerebral</Value>
+					<Label>middle cerebral</Label>
+				</Choice>
+				<Choice>
+					<Value>anterior cerebral</Value>
+					<Label>anteriorcerebral</Label>
+				</Choice>
+				<Choice>
+					<Value>intrasylviancortical</Value>
+					<Label>Intrasylvian cortical</Label>
+				</Choice>
+				<Choice>
+					<Value>basilarartery</Value>
+					<Label>Basilar artery</Label>
+				</Choice>
+				</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="arterialcalcification" DisplaySequence="11" IsRequired="true">
+			<Label>Arterial calcification</Label>
+			 <CodableConcept Name="arterialcalcification">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE169"></Code>
+			 <Display Value="RDE169"></Display>
+			 <Url Value="http://radelement.org/element/RDE169"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		
+		<ChoiceDataElement Id="venousthrombus" DisplaySequence="12" IsRequired="true">
+			<Label>Venous thrombus</Label>
+			 <CodableConcept Name="venousthrombus">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE170"></Code>
+			 <Display Value="RDE170"></Display>
+			 <Url Value="http://radelement.org/element/RDE170"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="sinuslocation" IsRequired="true" DisplaySequence="13">
+			<Label>Sinus location</Label>
+			 <CodableConcept Name="sinuslocation">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE171"></Code>
+			 <Display Value="RDE171"></Display>
+			 <Url Value="http://radelement.org/element/RDE171"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>duralvenous</Value>
+					<Label>dural venous sinus</Label>
+				</Choice>
+				<Choice>
+					<Value>cortical</Value>
+					<Label>cortical vein</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="hydrocephalus" DisplaySequence="14" IsRequired="true">
+			<Label>Hydrocephalus</Label>
+			 <CodableConcept Name="hydrocephalus">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE172"></Code>
+			 <Display Value="RDE172"></Display>
+			 <Url Value="http://radelement.org/element/RDE172"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<IntegerDataElement Id="ASPECTSclassification" DisplaySequence="15" IsRequired="true">
+			<Label>ASPECTS classification</Label>
+			 <CodableConcept Name="ASPECTSclassification">
+			 <Coding>
+			 <System Value="RadElement"></System>
+			 <Version Value="1.0"></Version>
+			 <Code Value="RDE173"></Code>
+			 <Display Value="RDE173"></Display>
+			 <Url Value="http://radelement.org/element/RDE173"></Url>
+			 <UserSelected Value="true"></UserSelected>
+			 </Coding>
+			 </CodableConcept> 
+				<Hint>Score 1 to 10</Hint>
+		</IntegerDataElement>
+	</DataElements>
+
+	<Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	<EndPoints>	 
+		<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="Hyperacutesigns"/>
+						<EqualCondition DataElementId="Hyperacutesigns" ComparisonValue="no"></EqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no loss of grey/white matter discrimination in the </ReportText>	
+				</Branch>
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="Hyperacutesigns"/>
+						<NotEqualCondition DataElementId="Hyperacutesigns" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is loss of grey/white matter discrimination in the </ReportText>	
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="anatomiclocation"></SectionIf>
+					<ReportText Type="InsertDataElementValue" Value="anatomiclocation"></ReportText>
+					<ReportText Type="PlainText" > lobe(s) </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="vascularterritory"/>
+					<ReportText Type="PlainText" >in the </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="vascularterritory"></ReportText>
+					<ReportText Type="PlainText" > distribution</ReportText>
+				</Branch>	
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hemorrhagicconversion"/>
+						<EqualCondition DataElementId="hemorrhagicconversion" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText" >There is no hemorrhagic conversion.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hemorrhagicconversion"/>
+						<NotEqualCondition DataElementId="hemorrhagicconversion" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText" >There is hemorrhagic conversion.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="masseffect"/>
+						<EqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no mass effect.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="masseffect"/>
+						<NotEqualCondition DataElementId="masseffect" ComparisonValue="no"/>
+					</AndCondition>
+					<ReportText Type="PlainText">There is mild mass effect.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="vascularmechanismpattern"/>					
+					<ReportText Type="PlainText">The ischemic pattern is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="vascularmechanismpattern"></ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="midlineshift"/>
+					<ReportText Type="PlainText">There is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="midlineshift"/>
+					<ReportText Type="PlainText"> mm midline shift.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="Herniation"/>
+					<ReportText Type="PlainText">There is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Herniation"/>
+					<ReportText Type="PlainText"> herniation.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hyperdense"/>
+						<EqualCondition DataElementId="hyperdense" ComparisonValue="no"></EqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no hyperdense right.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hyperdense"/>
+						<NotEqualCondition DataElementId="hyperdense" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is hyperdense right.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hyperdense"/>
+						<SectionIf DataElementId="hyperdensesign"/>
+					</AndCondition>
+					<ReportText Type="InsertDataElementValue" Value="hyperdensesign"/>					
+					<ReportText Type="PlainText"> sign.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="arterialcalcification"/>
+						<EqualCondition DataElementId="arterialcalcification" ComparisonValue="no"></EqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no arterial calcification at the skull base.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="arterialcalcification"/>
+						<NotEqualCondition DataElementId="arterialcalcification" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is arterial calcification at the skull base.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="venousthrombus"/>
+						<EqualCondition DataElementId="venousthrombus" ComparisonValue="no"></EqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no dense thrombus </ReportText>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="venousthrombus"/>
+						<NotEqualCondition DataElementId="venousthrombus" ComparisonValue="no"></NotEqualCondition>
+					</AndCondition>
+					<ReportText Type="PlainText">There is dense thrombus </ReportText>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="venousthrombus"/>
+						<SectionIf DataElementId="sinuslocation"/>						
+					</AndCondition>
+					<ReportText Type="PlainText"> in </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="sinuslocation"/>
+					<ReportText Type="PlainText">.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hydrocephalus"/>
+						<EqualCondition DataElementId="hydrocephalus" ComparisonValue="no"></EqualCondition>
+						<SectionIf DataElementId="hydrocephalus"/>
+					</AndCondition>
+					<ReportText Type="PlainText">There is no hydrocephalus.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="hydrocephalus"/>
+						<NotEqualCondition DataElementId="hydrocephalus" ComparisonValue="no"></NotEqualCondition>
+						<SectionIf DataElementId="hydrocephalus"/>
+					</AndCondition>
+					<ReportText Type="PlainText">There is hydrocephalus.</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="ASPECTSclassification"/>
+					<ReportText Type="PlainText">The ASPECTS score is estimated to be </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="ASPECTSclassification"/>
+				</Branch>
+			</ReportSection>
+		</ReportSections>				
+	</EndPoint>
+</EndPoints>
+</ReportingModule>

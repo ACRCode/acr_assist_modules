@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Left Ventricle T1 Mapping Quantification</Label>
+      <ID>Left_Ventricle_T1_Mapping_Quantification</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the Common Data elements and Macros forLeft Ventricle T1 Mapping Quantification</Description>
+         <References>
+            <Citation Url="http://radelement.org/">CDE URL</Citation>
+            <Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Reviewer1 test</Name>
+            <Email>reviewer1@yopmail.com</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+      <NumericDataElement Id="NativeT1" IsRequired="true" DisplaySequence="1">
+         <Label>Native T1</Label>
+         <Hint>Native average T1 tissue as average values from 4 ROIs (ms)</Hint>
+         <ChoiceInfo />
+      </NumericDataElement>
+      <NumericDataElement Id="Extracellularvolume" IsRequired="true" DisplaySequence="2">
+         <Label>Extracellular volume</Label>
+         <Hint>Average ECV as average signal value from 4 ROIs (%)</Hint>
+         <ChoiceInfo />
+         <Minimum>0</Minimum>
+         <Maximum>100</Maximum>
+      </NumericDataElement>
+      <MultiChoiceDataElement Id="Presenceofsuspecteddisease" DisplaySequence="3">
+         <Label>Presence of suspected disease</Label>
+         <Hint>Alert  if  calculated  native  T1  map  value  and  ECV  meet  threshold  for suspected cardiovascular disease</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0-Unknown</Value>
+               <Label>0-Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1-SuspectedDisease</Value>
+               <Label>1-Suspected Disease</Label>
+            </Choice>
+            <Choice>
+               <Value>2-NoDisease</Value>
+               <Label>2-No Disease</Label>
+            </Choice>
+         </ChoiceInfo>
+      </MultiChoiceDataElement>
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>
