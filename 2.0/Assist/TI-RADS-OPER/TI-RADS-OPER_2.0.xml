@@ -132,19 +132,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -163,16 +167,24 @@
          </CodableConcept>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -188,27 +200,27 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
+					<Label>Punctate echogenic focci (3 points) </Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
+					<Label>Lobulated or irregular margin without extra-thyroidal extension (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
+					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Value>3</Value>
+					<Label>Definite extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -359,19 +371,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -386,16 +402,24 @@
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -414,27 +438,27 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
+					<Label>Punctate echogenic focci (3 points) </Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
+					<Label>Lobulated or irregular margin without extra-thyroidal extension (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
+					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Value>3</Value>
+					<Label>Definite extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -605,19 +629,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -635,16 +663,24 @@
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -664,27 +700,27 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
+					<Label>Punctate echogenic focci (3 points) </Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
+					<Label>Lobulated or irregular margin without extra-thyroidal extension (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
+					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Value>3</Value>
+					<Label>Definite extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -837,10 +873,9 @@
 
 		
 		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="34" Unit="cm">		
-			<Label>Diameter</Label>
-			<Hint>Enter maximum diameter in cm</Hint>
+			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>100.0</Maximum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -866,19 +901,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>Cystic or almost completely cystic</Label>	
+					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>0</Value>
-					<Label>Spongiform</Label>
+					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>Mixed cystic and solid</Label>
+					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Solid or almost completely solid</Label>
+					<Label>Solid or almost completely solid (2 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -897,16 +936,24 @@
 			<Label>Echogenicity</Label>
 			<ChoiceInfo>
 				<Choice>
+					<Value>0</Value>
+					<Label>Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
 					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic</Label>
+					<Label>Hyperechoic or isoechoic (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Hypoechoic</Label>
+					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Very hypoechoic</Label>
+					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -927,27 +974,27 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
-					<Label>Macrocalcifications</Label>
+					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Peripheral rim calcifications</Label>
+					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci</Label>
+					<Label>Punctate echogenic focci (3 points) </Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
-					<Label>Lobulated or irregular margin</Label>
+					<Label>Lobulated or irregular margin without extra-thyroidal extension (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Taller-than-wide</Label>
+					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>0</Value>
-					<Label>Definite extra-thyroidal extension</Label>
+					<Value>3</Value>
+					<Label>Definite extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -989,7 +1036,7 @@
 		</ComputedDataElement>
 
 		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="38">
-			<Label>Are there any other nodule(s) present?</Label>
+			<Label>Are there any other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
