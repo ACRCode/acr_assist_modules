@@ -1,0 +1,70 @@
+<ReportingModule>
+  <Metadata>
+    <Label>Motor Cortex QSM</Label>
+    <ID>Motor_Cortex_QSM</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <Info>
+      <Diagrams></Diagrams>
+      <Description>This module describes the Common Data elements and Macros forMotor Cortex QSM</Description>
+      <References>
+        <Citation
+          Url="http://radelement.org/"> CDE URL </Citation>
+        <Citation
+          Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">
+              CDE google sheet </Citation>
+      </References>
+      <Contact>
+        <Name>Reviewer1 test</Name>
+        <Email>reviewer1@yopmail.com</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement
+      Id="MotorCortexQSMMean"
+      IsRequired="true"
+      DisplaySequence="1">
+      <Label>Motor Cortex QSM Mean</Label>
+      <Hint>Mean calculation of QSM MR units of the left and right motor cortex (MR Units)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="MotorCortexQSMMax"
+      IsRequired="true"
+      DisplaySequence="2">
+      <Label>Motor Cortex QSM Max</Label>
+      <Hint>Max calculation of QSM MR units of the left and right motor cortex  (MR units)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="MotorCortexQSMStandardDeviation"
+      IsRequired="true"
+      DisplaySequence="3">
+      <Label>Motor Cortex QSM Standard Deviation</Label>
+      <Hint>Standard deviation of QSM MR units of the left and right motor cortex (MR Units)</Hint>
+    </NumericDataElement>
+  </DataElements>
+  <Rules>
+    <DecisionPoint
+      Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition
+          DataElementId="conditionConst"
+          ComparisonValue="10" />
+        <EndPointRef
+          EndPointId="macroEndpoint"></EndPointRef>
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <EndPoint
+      Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportTexts>
+        <ReportText
+          SectionId="findings">	Sample Report Text</ReportText>
+      </ReportTexts>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

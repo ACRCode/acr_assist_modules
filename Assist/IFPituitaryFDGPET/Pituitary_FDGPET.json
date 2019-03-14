@@ -1,0 +1,256 @@
+{
+  "id": "Unique Id of Test case document",
+  "description": "Unique Id of Test case document",
+  "moduleId": "ACR PituitaryFDGPET",
+  "moduleName": "ACR PituitaryFDGPET",
+  "schemaVersion": "2.0",
+  "moduleVersion": "1.0",
+  "testCases": [
+    {
+      "testCaseId": "PituitaryFDGPET_1",
+      "endpointId": "Nofurtherevaluation",
+      "endpointlabel": "No Further Evaluation",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "type",
+          "dataElementValue": "limited"
+        }
+      ]
+    },
+    {
+      "testCaseId": "PituitaryFDGPET_2",
+      "endpointId": "general",
+      "endpointlabel": "Characterize with Pituitary MRI",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "no"
+        },
+        {
+          "dataElementId": "type",
+          "dataElementValue": "general"
+        }
+      ]
+    },
+   {
+      "testCaseId": "PituitaryFDGPET_3",
+      "endpointId": "Nofurtherevaluation",
+      "endpointlabel": "No Further Evaluation",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "simplecyst"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "masseffect",
+          "dataElementValue": "no"
+        }
+		
+      ]
+    },
+   {
+      "testCaseId": "PituitaryFDGPET_4",
+      "endpointId": "referral",
+      "endpointlabel": "Referral for endocrine and/or neurosurgical management",
+      "inputs": [
+          {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "simplecyst"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "masseffect",
+          "dataElementValue": "yes"
+        }
+      ]
+    },
+   {
+      "testCaseId": "PituitaryFDGPET_5",
+      "endpointId": "Nofurtherimgaing",
+      "endpointlabel": "No further imaging Correlate with history of pituitary hypersecretion",
+      "inputs": [
+          {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "mixed"
+        },
+		{
+          "dataElementId": "mixedcystsize",
+          "dataElementValue": "lessthan5mm"
+        }
+
+      ]
+    },
+	{
+      "testCaseId": "PituitaryFDGPET_6",
+      "endpointId": "Nofurtherimgaingabove5",
+      "endpointlabel": "No further imaging Correlate with history of pituitary hypersecretion and consider endocrine function tests",
+      "inputs": [
+          {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "mixed"
+        },
+		{
+          "dataElementId": "mixedcystsize",
+          "dataElementValue": "between5and10mm"
+        }
+      ]
+    },
+	{
+      "testCaseId": "PituitaryFDGPET_7",
+      "endpointId": "recommend",
+      "endpointlabel": "Recommend endocrine function tests 6-12 month follow-up pituitary MRI",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "mixed"
+        },
+        {
+          "dataElementId": "mixedcystsize",
+          "dataElementValue": "greaterthan10mm"
+        },
+		{
+          "dataElementId": "masseffect",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "no"
+        }
+      ]
+    },
+	{
+      "testCaseId": "PituitaryFDGPET_8",
+      "endpointId": "referral",
+      "endpointlabel": "Referral for endocrine and/or neurosurgical management",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "mixed"
+        },
+        {
+          "dataElementId": "mixedcystsize",
+          "dataElementValue": "greaterthan10mm"
+        },
+		{
+          "dataElementId": "masseffect",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "no"
+        }
+      ]
+    },
+	{
+      "testCaseId": "PituitaryFDGPET_9",
+      "endpointId": "referral",
+      "endpointlabel": "Referral for endocrine and/or neurosurgical management",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "simplecyst"
+        },
+		{
+          "dataElementId": "masseffect",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "yes"
+        }
+      ]
+    },
+	{
+      "testCaseId": "PituitaryFDGPET_10",
+      "endpointId": "referral",
+      "endpointlabel": "Referral for endocrine and/or neurosurgical management",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "mixed"
+        },
+        {
+          "dataElementId": "mixedcystsize",
+          "dataElementValue": "greaterthan10mm"
+        },
+		{
+          "dataElementId": "masseffect",
+          "dataElementValue": "yes"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "yes"
+        }
+      ]
+    },
+	 {
+      "testCaseId": "PituitaryFDGPET_11",
+      "endpointId": "Nofurtherevaluation",
+      "endpointlabel": "No Further Evaluation",
+      "inputs": [
+        {
+          "dataElementId": "abletoevaluatecomposition",
+          "dataElementValue": "yes"
+        },
+        {
+          "dataElementId": "typeofcyst",
+          "dataElementValue": "simplecyst"
+        },
+		{
+          "dataElementId": "invasion",
+          "dataElementValue": "no"
+        },
+		{
+          "dataElementId": "masseffect",
+          "dataElementValue": "no"
+        }
+		
+      ]
+    }
+	
+      ]
+    }
+   	

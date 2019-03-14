@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Flow in the ascending aorta</Label>
+      <ID>Flow_in_the_ascending_aorta</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the Common Data elements and Macros forFlow in the ascending aorta</Description>
+         <References>
+            <Citation Url="http://radelement.org/">CDE URL</Citation>
+            <Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Reviewer1 test</Name>
+            <Email>reviewer1@yopmail.com</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+      <NumericDataElement Id="Ascendingaorticflowrate" IsRequired="true" DisplaySequence="1">
+         <Label>Ascending aortic flow rate</Label>
+         <Hint>Measurement of net flow volume in the ascending thoracic aorta above the aortic valve (mL/sec)</Hint>
+         <ChoiceInfo />
+      </NumericDataElement>
+      <NumericDataElement Id="Flowgradient" DisplaySequence="2">
+         <Label>Flow gradient</Label>
+         <Hint>Pressure of aortic flow (Pa)</Hint>
+         <ChoiceInfo />
+      </NumericDataElement>
+      <MultiChoiceDataElement Id="Presenceofaliasing" DisplaySequence="3">
+         <Label>Presence of aliasing</Label>
+         <Hint>Presence of aliasing</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0-Unknown</Value>
+               <Label>0- Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1-Aliasingpresent</Value>
+               <Label>1-Aliasing present</Label>
+            </Choice>
+            <Choice>
+               <Value>2-Aliasingabsent</Value>
+               <Label>2-Aliasing absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </MultiChoiceDataElement>
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>
