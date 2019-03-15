@@ -1668,13 +1668,13 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="DWI_1" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_1" ComparisonValue="2"/>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1683,7 +1683,7 @@
 							<EqualCondition DataElementId="DWI_1" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DCE_1" ComparisonValue="1"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1695,13 +1695,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="DWI_1" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_1" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_1"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -1721,14 +1721,14 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="2"/>
 
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1737,7 +1737,7 @@
 							<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="3"/>
 							<LessThanOrEqualsCondition DataElementId="DWI_1" ComparisonValue="4"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1749,13 +1749,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_1"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -1779,7 +1779,7 @@
 							<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="1"/>
 							<EqualCondition DataElementId="DWI_1" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1788,7 +1788,7 @@
 							<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="2"/>
 							<EqualCondition DataElementId="DWI_1" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_1"></EndPointRef>
 					</Branch>
 
 
@@ -1800,7 +1800,7 @@
 							<EqualCondition DataElementId="DCE_1" ComparisonValue="1"/>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1817,13 +1817,13 @@
 								<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="4"/>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_1"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -1850,7 +1850,7 @@
 								<EqualCondition DataElementId="DCE_1" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1862,7 +1862,7 @@
 								<EqualCondition DataElementId="DCE_1" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_1"></EndPointRef>
 					</Branch>
 
 
@@ -1877,7 +1877,7 @@
 							</OrCondition>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1900,7 +1900,7 @@
 								</OrCondition>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1912,7 +1912,7 @@
 								<EqualCondition DataElementId="DCE_1" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_1"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -1937,13 +1937,13 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="DWI_2" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_2" ComparisonValue="2"/>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1952,7 +1952,7 @@
 							<EqualCondition DataElementId="DWI_2" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DCE_2" ComparisonValue="1"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -1964,13 +1964,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="DWI_2" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_2" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_2"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -1990,14 +1990,14 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="2"/>
 
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2006,7 +2006,7 @@
 							<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="3"/>
 							<LessThanOrEqualsCondition DataElementId="DWI_2" ComparisonValue="4"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2018,13 +2018,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_2"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2048,7 +2048,7 @@
 							<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="1"/>
 							<EqualCondition DataElementId="DWI_2" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2057,7 +2057,7 @@
 							<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="2"/>
 							<EqualCondition DataElementId="DWI_2" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
 
 
@@ -2069,7 +2069,7 @@
 							<EqualCondition DataElementId="DCE_2" ComparisonValue="1"/>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2086,7 +2086,7 @@
 								<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="4"/>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2119,7 +2119,7 @@
 								<EqualCondition DataElementId="DCE_2" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2131,7 +2131,7 @@
 								<EqualCondition DataElementId="DCE_2" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
 
 
@@ -2146,7 +2146,7 @@
 							</OrCondition>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2169,7 +2169,7 @@
 								</OrCondition>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2181,7 +2181,7 @@
 								<EqualCondition DataElementId="DCE_2" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_2"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2206,13 +2206,13 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="DWI_3" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_3" ComparisonValue="2"/>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2221,7 +2221,7 @@
 							<EqualCondition DataElementId="DWI_3" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DCE_3" ComparisonValue="1"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2233,13 +2233,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="DWI_3" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_3" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_3"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2259,14 +2259,14 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="2"/>
 
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2275,7 +2275,7 @@
 							<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="3"/>
 							<LessThanOrEqualsCondition DataElementId="DWI_3" ComparisonValue="4"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2287,13 +2287,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_3"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2317,7 +2317,7 @@
 							<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="1"/>
 							<EqualCondition DataElementId="DWI_3" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2326,7 +2326,7 @@
 							<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="2"/>
 							<EqualCondition DataElementId="DWI_3" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
 
 
@@ -2338,7 +2338,7 @@
 							<EqualCondition DataElementId="DCE_3" ComparisonValue="1"/>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2355,13 +2355,13 @@
 								<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="4"/>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_3"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2388,7 +2388,7 @@
 								<EqualCondition DataElementId="DCE_3" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2400,7 +2400,7 @@
 								<EqualCondition DataElementId="DCE_3" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
 
 
@@ -2415,7 +2415,7 @@
 							</OrCondition>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2438,7 +2438,7 @@
 								</OrCondition>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2450,7 +2450,7 @@
 								<EqualCondition DataElementId="DCE_3" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_3"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2475,13 +2475,13 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="DWI_4" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_4" ComparisonValue="2"/>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2490,7 +2490,7 @@
 							<EqualCondition DataElementId="DWI_4" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DCE_4" ComparisonValue="1"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2502,13 +2502,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="DWI_4" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_4" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_4"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2528,14 +2528,14 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="2"/>
 
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2544,7 +2544,7 @@
 							<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="3"/>
 							<LessThanOrEqualsCondition DataElementId="DWI_4" ComparisonValue="4"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2556,13 +2556,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_4"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2586,7 +2586,7 @@
 							<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="1"/>
 							<EqualCondition DataElementId="DWI_4" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2595,7 +2595,7 @@
 							<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="2"/>
 							<EqualCondition DataElementId="DWI_4" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
 
 
@@ -2607,7 +2607,7 @@
 							<EqualCondition DataElementId="DCE_4" ComparisonValue="1"/>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2624,13 +2624,13 @@
 								<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="4"/>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_4"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2657,7 +2657,7 @@
 								<EqualCondition DataElementId="DCE_4" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2669,7 +2669,7 @@
 								<EqualCondition DataElementId="DCE_4" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
 
 
@@ -2684,7 +2684,7 @@
 							</OrCondition>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2707,7 +2707,7 @@
 								</OrCondition>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2719,7 +2719,7 @@
 								<EqualCondition DataElementId="DCE_4" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_4"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2743,13 +2743,13 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="DWI_5" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_5" ComparisonValue="2"/>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2758,7 +2758,7 @@
 							<EqualCondition DataElementId="DWI_5" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DCE_5" ComparisonValue="1"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2770,13 +2770,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="DWI_5" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_5" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_5"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2796,14 +2796,14 @@
 					<Branch>
 						<Label>Overall Point 1</Label>
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="1"/>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="2"/>
 
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2812,7 +2812,7 @@
 							<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="3"/>
 							<LessThanOrEqualsCondition DataElementId="DWI_5" ComparisonValue="4"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2824,13 +2824,13 @@
 							</AndCondition>
 							<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="4"/>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_5"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2854,7 +2854,7 @@
 							<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="1"/>
 							<EqualCondition DataElementId="DWI_5" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2863,7 +2863,7 @@
 							<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="2"/>
 							<EqualCondition DataElementId="DWI_5" ComparisonValue="6"/>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
 
 
@@ -2875,7 +2875,7 @@
 							<EqualCondition DataElementId="DCE_5" ComparisonValue="1"/>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2892,13 +2892,13 @@
 								<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="4"/>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_5"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2925,7 +2925,7 @@
 								<EqualCondition DataElementId="DCE_5" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Verylow"></EndPointRef>
+						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2937,7 +2937,7 @@
 								<EqualCondition DataElementId="DCE_5" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="Low"></EndPointRef>
+						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
 
 
@@ -2952,7 +2952,7 @@
 							</OrCondition>
 
 						</AndCondition>
-						<EndPointRef EndPointId="Intermediate"></EndPointRef>
+						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2975,7 +2975,7 @@
 								</OrCondition>
 							</AndCondition>
 						</OrCondition>
-						<EndPointRef EndPointId="High"></EndPointRef>
+						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
 
 					<Branch>
@@ -2987,7 +2987,7 @@
 								<EqualCondition DataElementId="DCE_5" ComparisonValue="4"/>
 							</OrCondition>
 						</AndCondition>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_5"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
@@ -2997,7 +2997,57 @@
 	</Rules>
 
 <EndPoints>
-		<EndPoint Id="Verylow">
+        
+		<!-- nodule 1 -->
+		
+		
+		<TemplatePartial Id="nodule1Findings_1">
+			<Branch>
+			     <ReportText Type="PlainText">Overall category of the gland: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Gland_cat"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_1"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_1"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DWI test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DWI_1"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WPZ_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WTZ_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DCE test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DCE_1"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other nodules: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
+				<ReportText Type="Newline"/>
+
+				
+			</Branch>
+		</TemplatePartial>
+		
+		<EndPoint Id="Verylow_1">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -3008,7 +3058,7 @@
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="Low">
+		<EndPoint Id="Low_1">
 			<Label>PIRADS-2</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -3019,7 +3069,7 @@
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="Intermediate">
+		<EndPoint Id="Intermediate_1">
 			<Label>PIRADS-3</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -3030,7 +3080,7 @@
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="High">
+		<EndPoint Id="High_1">
 			<Label>PIRADS-4</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -3041,7 +3091,108 @@
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="VeryHigh">
+		<EndPoint Id="VeryHigh_1">
+			<Label>PIRADS-5</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+                
+			
+           <!-- nodule 2 -->
+
+        <TemplatePartial Id="nodule1Findings_2">
+			<Branch>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_2"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_2"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DWI test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DWI_2"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WPZ_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WTZ_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DCE test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DCE_2"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other nodules: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
+				<ReportText Type="Newline"/>
+
+				
+			</Branch>
+		</TemplatePartial>		   
+
+        <EndPoint Id="Verylow_2">
+			<Label>PIRADS-1</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Low_2">
+			<Label>PIRADS-2</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Intermediate_2">
+			<Label>PIRADS-3</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="High_2">
+			<Label>PIRADS-4</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="VeryHigh_2">
 			<Label>PIRADS-5</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
@@ -3052,6 +3203,303 @@
 			</ReportSections>
 		</EndPoint>
 
+		 
+             <!-- nodule 3 -->
+			 
+			 <TemplatePartial Id="nodule1Findings_3">
+			<Branch>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_3"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_3"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DWI test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DWI_3"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WPZ_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WTZ_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DCE test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DCE_3"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other nodules: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
+				<ReportText Type="Newline"/>
+
+				
+			</Branch>
+		</TemplatePartial>		   
+
+            <EndPoint Id="Verylow_3">
+			<Label>PIRADS-1</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Low_3">
+			<Label>PIRADS-2</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Intermediate_3">
+			<Label>PIRADS-3</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="High_3">
+			<Label>PIRADS-4</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="VeryHigh_3">
+			<Label>PIRADS-5</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>	
+
+            <!-- nodule 4 -->
+
+             <TemplatePartial Id="nodule1Findings_4">
+			<Branch>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_4"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_4"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DWI test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DWI_4"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WPZ_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WTZ_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DCE test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DCE_4"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other nodules: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
+				<ReportText Type="Newline"/>
+
+				
+			</Branch>
+		</TemplatePartial>		
+		
+		
+			<EndPoint Id="Verylow_4">
+			<Label>PIRADS-1</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Low_4">
+			<Label>PIRADS-2</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Intermediate_4">
+			<Label>PIRADS-3</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="High_4">
+			<Label>PIRADS-4</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="VeryHigh_4">
+			<Label>PIRADS-5</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>	
+
+			     <!-- nodule 5 -->
+				 
+				 <TemplatePartial Id="nodule1Findings_5">
+			<Branch>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_5"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_5"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_5"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_5"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DWI test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DWI_5"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WPZ_5"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="T2WTZ_5"/>
+				<ReportText Type="Newline"/>
+
+				<ReportText Type="PlainText">DCE test results: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="DCE_5"/>
+				<ReportText Type="Newline"/>
+				
+			</Branch>
+		</TemplatePartial>	
+		
+		
+			<EndPoint Id="Verylow_5">
+			<Label>PIRADS-1</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Low_5">
+			<Label>PIRADS-2</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="Intermediate_5">
+			<Label>PIRADS-3</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="High_5">
+			<Label>PIRADS-4</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="VeryHigh_5">
+			<Label>PIRADS-5</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>		 
 	</EndPoints>
 
 </ReportingModule>	
