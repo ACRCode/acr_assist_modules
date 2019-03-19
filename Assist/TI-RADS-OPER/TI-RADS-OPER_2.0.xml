@@ -189,7 +189,49 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="0"/>
+					<NotEqualCondition DataElementId="composition_1" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement 	Id="echogenicity_solid_1" IsRequired="true" DisplaySequence="6">
+			<Label>Echogenicity</Label>
+			<CodableConcept Name="echogenicity_solid_1">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE126"></Code>
+					<Display Value="RDE126"></Display>
+					<Url Value="http://radelement.org/element/RDE126"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>S Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>S Hyperechoic or isoechoic (3 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>S Echogenicity cannot be determined (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>4</Value>
+					<Label>S Hypoechoic (4 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>5</Value>
+					<Label>S Very hypoechoic (5 points)</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<NotEqualCondition DataElementId="composition_1" ComparisonValue="2"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -237,14 +279,20 @@
 					<OrCondition>
 						<AndCondition>
 							<SectionIf DataElementId="composition_1"></SectionIf>
-							<SectionIfNot DataElementId="echogenicity_1"></SectionIfNot>
+							<OrCondition>
+								<SectionIfNot DataElementId="echogenicity_1"></SectionIfNot>
+								<SectionIfNot DataElementId="echogenicity_solid_1"></SectionIfNot>
+							</OrCondition>
 						</AndCondition>
 						<AndCondition>
 							<SectionIf DataElementId="composition_1"></SectionIf>
-							<SectionIf DataElementId="echogenicity_1"></SectionIf>
+							<OrCondition>
+								<SectionIf DataElementId="echogenicity_1"></SectionIf>
+								<SectionIf DataElementId="echogenicity_solid_1"></SectionIf>
+							</OrCondition>
 						</AndCondition>
 					</OrCondition>
-					<ArithmeticExpression>{composition_1} + {echogenicity_1} + {other_1} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_1} + {echogenicity_1} +  {echogenicity_solid_1} + {other_1} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
