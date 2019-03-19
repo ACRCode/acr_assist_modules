@@ -194,7 +194,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		
+
 		<ChoiceDataElement 	Id="echogenicity_solid_1" IsRequired="true" DisplaySequence="6">
 			<Label>Echogenicity</Label>
 			<CodableConcept Name="echogenicity_solid_1">
@@ -210,23 +210,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
-					<Label>S Anechoic (0 points)</Label>	
+					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>S Hyperechoic or isoechoic (3 points)</Label>
+					<Label>Hyperechoic or isoechoic (3 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
-					<Label>S Echogenicity cannot be determined (1 points)</Label>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>4</Value>
-					<Label>S Hypoechoic (4 points)</Label>
+					<Label>Hypoechoic (4 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>5</Value>
-					<Label>S Very hypoechoic (5 points)</Label>
+					<Label>Very hypoechoic (5 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -466,10 +466,55 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_2" ComparisonValue="0"/>
+						<NotEqualCondition DataElementId="composition_2" ComparisonValue="1"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement 	Id="echogenicity_solid_2" IsRequired="true" DisplaySequence="14">
+			<Label>Echogenicity</Label>
+			<CodableConcept Name="echogenicity_solid_2">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE126"></Code>
+					<Display Value="RDE126"></Display>
+					<Url Value="http://radelement.org/element/RDE126"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>Hyperechoic or isoechoic (3 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>4</Value>
+					<Label>Hypoechoic (4 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>5</Value>
+					<Label>Very hypoechoic (5 points)</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<NotEqualCondition DataElementId="composition_2" ComparisonValue="2"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
@@ -720,11 +765,57 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
+						<NotEqualCondition DataElementId="composition_3" ComparisonValue="1"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement 	Id="echogenicity_solid_3" IsRequired="true" DisplaySequence="22">
+			<Label>Echogenicity</Label>
+			<CodableConcept Name="echogenicity_solid_3">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE126"></Code>
+					<Display Value="RDE126"></Display>
+					<Url Value="http://radelement.org/element/RDE126"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>Hyperechoic or isoechoic (3 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>4</Value>
+					<Label>Hypoechoic (4 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>5</Value>
+					<Label>Very hypoechoic (5 points)</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<NotEqualCondition DataElementId="composition_3" ComparisonValue="2"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
@@ -986,12 +1077,59 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
+						<NotEqualCondition DataElementId="composition_4" ComparisonValue="1"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement 	Id="echogenicity_solid_4" IsRequired="true" DisplaySequence="36">
+			<Label>Echogenicity</Label>
+			<CodableConcept Name="echogenicity_solid_4">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE126"></Code>
+					<Display Value="RDE126"></Display>
+					<Url Value="http://radelement.org/element/RDE126"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>Hyperechoic or isoechoic (3 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Echogenicity cannot be determined (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>4</Value>
+					<Label>Hypoechoic (4 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>5</Value>
+					<Label>Very hypoechoic (5 points)</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<NotEqualCondition DataElementId="composition_4" ComparisonValue="2"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
@@ -1577,58 +1715,65 @@
 
 		<TemplatePartial Id="nodule1Findings_1">
 			<Branch>
-					<SectionIf DataElementId="nodulenumber_1"></SectionIf>
-					<ReportText Type="PlainText">Nodule Number: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="nodulenumber_1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+				<SectionIf DataElementId="nodulenumber_1"></SectionIf>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_1"></SectionIf>
-					<ReportText Type="PlainText">Lobe: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_1"></SectionIf>
+				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_location_1"></SectionIf>
-					<ReportText Type="PlainText">Location: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_location_1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_location_1"></SectionIf>
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="diameter_1"></SectionIf>
-					<ReportText Type="PlainText">Maximum Size: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="diameter_1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="diameter_1"></SectionIf>
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="composition_1"></SectionIf>
-					<ReportText Type="PlainText">Composition: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="composition_1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="composition_1"></SectionIf>
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="echogenicity_1"></SectionIf>
-					<ReportText Type="PlainText">Echogenicity: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="echogenicity_1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="echogenicity_1"></SectionIf>					
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="other_1"></SectionIf>
-					<ReportText Type="PlainText">Other Features:  </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="other_1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
+			<Branch>
+				<SectionIf DataElementId="echogenicity_solid_1"></SectionIf>
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="other_1"></SectionIf>
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_1"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+			<Branch>
+				<ReportText Type="Newline"/>
+			</Branch>
+
 		</TemplatePartial>
 
 
@@ -1906,58 +2051,66 @@
 
 		<TemplatePartial Id="nodule1Findings_2">
 			<Branch>
-					<SectionIf DataElementId="nodulenumber_2"></SectionIf>
-					<ReportText Type="PlainText">Nodule Number: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="nodulenumber_2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+				<SectionIf DataElementId="nodulenumber_2"></SectionIf>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_2"></SectionIf>
-					<ReportText Type="PlainText">Lobe: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_2"></SectionIf>
+				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_location_2"></SectionIf>
-					<ReportText Type="PlainText">Location: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_location_2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_location_2"></SectionIf>
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="diameter_2"></SectionIf>
-					<ReportText Type="PlainText">Maximum Size: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="diameter_2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="diameter_2"></SectionIf>
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="composition_2"></SectionIf>
-					<ReportText Type="PlainText">Composition: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="composition_2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="composition_2"></SectionIf>
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="echogenicity_2"></SectionIf>
-					<ReportText Type="PlainText">Echogenicity: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="echogenicity_2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="echogenicity_2"></SectionIf>
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="other_2"></SectionIf>
-					<ReportText Type="PlainText">Other Features:  </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="other_2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
+			<Branch>
+				<SectionIf DataElementId="echogenicity_solid_2"></SectionIf>
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+
+			<Branch>
+				<SectionIf DataElementId="other_2"></SectionIf>
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_2"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+			<Branch>
+				<ReportText Type="Newline"/>
+			</Branch>
+
 		</TemplatePartial>
 
 
@@ -2209,60 +2362,68 @@
 
 		<!-- Nodule 3 -->
 
-				<TemplatePartial Id="nodule1Findings_3">
+		<TemplatePartial Id="nodule1Findings_3">
 			<Branch>
-					<SectionIf DataElementId="nodulenumber_3"></SectionIf>
-					<ReportText Type="PlainText">Nodule Number: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="nodulenumber_3"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+				<SectionIf DataElementId="nodulenumber_3"></SectionIf>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_3"></SectionIf>
-					<ReportText Type="PlainText">Lobe: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_3"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_3"></SectionIf>
+				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_location_3"></SectionIf>
-					<ReportText Type="PlainText">Location: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_location_3"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_location_3"></SectionIf>
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="diameter_3"></SectionIf>
-					<ReportText Type="PlainText">Maximum Size: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="diameter_3"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="diameter_3"></SectionIf>
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="composition_3"></SectionIf>
-					<ReportText Type="PlainText">Composition: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="composition_3"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="composition_3"></SectionIf>
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="echogenicity_3"></SectionIf>
-					<ReportText Type="PlainText">Echogenicity: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="echogenicity_3"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="echogenicity_3"></SectionIf>
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="other_3"></SectionIf>
-					<ReportText Type="PlainText">Other Features:  </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="other_3"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
+			<Branch>
+				<SectionIf DataElementId="echogenicity_solid_3"></SectionIf>
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+
+			<Branch>
+				<SectionIf DataElementId="other_3"></SectionIf>
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_3"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+			<Branch>
+				<ReportText Type="Newline"/>
+			</Branch>
+
 		</TemplatePartial>
 
 		<EndPoint Id="ReporttextTR1_3">
@@ -2535,60 +2696,68 @@
 
 
 
-				<TemplatePartial Id="nodule1Findings_4">
+		<TemplatePartial Id="nodule1Findings_4">
 			<Branch>
-					<SectionIf DataElementId="nodulenumber_4"></SectionIf>
-					<ReportText Type="PlainText">Nodule Number: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="nodulenumber_4"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+				<SectionIf DataElementId="nodulenumber_4"></SectionIf>
+				<ReportText Type="PlainText">Nodule Number: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_4"></SectionIf>
-					<ReportText Type="PlainText">Lobe: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_4"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_4"></SectionIf>
+				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="lobe_location_4"></SectionIf>
-					<ReportText Type="PlainText">Location: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="lobe_location_4"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="lobe_location_4"></SectionIf>
+				<ReportText Type="PlainText">Location: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lobe_location_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="diameter_4"></SectionIf>
-					<ReportText Type="PlainText">Maximum Size: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="diameter_4"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="diameter_4"></SectionIf>
+				<ReportText Type="PlainText">Maximum Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="composition_4"></SectionIf>
-					<ReportText Type="PlainText">Composition: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="composition_4"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="composition_4"></SectionIf>
+				<ReportText Type="PlainText">Composition: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="composition_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="echogenicity_4"></SectionIf>
-					<ReportText Type="PlainText">Echogenicity: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="echogenicity_4"/>
-					<ReportText Type="Newline"/>
-				</Branch>
+			<Branch>
+				<SectionIf DataElementId="echogenicity_4"></SectionIf>
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
 
-				<Branch>
-					<SectionIf DataElementId="other_4"></SectionIf>
-					<ReportText Type="PlainText">Other Features:  </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="other_4"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				<Branch>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
+			<Branch>
+				<SectionIf DataElementId="echogenicity_solid_4"></SectionIf>
+				<ReportText Type="PlainText">Echogenicity: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+
+			<Branch>
+				<SectionIf DataElementId="other_4"></SectionIf>
+				<ReportText Type="PlainText">Other Features:  </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="other_4"/>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+			<Branch>
+				<ReportText Type="Newline"/>
+			</Branch>
+
 		</TemplatePartial>
 
 		<EndPoint Id="ReporttextTR1_4">
