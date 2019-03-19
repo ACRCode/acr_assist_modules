@@ -3023,22 +3023,6 @@
 				<ReportText Type="InsertDataElementValue" Value="Diameter_1"/>
 				<ReportText Type="Newline"/>
 
-				<ReportText Type="PlainText">DWI test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DWI_1"/>
-				<ReportText Type="Newline"/>
-				
-				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WPZ_1"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WTZ_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">DCE test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DCE_1"/>
-				<ReportText Type="Newline"/>
-
 				<ReportText Type="PlainText">Other nodules: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
 				<ReportText Type="Newline"/>
@@ -3052,6 +3036,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3063,6 +3048,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3074,6 +3060,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3085,6 +3072,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3096,6 +3084,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3124,22 +3113,6 @@
 				<ReportText Type="InsertDataElementValue" Value="Diameter_2"/>
 				<ReportText Type="Newline"/>
 
-				<ReportText Type="PlainText">DWI test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DWI_2"/>
-				<ReportText Type="Newline"/>
-				
-				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WPZ_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WTZ_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">DCE test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DCE_2"/>
-				<ReportText Type="Newline"/>
-
 				<ReportText Type="PlainText">Other nodules: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
 				<ReportText Type="Newline"/>
@@ -3153,6 +3126,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3164,6 +3138,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3175,6 +3150,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3186,6 +3162,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3197,6 +3174,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3225,22 +3203,6 @@
 				<ReportText Type="InsertDataElementValue" Value="Diameter_3"/>
 				<ReportText Type="Newline"/>
 
-				<ReportText Type="PlainText">DWI test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DWI_3"/>
-				<ReportText Type="Newline"/>
-				
-				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WPZ_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WTZ_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">DCE test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DCE_3"/>
-				<ReportText Type="Newline"/>
-
 				<ReportText Type="PlainText">Other nodules: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
 				<ReportText Type="Newline"/>
@@ -3254,6 +3216,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3265,6 +3228,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3276,6 +3240,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3287,6 +3252,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3298,6 +3264,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3325,22 +3292,6 @@
 				<ReportText Type="InsertDataElementValue" Value="Diameter_4"/>
 				<ReportText Type="Newline"/>
 
-				<ReportText Type="PlainText">DWI test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DWI_4"/>
-				<ReportText Type="Newline"/>
-				
-				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WPZ_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WTZ_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">DCE test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DCE_4"/>
-				<ReportText Type="Newline"/>
-
 				<ReportText Type="PlainText">Other nodules: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
 				<ReportText Type="Newline"/>
@@ -3355,6 +3306,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3366,6 +3318,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3377,6 +3330,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3388,6 +3342,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3399,6 +3354,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3425,22 +3381,6 @@
 				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Diameter_5"/>
 				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">DWI test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DWI_5"/>
-				<ReportText Type="Newline"/>
-				
-				<ReportText Type="PlainText">T2WPZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WPZ_5"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">T2WTZ test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="T2WTZ_5"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">DCE test results: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="DCE_5"/>
-				<ReportText Type="Newline"/>
 				
 			</Branch>
 		</TemplatePartial>	
@@ -3451,6 +3391,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3462,6 +3403,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3473,6 +3415,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3484,6 +3427,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
@@ -3495,6 +3439,7 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
+					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
 						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
 					</Branch>
 				</ReportSection>
