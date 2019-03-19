@@ -129,7 +129,9 @@ durationConditionalProperty = element ConditionalProperty {
 	  element MinimumHours {xsd:integer}?,
 	  element MaximumHours {xsd:integer}?,
 	  element MinimumMinutes {xsd:integer}?,
-	  element MaxmimumMinutes {xsd:integer}?
+	  element MaxmimumMinutes {xsd:integer}?,
+	  element MinimumSeconds {xsd:integer}?,
+	  element MaximimumSeconds {xsd:integer}?
 }
 
 computedValue =
@@ -175,12 +177,18 @@ IntegerDataElement =
  TimeSpanDataElement =
     element TimeSpanDataElement {
             baseElementContents,
+            attribute ShowDays {xsd:boolean}?,
+            attribute ShowHours {xsd:boolean}?,
+            attribute ShowMinutes {xsd:boolean}?,
+            attribute ShowSeconds {xsd:boolean}?,            
 			element MinimumDay {xsd:integer}?,
 			element MaximumDay {xsd:integer}?,	  
 			element MinimumHours {xsd:integer}?,
 			element MaximumHours {xsd:integer}?,
 			element MinimumMinutes {xsd:integer}?,
 			element MaxmimumMinutes {xsd:integer}?,
+			element MinimumSeconds {xsd:integer}?,
+			element MaximimumSeconds {xsd:integer}?,
             element ConditionalProperties { durationConditionalProperty+ }?
         }
     
@@ -223,6 +231,7 @@ ChoiceDataElement =
     }
 MultiChoiceDataElement =
     element MultiChoiceDataElement { 
+    attribute AllowFreetext { "true" | "false" }?,
     baseElementContents, 
     ChoiceInfo,    
     ImageMap?,

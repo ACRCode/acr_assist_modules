@@ -120,15 +120,15 @@
 		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="5">
 			<Label>Composition</Label>
 			<CodableConcept Name="composition_1">
-            <Coding>
-            <System Value="RadElement"></System>
-            <Version Value="1.0"></Version>
-            <Code Value="RDE125"></Code>
-            <Display Value="RDE125"></Display>
-			<Url Value="http://radelement.org/element/RDE125"></Url>
-            <UserSelected Value="true"></UserSelected>
-            </Coding>
-         </CodableConcept>
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE125"></Code>
+					<Display Value="RDE125"></Display>
+					<Url Value="http://radelement.org/element/RDE125"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
@@ -156,15 +156,15 @@
 		<ChoiceDataElement 	Id="echogenicity_1" IsRequired="true" DisplaySequence="6">
 			<Label>Echogenicity</Label>
 			<CodableConcept Name="echogenicity_1">
-            <Coding>
-            <System Value="RadElement"></System>
-            <Version Value="1.0"></Version>
-            <Code Value="RDE126"></Code>
-            <Display Value="RDE126"></Display>
-			<Url Value="http://radelement.org/element/RDE126"></Url>
-            <UserSelected Value="true"></UserSelected>
-            </Coding>
-         </CodableConcept>
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE126"></Code>
+					<Display Value="RDE126"></Display>
+					<Url Value="http://radelement.org/element/RDE126"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>0</Value>
@@ -183,13 +183,55 @@
 					<Label>Hypoechoic (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
+					<Value>4</Value>
 					<Label>Very hypoechoic (4 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="0"/>
+					<NotEqualCondition DataElementId="composition_1" ComparisonValue="1"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement 	Id="echogenicity_solid_1" IsRequired="true" DisplaySequence="6">
+			<Label>Echogenicity</Label>
+			<CodableConcept Name="echogenicity_solid_1">
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE126"></Code>
+					<Display Value="RDE126"></Display>
+					<Url Value="http://radelement.org/element/RDE126"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>S Anechoic (0 points)</Label>	
+				</Choice>
+				<Choice>
+					<Value>3</Value>
+					<Label>S Hyperechoic or isoechoic (3 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>S Echogenicity cannot be determined (1 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>4</Value>
+					<Label>S Hypoechoic (4 points)</Label>
+				</Choice>
+				<Choice>
+					<Value>5</Value>
+					<Label>S Very hypoechoic (5 points)</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<NotEqualCondition DataElementId="composition_1" ComparisonValue="2"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -234,24 +276,23 @@
 		<ComputedDataElement Id="addtr1_1">		
 			<DecisionPoint>
 				<Branch>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_1}</ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_1" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_1" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_1"></SectionIf>
-					</AndCondition>
-					<ArithmeticExpression>{composition_1} + {echogenicity_1} + {other_1} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_1" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_1" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_1"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_1} + {echogenicity_1} </ArithmeticExpression>
+					<OrCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_1"></SectionIf>
+							<OrCondition>
+								<SectionIfNot DataElementId="echogenicity_1"></SectionIfNot>
+								<SectionIfNot DataElementId="echogenicity_solid_1"></SectionIfNot>
+							</OrCondition>
+						</AndCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_1"></SectionIf>
+							<OrCondition>
+								<SectionIf DataElementId="echogenicity_1"></SectionIf>
+								<SectionIf DataElementId="echogenicity_solid_1"></SectionIf>
+							</OrCondition>
+						</AndCondition>
+					</OrCondition>
+					<ArithmeticExpression>{composition_1} + {echogenicity_1} +  {echogenicity_solid_1} + {other_1} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -344,7 +385,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
-		
+
 
 		<NumericDataElement Id="diameter_2" IsRequired="true" DisplaySequence="12" Unit="cm">		
 			<Label>Maximum Diameter</Label>
@@ -406,20 +447,20 @@
 					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
+					<Value>2</Value>
+					<Label>Hyperechoic or isoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
-					<Label>Hypoechoic (2 points)</Label>
+					<Value>3</Value>
+					<Label>Hypoechoic (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
-					<Label>Very hypoechoic (3 points)</Label>
+					<Value>4</Value>
+					<Label>Very hypoechoic (4 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -475,24 +516,17 @@
 		<ComputedDataElement Id="addtr1_2">		
 			<DecisionPoint>
 				<Branch>
-					<EqualCondition DataElementId="composition_2" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_2}</ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_2" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_2" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_2"></SectionIf>
-					</AndCondition>
+					<OrCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_2"></SectionIf>
+							<SectionIfNot DataElementId="echogenicity_2"></SectionIfNot>
+						</AndCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_2"></SectionIf>
+							<SectionIf DataElementId="echogenicity_2"></SectionIf>
+						</AndCondition>
+					</OrCondition>
 					<ArithmeticExpression>{composition_2} + {echogenicity_2} + {other_2} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_2" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_2" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_2"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_2} + {echogenicity_2} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -525,13 +559,13 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
 			</ConditionalProperties>	
-	
+
 		</IntegerDataElement>
 
 		<ChoiceDataElement Id="lobe_3" IsRequired="false" DisplaySequence="18">
@@ -553,8 +587,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
@@ -593,14 +627,14 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</ChoiceDataElement>
-		
+
 		<NumericDataElement Id="diameter_3" DisplaySequence="20" Unit="cm">		
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
@@ -616,8 +650,8 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
@@ -651,8 +685,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -667,28 +701,28 @@
 					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
+					<Value>2</Value>
+					<Label>Hyperechoic or isoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
-					<Label>Hypoechoic (2 points)</Label>
+					<Value>3</Value>
+					<Label>Hypoechoic (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
-					<Label>Very hypoechoic (3 points)</Label>
+					<Value>4</Value>
+					<Label>Very hypoechoic (4 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
@@ -727,8 +761,8 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -738,24 +772,17 @@
 		<ComputedDataElement Id="addtr1_3">		
 			<DecisionPoint>
 				<Branch>
-					<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_3}</ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_3" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_3"></SectionIf>
-					</AndCondition>
+					<OrCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_3"></SectionIf>
+							<SectionIfNot DataElementId="echogenicity_3"></SectionIfNot>
+						</AndCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_3"></SectionIf>
+							<SectionIf DataElementId="echogenicity_3"></SectionIf>
+						</AndCondition>
+					</OrCondition>
 					<ArithmeticExpression>{composition_3} + {echogenicity_3} + {other_3} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_3" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_3" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_3"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_3} + {echogenicity_3} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -775,8 +802,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -784,7 +811,7 @@
 		</ChoiceDataElement>
 
 		<!-- Nodule 4 -->
-		
+
 		<IntegerDataElement Id="nodulenumber_4" IsRequired="true" DisplaySequence="31">
 			<Label>What is the nodule number?</Label>
 			<Minimum>1</Minimum>
@@ -792,9 +819,9 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -820,9 +847,9 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -861,9 +888,9 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -871,7 +898,7 @@
 		</ChoiceDataElement>
 
 
-		
+
 		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="34" Unit="cm">		
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
@@ -887,9 +914,9 @@
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
@@ -923,9 +950,9 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -940,27 +967,27 @@
 					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>1</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
+					<Value>2</Value>
+					<Label>Hyperechoic or isoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
 					<Value>1</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
-					<Label>Hypoechoic (2 points)</Label>
+					<Value>3</Value>
+					<Label>Hypoechoic (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
-					<Label>Very hypoechoic (3 points)</Label>
+					<Value>4</Value>
+					<Label>Very hypoechoic (4 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
@@ -1001,9 +1028,9 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -1013,51 +1040,20 @@
 		<ComputedDataElement Id="addtr1_4">		
 			<DecisionPoint>
 				<Branch>
-					<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
-					<ArithmeticExpression>{composition_4}</ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
-						<SectionIf DataElementId="other_4"></SectionIf>
-					</AndCondition>
+					<OrCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_4"></SectionIf>
+							<SectionIfNot DataElementId="echogenicity_4"></SectionIfNot>
+						</AndCondition>
+						<AndCondition>
+							<SectionIf DataElementId="composition_4"></SectionIf>
+							<SectionIf DataElementId="echogenicity_4"></SectionIf>
+						</AndCondition>
+					</OrCondition>
 					<ArithmeticExpression>{composition_4} + {echogenicity_4} + {other_4} </ArithmeticExpression>
-				</Branch>
-				<Branch>
-					<AndCondition>
-						<GreaterThanCondition DataElementId="composition_4" ComparisonValue="0"/>
-						<GreaterThanCondition DataElementId="echogenicity_4" ComparisonValue="0"/>
-						<SectionIfNot DataElementId="other_4"></SectionIfNot>
-					</AndCondition>
-					<ArithmeticExpression>{composition_4} + {echogenicity_4} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-
-		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="38">
-			<Label>Are there any other nodules present?</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>	
-				</Choice>
-				<Choice IsDefault="true">
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>
-		</ChoiceDataElement>
 	</DataElements>	
 
 	<Rules>	
@@ -1071,7 +1067,7 @@
 			<Branch>
 				<Label>2 points TR2</Label>
 				<EqualCondition DataElementId="addtr1_1" ComparisonValue="2"/>
-				<EndPointRef EndPointId="ReporttextTR1_2"></EndPointRef>
+				<EndPointRef EndPointId="ReporttextTR2_1"></EndPointRef>
 			</Branch>
 			<Branch>
 				<Label>3 points TR3 FNA</Label>
@@ -1095,7 +1091,7 @@
 				</AndCondition>			  
 				<EndPointRef EndPointId="ReporttextTR6_1"></EndPointRef>
 			</Branch>
-			
+
 
 			<Branch>
 				<Label>3 points TR3 Mildly Suspicious</Label>
@@ -1578,42 +1574,65 @@
 	</Rules>	
 
 	<EndPoints>
-	
-			<TemplatePartial Id="nodule1Findings_1">
+
+		<TemplatePartial Id="nodule1Findings_1">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Number: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_1"/>
-				<ReportText Type="Newline"/>
+					<SectionIf DataElementId="nodulenumber_1"></SectionIf>
+					<ReportText Type="PlainText">Nodule Number: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="nodulenumber_1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="lobe_1"></SectionIf>
+					<ReportText Type="PlainText">Lobe: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="lobe_location_1"></SectionIf>
+					<ReportText Type="PlainText">Location: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_location_1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="diameter_1"></SectionIf>
+					<ReportText Type="PlainText">Maximum Size: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="diameter_1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="composition_1"></SectionIf>
+					<ReportText Type="PlainText">Composition: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="composition_1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="echogenicity_1"></SectionIf>
+					<ReportText Type="PlainText">Echogenicity: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="echogenicity_1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="other_1"></SectionIf>
+					<ReportText Type="PlainText">Other Features:  </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="other_1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
 				
-				<ReportText Type="PlainText">Lobe: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_1"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Location: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_location_1"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Maximum Size: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="diameter_1"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Composition: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="composition_1"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_1"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other Features:  </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="other_1"/>
-				<ReportText Type="Newline"/>
-				<ReportText Type="Newline"/>
-			</Branch>
+				<Branch>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
 		</TemplatePartial>
-		
-		
-		
+
+
+
 		<EndPoint Id="ReporttextTR1_1">
 			<Label>Benign noFNA</Label>
 			<ReportSections>
@@ -1630,7 +1649,7 @@
 						<ReportText Type="PlainText">ACR TI-RADS recommendation: No FNA or follow up</ReportText>
 						<ReportText Type="Newline"/>
 					</Branch>
-					
+
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
@@ -1655,7 +1674,7 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-		
+
 		<!--<EndPoint Id="ReporttextTR2_2">
 			<Label>NotSuspicious noFNA</Label>
 			<ReportSections>
@@ -1675,8 +1694,8 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint> -->
-		
-		
+
+
 		<EndPoint Id="ReporttextTR6_1">
 			<Label>Mildly Suspicious Follow</Label>
 			<ReportSections>
@@ -1884,40 +1903,63 @@
 
 
 		<!-- Nodule 2 -->
-		
+
 		<TemplatePartial Id="nodule1Findings_2">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Number: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_2"/>
-				<ReportText Type="Newline"/>
+					<SectionIf DataElementId="nodulenumber_2"></SectionIf>
+					<ReportText Type="PlainText">Nodule Number: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="nodulenumber_2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="lobe_2"></SectionIf>
+					<ReportText Type="PlainText">Lobe: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="lobe_location_2"></SectionIf>
+					<ReportText Type="PlainText">Location: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_location_2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="diameter_2"></SectionIf>
+					<ReportText Type="PlainText">Maximum Size: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="diameter_2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="composition_2"></SectionIf>
+					<ReportText Type="PlainText">Composition: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="composition_2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="echogenicity_2"></SectionIf>
+					<ReportText Type="PlainText">Echogenicity: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="echogenicity_2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="other_2"></SectionIf>
+					<ReportText Type="PlainText">Other Features:  </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="other_2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
 				
-				<ReportText Type="PlainText">Lobe: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Location: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_location_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Maximum Size: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="diameter_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Composition: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="composition_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other Features:  </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="other_2"/>
-				<ReportText Type="Newline"/>
-				<ReportText Type="Newline"/>
-			</Branch>
+				<Branch>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
 		</TemplatePartial>
-		
+
 
 		<EndPoint Id="ReporttextTR1_2">
 			<Label>Benign noFNA</Label>
@@ -2167,37 +2209,60 @@
 
 		<!-- Nodule 3 -->
 
-		<TemplatePartial Id="nodule1Findings_3">
+				<TemplatePartial Id="nodule1Findings_3">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Number: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_3"/>
-				<ReportText Type="Newline"/>
+					<SectionIf DataElementId="nodulenumber_3"></SectionIf>
+					<ReportText Type="PlainText">Nodule Number: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="nodulenumber_3"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="lobe_3"></SectionIf>
+					<ReportText Type="PlainText">Lobe: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_3"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="lobe_location_3"></SectionIf>
+					<ReportText Type="PlainText">Location: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_location_3"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="diameter_3"></SectionIf>
+					<ReportText Type="PlainText">Maximum Size: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="diameter_3"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="composition_3"></SectionIf>
+					<ReportText Type="PlainText">Composition: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="composition_3"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="echogenicity_3"></SectionIf>
+					<ReportText Type="PlainText">Echogenicity: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="echogenicity_3"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="other_3"></SectionIf>
+					<ReportText Type="PlainText">Other Features:  </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="other_3"/>
+					<ReportText Type="Newline"/>
+				</Branch>
 				
-				<ReportText Type="PlainText">Lobe: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Location: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_location_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Maximum Size: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="diameter_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Composition: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="composition_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other Features:  </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="other_3"/>
-				<ReportText Type="Newline"/>
-				<ReportText Type="Newline"/>
-			</Branch>
+				<Branch>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
 		</TemplatePartial>
 
 		<EndPoint Id="ReporttextTR1_3">
@@ -2465,43 +2530,65 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-		
+
 		<!-- Nodule 4 -->
 
 
-		
-		<TemplatePartial Id="nodule1Findings_4">
+
+				<TemplatePartial Id="nodule1Findings_4">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Number: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_4"/>
-				<ReportText Type="Newline"/>
+					<SectionIf DataElementId="nodulenumber_4"></SectionIf>
+					<ReportText Type="PlainText">Nodule Number: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="nodulenumber_4"/>
+					<ReportText Type="Newline"/>
+				</Branch>
 
-				<ReportText Type="PlainText">Lobe: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_4"/>
-				<ReportText Type="Newline"/>
+				<Branch>
+					<SectionIf DataElementId="lobe_4"></SectionIf>
+					<ReportText Type="PlainText">Lobe: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_4"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="lobe_location_4"></SectionIf>
+					<ReportText Type="PlainText">Location: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lobe_location_4"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="diameter_4"></SectionIf>
+					<ReportText Type="PlainText">Maximum Size: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="diameter_4"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="composition_4"></SectionIf>
+					<ReportText Type="PlainText">Composition: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="composition_4"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="echogenicity_4"></SectionIf>
+					<ReportText Type="PlainText">Echogenicity: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="echogenicity_4"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+
+				<Branch>
+					<SectionIf DataElementId="other_4"></SectionIf>
+					<ReportText Type="PlainText">Other Features:  </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="other_4"/>
+					<ReportText Type="Newline"/>
+				</Branch>
 				
-				<ReportText Type="PlainText">Location: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lobe_location_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Maximum Size: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="diameter_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Composition: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="composition_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_4"/>
-				<ReportText Type="Newline"/>
-
-
-				<ReportText Type="PlainText">Other Features:  </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="other_4"/>
-				<ReportText Type="Newline"/>
-				<ReportText Type="Newline"/>
-			</Branch>
+				<Branch>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
 		</TemplatePartial>
 
 		<EndPoint Id="ReporttextTR1_4">
