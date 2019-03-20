@@ -20,13 +20,15 @@ Briefly, the schema lays out the structure of guideline:
 
 ## Sample Guideline
 
-A sample guideline is available at [Assist/Hello_Rads/Hello_Rads.xml](https://github.com/acrscm/acr_assist_modules/tree/master/Assist/Hello_Rads). The sample guideline (which is similar to the ACR's LI-RADS, but which is *not* an official ACR implementation of a LI-RADS tool) contains examples of common features.
+- **Hello Assist** is a simple guideline available at [Assist/Hello_Assist/Hello_Assist.xml](https://github.com/acrscm/acr_assist_modules/blob/master/Assist/Hello_Assist/Hello_Assist.xml).
+
+- **Hello Rads** is another sample guideline is available at [Assist/Hello_Rads/Hello_Rads.xml](https://github.com/acrscm/acr_assist_modules/tree/master/Assist/Hello_Rads). The sample guideline (which is similar to the ACR's LI-RADS, but which is *not* an official ACR implementation of a LI-RADS tool) contains examples of common features.
 
 ## See Also
 
-- [ACR Assist home page](https://www.acr.org/Advocacy/Informatics/Systems-and-Tools/ACR-Assist)
-- Forthcoming white paper
-- Reference implementation for rendering and executing ACR Assist modules
+- [ACR Assist home page](https://www.acr.org/Practice-Management-Quality-Informatics/Informatics/Structured-Content)
+- [Reference implementation for rendering and executing ACR Assist modules] (https://github.com/acrscm/acr_assist_simulator_control)
+- [Try the simulator] (https://assist.acr.org/simulator/)
 
 
 
