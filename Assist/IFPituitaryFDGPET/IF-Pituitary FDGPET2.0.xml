@@ -137,8 +137,8 @@
 		
 		
 		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="6" CdeId="RDE65">
-			<Label>Has Mass Effect?</Label>
-				
+			<Label>Has Mass Effect and/or Has Invasion into surrounding structures?</Label>
+			<Hint>Invasion into surrounding Structures include Optic Chiasm, Optic Nerve and Cavernous Sinus</Hint>	
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -164,34 +164,6 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="invasion" IsRequired="true" DisplaySequence="7" CdeId="RDE65">
-			<Label>Has Invasion into surrounding structures?</Label>
-				
-			<Hint>Invasion into surrounding Structures include Optic Chiasm, Optic Nerve and Cavernous Sinus</Hint>
-			<ChoiceInfo>
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>	
-				</Choice>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>	
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-				<OrCondition>
-					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm"/> 
-					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm"/> 					
-				</OrCondition>	
-				<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</ChoiceDataElement>	
 		
 		
 	</DataElements>	
