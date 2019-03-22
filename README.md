@@ -10,10 +10,10 @@ Radiology practice contains a large number of guidelines and algorithms for work
 
 The schema is defined in [ACRAssist_xml_schema_beta2.0.rnc](https://github.com/acrscm/acr_assist_modules/blob/master/ACRAssist_xml_schema_beta2.0.rnc) using the RelaxNG Compact format ([specification](http://relaxng.org/compact-20021121.html); [tutorial](http://relaxng.org/compact-tutorial-20030326.html)).
 
-The metadata schema defined in [Metadata.rnc] https://github.com/acrscm/acr_assist_modules/blob/master/Metadata.rnc
+
 
 Briefly, the schema lays out the structure of guideline:
-- **Metadata** section contains descriptive information about the guideline
+- **Metadata** section contains descriptive information about the guideline. The metadata schema is defined in [Metadata.rnc](https://github.com/acrscm/acr_assist_modules/blob/master/Metadata.rnc)
 - **Data Elements** section defines the various pieces of data used to characterize the clinical scenario and drive guidance and any logic
 - **Rules** section defines the logic which can be run based on the input data elements to specify a guided output
 - **End Points** section defines the actions to be taken based on the output of running the defined rules on the inputs given for a case.
