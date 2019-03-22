@@ -129,7 +129,7 @@ durationConditionalProperty = element ConditionalProperty {
 	  element MinimumHours {xsd:integer}?,
 	  element MaximumHours {xsd:integer}?,
 	  element MinimumMinutes {xsd:integer}?,
-	  element MaxmimumMinutes {xsd:integer}?,
+	  element MaximimumMinutes {xsd:integer}?,
 	  element MinimumSeconds {xsd:integer}?,
 	  element MaximimumSeconds {xsd:integer}?
 }
@@ -186,7 +186,7 @@ IntegerDataElement =
 			element MinimumHours {xsd:integer}?,
 			element MaximumHours {xsd:integer}?,
 			element MinimumMinutes {xsd:integer}?,
-			element MaxmimumMinutes {xsd:integer}?,
+			element MaximimumMinutes {xsd:integer}?,
 			element MinimumSeconds {xsd:integer}?,
 			element MaximimumSeconds {xsd:integer}?,
             element ConditionalProperties { durationConditionalProperty+ }?
