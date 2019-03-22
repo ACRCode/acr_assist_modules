@@ -170,6 +170,8 @@
 			<MaximumHours>5</MaximumHours>			
 			<MinimumMinutes>1</MinimumMinutes>			
 			<MaxmimumMinutes>5</MaxmimumMinutes>	
+    		<MinimumSeconds>1</MinimumSeconds>
+    		<MaximimumSeconds>5</MaximimumSeconds>
     		<ConditionalProperties>
     			<ConditionalProperty>
     				<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="treatedObservation"/>
@@ -181,7 +183,9 @@
 					<MinimumHours>5</MinimumHours>			
 					<MaximumHours>10</MaximumHours>			
 					<MinimumMinutes>5</MinimumMinutes>			
-					<MaxmimumMinutes>10</MaxmimumMinutes>			
+					<MaxmimumMinutes>10</MaxmimumMinutes>
+    				<MinimumSeconds>5</MinimumSeconds>
+    				<MaximimumSeconds>10</MaximimumSeconds>
     			</ConditionalProperty>    			
     			<ConditionalProperty>
     				<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="definitelyBenign"/>
