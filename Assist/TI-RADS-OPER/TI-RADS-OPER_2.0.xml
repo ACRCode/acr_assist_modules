@@ -101,7 +101,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<NumericDataElement Id="diameter_1" IsRequired="false" DisplaySequence="4" Unit="cm">		
+		<NumericDataElement Id="diameter_1" IsRequired="true" DisplaySequence="4" Unit="cm">		
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
@@ -680,7 +680,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<NumericDataElement Id="diameter_3" DisplaySequence="20" Unit="cm">		
+		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="20" Unit="cm">		
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
