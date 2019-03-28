@@ -131,23 +131,23 @@
 			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
-					<Value>0</Value>
+					<Value>cystic</Value>
 					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>0</Value>
+					<Value>spongiform</Value>
 					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>mixed_cystic_solid</Value>
 					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>solid</Value>
 					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>nonevaluable</Value>
 					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -273,6 +273,29 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 
+		<ComputedDataElement Id="composition_point_1">		
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="spongiform"/>
+					</OrCondition>
+					<TextExpression>0</TextExpression>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
+					<TextExpression>1</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="nonevaluable"/>
+					</OrCondition>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
 		<ComputedDataElement Id="addtr1_1">		
 			<DecisionPoint>
 				<Branch>
@@ -292,7 +315,7 @@
 							</OrCondition>
 						</AndCondition>
 					</OrCondition>
-					<ArithmeticExpression>{composition_1} + {echogenicity_1} +  {echogenicity_solid_1} + {other_1} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_point_1} + {echogenicity_1} +  {echogenicity_solid_1} + {other_1} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -411,23 +434,23 @@
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>0</Value>
+					<Value>cystic</Value>
 					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>0</Value>
+					<Value>spongiform</Value>
 					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>mixed_cystic_solid</Value>
 					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>solid</Value>
 					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>nonevaluable</Value>
 					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -558,6 +581,29 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 
+		<ComputedDataElement Id="composition_point_2">		
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="spongiform"/>
+					</OrCondition>
+					<TextExpression>0</TextExpression>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="composition_2" ComparisonValue="mixed_cystic_solid"/>
+					<TextExpression>1</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="nonevaluable"/>
+					</OrCondition>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
 		<ComputedDataElement Id="addtr1_2">		
 			<DecisionPoint>
 				<Branch>
@@ -571,7 +617,7 @@
 							<SectionIf DataElementId="echogenicity_2"></SectionIf>
 						</AndCondition>
 					</OrCondition>
-					<ArithmeticExpression>{composition_2} + {echogenicity_2} + {other_2} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_point_2} + {echogenicity_2} + {other_2} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -707,23 +753,23 @@
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>0</Value>
+					<Value>cystic</Value>
 					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>0</Value>
+					<Value>spongiform</Value>
 					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>mixed_cystic_solid</Value>
 					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>solid</Value>
 					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>nonevaluable</Value>
 					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -859,6 +905,29 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
+		
+		<ComputedDataElement Id="composition_point_3">		
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_3" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_3" ComparisonValue="spongiform"/>
+					</OrCondition>
+					<TextExpression>0</TextExpression>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="composition_3" ComparisonValue="mixed_cystic_solid"/>
+					<TextExpression>1</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_3" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="composition_3" ComparisonValue="nonevaluable"/>
+					</OrCondition>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
 
 		<ComputedDataElement Id="addtr1_3">		
 			<DecisionPoint>
@@ -873,7 +942,7 @@
 							<SectionIf DataElementId="echogenicity_3"></SectionIf>
 						</AndCondition>
 					</OrCondition>
-					<ArithmeticExpression>{composition_3} + {echogenicity_3} + {other_3} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_point_3} + {echogenicity_3} + {other_3} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -1018,23 +1087,23 @@
 			<Label>Composition</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>0</Value>
+					<Value>cystic</Value>
 					<Label>Cystic or almost completely cystic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>0</Value>
+					<Value>spongiform</Value>
 					<Label>Spongiform (0 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>mixed_cystic_solid</Value>
 					<Label>Mixed cystic and solid (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>solid</Value>
 					<Label>Solid or almost completely solid (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>nonevaluable</Value>
 					<Label>Composition cannot be determined (2 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -1175,6 +1244,29 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 
+		<ComputedDataElement Id="composition_point_4">		
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_4" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_4" ComparisonValue="spongiform"/>
+					</OrCondition>
+					<TextExpression>0</TextExpression>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="composition_4" ComparisonValue="mixed_cystic_solid"/>
+					<TextExpression>1</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_4" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="composition_4" ComparisonValue="nonevaluable"/>
+					</OrCondition>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
 		<ComputedDataElement Id="addtr1_4">		
 			<DecisionPoint>
 				<Branch>
@@ -1188,7 +1280,7 @@
 							<SectionIf DataElementId="echogenicity_4"></SectionIf>
 						</AndCondition>
 					</OrCondition>
-					<ArithmeticExpression>{composition_4} + {echogenicity_4} + {other_4} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_point_4} + {echogenicity_4} + {other_4} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
