@@ -189,7 +189,7 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<NotEqualCondition DataElementId="composition_1" ComparisonValue="1"/>
+					<NotEqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -231,7 +231,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<NotEqualCondition DataElementId="composition_1" ComparisonValue="2"/>
+					<OrCondition>
+					<NotEqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
+					<NotEqualCondition DataElementId="composition_1" ComparisonValue="nonevaluable"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -267,7 +270,10 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="0"/>
+					<OrCondition>
+					<EqualCondition DataElementId="composition_1" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="composition_1" ComparisonValue="spongiform"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -489,7 +495,7 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_2" ComparisonValue="1"/>
+						<NotEqualCondition DataElementId="composition_2" ComparisonValue="mixed_cystic_solid"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -534,7 +540,10 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_2" ComparisonValue="2"/>
+						
+						<NotEqualCondition DataElementId="composition_2" ComparisonValue="solid"/>
+						<NotEqualCondition DataElementId="composition_2" ComparisonValue="nonevaluable"/>
+						
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
@@ -573,7 +582,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_2" ComparisonValue="0"/>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
@@ -811,7 +821,7 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_3" ComparisonValue="1"/>
+						<NotEqualCondition DataElementId="composition_3" ComparisonValue="mixed_cystic_solid"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
@@ -857,7 +867,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_3" ComparisonValue="2"/>
+						<NotEqualCondition DataElementId="composition_3" ComparisonValue="solid"/>
+						<NotEqualCondition DataElementId="composition_3" ComparisonValue="nonevaluable"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
@@ -897,7 +908,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_3" ComparisonValue="0"/>
+						<EqualCondition DataElementId="composition_3" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_3" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
@@ -1146,7 +1158,7 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_4" ComparisonValue="1"/>
+						<NotEqualCondition DataElementId="composition_4" ComparisonValue="mixed_cystic_solid"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
@@ -1193,7 +1205,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_4" ComparisonValue="2"/>
+						<NotEqualCondition DataElementId="composition_4" ComparisonValue="solid"/>
+						<NotEqualCondition DataElementId="composition_4" ComparisonValue="nonevaluable"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
@@ -1234,7 +1247,8 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_4" ComparisonValue="0"/>
+						<EqualCondition DataElementId="composition_4" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_4" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
