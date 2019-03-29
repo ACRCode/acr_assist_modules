@@ -231,10 +231,7 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<OrCondition>
 					<NotEqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
-					<NotEqualCondition DataElementId="composition_1" ComparisonValue="nonevaluable"/>
-					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
@@ -542,7 +539,7 @@
 					<OrCondition>
 						
 						<NotEqualCondition DataElementId="composition_2" ComparisonValue="solid"/>
-						<NotEqualCondition DataElementId="composition_2" ComparisonValue="nonevaluable"/>
+	
 						
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					</OrCondition>
@@ -868,7 +865,6 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<NotEqualCondition DataElementId="composition_3" ComparisonValue="solid"/>
-						<NotEqualCondition DataElementId="composition_3" ComparisonValue="nonevaluable"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
@@ -1206,7 +1202,6 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<NotEqualCondition DataElementId="composition_4" ComparisonValue="solid"/>
-						<NotEqualCondition DataElementId="composition_4" ComparisonValue="nonevaluable"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
