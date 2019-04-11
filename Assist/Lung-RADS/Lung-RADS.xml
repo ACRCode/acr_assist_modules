@@ -49,7 +49,54 @@
     </Metadata>
 	
     <DataElements>
-        <ChoiceDataElement Id="baseCategory" DisplaySequence="3" IsRequired= "true" >
+	
+		<ChoiceDataElement Id="composition" IsRequired="true" DisplaySequence="1">
+			<Label>Composition</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>solid</Value>
+					<Label>Solid</Label>	
+				</Choice>
+				<Choice>
+					<Value>part_solid</Value>
+					<Label>Part Solid</Label>
+				</Choice>
+				<Choice>
+					<Value>non_solid</Value>
+					<Label>Non Solid</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="size_1" IsRequired="true" DisplaySequence="2" Unit="mm">		
+			<Label>Size</Label>
+			<Minimum>0.1</Minimum>
+			<Maximum>100.0</Maximum>			
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="growth" IsRequired="true" DisplaySequence="3">
+			<Label>Growth</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>unchanged</Value>
+					<Label>Unchanged</Label>	
+				</Choice>
+				<Choice>
+					<Value>resolved</Value>
+					<Label>Resolved</Label>
+				</Choice>
+				<Choice>
+					<Value>increased</Value>
+					<Label>Increased</Label>
+				</Choice>
+				<Choice>
+					<Value>decreased</Value>
+					<Label>Decreased</Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+	
+        <ChoiceDataElement Id="baseCategory" DisplaySequence="4" IsRequired= "true" >
             <Label>Category of findings</Label>
             <Hint>Lung-RADS category</Hint>
             <ChoiceInfo>
