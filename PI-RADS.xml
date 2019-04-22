@@ -127,16 +127,18 @@
 					<Value>Y</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>N</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>			
 		</ChoiceDataElement>
 
-		<IntegerDataElement Id="Diameter_1" IsRequired="true" DisplaySequence="5">
+		<NumericDataElement Id="Diameter_1" IsRequired="true" DisplaySequence="5">
 			<Label>Diameter of the lesion in cm</Label>
-		</IntegerDataElement>
+			<Minimum>0.1</Minimum>
+			<Maximum>15.0</Maximum>
+		</NumericDataElement>
 
 
 		<ChoiceDataElement Id="DWI_1" IsRequired="true" DisplaySequence="6">
@@ -331,12 +333,12 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-		
-		
+
+
+
 		<!-- Nodule 2 -->
 
-		
+
 
 		<ChoiceDataElement Id="Zoneselection_2" IsRequired="true" DisplaySequence="11">
 			<Label>What is the dominant zone of the lesion?</Label>
@@ -358,12 +360,12 @@
 					<Label>Peripheral and Transition Zones without adequate DCE</Label>
 				</Choice>
 			</ChoiceInfo>
-		<ConditionalProperties>	
-                <ConditionalProperty>
+			<ConditionalProperties>	
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-        </ConditionalProperties>				
+			</ConditionalProperties>				
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_2" IsRequired="true" DisplaySequence="12">
@@ -408,7 +410,7 @@
 					<ChoiceNotRelevant ChoiceValue="PZ"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="TZ"></ChoiceNotRelevant>					
 				</ConditionalProperty>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -423,28 +425,30 @@
 					<Value>Y</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>N</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
-          <ConditionalProperties>	
-                <ConditionalProperty>
+			<ConditionalProperties>	
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-        </ConditionalProperties>				
+			</ConditionalProperties>				
 		</ChoiceDataElement>
 
-		<IntegerDataElement Id="Diameter_2" IsRequired="true" DisplaySequence="14">
+		<NumericDataElement Id="Diameter_2" IsRequired="true" DisplaySequence="14">
 			<Label>Diameter of the lesion in cm</Label>
+			<Minimum>0.1</Minimum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>	
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-        </ConditionalProperties>	
-		</IntegerDataElement>
+			</ConditionalProperties>
+		</NumericDataElement>
 
 
 		<ChoiceDataElement Id="DWI_2" IsRequired="true" DisplaySequence="15">
@@ -493,7 +497,7 @@
 					<ChoiceNotRelevant ChoiceValue="4"></ChoiceNotRelevant> 
 					<ChoiceNotRelevant ChoiceValue="5"></ChoiceNotRelevant> 					
 				</ConditionalProperty>	
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
@@ -529,7 +533,7 @@
 					<EqualCondition ComparisonValue="TZ" DataElementId="Zoneselection_2"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>	
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
@@ -565,7 +569,7 @@
 					<EqualCondition ComparisonValue="PZ" DataElementId="Zoneselection_2"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>	
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
@@ -608,7 +612,7 @@
 					<ChoiceNotRelevant ChoiceValue="1"></ChoiceNotRelevant> 
 					<ChoiceNotRelevant ChoiceValue="2"></ChoiceNotRelevant> 
 				</ConditionalProperty>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
@@ -628,11 +632,11 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>	
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-        </ConditionalProperties>	
+			</ConditionalProperties>	
 		</ChoiceDataElement>
 
 		<ComputedDataElement Id="T1computedScore_2">		
@@ -660,11 +664,11 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-		
+
+
 		<!-- Nodule 3 -->
 
-		
+
 
 		<ChoiceDataElement Id="Zoneselection_3" IsRequired="true" DisplaySequence="20">
 			<Label>What is the dominant zone of the lesion?</Label>
@@ -686,12 +690,12 @@
 					<Label>Peripheral and Transition Zones without adequate DCE</Label>
 				</Choice>
 			</ChoiceInfo>
-             <ConditionalProperties>
-                <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>			
+			</ConditionalProperties>			
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_3" IsRequired="true" DisplaySequence="21">
@@ -736,7 +740,7 @@
 					<ChoiceNotRelevant ChoiceValue="PZ"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="TZ"></ChoiceNotRelevant>					
 				</ConditionalProperty>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -751,28 +755,30 @@
 					<Value>Y</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>N</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
-           <ConditionalProperties>
-                <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>			
-		   </ChoiceDataElement>
+			</ConditionalProperties>			
+		</ChoiceDataElement>
 
-		<IntegerDataElement Id="Diameter_3" IsRequired="true" DisplaySequence="23">
+		<NumericDataElement Id="Diameter_3" IsRequired="true" DisplaySequence="23">
 			<Label>Diameter of the lesion in cm</Label>
-			 <ConditionalProperties>
-                <ConditionalProperty>
+			<Minimum>0.1</Minimum>
+			<Maximum>15.0</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>
-		</IntegerDataElement>
+			</ConditionalProperties>
+		</NumericDataElement>
 
 
 		<ChoiceDataElement Id="DWI_3" IsRequired="true" DisplaySequence="24">
@@ -821,7 +827,7 @@
 					<ChoiceNotRelevant ChoiceValue="4"></ChoiceNotRelevant> 
 					<ChoiceNotRelevant ChoiceValue="5"></ChoiceNotRelevant> 					
 				</ConditionalProperty>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -857,7 +863,7 @@
 					<EqualCondition ComparisonValue="TZ" DataElementId="Zoneselection_3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -893,7 +899,7 @@
 					<EqualCondition ComparisonValue="PZ" DataElementId="Zoneselection_3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -936,12 +942,12 @@
 					<ChoiceNotRelevant ChoiceValue="1"></ChoiceNotRelevant> 
 					<ChoiceNotRelevant ChoiceValue="2"></ChoiceNotRelevant> 
 				</ConditionalProperty>
-			
-                <ConditionalProperty>
+
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-           
+
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -957,12 +963,12 @@
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
-			 <ConditionalProperties>
-                <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>
+			</ConditionalProperties>
 
 		</ChoiceDataElement>
 
@@ -991,10 +997,10 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-		
+
+
 		<!-- Nodule 4 -->
-	
+
 
 		<ChoiceDataElement Id="Zoneselection_4" IsRequired="true" DisplaySequence="29">
 			<Label>What is the dominant zone of the lesion?</Label>
@@ -1016,12 +1022,12 @@
 					<Label>Peripheral and Transition Zones without adequate DCE</Label>
 				</Choice>
 			</ChoiceInfo>
-            <ConditionalProperties>
-                <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>			
+			</ConditionalProperties>			
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_4" IsRequired="true" DisplaySequence="30">
@@ -1067,7 +1073,7 @@
 					<ChoiceNotRelevant ChoiceValue="TZ"></ChoiceNotRelevant>					
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -1083,28 +1089,30 @@
 					<Value>Y</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>N</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
-         <ConditionalProperties>
-                <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>			
+			</ConditionalProperties>			
 		</ChoiceDataElement>
 
-		<IntegerDataElement Id="Diameter_4" IsRequired="true" DisplaySequence="32">
+		<NumericDataElement Id="Diameter_4" IsRequired="true" DisplaySequence="32">
 			<Label>Diameter of the lesion in cm</Label>
+			<Minimum>0.1</Minimum>
+			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>
-		</IntegerDataElement>
+			</ConditionalProperties>
+		</NumericDataElement>
 
 
 		<ChoiceDataElement Id="DWI_4" IsRequired="true" DisplaySequence="33">
@@ -1154,11 +1162,11 @@
 					<ChoiceNotRelevant ChoiceValue="5"></ChoiceNotRelevant> 					
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>						
+			</ConditionalProperties>						
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WPZ_4" IsRequired="true" DisplaySequence="34">
@@ -1191,11 +1199,11 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
- 
+
 			</ConditionalProperties>			
 		</ChoiceDataElement>
 
@@ -1229,7 +1237,7 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -1274,11 +1282,11 @@
 					<ChoiceNotRelevant ChoiceValue="2"></ChoiceNotRelevant> 
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
- 
+
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -1295,11 +1303,11 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties>
+			</ConditionalProperties>
 
 		</ChoiceDataElement>
 
@@ -1328,11 +1336,11 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-		
+
+
 		<!-- Nodule 5 -->
 
-	
+
 
 		<ChoiceDataElement Id="Zoneselection_5" IsRequired="true" DisplaySequence="38">
 			<Label>What is the dominant zone of the lesion?</Label>
@@ -1354,12 +1362,12 @@
 					<Label>Peripheral and Transition Zones without adequate DCE</Label>
 				</Choice>
 			</ChoiceInfo>
-             <ConditionalProperties>
-                <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties> 				
+			</ConditionalProperties> 				
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_5" IsRequired="true" DisplaySequence="39">
@@ -1405,11 +1413,11 @@
 					<ChoiceNotRelevant ChoiceValue="TZ"></ChoiceNotRelevant>					
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-  	
+
 			</ConditionalProperties>
 
 		</ChoiceDataElement>
@@ -1421,28 +1429,30 @@
 					<Value>Y</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>N</Value>
 					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
-              <ConditionalProperties>
-                <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-                </ConditionalProperties> 				
+			</ConditionalProperties> 				
 		</ChoiceDataElement>
 
-		<IntegerDataElement Id="Diameter_5" IsRequired="true" DisplaySequence="40">
+		<NumericDataElement Id="Diameter_5" IsRequired="true" DisplaySequence="40">
 			<Label>Diameter of the lesion in cm</Label>
-			 <ConditionalProperties>
-                <ConditionalProperty>
+			<Minimum>0.1</Minimum>
+			<Maximum>15.0</Maximum>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
-					<IsRelevant>false</IsRelevant>					
+					<IsRelevant>false</IsRelevant>			
 				</ConditionalProperty>
-                </ConditionalProperties> 	
-		</IntegerDataElement>
+			</ConditionalProperties>
+		</NumericDataElement>
 
 
 		<ChoiceDataElement Id="DWI_5" IsRequired="true" DisplaySequence="41">
@@ -1491,7 +1501,7 @@
 					<ChoiceNotRelevant ChoiceValue="4"></ChoiceNotRelevant> 
 					<ChoiceNotRelevant ChoiceValue="5"></ChoiceNotRelevant> 					
 				</ConditionalProperty>
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
@@ -1528,11 +1538,11 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-	
+
 			</ConditionalProperties>			
 		</ChoiceDataElement>
 
@@ -1566,11 +1576,11 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
- 	
+
 			</ConditionalProperties>
 		</ChoiceDataElement>			
 
@@ -1611,11 +1621,11 @@
 					<ChoiceNotRelevant ChoiceValue="2"></ChoiceNotRelevant> 
 				</ConditionalProperty>
 
-                <ConditionalProperty>
+				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="N"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-	
+
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -1649,7 +1659,7 @@
 
 	</DataElements>
 
-<Rules>
+	<Rules>
 		<DecisionPoint Id="decisionPointAddtr1_1">
 			<Label>Main branch</Label>
 
@@ -1726,17 +1736,30 @@
 
 					<Branch>
 						<Label>Overall Point 2</Label>
-						<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="2"/>
+					
+						<AndCondition>
+							<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="2"/>
+							<LessThanOrEqualsCondition DataElementId="DWI_1" ComparisonValue="3"/>
+						</AndCondition>
 
 						<EndPointRef EndPointId="Low_1"></EndPointRef>
 					</Branch>
 
 					<Branch>
 						<Label>Overall Point 3</Label>
-						<AndCondition>
-							<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="3"/>
-							<LessThanOrEqualsCondition DataElementId="DWI_1" ComparisonValue="4"/>
-						</AndCondition>
+						
+						<OrCondition>
+							<AndCondition>
+								<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="2"/>
+								<GreaterThanOrEqualsCondition DataElementId="DWI_1" ComparisonValue="4"/>
+							</AndCondition>
+							
+							<AndCondition>
+								<EqualCondition DataElementId="T2WTZ_1" ComparisonValue="3"/>
+								<LessThanOrEqualsCondition DataElementId="DWI_1" ComparisonValue="4"/>
+							</AndCondition>
+						</OrCondition>
+						
 						<EndPointRef EndPointId="Intermediate_1"></EndPointRef>
 					</Branch>
 
@@ -1918,8 +1941,8 @@
 			</Branch>
 
 		</DecisionPoint>
-	
-	<DecisionPoint Id="decisionPointAddtr1_2">
+
+		<DecisionPoint Id="decisionPointAddtr1_2">
 			<Label>Main branch</Label>
 
 			<Branch>
@@ -2187,8 +2210,8 @@
 			</Branch>
 
 		</DecisionPoint>
-	
-	<DecisionPoint Id="decisionPointAddtr1_3">
+
+		<DecisionPoint Id="decisionPointAddtr1_3">
 			<Label>Main branch</Label>
 
 			<Branch>
@@ -2456,8 +2479,8 @@
 			</Branch>
 
 		</DecisionPoint>
-	
-	<DecisionPoint Id="decisionPointAddtr1_4">
+
+		<DecisionPoint Id="decisionPointAddtr1_4">
 			<Label>Main branch</Label>
 
 			<Branch>
@@ -2725,7 +2748,7 @@
 			</Branch>
 
 		</DecisionPoint>
-	<DecisionPoint Id="decisionPointAddtr1_5">
+		<DecisionPoint Id="decisionPointAddtr1_5">
 			<Label>Main branch</Label>
 
 			<Branch>
@@ -2993,20 +3016,20 @@
 			</Branch>
 
 		</DecisionPoint>
-	
+
 	</Rules>
 
-<EndPoints>
-        
+	<EndPoints>
+
 		<!-- nodule 1 -->
-		
-		
+
+
 		<TemplatePartial Id="nodule1Findings_1">
 			<Branch>
-			     <ReportText Type="PlainText">Overall category of the gland: </ReportText>
+				<ReportText Type="PlainText">Overall category of the gland: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Gland_cat"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Zone selection: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Zoneselection_1"/>
 				<ReportText Type="Newline"/>
@@ -3014,30 +3037,30 @@
 				<ReportText Type="PlainText">Other zones: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Other_zones_1"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Is this index lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Index_1"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Diameter_1"/>
 				<ReportText Type="Newline"/>
 
-				<ReportText Type="PlainText">Other nodules: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
-				<ReportText Type="Newline"/>
-
-				
 			</Branch>
 		</TemplatePartial>
-		
+
 		<EndPoint Id="Verylow_1">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion of cancer.</ReportText>
+
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3048,8 +3071,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3060,8 +3087,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3072,8 +3103,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3084,19 +3119,23 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_1"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_1"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-                
-			
-           <!-- nodule 2 -->
 
-        <TemplatePartial Id="nodule1Findings_2">
+
+		<!-- nodule 2 -->
+
+		<TemplatePartial Id="nodule1Findings_2">
 			<Branch>
-				
+
 				<ReportText Type="PlainText">Zone selection: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Zoneselection_2"/>
 				<ReportText Type="Newline"/>
@@ -3104,30 +3143,28 @@
 				<ReportText Type="PlainText">Other zones: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Other_zones_2"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Is this index lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Index_2"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Diameter_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other nodules: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
-				<ReportText Type="Newline"/>
-
-				
+				<ReportText Type="Newline"/>				
 			</Branch>
 		</TemplatePartial>		   
 
-        <EndPoint Id="Verylow_2">
+		<EndPoint Id="Verylow_2">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>		
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3138,8 +3175,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>		
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3150,8 +3191,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>		
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3162,8 +3207,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>		
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3174,19 +3223,23 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_2"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>		
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_2"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
 
-		 
-             <!-- nodule 3 -->
-			 
-			 <TemplatePartial Id="nodule1Findings_3">
+
+		<!-- nodule 3 -->
+
+		<TemplatePartial Id="nodule1Findings_3">
 			<Branch>
-				
+
 				<ReportText Type="PlainText">Zone selection: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Zoneselection_3"/>
 				<ReportText Type="Newline"/>
@@ -3194,30 +3247,29 @@
 				<ReportText Type="PlainText">Other zones: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Other_zones_3"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Is this index lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Index_3"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Diameter_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other nodules: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
-				<ReportText Type="Newline"/>
-
-				
+				<ReportText Type="Newline"/>				
 			</Branch>
 		</TemplatePartial>		   
 
-            <EndPoint Id="Verylow_3">
+		<EndPoint Id="Verylow_3">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion of cancer.</ReportText>
+
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3228,8 +3280,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3240,8 +3296,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3252,8 +3312,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3264,18 +3328,22 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_3"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_3"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>	
 
-            <!-- nodule 4 -->
+		<!-- nodule 4 -->
 
-             <TemplatePartial Id="nodule1Findings_4">
+		<TemplatePartial Id="nodule1Findings_4">
 			<Branch>
-				
+
 				<ReportText Type="PlainText">Zone selection: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Zoneselection_4"/>
 				<ReportText Type="Newline"/>
@@ -3283,31 +3351,29 @@
 				<ReportText Type="PlainText">Other zones: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Other_zones_4"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Is this index lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Index_4"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Diameter_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other nodules: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
-				<ReportText Type="Newline"/>
-
-				
+				<ReportText Type="Newline"/>				
 			</Branch>
 		</TemplatePartial>		
-		
-		
-			<EndPoint Id="Verylow_4">
+
+
+		<EndPoint Id="Verylow_4">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3318,8 +3384,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3330,8 +3400,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3342,8 +3416,12 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3354,18 +3432,22 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_4"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion of cancer.</ReportText>
+						<ReportText Type="Newline"/>
+						<ReportText Type="PlainText">Other nodules: </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="nodulequestion_4"/>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>	
 
-			     <!-- nodule 5 -->
-				 
-				 <TemplatePartial Id="nodule1Findings_5">
+		<!-- nodule 5 -->
+
+		<TemplatePartial Id="nodule1Findings_5">
 			<Branch>
-				
+
 				<ReportText Type="PlainText">Zone selection: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Zoneselection_5"/>
 				<ReportText Type="Newline"/>
@@ -3373,26 +3455,26 @@
 				<ReportText Type="PlainText">Other zones: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Other_zones_5"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Is this index lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Index_5"/>
 				<ReportText Type="Newline"/>
-				
+
 				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Diameter_5"/>
 				<ReportText Type="Newline"/>
-				
+
 			</Branch>
 		</TemplatePartial>	
-		
-		
-			<EndPoint Id="Verylow_5">
+
+
+		<EndPoint Id="Verylow_5">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion, clinically significant cancer is highly unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-1. Very low suspicion of cancer.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3403,8 +3485,8 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-2. Low suspicion, clinically significant cancer is unlikely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-2. Low suspicion of cancer.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3415,8 +3497,8 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion, the presence of clinically significant cancer is equivocal.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-3. Intermediate suspicion of cancer.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3427,8 +3509,8 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-4. High suspicion, clinically significant cancer is likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-4. High suspicion of cancer.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3439,8 +3521,8 @@
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-					    <ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
-						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion, clinically significant cancer is highly likely to be present.</ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodule1Findings_5"></ReportText>
+						<ReportText Type="PlainText">PI-RADS-5. Very high suspicion of cancer.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -3448,3 +3530,4 @@
 	</EndPoints>
 
 </ReportingModule>	
+
