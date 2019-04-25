@@ -3968,9 +3968,7 @@
 					<Branch>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
 						<ReportText Type="PlainText">(pretreatment unknown)</ReportText>
-<!--						<ReportText Type="Newline"></ReportText>-->
 					</Branch>
-					
 					<Branch>
 						<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
 						<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
@@ -3981,12 +3979,13 @@
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-						<ReportText Type=", " /> 
+						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
 						<ReportText Type="PlainText"> mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>				
-				</ReportSection>
+				</ReportSection>	
+
 				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="treatedimpressiontext"></ReportText>
@@ -3995,7 +3994,6 @@
 					<Branch>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
 						<ReportText Type="PlainText">(Pretreatment unknown) </ReportText>
-<!--						<ReportText Type="Newline"></ReportText>-->
 					</Branch>
 					<Branch>
 						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
@@ -4010,8 +4008,8 @@
 						<SectionIf DataElementId="segmentlocation" />
 						<ReportText Type="PlainText" > in segment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
-					</Branch>		
-				</ReportSection>			
+					</Branch>
+				</ReportSection>
 			</ReportSections>
       </EndPoint>
 
