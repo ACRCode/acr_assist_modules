@@ -205,8 +205,8 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="TreatmentMethod" IsRequired="true" DisplaySequence="7">
-			<Label>Treatment method</Label>
+		<MultiChoiceDataElement Id="TreatmentMethod" IsRequired="true" DisplaySequence="7" AllowFreetext="true">
+			<Label>Treatment method (pick all that apply)</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Ablation_Type_Unknown</Value>
@@ -243,10 +243,6 @@
 				<Choice>
 					<Value>SBRT</Value>
 					<Label>SBRT</Label>
-				</Choice>
-				<Choice>
-					<Value>Other</Value>
-					<Label>Other</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
