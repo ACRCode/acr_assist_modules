@@ -167,23 +167,23 @@
 			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
-					<Value>0</Value>
+					<Value>Anechoic</Value>
 					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>Hyperechoic</Value>
 					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>Echogenicity</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>Hypoechoic</Value>
 					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>Very</Value>
 					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -209,23 +209,23 @@
 			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
-					<Value>0</Value>
+					<Value>Anechoic</Value>
 					<Label>Anechoic (0 points)</Label>	
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>Hyperechoic</Value>
 					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>1</Value>
+					<Value>Echogenicity</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>Hypoechoic</Value>
 					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
+					<Value>Very</Value>
 					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -241,27 +241,27 @@
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>1</Value>
+					<Value>Macrocalcifications</Value>
 					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>Peripheral</Value>
 					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
-					<Label>Punctate echogenic focci (3 points) </Label>
+					<Value>Punctate</Value>
+					<Label>Punctate echogenic foci (3 points) </Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>Lobulated</Value>
 					<Label>Lobulated or irregular margin without extra-thyroidal extension (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
+					<Value>Taller</Value>
 					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
+					<Value>Definite</Value>
 					<Label>Definite extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -290,11 +290,84 @@
 					<TextExpression>1</TextExpression>
 				</Branch>
 				<Branch>
+						<OrCondition>
+							<EqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
+							<EqualCondition DataElementId="composition_1" ComparisonValue="nonevaluable"/>
+						</OrCondition>
+					<TextExpression>2</TextExpression>
+				</Branch>
+
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="echogenicity_point_1">		
+			<DecisionPoint>
+				<Branch>
+						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Anechoic"/>
+					<TextExpression>0</TextExpression>
+				</Branch>
+				<Branch>
 					<OrCondition>
-						<EqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
-						<EqualCondition DataElementId="composition_1" ComparisonValue="nonevaluable"/>
+						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Hyperechoic"/>
+						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Echogenicity"/>
+					</OrCondition>
+					<TextExpression>1</TextExpression>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Hypoechoic"/>
+					<TextExpression>2</TextExpression>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Very"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="echogenicity_solid_point_1">		
+			<DecisionPoint>
+				<Branch>
+						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Anechoic"/>
+					<TextExpression>0</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Hyperechoic"/>
+						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Echogenicity"/>
+					</OrCondition>
+					<TextExpression>1</TextExpression>
+				</Branch>
+				<Branch>
+						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Hypoechoic"/>
+					<TextExpression>2</TextExpression>
+				</Branch>
+				<Branch>
+						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Very"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="other_point_1">		
+			<DecisionPoint>
+				<Branch>
+						<EqualCondition DataElementId="other_1" ComparisonValue="Macrocalcifications"/>
+					<TextExpression>1</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="other_1" ComparisonValue="Peripheral"/>
+						<EqualCondition DataElementId="other_1" ComparisonValue="Lobulated"/>
 					</OrCondition>
 					<TextExpression>2</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="other_1" ComparisonValue="Punctate"/>
+						<EqualCondition DataElementId="other_1" ComparisonValue="Taller"/>
+						<EqualCondition DataElementId="other_1" ComparisonValue="Definite"/>
+					</OrCondition>
+					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -318,7 +391,7 @@
 							</OrCondition>
 						</AndCondition>
 					</OrCondition>
-					<ArithmeticExpression>{composition_point_1} + {echogenicity_1} +  {echogenicity_solid_1} + {other_1} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_point_1} + {echogenicity_point_1} +  {echogenicity_solid_point_1} + {other_point_1} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -561,7 +634,7 @@
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci (3 points) </Label>
+					<Label>Punctate echogenic foci (3 points) </Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
@@ -886,7 +959,7 @@
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci (3 points) </Label>
+					<Label>Punctate echogenic foci (3 points) </Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
@@ -1224,7 +1297,7 @@
 				</Choice>
 				<Choice>
 					<Value>3</Value>
-					<Label>Punctate echogenic focci (3 points) </Label>
+					<Label>Punctate echogenic foci (3 points) </Label>
 				</Choice>
 				<Choice>
 					<Value>2</Value>
