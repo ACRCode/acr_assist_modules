@@ -310,7 +310,36 @@
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</ChoiceDataElement>
-				
+		
+		<ChoiceDataElement Id="pretreatmentsizeCategory" IsRequired="true" DisplaySequence="9" >
+			<Label>What is the pretreatment size category?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>unknown</Value>
+					<Label>unknown</Label>
+				</Choice>
+				<Choice>
+					<Value>unmeasurable</Value>
+					<Label>unmeasurable</Label>
+				</Choice>
+				<Choice>
+					<Value>measurable</Value>
+					<Label>measurable</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="pretreatmentCategory" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
 		<NumericDataElement Id="pretreatmentsize" IsRequired="true" DisplaySequence="10" Unit="mm">
 			<Label>Pre-treatment size</Label>
 			<Minimum>1</Minimum>
@@ -319,6 +348,7 @@
 					<OrCondition>	
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="pretreatmentCategory" />
+						<SectionIfNot DataElementId="pretreatmentsizeCategory" />
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>	
@@ -326,6 +356,7 @@
 					<OrCondition>
 						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"/>
+						<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>									
 				</ConditionalProperty>		
@@ -3915,15 +3946,46 @@
 					<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
 					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
+				
 				<Branch>
-					<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+					</AndCondition>
 					<ReportText Type="PlainText">(Pretreatment </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
-					<ReportText Type="PlainText">, </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-					<ReportText Type="PlainText" > mm) </ReportText>
+					<ReportText Type="PlainText">, size is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+					<ReportText Type="PlainText" >) </ReportText>
 					<ReportText Type="Newline"></ReportText>
-				</Branch>				
+				</Branch>
+				
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
@@ -3940,13 +4002,41 @@
 					<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
 					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
+				
 				<Branch>
-					<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
+					</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+					</AndCondition>
 					<ReportText Type="PlainText">(Pretreatment </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
-					<ReportText Type="PlainText">, </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-					<ReportText Type="PlainText"> mm)</ReportText>
+					<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+					<ReportText Type="PlainText">, size is </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+					<ReportText Type="PlainText" >) </ReportText>
 				</Branch>				
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
@@ -3976,14 +4066,43 @@
 					</Branch>
 					
 					<Branch>
-						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
 						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText"> mm) </ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
-					</Branch>				
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, size is </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+						<ReportText Type="PlainText" >) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>			
 				</ReportSection>	
 
 				<ReportSection SectionId="impression">
@@ -3995,13 +4114,41 @@
 						<EqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown"></EqualCondition>
 						<ReportText Type="PlainText">(Pretreatment unknown) </ReportText>
 					</Branch>
+					
 					<Branch>
-						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
 						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" > mm)</ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, size is </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+						<ReportText Type="PlainText" >) </ReportText>
 					</Branch>
 					
 					<Branch>
@@ -4034,14 +4181,43 @@
 					</Branch>
 					
 					<Branch>
-						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
 						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
 						<ReportText Type="PlainText" > mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
-					</Branch>				
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, size is </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+						<ReportText Type="PlainText" >) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>					
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
@@ -4062,12 +4238,38 @@
 					</Branch>
 					
 					<Branch>
-						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+					</Branch>
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
 						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" > mm)</ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, size is </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+						<ReportText Type="PlainText" >) </ReportText>
 					</Branch>
 					
 					<Branch>
@@ -4101,14 +4303,44 @@
 					</Branch>
 					
 					<Branch>
-						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
 						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
 						<ReportText Type="PlainText" > mm) </ReportText>
 						<ReportText Type="Newline"></ReportText>
-					</Branch>				
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, size is </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+						<ReportText Type="PlainText" >) </ReportText>
+						<ReportText Type="Newline"></ReportText>
+					</Branch>		
+					
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
@@ -4126,12 +4358,39 @@
 					</Branch>
 					
 					<Branch>
-						<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIfNot DataElementId="pretreatmentsize"></SectionIfNot>
+						</AndCondition>
 						<ReportText Type="PlainText">(Pretreatment </ReportText>
-						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">) </ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<EqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></EqualCondition>
+							<SectionIf DataElementId="pretreatmentsize"></SectionIf>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
 						<ReportText Type="PlainText">, </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
-						<ReportText Type="PlainText" > mm)</ReportText>
+						<ReportText Type="PlainText" > mm) </ReportText>
+					</Branch>
+					
+					<Branch>
+						<AndCondition>
+							<NotEqualCondition DataElementId="pretreatmentCategory" ComparisonValue="Unknown" ></NotEqualCondition>
+							<NotEqualCondition DataElementId="pretreatmentsizeCategory" ComparisonValue="measurable" ></NotEqualCondition>
+						</AndCondition>
+						<ReportText Type="PlainText">(Pretreatment </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentCategory"/> 
+						<ReportText Type="PlainText">, size is </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="pretreatmentsizeCategory"></ReportText>
+						<ReportText Type="PlainText" >) </ReportText>
 					</Branch>
 					
 					<Branch>
