@@ -360,8 +360,7 @@
 		</NumericDataElement>
 
 		<ChoiceDataElement Id="untreatedobservation" IsRequired="true" DisplaySequence="11">
-			<Label>Untreated observation without pathologic proof in patient at high-risk for
-				HCC</Label>
+			<Label>Untreated observation without pathologic proof in patient at high-risk for HCC</Label>
 			<Hint> Observation: generically applies to any apparent abnormality detected at
 				imaging. As a generic term, it is preferred over lesion or nodule, since some
 				observations (e.g. perfusion alterations, artifacts) may represent pseudolesions
@@ -485,6 +484,12 @@
 		
 		<ChoiceDataElement Id="LR1Features" IsRequired="false" DisplaySequence="13" AllowFreetext="true">
 			<Label>LR-1 diagnosis</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>LR-1_schematics.png</Location>
+					<Label>LR-1</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Cyst</Value>
@@ -543,6 +548,16 @@
 		
 		<ChoiceDataElement Id="LR2features" DisplaySequence="14" IsRequired="false" AllowFreetext="true">
 			<Label>LR-2 diagnosis</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>LR-2_schematics.png</Location>
+					<Label>LR-2</Label>
+				</Diagram>
+				<Diagram>
+					<Location>LR-2_distinctive_nodule.png</Location>
+					<Label>LR-2 distinctive</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Cyst</Value>
@@ -1437,6 +1452,10 @@
 			<Minimum>1</Minimum>
 			<ConditionalProperties>	
 				<ConditionalProperty>
+					<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
+					<Maximum>20</Maximum>	
+				</ConditionalProperty>
+				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
@@ -1643,6 +1662,7 @@
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
