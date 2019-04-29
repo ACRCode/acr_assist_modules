@@ -750,109 +750,105 @@
 			</Diagrams>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>
+				
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
-						<SectionIfNot DataElementId="treatedobservation" />
-						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
-						<SectionIfNot DataElementId="lesionalenhancement" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<EqualCondition DataElementId="treatedobservation" ComparisonValue="LRTRNonevaluable"/>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
-					<IsRelevant>false</IsRelevant>
+					<OrCondition>
+						<SectionIfNot DataElementId="treatedobservation" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="LRTRNonevaluable"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
 					<OrCondition>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>	
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
-						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>
-					</OrCondition>					
+						<SectionIfNot DataElementId="lesionalenhancement" />
+						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
+					</OrCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>			
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<SectionIf DataElementId="enhancementisexpectedpattern" />
+						<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
+					</AndCondition>					
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
 				
 			</ConditionalProperties>
 		</NumericDataElement>
 		
-		<ChoiceDataElement Id="irregularattheperiphery" IsRequired="true" DisplaySequence="20">
-			<Label>Posttreatment enhancement pattern</Label>
-			<ChoiceInfo>				
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>
-				</Choice>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="observationinPatient" />
-						<SectionIfNot DataElementId="treatedobservation" />
-						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
-						<SectionIfNot DataElementId="lesionalenhancement" />
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty>
+		<!-- <ChoiceDataElement Id="irregularattheperiphery" IsRequired="true" DisplaySequence="20"> -->
+			<!-- <Label>Posttreatment enhancement pattern</Label> -->
+			<!-- <ChoiceInfo>				 -->
+				<!-- <Choice> -->
+					<!-- <Value>yes</Value> -->
+					<!-- <Label>Yes</Label> -->
+				<!-- </Choice> -->
+				<!-- <Choice> -->
+					<!-- <Value>no</Value> -->
+					<!-- <Label>No</Label> -->
+				<!-- </Choice> -->
+			<!-- </ChoiceInfo> -->
+			<!-- <ConditionalProperties> -->
+				<!-- <ConditionalProperty> -->
+					<!-- <OrCondition> -->
+						<!-- <SectionIfNot DataElementId="observationinPatient" /> -->
+						<!-- <SectionIfNot DataElementId="treatedobservation" /> -->
+						<!-- <SectionIfNot DataElementId="enhancementisexpectedpattern" /> -->
+						<!-- <SectionIfNot DataElementId="lesionalenhancement" /> -->
+					<!-- </OrCondition> -->
+					<!-- <IsRelevant>false</IsRelevant>	 -->
+				<!-- </ConditionalProperty> -->
 				
-				<ConditionalProperty>
-					<EqualCondition DataElementId="treatedobservation" ComparisonValue="LRTRNonevaluable"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+				<!-- <ConditionalProperty> -->
+					<!-- <EqualCondition DataElementId="treatedobservation" ComparisonValue="LRTRNonevaluable"/> -->
+					<!-- <IsRelevant>false</IsRelevant> -->
+				<!-- </ConditionalProperty> -->
 				
-				<ConditionalProperty>
-					<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+				<!-- <ConditionalProperty> -->
+					<!-- <EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/> -->
+					<!-- <IsRelevant>false</IsRelevant> -->
+				<!-- </ConditionalProperty> -->
 				
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
-						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="equivocal"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+				<!-- <ConditionalProperty> -->
+					<!-- <OrCondition> -->
+						<!-- <EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/> -->
+						<!-- <EqualCondition DataElementId="lesionalenhancement" ComparisonValue="equivocal"/> -->
+					<!-- </OrCondition> -->
+					<!-- <IsRelevant>false</IsRelevant> -->
+				<!-- </ConditionalProperty> -->
 				
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="tumorInVein"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="notcategorized"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="probablyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="malignantbutnothcc"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="nonofabove"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</ChoiceDataElement>
+				<!-- <ConditionalProperty> -->
+					<!-- <OrCondition> -->
+						<!-- <EqualCondition DataElementId="untreatedobservation" -->
+							<!-- ComparisonValue="tumorInVein"/> -->
+						<!-- <EqualCondition DataElementId="untreatedobservation" -->
+							<!-- ComparisonValue="notcategorized"/> -->
+						<!-- <EqualCondition DataElementId="untreatedobservation" -->
+							<!-- ComparisonValue="definitelyBenign"/> -->
+						<!-- <EqualCondition DataElementId="untreatedobservation" -->
+							<!-- ComparisonValue="probablyBenign"/> -->
+						<!-- <EqualCondition DataElementId="untreatedobservation" -->
+							<!-- ComparisonValue="malignantbutnothcc"/> -->
+						<!-- <EqualCondition DataElementId="untreatedobservation" -->
+							<!-- ComparisonValue="nonofabove"/> -->
+					<!-- </OrCondition> -->
+					<!-- <IsRelevant>false</IsRelevant> -->
+				<!-- </ConditionalProperty> -->
+			<!-- </ConditionalProperties> -->
+		<!-- </ChoiceDataElement> -->
 		
 		<MultiChoiceDataElement Id="patternofenhancement" DisplaySequence="21">
-			<Label>Observation pattern of enhancement</Label>
+			<Label>Pattern of enhancement (pick all that apply)</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>aphe</Value>
@@ -860,11 +856,11 @@
 				</Choice>
 				<Choice>
 					<Value>washout</Value>
-					<Label>"Washout" (washout appearance)</Label>
+					<Label>Washout appearance</Label>
 				</Choice>
 				<Choice>
 					<Value>similar_to_pretreatment</Value>
-					<Label>Enhancement similar to pretreatment?</Label>
+					<Label>Enhancement similar to pretreatment</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -873,7 +869,6 @@
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="treatedobservation" />
 						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
-						<SectionIfNot DataElementId="irregularattheperiphery" />
 						<SectionIfNot DataElementId="lesionalenhancement" />
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -887,11 +882,6 @@
 				
 				<ConditionalProperty>
 					<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<EqualCondition DataElementId="irregularattheperiphery" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				
