@@ -2918,8 +2918,13 @@
 
 		<TemplatePartial Id="treatedFindingsReporttext">
 			<Branch>
-				<ReportText Type="PlainText">Observation #: </ReportText>
+				<ReportText Type="PlainText">Observation #</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
+				<ReportText Type="PlainText"> (image </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
+				<ReportText Type="PlainText">, series </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
+				<ReportText Type="PlainText">)</ReportText>
 				<ReportText Type="Newline"/>
 				
 				<ReportText Type="PlainText">Treatment method: </ReportText>
@@ -2928,11 +2933,6 @@
 				
 				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
-				<ReportText Type="PlainText"> (image # </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
-				<ReportText Type="PlainText">, series </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
-				<ReportText Type="PlainText">)</ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
 				<ReportText Type="PlainText">Pretreatment category: </ReportText>				
@@ -3035,7 +3035,7 @@
 		<TemplatePartial Id="treatedimpressiontext">
 			<Branch>
 				<SectionIf DataElementId="observationnumber"></SectionIf>
-				<ReportText Type="PlainText">Observation #: </ReportText>
+				<ReportText Type="PlainText">Observation #</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
@@ -3050,9 +3050,14 @@
 		
 		<TemplatePartial Id="tivreporttextifparenchymalmassisyes">
 			<Branch>
-				<ReportText Type="PlainText" >Observation #: </ReportText>
+				<ReportText Type="PlainText">Observation #</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
-				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="PlainText"> (image </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
+				<ReportText Type="PlainText">, series </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
+				<ReportText Type="PlainText">)</ReportText>
+				<ReportText Type="Newline"/>
 				
 				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
@@ -3108,11 +3113,7 @@
 				<ReportText Type="Tab"/>			
 				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
-				<ReportText Type="PlainText"> mm (image # </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
-				<ReportText Type="PlainText">, series </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
-				<ReportText Type="PlainText">)</ReportText>
+				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
@@ -3212,7 +3213,7 @@
 				<ReportText Type="Newline"></ReportText>-->
 				
 				<SectionIf DataElementId="observationnumber"></SectionIf>
-				<ReportText Type="PlainText">Observation #: </ReportText>
+				<ReportText Type="PlainText">Observation #</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"></ReportText>				
 			</Branch>
@@ -3220,9 +3221,14 @@
 		
 		<TemplatePartial Id="untreatreporttext">
 			<Branch>
-				<ReportText Type="PlainText" >Observation #: </ReportText>
+				<ReportText Type="PlainText">Observation #</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
-				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="PlainText"> (image </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
+				<ReportText Type="PlainText">, series </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
+				<ReportText Type="PlainText">)</ReportText>
+				<ReportText Type="Newline"/>
 				
 				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
@@ -3236,11 +3242,7 @@
 				</AndCondition>
 				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
-				<ReportText Type="PlainText"> mm (image # </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
-				<ReportText Type="PlainText">, series </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
-				<ReportText Type="PlainText">)</ReportText>
+				<ReportText Type="PlainText"> mm</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
