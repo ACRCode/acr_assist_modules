@@ -191,7 +191,14 @@
 				<ConditionalProperty>
 					<NotEqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="composition_1" />
+						<EqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -233,7 +240,14 @@
 				<ConditionalProperty>
 					<NotEqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="composition_1" />
+						<EqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
