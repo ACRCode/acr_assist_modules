@@ -452,6 +452,37 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
+		<ChoiceDataElement Id="lrnc_category" IsRequired="true" DisplaySequence="12" AllowFreetext="true">
+			<Label>Reason for LR-NC category</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Arterial_phase_images_mistimed</Value>
+					<Label>Arterial phase images mistimed</Label>
+				</Choice>
+				<Choice>
+					<Value>Arterial_phase_images_degraded</Value>
+					<Label>Arterial phase images degraded by motion/artifact</Label>
+				</Choice>
+				<Choice>
+					<Value>Postarterial_phase_images_missing</Value>
+					<Label>Postarterial phase images missing</Label>
+				</Choice>
+				<Choice>
+					<Value>Postarterial_phase_images_degraded</Value>
+					<Label>Postarterial phase images degraded by motion/artifact</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="untreatedobservation" />
+						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			</ConditionalProperties>		
+		</ChoiceDataElement>	
+			
 		<ChoiceDataElement Id="treatedobservation" IsRequired="true" DisplaySequence="12">
 			<Label>Treated observation features</Label>
 			<Diagrams>
@@ -1446,27 +1477,38 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
+		
 		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="31">		
 			<Label>Observation size (mm)</Label>
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>	
 				<ConditionalProperty>
-					<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
-					<Maximum>20</Maximum>	
-				</ConditionalProperty>
+					<AndCondition>
+						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
+					</AndCondition>					
+					<Maximum>20</Maximum>
+				</ConditionalProperty>				
+				
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
-						<SectionIfNot DataElementId="untreatedobservation" />	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<OrCondition>	
-						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+					<OrCondition>						
+						<SectionIfNot DataElementId="untreatedobservation" />	
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
 						<!-- <EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/> -->
 						<!-- <EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>		 -->
 						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
@@ -3487,6 +3529,14 @@
 <!--					<ReportText Type="InsertPartialTemplate" Value="adjustcategorytext"></ReportText>-->
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
+				
+				<Branch>
+					<SectionIf DataElementId="lrnc_category"></SectionIf>
+					<ReportText Type="PlainText">Reason for LR-NC category: </ReportText>				
+					<ReportText Type="InsertDataElementValue" Value="lrnc_category"></ReportText>
+					<ReportText Type="Newline"></ReportText>
+				</Branch>
+			
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
