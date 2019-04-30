@@ -119,42 +119,60 @@
 		
 		<ChoiceDataElement Id="segmentlocation" IsRequired="true" DisplaySequence="5" AllowFreetext="true">
 			<Label>Liver Segment#</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>Liver_segment_schem_1.png</Location>
+					<Label>Liver segment I and II</Label>
+				</Diagram>
+				<Diagram>
+					<Location>Liver_segment_schem_2.png</Location>
+					<Label>Liver segment III and IV</Label>
+				</Diagram>
+				<Diagram>
+					<Location>Liver_segment_schem_3.png</Location>
+					<Label>Liver segment V and VI</Label>
+				</Diagram>
+				<Diagram>
+					<Location>Liver_segment_schem_4.png</Location>
+					<Label>Liver segment VII and VIII</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>I</Value>
-					<Label>I</Label>					
+					<Label>Segment I</Label>					
 				</Choice>
 				<Choice>
 					<Value>II</Value>
-					<Label>II</Label>
+					<Label>Segment II</Label>
 				</Choice>
 				<Choice>
 					<Value>III</Value>
-					<Label>III</Label>
+					<Label>Segment III</Label>
 				</Choice>
 				<Choice>
 					<Value>IVa</Value>
-					<Label>IVa</Label>
+					<Label>Segment IVa</Label>
 				</Choice>
 				<Choice>
 					<Value>IVb</Value>
-					<Label>IVb</Label>
+					<Label>Segment IVb</Label>
 				</Choice>
 				<Choice>
 					<Value>V</Value>
-					<Label>V</Label>
+					<Label>Segment V</Label>
 				</Choice>
 				<Choice>
 					<Value>VI</Value>
-					<Label>VI</Label>
+					<Label>Segment VI</Label>
 				</Choice>
 				<Choice>
 					<Value>VII</Value>
-					<Label>VII</Label>
+					<Label>Segment VII</Label>
 				</Choice>
 				<Choice>
 					<Value>VIII</Value>
-					<Label>VIII</Label>
+					<Label>Segment VIII</Label>
 				</Choice>
 				<Choice>
 					<Value>Left_lateral_sector</Value>
@@ -3005,7 +3023,7 @@
 				<ReportText Type="InsertDataElementValue" Value="TreatmentMethod"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
-				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
+				<ReportText Type="PlainText">Location: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
@@ -3133,7 +3151,7 @@
 				<ReportText Type="PlainText">)</ReportText>
 				<ReportText Type="Newline"/>
 				
-				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
+				<ReportText Type="PlainText">Location: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
@@ -3304,7 +3322,7 @@
 				<ReportText Type="PlainText">)</ReportText>
 				<ReportText Type="Newline"/>
 				
-				<ReportText Type="PlainText">Location: Liver Segment </ReportText>
+				<ReportText Type="PlainText">Location: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
@@ -3553,7 +3571,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-NC (noncategorizable) in segment </ReportText>
+					<ReportText Type="PlainText">LR-NC (noncategorizable) in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>	
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
@@ -3581,7 +3599,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-1 (definitely benign) in segment </ReportText>
+					<ReportText Type="PlainText">LR-1 (definitely benign) in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
@@ -3610,7 +3628,7 @@
 				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-						<ReportText Type="PlainText">LR-1 (definitely benign) in segment </ReportText>
+						<ReportText Type="PlainText">LR-1 (definitely benign) in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -3638,7 +3656,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-2 (probably benign) in segment </ReportText>
+					<ReportText Type="PlainText">LR-2 (probably benign) in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
@@ -3668,7 +3686,7 @@
 				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-						<ReportText Type="PlainText">LR-2 (probably benign) in segment </ReportText>
+						<ReportText Type="PlainText">LR-2 (probably benign) in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -3690,7 +3708,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in segment </ReportText>
+					<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
@@ -3713,7 +3731,7 @@
 				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-						<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in segment </ReportText>
+						<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -3735,7 +3753,7 @@
 			<ReportSection SectionId="impression">
 				<Branch>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-					<ReportText Type="PlainText">LR-4 (probably HCC) in segment </ReportText>
+					<ReportText Type="PlainText">LR-4 (probably HCC) in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="Newline"></ReportText>
 				</Branch>
@@ -3758,7 +3776,7 @@
 				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
-						<ReportText Type="PlainText">LR-4 (probably HCC) in segment </ReportText>
+						<ReportText Type="PlainText">LR-4 (probably HCC) in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -3791,7 +3809,7 @@
 				
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText" > in segment </ReportText>
+					<ReportText Type="PlainText" > in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 				</Branch>				
 			</ReportSection>
@@ -3824,7 +3842,7 @@
 					
 					<Branch>
 						<SectionIf DataElementId="segmentlocation" />
-						<ReportText Type="PlainText" > in segment </ReportText>
+						<ReportText Type="PlainText" > in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 					</Branch>				
 				</ReportSection>
@@ -3855,7 +3873,7 @@
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText"> in segment </ReportText>
+					<ReportText Type="PlainText"> in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				</Branch>
 				<Branch>
@@ -3891,7 +3909,7 @@
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText"> in segment </ReportText>
+					<ReportText Type="PlainText"> in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				</Branch>
 				<Branch>
@@ -3927,7 +3945,7 @@
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText"> in segment </ReportText>
+					<ReportText Type="PlainText"> in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				</Branch>
 				<Branch>
@@ -3963,7 +3981,7 @@
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText"> in segment </ReportText>
+					<ReportText Type="PlainText"> in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 				</Branch>
 				<Branch>
@@ -4001,7 +4019,7 @@
 				</Branch>
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText" > in segment </ReportText>
+					<ReportText Type="PlainText" > in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 				</Branch>
 			</ReportSection>
@@ -4120,7 +4138,7 @@
 				</Branch>				
 				<Branch>
 					<SectionIf DataElementId="segmentlocation" />
-					<ReportText Type="PlainText" > in segment </ReportText>
+					<ReportText Type="PlainText" > in </ReportText>
 					<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 				</Branch>
 			</ReportSection>
@@ -4233,7 +4251,7 @@
 					
 					<Branch>
 						<SectionIf DataElementId="segmentlocation" />
-						<ReportText Type="PlainText" > in segment </ReportText>
+						<ReportText Type="PlainText" > in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 					</Branch>
 				</ReportSection>
@@ -4354,7 +4372,7 @@
 					
 					<Branch>
 						<SectionIf DataElementId="segmentlocation" />
-						<ReportText Type="PlainText" > in segment </ReportText>
+						<ReportText Type="PlainText" > in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 					</Branch>			
 				</ReportSection>			
@@ -4475,7 +4493,7 @@
 					
 					<Branch>
 						<SectionIf DataElementId="segmentlocation" />
-						<ReportText Type="PlainText" > in segment </ReportText>
+						<ReportText Type="PlainText" > in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation" />
 					</Branch>					
 				</ReportSection>			
