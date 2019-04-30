@@ -2151,25 +2151,28 @@
 												<!--<NotRelevantDataElements>
 													<DataElementRef DataElementId="patternofenhancement"/>
 												</NotRelevantDataElements>-->
-												<EqualCondition DataElementId="irregularattheperiphery" ComparisonValue="no"/>
+												<SectionIfNot DataElementId="patternofenhancement"></SectionIfNot>
+												<!-- <EqualCondition DataElementId="irregularattheperiphery" ComparisonValue="no"/> -->
 												<EndPointRef EndPointId="LRTREquivoca"></EndPointRef>
 											</Branch>
 											<Branch>
 												<Label>Yes</Label>
-												<EqualCondition DataElementId="irregularattheperiphery" ComparisonValue="yes"/>
-												<DecisionPoint Id="patterenenhancementdp">
-													<Label>Pattern of enhancement</Label>
-													<Branch>
-														<Label>None</Label>
-														<EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="none"/>
-														<EndPointRef EndPointId="LRTREquivoca"></EndPointRef>
-													</Branch>
-													<Branch>
-														<Label>At least one pattern of enhancement</Label>
-														<EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="morethanone"/>
-														<EndPointRef EndPointId="LRTRViable"></EndPointRef>
-													</Branch>
-												</DecisionPoint>
+												<!-- <EqualCondition DataElementId="irregularattheperiphery" ComparisonValue="yes"/> -->
+												<SectionIf DataElementId="patternofenhancement"></SectionIf>
+												<EndPointRef EndPointId="LRTRViable"></EndPointRef>
+												<!-- <DecisionPoint Id="patterenenhancementdp"> -->
+													<!-- <Label>Pattern of enhancement</Label> -->
+													<!-- <Branch> -->
+														<!-- <Label>None</Label> -->
+														<!-- <EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="none"/> -->
+														<!-- <EndPointRef EndPointId="LRTREquivoca"></EndPointRef> -->
+													<!-- </Branch> -->
+													<!-- <Branch> -->
+														<!-- <Label>At least one pattern of enhancement</Label> -->
+														<!-- <EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="morethanone"/> -->
+														<!-- <EndPointRef EndPointId="LRTRViable"></EndPointRef> -->
+													<!-- </Branch> -->
+												<!-- </DecisionPoint> -->
 											</Branch>
 										</DecisionPoint>
 									</Branch>
