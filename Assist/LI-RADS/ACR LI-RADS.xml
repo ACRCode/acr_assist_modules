@@ -211,6 +211,10 @@
 		
 		<ChoiceDataElement Id="observationinPatient" IsRequired="true" DisplaySequence="6">	
 			<Label>Observation in high-risk patient</Label>
+			<Diagram>
+					<Location>patientathccrisk.JPG</Location>
+					<Label>Patient at high-risk for HCC</Label>
+				</Diagram>
 			<ChoiceInfo>
 				<Choice>
 					<Value>treated</Value>
@@ -391,10 +395,6 @@
 				<Diagram>
 					<Location>Observation2.JPG</Location>
 					<Label>Observation types</Label>
-				</Diagram>
-				<Diagram>
-					<Location>patientathccrisk.JPG</Location>
-					<Label>Patient at high-risk for HCC</Label>
 				</Diagram>
 				<Diagram>
 					<Location>tumorinvein.PNG</Location>
@@ -1315,7 +1315,14 @@
 		</ChoiceDataElement>-->
 		
 		<MultiChoiceDataElement Id="lrmtargetoidmass" IsRequired="true" DisplaySequence="28">
-			<Label>Targetoid mass (any of the following)</Label>
+			<Label>Targetoid LR-M features (any of the following)</Label>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>targetoid_mass.png</Location>
+					<Label>targetoid mass</Label>
+				</Diagram>	
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rim_APHE</Value>
@@ -1339,10 +1346,6 @@
 				<Choice>
 					<Value>Targetoid_on_transitional_phase/hepatobiliary_phase</Value>
 					<Label>Targetoid on transitional phase/hepatobiliary phase</Label>
-				</Choice>
-				<Choice>
-					<Value>Not_evaluated</Value>
-					<Label>NA</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -1368,7 +1371,6 @@
 							ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="nonofabove"/>
-						<SectionIf DataElementId="lrmnontargetoidmass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>	
@@ -1389,8 +1391,16 @@
 			</ConditionalProperties>		
 		</MultiChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="lrmnontargetoidmass" IsRequired="true" DisplaySequence="29">
-			<Label>Nontargetoid mass (NOT LR-5 and no TIV)</Label>
+		<MultiChoiceDataElement Id="lrmnontargetoidmass" IsRequired="true" DisplaySequence="29" AllowFreetext="true">
+			<Label>Nontargetoid LR-M features (any of the following)</Label>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>nontargetoid_mass.png</Location>
+					<Label>nontargetoid mass</Label>
+				</Diagram>	
+			</Diagrams>
+			
 			<ChoiceInfo>
 				<Choice>
 					<Value>Infiltrative_appearance</Value>
@@ -1403,14 +1413,6 @@
 				<Choice>
 					<Value>Necrosis_or_severe_ischemia</Value>
 					<Label>Necrosis or severe ischemia</Label>
-				</Choice>
-				<Choice>
-					<Value>Othery</Value>
-					<Label>Other feature that in radiologist’s judgment suggests non-HCC malignancy(specify in report)</Label>
-				</Choice>
-				<Choice>
-					<Value>Not_evaluated</Value>
-					<Label>NA</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -1439,7 +1441,6 @@
 							ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="nonofabove"/>
-						<SectionIf DataElementId="lrmtargetoidmass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
