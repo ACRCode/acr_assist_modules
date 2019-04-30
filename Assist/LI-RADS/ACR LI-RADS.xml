@@ -1014,27 +1014,27 @@
 		<ChoiceInfo>
 			<Choice>
 				<Value>Main_portal_vein</Value>
-				<Label>Main portal vein</Label>
+				<Label>main portal vein</Label>
 			</Choice>
 			<Choice>
 				<Value>Right_portal_vein</Value>
-				<Label>Right portal vein</Label>
+				<Label>right portal vein</Label>
 			</Choice>
 			<Choice>
 				<Value>Left_portal_vein</Value>
-				<Label>Left portal vein</Label>
+				<Label>left portal vein</Label>
 			</Choice>
 			<Choice>
 				<Value>Right_hepatic_vein</Value>
-				<Label>Right hepatic vein</Label>
+				<Label>right hepatic vein</Label>
 			</Choice>
 			<Choice>
 				<Value>Middle_hepatic_vein</Value>
-				<Label>Middle hepatic vein</Label>
+				<Label>middle hepatic vein</Label>
 			</Choice>
 			<Choice>
 				<Value>Left_hepatic_vein</Value>
-				<Label>Left hepatic vein</Label>
+				<Label>left hepatic vein</Label>
 			</Choice>			
 		</ChoiceInfo>
 			<ConditionalProperties>
@@ -1331,22 +1331,19 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
-						<SectionIfNot DataElementId="untreatedobservation" />						
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+											
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-				
+
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="untreatedobservation" />	
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="notcategorized"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="tumorInVein"/>
+						<!-- <EqualCondition DataElementId="untreatedobservation" -->
+							<!-- ComparisonValue="tumorInVein"/> -->
 						<EqualCondition DataElementId="untreatedobservation"
 							ComparisonValue="definitelyBenign"/>
 						<EqualCondition DataElementId="untreatedobservation"
@@ -1356,7 +1353,21 @@
 						<SectionIf DataElementId="lrmnontargetoidmass"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>	
+
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="no"/>
+						</OrCondition>					
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>				
+					
 			</ConditionalProperties>		
 		</MultiChoiceDataElement>
 		
@@ -1447,6 +1458,8 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1499,14 +1512,17 @@
 				
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
 						<!-- <EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/> -->
 						<!-- <EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>		 -->
-						<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+						<!-- <EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/> -->
 <!--						<EqualCondition DataElementId="Isparenchymalmassinfiltrative" ComparisonValue="yes"/>-->
 						<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
+				
 			</ConditionalProperties>
 		</NumericDataElement>
 			
@@ -1536,6 +1552,8 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1587,6 +1605,8 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1638,6 +1658,8 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="observationinPatient" />
 						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />	
+						<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
