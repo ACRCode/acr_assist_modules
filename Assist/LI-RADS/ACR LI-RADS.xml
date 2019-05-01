@@ -1530,13 +1530,14 @@
 			<Label>Observation size (mm)</Label>
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
+			<Maximum>20</Maximum>
 			<ConditionalProperties>	
 				<ConditionalProperty>
 					<AndCondition>
 						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
 					</AndCondition>					
-					<Maximum>20</Maximum>
+
 				</ConditionalProperty>				
 				
 				<ConditionalProperty>
@@ -1773,7 +1774,7 @@
 			<Label>Time period since the prior study</Label>
 			<Hint>Time period since the prior study</Hint>
 			<Minimum>0.1</Minimum>
-			<Minimum>7.0</Minimum>
+			<Maximum>6.9</Maximum>
 			<ConditionalProperties>	
 				<ConditionalProperty>
 					<OrCondition>
