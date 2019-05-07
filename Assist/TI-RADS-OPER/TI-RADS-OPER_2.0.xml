@@ -624,14 +624,18 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						
 						<NotEqualCondition DataElementId="composition_2" ComparisonValue="solid"/>
-	
-						
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="composition_2" />
+						<EqualCondition DataElementId="composition_2" ComparisonValue="mixed_cystic_solid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -1027,7 +1031,14 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="composition_3" />
+						<EqualCondition DataElementId="composition_3" ComparisonValue="mixed_cystic_solid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -1437,7 +1448,15 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="composition_4" />
+						<EqualCondition DataElementId="composition_4" ComparisonValue="mixed_cystic_solid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
