@@ -255,27 +255,27 @@
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>Macrocalcifications</Value>
+					<Value>1</Value>
 					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Peripheral</Value>
+					<Value>2</Value>
 					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Punctate</Value>
+					<Value>3</Value>
 					<Label>Punctate echogenic foci (3 points) </Label>
 				</Choice>
 				<Choice>
-					<Value>Lobulated</Value>
+					<Value>2</Value>
 					<Label>Lobulated or irregular margin without extra-thyroidal extension (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Taller</Value>
+					<Value>3</Value>
 					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Definite</Value>
+					<Value>3</Value>
 					<Label>Definite extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -405,7 +405,7 @@
 							</OrCondition>
 						</AndCondition>
 					</OrCondition>
-					<ArithmeticExpression>{composition_point_1} + {echogenicity_point_1} +  {echogenicity_solid_point_1} + {other_point_1} </ArithmeticExpression>
+					<ArithmeticExpression>{composition_point_1} + {echogenicity_point_1} +  {echogenicity_solid_point_1} + {other_1} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
