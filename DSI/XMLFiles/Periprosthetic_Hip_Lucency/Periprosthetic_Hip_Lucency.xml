@@ -1,0 +1,47 @@
+<ReportingModule>
+    <Metadata>
+        <Label>Periprosthetic Hip Lucency</Label>
+        <ID>Periprosthetic_Hip_Lucency</ID>
+        <SchemaVersion>1.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <Info>
+            <Diagrams></Diagrams>
+            <Description>This module describes the common data elements for periprosthetic hip lucency use case.</Description>
+            <References>
+                <Citation Url="http://radelement.org/"> CDE URL </Citation>
+                <Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">
+              CDE google sheet </Citation>
+            </References>
+            <Contact>
+                <Name>Munib Sana, MD</Name>
+                <Email>DSIUseCases@acr.org</Email>
+                <Institution>undefined</Institution>
+            </Contact>
+        </Info>
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="PeriprostheticLucency" IsRequired="true" DisplaySequence="1">
+            <Label>Periprosthetic Lucency</Label>
+            <Hint>Measure periprosthetic lucency. Alert if greater than 2 mm</Hint>
+            <ChoiceInfo></ChoiceInfo>
+        </NumericDataElement>
+ 
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="macrodp">
+            <Label>Macro Banch</Label>
+            <Branch>
+                <EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+                <EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="macroEndpoint">
+            <Label>A</Label>
+            <ReportTexts>
+                <ReportText SectionId="findings">	Sample Report Text</ReportText>
+            </ReportTexts>
+        </EndPoint>
+    </EndPoints>
+</ReportingModule>

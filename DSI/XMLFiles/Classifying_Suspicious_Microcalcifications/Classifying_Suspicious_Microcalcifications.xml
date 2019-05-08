@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Classifying Suspicious Microcalcifications</Label>
+      <ID>Classifying_Suspicious_Microcalcifications</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the common data elements for classifying suspicious microcalcifications use case</Description>
+         <References>
+            <Citation Url="http://radelement.org/">CDE URL</Citation>
+            <Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Christoph Lee, MD</Name>
+            <Email>DSIUseCases@acr.org</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+      <ChoiceDataElement Id="SuspiciousMicrocalcificationDetection" IsRequired="true" DisplaySequence="1">
+         <Label>Suspicious Microcalcification Detection</Label>
+         <Hint>Identify suspicious microcalcifications</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Suspiciousmicrocalcificationpresent</Value>
+               <Label>1 Suspicious microcalcification present</Label>
+            </Choice>
+            <Choice>
+               <Value>2Suspiciousmicrocalcificationabsent</Value>
+               <Label>2 Suspicious microcalcification absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <NumericDataElement Id="ProbabilityOfMalignantMicrocalcification" IsRequired="true" DisplaySequence="2">
+         <Label>Probability Of Malignant Microcalcification</Label>
+         <Hint>For a selected microcalcification, identify the probability of malignancy ( 0-benign, 1-malignant)</Hint>
+         <ChoiceInfo />
+         <Minimum>0</Minimum>
+         <Maximum>1</Maximum>
+      </NumericDataElement>
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>

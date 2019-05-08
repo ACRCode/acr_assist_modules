@@ -1,0 +1,91 @@
+<ReportingModule>
+  <Metadata>
+    <Label>Quantification of Myocardial Perfusion</Label>
+    <ID>Quantification_of_Myocardial_Perfusion</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <Info>
+      <Diagrams></Diagrams>
+      <Description>This module describes the common data elements for Quantification of Myocardial Perfusion use case. </Description>
+      <References>
+        <Citation
+          Url="http://radelement.org/"> CDE URL </Citation>
+        <Citation
+          Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">
+              CDE google sheet </Citation>
+      </References>
+      <Contact>
+        <Name>Marly Van Assen, MSc</Name>
+        <Email>DSIUseCases@acr.org</Email>
+        <Institution>ACR</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement
+      Id="MBFQuantification"
+      IsRequired="true"
+      DisplaySequence="1">
+      <Label>MBF Quantification</Label>
+      <Hint>MBF quantification per segment (mL/100 mL/min)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="MBVQuantification"
+      IsRequired="true"
+      DisplaySequence="2">
+      <Label>MBV Quantification</Label>
+      <Hint>MBV quantification per segment (mL/100 mL)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="GlobalMBFQuantification"
+      IsRequired="true"
+      DisplaySequence="3">
+      <Label>Global MBF Quantification</Label>
+      <Hint>Global MBF quantification (mL/100 mL / min)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="GlobalMBVquantification"
+      IsRequired="true"
+      DisplaySequence="4">
+      <Label>Global MBV quantification</Label>
+      <Hint>Globabl MBV quantification (mL/100 mL)</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="MBFIndex"
+      IsRequired="true"
+      DisplaySequence="5">
+      <Label>MBF Index</Label>
+      <Hint>MBF index comparing MBF from each segment to the global LV-MBF value</Hint>
+    </NumericDataElement>
+    <NumericDataElement
+      Id="DefectDetection"
+      IsRequired="true"
+      DisplaySequence="6">
+      <Label>Defect Detection</Label>
+      <Hint>Size, location (AHA segment), absolute values, and nature (ischemic/infarct)  of defects</Hint>
+    </NumericDataElement>
+  </DataElements>
+  <Rules>
+    <DecisionPoint
+      Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition
+          DataElementId="conditionConst"
+          ComparisonValue="10" />
+        <EndPointRef
+          EndPointId="macroEndpoint"></EndPointRef>
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <EndPoint
+      Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportTexts>
+        <ReportText
+          SectionId="findings">	Sample Report Text</ReportText>
+      </ReportTexts>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

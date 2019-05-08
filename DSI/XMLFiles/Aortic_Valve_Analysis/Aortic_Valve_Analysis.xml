@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Aortic Valve Analysis</Label>
+      <ID>Aortic_Valve_Analysis</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the Common Data elements and Macros forAortic Valve Analysis</Description>
+         <References>
+            <Citation Url="http://radelement.org/">CDE URL</Citation>
+            <Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Carlo De Cecco, MD, PhD</Name>
+            <Email>DSIUseCases@acr.org</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+      <NumericDataElement Id="Bestsystolicphase" IsRequired="true" DisplaySequence="1">
+         <Label>Best systolic phase</Label>
+         <Hint>Percentage of cardiac cycle in systole</Hint>
+         <ChoiceInfo />
+         <Minimum>0</Minimum>
+         <Maximum>100</Maximum>
+      </NumericDataElement>
+      <NumericDataElement Id="Bestdiastolicphase" IsRequired="true" DisplaySequence="2">
+         <Label>Best diastolic phase</Label>
+         <Hint>Percentage of cardiac cycle in diastole</Hint>
+         <ChoiceInfo />
+         <Minimum>0</Minimum>
+         <Maximum>100</Maximum>
+      </NumericDataElement>
+      <NumericDataElement Id="Aorticvalveopeningarea" IsRequired="true" DisplaySequence="3">
+         <Label>Aortic valve opening area</Label>
+         <Hint>Aortic valve opening area (mm2)</Hint>
+         <ChoiceInfo />
+      </NumericDataElement>
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>

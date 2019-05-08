@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Acute Appendicitis.</Label>
+      <ID>Acute_Appendicitis.</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the common data elements for acute appendicitis use case.</Description>
+         <References>
+            <Citation Url="http-//radelement.org/">CDE URL</Citation>
+            <Citation Url="https-//docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Arun Krishnaraj, MD</Name>
+            <Email>DSIUseCases@acr.org</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+      <ChoiceDataElement Id="AppendicitisDetection" IsRequired="true" DisplaySequence="1">
+         <Label>Appendicitis Detection</Label>
+         <Hint>The status of the appendix</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Normal</Value>
+               <Label>1 Normal</Label>
+            </Choice>
+            <Choice>
+               <Value>2Nonrupturedappendicitis</Value>
+               <Label>2 Nonruptured appendicitis</Label>
+            </Choice>
+            <Choice>
+               <Value>3Rupturedappendicitis</Value>
+               <Label>3 Ruptured appendicitis</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <NumericDataElement Id="AppendicealDiameter" DisplaySequence="2">
+         <Label>Appendiceal Diameter</Label>
+         <Hint>Diameter of the appendiceal. Units- mm</Hint>
+         <ChoiceInfo />
+      </NumericDataElement>
+      <ChoiceDataElement Id="Peri-AppendicealFatStranding" DisplaySequence="3">
+         <Label>Peri-Appendiceal Fat Stranding</Label>
+         <Hint>Detection of fat stranding around appendiceal</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Present</Value>
+               <Label>1 Present</Label>
+            </Choice>
+            <Choice>
+               <Value>2Absent</Value>
+               <Label>2 Absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <ChoiceDataElement Id="FreeFluid" DisplaySequence="4">
+         <Label>Free Fluid</Label>
+         <Hint>Detection of free fluid around appendiceal</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Present</Value>
+               <Label>1 Present</Label>
+            </Choice>
+            <Choice>
+               <Value>2Absent</Value>
+               <Label>2 Absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <ChoiceDataElement Id="ObstructingFocus" DisplaySequence="5">
+         <Label>Obstructing Focus</Label>
+         <Hint>Presence of obstructing mass such as a stone or fecalith</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Present</Value>
+               <Label>1 Present</Label>
+            </Choice>
+            <Choice>
+               <Value>2Absent</Value>
+               <Label>2 Absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <ChoiceDataElement Id="LumenContents" DisplaySequence="6">
+         <Label>Lumen Contents</Label>
+         <Hint>Content within the lumen</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Airfilled</Value>
+               <Label>1 Air-filled</Label>
+            </Choice>
+            <Choice>
+               <Value>2Contrastfilled</Value>
+               <Label>2 Contrast-filled</Label>
+            </Choice>
+            <Choice>
+               <Value>3Fluidfilled</Value>
+               <Label>3 Fluid-filled</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <ChoiceDataElement Id="Peri-AppendicealAbscess" DisplaySequence="7">
+         <Label>Peri-Appendiceal Abscess</Label>
+         <Hint>States the presence of the peri-appendiceal abscess</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Present</Value>
+               <Label>1 Present</Label>
+            </Choice>
+            <Choice>
+               <Value>2Absent</Value>
+               <Label>2 Absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <ChoiceDataElement Id="Opacification" DisplaySequence="8">
+         <Label>Opacification</Label>
+         <Hint>Opacification of the appendix</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Present</Value>
+               <Label>1 Present</Label>
+            </Choice>
+            <Choice>
+               <Value>2Absent</Value>
+               <Label>2 Absent</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>

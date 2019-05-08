@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Osteochondritis Dissecans</Label>
+      <ID>Osteochondritis_Dissecans</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the common data elements for osteochondritis dissecans use case.</Description>
+         <References>
+            <Citation Url="http://radelement.org/">CDE URL</Citation>
+            <Citation Url="https://docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Munib Sana, MD</Name>
+            <Email>DSIUseCase@acr.org</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+      <NumericDataElement Id="InstabilityofOCD" IsRequired="true" DisplaySequence="1">
+         <Label>Instability of OCD</Label>
+         <Hint>Probability the OCD is unstable (0-stable, 1-unstable or indeterminate)</Hint>
+         <ChoiceInfo />
+         <Minimum>0</Minimum>
+         <Maximum>1</Maximum>
+      </NumericDataElement>
+      <NumericDataElement Id="Numberofcysts" DisplaySequence="2">
+         <Label>Number of cysts</Label>
+         <Hint>Define number of cysts larger than 5 mm</Hint>
+         <ChoiceInfo />
+      </NumericDataElement>
+      <NumericDataElement Id="Sizeoflargestcyst" DisplaySequence="3">
+         <Label>Size of largest cyst</Label>
+         <Hint>Define volume of largest cyst</Hint>
+         <ChoiceInfo />
+      </NumericDataElement>
+      <NumericDataElement Id="Fluidsignalintensitybetweenparentandprogenybone" DisplaySequence="4">
+         <Label>Fluid signal intensity between parent and progeny bone</Label>
+         <Hint>If  there  is  a  line  of  signal  equal  to  the  pixel  intensity  value  of  joint  fluid separating  the  parent  and  progeny  bone,  than  this  feature  is  considered positive</Hint>
+         <ChoiceInfo />
+         <Minimum>0</Minimum>
+         <Maximum>1</Maximum>
+      </NumericDataElement>
+      <ChoiceDataElement Id="Integrityofoverlyingcartilage" DisplaySequence="5">
+         <Label>Integrity of overlying cartilage</Label>
+         <Hint>Disruption of the cartilage surface</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Focalbreaks</Value>
+               <Label>1 Focal breaks</Label>
+            </Choice>
+            <Choice>
+               <Value>2Incongruity</Value>
+               <Label>2 Incongruity</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+      <ChoiceDataElement Id="Integrityofsubchondralboneplate" DisplaySequence="6">
+         <Label>Integrity of subchondral bone plate</Label>
+         <Hint>Disruption of the cartilage surface</Hint>
+         <ChoiceInfo>
+            <Choice>
+               <Value>0Unknown</Value>
+               <Label>0 Unknown</Label>
+            </Choice>
+            <Choice>
+               <Value>1Focalbreaks</Value>
+               <Label>1 Focal breaks</Label>
+            </Choice>
+            <Choice>
+               <Value>2Incongruity</Value>
+               <Label>2 Incongruity</Label>
+            </Choice>
+         </ChoiceInfo>
+      </ChoiceDataElement>
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportingModule>
+   <Metadata>
+      <Label>Pulmonary to Systemic Flow Ratio</Label>
+      <ID>Pulmonary_to_Systemic_Flow_Ratio</ID>
+      <SchemaVersion>1.0</SchemaVersion>
+      <ModuleVersion>1.0</ModuleVersion>
+      <Info>
+         <Diagrams />
+         <Description>This module describes the common data elements for Pulmonary to Systemic Flow Ratio use case</Description>
+         <References>
+            <Citation Url="http-//radelement.org/">CDE URL</Citation>
+            <Citation Url="https-//docs.google.com/spreadsheets/d/1mXqXAByeur3C5ud-wbLY2vggB29-nSxU5nYpoInGsK4/edit#gid=891834841">CDE google sheet</Citation>
+         </References>
+         <Contact>
+            <Name>Benoit Desjardins, MD, PhD</Name>
+            <Email>DSIUseCases@acr.org</Email>
+            <Institution>undefined</Institution>
+         </Contact>
+      </Info>
+   </Metadata>
+   <DataElements>
+
+      <NumericDataElement Id="Pulmonarytosystemicflowratio" IsRequired="true" DisplaySequence="2">
+         <Label>Pulmonary to systemic flow ratio</Label>
+         <Hint>Measurement of Qp-Qs ratio using aortic and pulmonary flow measurements</Hint>
+         <ChoiceInfo />
+         <Minimum>0</Minimum>
+         <Maximum>5</Maximum>
+      </NumericDataElement>
+   </DataElements>
+   <Rules>
+      <DecisionPoint Id="macrodp">
+         <Label>Macro Banch</Label>
+         <Branch>
+            <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+            <EndPointRef EndPointId="macroEndpoint" />
+         </Branch>
+      </DecisionPoint>
+   </Rules>
+   <EndPoints>
+      <EndPoint Id="macroEndpoint">
+         <Label>A</Label>
+         <ReportTexts>
+            <ReportText SectionId="findings">Sample Report Text</ReportText>
+         </ReportTexts>
+      </EndPoint>
+   </EndPoints>
+</ReportingModule>
