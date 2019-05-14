@@ -105,16 +105,6 @@
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_1" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_1" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>1</DisplaySequence>
-				</ConditionalProperty>
-			</ConditionalProperties>			
 		</NumericDataElement>	
 
 		<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="5">
@@ -189,65 +179,13 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<NotEqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="composition_1" />
-						<EqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="spongiform"/>
 					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>					
-			</ConditionalProperties>
-		</ChoiceDataElement>
-
-		<ChoiceDataElement 	Id="echogenicity_solid_1" IsRequired="true" DisplaySequence="6">
-			<Label>Echogenicity</Label>
-			<CodableConcept Name="echogenicity_solid_1">
-				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="RDE126"></Code>
-					<Display Value="RDE126"></Display>
-					<Url Value="http://radelement.org/element/RDE126"></Url>
-					<UserSelected Value="true"></UserSelected>
-				</Coding>
-			</CodableConcept>
-			<ChoiceInfo>
-				<Choice>
-					<Value>Anechoic</Value>
-					<Label>Anechoic (0 points)</Label>	
-				</Choice>
-				<Choice>
-					<Value>Hyperechoic</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Echogenicity</Value>
-					<Label>Echogenicity cannot be determined (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Hypoechoic</Value>
-					<Label>Hypoechoic (2 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Very</Value>
-					<Label>Very hypoechoic (3 points)</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<NotEqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="composition_1" />
-						<EqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -255,35 +193,36 @@
 			<Label>Other features</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>1</Value>
+					<Value>Macrocalcifications</Value>
 					<Label>Macrocalcifications (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>Peripheral</Value>
 					<Label>Peripheral (rim) calcifications (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
+					<Value>Punctate</Value>
 					<Label>Punctate echogenic foci (3 points) </Label>
 				</Choice>
 				<Choice>
-					<Value>2</Value>
+					<Value>Lobulated</Value>
 					<Label>Lobulated or irregular margin without extra-thyroidal extension (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
+					<Value>Taller</Value>
 					<Label>Taller-than-wide (3 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>3</Value>
+					<Value>Definite</Value>
 					<Label>Definite extra-thyroidal extension (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="cystic"/>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="spongiform"/>
+						<SectionIfNot DataElementId="composition_1" />
+						<EqualCondition DataElementId="composition_1" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="spongiform"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -300,24 +239,28 @@
 					<TextExpression>0</TextExpression>
 				</Branch>
 				<Branch>
-					<EqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="mixed_cystic_solid"/>
+					</OrCondition>
 					<TextExpression>1</TextExpression>
 				</Branch>
 				<Branch>
-						<OrCondition>
-							<EqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
-							<EqualCondition DataElementId="composition_1" ComparisonValue="nonevaluable"/>
-						</OrCondition>
+					<OrCondition>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="solid"/>
+						<EqualCondition DataElementId="composition_1" ComparisonValue="nonevaluable"/>
+					</OrCondition>
 					<TextExpression>2</TextExpression>
 				</Branch>
 
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
 		<ComputedDataElement Id="echogenicity_point_1">		
 			<DecisionPoint>
 				<Branch>
+					<OrCondition>
 						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Anechoic"/>
+					</OrCondition>
 					<TextExpression>0</TextExpression>
 				</Branch>
 				<Branch>
@@ -328,84 +271,90 @@
 					<TextExpression>1</TextExpression>
 				</Branch>
 				<Branch>
-					<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Hypoechoic"/>
+					<OrCondition>
+						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Hypoechoic"/>
+					</OrCondition>
 					<TextExpression>2</TextExpression>
-				</Branch>
-				<Branch>
-					<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Very"/>
-					<TextExpression>3</TextExpression>
-				</Branch>
-			</DecisionPoint>
-		</ComputedDataElement>
-		
-		<ComputedDataElement Id="echogenicity_solid_point_1">		
-			<DecisionPoint>
-				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Anechoic"/>
-					<TextExpression>0</TextExpression>
 				</Branch>
 				<Branch>
 					<OrCondition>
-						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Echogenicity"/>
+						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Very"/>
 					</OrCondition>
-					<TextExpression>1</TextExpression>
-				</Branch>
-				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Hypoechoic"/>
-					<TextExpression>2</TextExpression>
-				</Branch>
-				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_1" ComparisonValue="Very"/>
 					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
+		<ComputedDataElement Id="other_Macrocalcifications_point_1">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_1" ComparisonValue="Macrocalcifications"/>
+					<TextExpression>1</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Peripheral_point_1">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_1" ComparisonValue="Peripheral"/>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Lobulated_point_1">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_1" ComparisonValue="Lobulated"/>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Punctate_point_1">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_1" ComparisonValue="Punctate"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Taller_point_1">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_1" ComparisonValue="Taller"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Definite_point_1">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_1" ComparisonValue="Definite"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
 		<ComputedDataElement Id="other_point_1">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="other_1" ComparisonValue="Macrocalcifications"/>
-					<TextExpression>1</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_1" ComparisonValue="Peripheral"/>
-						<EqualCondition DataElementId="other_1" ComparisonValue="Lobulated"/>
-					</OrCondition>
-					<TextExpression>2</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_1" ComparisonValue="Punctate"/>
-						<EqualCondition DataElementId="other_1" ComparisonValue="Taller"/>
-						<EqualCondition DataElementId="other_1" ComparisonValue="Definite"/>
-					</OrCondition>
-					<TextExpression>3</TextExpression>
+
+					<SectionIf DataElementId="composition_1"></SectionIf>
+					<ArithmeticExpression>{other_Macrocalcifications_point_1} + {other_Peripheral_point_1} + 
+					{other_Lobulated_point_1} + {other_Punctate_point_1}+ {other_Taller_point_1} + {other_Definite_point_1}</ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
 		<ComputedDataElement Id="addtr1_1">		
 			<DecisionPoint>
 				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_1"></SectionIf>
-							<OrCondition>
-								<SectionIfNot DataElementId="echogenicity_1"></SectionIfNot>
-								<SectionIfNot DataElementId="echogenicity_solid_1"></SectionIfNot>
-							</OrCondition>
-						</AndCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_1"></SectionIf>
-							<OrCondition>
-								<SectionIf DataElementId="echogenicity_1"></SectionIf>
-								<SectionIf DataElementId="echogenicity_solid_1"></SectionIf>
-							</OrCondition>
-						</AndCondition>
-					</OrCondition>
-					<ArithmeticExpression>{composition_point_1} + {echogenicity_point_1} +  {echogenicity_solid_point_1} + {other_1} </ArithmeticExpression>
+					<SectionIf DataElementId="composition_1"></SectionIf>
+					<ArithmeticExpression>{composition_point_1} + {echogenicity_point_1} + {other_point_1} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -506,18 +455,10 @@
 			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
 				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_2" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_2" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>6</DisplaySequence>
-				</ConditionalProperty>
-				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-			</ConditionalProperties>			
+				</ConditionalProperty>		
+			</ConditionalProperties>	
 		</NumericDataElement>	
 
 		<ChoiceDataElement Id="composition_2" IsRequired="true" DisplaySequence="13">
@@ -579,63 +520,11 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_2" ComparisonValue="mixed_cystic_solid"/>
+						<SectionIfNot DataElementId="composition_2" />
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
-			</ConditionalProperties>
-		</ChoiceDataElement>
-
-		<ChoiceDataElement 	Id="echogenicity_solid_2" IsRequired="true" DisplaySequence="14">
-			<Label>Echogenicity</Label>
-			<CodableConcept Name="echogenicity_solid_2">
-				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="RDE126"></Code>
-					<Display Value="RDE126"></Display>
-					<Url Value="http://radelement.org/element/RDE126"></Url>
-					<UserSelected Value="true"></UserSelected>
-				</Coding>
-			</CodableConcept>
-			<ChoiceInfo>
-				<Choice>
-					<Value>Anechoic</Value>
-					<Label>Anechoic (0 points)</Label>	
-				</Choice>
-				<Choice>
-					<Value>Hyperechoic</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Echogenicity</Value>
-					<Label>Echogenicity cannot be determined (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Hypoechoic</Value>
-					<Label>Hypoechoic (2 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Very</Value>
-					<Label>Very hypoechoic (3 points)</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<NotEqualCondition DataElementId="composition_2" ComparisonValue="solid"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="composition_2" />
-						<EqualCondition DataElementId="composition_2" ComparisonValue="mixed_cystic_solid"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -670,6 +559,7 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="composition_2" />
 						<EqualCondition DataElementId="composition_2" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="composition_2" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
@@ -701,11 +591,11 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
 		<ComputedDataElement Id="echogenicity_point_2">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_2" ComparisonValue="Anechoic"/>
+					<EqualCondition DataElementId="echogenicity_2" ComparisonValue="Anechoic"/>
 					<TextExpression>0</TextExpression>
 				</Branch>
 				<Branch>
@@ -725,68 +615,77 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		<ComputedDataElement Id="echogenicity_solid_point_2">		
+
+				<ComputedDataElement Id="other_Macrocalcifications_point_2">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_2" ComparisonValue="Anechoic"/>
-					<TextExpression>0</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="echogenicity_solid_2" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_solid_2" ComparisonValue="Echogenicity"/>
-					</OrCondition>
+					<ContainsCondition DataElementId="other_2" ComparisonValue="Macrocalcifications"/>
 					<TextExpression>1</TextExpression>
 				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Peripheral_point_2">		
+			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_2" ComparisonValue="Hypoechoic"/>
+					<ContainsCondition DataElementId="other_2" ComparisonValue="Peripheral"/>
 					<TextExpression>2</TextExpression>
 				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Lobulated_point_2">		
+			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_2" ComparisonValue="Very"/>
+					<ContainsCondition DataElementId="other_2" ComparisonValue="Lobulated"/>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Punctate_point_2">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_2" ComparisonValue="Punctate"/>
 					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Taller_point_2">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_2" ComparisonValue="Taller"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Definite_point_2">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_2" ComparisonValue="Definite"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
 		<ComputedDataElement Id="other_point_2">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="other_2" ComparisonValue="Macrocalcifications"/>
-					<TextExpression>1</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_2" ComparisonValue="Peripheral"/>
-						<EqualCondition DataElementId="other_2" ComparisonValue="Lobulated"/>
-					</OrCondition>
-					<TextExpression>2</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_2" ComparisonValue="Punctate"/>
-						<EqualCondition DataElementId="other_2" ComparisonValue="Taller"/>
-						<EqualCondition DataElementId="other_2" ComparisonValue="Definite"/>
-					</OrCondition>
-					<TextExpression>3</TextExpression>
+
+					<SectionIf DataElementId="composition_2"></SectionIf>
+					<ArithmeticExpression>{other_Macrocalcifications_point_2} + {other_Peripheral_point_2} + 
+					{other_Lobulated_point_2} + {other_Punctate_point_2}+ {other_Taller_point_2} + {other_Definite_point_2}</ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-		
+
 		<ComputedDataElement Id="addtr1_2">		
 			<DecisionPoint>
 				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_2"></SectionIf>
-							<SectionIfNot DataElementId="echogenicity_2"></SectionIfNot>
-						</AndCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_2"></SectionIf>
-							<SectionIf DataElementId="echogenicity_2"></SectionIf>
-						</AndCondition>
-					</OrCondition>
-					<ArithmeticExpression>{composition_point_2} + {echogenicity_point_2} + {echogenicity_solid_2} + {other_point_2} </ArithmeticExpression>
+					<SectionIf DataElementId="composition_2"></SectionIf>
+					<ArithmeticExpression>{composition_point_2} + {echogenicity_point_2} + {other_point_2} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -898,24 +797,16 @@
 		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="20" Unit="cm">		
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>15.0</Maximum>
+			<Maximum>15.0</Maximum>		
 			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_3" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_3" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>11</DisplaySequence>
-				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-			</ConditionalProperties>			
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>		
+			</ConditionalProperties>	
 		</NumericDataElement>	
 
 		<ChoiceDataElement Id="composition_3" IsRequired="true" DisplaySequence="21">
@@ -980,65 +871,12 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_3" ComparisonValue="mixed_cystic_solid"/>
+						<SectionIfNot DataElementId="composition_3" />
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
-			</ConditionalProperties>
-		</ChoiceDataElement>
-
-		<ChoiceDataElement 	Id="echogenicity_solid_3" IsRequired="true" DisplaySequence="22">
-			<Label>Echogenicity</Label>
-			<CodableConcept Name="echogenicity_solid_3">
-				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="RDE126"></Code>
-					<Display Value="RDE126"></Display>
-					<Url Value="http://radelement.org/element/RDE126"></Url>
-					<UserSelected Value="true"></UserSelected>
-				</Coding>
-			</CodableConcept>
-			<ChoiceInfo>
-				<Choice>
-					<Value>Anechoic</Value>
-					<Label>Anechoic (0 points)</Label>	
-				</Choice>
-				<Choice>
-					<Value>Hyperechoic</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Echogenicity</Value>
-					<Label>Echogenicity cannot be determined (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Hypoechoic</Value>
-					<Label>Hypoechoic (2 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Very</Value>
-					<Label>Very hypoechoic (3 points)</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<NotEqualCondition DataElementId="composition_3" ComparisonValue="solid"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="composition_3" />
-						<EqualCondition DataElementId="composition_3" ComparisonValue="mixed_cystic_solid"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -1073,6 +911,7 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="composition_3" />
 						<EqualCondition DataElementId="composition_3" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="composition_3" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
@@ -1082,7 +921,7 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
-		
+
 		<ComputedDataElement Id="composition_point_3">		
 			<DecisionPoint>
 				<Branch>
@@ -1105,11 +944,11 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
 		<ComputedDataElement Id="echogenicity_point_3">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_3" ComparisonValue="Anechoic"/>
+					<EqualCondition DataElementId="echogenicity_3" ComparisonValue="Anechoic"/>
 					<TextExpression>0</TextExpression>
 				</Branch>
 				<Branch>
@@ -1129,69 +968,77 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-		<ComputedDataElement Id="echogenicity_solid_point_3">		
+
+		<ComputedDataElement Id="other_Macrocalcifications_point_3">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_3" ComparisonValue="Anechoic"/>
-					<TextExpression>0</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="echogenicity_solid_3" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_solid_3" ComparisonValue="Echogenicity"/>
-					</OrCondition>
+					<ContainsCondition DataElementId="other_3" ComparisonValue="Macrocalcifications"/>
 					<TextExpression>1</TextExpression>
 				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Peripheral_point_3">		
+			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_3" ComparisonValue="Hypoechoic"/>
+					<ContainsCondition DataElementId="other_3" ComparisonValue="Peripheral"/>
 					<TextExpression>2</TextExpression>
 				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Lobulated_point_3">		
+			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_3" ComparisonValue="Very"/>
+					<ContainsCondition DataElementId="other_3" ComparisonValue="Lobulated"/>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Punctate_point_3">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_3" ComparisonValue="Punctate"/>
 					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
+		<ComputedDataElement Id="other_Taller_point_3">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_3" ComparisonValue="Taller"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Definite_point_3">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_3" ComparisonValue="Definite"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
 		<ComputedDataElement Id="other_point_3">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="other_3" ComparisonValue="Macrocalcifications"/>
-					<TextExpression>1</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_3" ComparisonValue="Peripheral"/>
-						<EqualCondition DataElementId="other_3" ComparisonValue="Lobulated"/>
-					</OrCondition>
-					<TextExpression>2</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_3" ComparisonValue="Punctate"/>
-						<EqualCondition DataElementId="other_3" ComparisonValue="Taller"/>
-						<EqualCondition DataElementId="other_3" ComparisonValue="Definite"/>
-					</OrCondition>
-					<TextExpression>3</TextExpression>
+
+					<SectionIf DataElementId="composition_3"></SectionIf>
+					<ArithmeticExpression>{other_Macrocalcifications_point_3} + {other_Peripheral_point_3} + 
+					{other_Lobulated_point_3} + {other_Punctate_point_3}+ {other_Taller_point_3} + {other_Definite_point_3}</ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
 		<ComputedDataElement Id="addtr1_3">		
 			<DecisionPoint>
 				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_3"></SectionIf>
-							<SectionIfNot DataElementId="echogenicity_3"></SectionIfNot>
-						</AndCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_3"></SectionIf>
-							<SectionIf DataElementId="echogenicity_3"></SectionIf>
-						</AndCondition>
-					</OrCondition>
-					<ArithmeticExpression>{composition_point_3} + {echogenicity_point_3} + {echogenicity_solid_point_3} + {other_point_3} </ArithmeticExpression>
+					<SectionIf DataElementId="composition_3"></SectionIf>
+					<ArithmeticExpression>{composition_point_3} + {echogenicity_point_3} + {other_point_3} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -1311,16 +1158,8 @@
 		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="34" Unit="cm">		
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
-			<Maximum>15.0</Maximum>
+			<Maximum>15.0</Maximum>	
 			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="addtr1_4" ComparisonValue="0"/>
-						<EqualCondition DataElementId="addtr1_4" ComparisonValue="2"/>
-					</OrCondition>
-					<IsRequired>false</IsRequired>
-					<DisplaySequence>16</DisplaySequence>
-				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
@@ -1328,7 +1167,7 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
+				</ConditionalProperty>		
 			</ConditionalProperties>			
 		</NumericDataElement>	
 
@@ -1395,68 +1234,13 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<NotEqualCondition DataElementId="composition_4" ComparisonValue="mixed_cystic_solid"/>
+						<SectionIfNot DataElementId="composition_4" />
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
-			</ConditionalProperties>
-		</ChoiceDataElement>
-
-		<ChoiceDataElement 	Id="echogenicity_solid_4" IsRequired="true" DisplaySequence="36">
-			<Label>Echogenicity</Label>
-			<CodableConcept Name="echogenicity_solid_4">
-				<Coding>
-					<System Value="RadElement"></System>
-					<Version Value="1.0"></Version>
-					<Code Value="RDE126"></Code>
-					<Display Value="RDE126"></Display>
-					<Url Value="http://radelement.org/element/RDE126"></Url>
-					<UserSelected Value="true"></UserSelected>
-				</Coding>
-			</CodableConcept>
-			<ChoiceInfo>
-				<Choice>
-					<Value>Anechoic</Value>
-					<Label>Anechoic (0 points)</Label>	
-				</Choice>
-				<Choice>
-					<Value>Hyperechoic</Value>
-					<Label>Hyperechoic or isoechoic (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Echogenicity</Value>
-					<Label>Echogenicity cannot be determined (1 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Hypoechoic</Value>
-					<Label>Hypoechoic (2 points)</Label>
-				</Choice>
-				<Choice>
-					<Value>Very</Value>
-					<Label>Very hypoechoic (3 points)</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<NotEqualCondition DataElementId="composition_4" ComparisonValue="solid"/>
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
-						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="composition_4" />
-						<EqualCondition DataElementId="composition_4" ComparisonValue="mixed_cystic_solid"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>					
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -1491,6 +1275,7 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="composition_4" />
 						<EqualCondition DataElementId="composition_4" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="composition_4" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
@@ -1524,11 +1309,11 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
 		<ComputedDataElement Id="echogenicity_point_4">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_4" ComparisonValue="Anechoic"/>
+					<EqualCondition DataElementId="echogenicity_4" ComparisonValue="Anechoic"/>
 					<TextExpression>0</TextExpression>
 				</Branch>
 				<Branch>
@@ -1548,76 +1333,81 @@
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-			<ComputedDataElement Id="echogenicity_solid_point_4">		
+
+		<ComputedDataElement Id="other_Macrocalcifications_point_4">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_4" ComparisonValue="Anechoic"/>
-					<TextExpression>0</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="echogenicity_solid_4" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_solid_4" ComparisonValue="Echogenicity"/>
-					</OrCondition>
+					<ContainsCondition DataElementId="other_4" ComparisonValue="Macrocalcifications"/>
 					<TextExpression>1</TextExpression>
 				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Peripheral_point_4">		
+			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_4" ComparisonValue="Hypoechoic"/>
+					<ContainsCondition DataElementId="other_4" ComparisonValue="Peripheral"/>
 					<TextExpression>2</TextExpression>
 				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Lobulated_point_4">		
+			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="echogenicity_solid_4" ComparisonValue="Very"/>
+					<ContainsCondition DataElementId="other_4" ComparisonValue="Lobulated"/>
+					<TextExpression>2</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Punctate_point_4">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_4" ComparisonValue="Punctate"/>
 					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
+
+		<ComputedDataElement Id="other_Taller_point_4">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_4" ComparisonValue="Taller"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
+		<ComputedDataElement Id="other_Definite_point_4">		
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="other_4" ComparisonValue="Definite"/>
+					<TextExpression>3</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+
 		<ComputedDataElement Id="other_point_4">		
 			<DecisionPoint>
 				<Branch>
-						<EqualCondition DataElementId="other_4" ComparisonValue="Macrocalcifications"/>
-					<TextExpression>1</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_4" ComparisonValue="Peripheral"/>
-						<EqualCondition DataElementId="other_4" ComparisonValue="Lobulated"/>
-					</OrCondition>
-					<TextExpression>2</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="other_4" ComparisonValue="Punctate"/>
-						<EqualCondition DataElementId="other_4" ComparisonValue="Taller"/>
-						<EqualCondition DataElementId="other_4" ComparisonValue="Definite"/>
-					</OrCondition>
-					<TextExpression>3</TextExpression>
+
+					<SectionIf DataElementId="composition_4"></SectionIf>
+					<ArithmeticExpression>{other_Macrocalcifications_point_4} + {other_Peripheral_point_4} + 
+					{other_Lobulated_point_4} + {other_Punctate_point_4}+ {other_Taller_point_4} + {other_Definite_point_4}</ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-		
-		
-		
+
 		<ComputedDataElement Id="addtr1_4">		
 			<DecisionPoint>
 				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_4"></SectionIf>
-							<SectionIfNot DataElementId="echogenicity_4"></SectionIfNot>
-						</AndCondition>
-						<AndCondition>
-							<SectionIf DataElementId="composition_4"></SectionIf>
-							<SectionIf DataElementId="echogenicity_4"></SectionIf>
-						</AndCondition>
-					</OrCondition>
+					<SectionIf DataElementId="composition_4"></SectionIf>
 					<ArithmeticExpression>{composition_point_4} + {echogenicity_point_4} + {other_point_4} </ArithmeticExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
-	</DataElements>	
-
+	</DataElements>
 	<Rules>	
 		<DecisionPoint Id="decisionPointAddtr1_1">
 			<Label>0points</Label>
@@ -2181,13 +1971,6 @@
 			</Branch>
 
 			<Branch>
-				<SectionIf DataElementId="echogenicity_solid_1"></SectionIf>
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_1"/>
-				<ReportText Type="Newline"/>
-			</Branch>
-
-			<Branch>
 				<SectionIf DataElementId="other_1"></SectionIf>
 				<ReportText Type="PlainText">Other Features:  </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="other_1"/>
@@ -2517,14 +2300,6 @@
 			</Branch>
 
 			<Branch>
-				<SectionIf DataElementId="echogenicity_solid_2"></SectionIf>
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_2"/>
-				<ReportText Type="Newline"/>
-			</Branch>
-
-
-			<Branch>
 				<SectionIf DataElementId="other_2"></SectionIf>
 				<ReportText Type="PlainText">Other Features:  </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="other_2"/>
@@ -2828,14 +2603,6 @@
 				<ReportText Type="InsertDataElementValue" Value="echogenicity_3"/>
 				<ReportText Type="Newline"/>
 			</Branch>
-
-			<Branch>
-				<SectionIf DataElementId="echogenicity_solid_3"></SectionIf>
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_3"/>
-				<ReportText Type="Newline"/>
-			</Branch>
-
 
 			<Branch>
 				<SectionIf DataElementId="other_3"></SectionIf>
@@ -3162,14 +2929,6 @@
 				<ReportText Type="InsertDataElementValue" Value="echogenicity_4"/>
 				<ReportText Type="Newline"/>
 			</Branch>
-
-			<Branch>
-				<SectionIf DataElementId="echogenicity_solid_4"></SectionIf>
-				<ReportText Type="PlainText">Echogenicity: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="echogenicity_solid_4"/>
-				<ReportText Type="Newline"/>
-			</Branch>
-
 
 			<Branch>
 				<SectionIf DataElementId="other_4"></SectionIf>
