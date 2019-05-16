@@ -330,8 +330,12 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="pretreatmentsizeCategory" IsRequired="true" DisplaySequence="9" >
-			<Label>What is the pretreatment size category?</Label>
+			<Label>What is the pretreatment size?</Label>
 			<ChoiceInfo>
+				<Choice>
+					<Value>measurable</Value>
+					<Label>measurable</Label>
+				</Choice>
 				<Choice>
 					<Value>unknown</Value>
 					<Label>unknown</Label>
@@ -339,10 +343,6 @@
 				<Choice>
 					<Value>unmeasurable</Value>
 					<Label>unmeasurable</Label>
-				</Choice>
-				<Choice>
-					<Value>measurable</Value>
-					<Label>measurable</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
