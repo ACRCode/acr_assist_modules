@@ -118,7 +118,7 @@
 		</IntegerDataElement>
 		
 		<ChoiceDataElement Id="segmentlocation" IsRequired="true" DisplaySequence="5" AllowFreetext="true">
-			<Label>Liver Segment#</Label>
+			<Label>Location</Label>
 			<Diagrams>
 				<Diagram>
 					<Location>Liver_segment_schem_1.png</Location>
@@ -314,8 +314,12 @@
 					<Label>Path-Intrahepatic cholangiocarcinoma</Label>
 				</Choice>
 				<Choice>
+					<Value>LR-NC</Value>
+					<Label>LR-NC</Label>
+				</Choice>
+				<Choice>
 					<Value>Unknown</Value>
-					<Label>Unknown</Label>
+					<Label>Unknown (Pretreatment images not available)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -673,15 +677,11 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="17">
-			<Label>Posttreatement lesion enhancement</Label>
+			<Label>Posttreatment lesion enhancement</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
 					<Label>Yes</Label>
-				</Choice>
-				<Choice>
-					<Value>equivocal</Value>
-					<Label>Equivocal</Label>
 				</Choice>
 				<Choice>
 					<Value>no</Value>
@@ -743,10 +743,64 @@
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
+					<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="irregular_enhancing_tissue" IsRequired="true" DisplaySequence="19">
+			<Label>Is there nodular, mass-like or irregular enhancing tissue?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="treatedobservation" />
+						<SectionIfNot DataElementId="lesionalenhancement" />
+						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<EqualCondition DataElementId="treatedobservation"
+						ComparisonValue="LRTRNonevaluable"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
-						<EqualCondition DataElementId="lesionalenhancement"
-							ComparisonValue="equivocal"/>
+						<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
@@ -765,52 +819,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<NumericDataElement Id="sizeoftheenhancementComponents" IsRequired="true" DisplaySequence="19">
-			<Label>Size of largest enhancing component (in mm)</Label>
-			<Hint>Size of largest enhancing component (in mm)</Hint>
-			<Diagrams>
-				<Diagram>
-					<Location>size_measurement_for_treated_obs.JPG</Location>
-					<Label>Size measurement for treated observation</Label>
-				</Diagram>				
-			</Diagrams>
-			<Minimum>1</Minimum>
-			<ConditionalProperties>
-				
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="observationinPatient" />
-						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="treatedobservation" />
-						<EqualCondition DataElementId="observationinPatient" ComparisonValue="LRTRNonevaluable"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="lesionalenhancement" />
-						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<AndCondition>
-						<SectionIf DataElementId="enhancementisexpectedpattern" />
-						<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
-					</AndCondition>					
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				
-			</ConditionalProperties>
-		</NumericDataElement>
+
 		
 		<!-- <ChoiceDataElement Id="irregularattheperiphery" IsRequired="true" DisplaySequence="20"> -->
 			<!-- <Label>Posttreatment enhancement pattern</Label> -->
@@ -873,7 +882,7 @@
 			<!-- </ConditionalProperties> -->
 		<!-- </ChoiceDataElement> -->
 		
-		<MultiChoiceDataElement Id="patternofenhancement" DisplaySequence="21">
+		<MultiChoiceDataElement Id="patternofenhancement" DisplaySequence="20">
 			<Label>Pattern of enhancement (pick all that apply)</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -887,6 +896,10 @@
 				<Choice>
 					<Value>similar_to_pretreatment</Value>
 					<Label>Enhancement similar to pretreatment</Label>
+				</Choice>
+				<Choice>
+					<Value>noneoftheabove</Value>
+					<Label>None of the above</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -904,6 +917,7 @@
 						<SectionIfNot DataElementId="treatedobservation" />
 						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
 						<SectionIfNot DataElementId="lesionalenhancement" />
+						<SectionIfNot DataElementId="irregular_enhancing_tissue" />
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -920,10 +934,12 @@
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="equivocal"/>
-						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
-					</OrCondition>					
+					<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>			
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<EqualCondition DataElementId="irregular_enhancing_tissue" ComparisonValue="no"/>			
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				
@@ -944,22 +960,88 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>			
+					<ChoiceNotRelevant ChoiceValue="aphe"></ChoiceNotRelevant>
+					<ChoiceNotRelevant ChoiceValue="washout"></ChoiceNotRelevant>
+					<ChoiceNotRelevant ChoiceValue="similar_to_pretreatment"></ChoiceNotRelevant>
+				</ConditionalProperty>
+				
+				
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
 		
+		<NumericDataElement Id="sizeoftheenhancementComponents" IsRequired="true" DisplaySequence="21">
+			<Label>Size of largest enhancing component (in mm)</Label>
+			<Hint>Size of largest enhancing component (in mm)</Hint>
+			<Diagrams>
+				<Diagram>
+					<Location>size_measurement_for_treated_obs.JPG</Location>
+					<Label>Size measurement for treated observation</Label>
+				</Diagram>				
+			</Diagrams>
+			<Minimum>1</Minimum>
+			<ConditionalProperties>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="treatedobservation" />
+						<EqualCondition DataElementId="treatedobservation" ComparisonValue="LRTRNonevaluable"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="lesionalenhancement" />
+						<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="enhancementisexpectedpattern" />
+						<EqualCondition DataElementId="enhancementisexpectedpattern" ComparisonValue="yes"/>
+					</OrCondition>					
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+			</ConditionalProperties>
+		</NumericDataElement>
+		
 		<ComputedDataElement Id="patternInEnhancementCE">
 			<DecisionPoint>
-				<Branch>
-					<OrCondition>
-						<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>
-						<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
-						<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"/>
-					</OrCondition>
-					<TextExpression>morethanone</TextExpression>
-				</Branch>
 				<DefaultBranch>
+					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
 					<TextExpression>none</TextExpression>
 				</DefaultBranch>
+				<Branch>
+					<AndCondition>
+						<OrCondition>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"/>
+						</OrCondition>
+						
+						<NotCondition>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
+						</NotCondition>
+					</AndCondition>
+					<TextExpression>morethanone</TextExpression>
+				</Branch>
+				<!-- <DefaultBranch> -->
+					<!-- <TextExpression>none</TextExpression> -->
+				<!-- </DefaultBranch> -->
 			</DecisionPoint>
 		</ComputedDataElement>
 		
@@ -1530,14 +1612,13 @@
 			<Label>Observation size (mm)</Label>
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
-			<Maximum>20</Maximum>
+			<Maximum>100</Maximum>
 			<ConditionalProperties>	
 				<ConditionalProperty>
 					<AndCondition>
 						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
 						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
 					</AndCondition>					
-
 				</ConditionalProperty>				
 				
 				<ConditionalProperty>
@@ -2152,28 +2233,28 @@
 												<!--<NotRelevantDataElements>
 													<DataElementRef DataElementId="patternofenhancement"/>
 												</NotRelevantDataElements>-->
-												<SectionIfNot DataElementId="patternofenhancement"></SectionIfNot>
-												<!-- <EqualCondition DataElementId="irregularattheperiphery" ComparisonValue="no"/> -->
+												<!-- <SectionIfNot DataElementId="patternofenhancement"></SectionIfNot> -->
+												<EqualCondition DataElementId="irregular_enhancing_tissue" ComparisonValue="no"/>
 												<EndPointRef EndPointId="LRTREquivoca"></EndPointRef>
 											</Branch>
 											<Branch>
 												<Label>Yes</Label>
-												<!-- <EqualCondition DataElementId="irregularattheperiphery" ComparisonValue="yes"/> -->
+												<EqualCondition DataElementId="irregular_enhancing_tissue" ComparisonValue="yes"/>
 												<SectionIf DataElementId="patternofenhancement"></SectionIf>
-												<EndPointRef EndPointId="LRTRViable"></EndPointRef>
-												<!-- <DecisionPoint Id="patterenenhancementdp"> -->
-													<!-- <Label>Pattern of enhancement</Label> -->
-													<!-- <Branch> -->
-														<!-- <Label>None</Label> -->
-														<!-- <EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="none"/> -->
-														<!-- <EndPointRef EndPointId="LRTREquivoca"></EndPointRef> -->
-													<!-- </Branch> -->
-													<!-- <Branch> -->
-														<!-- <Label>At least one pattern of enhancement</Label> -->
-														<!-- <EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="morethanone"/> -->
-														<!-- <EndPointRef EndPointId="LRTRViable"></EndPointRef> -->
-													<!-- </Branch> -->
-												<!-- </DecisionPoint> -->
+												<!-- <EndPointRef EndPointId="LRTRViable"></EndPointRef> -->
+												<DecisionPoint Id="patterenenhancementdp">
+													<Label>Pattern of enhancement</Label>
+													<Branch>
+														<Label>None</Label>
+														<EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="none"/>
+														<EndPointRef EndPointId="LRTREquivoca"></EndPointRef>
+													</Branch>
+													<Branch>
+														<Label>At least one pattern of enhancement</Label>
+														<EqualCondition DataElementId="patternInEnhancementCE" ComparisonValue="morethanone"/>
+														<EndPointRef EndPointId="LRTRViable"></EndPointRef>
+													</Branch>
+												</DecisionPoint>
 											</Branch>
 										</DecisionPoint>
 									</Branch>
@@ -2189,16 +2270,6 @@
 								</NotRelevantDataElements>-->
 								<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="no"/>
 								<EndPointRef EndPointId="LRTRNonviable"></EndPointRef>
-							</Branch>
-							<Branch>
-								<Label>Equivocal</Label>
-								<!--<NotRelevantDataElements>
-									<DataElementRef DataElementId="enhancementisexpectedpattern"/>
-									<DataElementRef DataElementId="irregularattheperiphery"/>
-									<DataElementRef DataElementId="patternofenhancement"/>
-								</NotRelevantDataElements>-->
-								<EqualCondition DataElementId="lesionalenhancement" ComparisonValue="equivocal"/>
-								<EndPointRef EndPointId="LRTREquivoca"></EndPointRef>
 							</Branch>
 						</DecisionPoint>
 					</Branch>
@@ -3170,6 +3241,9 @@
 				<AndCondition>
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"></EqualCondition>
+					<NotCondition>
+						<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"></ContainsCondition>
+					</NotCondition>
 				</AndCondition>
 				<ReportText Type="PlainText">Arterial phase hyperenhancement: Yes</ReportText>
 				<ReportText Type="Newline"></ReportText>
@@ -3178,7 +3252,8 @@
 			<Branch>
 				<AndCondition>
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
-					<NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"></NotEqualCondition>
+					<!-- <NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="aphe"></NotEqualCondition> -->
+					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"></ContainsCondition>
 				</AndCondition>
 				<ReportText Type="PlainText">Arterial phase hyperenhancement: No</ReportText>
 				<ReportText Type="Newline"></ReportText>
@@ -3188,6 +3263,9 @@
 				<AndCondition>
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"></EqualCondition>
+					<NotCondition>
+						<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"></ContainsCondition>
+					</NotCondition>
 				</AndCondition>
 				<ReportText Type="PlainText">Washout appearance: Yes</ReportText>
 				<ReportText Type="Newline"></ReportText>
@@ -3196,7 +3274,8 @@
 			<Branch>
 				<AndCondition>
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
-					<NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"></NotEqualCondition>
+					<!-- <NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="washout"></NotEqualCondition> -->
+					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"></ContainsCondition>
 				</AndCondition>
 				<ReportText Type="PlainText">Washout appearance: No</ReportText>
 				<ReportText Type="Newline"></ReportText>
@@ -3206,6 +3285,9 @@
 				<AndCondition>
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
 					<EqualCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"></EqualCondition>
+					<NotCondition>
+						<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"></ContainsCondition>
+					</NotCondition>
 				</AndCondition>				
 				<ReportText Type="PlainText">Other: Enhancement similar to pretreatment</ReportText>
 				<ReportText Type="Newline"></ReportText>
@@ -3213,7 +3295,8 @@
 			<Branch>
 				<AndCondition>
 					<SectionIf DataElementId="patternofenhancement"></SectionIf>
-					<NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"></NotEqualCondition>
+					<!-- <NotEqualCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"></NotEqualCondition> -->
+					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"></ContainsCondition>
 				</AndCondition>				
 				<ReportText Type="PlainText">Other: NA</ReportText>
 				<ReportText Type="Newline"></ReportText>
