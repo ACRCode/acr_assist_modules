@@ -479,8 +479,8 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="lrnc_category" IsRequired="true" DisplaySequence="12" AllowFreetext="true">
-			<Label>Reason for LR-NC category</Label>
+		<MultiChoiceDataElement Id="lrnc_category" IsRequired="true" DisplaySequence="12" AllowFreetext="true">
+			<Label>What is the reason for LR-NC category?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Arterial_phase_images_mistimed</Value>
@@ -508,7 +508,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>				
 			</ConditionalProperties>		
-		</ChoiceDataElement>	
+		</MultiChoiceDataElement>	
 			
 		<ChoiceDataElement Id="treatedobservation" IsRequired="true" DisplaySequence="12">
 			<Label>Treated observation features</Label>
@@ -1125,7 +1125,7 @@
 			</DecisionPoint>
 		</ComputedDataElement>
 	
-		<ChoiceDataElement Id="WhichVein" IsRequired="true" AllowFreetext="true" DisplaySequence="22">
+		<MultiChoiceDataElement Id="WhichVein" IsRequired="true" AllowFreetext="true" DisplaySequence="22">
 		<Label>What vein or veins?</Label>
 		<ChoiceInfo>
 			<Choice>
@@ -1183,7 +1183,7 @@
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</MultiChoiceDataElement>
 		
 		<ChoiceDataElement Id="IsTIVcontiguouswithaparenchymalmass" IsRequired="true" DisplaySequence="23">
 		<Label>Is TIV contiguous with a parenchymal mass?</Label>
@@ -1771,7 +1771,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="thresholdgrowth" IsRequired="true" DisplaySequence="34">
-			<Label>Threshold growth (≥50% size increase in ≤6 months?)</Label>
+			<Label>Threshold growth (≥50% size increase in ≤6 months)</Label>
 			<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND
 				depending on the time interval between examinations, by the following amounts: less
 				than or equal to 6 months: >50% diameter increase greater than 6 months: >100%
