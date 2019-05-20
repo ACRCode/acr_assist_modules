@@ -521,7 +521,9 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="composition_2" />
-						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_2" ComparisonValue="spongiform"/>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>		
@@ -872,6 +874,8 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="composition_3" />
+						<EqualCondition DataElementId="composition_3" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_3" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
@@ -1235,6 +1239,8 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="composition_4" />
+						<EqualCondition DataElementId="composition_4" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="composition_4" ComparisonValue="spongiform"/>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
