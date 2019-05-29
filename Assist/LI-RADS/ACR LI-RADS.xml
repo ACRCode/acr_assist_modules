@@ -1609,12 +1609,12 @@
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>	
-				<ConditionalProperty>
-					<AndCondition>
-						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
-						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
-					</AndCondition>					
-				</ConditionalProperty>				
+				<!-- <ConditionalProperty> -->
+					<!-- <AndCondition> -->
+						<!-- <NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/> -->
+						<!-- <EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/> -->
+					<!-- </AndCondition>					 -->
+				<!-- </ConditionalProperty>				 -->
 				
 				<ConditionalProperty>
 					<OrCondition>
@@ -1645,7 +1645,10 @@
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
+					</AndCondition>
 					<Maximum>20</Maximum>
 				</ConditionalProperty>
 				
