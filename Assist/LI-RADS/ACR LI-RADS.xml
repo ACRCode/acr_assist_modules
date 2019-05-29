@@ -1608,7 +1608,6 @@
 			<Label>Observation size (mm)</Label>
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
-			<Maximum>20</Maximum>
 			<ConditionalProperties>	
 				<ConditionalProperty>
 					<AndCondition>
@@ -1643,6 +1642,11 @@
 						</OrCondition>
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+					<Maximum>20</Maximum>
 				</ConditionalProperty>
 				
 			</ConditionalProperties>
@@ -1876,7 +1880,7 @@
 		<NumericDataElement Id="recent_study_size" IsRequired="true" DisplaySequence="36">
 			<Label>What was the size on the prior most recent study (mm)? </Label>
 			<Minimum>1</Minimum>
-			<Maximum>20</Maximum>
+			<Maximum>100</Maximum>
 			<ConditionalProperties>		
 				<ConditionalProperty>
 					<OrCondition>
