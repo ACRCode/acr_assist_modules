@@ -211,10 +211,12 @@
 		
 		<ChoiceDataElement Id="observationinPatient" IsRequired="true" DisplaySequence="6">	
 			<Label>Observation in high-risk patient</Label>
-			<Diagram>
+			<Diagrams>
+				<Diagram>
 					<Location>patientathccrisk.JPG</Location>
 					<Label>Patient at high-risk for HCC</Label>
 				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>treated</Value>
@@ -677,7 +679,7 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="17">
-			<Label>Posttreatment lesion enhancement</Label>
+			<Label>Is there enhancement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -708,7 +710,7 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="enhancementisexpectedpattern" IsRequired="true" DisplaySequence="18">
-			<Label>Enhancement in an expected treatment-specific pattern?</Label>
+			<Label>Is enhancement in treatment-specific pattern?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>no</Value>
@@ -1760,11 +1762,10 @@
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
-				
 			</ConditionalProperties>		
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="thresholdgrowth" IsRequired="true" DisplaySequence="34">
+<!-- 		<ChoiceDataElement Id="thresholdgrowthold" IsRequired="true" DisplaySequence="34">
 			<Label>Threshold growth (≥50% size increase in ≤6 months)</Label>
 			<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND
 				depending on the time interval between examinations, by the following amounts: less
@@ -1823,11 +1824,242 @@
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>		
+		</ChoiceDataElement> -->
+		
+		<ChoiceDataElement Id="prior_ct_mri" IsRequired="true" DisplaySequence="35">		
+			<Label>Were there any prior CT or MRI?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>		
 		</ChoiceDataElement>
 		
-
+		<NumericDataElement Id="recent_study_size" IsRequired="true" DisplaySequence="36">
+			<Label>What was the size on the prior most recent study (mm)? </Label>
+			<Minimum>1</Minimum>
+			<Maximum>20</Maximum>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="prior_ct_mri"></SectionIfNot>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+					</OrCondition>					
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+			</ConditionalProperties>	
+		</NumericDataElement>
 		
-		<NumericDataElement Id="prior_study_size" IsRequired="true" DisplaySequence="36" Unit="mm">		
+		<ChoiceDataElement Id="prior_ct_mri_6months" IsRequired="true" DisplaySequence="37">		
+			<Label>Was there CT or MRI within the past six months?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="prior_ct_mri"></SectionIfNot>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+					</OrCondition>					
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>		
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="prior_ct_mri_6months_size_50percent_increase" IsRequired="true" DisplaySequence="38">		
+			<Label>Has the observation demonstrated >=50% size increase in ≤6 months any time in the past?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="prior_ct_mri"></SectionIfNot>
+						<SectionIfNot DataElementId="prior_ct_mri_6months"></SectionIfNot>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+						<EqualCondition DataElementId="prior_ct_mri_6months" ComparisonValue="no"/>
+					</OrCondition>					
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>		
+		</ChoiceDataElement>
+		
+		<ComputedDataElement Id="thresholdgrowth">
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+						<EqualCondition DataElementId="prior_ct_mri_6months" ComparisonValue="no"/>
+					</OrCondition>
+					<TextExpression>na</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="yes"/>
+					<TextExpression>yes</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="no"/>
+					<TextExpression>no</TextExpression>
+				</Branch>
+
+				<!-- <DefaultBranch> -->
+					<!-- <TextExpression>na</TextExpression> -->
+				<!-- </DefaultBranch> -->
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<NumericDataElement Id="prior_study_size" IsRequired="true" DisplaySequence="39" Unit="mm">		
 			<Label>Size on the prior study</Label>
 			<Hint>Size on the prior study in mm</Hint>
 			<Minimum>1</Minimum>
@@ -1847,7 +2079,7 @@
 			</ConditionalProperties>
 		</NumericDataElement>
 		
-		<NumericDataElement Id="time_period_since_prior_study" IsRequired="true" DisplaySequence="37" Unit="months">		
+		<NumericDataElement Id="time_period_since_prior_study" IsRequired="true" DisplaySequence="40" Unit="months">		
 			<Label>Time period since the prior study</Label>
 			<Hint>Time period since the prior study</Hint>
 			<Minimum>0.1</Minimum>
@@ -1868,7 +2100,7 @@
 			</ConditionalProperties>
 		</NumericDataElement>
 		
-		<MultiChoiceDataElement Id="lrmnontargetoidmass" IsRequired="true" DisplaySequence="38" AllowFreetext="true">
+		<MultiChoiceDataElement Id="lrmnontargetoidmass" IsRequired="true" DisplaySequence="41" AllowFreetext="true">
 			<Label>Nontargetoid LR-M features (any of the following)</Label>
 			
 			<Diagrams>
@@ -1920,7 +2152,7 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 				
-		<ChoiceDataElement Id="adjustcategorybasedonAncillary" DisplaySequence="39">
+		<ChoiceDataElement Id="adjustcategorybasedonAncillary" DisplaySequence="42">
 			<Label>Do you want to adjust category based on ancillary features? </Label>
 			<Diagrams>
 				<Diagram>
@@ -2032,7 +2264,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>-->
 			
-		<MultiChoiceDataElement Id="ancillaryFavoringMalignancy" DisplaySequence="40">
+		<MultiChoiceDataElement Id="ancillaryFavoringMalignancy" DisplaySequence="43">
 			<Label>What ancillary features of malignancy are present? (pick all that apply)</Label>
 			<Diagrams>
 				<Diagram>
@@ -2163,7 +2395,7 @@
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="ancillaryFavoringBenignity" DisplaySequence="41">
+		<MultiChoiceDataElement Id="ancillaryFavoringBenignity" DisplaySequence="44">
 			<Label>What ancillary features of benignity are present? (pick all that apply)</Label>
 			<Diagrams>
 				<Diagram>
