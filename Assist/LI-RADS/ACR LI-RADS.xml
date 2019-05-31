@@ -679,7 +679,7 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="17">
-			<Label>Is there enhancement?</Label>
+			<Label>Is there posttreatment lesion enhancement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -1038,95 +1038,18 @@
 					</AndCondition>
 					<TextExpression>morethanone</TextExpression>
 				</Branch>
-				<DefaultBranch>
+				<Branch>
 					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
 					<TextExpression>none</TextExpression>
-				</DefaultBranch>
+				</Branch>
+				
 				<!-- <DefaultBranch> -->
 					<!-- <TextExpression>none</TextExpression> -->
 				<!-- </DefaultBranch> -->
 			</DecisionPoint>
 		</ComputedDataElement>
 		
-		<ComputedDataElement Id="washoutcapsulethreshold" >
-			<DecisionPoint>
-				<Branch>
-					<AndCondition>
-						<OrCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-							<SectionIfNot DataElementId="washout" />
-						</OrCondition>
-						
-						<OrCondition>
-							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-							<SectionIfNot DataElementId="capsule" />
-						</OrCondition>						
-						
-						<OrCondition>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-							<SectionIfNot DataElementId="thresholdgrowth" />
-						</OrCondition>	
-					</AndCondition>
-					<TextExpression>none</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="capsule" />
-							</OrCondition>
-							 <OrCondition>
-							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-							 </OrCondition>	
-						</AndCondition>
-						
-						<AndCondition>
-							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="washout" />
-							</OrCondition>							
-							 <OrCondition>
-							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-							 </OrCondition>	
-						</AndCondition>
-						
-						<AndCondition>
-							<OrCondition>
-								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="washout" />
-							</OrCondition>
-							<OrCondition>
-								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="capsule" />
-							</OrCondition>							
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
-						</AndCondition>
-					</OrCondition>
-					<TextExpression>one</TextExpression>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIfNot DataElementId="washout" />
-						<SectionIfNot DataElementId="capsule" />
-						<SectionIfNot DataElementId="thresholdgrowth" />
-					</AndCondition>
-					<TextExpression>none</TextExpression>
-				</Branch>
-				
-				<DefaultBranch>
-					<TextExpression>twoormore</TextExpression>
-				</DefaultBranch>
-			</DecisionPoint>
-		</ComputedDataElement>
+
 		
 		<ComputedDataElement Id="otherwiseCategoryCE">
 			<DecisionPoint>
@@ -1649,7 +1572,7 @@
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
 						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
 					</AndCondition>
-					<Maximum>20</Maximum>
+					<Maximum>19</Maximum>
 				</ConditionalProperty>
 				
 			</ConditionalProperties>
@@ -2059,10 +1982,86 @@
 					<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="no"/>
 					<TextExpression>no</TextExpression>
 				</Branch>
-
-				<!-- <DefaultBranch> -->
-					<!-- <TextExpression>na</TextExpression> -->
-				<!-- </DefaultBranch> -->
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="washoutcapsulethreshold" >
+			<DecisionPoint>
+				<Branch>
+					<AndCondition>
+						<OrCondition>
+							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="washout" />
+						</OrCondition>
+						
+						<OrCondition>
+							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="capsule" />
+						</OrCondition>						
+						
+						<OrCondition>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+							<SectionIfNot DataElementId="thresholdgrowth" />
+						</OrCondition>	
+					</AndCondition>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>
+							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+							 </OrCondition>	
+						</AndCondition>
+						
+						<AndCondition>
+							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>							
+							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+							 </OrCondition>	
+						</AndCondition>
+						
+						<AndCondition>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>							
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+						</AndCondition>
+					</OrCondition>
+					<TextExpression>one</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIfNot DataElementId="washout" />
+						<SectionIfNot DataElementId="capsule" />
+						<SectionIfNot DataElementId="thresholdgrowth" />
+					</AndCondition>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				
+				<DefaultBranch>
+					<TextExpression>twoormore</TextExpression>
+				</DefaultBranch>
 			</DecisionPoint>
 		</ComputedDataElement>
 		
@@ -3350,7 +3349,10 @@
 											<Branch>
 												<AndCondition>
 													<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-													<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+													<OrCondition>
+														<SectionIfNot DataElementId="capsule"></SectionIfNot>
+														<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+													</OrCondition>
 												</AndCondition>																				
 <!--												<EndPointRef EndPointId="LR5"/>-->
 												<DecisionPoint Id="decisionpoint_one_cap">
@@ -3595,12 +3597,12 @@
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
-			<Branch>
+			<!-- <Branch>
 				<SectionIf DataElementId="irregularattheperiphery"></SectionIf>
 				<ReportText Type="PlainText">Enhancement in a nodular, mass-like or thick irregular pattern: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="irregularattheperiphery"></ReportText>
 				<ReportText Type="Newline"></ReportText>
-			</Branch>
+			</Branch> -->
 			
 			<Branch>
 				<SectionIfNot DataElementId="sizeoftheenhancementComponents"></SectionIfNot>
@@ -3861,6 +3863,7 @@
 				<ReportText Type="InsertDataElementValue" Value="capsule"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
+
 			
 		</TemplatePartial>
 
@@ -4131,8 +4134,7 @@
 				<ReportText Type="PlainText">Favoring malignancy: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringMalignancy"></ReportText>
 				<ReportText Type="Newline"></ReportText>
-			</Branch>
-			
+			</Branch>			
 		</TemplatePartial>
 
 		<!-- Template Partials end -->
