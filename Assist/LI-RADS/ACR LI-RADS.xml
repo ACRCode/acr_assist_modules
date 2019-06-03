@@ -1970,17 +1970,17 @@
 						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
 						<EqualCondition DataElementId="prior_ct_mri_6months" ComparisonValue="no"/>
 					</OrCondition>
-					<TextExpression>na</TextExpression>
+					<TextExpression>NA</TextExpression>
 				</Branch>
 				
 				<Branch>
 					<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="yes"/>
-					<TextExpression>yes</TextExpression>
+					<TextExpression>Yes</TextExpression>
 				</Branch>
 				
 				<Branch>
 					<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="no"/>
-					<TextExpression>no</TextExpression>
+					<TextExpression>No</TextExpression>
 				</Branch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -2000,8 +2000,8 @@
 						</OrCondition>						
 						
 						<OrCondition>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
 							<SectionIfNot DataElementId="thresholdgrowth" />
 						</OrCondition>	
 					</AndCondition>
@@ -2017,8 +2017,8 @@
 							</OrCondition>
 							 <OrCondition>
 							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
 							 </OrCondition>	
 						</AndCondition>
 						
@@ -2030,8 +2030,8 @@
 							</OrCondition>							
 							 <OrCondition>
 							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
 							 </OrCondition>	
 						</AndCondition>
 						
@@ -2044,7 +2044,7 @@
 								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
 								<SectionIfNot DataElementId="capsule" />
 							</OrCondition>							
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>
 						</AndCondition>
 					</OrCondition>
 					<TextExpression>one</TextExpression>
@@ -2078,7 +2078,7 @@
 						
 						<NotEqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>	
 						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>	
-						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>								
+						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>								
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>				
@@ -2099,7 +2099,7 @@
 						
 						<NotEqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>	
 						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>	
-						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>								
+						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>								
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>				
