@@ -211,10 +211,12 @@
 		
 		<ChoiceDataElement Id="observationinPatient" IsRequired="true" DisplaySequence="6">	
 			<Label>Observation in high-risk patient</Label>
-			<Diagram>
+			<Diagrams>
+				<Diagram>
 					<Location>patientathccrisk.JPG</Location>
 					<Label>Patient at high-risk for HCC</Label>
 				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>treated</Value>
@@ -459,7 +461,7 @@
 
 				<Choice>
 					<Value>malignantbutnothcc</Value>
-					<Label>Probably or definitely malignant but not HCC specific</Label>
+					<Label>Targetoid mass</Label>
 					<Hint>e.g., if targetoid</Hint>
 				</Choice>
 
@@ -677,7 +679,7 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="17">
-			<Label>Posttreatment lesion enhancement</Label>
+			<Label>Is there posttreatment lesion enhancement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
@@ -708,16 +710,16 @@
 		</ChoiceDataElement>
 				
 		<ChoiceDataElement Id="enhancementisexpectedpattern" IsRequired="true" DisplaySequence="18">
-			<Label>Enhancement in an expected treatment-specific pattern?</Label>
+			<Label>Is enhancement in treatment-specific pattern?</Label>
 			<ChoiceInfo>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
 				<Choice>
 					<Value>yes</Value>
 					<Label>Yes</Label>
 				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>				
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -765,13 +767,13 @@
 			<Label>Is there nodular, mass-like or irregular enhancing tissue?</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-				<Choice>
 					<Value>yes</Value>
 					<Label>Yes</Label>
 				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>				
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -1021,10 +1023,7 @@
 		
 		<ComputedDataElement Id="patternInEnhancementCE">
 			<DecisionPoint>
-				<DefaultBranch>
-					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
-					<TextExpression>none</TextExpression>
-				</DefaultBranch>
+				
 				<Branch>
 					<AndCondition>
 						<OrCondition>
@@ -1039,88 +1038,47 @@
 					</AndCondition>
 					<TextExpression>morethanone</TextExpression>
 				</Branch>
+				<Branch>
+					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				
 				<!-- <DefaultBranch> -->
 					<!-- <TextExpression>none</TextExpression> -->
 				<!-- </DefaultBranch> -->
 			</DecisionPoint>
 		</ComputedDataElement>
 		
-		<ComputedDataElement Id="washoutcapsulethreshold" >
+
+		
+		<ComputedDataElement Id="otherwiseCategoryCE">
 			<DecisionPoint>
-				<Branch>
-					<AndCondition>
-						<OrCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-							<SectionIfNot DataElementId="washout" />
-						</OrCondition>
-						
-						<OrCondition>
-							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-							<SectionIfNot DataElementId="capsule" />
-						</OrCondition>						
-						
-						<OrCondition>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-							<SectionIfNot DataElementId="thresholdgrowth" />
-						</OrCondition>	
-					</AndCondition>
-					<TextExpression>none</TextExpression>
-				</Branch>
 				<Branch>
 					<OrCondition>
 						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="capsule" />
-							</OrCondition>
-							 <OrCondition>
-							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-							 </OrCondition>	
+							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
+							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
+							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"/>
+						</AndCondition>
+
+						<AndCondition>
+							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
+							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
+							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"/>
 						</AndCondition>
 						
 						<AndCondition>
-							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="washout" />
-							</OrCondition>							
-							 <OrCondition>
-							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="no"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="na"/>
-							 </OrCondition>	
-						</AndCondition>
-						
-						<AndCondition>
-							<OrCondition>
-								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="washout" />
-							</OrCondition>
-							<OrCondition>
-								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="capsule" />
-							</OrCondition>							
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
+							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
+							<LessThanOrEqualsCondition DataElementId="diameter" ComparisonValue="19"/>
+							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"/>
+							<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
 						</AndCondition>
 					</OrCondition>
-					<TextExpression>one</TextExpression>
+					<TextExpression>LR5</TextExpression>
 				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIfNot DataElementId="washout" />
-						<SectionIfNot DataElementId="capsule" />
-						<SectionIfNot DataElementId="thresholdgrowth" />
-					</AndCondition>
-					<TextExpression>none</TextExpression>
-				</Branch>
-				
 				<DefaultBranch>
-					<TextExpression>twoormore</TextExpression>
+					<TextExpression>none</TextExpression>
 				</DefaultBranch>
 			</DecisionPoint>
 		</ComputedDataElement>
@@ -1442,7 +1400,7 @@
 					<Label>Targetoid on DWI</Label>
 				</Choice>
 				<Choice>
-					<Value>Targetoid_on_transitional_phase/hepatobiliary_phase</Value>
+					<Value>Targetoid_on_transitional_phase</Value>
 					<Label>Targetoid on transitional phase/hepatobiliary phase</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -1484,66 +1442,27 @@
 						</OrCondition>					
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>				
-					
+				</ConditionalProperty>
 			</ConditionalProperties>		
 		</MultiChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="lrmnontargetoidmass" IsRequired="true" DisplaySequence="29" AllowFreetext="true">
-			<Label>Nontargetoid LR-M features (any of the following)</Label>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>nontargetoid_mass.png</Location>
-					<Label>nontargetoid mass</Label>
-				</Diagram>	
-			</Diagrams>
-			
-			<ChoiceInfo>
-				<Choice>
-					<Value>Infiltrative_appearance</Value>
-					<Label>Infiltrative appearance</Label>
-				</Choice>
-				<Choice>
-					<Value>Marked_diffusion_restriction</Value>
-					<Label>Marked diffusion restriction</Label>
-				</Choice>
-				<Choice>
-					<Value>Necrosis_or_severe_ischemia</Value>
-					<Label>Necrosis or severe ischemia</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
+		<ComputedDataElement Id="lrmtargetoidmassCE">
+			<DecisionPoint>
+				<Branch>
 					<OrCondition>
-						<SectionIfNot DataElementId="observationinPatient" />
-						<SectionIfNot DataElementId="untreatedobservation" />						
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Rim_APHE"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Peripheral_washout"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Delayed_central_enhancement"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Targetoid_on_DWI"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Targetoid_on_transitional_phase"/>
 					</OrCondition>
-					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
-					<IsRelevant>false</IsRelevant>				
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="notcategorized"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="tumorInVein"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="definitelyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="probablyBenign"/>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="nonofabove"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>	
-		</MultiChoiceDataElement>
+					<TextExpression>morethanone</TextExpression>
+				</Branch>
+				<DefaultBranch>
+					<TextExpression>none</TextExpression>
+				</DefaultBranch>
+			</DecisionPoint>
+		</ComputedDataElement>
 		
 		<ChoiceDataElement Id="arterialEnhancement" IsRequired="true" DisplaySequence="30">	
 			<Label>Nonrim arterial phase hyperenhancement</Label>
@@ -1612,14 +1531,13 @@
 			<Label>Observation size (mm)</Label>
 			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
 			<Minimum>1</Minimum>
-			<Maximum>20</Maximum>
 			<ConditionalProperties>	
-				<ConditionalProperty>
-					<AndCondition>
-						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
-						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
-					</AndCondition>					
-				</ConditionalProperty>				
+				<!-- <ConditionalProperty> -->
+					<!-- <AndCondition> -->
+						<!-- <NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/> -->
+						<!-- <EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/> -->
+					<!-- </AndCondition>					 -->
+				<!-- </ConditionalProperty>				 -->
 				
 				<ConditionalProperty>
 					<OrCondition>
@@ -1647,6 +1565,14 @@
 						</OrCondition>
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
+					</AndCondition>
+					<Maximum>19</Maximum>
 				</ConditionalProperty>
 				
 			</ConditionalProperties>
@@ -1766,11 +1692,10 @@
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
-				
 			</ConditionalProperties>		
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="thresholdgrowth" IsRequired="true" DisplaySequence="34">
+<!-- 		<ChoiceDataElement Id="thresholdgrowthold" IsRequired="true" DisplaySequence="34">
 			<Label>Threshold growth (≥50% size increase in ≤6 months)</Label>
 			<Hint>Increase in diameter of a mass compared to its baseline by a minimum of 5 mm AND
 				depending on the time interval between examinations, by the following amounts: less
@@ -1829,9 +1754,318 @@
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>		
+		</ChoiceDataElement> -->
+		
+		<ChoiceDataElement Id="prior_ct_mri" IsRequired="true" DisplaySequence="35">		
+			<Label>Were there any prior CT or MRI?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>		
 		</ChoiceDataElement>
 		
-		<NumericDataElement Id="prior_study_size" IsRequired="true" DisplaySequence="35" Unit="mm">		
+		<NumericDataElement Id="recent_study_size" IsRequired="true" DisplaySequence="36">
+			<Label>What was the size on the prior most recent study (mm)? </Label>
+			<Minimum>1</Minimum>
+			<Maximum>100</Maximum>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="prior_ct_mri"></SectionIfNot>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+					</OrCondition>					
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+			</ConditionalProperties>	
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="prior_ct_mri_6months" IsRequired="true" DisplaySequence="37">		
+			<Label>Was there CT or MRI within the past six months?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="prior_ct_mri"></SectionIfNot>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+					</OrCondition>					
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>		
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="prior_ct_mri_6months_size_50percent_increase" IsRequired="true" DisplaySequence="38">		
+			<Label>Has the observation demonstrated >=50% size increase in ≤6 months any time in the past?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>		
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>	
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="definitelyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="Isparenchymalmasstargetoid" ComparisonValue="yes"/>
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="prior_ct_mri"></SectionIfNot>
+						<SectionIfNot DataElementId="prior_ct_mri_6months"></SectionIfNot>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+						<EqualCondition DataElementId="prior_ct_mri_6months" ComparisonValue="no"/>
+					</OrCondition>					
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>		
+		</ChoiceDataElement>
+		
+		<ComputedDataElement Id="thresholdgrowth">
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+						<EqualCondition DataElementId="prior_ct_mri_6months" ComparisonValue="no"/>
+					</OrCondition>
+					<TextExpression>NA</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="yes"/>
+					<TextExpression>Yes</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="no"/>
+					<TextExpression>No</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="washoutcapsulethreshold" >
+			<DecisionPoint>
+				<Branch>
+					<AndCondition>
+						<OrCondition>
+							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="washout" />
+						</OrCondition>
+						
+						<OrCondition>
+							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="capsule" />
+						</OrCondition>						
+						
+						<OrCondition>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
+							<SectionIfNot DataElementId="thresholdgrowth" />
+						</OrCondition>	
+					</AndCondition>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>
+							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
+							 </OrCondition>	
+						</AndCondition>
+						
+						<AndCondition>
+							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>							
+							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
+							 </OrCondition>	
+						</AndCondition>
+						
+						<AndCondition>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>							
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>
+						</AndCondition>
+					</OrCondition>
+					<TextExpression>one</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIfNot DataElementId="washout" />
+						<SectionIfNot DataElementId="capsule" />
+						<SectionIfNot DataElementId="thresholdgrowth" />
+					</AndCondition>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				
+				<DefaultBranch>
+					<TextExpression>twoormore</TextExpression>
+				</DefaultBranch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<NumericDataElement Id="prior_study_size" IsRequired="true" DisplaySequence="39" Unit="mm">		
 			<Label>Size on the prior study</Label>
 			<Hint>Size on the prior study in mm</Hint>
 			<Minimum>1</Minimum>
@@ -1844,14 +2078,14 @@
 						
 						<NotEqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>	
 						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>	
-						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>								
+						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>								
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>				
 			</ConditionalProperties>
 		</NumericDataElement>
 		
-		<NumericDataElement Id="time_period_since_prior_study" IsRequired="true" DisplaySequence="36" Unit="months">		
+		<NumericDataElement Id="time_period_since_prior_study" IsRequired="true" DisplaySequence="40" Unit="months">		
 			<Label>Time period since the prior study</Label>
 			<Hint>Time period since the prior study</Hint>
 			<Minimum>0.1</Minimum>
@@ -1865,14 +2099,66 @@
 						
 						<NotEqualCondition DataElementId="observationinPatient" ComparisonValue="untreated"/>	
 						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>	
-						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="yes"/>								
+						<NotEqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>								
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>				
 			</ConditionalProperties>
 		</NumericDataElement>
+		
+		<MultiChoiceDataElement Id="lrmnontargetoidmass" IsRequired="true" DisplaySequence="41" AllowFreetext="true">
+			<Label>Nontargetoid LR-M features (any of the following)</Label>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>nontargetoid_mass.png</Location>
+					<Label>nontargetoid mass</Label>
+				</Diagram>	
+			</Diagrams>
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>Infiltrative_appearance</Value>
+					<Label>Infiltrative appearance</Label>
+				</Choice>
+				<Choice>
+					<Value>Marked_diffusion_restriction</Value>
+					<Label>Marked diffusion restriction</Label>
+				</Choice>
+				<Choice>
+					<Value>Necrosis_or_severe_ischemia</Value>
+					<Label>Necrosis or severe ischemia</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<SectionIfNot DataElementId="untreatedobservation" />	
+						<SectionIfNot DataElementId="diameter" />	
+						<SectionIfNot DataElementId="arterialEnhancement" />						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
 				
-		<ChoiceDataElement Id="adjustcategorybasedonAncillary" DisplaySequence="37">
+				<ConditionalProperty>
+					<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>
+					<IsRelevant>false</IsRelevant>				
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<EqualCondition DataElementId="otherwiseCategoryCE" ComparisonValue="LR5"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</MultiChoiceDataElement>
+				
+		<ChoiceDataElement Id="adjustcategorybasedonAncillary" DisplaySequence="42">
 			<Label>Do you want to adjust category based on ancillary features? </Label>
 			<Diagrams>
 				<Diagram>
@@ -1912,6 +2198,15 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<SectionIf DataElementId="lrmnontargetoidmass" />
+						<NotEqualCondition DataElementId="otherwiseCategoryCE" ComparisonValue="LR5"/>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+				
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 				
@@ -1975,7 +2270,7 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>-->
 			
-		<MultiChoiceDataElement Id="ancillaryFavoringMalignancy" DisplaySequence="38">
+		<MultiChoiceDataElement Id="ancillaryFavoringMalignancy" DisplaySequence="43">
 			<Label>What ancillary features of malignancy are present? (pick all that apply)</Label>
 			<Diagrams>
 				<Diagram>
@@ -2010,9 +2305,9 @@
 				</Choice>
 				<Choice>
 					<Value>Restricted_diffusion</Value>
-					<Label>Restricted diffusion</Label>
+					<Label>Restricted diffusion (mild to moderate)</Label>
 					<Hint>Intensity on DWI, not attributable solely to T2 shine-through, unequivocally higher than liver and/or ADC unequivocally lower than liver</Hint>
-					<ReportText>Restricted diffusion</ReportText>
+					<ReportText>Restricted diffusion (mild to moderate)</ReportText>
 				</Choice>
 				<Choice>
 					<Value>Mild-moderate_T2_hyperintensity</Value>
@@ -2099,10 +2394,14 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				<ConditionalProperty>
+					<SectionIf DataElementId="lrmnontargetoidmass" />
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
 			</ConditionalProperties>	
 		</MultiChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="ancillaryFavoringBenignity" DisplaySequence="39">
+		<MultiChoiceDataElement Id="ancillaryFavoringBenignity" DisplaySequence="44">
 			<Label>What ancillary features of benignity are present? (pick all that apply)</Label>
 			<Diagrams>
 				<Diagram>
@@ -2184,6 +2483,10 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				<ConditionalProperty>
+					<SectionIf DataElementId="lrmnontargetoidmass" />
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
 			</ConditionalProperties>
 		</MultiChoiceDataElement>		
 	</DataElements>
@@ -2239,8 +2542,11 @@
 											</Branch>
 											<Branch>
 												<Label>Yes</Label>
-												<EqualCondition DataElementId="irregular_enhancing_tissue" ComparisonValue="yes"/>
-												<SectionIf DataElementId="patternofenhancement"></SectionIf>
+												
+												<AndCondition>
+													<SectionIf DataElementId="patternofenhancement"></SectionIf>
+													<EqualCondition DataElementId="irregular_enhancing_tissue" ComparisonValue="yes"/>
+												</AndCondition>
 												<!-- <EndPointRef EndPointId="LRTRViable"></EndPointRef> -->
 												<DecisionPoint Id="patterenenhancementdp">
 													<Label>Pattern of enhancement</Label>
@@ -2532,11 +2838,25 @@
 
 					<Branch>
 						<Label>Probably or definitely malignant but not HCC specific </Label>
-						<EqualCondition DataElementId="untreatedobservation"
-							ComparisonValue="malignantbutnothcc"/>
+						<AndCondition>
+							<EqualCondition DataElementId="untreatedobservation" ComparisonValue="malignantbutnothcc"/>
+							<EqualCondition DataElementId="lrmtargetoidmassCE" ComparisonValue="morethanone"/>
+						</AndCondition>		
 						<EndPointRef EndPointId="LRM"/>
 					</Branch>
 
+					<Branch>
+						<Label>Otherwise with LRM</Label>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>
+						<DecisionPoint Id="OtherwiseWithLRMFeature">
+							<Label>Otherwise with LRM</Label>
+							<Branch>
+								<SectionIf DataElementId="lrmnontargetoidmass"></SectionIf>
+								<EndPointRef EndPointId="LRM"/>	
+							</Branch>
+						</DecisionPoint>
+					</Branch>
+					
 					<Branch>
 						<Label>Otherwise</Label>
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="nonofabove"/>
@@ -2561,10 +2881,12 @@
 														<AndCondition>													
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>													
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 													</OrCondition>
 													<EndPointRef EndPointId="LR3"/>	
@@ -2573,6 +2895,7 @@
 													<AndCondition>
 														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>							
 													<EndPointRef EndPointId="LR2_adjusted"/>	
 												</Branch>												
@@ -2580,6 +2903,7 @@
 													<AndCondition>
 														<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>
 													<EndPointRef EndPointId="LR4_adjusted"/>	
 												</Branch>
@@ -2595,10 +2919,12 @@
 														<AndCondition>													
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>													
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 													</OrCondition>
 													<EndPointRef EndPointId="LR3"/>	
@@ -2607,6 +2933,7 @@
 													<AndCondition>
 														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>							
 													<EndPointRef EndPointId="LR2_adjusted"/>	
 												</Branch>	
@@ -2614,6 +2941,7 @@
 													<AndCondition>
 														<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>
 													<EndPointRef EndPointId="LR4_adjusted"/>	
 												</Branch>												
@@ -2628,14 +2956,17 @@
 														<AndCondition>													
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>													
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 													</OrCondition>
 													<EndPointRef EndPointId="LR4"/>
@@ -2644,6 +2975,7 @@
 													<AndCondition>
 														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>
 													<EndPointRef EndPointId="LR3_adjusted"/>
 												</Branch>
@@ -2667,10 +2999,12 @@
 														<AndCondition>													
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>													
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 													</OrCondition>
 													<EndPointRef EndPointId="LR3"/>	
@@ -2679,13 +3013,15 @@
 													<AndCondition>
 														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>							
 													<EndPointRef EndPointId="LR2_adjusted"/>	
 												</Branch>												
 												<Branch>
 													<AndCondition>
-													<SectionIf DataElementId="ancillaryFavoringMalignancy" />
-													<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														<SectionIf DataElementId="ancillaryFavoringMalignancy" />
+														<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>
 													<EndPointRef EndPointId="LR4_adjusted"/>	
 												</Branch>
@@ -2701,14 +3037,17 @@
 														<AndCondition>													
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>													
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 													</OrCondition>
 													<EndPointRef EndPointId="LR4"/>
@@ -2717,6 +3056,7 @@
 													<AndCondition>
 														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>
 													<EndPointRef EndPointId="LR3_adjusted"/>
 												</Branch>
@@ -2732,14 +3072,17 @@
 														<AndCondition>													
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>													
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<AndCondition>
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 													</OrCondition>
 													<EndPointRef EndPointId="LR4"/>
@@ -2748,6 +3091,7 @@
 													<AndCondition>
 														<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 														<SectionIf DataElementId="ancillaryFavoringBenignity" />
+														<SectionIfNot DataElementId="lrmnontargetoidmass" />
 													</AndCondition>
 													<EndPointRef EndPointId="LR3_adjusted"/>
 												</Branch>
@@ -2776,10 +3120,12 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR3"/>	
@@ -2788,6 +3134,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>							
 														<EndPointRef EndPointId="LR2_adjusted"/>	
 													</Branch>												
@@ -2795,6 +3142,7 @@
 														<AndCondition>
 															<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR4_adjusted"/>	
 													</Branch>
@@ -2810,14 +3158,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR4"/>
@@ -2826,6 +3177,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR3_adjusted"/>
 													</Branch>
@@ -2841,14 +3193,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR4"/>
@@ -2857,6 +3212,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR3_adjusted"/>
 													</Branch>
@@ -2887,18 +3243,21 @@
 																	<AndCondition>													
 																		<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																		<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																		<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																	</AndCondition>
 																	<AndCondition>													
 																		<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																		<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																		<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																	</AndCondition>
 																</OrCondition>
-																<EndPointRef EndPointId="LR3"/>	
+																<EndPointRef EndPointId="LR3"/>																
 															</Branch>
 															<Branch>
 																<AndCondition>
 																	<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																	<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																	<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																</AndCondition>							
 																<EndPointRef EndPointId="LR2_adjusted"/>	
 															</Branch>												
@@ -2906,6 +3265,7 @@
 																<AndCondition>
 																	<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																	<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																	<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																</AndCondition>
 																<EndPointRef EndPointId="LR4_adjusted"/>	
 															</Branch>
@@ -2920,14 +3280,17 @@
 																	<AndCondition>													
 																		<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																		<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																		<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																	</AndCondition>
 																	<AndCondition>													
 																		<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																		<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																		<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																	</AndCondition>
 																	<AndCondition>
 																		<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																		<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																		<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																	</AndCondition>
 																</OrCondition>
 																<EndPointRef EndPointId="LR4_adjusted"/>
@@ -2936,6 +3299,7 @@
 																<AndCondition>
 																	<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																	<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																	<SectionIfNot DataElementId="lrmnontargetoidmass" />
 																</AndCondition>
 																<EndPointRef EndPointId="LR3_adjusted"/>
 															</Branch>
@@ -2956,14 +3320,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR4"/>
@@ -2972,6 +3339,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR3_adjusted"/>
 													</Branch>
@@ -2981,7 +3349,10 @@
 											<Branch>
 												<AndCondition>
 													<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"></EqualCondition>
-													<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+													<OrCondition>
+														<SectionIfNot DataElementId="capsule"></SectionIfNot>
+														<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+													</OrCondition>
 												</AndCondition>																				
 <!--												<EndPointRef EndPointId="LR5"/>-->
 												<DecisionPoint Id="decisionpoint_one_cap">
@@ -2991,14 +3362,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR5"/>
@@ -3007,6 +3381,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR4_adjusted"/>
 													</Branch>
@@ -3022,14 +3397,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR5"/>
@@ -3038,6 +3416,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR4_adjusted"/>
 													</Branch>
@@ -3060,14 +3439,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR4"/>
@@ -3076,6 +3458,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR3_adjusted"/>
 													</Branch>
@@ -3091,14 +3474,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR5"/>
@@ -3107,6 +3493,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR4_adjusted"/>
 													</Branch>
@@ -3122,14 +3509,17 @@
 															<AndCondition>													
 																<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>													
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIf DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 															<AndCondition>
 																<SectionIf DataElementId="ancillaryFavoringMalignancy" />
 																<SectionIfNot DataElementId="ancillaryFavoringBenignity" />
+																<SectionIfNot DataElementId="lrmnontargetoidmass" />
 															</AndCondition>
 														</OrCondition>
 														<EndPointRef EndPointId="LR5"/>
@@ -3138,6 +3528,7 @@
 														<AndCondition>
 															<SectionIfNot DataElementId="ancillaryFavoringMalignancy" />
 															<SectionIf DataElementId="ancillaryFavoringBenignity" />
+															<SectionIfNot DataElementId="lrmnontargetoidmass" />
 														</AndCondition>
 														<EndPointRef EndPointId="LR4_adjusted"/>
 													</Branch>
@@ -3206,12 +3597,12 @@
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
-			<Branch>
+			<!-- <Branch>
 				<SectionIf DataElementId="irregularattheperiphery"></SectionIf>
 				<ReportText Type="PlainText">Enhancement in a nodular, mass-like or thick irregular pattern: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="irregularattheperiphery"></ReportText>
 				<ReportText Type="Newline"></ReportText>
-			</Branch>
+			</Branch> -->
 			
 			<Branch>
 				<SectionIfNot DataElementId="sizeoftheenhancementComponents"></SectionIfNot>
@@ -3472,6 +3863,7 @@
 				<ReportText Type="InsertDataElementValue" Value="capsule"></ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
+
 			
 		</TemplatePartial>
 
@@ -3742,8 +4134,7 @@
 				<ReportText Type="PlainText">Favoring malignancy: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="ancillaryFavoringMalignancy"></ReportText>
 				<ReportText Type="Newline"></ReportText>
-			</Branch>
-			
+			</Branch>			
 		</TemplatePartial>
 
 		<!-- Template Partials end -->
@@ -3999,8 +4390,8 @@
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
 					<SectionIf DataElementId="diameter"></SectionIf>
+					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>					
 					<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
 					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
@@ -4032,8 +4423,8 @@
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
 						<SectionIf DataElementId="diameter"></SectionIf>
+						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>						
 						<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
 						<ReportText Type="PlainText"> mm </ReportText>
 					</Branch>
@@ -4209,8 +4600,8 @@
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
 					<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
+					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>				
 					<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
 					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
