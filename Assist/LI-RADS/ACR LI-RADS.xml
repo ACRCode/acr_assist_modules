@@ -1551,6 +1551,58 @@
 					<OrCondition>						
 						<SectionIfNot DataElementId="untreatedobservation" />	
 						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="IsTIVcontiguouswithaparenchymalmass" />
+							<SectionIfNot DataElementId="Isparenchymalmasstargetoid" />	
+							<EqualCondition DataElementId="IsTIVcontiguouswithaparenchymalmass" ComparisonValue="no"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="untreatedobservation" ComparisonValue="probablyBenign"/>
+						<EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/>
+					</AndCondition>
+					<Maximum>19</Maximum>
+				</ConditionalProperty>
+				
+			</ConditionalProperties>
+		</NumericDataElement>
+		
+		<NumericDataElement Id="parenchymal_mass_size" IsRequired="true" DisplaySequence="31">		
+			<Label>Parenchymal mass size (mm)</Label>
+			<Hint>Size of the lesion (outer edge to outer edge) in mm</Hint>
+			<Minimum>1</Minimum>
+			<ConditionalProperties>	
+				<!-- <ConditionalProperty> -->
+					<!-- <AndCondition> -->
+						<!-- <NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="notcategorized"/> -->
+						<!-- <EqualCondition DataElementId="LR2features" ComparisonValue="Distinct"/> -->
+					<!-- </AndCondition>					 -->
+				<!-- </ConditionalProperty>				 -->
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="observationinPatient" />
+						<EqualCondition DataElementId="observationinPatient" ComparisonValue="treated"/>						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>						
+						<SectionIfNot DataElementId="untreatedobservation" />
+						<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -2622,7 +2674,7 @@
 														<Label>arterialEnhancemenNoAphe</Label>
 														<Branch>
 															<Label>Less than 20</Label>
-															<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
+															<LessThanCondition DataElementId="parenchymal_mass_size" ComparisonValue="20"/>
 															<DecisionPoint Id="washoutcapsulethresholdNone">
 																<Label>washoutcapsulethreshold None</Label>
 																<Branch>
@@ -2644,7 +2696,7 @@
 														
 														<Branch>
 															<Label>Greater than 20</Label>
-															<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
+															<GreaterThanOrEqualsCondition DataElementId="parenchymal_mass_size" ComparisonValue="20"/>
 															<DecisionPoint Id="washoutcapsulethresholdNoneGreaterThan20">
 																<Label>washoutcapsulethreshold None</Label>
 																<Branch>
@@ -2673,7 +2725,7 @@
 														<Label>arterialEnhancemenNoAphe</Label>
 														<Branch>
 															<Label>Less than 10</Label>
-															<LessThanCondition DataElementId="diameter" ComparisonValue="10"/>
+															<LessThanCondition DataElementId="parenchymal_mass_size" ComparisonValue="10"/>
 															<DecisionPoint Id="washoutcapsulethresholdNoneLessthan10">
 																<Label>washoutcapsulethreshold None</Label>
 																<Branch>
@@ -2696,8 +2748,8 @@
 														<Branch>
 															<Label>Between 10 and 20</Label>
 															<AndCondition>
-																<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
-																<LessThanCondition DataElementId="diameter" ComparisonValue="20"/>
+																<GreaterThanOrEqualsCondition DataElementId="parenchymal_mass_size" ComparisonValue="10"/>
+																<LessThanCondition DataElementId="parenchymal_mass_size" ComparisonValue="20"/>
 															</AndCondition>																		
 															<DecisionPoint Id="washoutcapsulethresholdNoneBetween10and20">
 																<Label>washoutcapsulethreshold None</Label>
@@ -2732,7 +2784,7 @@
 														<Branch>
 															<Label>Greater than 20</Label>
 															<!--																		<AndCondition>-->
-															<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
+															<GreaterThanOrEqualsCondition DataElementId="parenchymal_mass_size" ComparisonValue="20"/>
 															<!--</AndCondition>-->																		
 															<DecisionPoint Id="washoutcapsulethresholdNoneDiameterGreaterThan20">
 																<Label>washoutcapsulethreshold None</Label>
@@ -3780,6 +3832,15 @@
 			</Branch>
 			
 			<Branch>
+				<SectionIf DataElementId="parenchymal_mass_size"></SectionIf>
+				<ReportText Type="Tab"/>			
+				<ReportText Type="PlainText">Parenchymal mass size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="parenchymal_mass_size"></ReportText>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
 				<AndCondition>
 					<SectionIfNot DataElementId="lrmtargetoidmass"></SectionIfNot>
 					<SectionIfNot DataElementId="lrmnontargetoidmass"></SectionIfNot>
@@ -3903,10 +3964,10 @@
 			<Branch>
 				<AndCondition>
 					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>					
-					<SectionIf DataElementId="diameter"></SectionIf>
+					<SectionIf DataElementId="parenchymal_mass_size"></SectionIf>
 				</AndCondition>
-				<ReportText Type="PlainText">Size: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
+				<ReportText Type="PlainText">Parenchymal mass size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="parenchymal_mass_size"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
