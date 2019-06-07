@@ -52,53 +52,71 @@
 			<Maximum>4</Maximum>
 		</IntegerDataElement>
 
-		<ChoiceDataElement Id="lobe_1" IsRequired="false" DisplaySequence="2">
-			<Label>Which lobe in the nodule is located?</Label>
+		<ChoiceDataElement Id="lobe_1" IsRequired="true" DisplaySequence="2">
+			<Label>Where in the gland is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
 					<Label>Right lobe</Label>	
 				</Choice>
 				<Choice>
-					<Value>Isthmus</Value>
-					<Label>Isthmus</Label>
-				</Choice>
-				<Choice>
 					<Value>Leftlobe</Value>
 					<Label>Left lobe</Label>
+				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="lobe_location_1" IsRequired="false" DisplaySequence="3">
-			<Label>Where in the lobe is the nodule located?</Label>
+		<ChoiceDataElement Id="lobe_location_1" IsRequired="false" DisplaySequence="3" >
+			<Label>Where in the lobe or isthmus is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>Upper</Value>
-					<Label>Upper</Label>	
+					<Value>upper</Value>
+					<Label>Upper</Label>
 				</Choice>
 				<Choice>
-					<Value>Mid</Value>
+					<Value>mid</Value>
 					<Label>Mid</Label>
 				</Choice>
 				<Choice>
-					<Value>Lower</Value>
+					<Value>lower</Value>
 					<Label>Lower</Label>
 				</Choice>
-
 				<Choice>
 					<Value>Rightisthmus</Value>
-					<Label>Right isthmus</Label>	
+					<Label>Right</Label>
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
-					<Label>Left isthmus</Label>
+					<Label>Left</Label>
 				</Choice>
 				<Choice>
 					<Value>Midlineisthmus</Value>
-					<Label>Midline isthmus</Label>
+					<Label>Midline</Label>
 				</Choice>
 			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Rightlobe" DataElementId="lobe_1"/>
+						<EqualCondition ComparisonValue="Leftlobe" DataElementId="lobe_1"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="Rightisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Leftisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Midlineisthmus"/>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Isthmus" DataElementId="lobe_1"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="upper"/>
+						<ChoiceNotRelevant ChoiceValue="mid"/>
+						<ChoiceNotRelevant ChoiceValue="lower"/>
+				</ConditionalProperty>
+			</ConditionalProperties>
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="diameter_1" IsRequired="true" DisplaySequence="4" Unit="cm">		
@@ -386,21 +404,20 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>	
 		</IntegerDataElement>
-
-		<ChoiceDataElement Id="lobe_2" IsRequired="false" DisplaySequence="10">
-			<Label>Which lobe in the nodule is located?</Label>
+		<ChoiceDataElement Id="lobe_2" IsRequired="true" DisplaySequence="10">
+			<Label>Where in the gland is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
 					<Label>Right lobe</Label>	
 				</Choice>
 				<Choice>
-					<Value>Isthmus</Value>
-					<Label>Isthmus</Label>
-				</Choice>
-				<Choice>
 					<Value>Leftlobe</Value>
 					<Label>Left lobe</Label>
+				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -411,41 +428,57 @@
 			</ConditionalProperties>	
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="lobe_location_2" IsRequired="false" DisplaySequence="11">
-			<Label>Where in the lobe is the nodule located?</Label>
+		<ChoiceDataElement Id="lobe_location_2" IsRequired="false" DisplaySequence="11" >
+			<Label>Where in the lobe or isthmus is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>Upper</Value>
-					<Label>Upper</Label>	
+					<Value>upper</Value>
+					<Label>Upper</Label>
 				</Choice>
 				<Choice>
-					<Value>Mid</Value>
+					<Value>mid</Value>
 					<Label>Mid</Label>
 				</Choice>
 				<Choice>
-					<Value>Lower</Value>
+					<Value>lower</Value>
 					<Label>Lower</Label>
 				</Choice>
-
 				<Choice>
 					<Value>Rightisthmus</Value>
-					<Label>Right isthmus</Label>	
+					<Label>Right</Label>
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
-					<Label>Left isthmus</Label>
+					<Label>Left</Label>
 				</Choice>
 				<Choice>
 					<Value>Midlineisthmus</Value>
-					<Label>Midline isthmus</Label>
+					<Label>Midline</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>	
+				</ConditionalProperty>	
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Rightlobe" DataElementId="lobe_2"/>
+						<EqualCondition ComparisonValue="Leftlobe" DataElementId="lobe_2"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="Rightisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Leftisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Midlineisthmus"/>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Isthmus" DataElementId="lobe_2"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="upper"/>
+						<ChoiceNotRelevant ChoiceValue="mid"/>
+						<ChoiceNotRelevant ChoiceValue="lower"/>
+				</ConditionalProperty>
+			</ConditionalProperties>
 		</ChoiceDataElement>
 
 
@@ -711,7 +744,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-
+	
 		<!-- Nodule 3 -->
 		<IntegerDataElement Id="nodulenumber_3" IsRequired="false" DisplaySequence="17">
 			<Label>What is the nodule number?</Label>
@@ -729,20 +762,20 @@
 
 		</IntegerDataElement>
 
-		<ChoiceDataElement Id="lobe_3" IsRequired="false" DisplaySequence="18">
-			<Label>Which lobe in the nodule is located?</Label>
+		<ChoiceDataElement Id="lobe_3" IsRequired="true" DisplaySequence="18">
+			<Label>Where in the gland is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
 					<Label>Right lobe</Label>	
 				</Choice>
 				<Choice>
-					<Value>Isthmus</Value>
-					<Label>Isthmus</Label>
-				</Choice>
-				<Choice>
 					<Value>Leftlobe</Value>
 					<Label>Left lobe</Label>
+				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -756,46 +789,61 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="lobe_location_3" IsRequired="false" DisplaySequence="19">
-			<Label>Where in the lobe is the nodule located?</Label>
+		<ChoiceDataElement Id="lobe_location_3" IsRequired="false" DisplaySequence="19" >
+			<Label>Where in the lobe or isthmus is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>Upper</Value>
-					<Label>Upper</Label>	
+					<Value>upper</Value>
+					<Label>Upper</Label>
 				</Choice>
 				<Choice>
-					<Value>Mid</Value>
+					<Value>mid</Value>
 					<Label>Mid</Label>
 				</Choice>
 				<Choice>
-					<Value>Lower</Value>
+					<Value>lower</Value>
 					<Label>Lower</Label>
 				</Choice>
-
 				<Choice>
 					<Value>Rightisthmus</Value>
-					<Label>Right isthmus</Label>	
+					<Label>Right</Label>
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
-					<Label>Left isthmus</Label>
+					<Label>Left</Label>
 				</Choice>
 				<Choice>
 					<Value>Midlineisthmus</Value>
-					<Label>Midline isthmus</Label>
+					<Label>Midline</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Rightlobe" DataElementId="lobe_3"/>
+						<EqualCondition ComparisonValue="Leftlobe" DataElementId="lobe_3"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="Rightisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Leftisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Midlineisthmus"/>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Isthmus" DataElementId="lobe_3"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="upper"/>
+						<ChoiceNotRelevant ChoiceValue="mid"/>
+						<ChoiceNotRelevant ChoiceValue="lower"/>
+				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>		
-			</ConditionalProperties>	
+				</ConditionalProperty>	
+			</ConditionalProperties>
 		</ChoiceDataElement>
-
 		<NumericDataElement Id="diameter_3" IsRequired="true" DisplaySequence="20" Unit="cm">		
 			<Label>Maximum Diameter</Label>
 			<Minimum>0.1</Minimum>
@@ -1089,20 +1137,20 @@
 		</IntegerDataElement>
 
 		<ChoiceDataElement Id="lobe_4" IsRequired="true" DisplaySequence="32">
-			<Label>Which lobe in the nodule is located?</Label>
+			<Label>Where in the gland is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Rightlobe</Value>
 					<Label>Right lobe</Label>	
 				</Choice>
 				<Choice>
-					<Value>Isthmus</Value>
-					<Label>Isthmus</Label>
-				</Choice>
-				<Choice>
 					<Value>Leftlobe</Value>
 					<Label>Left lobe</Label>
 				</Choice>
+				<Choice>
+					<Value>Isthmus</Value>
+					<Label>Isthmus</Label>
+				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -1116,36 +1164,52 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="lobe_location_4" IsRequired="true" DisplaySequence="33">
-			<Label>Where in the lobe is the nodule located?</Label>
+		<ChoiceDataElement Id="lobe_location_4" IsRequired="false" DisplaySequence="33" >
+			<Label>Where in the lobe or isthmus is the nodule located?</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>Upper</Value>
-					<Label>Upper</Label>	
+					<Value>upper</Value>
+					<Label>Upper</Label>
 				</Choice>
 				<Choice>
-					<Value>Mid</Value>
+					<Value>mid</Value>
 					<Label>Mid</Label>
 				</Choice>
 				<Choice>
-					<Value>Lower</Value>
+					<Value>lower</Value>
 					<Label>Lower</Label>
 				</Choice>
-
 				<Choice>
 					<Value>Rightisthmus</Value>
-					<Label>Right isthmus</Label>	
+					<Label>Right</Label>
 				</Choice>
 				<Choice>
 					<Value>Leftisthmus</Value>
-					<Label>Left isthmus</Label>
+					<Label>Left</Label>
 				</Choice>
 				<Choice>
 					<Value>Midlineisthmus</Value>
-					<Label>Midline isthmus</Label>
+					<Label>Midline</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Rightlobe" DataElementId="lobe_4"/>
+						<EqualCondition ComparisonValue="Leftlobe" DataElementId="lobe_4"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="Rightisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Leftisthmus"/>
+						<ChoiceNotRelevant ChoiceValue="Midlineisthmus"/>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition ComparisonValue="Isthmus" DataElementId="lobe_4"/>
+					</OrCondition>
+						<ChoiceNotRelevant ChoiceValue="upper"/>
+						<ChoiceNotRelevant ChoiceValue="mid"/>
+						<ChoiceNotRelevant ChoiceValue="lower"/>
+				</ConditionalProperty>
 				<ConditionalProperty>
 					<OrCondition>
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
@@ -1153,11 +1217,9 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
+				</ConditionalProperty>	
 			</ConditionalProperties>
 		</ChoiceDataElement>
-
-
 
 		<NumericDataElement Id="diameter_4" IsRequired="true" DisplaySequence="34" Unit="cm">		
 			<Label>Maximum Diameter</Label>
@@ -1943,7 +2005,7 @@
 
 			<Branch>
 				<SectionIf DataElementId="lobe_1"></SectionIf>
-				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="PlainText">Gland: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="lobe_1"/>
 				<ReportText Type="Newline"/>
 			</Branch>
@@ -2272,7 +2334,7 @@
 
 			<Branch>
 				<SectionIf DataElementId="lobe_2"></SectionIf>
-				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="PlainText">Gland: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="lobe_2"/>
 				<ReportText Type="Newline"/>
 			</Branch>
@@ -2577,7 +2639,7 @@
 
 			<Branch>
 				<SectionIf DataElementId="lobe_3"></SectionIf>
-				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="PlainText">Gland: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="lobe_3"/>
 				<ReportText Type="Newline"/>
 			</Branch>
@@ -2903,7 +2965,7 @@
 
 			<Branch>
 				<SectionIf DataElementId="lobe_4"></SectionIf>
-				<ReportText Type="PlainText">Lobe: </ReportText>
+				<ReportText Type="PlainText">Gland:</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="lobe_4"/>
 				<ReportText Type="Newline"/>
 			</Branch>
