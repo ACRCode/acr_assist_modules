@@ -4029,12 +4029,17 @@
 				<ReportText Type="PlainText" >: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
-				<ReportText Type="Newline"></ReportText>-->
-				
+				<ReportText Type="Newline"></ReportText>-->				
 				<SectionIf DataElementId="observationnumber"></SectionIf>
 				<ReportText Type="PlainText">Observation #</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"></ReportText>				
+			</Branch>
+			
+			<Branch>
+				<SectionIf DataElementId="diameter"></SectionIf>
+				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
+				<ReportText Type="PlainText"> mm </ReportText>
 			</Branch>
 		</TemplatePartial>
 		
@@ -4483,7 +4488,7 @@
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>`
 						<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 						<ReportText Type="Newline"></ReportText>
@@ -4552,8 +4557,6 @@
 				<Branch>
 					<SectionIf DataElementId="diameter"></SectionIf>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>					
-					<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
-					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
 				
 				<Branch>
@@ -4585,8 +4588,6 @@
 					<Branch>
 						<SectionIf DataElementId="diameter"></SectionIf>
 						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>						
-						<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
-						<ReportText Type="PlainText"> mm </ReportText>
 					</Branch>
 					
 					<Branch>
@@ -4760,12 +4761,7 @@
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
-					<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
-					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>				
-					<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
-					<ReportText Type="PlainText"> mm </ReportText>
-				</Branch>
-				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>	
 					<ReportText Type="PlainText">LR-M (Probably or definitely malignant, not HCC specific) </ReportText>
 					<!--<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="Newline"></ReportText>-->
