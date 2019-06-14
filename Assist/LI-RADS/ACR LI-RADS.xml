@@ -4008,6 +4008,30 @@
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="thresholdgrowth"></SectionIf>
+					<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"></EqualCondition>
+					<EqualCondition DataElementId="prior_observation" ComparisonValue="no"></EqualCondition>
+					<SectionIfNot DataElementId="recent_study_size"></SectionIfNot>
+				</AndCondition>
+				<ReportText Type="Tab"/>
+				<ReportText Type="PlainText">Size on the most recent prior study: N/A, the observation is new </ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="thresholdgrowth"></SectionIf>
+					<EqualCondition DataElementId="prior_observation" ComparisonValue="yes"></EqualCondition>	
+					<SectionIf DataElementId="recent_study_size"></SectionIf>
+				</AndCondition>
+				<ReportText Type="Tab"/>
+				<ReportText Type="PlainText">Size on the most recent prior study: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="recent_study_size"></ReportText>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline"></ReportText>	
+			</Branch>
 			
 			
 			<Branch>
@@ -4029,13 +4053,28 @@
 				<ReportText Type="PlainText" >: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="pretreatmentsize"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
-				<ReportText Type="Newline"></ReportText>-->
-				
+				<ReportText Type="Newline"></ReportText>-->				
 				<SectionIf DataElementId="observationnumber"></SectionIf>
 				<ReportText Type="PlainText">Observation #</ReportText>
 				<ReportText Type="InsertDataElementValue" Value="observationnumber"></ReportText>
 				<ReportText Type="Newline"></ReportText>				
 			</Branch>
+			
+			<Branch>
+				<SectionIf DataElementId="diameter"></SectionIf>
+				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
+				<ReportText Type="PlainText"> mm </ReportText>
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>					
+					<SectionIf DataElementId="parenchymal_mass_size"></SectionIf>
+				</AndCondition>
+				<ReportText Type="InsertDataElementValue" Value="parenchymal_mass_size"></ReportText>
+				<ReportText Type="PlainText"> mm</ReportText>
+			</Branch>
+			
 		</TemplatePartial>
 		
 		<TemplatePartial Id="untreatreporttext">
@@ -4056,7 +4095,7 @@
 			
 			<Branch>
 				<AndCondition>
-					<NotEqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>					
+					<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"/>					
 					<SectionIf DataElementId="parenchymal_mass_size"></SectionIf>
 				</AndCondition>
 				<ReportText Type="PlainText">Parenchymal mass size: </ReportText>
@@ -4065,6 +4104,14 @@
 				<ReportText Type="Newline"></ReportText>
 			</Branch>
 			
+			<Branch>
+				<SectionIf DataElementId="diameter"></SectionIf>		
+				<ReportText Type="PlainText">Size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
+				<ReportText Type="PlainText"> mm </ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+						
 			<Branch>				
 				<EqualCondition DataElementId="untreatedobservation" ComparisonValue="tumorInVein"></EqualCondition>
 				<ReportText Type="PlainText">Tumor in Vein: Yes;</ReportText>				
@@ -4194,7 +4241,7 @@
 					<EqualCondition DataElementId="prior_observation" ComparisonValue="yes"></EqualCondition>	
 					<SectionIf DataElementId="recent_study_size"></SectionIf>
 				</AndCondition>
-				<ReportText Type="PlainText">Size on the most recent prior study: SIZE </ReportText>
+				<ReportText Type="PlainText">Size on the most recent prior study: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="recent_study_size"></ReportText>
 				<ReportText Type="PlainText"> mm </ReportText>
 				<ReportText Type="Newline"></ReportText>
@@ -4301,7 +4348,7 @@
 		
 		<!-- Untreated Endpoints start -->
 		 
-	 <EndPoint Id="LRNC">
+		<EndPoint Id="LRNC">
 	  	<Label>LR-NC</Label>
 		<ReportSections>
 			<ReportSection SectionId="findings">
@@ -4483,7 +4530,7 @@
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>`
 						<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 						<ReportText Type="Newline"></ReportText>
@@ -4552,8 +4599,6 @@
 				<Branch>
 					<SectionIf DataElementId="diameter"></SectionIf>
 					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>					
-					<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
-					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
 				
 				<Branch>
@@ -4585,8 +4630,6 @@
 					<Branch>
 						<SectionIf DataElementId="diameter"></SectionIf>
 						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>						
-						<ReportText Type="InsertDataElementValue" Value="diameter"></ReportText>
-						<ReportText Type="PlainText"> mm </ReportText>
 					</Branch>
 					
 					<Branch>
@@ -4710,7 +4753,7 @@
 		</ReportSections>
       </EndPoint>
 		
-	<EndPoint Id="LRTIV_def_hcc">
+		<EndPoint Id="LRTIV_def_hcc">
 			<Label>[LR-TIV, Definitely due to HCC]</Label>
 			<ReportSections>
 			<ReportSection SectionId="findings">
@@ -4760,12 +4803,7 @@
 			</ReportSection>
 			<ReportSection SectionId="impression">
 				<Branch>
-					<SectionIf DataElementId="sizeoftheenhancementComponents"></SectionIf>
-					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>				
-					<ReportText Type="InsertDataElementValue" Value="sizeoftheenhancementComponents"></ReportText>
-					<ReportText Type="PlainText"> mm </ReportText>
-				</Branch>
-				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>	
 					<ReportText Type="PlainText">LR-M (Probably or definitely malignant, not HCC specific) </ReportText>
 					<!--<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 					<ReportText Type="Newline"></ReportText>-->
