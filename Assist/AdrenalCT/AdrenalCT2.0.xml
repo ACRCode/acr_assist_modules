@@ -34,22 +34,32 @@
 
 	</Metadata>
 	<DataElements>
-		
-		
-		
-		<ChoiceDataElement Id="side" DisplaySequence="1" IsRequired="true">
+
+		<IntegerDataElement Id="seriesnumber" IsRequired="false" DisplaySequence="2">
+			<Label>Series</Label>
+			<Minimum>1</Minimum>
+			<Maximum>10</Maximum>
+		</IntegerDataElement>
+
+		<IntegerDataElement Id="imagenumber" IsRequired="false" DisplaySequence="3">
+			<Label>Image</Label>
+			<Minimum>1</Minimum>
+			<Maximum>10</Maximum>
+		</IntegerDataElement>
+
+		<ChoiceDataElement Id="side" DisplaySequence="4" IsRequired="true">
 			<Label>Side</Label>
 			<Hint></Hint>
 			<CodableConcept Name="side">
-            <Coding>
-            <System Value="RadElement"></System>
-            <Version Value="1.0"></Version>
-            <Code Value="RDE42"></Code>
-            <Display Value="RDE42"></Display>
-			<Url Value="http://radelement.org/element/RDE42"></Url>
-            <UserSelected Value="true"></UserSelected>
-            </Coding>
-         </CodableConcept>
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE42"></Code>
+					<Display Value="RDE42"></Display>
+					<Url Value="http://radelement.org/element/RDE42"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
 			<ChoiceInfo>
 				<Choice>
 					<Value>left</Value>
@@ -62,24 +72,24 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<NumericDataElement Id="adrenalmass" DisplaySequence="2" IsRequired="true">
+		<NumericDataElement Id="adrenalmass" DisplaySequence="5" IsRequired="true">
 			<Label>Size(cm)</Label>
 			<Hint>Enter the nodule size in cm</Hint>
 			<CodableConcept Name="adrenalmass">
-            <Coding>
-            <System Value="RadElement"></System>
-            <Version Value="1.0"></Version>
-            <Code Value="RDE41"></Code>
-            <Display Value="RDE41"></Display>
-			<Url Value="http://radelement.org/element/RDE41"></Url>
-            <UserSelected Value="true"></UserSelected>
-            </Coding>
-         </CodableConcept>
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE41"></Code>
+					<Display Value="RDE41"></Display>
+					<Url Value="http://radelement.org/element/RDE41"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
 			<Minimum>1.0</Minimum>
 			<Maximum>10.0</Maximum>
 		</NumericDataElement>
 
-		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="3" IsRequired="true">
+		<ChoiceDataElement Id="diagimagfeatures" DisplaySequence="6" IsRequired="true">
 			<Label>Diagnostic Benign Features</Label>
 			<Hint></Hint>
 			<ChoiceInfo>
@@ -112,7 +122,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 
-		<ChoiceDataElement Id="imgenlarge" DisplaySequence="4" IsRequired="false">
+		<ChoiceDataElement Id="imgenlarge" DisplaySequence="7" IsRequired="false">
 			<Label>Stability</Label>
 			<Hint></Hint>
 			<ChoiceInfo>
@@ -142,19 +152,19 @@
 		</ChoiceDataElement>
 
 
-		<ChoiceDataElement Id="cancerhx" DisplaySequence="5" IsRequired="false">
+		<ChoiceDataElement Id="cancerhx" DisplaySequence="8" IsRequired="false">
 			<Label>Cancer Hx</Label>
 			<Hint></Hint>
 			<CodableConcept Name="cancerhx">
-            <Coding>
-            <System Value="RadElement"></System>
-            <Version Value="1.0"></Version>
-            <Code Value="RDE46"></Code>
-            <Display Value="RDE46"></Display>
-			<Url Value="http://radelement.org/element/RDE46"></Url>
-            <UserSelected Value="true"></UserSelected>
-            </Coding>
-         </CodableConcept>
+				<Coding>
+					<System Value="RadElement"></System>
+					<Version Value="1.0"></Version>
+					<Code Value="RDE46"></Code>
+					<Display Value="RDE46"></Display>
+					<Url Value="http://radelement.org/element/RDE46"></Url>
+					<UserSelected Value="true"></UserSelected>
+				</Coding>
+			</CodableConcept>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>unknown</Value>
@@ -181,8 +191,8 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		
-		<ChoiceDataElement Id="washout" DisplaySequence="6" IsRequired="false">
+
+		<ChoiceDataElement Id="washout" DisplaySequence="9" IsRequired="false">
 			<Label>Washout</Label>
 			<Hint></Hint>
 			<ChoiceInfo>
@@ -207,18 +217,19 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		
-		<IntegerDataElement Id="seriesnumber" IsRequired="false" DisplaySequence="7">
-			<Label>Series</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-		</IntegerDataElement>
 
-		<IntegerDataElement Id="imagenumber" IsRequired="false" DisplaySequence="8">
-			<Label>Image</Label>
-			<Minimum>1</Minimum>
-			<Maximum>10</Maximum>
-		</IntegerDataElement>
+		<ComputedDataElement Id="GetSideValueInLowerCase">
+			<DecisionPoint>				
+				<Branch>
+					<EqualCondition DataElementId="side" ComparisonValue="Left"/>
+					<TextExpression>left</TextExpression>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="side" ComparisonValue="Right"/>
+					<TextExpression>right</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
 	</DataElements>
 	<Rules>
 
@@ -280,12 +291,12 @@
 			</Branch>
 			<Branch>
 				<Label>Indeterminate Imaging features</Label>
-				
+
 				<AndCondition>
 					<EqualCondition DataElementId="diagimagfeatures" ComparisonValue="none"/>
 					<EqualCondition DataElementId="washout" ComparisonValue="none"/>
 				</AndCondition>
-				
+
 				<DecisionPoint Id="IndeterminateImagingDP">
 					<Label>Adrenal Mass</Label>
 					<Branch>
@@ -413,12 +424,48 @@
 
 	</Rules>
 	<EndPoints>
+		<TemplatePartial Id="findingTemplate">
+
+			<Branch>			
+				<AndCondition>
+					<SectionIf DataElementId="imagenumber"></SectionIf>
+					<SectionIf DataElementId="seriesnumber"></SectionIf>
+				</AndCondition>
+				<ReportText Type="PlainText">Series </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="seriesnumber"></ReportText>
+				<ReportText Type="PlainText"> , image </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="imagenumber"></ReportText>
+				<ReportText Type="Newline"/>
+			</Branch>
+
+			<Branch>			
+				<AndCondition>
+					<SectionIf DataElementId="adrenalmass"></SectionIf>
+					<SectionIf DataElementId="side"></SectionIf>
+				</AndCondition>
+				<ReportText Type="PlainText">There is a </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="adrenalmass"></ReportText>
+				<ReportText Type="PlainText"> cm lesion on the </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="GetSideValueInLowerCase"></ReportText>
+				<ReportText Type="PlainText"> adrenal gland. </ReportText>
+				<ReportText Type="Newline"/>
+			</Branch>
+		</TemplatePartial>
+
 		<EndPoint Id="benignadenoma">
 			<Label>Benign adenoma, no F/U</Label>
 			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="side"/> 
+						<ReportText Type="PlainText"> adrenal lesion has microscopic fat likely a lipid-rich benign adenoma. No additional imaging workup is recommended. </ReportText>
+					</Branch>
+				</ReportSection>		
+
 				<ReportSection SectionId="Impression">
 					<Branch>
-						<ReportText Type="PlainText">Benign adenoma, no Follow up.</ReportText>
+						<ReportText Type="PlainText">No additional imaging workup is recommended.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -427,9 +474,18 @@
 		<EndPoint Id="considerresection">
 			<Label>Consider resection</Label>
 			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>
+
+						<ReportText Type="PlainText">Indeterminate </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="GetSideValueInLowerCase"/>						 
+						<ReportText Type="PlainText"> adrenal lesion due to lack of benign washout characteristics. In a patient without a history of cancer, consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>						
+					</Branch>
+				</ReportSection>
 				<ReportSection SectionId="Impression">
 					<Branch>
-						<ReportText Type="PlainText">Consider resection</ReportText>
+						<ReportText Type="PlainText">Consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -438,9 +494,15 @@
 		<EndPoint Id="considerBX">
 			<Label>Consider Bx or PET-CT</Label>
 			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>
+						<ReportText Type="PlainText">In a patient with a known history of cancer, consider PET-CT or biopsy for further lesion characterization with prior endocrine screening to determine functional status and exclude pheochromocytoma.</ReportText>
+					</Branch>
+				</ReportSection>
 				<ReportSection SectionId="Impression">
 					<Branch>
-						<ReportText Type="PlainText">Consider Bx or PET-CT</ReportText>
+						<ReportText Type="PlainText">Consider PET-CT or biopsy for further lesion characterization with prior endocrine screening to determine functional status and exclude pheochromocytoma.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -449,9 +511,17 @@
 		<EndPoint Id="benignnoFU">
 			<Label>Benign, no F/U</Label>
 			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>
+						<ReportText Type="InsertDataElementValue" Value="side"/> 
+						<ReportText Type="PlainText"> adrenal lesion has benign diagnostic features in keeping with an adrenal dignostic benign features. No additional workup is recommended.</ReportText>					
+					</Branch>
+				</ReportSection>
+
 				<ReportSection SectionId="Impression">
 					<Branch>
-						<ReportText Type="PlainText">Benign, no Follow up</ReportText>
+						<ReportText Type="PlainText">No additional workup is recommended.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -460,10 +530,18 @@
 		<EndPoint Id="consider12">
 			<Label>Consider 12 month F/U adrenal CT or resection</Label>
 			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>
+
+						<ReportText Type="PlainText">Indeterminate </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="GetSideValueInLowerCase"/>						 
+						<ReportText Type="PlainText"> adrenal lesion due to lack of benign washout characteristics. In a patient without a history of cancer, consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>				
+					</Branch>
+				</ReportSection>
 				<ReportSection SectionId="Impression">
 					<Branch>
-
-						<ReportText Type="PlainText">Consider 12 months Follow up adrenal CT or resection</ReportText>
+						<ReportText Type="PlainText">Consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -472,9 +550,17 @@
 		<EndPoint Id="consider12probBenign">
 			<Label>Probably benign Consider 12 month F/U adrenal CT</Label>
 			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>
+						<ReportText Type="PlainText">Indeterminate </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="GetSideValueInLowerCase"/>						 
+						<ReportText Type="PlainText"> adrenal lesion due to lack of benign washout characteristics. In a patient without a history of cancer, consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
+					</Branch>
+				</ReportSection>
 				<ReportSection SectionId="Impression">
 					<Branch>
-						<ReportText Type="PlainText">Probably benign Consider 12 months Follow up adrenal CT or resection.</ReportText>
+						<ReportText Type="PlainText">Consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -484,6 +570,11 @@
 		<EndPoint Id="ImagingFU">
 			<Label>Imaging F/U, Bx, PET-CT,or resection depending on clinical scenario</Label>
 			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>						
+					</Branch>
+				</ReportSection>
 				<ReportSection SectionId="Impression">
 					<Branch>
 						<ReportText Type="PlainText">Imaging Follow up, Bx, PET-CT, or resection depending on clinical scenario</ReportText>
@@ -491,7 +582,5 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-
-
 	</EndPoints>
 </ReportingModule>
