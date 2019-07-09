@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../CARDS_Schema_2.0.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>NI-9-0</Label>
+		<ID>NI-RADS</ID>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<CreatedDate>2019-07-02</CreatedDate>
+		<LastModifiedDate>2019-07-09</LastModifiedDate>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<!--Need to be modified-->
+		<CodableConcept Name="codableConcept_TIRADS">
+			<Coding>
+				<System Value="RadElement"></System>
+				<Version Value="1.0"></Version>
+				<Code Value="RDES15"></Code>
+				<Display Value="RDES15"></Display>
+				<Url Value="http://radelement.org/set/RDES15"></Url>
+				<UserSelected Value="false"></UserSelected>
+			</Coding>
+		</CodableConcept>
+
+		<Info>
+			<Description>NI-RADS level determination</Description>
+			<References>
+				<Citation Url="https://www.jacr.org/article/S1546-1440(18)30598-2/pdf">
+                ACR Ni-RADS</Citation>
+			</References>
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>NI-RADS Primary Site Category and Management.jpg</Location>
+					<Label>NI-RADS Primary Site Category and Management</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>NI-RADS Neck Nodes Category and Management.jpg</Location>
+					<Label>NI-RADS Neck Nodes Category and Management</Label>
+				</Diagram>
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Location>Recommendation.jpg</Location>
+					<Label>NiRADS Recommendation</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>NI-RADS</ReportCitationText>
+		<ApplicableSexes Value="Both"></ApplicableSexes>
+	</Metadata>
+	<DataElements>
+		<IntegerDataElement Id="Whatistheimagenumber" IsRequired="true" DisplaySequence="1">
+				<Label>What is the image number?</Label>
+				<Minimum>1 </Minimum>
+		 </IntegerDataElement>
+		<ChoiceDataElement Id="Whereisthenode" IsRequired="true" DisplaySequence="2">
+				<Label>Where is the node?</Label>
+				<ChoiceInfo>
+					<Choice>
+						<Value>PrimarySite</Value>
+						<Label>Primary Site </Label>
+					</Choice>
+					<Choice>
+						<Value>NeckNode</Value>
+						<Label>Neck Node </Label>
+					</Choice>
+				 </ChoiceInfo>
+		 </ChoiceDataElement>
+		<ChoiceDataElement Id="Whatistheprimarysitenodetype" DisplaySequence="3">
+				<Label>What is the primary site node type?</Label>
+				<ChoiceInfo>
+					<Choice>
+						<Value>Superficialmucosal</Value>
+						<Label>Superficial/mucosal </Label>
+					 </Choice>
+					<Choice>
+						<Value>Deep</Value>
+						<Label>Deep </Label>
+					 </Choice>
+					<Choice>
+						<Value>Definiteprimarysiterecurrence</Value>
+						<Label>Definite primary site recurrence </Label>
+					 </Choice>
+				 </ChoiceInfo>	 
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="Whereisthenode"/>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		 </ChoiceDataElement>
+		<ChoiceDataElement Id="Whatisthenecknodetype" DisplaySequence="4">
+				<Label>What is the neck node type ?  </Label>
+				<ChoiceInfo>
+					<Choice>
+						<Value>Nonewnodeorabnormalnode</Value>
+						<Label>No new node or abnormal node </Label>
+					 </Choice>
+					<Choice>
+						<Value>Residualneworenlargingnode</Value>
+						<Label>Residual, new or enlarging node  </Label>
+					 </Choice>
+					<Choice>
+						<Value>Definitenodalrecurrence</Value>
+						<Label>Definite nodal recurrence </Label>
+					 </Choice>
+				 </ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="Whereisthenode"/>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		 </ChoiceDataElement>
+		<ChoiceDataElement Id="ConditionofthisSuperficialmucosalnode" DisplaySequence="5">
+			<Label>Condition of this Superficial/mucosal node </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>DiffuselinearC</Value>
+					<Label>Diffuse linear C+ </Label>
+				 </Choice>
+				<Choice>
+					<Value>FocalCulcerorFDGuptakeespifinitialposttreatmentscan</Value>
+					<Label>Focal C+ /ulcer or FDG uptake, esp if initial post treatment scan </Label>
+				 </Choice>
+				<Choice>
+					<Value>NodularCespifdevelopsafterinitialposttreatmentscan</Value>
+					<Label>Nodular C+, esp if develops after initial post treatment scan </Label>
+				 </Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="Whereisthenode" />
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode"/>
+										
+						<SectionIfNot DataElementId="Whatistheprimarysitenodetype" />
+						<NotEqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Superficialmucosal"/>
+					</OrCondition>
+						<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		<ChoiceDataElement Id="ConditionofthisDeepnode" DisplaySequence="6">
+				<Label>Condition of this Deep node </Label>
+				<ChoiceInfo>
+					<Choice>
+						<Value>IlldefinedenhancingwithNoFDGuptake</Value>
+						<Label>Ill-defined enhancing with No FDG uptake</Label>
+					 </Choice>
+					<Choice>
+						<Value>IlldefinedenhancingwithMildmodFDGuptakeornoPET</Value>
+						<Label>Ill-defined enhancing with Mild/ mod FDG uptake or no PET</Label>
+					 </Choice>
+					<Choice>
+						<Value>DiscretemasstissuewithMildmodFDGuptakeornoPET</Value>
+						<Label>Discrete mass tissue with Mild/mod FDG uptake or no PET</Label>
+					 </Choice>
+					<Choice>
+						<Value>DiscretemasstissuewithIntenseFDGuptake</Value>
+						<Label>Discrete mass tissue with Intense FDG uptake</Label>
+					 </Choice>
+				 </ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="Whereisthenode" />
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode"/>
+						<SectionIfNot DataElementId="Whatistheprimarysitenodetype" />
+						<NotEqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		 </ChoiceDataElement>
+		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE" DisplaySequence="7">
+			<Label>Does the node have new necrosis or ENE ?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				
+				<Choice>
+					<Value>No</Value>
+					<Label>No</Label>
+				</Choice>
+
+			 </ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="Whereisthenode" />
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite"/>
+						<SectionIfNot DataElementId="Whatisthenecknodetype"/>
+						<NotEqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		<ChoiceDataElement Id="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" DisplaySequence="8">
+			<Label>Condition of this Residual, new or enlarging node </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>NoFDGuptake</Value>
+					<Label>No FDG uptake </Label>
+				 </Choice>
+				<Choice>
+					<Value>MildmodFDGuptake</Value>
+					<Label>Mild/mod FDG uptake </Label>
+				 </Choice>
+				<Choice>
+					<Value>CECTonlynoPET</Value>
+					<Label>CECT only, no PET </Label>
+				 </Choice>
+				<Choice>
+					<Value>IntenseFDGuptake</Value>
+					<Label>Intense FDG uptake </Label>
+				 </Choice>
+			 </ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="Whereisthenode" />
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite"/>
+						
+						<SectionIfNot DataElementId="Whatisthenecknodetype" />
+						<NotEqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode"/>
+					
+						<SectionIfNot DataElementId="DoesthenodehavenewnecrosisorENE"/>
+						<NotEqualCondition DataElementId="DoesthenodehavenewnecrosisorENE" ComparisonValue="No"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		 </ChoiceDataElement>
+	</DataElements>
+	<Rules>
+		<DecisionPoint Id="DecisionPoint1">
+			<Label>Decision Point 1 </Label>
+			<Branch>
+				<Label>Rule decision point branch 1 </Label>
+				<EndPointRef EndPointId="Endpoint1" />
+			 </Branch>
+		 </DecisionPoint>
+	</Rules>
+	<EndPoints>
+		<EndPoint Id="Endpoint1">
+			<Label>Endpoint1 Label </Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Superficialmucosal" />
+							<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode" ComparisonValue="DiffuselinearC" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Expected post treatment changes</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Non-mass-like distortion of soft tissues</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Low-density post-treatment mucosal edema</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Diffuse linear mucosal enhancement or FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">If residual nodal tissue, no FDG uptake</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Superficialmucosal" />
+							<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode" ComparisonValue="FocalCulcerorFDGuptakeespifinitialposttreatmentscan" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2a: Focal mucosal enhancement or FDG uptake on initial post treatment scan </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Superficialmucosal" />
+							<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode" ComparisonValue="NodularCespifdevelopsafterinitialposttreatmentscan" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Discrete nodule or mass at the primary site with intense focal FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Residual nodal tissue with intense FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">New enlarged lymph node or enlarging lymph node with abnormal morphologic features*** on CECT only or focal intense FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+						<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+						<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="IlldefinedenhancingwithNoFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Expected post treatment changes</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Non-mass-like distortion of soft tissues</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Low-density post-treatment mucosal edema</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Diffuse linear mucosal enhancement or FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">If residual nodal tissue, no FDG uptake</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+						<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+						<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="IlldefinedenhancingwithMildmodFDGuptakeornoPET" />
+						 </AndCondition>
+						<ReportText Type="PlainText"> Category 2b: Short interval follow-up (3 months) or PET if scoring on CECT alone.</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Any discordance between PET and CECT: discrete CECT abnormality but little to no FDG uptake or focal FDG uptake but no CT correlate** </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+							<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="DiscretemasstissuewithMildmodFDGuptakeornoPET" />
+						 </AndCondition>
+						<ReportText Type="PlainText"> Category 2b: Short interval follow-up (3 months) or PET if scoring on CECT alone.</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Any discordance between PET and CECT: discrete CECT abnormality but little to no FDG uptake or focal FDG uptake but no CT correlate** </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+							<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="DiscretemasstissuewithIntenseFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Discrete nodule or mass at the primary site with intense focal FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Residual nodal tissue with intense FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">New enlarged lymph node or enlarging lymph node with abnormal morphologic features*** on CECT only or focal intense FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Definiteprimarysiterecurrence" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 4: Pathologically proven or definite radiologic and clinical progression  </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+						<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Nonewnodeorabnormalnode" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Expected post treatment changes</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Non-mass-like distortion of soft tissues</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Low-density post-treatment mucosal edema</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Diffuse linear mucosal enhancement or FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">If residual nodal tissue, no FDG uptake</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="NoFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Expected post treatment changes</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Non-mass-like distortion of soft tissues</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Low-density post-treatment mucosal edema</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Diffuse linear mucosal enhancement or FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">If residual nodal tissue, no FDG uptake</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="MildmodFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2: Mild/ mod FDG in residual nodal tissue,</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Enlarging or new lymph node without definitive abnormal morphologic features *</ReportText>			
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Any discordance between PET and CECT: enlarging lymph node  or discrete neck mass but little to no FDG uptake or focal uptake with no CT correlate**</ReportText>	
+						<ReportText Type="Newline" />
+					</Branch>	
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="CECTonlynoPET" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2: Mild/ mod FDG in residual nodal tissue,</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Enlarging or new lymph node without definitive abnormal morphologic features *</ReportText>			
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Any discordance between PET and CECT: enlarging lymph node  or discrete neck mass but little to no FDG uptake or focal uptake with no CT correlate**</ReportText>	
+						<ReportText Type="Newline" />
+					</Branch>					
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="IntenseFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Discrete nodule or mass at the primary site with intense focal FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Residual nodal tissue with intense FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">New enlarged lymph node or enlarging lymph node with abnormal morphologic features*** on CECT only or focal intense FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>				
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="DoesthenodehavenewnecrosisorENE" ComparisonValue="Yes"/>
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Discrete nodule or mass at the primary site with intense focal FDG uptake if PET available </ReportText>
+						<ReportText Type="PlainText">Residual nodal tissue with intense FDG</ReportText>
+						<ReportText Type="PlainText">New enlarged lymph node or enlarging lymph node with abnormal morphologic features*** on CECT only or focal intense FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Definitenodalrecurrence" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 4: Pathologically proven or definite radiologic and clinical progression  </ReportText>
+						<ReportText Type="Newline" />	
+					</Branch>						
+				</ReportSection>
+				
+				<ReportSection SectionId="recommendation">
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Superficialmucosal" />
+							<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode" ComparisonValue="DiffuselinearC" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Routine surveillance </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Superficialmucosal" />
+							<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode" ComparisonValue="FocalCulcerorFDGuptakeespifinitialposttreatmentscan" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2a: Direct visual inspection  </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Superficialmucosal" />
+							<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode" ComparisonValue="NodularCespifdevelopsafterinitialposttreatmentscan" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Image guided or clinical biopsy if clinically indicated</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+						<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+						<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="IlldefinedenhancingwithNoFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Routine surveillance</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+						<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+						<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="IlldefinedenhancingwithMildmodFDGuptakeornoPET" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2b: Short interval follow-up (3 months) or PET if scoring on CECT alone.</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+						<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+						<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="DiscretemasstissuewithMildmodFDGuptakeornoPET" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2b: Short interval follow-up (3 months) or PET if scoring on CECT alone.</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+						<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Deep" />
+						<EqualCondition DataElementId="ConditionofthisDeepnode" ComparisonValue="DiscretemasstissuewithIntenseFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Image guided or clinical biopsy if clinically indicated</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="PrimarySite" />
+							<EqualCondition DataElementId="Whatistheprimarysitenodetype" ComparisonValue="Definiteprimarysiterecurrence" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 4: Clinical Management </ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+						<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Nonewnodeorabnormalnode" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Routine Surveillance</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+						<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+						<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+						<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="NoFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 1: Routine Surveillance</ReportText>
+						<ReportText Type="Newline" />
+					 </Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="MildmodFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2: Short interval follow-up (3 months) or PET if scoring on CECT alone High.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>	
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="CECTonlynoPET" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 2: Short interval follow-up (3 months) or PET if scoring on CECT alone High.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="Conditionofthisorabnormalnode1RoutinesurveillanceResidualneworenlargingnode" ComparisonValue="IntenseFDGuptake" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Image guided or clinical biopsy if clinically indicated.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Residualneworenlargingnode" />
+							<EqualCondition DataElementId="DoesthenodehavenewnecrosisorENE" ComparisonValue="Yes"/>
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 3: Image guided or clinical biopsy if clinically indicated.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+					<Branch>
+						<AndCondition>
+							<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode" />
+							<EqualCondition DataElementId="Whatisthenecknodetype" ComparisonValue="Definitenodalrecurrence" />
+						 </AndCondition>
+						<ReportText Type="PlainText">Category 4: Clinical management </ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				 </ReportSection>
+			 </ReportSections>
+		</EndPoint>
+	</EndPoints>
+ </ReportingModule>
