@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 	<Metadata>
 		<Label>Adrenal CT</Label>
@@ -17,8 +17,8 @@
 				<Version Value="1.0"></Version>
 				<Code Value="RDES3"></Code>
 				<Display Value="RDES3"></Display>
-				<Url Value="http://radelement.org/set/RDES3"></Url>
 				<UserSelected Value="false"></UserSelected>
+				<Url Value="http://radelement.org/set/RDES3"></Url>
 			</Coding>
 		</CodableConcept>	
 		<Info>
@@ -48,18 +48,19 @@
 		</IntegerDataElement>
 
 		<ChoiceDataElement Id="side" DisplaySequence="4" IsRequired="true">
-			<Label>Side</Label>
-			<Hint></Hint>
 			<CodableConcept Name="side">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
 					<Code Value="RDE42"></Code>
 					<Display Value="RDE42"></Display>
-					<Url Value="http://radelement.org/element/RDE42"></Url>
 					<UserSelected Value="true"></UserSelected>
+					<Url Value="http://radelement.org/element/RDE42"></Url>					
 				</Coding>
 			</CodableConcept>
+			<Label>Side</Label>
+			<Hint></Hint>
+			
 			<ChoiceInfo>
 				<Choice>
 					<Value>left</Value>
@@ -73,18 +74,18 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="adrenalmass" DisplaySequence="5" IsRequired="true">
-			<Label>Size(cm)</Label>
-			<Hint>Enter the nodule size in cm</Hint>
 			<CodableConcept Name="adrenalmass">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
 					<Code Value="RDE41"></Code>
 					<Display Value="RDE41"></Display>
-					<Url Value="http://radelement.org/element/RDE41"></Url>
 					<UserSelected Value="true"></UserSelected>
+					<Url Value="http://radelement.org/element/RDE41"></Url>
 				</Coding>
 			</CodableConcept>
+			<Label>Size(cm)</Label>
+			<Hint>Enter the nodule size in cm</Hint>
 			<Minimum>1.0</Minimum>
 			<Maximum>10.0</Maximum>
 		</NumericDataElement>
@@ -153,18 +154,18 @@
 
 
 		<ChoiceDataElement Id="cancerhx" DisplaySequence="8" IsRequired="false">
-			<Label>Cancer Hx</Label>
-			<Hint></Hint>
 			<CodableConcept Name="cancerhx">
 				<Coding>
 					<System Value="RadElement"></System>
 					<Version Value="1.0"></Version>
 					<Code Value="RDE46"></Code>
 					<Display Value="RDE46"></Display>
-					<Url Value="http://radelement.org/element/RDE46"></Url>
 					<UserSelected Value="true"></UserSelected>
+					<Url Value="http://radelement.org/element/RDE46"></Url>
 				</Coding>
 			</CodableConcept>
+			<Label>Cancer Hx</Label>
+			<Hint></Hint>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
 					<Value>unknown</Value>
@@ -463,7 +464,7 @@
 					</Branch>
 				</ReportSection>		
 
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="PlainText">No additional imaging workup is recommended.</ReportText>
 					</Branch>
@@ -483,7 +484,7 @@
 						<ReportText Type="PlainText"> adrenal lesion due to lack of benign washout characteristics. In a patient without a history of cancer, consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>						
 					</Branch>
 				</ReportSection>
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="PlainText">Consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
 					</Branch>
@@ -500,7 +501,7 @@
 						<ReportText Type="PlainText">In a patient with a known history of cancer, consider PET-CT or biopsy for further lesion characterization with prior endocrine screening to determine functional status and exclude pheochromocytoma.</ReportText>
 					</Branch>
 				</ReportSection>
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="PlainText">Consider PET-CT or biopsy for further lesion characterization with prior endocrine screening to determine functional status and exclude pheochromocytoma.</ReportText>
 					</Branch>
@@ -519,7 +520,7 @@
 					</Branch>
 				</ReportSection>
 
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="PlainText">No additional workup is recommended.</ReportText>
 					</Branch>
@@ -539,7 +540,7 @@
 						<ReportText Type="PlainText"> adrenal lesion due to lack of benign washout characteristics. In a patient without a history of cancer, consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>				
 					</Branch>
 				</ReportSection>
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="PlainText">Consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
 					</Branch>
@@ -558,7 +559,7 @@
 						<ReportText Type="PlainText"> adrenal lesion due to lack of benign washout characteristics. In a patient without a history of cancer, consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
 					</Branch>
 				</ReportSection>
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="PlainText">Consider 6/12-month follow-up CT to document stability, biopsy, or resection.</ReportText>
 					</Branch>
@@ -575,7 +576,7 @@
 						<ReportText Type="InsertPartialTemplate" Value="findingTemplate"></ReportText>						
 					</Branch>
 				</ReportSection>
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="impression">
 					<Branch>
 						<ReportText Type="PlainText">Imaging Follow up, Bx, PET-CT, or resection depending on clinical scenario</ReportText>
 					</Branch>
