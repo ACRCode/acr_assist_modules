@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 	<Metadata>
 		<Label>IF-Pituitary CT MRI</Label>
@@ -39,7 +39,7 @@
 	
 	<DataElements>
 	
-		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="1" CdeId="RDE65">
+		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="1">
 			<Label>Composition of Cyst</Label>
 			<Hint> If the composition of the lesion cannot be determined, it should be managed as if solid</Hint>
 			<ChoiceInfo>
@@ -54,7 +54,7 @@
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="2" CdeId="RDE65">
+		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="2">
 			<Label>Size of Mixed-Solid Cyst</Label>
 			<Hint>COnsider the possibility of a pseudolesion given the lesion's size. Pseudolesions require no further management.</Hint>
 			<ChoiceInfo>
@@ -73,17 +73,13 @@
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>					
-					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>					
 					<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/> 
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>	
 		</ChoiceDataElement>	
 		
-		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="3" CdeId="RDE65">
+		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="3">
 			<Label>Has Mass Effect and/or Has Invasion into surrounding structures?</Label>
 			<Hint>Invasion into surrounding Structures include Optic Chiasm, Optic Nerve and Cavernous Sinus</Hint>
 			<ChoiceInfo>
@@ -97,10 +93,6 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition DataElementId="abletoevaluatecomposition" ComparisonValue="no"/> 
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
 				<ConditionalProperty>
 				<OrCondition>
 					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm"/> 
