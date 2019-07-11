@@ -312,7 +312,7 @@
 					<Label>Path-HCC</Label>
 				</Choice>
 				<Choice>
-					<Value>Path-Intrahepatic_Cholangiocarcinoma</Value>
+					<Value>Path-Intrahepatic</Value>
 					<Label>Path-Intrahepatic cholangiocarcinoma</Label>
 				</Choice>
 				<Choice>
@@ -485,19 +485,19 @@
 			<Label>What is the reason for LR-NC category?</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>Arterial_phase_images_mistimed</Value>
+					<Value>Arterial_phase_mistimed</Value>
 					<Label>Arterial phase images mistimed</Label>
 				</Choice>
 				<Choice>
-					<Value>Arterial_phase_images_degraded</Value>
+					<Value>Arterial_phase_degraded</Value>
 					<Label>Arterial phase images degraded by motion/artifact</Label>
 				</Choice>
 				<Choice>
-					<Value>Postarterial_phase_images_missing</Value>
+					<Value>Postarterial_phase_missing</Value>
 					<Label>Postarterial phase images missing</Label>
 				</Choice>
 				<Choice>
-					<Value>Postarterial_phase_images_degraded</Value>
+					<Value>Postarterial_phase_degraded</Value>
 					<Label>Postarterial phase images degraded by motion/artifact</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -2425,7 +2425,7 @@
 			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
-					<Value>US_visibility_as_discrete_nodule</Value>
+					<Value>US_visibility_discrete_nodule</Value>
 					<Label>US visibility as discrete nodule</Label>
 					<Hint>Unenhanced US visibility as discrete nodule or mass corresponding to CT- or MRI-detected observation</Hint>
 					<ReportText>US visibility as discrete nodule</ReportText>
@@ -2443,7 +2443,7 @@
 					<ReportText>Corona enhancement</ReportText>
 				</Choice>
 				<Choice>
-					<Value>Fat_sparing_in_solid_massFat sparing in solid mass</Value>
+					<Value>Fat_sparing_in_solid_mass</Value>
 					<Label>Fat sparing in solid mass</Label>
 					<Hint>Relative paucity of fat in solid mass relative to steatotic liver OR in inner nodule relative to steatotic outer nodule</Hint>
 					<ReportText>Fat sparing in solid mass</ReportText>
@@ -2467,13 +2467,13 @@
 					<ReportText>Iron sparing in solid mass</ReportText>
 				</Choice>
 				<Choice>
-					<Value>Transitional_phase_hypointensity</Value>
+					<Value>Transitional_intensity</Value>
 					<Label>Transitional phase hypointensity</Label>
 					<Hint>Intensity in the transitional phase unequivocally less, in whole or in part, than liver</Hint>
 					<ReportText>Transitional phase hypointensity</ReportText>
 				</Choice>
 				<Choice>
-					<Value>Hepatobiliary_phase_hypointensity</Value>
+					<Value>Hepatobiliary_hypointensity</Value>
 					<Label>Hepatobiliary phase hypointensity</Label>
 					<Hint>Intensity in the hepatobiliary phase unequivocally less, in whole or in part, than liver</Hint>
 					<ReportText>Hepatobiliary phase hypointensity</ReportText>
@@ -2497,7 +2497,7 @@
 					<ReportText>Mosaic architecture</ReportText>
 				</Choice>
 				<Choice>
-					<Value>Fat_in_mass_more_than_adjacent_liver</Value>
+					<Value>Fat_in_mass</Value>
 					<Label>Fat in mass, more than adjacent liver</Label>
 					<Hint>Excess fat within a mass, in whole or in part, relative to adjacent liver</Hint>
 					<ReportText>Fat in mass, more than adjacent liver</ReportText>
