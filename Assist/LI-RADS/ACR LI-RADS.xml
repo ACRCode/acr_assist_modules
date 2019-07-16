@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../CARDS_Schema_2.0.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 	<Metadata>
 		<Label>LI-RADS</Label>
@@ -17,8 +17,8 @@
 				<Version Value="1.0"></Version>
 				<Code Value="RDES5"></Code>
 				<Display Value="RDES5"></Display>
-				<Url Value="http://radelement.org/set/RDES5"></Url>
 				<UserSelected Value="false"></UserSelected>
+				<Url Value="http://radelement.org/set/RDES5"></Url>				
 			</Coding>
 		</CodableConcept>		
 		<Info>
@@ -1021,68 +1021,7 @@
 			</ConditionalProperties>
 		</NumericDataElement>
 		
-		<ComputedDataElement Id="patternInEnhancementCE">
-			<DecisionPoint>
-				
-				<Branch>
-					<AndCondition>
-						<OrCondition>
-							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>
-							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
-							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"/>
-						</OrCondition>
-						
-						<NotCondition>
-							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
-						</NotCondition>
-					</AndCondition>
-					<TextExpression>morethanone</TextExpression>
-				</Branch>
-				<Branch>
-					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
-					<TextExpression>none</TextExpression>
-				</Branch>
-				
-				<!-- <DefaultBranch> -->
-					<!-- <TextExpression>none</TextExpression> -->
-				<!-- </DefaultBranch> -->
-			</DecisionPoint>
-		</ComputedDataElement>
-		
 
-		
-		<ComputedDataElement Id="otherwiseCategoryCE">
-			<DecisionPoint>
-				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
-							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
-							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"/>
-						</AndCondition>
-
-						<AndCondition>
-							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
-							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
-							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"/>
-						</AndCondition>
-						
-						<AndCondition>
-							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
-							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
-							<LessThanOrEqualsCondition DataElementId="diameter" ComparisonValue="19"/>
-							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"/>
-							<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-						</AndCondition>
-					</OrCondition>
-					<TextExpression>LR5</TextExpression>
-				</Branch>
-				<DefaultBranch>
-					<TextExpression>none</TextExpression>
-				</DefaultBranch>
-			</DecisionPoint>
-		</ComputedDataElement>
-	
 		<MultiChoiceDataElement Id="WhichVein" IsRequired="true" AllowFreetext="true" DisplaySequence="22">
 		<Label>What vein or veins?</Label>
 		<ChoiceInfo>
@@ -1445,25 +1384,6 @@
 				</ConditionalProperty>
 			</ConditionalProperties>		
 		</MultiChoiceDataElement>
-		
-		<ComputedDataElement Id="lrmtargetoidmassCE">
-			<DecisionPoint>
-				<Branch>
-					<OrCondition>
-						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Rim_APHE"/>
-						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Peripheral_washout"/>
-						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Delayed_central_enhancement"/>
-						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Targetoid_on_DWI"/>
-						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Targetoid_on_transitional_phase"/>
-					</OrCondition>
-					<TextExpression>morethanone</TextExpression>
-				</Branch>
-				<DefaultBranch>
-					<TextExpression>none</TextExpression>
-				</DefaultBranch>
-			</DecisionPoint>
-		</ComputedDataElement>
-		
 		
 		<NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="30">		
 			<Label>Observation size (mm)</Label>
@@ -2095,120 +2015,7 @@
 			</ConditionalProperties>		
 		</ChoiceDataElement>
 		
-		<ComputedDataElement Id="thresholdgrowth">
-			<DecisionPoint>
-				<Branch>
-					<OrCondition>
-						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
-						<EqualCondition DataElementId="prior_ct_mri_6months" ComparisonValue="no"/>
-					</OrCondition>
-					<TextExpression>NA</TextExpression>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIf DataElementId="prior_ct_mri_6months_size_50percent_increase"></SectionIf>
-						<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="yes"/>
-					</AndCondition>
-					<TextExpression>Yes</TextExpression>
-				</Branch>
-				
-				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<SectionIf DataElementId="prior_observation"></SectionIf>
-							<EqualCondition DataElementId="prior_observation" ComparisonValue="no"/>
-						</AndCondition>
-						
-						<AndCondition>
-							<SectionIf DataElementId="prior_ct_mri_6months_size_50percent_increase"></SectionIf>
-							<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="no"/>
-						</AndCondition>			
-					</OrCondition>
-					<TextExpression>No</TextExpression>
-				</Branch>
-			</DecisionPoint>
-		</ComputedDataElement>
-		
-		<ComputedDataElement Id="washoutcapsulethreshold" >
-			<DecisionPoint>
-				<Branch>
-					<AndCondition>
-						<OrCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-							<SectionIfNot DataElementId="washout" />
-						</OrCondition>
-						
-						<OrCondition>
-							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-							<SectionIfNot DataElementId="capsule" />
-						</OrCondition>						
-						
-						<OrCondition>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
-							<SectionIfNot DataElementId="thresholdgrowth" />
-						</OrCondition>	
-					</AndCondition>
-					<TextExpression>none</TextExpression>
-				</Branch>
-				<Branch>
-					<OrCondition>
-						<AndCondition>
-							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="capsule" />
-							</OrCondition>
-							 <OrCondition>
-							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
-							 </OrCondition>	
-						</AndCondition>
-						
-						<AndCondition>
-							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
-							<OrCondition>
-								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="washout" />
-							</OrCondition>							
-							 <OrCondition>
-							 	<SectionIfNot DataElementId="thresholdgrowth" />
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
-								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
-							 </OrCondition>	
-						</AndCondition>
-						
-						<AndCondition>
-							<OrCondition>
-								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="washout" />
-							</OrCondition>
-							<OrCondition>
-								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
-								<SectionIfNot DataElementId="capsule" />
-							</OrCondition>							
-							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>
-						</AndCondition>
-					</OrCondition>
-					<TextExpression>one</TextExpression>
-				</Branch>
-				
-				<Branch>
-					<AndCondition>
-						<SectionIfNot DataElementId="washout" />
-						<SectionIfNot DataElementId="capsule" />
-						<SectionIfNot DataElementId="thresholdgrowth" />
-					</AndCondition>
-					<TextExpression>none</TextExpression>
-				</Branch>
-				
-				<DefaultBranch>
-					<TextExpression>twoormore</TextExpression>
-				</DefaultBranch>
-			</DecisionPoint>
-		</ComputedDataElement>
+
 		
 <!-- 		<NumericDataElement Id="prior_study_size" IsRequired="true" DisplaySequence="39" Unit="mm">		
 			<Label>Size on the prior study</Label>
@@ -2633,7 +2440,202 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 			</ConditionalProperties>
-		</MultiChoiceDataElement>		
+		</MultiChoiceDataElement>	
+
+
+		<ComputedDataElement Id="patternInEnhancementCE">
+			<DecisionPoint>
+				
+				<Branch>
+					<AndCondition>
+						<OrCondition>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="aphe"/>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="washout"/>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="similar_to_pretreatment"/>
+						</OrCondition>
+						
+						<NotCondition>
+							<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
+						</NotCondition>
+					</AndCondition>
+					<TextExpression>morethanone</TextExpression>
+				</Branch>
+				<Branch>
+					<ContainsCondition DataElementId="patternofenhancement" ComparisonValue="noneoftheabove"/>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				
+				<!-- <DefaultBranch> -->
+					<!-- <TextExpression>none</TextExpression> -->
+				<!-- </DefaultBranch> -->
+			</DecisionPoint>
+		</ComputedDataElement>
+			
+		<ComputedDataElement Id="lrmtargetoidmassCE">
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Rim_APHE"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Peripheral_washout"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Delayed_central_enhancement"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Targetoid_on_DWI"/>
+						<ContainsCondition DataElementId="lrmtargetoidmass" ComparisonValue="Targetoid_on_transitional_phase"/>
+					</OrCondition>
+					<TextExpression>morethanone</TextExpression>
+				</Branch>
+				<DefaultBranch>
+					<TextExpression>none</TextExpression>
+				</DefaultBranch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="thresholdgrowth">
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<EqualCondition DataElementId="prior_ct_mri" ComparisonValue="no"/>
+						<EqualCondition DataElementId="prior_ct_mri_6months" ComparisonValue="no"/>
+					</OrCondition>
+					<TextExpression>NA</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIf DataElementId="prior_ct_mri_6months_size_50percent_increase"></SectionIf>
+						<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="yes"/>
+					</AndCondition>
+					<TextExpression>Yes</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<OrCondition>
+						<AndCondition>
+							<SectionIf DataElementId="prior_observation"></SectionIf>
+							<EqualCondition DataElementId="prior_observation" ComparisonValue="no"/>
+						</AndCondition>
+						
+						<AndCondition>
+							<SectionIf DataElementId="prior_ct_mri_6months_size_50percent_increase"></SectionIf>
+							<EqualCondition DataElementId="prior_ct_mri_6months_size_50percent_increase" ComparisonValue="no"/>
+						</AndCondition>			
+					</OrCondition>
+					<TextExpression>No</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="washoutcapsulethreshold" >
+			<DecisionPoint>
+				<Branch>
+					<AndCondition>
+						<OrCondition>
+							<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="washout" />
+						</OrCondition>
+						
+						<OrCondition>
+							<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+							<SectionIfNot DataElementId="capsule" />
+						</OrCondition>						
+						
+						<OrCondition>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
+							<SectionIfNot DataElementId="thresholdgrowth" />
+						</OrCondition>	
+					</AndCondition>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				<Branch>
+					<OrCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="washout" ComparisonValue="yes"/>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>
+							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
+							 </OrCondition>	
+						</AndCondition>
+						
+						<AndCondition>
+							<EqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>							
+							 <OrCondition>
+							 	<SectionIfNot DataElementId="thresholdgrowth" />
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="No"/>
+								<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="NA"/>
+							 </OrCondition>	
+						</AndCondition>
+						
+						<AndCondition>
+							<OrCondition>
+								<EqualCondition DataElementId="washout" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="washout" />
+							</OrCondition>
+							<OrCondition>
+								<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
+								<SectionIfNot DataElementId="capsule" />
+							</OrCondition>							
+							<EqualCondition DataElementId="thresholdgrowth" ComparisonValue="Yes"/>
+						</AndCondition>
+					</OrCondition>
+					<TextExpression>one</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<AndCondition>
+						<SectionIfNot DataElementId="washout" />
+						<SectionIfNot DataElementId="capsule" />
+						<SectionIfNot DataElementId="thresholdgrowth" />
+					</AndCondition>
+					<TextExpression>none</TextExpression>
+				</Branch>
+				
+				<DefaultBranch>
+					<TextExpression>twoormore</TextExpression>
+				</DefaultBranch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="otherwiseCategoryCE">
+			<DecisionPoint>
+				<Branch>
+					<OrCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
+							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
+							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="twoormore"/>
+						</AndCondition>
+
+						<AndCondition>
+							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
+							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="20"/>
+							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"/>
+						</AndCondition>
+						
+						<AndCondition>
+							<EqualCondition DataElementId="arterialEnhancement" ComparisonValue="aphe"/>
+							<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="10"/>
+							<LessThanOrEqualsCondition DataElementId="diameter" ComparisonValue="19"/>
+							<EqualCondition DataElementId="washoutcapsulethreshold" ComparisonValue="one"/>
+							<NotEqualCondition DataElementId="capsule" ComparisonValue="yes"/>
+						</AndCondition>
+					</OrCondition>
+					<TextExpression>LR5</TextExpression>
+				</Branch>
+				<DefaultBranch>
+					<TextExpression>none</TextExpression>
+				</DefaultBranch>
+			</DecisionPoint>
+		</ComputedDataElement>
+			
 	</DataElements>
 
 	<Rules>
@@ -4530,7 +4532,7 @@
 				</ReportSection>
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>`
+						<ReportText Type="InsertPartialTemplate" Value="untreatedimpressiontext"></ReportText>
 						<ReportText Type="PlainText">LR-3 (intermediate probability of malignancy) in </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="segmentlocation"></ReportText>
 						<ReportText Type="Newline"></ReportText>
