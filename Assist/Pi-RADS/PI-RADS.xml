@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="../../ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 	<Metadata>
 		<Label>ACR PI-RADS</Label>
@@ -20,8 +20,20 @@
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
 					<Location>PI-RADS assessment for TZ.jpg</Location>
+					<Label>PI-RADS</Label>
+				</Diagram>
+				
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
 					<Location>PI-RADS Zoning2.1.jpg</Location>
+					<Label>PI-RADS</Label>
+				</Diagram>
+				
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
 					<Location>PI-RADS Assessment Category.jpg</Location>
+					<Label>PI-RADS</Label>
+				</Diagram>
+				
+				<Diagram DisplaySequence="4" IsKeyDiagram="true">
 					<Location>PI-RADS Assessment Cat3.jpg</Location>
 					<Label>PI-RADS</Label>
 				</Diagram>
@@ -1717,7 +1729,8 @@
 
 	<Rules>
 		<DecisionPoint Id="decisionPointAddtr1_1">
-			<Label>Main branch</Label>
+			<!--Main branch Nodule 1-->
+			<Label>Main branch - Nodule1</Label>
 
 			<Branch>
 				<Label>PZ</Label>
@@ -1996,21 +2009,18 @@
 				</DecisionPoint>
 			</Branch>
 
-		</DecisionPoint>
-
-		<DecisionPoint Id="decisionPointAddtr1_2">
-			<Label>Main branch</Label>
-
+			<!--Main branch Nodule 2-->
+			
 			<Branch>
 				<Label>PZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
 					<SectionIf DataElementId="DCE_2" ></SectionIf>
 					<SectionIf DataElementId="T2WPZ_2" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_2">
 					<Label>decisionPointPZ_2</Label>
 					<Branch>
@@ -2018,13 +2028,13 @@
 						<EqualCondition DataElementId="DWI_2" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_2" ComparisonValue="2"/>
 						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2033,7 +2043,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2045,7 +2055,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_2" ComparisonValue="5"/>
@@ -2053,17 +2063,17 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>TZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
 					<SectionIf DataElementId="DCE_2" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_2" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointTZ_2">
 					<Label>decisionPointTZ_2</Label>
 					<Branch>
@@ -2071,14 +2081,14 @@
 						<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="2"/>
-
+						
 						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2087,7 +2097,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2099,7 +2109,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="5"/>
@@ -2107,10 +2117,10 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DWI</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
@@ -2118,7 +2128,7 @@
 					<SectionIf DataElementId="T2WPZ_2" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_2" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DWI_2">
 					<Label>decisionPointPZ_TZ_NO_DWI_2</Label>
 					<Branch>
@@ -2129,7 +2139,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -2138,19 +2148,19 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
 							<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DWI_2" ComparisonValue="6"/>
 							<EqualCondition DataElementId="DCE_2" ComparisonValue="1"/>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2158,7 +2168,7 @@
 								<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DWI_2" ComparisonValue="6"/>
 								<EqualCondition DataElementId="DCE_2" ComparisonValue="2"/>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="DWI_2" ComparisonValue="6"/>
@@ -2167,18 +2177,18 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="5"/>
-						<EndPointRef EndPointId="VeryHigh"></EndPointRef>
+						<EndPointRef EndPointId="VeryHigh_2"></EndPointRef>
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DCE</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
@@ -2186,7 +2196,7 @@
 					<SectionIf DataElementId="T2WPZ_2" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_2" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DCE_2">
 					<Label>decisionPointPZ_TZ_NO_DCE_2 Point 1</Label>
 					<Branch>
@@ -2200,7 +2210,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -2212,8 +2222,8 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_2"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2223,11 +2233,11 @@
 								<EqualCondition DataElementId="DCE_2" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DCE_2" ComparisonValue="4"/>
 							</OrCondition>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2238,7 +2248,7 @@
 									<EqualCondition DataElementId="DCE_2" ComparisonValue="3"/>
 									<EqualCondition DataElementId="DCE_2" ComparisonValue="4"/>
 								</OrCondition>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="T2WTZ_2" ComparisonValue="4"/>
@@ -2250,7 +2260,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_2"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<AndCondition>
@@ -2264,22 +2274,19 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
-		</DecisionPoint>
-
-		<DecisionPoint Id="decisionPointAddtr1_3">
-			<Label>Main branch</Label>
-
+			
+			<!--Main branch Nodule 3-->
+			
 			<Branch>
 				<Label>PZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
 					<SectionIf DataElementId="DCE_3" ></SectionIf>
 					<SectionIf DataElementId="T2WPZ_3" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_3">
 					<Label>decisionPointPZ_3</Label>
 					<Branch>
@@ -2287,13 +2294,13 @@
 						<EqualCondition DataElementId="DWI_3" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_3" ComparisonValue="2"/>
 						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2302,7 +2309,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2314,7 +2321,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_3" ComparisonValue="5"/>
@@ -2322,17 +2329,17 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>TZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
 					<SectionIf DataElementId="DCE_3" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_3" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointTZ_3">
 					<Label>decisionPointTZ_3</Label>
 					<Branch>
@@ -2340,14 +2347,14 @@
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="2"/>
-
+						
 						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2356,7 +2363,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2368,7 +2375,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="5"/>
@@ -2376,10 +2383,10 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DWI</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
@@ -2387,7 +2394,7 @@
 					<SectionIf DataElementId="T2WPZ_3" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_3" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DWI_3">
 					<Label>decisionPointPZ_TZ_NO_DWI_3</Label>
 					<Branch>
@@ -2398,7 +2405,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -2407,19 +2414,19 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
 							<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DWI_3" ComparisonValue="6"/>
 							<EqualCondition DataElementId="DCE_3" ComparisonValue="1"/>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2427,7 +2434,7 @@
 								<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DWI_3" ComparisonValue="6"/>
 								<EqualCondition DataElementId="DCE_3" ComparisonValue="2"/>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="DWI_3" ComparisonValue="6"/>
@@ -2436,7 +2443,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="5"/>
@@ -2444,10 +2451,10 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DCE</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
@@ -2455,7 +2462,7 @@
 					<SectionIf DataElementId="T2WPZ_3" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_3" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DCE_3">
 					<Label>decisionPointPZ_TZ_NO_DCE_3 Point 1</Label>
 					<Branch>
@@ -2469,7 +2476,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -2481,8 +2488,8 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_3"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2492,11 +2499,11 @@
 								<EqualCondition DataElementId="DCE_3" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DCE_3" ComparisonValue="4"/>
 							</OrCondition>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2507,7 +2514,7 @@
 									<EqualCondition DataElementId="DCE_3" ComparisonValue="3"/>
 									<EqualCondition DataElementId="DCE_3" ComparisonValue="4"/>
 								</OrCondition>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="T2WTZ_3" ComparisonValue="4"/>
@@ -2519,7 +2526,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_3"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<AndCondition>
@@ -2533,22 +2540,19 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
-		</DecisionPoint>
-
-		<DecisionPoint Id="decisionPointAddtr1_4">
-			<Label>Main branch</Label>
-
+			
+			<!--Main branch Nodule 4-->
+			
 			<Branch>
 				<Label>PZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
 					<SectionIf DataElementId="DCE_4" ></SectionIf>
 					<SectionIf DataElementId="T2WPZ_4" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_4">
 					<Label>decisionPointPZ_4</Label>
 					<Branch>
@@ -2556,13 +2560,13 @@
 						<EqualCondition DataElementId="DWI_4" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_4" ComparisonValue="2"/>
 						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2571,7 +2575,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2583,7 +2587,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_4" ComparisonValue="5"/>
@@ -2591,17 +2595,17 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>TZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
 					<SectionIf DataElementId="DCE_4" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_4" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointTZ_4">
 					<Label>decisionPointTZ_4</Label>
 					<Branch>
@@ -2609,14 +2613,14 @@
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="2"/>
-
+						
 						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2625,7 +2629,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2637,7 +2641,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="5"/>
@@ -2645,10 +2649,10 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DWI</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
@@ -2656,7 +2660,7 @@
 					<SectionIf DataElementId="T2WPZ_4" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_4" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DWI_4">
 					<Label>decisionPointPZ_TZ_NO_DWI_4</Label>
 					<Branch>
@@ -2667,7 +2671,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -2676,19 +2680,19 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
 							<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DWI_4" ComparisonValue="6"/>
 							<EqualCondition DataElementId="DCE_4" ComparisonValue="1"/>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2696,7 +2700,7 @@
 								<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DWI_4" ComparisonValue="6"/>
 								<EqualCondition DataElementId="DCE_4" ComparisonValue="2"/>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="DWI_4" ComparisonValue="6"/>
@@ -2705,7 +2709,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="5"/>
@@ -2713,10 +2717,10 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DCE</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
@@ -2724,7 +2728,7 @@
 					<SectionIf DataElementId="T2WPZ_4" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_4" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DCE_4">
 					<Label>decisionPointPZ_TZ_NO_DCE_4 Point 1</Label>
 					<Branch>
@@ -2738,7 +2742,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -2750,8 +2754,8 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_4"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2761,11 +2765,11 @@
 								<EqualCondition DataElementId="DCE_4" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DCE_4" ComparisonValue="4"/>
 							</OrCondition>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2776,7 +2780,7 @@
 									<EqualCondition DataElementId="DCE_4" ComparisonValue="3"/>
 									<EqualCondition DataElementId="DCE_4" ComparisonValue="4"/>
 								</OrCondition>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="T2WTZ_4" ComparisonValue="4"/>
@@ -2788,7 +2792,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_4"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<AndCondition>
@@ -2802,21 +2806,19 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
-		</DecisionPoint>
-		<DecisionPoint Id="decisionPointAddtr1_5">
-			<Label>Main branch</Label>
-
+		
+			<!--Main branch Nodule 5-->
+			
 			<Branch>
 				<Label>PZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
 					<SectionIf DataElementId="DCE_5" ></SectionIf>
 					<SectionIf DataElementId="T2WPZ_5" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_5">
 					<Label>decisionPointPZ_5</Label>
 					<Branch>
@@ -2824,13 +2826,13 @@
 						<EqualCondition DataElementId="DWI_5" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="DWI_5" ComparisonValue="2"/>
 						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2839,7 +2841,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2851,7 +2853,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="DWI_5" ComparisonValue="5"/>
@@ -2859,17 +2861,17 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>TZ</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
 					<SectionIf DataElementId="DCE_5" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_5" ></SectionIf>
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointTZ_5">
 					<Label>decisionPointTZ_5</Label>
 					<Branch>
@@ -2877,14 +2879,14 @@
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="1"/>
 						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="2"/>
-
+						
 						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -2893,7 +2895,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2905,7 +2907,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="5"/>
@@ -2913,10 +2915,10 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DWI</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
@@ -2924,7 +2926,7 @@
 					<SectionIf DataElementId="T2WPZ_5" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_5" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DWI_5">
 					<Label>decisionPointPZ_TZ_NO_DWI_5</Label>
 					<Branch>
@@ -2935,7 +2937,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -2944,19 +2946,19 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
 							<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="3"/>
 							<EqualCondition DataElementId="DWI_5" ComparisonValue="6"/>
 							<EqualCondition DataElementId="DCE_5" ComparisonValue="1"/>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -2964,7 +2966,7 @@
 								<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DWI_5" ComparisonValue="6"/>
 								<EqualCondition DataElementId="DCE_5" ComparisonValue="2"/>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="DWI_5" ComparisonValue="6"/>
@@ -2973,7 +2975,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="5"/>
@@ -2981,10 +2983,10 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 			<Branch>
 				<Label>PZ and TZ without DCE</Label>
-
+				
 				<AndCondition>
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
@@ -2992,7 +2994,7 @@
 					<SectionIf DataElementId="T2WPZ_5" ></SectionIf>
 					<SectionIf DataElementId="T2WTZ_5" ></SectionIf>					
 				</AndCondition>
-
+				
 				<DecisionPoint Id="decisionPointPZ_TZ_NO_DCE_5">
 					<Label>decisionPointPZ_TZ_NO_DCE_5 Point 1</Label>
 					<Branch>
@@ -3006,7 +3008,7 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Verylow_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 2</Label>
 						<AndCondition>
@@ -3018,8 +3020,8 @@
 						</AndCondition>
 						<EndPointRef EndPointId="Low_5"></EndPointRef>
 					</Branch>
-
-
+					
+					
 					<Branch>
 						<Label>Overall Point 3</Label>
 						<AndCondition>
@@ -3029,11 +3031,11 @@
 								<EqualCondition DataElementId="DCE_5" ComparisonValue="3"/>
 								<EqualCondition DataElementId="DCE_5" ComparisonValue="4"/>
 							</OrCondition>
-
+							
 						</AndCondition>
 						<EndPointRef EndPointId="Intermediate_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 4</Label>
 						<OrCondition>
@@ -3044,7 +3046,7 @@
 									<EqualCondition DataElementId="DCE_5" ComparisonValue="3"/>
 									<EqualCondition DataElementId="DCE_5" ComparisonValue="4"/>
 								</OrCondition>
-
+								
 							</AndCondition>
 							<AndCondition>
 								<EqualCondition DataElementId="T2WTZ_5" ComparisonValue="4"/>
@@ -3056,7 +3058,7 @@
 						</OrCondition>
 						<EndPointRef EndPointId="High_5"></EndPointRef>
 					</Branch>
-
+					
 					<Branch>
 						<Label>Overall Point 5</Label>
 						<AndCondition>
@@ -3070,7 +3072,7 @@
 					</Branch>
 				</DecisionPoint>
 			</Branch>
-
+			
 		</DecisionPoint>
 
 	</Rules>
@@ -3078,7 +3080,6 @@
 	<EndPoints>
 
 		<!-- nodule 1 -->
-		
 		
 		<TemplatePartial Id="nodule1Findings_1">
 			<Branch>
@@ -3103,6 +3104,106 @@
 				<ReportText Type="InsertDataElementValue" Value="Diameter_1"/>
 				<ReportText Type="Newline"/>
 
+			</Branch>
+		</TemplatePartial>
+
+		<TemplatePartial Id="nodule1Findings_2">
+			<Branch>
+				<ReportText Type="PlainText"> Nodule Number - </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_2"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_2"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_2"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_2"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_2"/>
+				<ReportText Type="Newline"/>				
+			</Branch>
+		</TemplatePartial>	
+
+		<TemplatePartial Id="nodule1Findings_3">
+			<Branch>
+				
+				
+				<ReportText Type="PlainText"> Nodule Number - </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_3"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_3"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_3"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_3"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_3"/>
+				<ReportText Type="Newline"/>				
+			</Branch>
+		</TemplatePartial>		
+
+		<TemplatePartial Id="nodule1Findings_4">
+			<Branch>
+				<ReportText Type="PlainText"> Nodule Number - </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_4"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_4"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_4"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_4"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_4"/>
+				<ReportText Type="Newline"/>				
+			</Branch>
+		</TemplatePartial>	
+
+		<TemplatePartial Id="nodule1Findings_5">
+			<Branch>
+				
+				<ReportText Type="PlainText"> Nodule Number - </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="nodulenumber_5"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">Zone selection: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Zoneselection_5"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Other zones: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Other_zones_5"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Is this index lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Index_5"/>
+				<ReportText Type="Newline"/>
+				
+				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Diameter_5"/>
+				<ReportText Type="Newline"/>
+				
 			</Branch>
 		</TemplatePartial>
 
@@ -3189,33 +3290,6 @@
 
 
 		<!-- nodule 2 -->
-
-		<TemplatePartial Id="nodule1Findings_2">
-			<Branch>
-                 
-				 
-		        <ReportText Type="PlainText"> Nodule Number - </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_2"></ReportText>
-				<ReportText Type="Newline"></ReportText>
-				 
-				<ReportText Type="PlainText">Zone selection: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Zoneselection_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other zones: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Other_zones_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Is this index lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Index_2"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Diameter_2"/>
-				<ReportText Type="Newline"/>				
-			</Branch>
-		</TemplatePartial>		   
-
 		<EndPoint Id="Verylow_2">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
@@ -3298,32 +3372,6 @@
 
 
 		<!-- nodule 3 -->
-
-		<TemplatePartial Id="nodule1Findings_3">
-			<Branch>
-			
-                
-		        <ReportText Type="PlainText"> Nodule Number - </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_3"></ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">Zone selection: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Zoneselection_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other zones: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Other_zones_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Is this index lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Index_3"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Diameter_3"/>
-				<ReportText Type="Newline"/>				
-			</Branch>
-		</TemplatePartial>		   
 
 		<EndPoint Id="Verylow_3">
 			<Label>PIRADS-1</Label>
@@ -3408,33 +3456,6 @@
 
 		<!-- nodule 4 -->
 
-		<TemplatePartial Id="nodule1Findings_4">
-			<Branch>
-                
-				
-		        <ReportText Type="PlainText"> Nodule Number - </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_4"></ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">Zone selection: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Zoneselection_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other zones: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Other_zones_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Is this index lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Index_4"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Diameter_4"/>
-				<ReportText Type="Newline"/>				
-			</Branch>
-		</TemplatePartial>		
-
-
 		<EndPoint Id="Verylow_4">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
@@ -3516,34 +3537,6 @@
 		</EndPoint>	
 
 		<!-- nodule 5 -->
-
-		<TemplatePartial Id="nodule1Findings_5">
-			<Branch>
-                
-		        <ReportText Type="PlainText"> Nodule Number - </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="nodulenumber_5"></ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">Zone selection: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Zoneselection_5"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Other zones: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Other_zones_5"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Is this index lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Index_5"/>
-				<ReportText Type="Newline"/>
-
-				<ReportText Type="PlainText">Diameter of the lesion: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Diameter_5"/>
-				<ReportText Type="Newline"/>
-
-			</Branch>
-		</TemplatePartial>	
-
-
 		<EndPoint Id="Verylow_5">
 			<Label>PIRADS-1</Label>
 			<ReportSections>
