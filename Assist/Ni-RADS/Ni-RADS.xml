@@ -7,7 +7,7 @@
 		<SchemaVersion>2.0</SchemaVersion>
 		<ModuleVersion>1.0</ModuleVersion>
 		<CreatedDate>2019-07-02</CreatedDate>
-		<LastModifiedDate>2019-07-09</LastModifiedDate>
+		<LastModifiedDate>2019-07-22</LastModifiedDate>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
 
@@ -58,7 +58,20 @@
 			<Label>What is the image number?</Label>
 			<Minimum>1 </Minimum>
 		</IntegerDataElement>
-		<ChoiceDataElement Id="Whereisthenode" IsRequired="true" DisplaySequence="2">
+		<ChoiceDataElement Id="PriorImage" IsRequired="true" DisplaySequence="2">
+			<Label>Is prior image available?</Label>
+				<ChoiceInfo>
+					<Choice>
+						<Value>Yes</Value>
+						<Label>Yes </Label>
+					</Choice>
+					<Choice>
+						<Value>No</Value>
+						<Label>No</Label>
+					</Choice>
+				 </ChoiceInfo>
+		 </ChoiceDataElement>
+		<ChoiceDataElement Id="Whereisthenode" IsRequired="true" DisplaySequence="3">
 			<Label>Where is the node?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -71,7 +84,7 @@
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="Whatistheprimarysitenodetype" DisplaySequence="3">
+		<ChoiceDataElement Id="Whatistheprimarysitenodetype" DisplaySequence="4">
 			<Label>What is the primary site node type?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -97,7 +110,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="Whatisthenecknodetype" DisplaySequence="4">
+		<ChoiceDataElement Id="Whatisthenecknodetype" DisplaySequence="5">
 			<Label>What is the neck node type ?  </Label>
 			<ChoiceInfo>
 				<Choice>
@@ -123,7 +136,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="ConditionofthisSuperficialmucosalnode" DisplaySequence="5">
+		<ChoiceDataElement Id="ConditionofthisSuperficialmucosalnode" DisplaySequence="6">
 			<Label>Condition of this Superficial/mucosal node </Label>
 			<ChoiceInfo>
 				<Choice>
@@ -152,7 +165,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="ConditionofthisDeepnode" DisplaySequence="6">
+		<ChoiceDataElement Id="ConditionofthisDeepnode" DisplaySequence="7">
 			<Label>Condition of this Deep node </Label>
 			<ChoiceInfo>
 				<Choice>
@@ -184,7 +197,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE" DisplaySequence="7">
+		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE" DisplaySequence="8">
 			<Label>Does the node have new necrosis or ENE ?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -209,7 +222,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="neworenlarginnode" DisplaySequence="8">
+		<ChoiceDataElement Id="neworenlarginnode" DisplaySequence="9">
 			<Label>Condition of this Residual, new or enlarging node </Label>
 			<ChoiceInfo>
 				<Choice>
@@ -249,6 +262,11 @@
 	<Rules>
 		<DecisionPoint Id="Category-DP">
 			<Label>Where is the node</Label>
+			<Branch>
+				<Label>incomplete</Label>
+				<EqualCondition DataElementId="PriorImage" ComparisonValue="No"/>
+				<EndPointRef EndPointId="Cat0Incomplete"/>
+			</Branch>
 			<Branch>
 				<Label>Neck</Label>
 				<EqualCondition DataElementId="Whereisthenode" ComparisonValue="NeckNode"/>
@@ -389,7 +407,7 @@
 					<Branch>
 						<ReportText Type="PlainText">Category 0: Incomplete</ReportText>
 						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* New baseline study without any prior imaging available AND knowledge that prior imaging exists and will become available as compariso</ReportText>
+						<ReportText Type="PlainText">* New baseline study without any prior imaging available AND knowledge that prior imaging exists and will become available as comparison</ReportText>
 						<ReportText Type="Newline" />
 					</Branch>
 				</ReportSection>
