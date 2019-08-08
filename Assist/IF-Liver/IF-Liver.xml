@@ -1,294 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-model href="../../ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
-<Metadata>
-<Label>IF-Liver</Label>
-<ID>IF-Liver</ID>
-<SchemaVersion>2.0 </SchemaVersion>
-<ModuleVersion>1.0 </ModuleVersion>
-<CreatedDate>2019-07-31 </CreatedDate>
-<LastModifiedDate>2019-07-31 </LastModifiedDate>
-<DevelopedBy>American College of Radiology </DevelopedBy>
-<CodableConcept />
-<Info>
-<Description>IF-Liver </Description>
-<References />
-<Diagrams>
-<Diagram DisplaySequence="1" IsKeyDiagram="false">
-<Location>IF-Liver diagram.PNG </Location>
-<Label>IF-Liver diagram </Label>
- </Diagram>
- </Diagrams>
-<Contact>
-<Name>Natalia Farish </Name>
-<Institution>American College of Radiology </Institution>
- </Contact>
- </Info>
-<Ontology>
-<AnatomicRegions />
-<PossibleDiagnoses />
- </Ontology>
-<ApplicableExams />
-<ApplicableSexes Value="Male" />
-<ApplicableAgeGroups />
-<TextCues>
-<ContextPhrases />
-<KeyWords />
-<NegationPhrases />
- </TextCues>
-<VoiceActivation />
- </Metadata>
- 
- 
- 
-<DataElements>
+	<Metadata>
+		<Label>IF-Liver</Label>
+		<ID>IF-Liver</ID>
+		<SchemaVersion>2.0 </SchemaVersion>
+		<ModuleVersion>1.0 </ModuleVersion>
+		<CreatedDate>2019-07-31 </CreatedDate>
+		<LastModifiedDate>2019-07-31 </LastModifiedDate>
+		<DevelopedBy>American College of Radiology </DevelopedBy>
+		<CodableConcept />
+		<Info>
+			<Description>IF-Liver </Description>
+			<References />
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="false">
+					<Location>IF-Liver diagram.PNG </Location>
+					<Label>IF-Liver diagram </Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>Natalia Farish </Name>
+				<Institution>American College of Radiology </Institution>
+			</Contact>
+		</Info>
+		<Ontology>
+			<AnatomicRegions />
+			<PossibleDiagnoses />
+		</Ontology>
+		<ApplicableExams />
+		<ApplicableSexes Value="Male" />
+		<ApplicableAgeGroups />
+		<TextCues>
+			<ContextPhrases />
+			<KeyWords />
+			<NegationPhrases />
+		</TextCues>
+		<VoiceActivation />
+	</Metadata>
 
 
-<ChoiceDataElement Id="Incidentallivermasssize" IsRequired="true" DisplaySequence="1">
-<Label>Incidental liver mass size </Label>
-<ChoiceInfo>
-<Choice>
-<Value>1cm</Value>
-<Label> &lt; 1 cm </Label>
- </Choice>
-<Choice>
-<Value>1015cm</Value>
-<Label>1.0 - 1.5 cm </Label>
- </Choice>
-<Choice>
-<Value>15cm</Value>
-<Label> &gt; 1.5 cm </Label>
- </Choice>
- </ChoiceInfo>
- </ChoiceDataElement>
- 
- 
-<ChoiceDataElement Id="Patientriskcategory" IsRequired="true" DisplaySequence="2">
-<Label>Patient risk category</Label>
-<ChoiceInfo>
-<Choice>
-<Value>Lowriskpatient</Value>
-<Label>Low-risk patient</Label>
- </Choice>
-<Choice>
-<Value>Highriskpatient</Value>
-<Label>High-risk patient </Label>
- </Choice>
- </ChoiceInfo>
- <ConditionalProperties>				
+
+	<DataElements>
+
+		<NumericDataElement Id="mass_size" IsRequired="true" DisplaySequence="1" Unit="mm">
+			<Label>Incidental liver mass size  </Label>
+			<Minimum>0.1</Minimum>
+			<Maximum>10</Maximum>
+		</NumericDataElement>
+
+		<ChoiceDataElement Id="Imagingfeatures" IsRequired="true" DisplaySequence="2">
+			<Label>Imaging features</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Benignimagingfeatures</Value>
+					<Label>Benign imaging features⁵ </Label>
+				</Choice>
+				<Choice>
+					<Value>Suspiciousimagingfeatures</Value>
+					<Label>Suspicious imaging features⁶ </Label>
+				</Choice>
+				<Choice>
+					<Value>Flashfillingimagingfeature</Value>
+					<Label>&apos;Flash-filling&apos; imaging feature⁷ </Label>
+				</Choice>
+				<Choice>
+					<Value>SuspiciousFlashfillingimagingfeature</Value>
+					<Label>Suspicious or &apos;Flash-filling&apos; imaging feature⁶ ⁷ ⁸ </Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>				
 				<ConditionalProperty>
-					<OrCondition>		
-						<EqualCondition DataElementId="Incidentallivermasssize" ComparisonValue="1015cm"/>
-						<EqualCondition DataElementId="Incidentallivermasssize" ComparisonValue="15cm"/>
-					</OrCondition>
+					<LessThanCondition DataElementId="mass_size" ComparisonValue="1"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-			</ConditionalProperties>
- </ChoiceDataElement>
- 
- 
-<ChoiceDataElement Id="Imagingfeatures" IsRequired="true" DisplaySequence="3">
-<Label>Imaging features</Label>
-<ChoiceInfo>
-<Choice>
-<Value>Benignimagingfeatures</Value>
-<Label>Benign imaging features </Label>
- </Choice>
-<Choice>
-<Value>Suspiciousimagingfeatures</Value>
-<Label>Suspicious imaging features </Label>
- </Choice>
-<Choice>
-<Value>Flashfillingimagingfeature</Value>
-<Label>&apos;Flash-filling&apos; imaging feature </Label>
- </Choice>
- </ChoiceInfo>
- <ConditionalProperties>				
 				<ConditionalProperty>
-					<OrCondition>		
-						<EqualCondition DataElementId="Incidentallivermasssize" ComparisonValue="1cm"/>
-						<EqualCondition DataElementId="Incidentallivermasssize" ComparisonValue="15cm"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
+					<GreaterThanCondition DataElementId="mass_size" ComparisonValue="1.5"/>
+					<ChoiceNotRelevant ChoiceValue="Suspiciousimagingfeatures"/>
+					<ChoiceNotRelevant ChoiceValue="Flashfillingimagingfeature"/>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<GreaterThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1"/>
+					<LessThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1.5"/>
+					<ChoiceNotRelevant ChoiceValue="SuspiciousFlashfillingimagingfeature"/>
 				</ConditionalProperty>
 			</ConditionalProperties>
- </ChoiceDataElement>
- 
- <ChoiceDataElement Id="Imagingfeatures2" IsRequired="true" DisplaySequence="4">
-<Label>Imaging features</Label>
-<ChoiceInfo>
-<Choice>
-<Value>Benignimagingfeatures</Value>
-<Label>Benign imaging features </Label>
- </Choice>
- <Choice>
-<Value>SusporFlashfillingimagingfeature</Value>
-<Label>Suspicious or &apos;Flash-filling&apos; imaging feature </Label>
- </Choice>
- </ChoiceInfo>
- <ConditionalProperties>				
-				<ConditionalProperty>
-					<OrCondition>		
-						<EqualCondition DataElementId="Incidentallivermasssize" ComparisonValue="1cm"/>
-						<EqualCondition DataElementId="Incidentallivermasssize" ComparisonValue="1015cm"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
- </ChoiceDataElement>
- 
- <ChoiceDataElement Id="Patientriskcategory2" IsRequired="true" DisplaySequence="5">
-<Label>Patient risk category</Label>
-<ChoiceInfo>
-<Choice>
-<Value>Lowriskpatient</Value>
-<Label>Low-risk patient</Label>
- </Choice>
-<Choice>
-<Value>Highriskpatient</Value>
-<Label>High-risk patient </Label>
- </Choice>
- </ChoiceInfo>
- <ConditionalProperties>				
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="Patientriskcategory" IsRequired="true" DisplaySequence="3">
+			<Label>Patient risk category</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Lowriskpatient</Value>
+					<Label>Low-risk patient²</Label>
+				</Choice>
+				<Choice>
+					<Value>Highriskpatient</Value>
+					<Label>High-risk patient³ </Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>		
 						<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Benignimagingfeatures"/>
 						<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Suspiciousimagingfeatures"/>
-						<EqualCondition DataElementId="Imagingfeatures2" ComparisonValue="Benignimagingfeatures"/>
-						<EqualCondition DataElementId="Incidentallivermasssize" ComparisonValue="1cm"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 			</ConditionalProperties>
- </ChoiceDataElement>
- 
- </DataElements>
- 
- 
- 
- <Rules>
-	<DecisionPoint Id="IF-Liver">
-	<Label>IF-Liver</Label>
-	<Branch>
-		<Label>Benign</Label>
-		<OrCondition>
-			<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Lowriskpatient"/>
-			<EqualCondition DataElementId="Patientriskcategory2" ComparisonValue="Lowriskpatient"/>
-			</OrCondition>	
-			<EndPointRef EndPointId="Benign"></EndPointRef>
-		
-	 </Branch>
-	 
-	 <Branch>
-		<Label>Follow</Label>
-			<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Highriskpatient"/>
-			<EndPointRef EndPointId="Follow"></EndPointRef>
-	 </Branch>
-	
-	<Branch>
-		<Label>Benign1</Label>
-		<OrCondition>
-			<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Benignimagingfeatures"/>
-			<EqualCondition DataElementId="Imagingfeatures2" ComparisonValue="Benignimagingfeatures"/>
-			</OrCondition>
-			<EndPointRef EndPointId="Benign1"></EndPointRef>
-	 </Branch>
-	 
-	 <Branch>
-		<Label>Suspicious</Label>
-		<AndCondition>
-			<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Suspiciousimagingfeatures"/>
-			<EqualCondition DataElementId="Imagingfeatures2" ComparisonValue="Suspiciousimagingfeatures"/>
+		</ChoiceDataElement>
 
-         </AndCondition>
-			<EndPointRef EndPointId="Suspicious"></EndPointRef>
-	 </Branch>
-	 
-	 <Branch>
-		<Label>Suspicious</Label>
-			<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Flashfillingimagingfeature"/>
-			<EndPointRef EndPointId="Suspicious"></EndPointRef>
-	 </Branch>
-	 
-	
-	 
-	 
-	 <Branch>
-		<Label>High_risk</Label>
-		   <AndCondition>
-			<EqualCondition DataElementId="Patientriskcategory2" ComparisonValue="Highriskpatient"/>
-           </AndCondition>
-			<EndPointRef EndPointId="High_risk"></EndPointRef>
-	 </Branch>
-	 
-	 
-	 </DecisionPoint>
-    </Rules>
+	</DataElements>
 
-	
-   <EndPoints>
+	<Rules>
+		<DecisionPoint Id="IF-Liver">
+			<Label>IF-Liver</Label>
+
+			<Branch>
+				<Label>Benign</Label>
+				<OrCondition>
+					<AndCondition>
+						<LessThanCondition DataElementId="mass_size" ComparisonValue="1"/>
+						<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Lowriskpatient"/>
+					</AndCondition>
+					<AndCondition>
+						<GreaterThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1"/>
+						<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Benignimagingfeatures"/>
+					</AndCondition>
+					<AndCondition>
+						<GreaterThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1"/>
+						<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Flashfillingimagingfeature"/>
+						<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Lowriskpatient"/>
+					</AndCondition>
+				</OrCondition>
+				<EndPointRef EndPointId="BenignNoFolloup"></EndPointRef>
+			</Branch>
+
+			<Branch>
+				<Label>follow-up MRI</Label>
+				<AndCondition>
+					<LessThanCondition DataElementId="mass_size" ComparisonValue="1"/>
+					<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Highriskpatient"/>
+				</AndCondition>
+				<EndPointRef EndPointId="FollowUpMRI"></EndPointRef>
+			</Branch>
+
+			<Branch>
+				<Label>Hepatic MRI</Label>
+
+				<OrCondition>
+					<AndCondition>
+						<GreaterThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1"/>
+						<LessThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1.5"/>
+						<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Suspiciousimagingfeatures"/>
+					</AndCondition>					
+					<AndCondition>
+						<GreaterThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1"/>
+						<LessThanOrEqualsCondition DataElementId="mass_size" ComparisonValue="1.5"/>
+						<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="Flashfillingimagingfeature"/>
+						<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Highriskpatient"/>
+					</AndCondition>					
+				</OrCondition>
+				<EndPointRef EndPointId="HepaticMRI"></EndPointRef>
+			</Branch>
+
+			<Branch>
+				<Label>Hepatic MRI8</Label>
+				<AndCondition>
+					<GreaterThanCondition DataElementId="mass_size" ComparisonValue="1.5"/>
+					<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="SuspiciousFlashfillingimagingfeature"/>
+					<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Lowriskpatient"/>
+				</AndCondition>		
+				<EndPointRef EndPointId="HepaticMRI8"></EndPointRef>
+			</Branch>
+
+			<Branch>
+				<Label>Hepatic MRI Or Biopsy</Label>
+				<AndCondition>
+					<GreaterThanCondition DataElementId="mass_size" ComparisonValue="1.5"/>
+					<EqualCondition DataElementId="Imagingfeatures" ComparisonValue="SuspiciousFlashfillingimagingfeature"/>
+					<EqualCondition DataElementId="Patientriskcategory" ComparisonValue="Highriskpatient"/>
+				</AndCondition>		
+				<EndPointRef EndPointId="HepaticMRIOrBiopsy"></EndPointRef>
+			</Branch>
+
+		</DecisionPoint>
+	</Rules>
+
+
+	<EndPoints>
+
+		<TemplatePartial Id="common_findings_temp">
+			<Branch>
+				<ReportText Type="PlainText">Incidental liver mass size: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="mass_size"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
 			
-	 <EndPoint Id="Benign">
-	  	<Label>Benign</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="PlainText">Benign, no further follow-up.</ReportText>
-				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>
-	  
-	  <EndPoint Id="Follow">
-	  	<Label>Follow</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="PlainText">Follow-up MRI in 3-6 months.</ReportText>
-				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>
-	  
-	  <EndPoint Id="Benign1">
-	  	<Label>Benign1</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="PlainText">Benign, no further follow-up.</ReportText>
-				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>
-	  
-	 
-	  
-	<EndPoint Id="Suspicious">
-	  	<Label>Suspicious</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="PlainText">Hepatic MRI now.</ReportText>
-				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>	
-	 
-	
-	<EndPoint Id="High_risk">
-	  	<Label>High_risk</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="PlainText">Hepatic MRI now or biopsy.</ReportText>
-				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>		
+			<Branch>
+				<ReportText Type="PlainText">Imaging features: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Imagingfeatures"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<SectionIf DataElementId="Patientriskcategory" />
+				<ReportText Type="PlainText">Patient risk category: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Patientriskcategory"></ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>
+			
+		</TemplatePartial>
+
+		<EndPoint Id="BenignNoFolloup">
+			<Label>Benign</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="common_findings_temp"></ReportText>
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Benign, no further follow-up.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="FollowUpMRI">
+			<Label>Follow</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="common_findings_temp"></ReportText>
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Follow-up MRI in 3-6 months⁴</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		<EndPoint Id="HepaticMRI">
+			<Label>Hepatic MRI </Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="common_findings_temp"></ReportText>
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Hepatic MRI now</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>	
+
+		<EndPoint Id="HepaticMRI8">
+			<Label>Hepatic MRI </Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="common_findings_temp"></ReportText>
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Hepatic MRI now⁸</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>	
+
+
+		<EndPoint Id="HepaticMRIOrBiopsy">
+			<Label>High_risk</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="common_findings_temp"></ReportText>
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Hepatic MRI now or biopsy⁸,⁹</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>		
 	</EndPoints>
-
-
-
-	
 
 </ReportingModule>
