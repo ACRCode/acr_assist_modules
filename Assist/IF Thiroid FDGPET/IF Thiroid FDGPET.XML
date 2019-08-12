@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label> TIRADS </Label>
+		<ID>ACR_IF-TI-RADS FDG-PET</ID>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<CreatedDate>2018-06-20</CreatedDate>
+    	<LastModifiedDate>2018-11-30</LastModifiedDate>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		<!-- <RadElementSetID>MID2244</RadElementSetID> -->
+		<Info>
+		     <References>
+			    <Citation Url="IF-TI RADS FDG-PET">
+                IF-TI RADS FDG-PET</Citation>
+                <Citation Url="https://www.jacr.org/article/S1546-1440(14)00627-9/pdf">
+                ACR Assist</Citation>
+			 </References>
+			<Diagrams>
+		    <Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keyimage.jpeg</Location>
+					<Label>IF-TI-RADS FDG-PET</Label>
+		    </Diagram>
+			</Diagrams>
+			 
+			<Description>IF-TI-RADS for FDG PET</Description>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>IF TI-RADS</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+
+	</Metadata>
+	
+	<DataElements>
+		
+		<ChoiceDataElement Id="activitystatus" IsRequired="true" DisplaySequence="2" CdeId="RDE65">
+			<Label>Does the Incidental Thyroid Nodule detected on FDG-PET and other nuclear medicine scan have focal activity?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes, there is focal activity</Label>	
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No, ITN on accompanying PET/CT or PET/MRI without metabolic activity.</Label>	
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="type" IsRequired="false" DisplaySequence="3" CdeId="RDE65">
+			<Label>Type</Label>
+				
+			<ChoiceInfo>
+				<Choice>
+					<Value>limited</Value>
+					<Label>Limited life expectancy or severe comorbidities</Label>	
+				</Choice>
+				<Choice>
+					<Value>general</Value>
+					<Label>General population</Label>	
+				</Choice>
+			</ChoiceInfo>
+			
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="activitystatus" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			 </ConditionalProperties> 
+		</ChoiceDataElement>
+		
+	</DataElements>	
+	
+    <Rules>
+	
+	<DecisionPoint Id="incidentalthyroidnodule">
+     <Label>Incidental</Label>
+     
+     <Branch>
+		 <Label>unable</Label>			  
+				  <EqualCondition DataElementId="activitystatus" ComparisonValue="yes"/> 
+                  <DecisionPoint Id="unableto">	 
+				  <Label>unable</Label>
+					<Branch>
+					   <Label>unable limited</Label>
+						 <EqualCondition DataElementId="type" ComparisonValue="limited"/>
+						 <EndPointRef EndPointId="Nofurtherevaluation" ></EndPointRef>		
+					</Branch>
+					<Branch>
+					 <Label>unable general</Label>
+						 <EqualCondition DataElementId="type" ComparisonValue="general"/>
+						 <EndPointRef EndPointId="general" ></EndPointRef>		
+					</Branch>
+				  </DecisionPoint>
+	 </Branch>
+			 
+			 
+	 <Branch>
+	    <Label>able to</Label>		   	
+		       <EqualCondition DataElementId="activitystatus" ComparisonValue="no"/>
+		        <EndPointRef EndPointId="referral"></EndPointRef>
+	   </Branch>
+	</DecisionPoint>
+		
+	</Rules>
+	
+	
+	<EndPoints>
+	
+		
+	   <EndPoint Id="Nofurtherevaluation">
+		<Label>Not Further evaluation</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No further evaluation</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="general">
+		<Label>general</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Evaluate with thyroid ultrasound</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="referral">
+		<Label>Referral</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Refer to Recommendations for ITN on CT and MRI </ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+		</EndPoint>
+		
+	
+		
+		
+	</EndPoints>
+	
+	
+	
+	</ReportingModule>
