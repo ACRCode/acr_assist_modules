@@ -274,12 +274,68 @@
 						<AndCondition>
 							<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 							<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+							<SectionIfNot DataElementId="premenopasual_type"/>
+						</AndCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+							<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 							<SectionIf DataElementId="premenopasual_type"/>
 							<NotEqualCondition DataElementId="premenopasual_type" ComparisonValue="lesion"/>
 						</AndCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="10">
+			<Label>Size category</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>less_5</Value>
+					<Label>&lt; 5</Label>
+				</Choice>
+				<Choice>
+					<Value>gre5_less10</Value>
+					<Label>	&gt; 5 and &lt; 10</Label>
+				</Choice>
+				<Choice>
+					<Value>less_10</Value>
+					<Label>&lt; 10</Label>
+				</Choice>
+				<Choice>
+					<Value>grt_eq_10</Value>
+					<Label>&gt; 10</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="location"></SectionIfNot>
+						<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
+						<SectionIfNot DataElementId="menopausal_status"></SectionIfNot>
+						<SectionIfNot DataElementId="intraovarian_lesion_type"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+					</AndCondition>
+					<ChoiceNotRelevant ChoiceValue="grt_eq_10"></ChoiceNotRelevant>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					</AndCondition>
+					<ChoiceNotRelevant ChoiceValue="less_5"></ChoiceNotRelevant>
+					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
+				</ConditionalProperty>
+				
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
