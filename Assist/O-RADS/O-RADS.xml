@@ -315,6 +315,7 @@
 						<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
 						<SectionIfNot DataElementId="menopausal_status"></SectionIfNot>
 						<SectionIfNot DataElementId="intraovarian_lesion_type"/>
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -335,10 +336,8 @@
 					<ChoiceNotRelevant ChoiceValue="less_5"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
 				</ConditionalProperty>
-				
 			</ConditionalProperties>
 		</ChoiceDataElement>
-
 	</DataElements>
 
 
@@ -403,6 +402,47 @@
 				<EndPointRef EndPointId="ORADS1_No_FU"></EndPointRef>
 			</Branch>
 			
+			<Branch>
+				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - size less than 5</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_5"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_No_FU"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - greater 5 and less than 10</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="gre5_less10"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_FU_8_12W"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - less than 10</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_REF_US_MRI"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - greater than equals 10</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
+			</Branch>
+			
+			
 		</DecisionPoint>
 	</Rules>
 
@@ -410,22 +450,56 @@
 
 	<EndPoints>
 		
-		<TemplatePartial Id="extraovarianFindingsTemplate">
+		<TemplatePartial Id="findings_template_1">
 		
 			<Branch>
 				<AndCondition>
+					<SectionIf DataElementId="location"></SectionIf>
 					<SectionIf DataElementId="laterality"></SectionIf>
 					<SectionIf DataElementId="maximum_size"></SectionIf>
-					<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
 				</AndCondition>
 				<ReportText Type="InsertDataElementValue" Value="laterality"></ReportText>
-				<ReportText Type="PlainText"> (Extraovarian) </ReportText>
+							
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="location"></SectionIf>
+					<SectionIf DataElementId="laterality"></SectionIf>
+					<SectionIf DataElementId="maximum_size"></SectionIf>
+					<EqualCondition DataElementId="location" ComparisonValue="extraovarian" ></EqualCondition>
+				</AndCondition>
+				<ReportText Type="PlainText"> (Extraovarian) </ReportText>		
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="location"></SectionIf>
+					<SectionIf DataElementId="laterality"></SectionIf>
+					<SectionIf DataElementId="maximum_size"></SectionIf>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian" ></EqualCondition>
+				</AndCondition>
+				<ReportText Type="PlainText"> (adnexal or ovarian or adnexal/ovarian) </ReportText>		
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="location"></SectionIf>
+					<SectionIf DataElementId="laterality"></SectionIf>
+					<SectionIf DataElementId="maximum_size"></SectionIf>
+				</AndCondition>
 				<ReportText Type="InsertDataElementValue" Value="maximum_size"></ReportText>
 				<ReportText Type="PlainText"> cm </ReportText>
+				
+			</Branch>
+			
+			<Branch>
+				<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
 				<ReportText Type="PlainText"> cystic lesion ( </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="Extraovarian_lesion_type"></ReportText>
-				<ReportText Type="PlainText"> ) </ReportText>				
+				<ReportText Type="PlainText"> ) </ReportText>			
 			</Branch>
+			
 			
 			<Branch>
 				<SectionIf DataElementId="Paraovarian_features"></SectionIf>
@@ -445,29 +519,14 @@
 				<ReportText Type="InsertDataElementValue" Value="Hydrosalpinx_features"></ReportText>			
 			</Branch>
 		</TemplatePartial>
-		
-		
-		<TemplatePartial Id="intraovarianFindingsTemplate">
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="laterality"></SectionIf>
-					<SectionIf DataElementId="maximum_size"></SectionIf>
-				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="laterality"></ReportText>
-				<ReportText Type="PlainText"> (adnexal or ovarian or adnexal/ovarian) </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="maximum_size"></ReportText>
-				<ReportText Type="PlainText"> cm </ReportText>
-				<ReportText Type="PlainText"> cystic lesion </ReportText>				
-			</Branch>
-		</TemplatePartial>
-		
+	
 		
 		<EndPoint Id="ORADS1_No_FU">
 			<Label>O-RADS 1</Label>
 			<ReportSections>
 				<ReportSection SectionId="Findings">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="intraovarianFindingsTemplate"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
 					</Branch>
 				</ReportSection>
 				
@@ -487,7 +546,7 @@
 			<ReportSections>
 				<ReportSection SectionId="Findings">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="extraovarianFindingsTemplate"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
 					</Branch>
 				</ReportSection>
 				
@@ -506,7 +565,7 @@
 			<ReportSections>
 				<ReportSection SectionId="Findings">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="extraovarianFindingsTemplate"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
 					</Branch>
 				</ReportSection>
 				
@@ -527,7 +586,7 @@
 			<ReportSections>
 				<ReportSection SectionId="Findings">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="extraovarianFindingsTemplate"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
 					</Branch>
 				</ReportSection>
 				
@@ -536,6 +595,65 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Management per gynecologist</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS2_FU_8_12W">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Follow-up in 8 – 12 weeks</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS2_REF_US_MRI">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Refer to an US specialist, MRI or gynecologist</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS3_REF_US_MRI_Mang_Gynec">
+			<Label>O-RADS 3</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 3</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Refer to US specialist or MRI for better characterization</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">May be managed by gynecologist</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
