@@ -471,6 +471,36 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
+		
+		<ChoiceDataElement Id="diagnostic_category" IsRequired="true" DisplaySequence="15">
+			<Label>Diagnostic category</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>confident</Value>
+					<Label>Confident diagnosis</Label>
+				</Choice>
+				<Choice>
+					<Value>uncertainty</Value>
+					<Label>diagnostic uncertainty</Label>
+				</Choice>
+				<Choice>
+					<Value>enlarging</Value>
+					<Label>Enlarging, changing morphology or developing vascularized component</Label>
+				</Choice>			
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<SectionIfNot DataElementId="size_category" />
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<NotEqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
 	</DataElements>
 
 	<Rules>
@@ -561,7 +591,7 @@
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>					
 				</AndCondition>
-				<EndPointRef EndPointId="ORADS2_REF_US_MRI"></EndPointRef>
+				<EndPointRef EndPointId="ORADS2_REF_US_MRI_OR_Gynec"></EndPointRef>
 			</Branch>
 			
 			<Branch>
@@ -594,6 +624,65 @@
 					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal - dermoid_cyst - less 10 confident dx</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="confident"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_NO_SUR_FU_US_1Year"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal - dermoid_cyst - less 10 uncertainty dx</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_FU_US_8_12W"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal - dermoid_cyst - less 10 uncertainty dx</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_REF_US_MRI_OR_Gynec"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal - dermoid_cyst - less 10 enlarging dx</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_REF_US_MRI"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal - dermoid_cyst - less 10 enlarging dx</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_MRI_FUR_CHAR"></EndPointRef>
 			</Branch>
 			
 		</DecisionPoint>
@@ -788,7 +877,26 @@
 			</ReportSections>
 		</EndPoint>
 		
-		<EndPoint Id="ORADS2_REF_US_MRI">
+		<EndPoint Id="ORADS2_FU_US_8_12W">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Follow-up US examination in 8-12 weeks</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS2_REF_US_MRI_OR_Gynec">
 			<Label>O-RADS 2</Label>
 			<ReportSections>
 				<ReportSection SectionId="Findings">
@@ -802,6 +910,63 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Refer to an US specialist, MRI or gynecologist</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS2_REF_US_MRI">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Refer to an US specialist or MRI</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS2_NO_SUR_FU_US_1Year">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">If not surgically excised, follow-up US examination in 1 year</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS2_MRI_FUR_CHAR">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">MRI for further characterization</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
