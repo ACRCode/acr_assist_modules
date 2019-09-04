@@ -402,7 +402,10 @@
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
 					<ChoiceNotRelevant ChoiceValue="less_5"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
 				</ConditionalProperty>
@@ -426,7 +429,9 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<SectionIfNot DataElementId="size_category" />
-						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
 						<NotEqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -463,7 +468,9 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<SectionIfNot DataElementId="size_category" />
-						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
 						<NotEqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>
 						<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
 					</OrCondition>
@@ -493,7 +500,9 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<SectionIfNot DataElementId="size_category" />
-						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
 						<NotEqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -608,9 +617,12 @@
 				<Label>Intraovarian - premenopausal - dermoid_cyst - greater than equals 10</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	
-					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>					
+					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
 			</Branch>
@@ -619,9 +631,12 @@
 				<Label>Intraovarian - premenopausal - dermoid_cyst - greater than equals 10 peritoneal yes</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	
-					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>					
+					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
 			</Branch>
@@ -630,9 +645,12 @@
 				<Label>Intraovarian - pre/postmenopausal - dermoid_cyst - less 10 confident dx</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
-					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="confident"/>					
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="confident"/>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_NO_SUR_FU_US_1Year"></EndPointRef>
 			</Branch>
@@ -642,9 +660,12 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
-					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>					
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_FU_US_8_12W"></EndPointRef>
 			</Branch>
@@ -654,9 +675,12 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
-					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>					
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>	
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_REF_US_MRI_OR_Gynec"></EndPointRef>
 			</Branch>
@@ -666,9 +690,12 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
-					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>					
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_REF_US_MRI"></EndPointRef>
 			</Branch>
@@ -678,9 +705,12 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
-					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>					
+					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_MRI_FUR_CHAR"></EndPointRef>
 			</Branch>
