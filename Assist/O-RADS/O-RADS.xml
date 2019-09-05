@@ -15,8 +15,24 @@
 			
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>IF-Chest.png</Location>
-					<Label>Key image</Label>
+					<Location>KeyDiagram.png</Location>
+					<Label>O-RADS image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>O-RADS2.png</Location>
+					<Label>O-RADS2 image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Location>O-RADS3.png</Location>
+					<Label>O-RADS3 image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="4" IsKeyDiagram="true">
+					<Location>O-RADS4.png</Location>
+					<Label>O-RADS4 image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="5" IsKeyDiagram="true">
+					<Location>O-RADS5.png</Location>
+					<Label>O-RADS5 image</Label>
 				</Diagram>
 			</Diagrams>
 			<Contact>
@@ -81,6 +97,20 @@
 		
 		<ChoiceDataElement Id="Extraovarian_lesion_type" IsRequired="true" DisplaySequence="5">
 			<Label>Extraovarian lesion types</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>paraovarian_cyst.png</Location>
+					<Label>paraovarian</Label>
+				</Diagram>
+				<Diagram>
+					<Location>Peritoneal_inclusion_cyst.png</Location>
+					<Label>Peritoneal inclusion cyst</Label>
+				</Diagram>
+				<Diagram>
+					<Location>Hydrosalpinx.png</Location>
+					<Label>Hydrosalpinx</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>paraovarian</Value>
@@ -108,6 +138,12 @@
 		
 		<MultiChoiceDataElement Id="Paraovarian_features" IsRequired="true" DisplaySequence="6">
 			<Label>Paraovarian Features</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>simple_cyst.png</Location>
+					<Label>simplecyst</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>simplecyst</Value>
@@ -200,6 +236,16 @@
 	
 		<ChoiceDataElement Id="premenopasual_type" IsRequired="true" DisplaySequence="9">
 			<Label>Premenopasual type</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>follicle.png</Location>
+					<Label>follicle</Label>
+				</Diagram>
+				<Diagram>
+					<Location>corpus_luteum.png</Location>
+					<Label>corpus_luteum</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>follicle</Value>
@@ -232,6 +278,20 @@
 		
 		<ChoiceDataElement Id="intraovarian_lesion_type" IsRequired="true" DisplaySequence="10">
 			<Label>Lesion type</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>hemorrhagic_cyst.png</Location>
+					<Label>hemorrhagic_cyst</Label>
+				</Diagram>
+				<Diagram>
+					<Location>dermoid_cyst.png</Location>
+					<Label>dermoid_cyst</Label>
+				</Diagram>
+					<Diagram>
+					<Location>endometrioma.png</Location>
+					<Label>endometrioma</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>hemorrhagic_cyst</Value>
@@ -354,6 +414,16 @@
 		
 		<ChoiceDataElement Id="cystic_lesion" IsRequired="true" DisplaySequence="12">
 			<Label>Cystic lesion</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>Unilocular.png</Location>
+					<Label>Unilocular</Label>
+				</Diagram>
+				<Diagram>
+					<Location>Multilocular.png</Location>
+					<Label>Multilocular</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Unilocular</Value>
