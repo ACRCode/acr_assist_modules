@@ -351,7 +351,111 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 		
-		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="12">
+		
+		<ChoiceDataElement Id="cystic_lesion" IsRequired="true" DisplaySequence="12">
+			<Label>Cystic lesion</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Unilocular</Value>
+					<Label>Unilocular</Label>
+				</Choice>
+				<Choice>
+					<Value>Multilocular</Value>
+					<Label>Multilocular</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="solid_component" IsRequired="true" DisplaySequence="13">
+			<Label>Solid component</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>no_solid</Value>
+					<Label>No solid component</Label>
+				</Choice>
+				<Choice>
+					<Value>with_solid</Value>
+					<Label>With solid component</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<SectionIfNot DataElementId="cystic_lesion" />
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="inner_margin" IsRequired="true" DisplaySequence="14">
+			<Label>Inner Margin</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>smooth</Value>
+					<Label>Smooth</Label>
+				</Choice>
+				<Choice>
+					<Value>irregular </Value>
+					<Label>Irregular</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<SectionIfNot DataElementId="cystic_lesion" />
+						<SectionIfNot DataElementId="solid_component" />						
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="Papillary_projections" IsRequired="true" DisplaySequence="14">
+			<Label>Papillary projections</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1to3</Value>
+					<Label>Papillary projections/mural nodules (≥ 3 mm in ht) # 1-3</Label>
+				</Choice>
+				<Choice>
+					<Value>grt4</Value>
+					<Label>Papillary projections/mural nodules (≥ 3 mm in ht) # ≥ 4</Label>
+				</Choice>
+				<Choice>
+					<Value>no_papillary_projection</Value>
+					<Label>Larger solid component that does not meet criteria for papillary projection</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<SectionIfNot DataElementId="cystic_lesion" />
+						<SectionIfNot DataElementId="solid_component" />						
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="15">
 			<Label>Size category</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -378,8 +482,14 @@
 						<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
 						<SectionIfNot DataElementId="menopausal_status"></SectionIfNot>
 						<SectionIfNot DataElementId="intraovarian_lesion_type"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>							
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>	
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+							<OrCondition>
+								<SectionIfNot DataElementId="inner_margin"></SectionIfNot>
+								<NotEqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>	
+							</OrCondition>
+						</AndCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -405,14 +515,19 @@
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+						
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+							<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+						</AndCondition>						
 					</OrCondition>
 					<ChoiceNotRelevant ChoiceValue="less_5"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
-				</ConditionalProperty>
+				</ConditionalProperty>				
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="peritoneal_nodules_present" IsRequired="true" DisplaySequence="13">
+		<ChoiceDataElement Id="peritoneal_nodules_present" IsRequired="true" DisplaySequence="16">
 			<Label>If ascites ± peritoneal nodules are present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -430,16 +545,33 @@
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<SectionIfNot DataElementId="size_category" />
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
-						<NotEqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	
+												
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<OrCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+							<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+						</AndCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+							<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
+						</AndCondition>
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+							<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
+						</AndCondition>
+					</OrCondition>
+				<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="peritoneal_features" IsRequired="true" DisplaySequence="14">
+		<MultiChoiceDataElement Id="peritoneal_features" IsRequired="true" DisplaySequence="17">
 			<Label>Peritoneal Features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -469,9 +601,7 @@
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<SectionIfNot DataElementId="size_category" />
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
-						<NotEqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>
 						<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -479,7 +609,7 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 		
-		<ChoiceDataElement Id="diagnostic_category" IsRequired="true" DisplaySequence="15">
+		<ChoiceDataElement Id="diagnostic_category" IsRequired="true" DisplaySequence="18">
 			<Label>Diagnostic category</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -509,7 +639,6 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
-
 	</DataElements>
 
 	<Rules>
@@ -715,6 +844,114 @@
 				<EndPointRef EndPointId="ORADS2_MRI_FUR_CHAR"></EndPointRef>
 			</Branch>
 			
+			
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
+					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
+			</Branch>
+
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
+					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+			</Branch>
+
+
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>
+					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>
+					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<!-- Not working - to be fixed -->
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - no_solid - irregular </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
+			</Branch>
+			
+			
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - solid - Papillary_projections - 1to3 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+					<EqualCondition DataElementId="Papillary_projections" ComparisonValue="1to3"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - solid - Papillary_projections - grt4 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+					<EqualCondition DataElementId="Papillary_projections" ComparisonValue="grt4"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - cystic - Unilocular - solid - no_papillary_projection </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+					<EqualCondition DataElementId="Papillary_projections" ComparisonValue="no_papillary_projection"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
 		</DecisionPoint>
 	</Rules>
 
@@ -807,6 +1044,7 @@
 			</Branch>
 			
 		</TemplatePartial>
+
 
 	
 		<EndPoint Id="ORADS1_No_FU">
@@ -1018,6 +1256,27 @@
 						<ReportText Type="PlainText">Refer to US specialist or MRI for better characterization</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">May be managed by gynecologist</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS4_REF_US_MRI_Mang_Gynec_Onco">
+			<Label>O-RADS 4</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 4</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Refer to US specialist or consider MRI for better characterization</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">May be managed by gynecologist with gynecologic-oncologist consultation or solely by gynecologic-oncologist for management</ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
