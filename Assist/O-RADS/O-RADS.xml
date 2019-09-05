@@ -1045,7 +1045,28 @@
 			
 		</TemplatePartial>
 
+		<TemplatePartial Id="footer_template">
+			
+			<Branch>
+				
+				<ReportText Type="PlainText">O-RADS 1 = Normal ovary</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 2 = Almost certainly benign (&lt; 1% likelihood of malignancy)</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 3 = Low risk (1 - &lt; 10% likelihood of malignancy)</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 4 = Intermediate risk ( 10 - &lt; 50% likelihood of malignancy)</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 5 = High risk (≥ 50% likelihood of malignancy)</ReportText>
+				<ReportText Type="Newline"></ReportText>
 
+			</Branch>
+			
+		</TemplatePartial>
 	
 		<EndPoint Id="ORADS1_No_FU">
 			<Label>O-RADS 1</Label>
@@ -1061,6 +1082,11 @@
 						<ReportText Type="PlainText">Category: O-RADS 1</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">No need for additional imaging or follow-up</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
+						
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1081,6 +1107,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">No need for additional imaging or follow-up</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1102,6 +1132,10 @@
 						<ReportText Type="PlainText">Management per gynecologist</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">May consider a single follow-up US examination in 1 year</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1121,6 +1155,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Management per gynecologist</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1140,6 +1178,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Follow-up in 8 – 12 weeks</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1159,6 +1201,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Follow-up US examination in 8-12 weeks</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1178,6 +1224,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Refer to an US specialist, MRI or gynecologist</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1197,6 +1247,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Refer to an US specialist or MRI</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1216,6 +1270,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">If not surgically excised, follow-up US examination in 1 year</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1235,6 +1293,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">MRI for further characterization</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1256,6 +1318,10 @@
 						<ReportText Type="PlainText">Refer to US specialist or MRI for better characterization</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">May be managed by gynecologist</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1277,6 +1343,10 @@
 						<ReportText Type="PlainText">Refer to US specialist or consider MRI for better characterization</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">May be managed by gynecologist with gynecologic-oncologist consultation or solely by gynecologic-oncologist for management</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1296,6 +1366,10 @@
 						<ReportText Type="PlainText">Category: O-RADS 5</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">Refer to gynecologic-oncologist for management</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
