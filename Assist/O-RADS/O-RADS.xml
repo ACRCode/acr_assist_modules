@@ -19,18 +19,26 @@
 					<Label>O-RADS image</Label>
 				</Diagram>
 				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>lexicon_terms.png</Location>
+					<Label>lexicon_terms</Label>
+				</Diagram>
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Location>O-RADS1.png</Location>
+					<Label>O-RADS1 image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="4" IsKeyDiagram="true">
 					<Location>O-RADS2.png</Location>
 					<Label>O-RADS2 image</Label>
 				</Diagram>
-				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+				<Diagram DisplaySequence="5" IsKeyDiagram="true">
 					<Location>O-RADS3.png</Location>
 					<Label>O-RADS3 image</Label>
 				</Diagram>
-				<Diagram DisplaySequence="4" IsKeyDiagram="true">
+				<Diagram DisplaySequence="6" IsKeyDiagram="true">
 					<Location>O-RADS4.png</Location>
 					<Label>O-RADS4 image</Label>
 				</Diagram>
-				<Diagram DisplaySequence="5" IsKeyDiagram="true">
+				<Diagram DisplaySequence="7" IsKeyDiagram="true">
 					<Location>O-RADS5.png</Location>
 					<Label>O-RADS5 image</Label>
 				</Diagram>
@@ -53,11 +61,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>premenopausal</Value>
-					<Label>Premenopausal</Label>
+					<Label>premenopausal</Label>
 				</Choice>
 				<Choice>
 					<Value>postmenopausal</Value>
-					<Label>Postmenopausal</Label>
+					<Label>postmenopausal</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -67,11 +75,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>intraovarian</Value>
-					<Label>Intraovarian/adnexal</Label>
+					<Label>intraovarian/adnexal</Label>
 				</Choice>
 				<Choice>
 					<Value>extraovarian</Value>
-					<Label>Extraovarian (paraovarian/peritoneal inclusion cyst/hydrosalpinx)</Label>
+					<Label>extraovarian (paraovarian/peritoneal inclusion cyst/hydrosalpinx)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -81,11 +89,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>left</Value>
-					<Label>Left</Label>
+					<Label>left</Label>
 				</Choice>
 				<Choice>
 					<Value>right</Value>
-					<Label>Right</Label>
+					<Label>right</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -100,7 +108,7 @@
 			<Diagrams>
 				<Diagram>
 					<Location>paraovarian_cyst.png</Location>
-					<Label>paraovarian</Label>
+					<Label>Paraovarian cyst</Label>
 				</Diagram>
 				<Diagram>
 					<Location>Peritoneal_inclusion_cyst.png</Location>
@@ -114,15 +122,15 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>paraovarian</Value>
-					<Label>Paraovarian</Label>
+					<Label>paraovarian cyst</Label>
 				</Choice>
 				<Choice>
 					<Value>peritoneal_inclusion_cyst</Value>
-					<Label>Peritoneal inclusion cyst</Label>
+					<Label>peritoneal inclusion cyst</Label>
 				</Choice>
 				<Choice>
 					<Value>hydrosalpinx</Value>
-					<Label>Hydrosalpinx</Label>
+					<Label>hydrosalpinx</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -147,11 +155,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>simplecyst</Value>
-					<Label>Simple cyst separate from the ovary</Label>
+					<Label>simple cyst separate from the ovary</Label>
 				</Choice>
 				<Choice>
 					<Value>transducer_pressure</Value>
-					<Label>Moves independent of the ovary with transducer pressure</Label>
+					<Label>moves independent of the ovary with transducer pressure</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -172,23 +180,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>adjacent_pelvic</Value>
-					<Label>Follows the contour of the adjacent pelvic organs or peritoneum</Label>
+					<Label>follows the contour of the adjacent pelvic organs or peritoneum</Label>
 				</Choice>
 				<Choice>
 					<Value>no_mass_effect</Value>
-					<Label>Does no exert mass effect</Label>
+					<Label>does no exert mass effect</Label>
 				</Choice>
 				<Choice>
 					<Value>septations</Value>
-					<Label>Contains septations</Label>
+					<Label>contains septations</Label>
 				</Choice>
 				<Choice>
 					<Value>feature4</Value>
-					<Label>Ovary at the margin</Label>
+					<Label>ovary at the margin</Label>
 				</Choice>
 				<Choice>
 					<Value>Ovary_suspended</Value>
-					<Label>Ovary suspended within</Label>
+					<Label>ovary suspended within</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -209,15 +217,15 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>incomplete_septation</Value>
-					<Label>Incomplete septation</Label>
+					<Label>incomplete septation</Label>
 				</Choice>
 				<Choice>
 					<Value>tubular</Value>
-					<Label>Tubular</Label>
+					<Label>tubular</Label>
 				</Choice>
 				<Choice>
 					<Value>endosalpingeal</Value>
-					<Label>Endosalpingeal folds (short round projections around inner wall)</Label>
+					<Label>endosalpingeal folds (short round projections around inner wall)</Label>
 				</Choice>	
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -249,15 +257,15 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>follicle</Value>
-					<Label>Follicle</Label>
+					<Label>follicle</Label>
 				</Choice>
 				<Choice>
 					<Value>corpus_luteum</Value>
-					<Label>Corpus luteum</Label>
+					<Label>corpus luteum</Label>
 				</Choice>
 				<Choice>
 					<Value>lesion</Value>
-					<Label>Lesion (non-physiologic)</Label>
+					<Label>lesion (non-physiologic)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -295,23 +303,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>hemorrhagic_cyst</Value>
-					<Label>Hemorrhagic cyst</Label>
+					<Label>hemorrhagic cyst</Label>
 				</Choice>
 				<Choice>
 					<Value>dermoid_cyst</Value>
-					<Label>Dermoid cyst</Label>
+					<Label>dermoid cyst</Label>
 				</Choice>
 				<Choice>
 					<Value>endometrioma</Value>
-					<Label>Endometrioma</Label>
+					<Label>endometrioma</Label>
 				</Choice>
 				<Choice>
 					<Value>cystic</Value>
-					<Label>Cystic (must have no internal flow on Doppler)</Label>
+					<Label>cystic (must have no internal flow on Doppler)</Label>
 				</Choice>
 				<Choice>
 					<Value>solid</Value>
-					<Label>Solid/solid-appearing (≥ 80% solid)</Label>
+					<Label>solid/solid-appearing (≥ 80% solid)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -338,31 +346,31 @@
 		</ChoiceDataElement>
 		
 		<MultiChoiceDataElement Id="lesion_features" IsRequired="true" DisplaySequence="11">
-			<Label>Lesion Features</Label>
+			<Label>Lesion Descriptors</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>reticular_pattern</Value>
-					<Label>Reticular pattern</Label>
+					<Label>reticular pattern</Label>
 				</Choice>
 				<Choice>
 					<Value>retractile_clot</Value>
-					<Label>Retractile clot</Label>
+					<Label>retractile clot</Label>
 				</Choice>
 				<Choice>
 					<Value>hyperechoic_lines_and_dots</Value>
-					<Label>Hyperechoic lines and dots</Label>
+					<Label>hyperechoic lines and dots</Label>
 				</Choice>
 				<Choice>
 					<Value>acoustic_shadowing</Value>
-					<Label>Hyperechoic component with acoustic shadowing</Label>
+					<Label>hyperechoic component with acoustic shadowing</Label>
 				</Choice>
 				<Choice>
 					<Value>echogenic_sphericles</Value>
-					<Label>Floating echogenic sphericles</Label>
+					<Label>floating echogenic sphericles</Label>
 				</Choice>
 				<Choice>
 					<Value>low_level_echoes</Value>
-					<Label>Homogenous low-level echoes</Label>
+					<Label>homogenous low-level echoes</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -417,21 +425,21 @@
 			<Diagrams>
 				<Diagram>
 					<Location>Unilocular.png</Location>
-					<Label>Unilocular</Label>
+					<Label>unilocular</Label>
 				</Diagram>
 				<Diagram>
 					<Location>Multilocular.png</Location>
-					<Label>Multilocular</Label>
+					<Label>multilocular</Label>
 				</Diagram>
 			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Unilocular</Value>
-					<Label>Unilocular</Label>
+					<Label>unilocular</Label>
 				</Choice>
 				<Choice>
 					<Value>Multilocular</Value>
-					<Label>Multilocular</Label>
+					<Label>multilocular</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -447,14 +455,20 @@
 		
 		<ChoiceDataElement Id="solid_component" IsRequired="true" DisplaySequence="13">
 			<Label>Solid component</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>simple_cyst.png</Location>
+					<Label>simplecyst</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>no_solid</Value>
-					<Label>No solid component</Label>
+					<Label>no solid component</Label>
 				</Choice>
 				<Choice>
 					<Value>with_solid</Value>
-					<Label>With solid component</Label>
+					<Label>with solid component</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -474,11 +488,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>smooth</Value>
-					<Label>Smooth</Label>
+					<Label>smooth</Label>
 				</Choice>
 				<Choice>
 					<Value>irregular </Value>
-					<Label>Irregular</Label>
+					<Label>irregular</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -496,19 +510,25 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Papillary_projections" IsRequired="true" DisplaySequence="14">
-			<Label>Papillary projections</Label>
+			<Label>Solid component type</Label>
+			<Diagrams>
+				<Diagram>
+					<Location>papillary_projections.png</Location>
+					<Label>papillary_projections</Label>
+				</Diagram>
+			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1to3</Value>
-					<Label>Papillary projections/mural nodules (≥ 3 mm in ht) # 1-3</Label>
+					<Label>papillary projections/mural nodules (≥ 3 mm in ht) # 1-3</Label>
 				</Choice>
 				<Choice>
 					<Value>grt4</Value>
-					<Label>Papillary projections/mural nodules (≥ 3 mm in ht) # ≥ 4</Label>
+					<Label>papillary projections/mural nodules (≥ 3 mm in ht) # ≥ 4</Label>
 				</Choice>
 				<Choice>
 					<Value>no_papillary_projection</Value>
-					<Label>Larger solid component that does not meet criteria for papillary projection</Label>
+					<Label>larger solid component that does not meet criteria for papillary projection</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -602,11 +622,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
-					<Label>Yes</Label>
+					<Label>yes</Label>
 				</Choice>
 				<Choice IsDefault="true">
 					<Value>no</Value>
-					<Label>No</Label>
+					<Label>no</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -646,23 +666,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>ascites</Value>
-					<Label>Ascites</Label>
+					<Label>ascites</Label>
 				</Choice>
 				<Choice>
 					<Value>cul-de-sac_fluid</Value>
-					<Label>Cul-de-sac fluid</Label>
+					<Label>cul-de-sac fluid</Label>
 				</Choice>
 				<Choice>
 					<Value>anechoic</Value>
-					<Label>Anechoic (simple)</Label>
+					<Label>anechoic (simple)</Label>
 				</Choice>
 				<Choice>
 					<Value>contains_echoes</Value>
-					<Label>Contains echoes (not simple)</Label>
+					<Label>contains echoes (not simple)</Label>
 				</Choice>
 				<Choice>
 					<Value>peritoneal_nodules</Value>
-					<Label>Peritoneal nodules</Label>
+					<Label>peritoneal nodules</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -688,7 +708,7 @@
 				</Choice>
 				<Choice>
 					<Value>uncertainty</Value>
-					<Label>diagnostic uncertainty</Label>
+					<Label>Diagnostic uncertainty</Label>
 				</Choice>
 				<Choice>
 					<Value>enlarging</Value>
@@ -1119,7 +1139,7 @@
 			
 			<Branch>
 				
-				<ReportText Type="PlainText">O-RADS 1 = Normal ovary</ReportText>
+				<ReportText Type="PlainText">O-RADS 1 = Normal/physiologic ovary (0% likelihood of malignancy)</ReportText>
 				<ReportText Type="Newline"></ReportText>
 				
 				<ReportText Type="PlainText">O-RADS 2 = Almost certainly benign (&lt; 1% likelihood of malignancy)</ReportText>
