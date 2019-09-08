@@ -1048,8 +1048,106 @@
 
 
 	<EndPoints>
-		
+	
 		<TemplatePartial Id="findings_template_1">
+			<Branch>
+				<ReportText Type="Newline"></ReportText>
+				<SectionIf DataElementId="laterality"></SectionIf>
+				<ReportText Type="PlainText"> Laterality: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="laterality"></ReportText>
+				
+			</Branch>
+			
+			<Branch>
+				<ReportText Type="Newline"></ReportText>
+				<SectionIf DataElementId="location"></SectionIf>
+				<ReportText Type="PlainText"> Location: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="location"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<ReportText Type="Newline"></ReportText>
+				<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
+				<ReportText Type="PlainText"> Type: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="Extraovarian_lesion_type"></ReportText>
+			</Branch>
+
+			<Branch>
+				<OrCondition>
+					<SectionIf DataElementId="Paraovarian_features"></SectionIf>
+					<SectionIf DataElementId="Peritoneal_features"></SectionIf>
+					<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
+				</OrCondition>
+				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="PlainText"> Descriptors: </ReportText>
+			</Branch>
+
+			<Branch>
+				<SectionIf DataElementId="Paraovarian_features"></SectionIf>
+				<ReportText Type="InsertDataElementValue" Value="Paraovarian_features"></ReportText>			
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="Peritoneal_features"></SectionIf>
+					<SectionIf DataElementId="Paraovarian_features"></SectionIf>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Peritoneal_features"></ReportText>			
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="Peritoneal_features"></SectionIf>
+					<SectionIfNot DataElementId="Paraovarian_features"></SectionIfNot>
+				</AndCondition>
+				<ReportText Type="InsertDataElementValue" Value="Peritoneal_features"></ReportText>			
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
+					<OrCondition>
+						<SectionIf DataElementId="Paraovarian_features"></SectionIf>
+						<SectionIf DataElementId="Peritoneal_features"></SectionIf>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="Hydrosalpinx_features"></ReportText>			
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
+					<SectionIfNot DataElementId="Paraovarian_features"></SectionIfNot>
+					<SectionIfNot DataElementId="Peritoneal_features"></SectionIfNot>
+				</AndCondition>
+				<ReportText Type="InsertDataElementValue" Value="Hydrosalpinx_features"></ReportText>			
+			</Branch>
+
+			<Branch>
+				<ReportText Type="Newline"></ReportText>
+				<SectionIf DataElementId="lesion_features"></SectionIf>
+				<ReportText Type="PlainText"> Lesion Features: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="lesion_features"></ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ReportText Type="Newline"></ReportText>
+				<SectionIf DataElementId="peritoneal_features"></SectionIf>
+				<ReportText Type="PlainText"> Peritoneal Features: </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="peritoneal_features"></ReportText>
+			</Branch>
+			
+			<Branch>
+				<ReportText Type="Newline"></ReportText>
+				<SectionIf DataElementId="maximum_size"></SectionIf>
+				<ReportText Type="PlainText"> Maximum size: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="maximum_size"></ReportText>
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="findings_template_2">
 		
 			<Branch>
 				<AndCondition>
