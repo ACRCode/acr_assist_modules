@@ -55,7 +55,7 @@
 	
 	<DataElements>
 		<ChoiceDataElement Id="PriorImage_1" IsRequired="true" DisplaySequence="1">
-			<Label>Is there a prior image study available?</Label>
+			<Label>Is there a prior imaging study available?</Label>
 				<ChoiceInfo>
 					<Choice>
 						<Value>Yes</Value>
@@ -69,7 +69,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="PrimarySiteQuestion_1" IsRequired="true" DisplaySequence="2">
-			<Label>Is there a suspicious primary site ?</Label>
+			<Label>Is there a finding suspicious for residual or recurrent tumor at the primary site?</Label>
 				<ChoiceInfo>
 					<Choice>
 						<Value>Yes</Value>
@@ -83,7 +83,7 @@
 		 </ChoiceDataElement>
 		
 		<IntegerDataElement Id="Whatistheimagenumber_1" IsRequired="true" DisplaySequence="3">
-			<Label>What is the image number of the suspicious primary site?</Label>
+			<Label>What is the image number for the suspicious finding at the primary site?</Label>
 			<Minimum>1 </Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -98,7 +98,7 @@
 		</IntegerDataElement>
 		
 		<ChoiceDataElement Id="Whatistheprimarysitenodetype_1" DisplaySequence="4">
-			<Label>What is this primary site type?</Label>
+			<Label>Which of the following best characterizes the suspicious finding at the primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Superficialmucosal</Value>
@@ -126,7 +126,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="ConditionofthisSuperficialmucosalnode_1" DisplaySequence="5">
-			<Label>Condition of this Superficial/mucosal node </Label>
+			<Label>Which best characterizes the suspicious superficial finding at the primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>DiffuselinearC</Value>
@@ -158,7 +158,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Deepnode_1" DisplaySequence="6">
-			<Label>Is this Deep Node Ill-defined or Discrete? </Label>
+			<Label>Which best characterizes the deep abnormality at the primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Illdefined</Value>
@@ -183,7 +183,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Deepnode_Illed_1" DisplaySequence="7">
-			<Label>What is the FDG condition? </Label>
+			<Label>Which best describes the FDG uptake on PET?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>NoFDGuptake</Value>
@@ -235,7 +235,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="PrimarySiteQuestion_2" IsRequired="true" DisplaySequence="9">
-			<Label>Is there a second primary site?</Label>
+			<Label>Is there evidence of a second primary neoplasm elsewhere in the aerodigestive tract outside of the treated site?</Label>
 				<ChoiceInfo>
 					<Choice>
 						<Value>Yes</Value>
@@ -283,7 +283,7 @@
 		</ChoiceDataElement>
 		
 		<IntegerDataElement Id="Whatistheimagenumber_2" IsRequired="true" DisplaySequence="11">
-			<Label>What is the image number of the second primary site?</Label>
+			<Label>What is the image number for the suspicious finding at the second primary site</Label>
 			<Minimum>1 </Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -298,7 +298,7 @@
 		</IntegerDataElement>
 		
 		<ChoiceDataElement Id="Whatistheprimarysitenodetype_2" DisplaySequence="12">
-			<Label>What is this second primary site type?</Label>
+			<Label>Which of the following best characterizes the suspicious finding at the second primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Superficialmucosal</Value>
@@ -326,7 +326,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="ConditionofthisSuperficialmucosalnode_2" DisplaySequence="13">
-			<Label>Condition of this Superficial/mucosal node </Label>
+			<Label>Which best characterizes the suspicious superficial finding at the second primary site?"</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>DiffuselinearC</Value>
@@ -355,7 +355,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Deepnode_2" DisplaySequence="14">
-			<Label>Is this Deep Node Ill-defined or Discrete? </Label>
+			<Label>Which best characterizes the deep abnormality at the primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Illdefined</Value>
@@ -380,7 +380,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Deepnode_Illed_2" DisplaySequence="15">
-			<Label>What is the FDG condition? </Label>
+			<Label>Which best describes the FDG uptake on PET?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>NoFDGuptake</Value>
@@ -485,7 +485,7 @@
 			</ConditionalProperties>
 		</IntegerDataElement>
 		<ChoiceDataElement Id="Whatisthenecknodetype_neck" DisplaySequence="20">
-			<Label>What is the neck node type ?  </Label>
+			<Label>Which of the following best characterizes the abnormal node?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Nonewnodeorabnormalnode</Value>
@@ -537,7 +537,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		<ChoiceDataElement Id="neworenlarginnode_neck" DisplaySequence="22">
-			<Label>Condition of this Residual, new or enlarging node </Label>
+			<Label>What best describes the FDG uptake associated with this node?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>NoFDGuptake</Value>
