@@ -491,8 +491,56 @@
 					<Label>smooth</Label>
 				</Choice>
 				<Choice>
-					<Value>irregular </Value>
+					<Value>irregular</Value>
 					<Label>irregular</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+							<OrCondition>
+								<SectionIfNot DataElementId="cystic_lesion" />
+								<SectionIfNot DataElementId="solid_component" />
+								<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+							</OrCondition>
+						</AndCondition>
+					</OrCondition>
+					
+					<!-- <OrCondition> -->
+						<!-- <SectionIfNot DataElementId="intraovarian_lesion_type" /> -->
+						<!-- <SectionIfNot DataElementId="cystic_lesion" /> -->
+						<!-- <SectionIfNot DataElementId="solid_component" />	 -->
+						<!-- <AndCondition> -->
+							<!-- <EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/> -->
+							<!-- <EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/> -->
+						<!-- </AndCondition> -->
+					<!-- </OrCondition> -->
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="inner_content" IsRequired="true" DisplaySequence="14">
+			<Label>Inner content type</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>anechoic_simple</Value>
+					<Label>Anechoic (simple)</Label>
+				</Choice>
+				<Choice>
+					<Value>scattered_echoes_nonsimple</Value>
+					<Label>Scattered echoes (nonsimple)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -500,16 +548,20 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<SectionIfNot DataElementId="cystic_lesion" />
-						<SectionIfNot DataElementId="solid_component" />						
+						<SectionIfNot DataElementId="solid_component" />	
+						<SectionIfNot DataElementId="inner_margin" />							
 						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-						<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+						<NotEqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+						<NotEqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+						<NotEqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="Papillary_projections" IsRequired="true" DisplaySequence="14">
+		
+		<ChoiceDataElement Id="Papillary_projections" IsRequired="true" DisplaySequence="15">
 			<Label>Solid component type</Label>
 			<Diagrams>
 				<Diagram>
@@ -539,15 +591,70 @@
 						<SectionIfNot DataElementId="solid_component" />						
 						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+						<NotEqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="15">
+		
+		<ChoiceDataElement Id="color_score" IsRequired="true" DisplaySequence="16">
+			<Label>color score</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>score_1</Value>
+					<Label>Score 1: No flow</Label>
+				</Choice>
+				<Choice>
+					<Value>score_2</Value>
+					<Label>Score 2: Minimal flow - hypovascular (difficult to find)</Label>
+				</Choice>
+				<Choice>
+					<Value>score_3</Value>
+					<Label>Score 3: Moderate flow</Label>
+				</Choice>
+				<Choice>
+					<Value>score_4</Value>
+					<Label>Score 4: Strong flow</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<SectionIfNot DataElementId="cystic_lesion" />
+						<SectionIfNot DataElementId="solid_component" />	
+						<!-- <SectionIfNot DataElementId="inner_margin" /> -->
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<!-- <NotEqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/> -->
+						<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+						<NotEqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>						
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="16">
 			<Label>Size category</Label>
 			<ChoiceInfo>
+				<Choice>
+					<Value>less_3</Value>
+					<Label>≤ 3</Label>
+				</Choice>
+				<Choice>
+					<Value>gre3_less_eq_5</Value>
+					<Label>&gt; 3 cm to ≤ 5cm</Label>
+				</Choice>
+				<Choice>
+					<Value>gre5_less_10</Value>
+					<Label>&gt; 5 cm to &lt; 10 cm</Label>
+				</Choice>
+				<Choice>
+					<Value>gre3_less_10</Value>
+					<Label>&gt; 3 cm to &lt; 10 cm</Label>
+				</Choice>
 				<Choice>
 					<Value>less_5</Value>
 					<Label>&lt; 5</Label>
@@ -613,11 +720,11 @@
 					</OrCondition>
 					<ChoiceNotRelevant ChoiceValue="less_5"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
-				</ConditionalProperty>				
+				</ConditionalProperty>			
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="peritoneal_nodules_present" IsRequired="true" DisplaySequence="16">
+		<ChoiceDataElement Id="peritoneal_nodules_present" IsRequired="true" DisplaySequence="17">
 			<Label>If ascites ± peritoneal nodules are present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -635,8 +742,7 @@
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<SectionIfNot DataElementId="size_category" />
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
-												
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>							
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -661,7 +767,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="peritoneal_features" IsRequired="true" DisplaySequence="17">
+		<MultiChoiceDataElement Id="peritoneal_features" IsRequired="true" DisplaySequence="18">
 			<Label>Peritoneal Features</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -699,7 +805,7 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 		
-		<ChoiceDataElement Id="diagnostic_category" IsRequired="true" DisplaySequence="18">
+		<ChoiceDataElement Id="diagnostic_category" IsRequired="true" DisplaySequence="19">
 			<Label>Diagnostic category</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -796,8 +902,10 @@
 				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - size less than 5</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_5"/>					
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_5"/> -->
+					<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="5"/>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_No_FU"></EndPointRef>
 			</Branch>
@@ -806,8 +914,11 @@
 				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - greater 5 and less than 10</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="gre5_less10"/>					
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="gre5_less10"/>	 -->
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="5"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_FU_8_12W"></EndPointRef>
 			</Branch>
@@ -816,8 +927,10 @@
 				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - less than 10</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>					
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	 -->
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>						
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_REF_US_MRI_OR_Gynec"></EndPointRef>
 			</Branch>
@@ -827,7 +940,8 @@
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>					
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	 -->
+					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
 			</Branch>
@@ -836,7 +950,8 @@
 				<Label>Intraovarian - premenopausal - dermoid_cyst - greater than equals 10</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	 -->
+					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
@@ -850,7 +965,8 @@
 				<Label>Intraovarian - premenopausal - dermoid_cyst - greater than equals 10 peritoneal yes</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	 -->
+					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
@@ -864,7 +980,8 @@
 				<Label>Intraovarian - pre/postmenopausal - dermoid_cyst - less 10 confident dx</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="confident"/>
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
@@ -879,7 +996,8 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	 -->
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
@@ -894,7 +1012,8 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>	
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
@@ -909,7 +1028,8 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
@@ -924,7 +1044,8 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="enlarging"/>
 					<OrCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
@@ -936,60 +1057,196 @@
 			
 			
 			<Branch>
-				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
+				<Label>Intraovarian - premenopausal - cystic - Unilocular - no_solid - smooth - symple cyst 3 - 5 cm </Label>
 				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
 					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
 					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
 					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
-					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
+					<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="5"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
-			</Branch>
-
-			<Branch>
-				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
-				<AndCondition>
-					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
-					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
-					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
-					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
-				</AndCondition>
-				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
-			</Branch>
-
-
-			<Branch>
-				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
-				<AndCondition>
-					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
-					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
-					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>
-					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
-				</AndCondition>
-				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+				<EndPointRef EndPointId="ORADS1_No_FU"></EndPointRef>
 			</Branch>
 			
 			<Branch>
-				<Label>Intraovarian - cystic - Unilocular - no_solid - smooth - less 10 </Label>
+				<Label>Intraovarian - premenopausal - cystic - Unilocular - no_solid - smooth - symple cyst 6 - 9 cm </Label>
 				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
 					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
 					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
 					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
-					<EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>
-					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="5"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
 				</AndCondition>
-				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+				<EndPointRef EndPointId="ORADS2_Physiologic_FU_US_8_12W"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal cystic - Unilocular - no_solid - smooth - symple cyst greater than eqauls 10 cm </Label>
+				<AndCondition>
+					<OrCondition>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					</OrCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
+					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal - cystic - Unilocular - no_solid - smooth - symple cyst less than equals 3cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
+					<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="3"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS1_No_FU"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal -cystic - Unilocular - no_solid - smooth - symple cyst 3-9 cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_FU_US_1Year"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal -cystic - Unilocular - no_solid - smooth - symple cyst 4-9 cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_FU_US_1Year"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal -cystic - Unilocular - no_solid - smooth - no symple cyst less than equals 3 cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
+					<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="3"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_No_FU"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal -cystic - Unilocular - no_solid - smooth - no symple cyst 4-9 cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_FU_US_8_12W"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - premenopausal -cystic - Unilocular - no_solid - smooth - no symple cyst 4-9 cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_FU_US_8_12W"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal cystic - Unilocular - no_solid - smooth - no symple cyst greater than eqauls 10 cm </Label>
+				<AndCondition>
+					<OrCondition>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					</OrCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
+					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal -cystic - Unilocular - no_solid - smooth - no symple cyst less than equals 3 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
+					<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="3"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_FU_US_1Year"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal -cystic - Unilocular - no_solid - smooth - no symple cyst 4-9 cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_REF_US_MRI"></EndPointRef>
 			</Branch>
 			
 			<!-- Not working - to be fixed -->
@@ -1042,6 +1299,100 @@
 				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
 			</Branch>
 			
+			
+			<!-- Starting Multilocular -->
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal -cystic - Multilocular - no_solid - smooth - score 1-3 - less than 10cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<OrCondition>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_1"/>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_2"/>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_3"/>
+					</OrCondition>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal -cystic - Multilocular - no_solid - smooth - score 1-3 - grater than equals 10cm </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<OrCondition>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_1"/>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_2"/>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_3"/>
+					</OrCondition>
+					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal -cystic - Multilocular - no_solid - smooth - score 4 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="color_score" ComparisonValue="score_4"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal -cystic - Multilocular - no_solid - irregular</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal -cystic - Multilocular - with_solid - score 1-2 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+					<OrCondition>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_1"/>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_2"/>
+					</OrCondition>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal -cystic - Multilocular - with_solid - score 3-4 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+					<OrCondition>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_3"/>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_4"/>
+					</OrCondition>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+			</Branch>
 		</DecisionPoint>
 	</Rules>
 
@@ -1401,6 +1752,29 @@
 			</ReportSections>
 		</EndPoint>
 		
+		<EndPoint Id="ORADS2_Physiologic_FU_US_8_12W">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">As this is likely physiologic, consider repeat US examination in 8 – 12 weeks</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
 		<EndPoint Id="ORADS2_REF_US_MRI_OR_Gynec">
 			<Label>O-RADS 2</Label>
 			<ReportSections>
@@ -1470,6 +1844,29 @@
 			</ReportSections>
 		</EndPoint>
 		
+		<EndPoint Id="ORADS2_FU_US_1Year">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: O-RADS 2</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Follow-up US examination in 1 year</ReportText>
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
 		<EndPoint Id="ORADS2_MRI_FUR_CHAR">
 			<Label>O-RADS 2</Label>
 			<ReportSections>
@@ -1506,7 +1903,7 @@
 					<Branch>
 						<ReportText Type="PlainText">Category: O-RADS 3</ReportText>
 						<ReportText Type="Newline"></ReportText>
-						<ReportText Type="PlainText">Refer to US specialist or MRI for better characterization</ReportText>
+						<ReportText Type="PlainText">Refer to US specialist or MRI</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">May be managed by gynecologist</ReportText>
 						
@@ -1531,7 +1928,7 @@
 					<Branch>
 						<ReportText Type="PlainText">Category: O-RADS 4</ReportText>
 						<ReportText Type="Newline"></ReportText>
-						<ReportText Type="PlainText">Refer to US specialist or consider MRI for better characterization</ReportText>
+						<ReportText Type="PlainText">Refer to US specialist or consider MRI</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">May be managed by gynecologist with gynecologic-oncologist consultation or solely by gynecologic-oncologist for management</ReportText>
 						
