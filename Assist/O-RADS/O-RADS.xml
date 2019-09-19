@@ -762,9 +762,7 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
-						<SectionIfNot DataElementId="size_category" />
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>							
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -784,8 +782,30 @@
 							<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
 						</AndCondition>
 					</OrCondition>
-				<IsRelevant>false</IsRelevant>	
+					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+
+					</AndCondition>
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="inner_margin"></SectionIfNot>
+							<AndCondition>
+								<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+								<SectionIfNot DataElementId="color_score"></SectionIfNot>
+							</AndCondition>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
@@ -847,11 +867,10 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
-						<SectionIfNot DataElementId="size_category" />
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
-						<NotEqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	
+						<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -1322,7 +1341,7 @@
 			</Branch>
 			
 			
-			<!-- Starting Multilocular -->
+			<!-- cystic Starting Multilocular -->
 			
 			<Branch>
 				<Label>Intraovarian - pre/postmenopausal -cystic - Multilocular - no_solid - smooth - score 1-3 - less than 10cm </Label>
