@@ -622,21 +622,43 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
-						<SectionIfNot DataElementId="cystic_lesion" />
-						<SectionIfNot DataElementId="solid_component" />	
-						<!-- <SectionIfNot DataElementId="inner_margin" /> -->
-						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-						<!-- <NotEqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/> -->
-						<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
-						<NotEqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>						
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+							<OrCondition>								
+								<SectionIfNot DataElementId="cystic_lesion" />
+								<SectionIfNot DataElementId="solid_component" />	
+								<!-- <SectionIfNot DataElementId="inner_margin" /> -->
+								<!-- <NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/> -->
+								<!-- <NotEqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/> -->
+								<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+								<NotEqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+							</OrCondition>
+						</AndCondition>
+						
+						<AndCondition>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+							<OrCondition>								
+								<SectionIfNot DataElementId="inner_margin" />
+								<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+							</OrCondition>
+						</AndCondition>
+						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="16">
+<!-- 		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="16">
 			<Label>Size category</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -722,7 +744,7 @@
 					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
 				</ConditionalProperty>			
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement> -->
 		
 		<ChoiceDataElement Id="peritoneal_nodules_present" IsRequired="true" DisplaySequence="17">
 			<Label>If ascites ± peritoneal nodules are present?</Label>
@@ -1393,6 +1415,55 @@
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
 			</Branch>
+			
+			<!-- Solid -->
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal - solid - smooth - score1 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="color_score" ComparisonValue="score_1"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS3_REF_US_MRI_Mang_Gynec"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal - solid - smooth - score2 - 3 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<OrCondition>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_2"/>
+						<EqualCondition DataElementId="color_score" ComparisonValue="score_3"/>
+					</OrCondition>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS4_REF_US_MRI_Mang_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal - solid - smooth - score4 </Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<EqualCondition DataElementId="color_score" ComparisonValue="score_4"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - pre/postmenopausal - solid - irregular</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
+			</Branch>
+			
 		</DecisionPoint>
 	</Rules>
 
