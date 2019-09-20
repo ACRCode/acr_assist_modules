@@ -373,17 +373,7 @@
 					<Label>homogenous low-level echoes</Label>
 				</Choice>
 			</ChoiceInfo>
-			<ConditionalProperties>
-				<!-- <ConditionalProperty> -->
-					<!-- <OrCondition> -->
-						<!-- <SectionIfNot DataElementId="location"></SectionIfNot> -->
-						<!-- <EqualCondition DataElementId="location" ComparisonValue="intraovarian"/> -->
-						<!-- <SectionIfNot DataElementId="Extraovarian_lesion_type"></SectionIfNot> -->
-						<!-- <NotEqualCondition DataElementId="Extraovarian_lesion_type" ComparisonValue="hydrosalpinx"/> -->
-					<!-- </OrCondition> -->
-					<!-- <IsRelevant>false</IsRelevant>	 -->
-				<!-- </ConditionalProperty> -->
-				
+			<ConditionalProperties>				
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type"></SectionIfNot>
@@ -516,16 +506,6 @@
 							</OrCondition>
 						</AndCondition>
 					</OrCondition>
-					
-					<!-- <OrCondition> -->
-						<!-- <SectionIfNot DataElementId="intraovarian_lesion_type" /> -->
-						<!-- <SectionIfNot DataElementId="cystic_lesion" /> -->
-						<!-- <SectionIfNot DataElementId="solid_component" />	 -->
-						<!-- <AndCondition> -->
-							<!-- <EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/> -->
-							<!-- <EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/> -->
-						<!-- </AndCondition> -->
-					<!-- </OrCondition> -->
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
 			</ConditionalProperties>
@@ -623,7 +603,6 @@
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
-						<!-- <SectionIfNot DataElementId="cystic_lesion" /> -->
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
@@ -677,94 +656,6 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-<!-- 		<ChoiceDataElement Id="size_category" IsRequired="true" DisplaySequence="16">
-			<Label>Size category</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>less_3</Value>
-					<Label>≤ 3</Label>
-				</Choice>
-				<Choice>
-					<Value>gre3_less_eq_5</Value>
-					<Label>&gt; 3 cm to ≤ 5cm</Label>
-				</Choice>
-				<Choice>
-					<Value>gre5_less_10</Value>
-					<Label>&gt; 5 cm to &lt; 10 cm</Label>
-				</Choice>
-				<Choice>
-					<Value>gre3_less_10</Value>
-					<Label>&gt; 3 cm to &lt; 10 cm</Label>
-				</Choice>
-				<Choice>
-					<Value>less_5</Value>
-					<Label>&lt; 5</Label>
-				</Choice>
-				<Choice>
-					<Value>gre5_less10</Value>
-					<Label>	&gt; 5 and &lt; 10</Label>
-				</Choice>
-				<Choice>
-					<Value>less_10</Value>
-					<Label>&lt; 10</Label>
-				</Choice>
-				<Choice>
-					<Value>grt_eq_10</Value>
-					<Label>≥ 10</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="location"></SectionIfNot>
-						<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
-						<SectionIfNot DataElementId="menopausal_status"></SectionIfNot>
-						<SectionIfNot DataElementId="intraovarian_lesion_type"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>	
-						<AndCondition>
-							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-							<OrCondition>
-								<SectionIfNot DataElementId="inner_margin"></SectionIfNot>
-								<NotEqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>	
-							</OrCondition>
-						</AndCondition>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-						<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
-					</AndCondition>
-					<ChoiceNotRelevant ChoiceValue="grt_eq_10"></ChoiceNotRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<AndCondition>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
-					</AndCondition>
-					<ChoiceNotRelevant ChoiceValue="less_5"></ChoiceNotRelevant>
-					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
-				</ConditionalProperty>
-				
-				<ConditionalProperty>
-					<OrCondition>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
-						
-						<AndCondition>
-							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-							<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
-						</AndCondition>						
-					</OrCondition>
-					<ChoiceNotRelevant ChoiceValue="less_5"></ChoiceNotRelevant>
-					<ChoiceNotRelevant ChoiceValue="gre5_less10"></ChoiceNotRelevant>
-				</ConditionalProperty>			
-			</ConditionalProperties>
-		</ChoiceDataElement> -->
-		
 		<ChoiceDataElement Id="peritoneal_nodules_present" IsRequired="true" DisplaySequence="17">
 			<Label>If ascites ± peritoneal nodules are present?</Label>
 			<ChoiceInfo>
@@ -778,31 +669,20 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
-				<!-- <ConditionalProperty> -->
-					<!-- <OrCondition> -->
-						
-						<!-- <EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>						 -->
-					<!-- </OrCondition> -->
-					<!-- <IsRelevant>false</IsRelevant>	 -->
-				<!-- </ConditionalProperty> -->
-				
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<AndCondition>
 							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
 							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
-							<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 						</AndCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
-							<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 						</AndCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
 							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
-							<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 						</AndCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -1028,7 +908,6 @@
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_5"/> -->
 					<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="5"/>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_No_FU"></EndPointRef>
@@ -1040,7 +919,6 @@
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="gre5_less10"/>	 -->
 					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="5"/>
 					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>					
 				</AndCondition>
@@ -1053,7 +931,6 @@
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	 -->
 					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>						
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_REF_US_MRI_OR_Gynec"></EndPointRef>
@@ -1064,7 +941,6 @@
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	 -->
 					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>
 					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>					
 				</AndCondition>
@@ -1076,7 +952,6 @@
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	 -->
 					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>
 					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
 				</AndCondition>
@@ -1087,7 +962,6 @@
 				<Label>Intraovarian - premenopausal - dermoid_cyst - greater than equals 10</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	 -->
 					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="no"/>
 					<OrCondition>
@@ -1102,7 +976,6 @@
 				<Label>Intraovarian - premenopausal - dermoid_cyst - greater than equals 10 peritoneal yes</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="grt_eq_10"/>	 -->
 					<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
 					<OrCondition>
@@ -1117,7 +990,6 @@
 				<Label>Intraovarian - pre/postmenopausal - dermoid_cyst - less 10 confident dx</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="confident"/>
 					<OrCondition>
@@ -1133,7 +1005,6 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>	 -->
 					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>
 					<OrCondition>
@@ -1149,7 +1020,6 @@
 				<AndCondition>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
-					<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
 					<EqualCondition DataElementId="diagnostic_category" ComparisonValue="uncertainty"/>	
 					<OrCondition>
