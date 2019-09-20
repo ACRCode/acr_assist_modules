@@ -634,7 +634,20 @@
 				<ConditionalProperty>
 					<AndCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-						<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+						
+						<OrCondition>
+							<SectionIfNot DataElementId="cystic_lesion" />
+							<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>						
+						<SectionIfNot DataElementId="solid_component" />
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
@@ -644,38 +657,13 @@
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
 						<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>						
 						<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
-						<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="inner_margin" />
+							<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+						</OrCondition>
 					</AndCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
-				
-				<!-- <ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="intraovarian_lesion_type" />
-						<AndCondition>
-							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-							<OrCondition>								
-								<SectionIfNot DataElementId="cystic_lesion" />
-								<SectionIfNot DataElementId="solid_component" />	
-								<SectionIfNot DataElementId="inner_margin" />
-								<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-								<NotEqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
-								<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
-								<NotEqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
-							</OrCondition>
-						</AndCondition>
-						
-						<AndCondition>
-							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
-							<OrCondition>								
-								<SectionIfNot DataElementId="inner_margin" />
-								<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
-							</OrCondition>
-						</AndCondition>
-						
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty> -->
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
@@ -780,27 +768,31 @@
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="intraovarian_lesion_type" />
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>						
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty>
+				<!-- <ConditionalProperty> -->
+					<!-- <OrCondition> -->
+						
+						<!-- <EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>						 -->
+					<!-- </OrCondition> -->
+					<!-- <IsRelevant>false</IsRelevant>	 -->
+				<!-- </ConditionalProperty> -->
 				
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<AndCondition>
-							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-							<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+							<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 						</AndCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
-							<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
+							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+							<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 						</AndCondition>
 						<AndCondition>
 							<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
-							<EqualCondition DataElementId="size_category" ComparisonValue="less_10"/>
+							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+							<!-- <EqualCondition DataElementId="size_category" ComparisonValue="less_10"/> -->
 						</AndCondition>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
@@ -809,9 +801,69 @@
 				<ConditionalProperty>
 					<AndCondition>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
-
+						<OrCondition>
+							<SectionIfNot DataElementId="cystic_lesion" />
+							<SectionIfNot DataElementId="solid_component" />
+							
+							<AndCondition>
+								<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+								<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+								<SectionIfNot DataElementId="inner_margin" />				
+							</AndCondition>
+							
+							<AndCondition>
+								<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+								<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+								<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+								<SectionIfNot DataElementId="inner_content" />								
+							</AndCondition>	
+							
+							<AndCondition>
+								<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+								<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+								<SectionIf DataElementId="inner_margin" />
+								<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+								<SectionIf DataElementId="inner_content" />
+								<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
+							</AndCondition>
+							
+							<AndCondition>
+								<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+								<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+								<SectionIfNot DataElementId="Papillary_projections" />
+							</AndCondition>							
+						</OrCondition>
 					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+						<OrCondition>
+							<SectionIfNot DataElementId="solid_component" />
+							<AndCondition>
+								<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+								<SectionIfNot DataElementId="inner_margin" />
+							</AndCondition>	
+							
+							<AndCondition>
+								<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+								<SectionIf DataElementId="inner_margin" />
+								<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+								<SectionIfNot DataElementId="color_score" />
+							</AndCondition>
+							
+							<AndCondition>
+								<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+								<SectionIfNot DataElementId="color_score" />
+							</AndCondition>							
+						</OrCondition>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
 				
 				<ConditionalProperty>
 					<AndCondition>
