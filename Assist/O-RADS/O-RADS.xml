@@ -622,13 +622,34 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
+						<SectionIfNot DataElementId="intraovarian_lesion_type" />
+						<SectionIfNot DataElementId="cystic_lesion" />
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>
+				
 				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<ConditionalProperty>
+					<AndCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>						
+						<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+						<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+					</AndCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
+				
+				<!-- <ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="intraovarian_lesion_type" />
 						<AndCondition>
@@ -636,9 +657,9 @@
 							<OrCondition>								
 								<SectionIfNot DataElementId="cystic_lesion" />
 								<SectionIfNot DataElementId="solid_component" />	
-								<!-- <SectionIfNot DataElementId="inner_margin" /> -->
-								<!-- <NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/> -->
-								<!-- <NotEqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/> -->
+								<SectionIfNot DataElementId="inner_margin" />
+								<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+								<NotEqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
 								<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
 								<NotEqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
 							</OrCondition>
@@ -654,7 +675,7 @@
 						
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
-				</ConditionalProperty>
+				</ConditionalProperty> -->
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
