@@ -158,7 +158,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Deepnode_1" DisplaySequence="6">
-			<Label>Which best characterizes the deep abnormality at the primary site?</Label>
+			<Label>Is there an ill-defined enhancement or discrete mass?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Illdefined</Value>
@@ -431,7 +431,25 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="NeckNodeQUestion_neck" IsRequired="true" DisplaySequence="17">
+		
+		<ChoiceDataElement Id="PriorImage_neck" IsRequired="true" DisplaySequence="17">
+			<Label>Is there a prior comparison image study available for a neck node?</Label>
+				<ChoiceInfo>
+					<Choice>
+						<Value>Yes</Value>
+						<Label>Yes </Label>
+					</Choice>
+					<Choice>
+						<Value>No</Value>
+						<Label>No</Label>
+					</Choice>
+				 </ChoiceInfo>
+			
+		</ChoiceDataElement>
+	
+		
+		
+		<ChoiceDataElement Id="NeckNodeQUestion_neck" IsRequired="true" DisplaySequence="18">
 			<Label>Is there a suspicious neck node?</Label>
 				<ChoiceInfo>
 					<Choice>
@@ -443,31 +461,21 @@
 						<Label>No</Label>
 					</Choice>
 				 </ChoiceInfo>
-		 </ChoiceDataElement>
-		
-		<ChoiceDataElement Id="PriorImage_neck" IsRequired="true" DisplaySequence="18">
-			<Label>Is there a prior comparison image study available?</Label>
-				<ChoiceInfo>
-					<Choice>
-						<Value>Yes</Value>
-						<Label>Yes </Label>
-					</Choice>
-					<Choice>
-						<Value>No</Value>
-						<Label>No</Label>
-					</Choice>
-				 </ChoiceInfo>
-			<ConditionalProperties>
+				 
+				<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
-						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-					
+						<SectionIfNot DataElementId="PriorImage_neck"/>
+						<EqualCondition DataElementId="PriorImage_neck" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
-		</ChoiceDataElement>
+				
+				
+		 </ChoiceDataElement>
+		
+		
 		
 		<IntegerDataElement Id="Whatistheimagenumber_neck" IsRequired="true" DisplaySequence="19">
 			<Label>What is the image number of the suspicious neck node?</Label>
@@ -475,26 +483,48 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<SectionIfNot DataElementId="PrimarySiteQuestion_1"/>
-						<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="No"/>
-						<EqualCondition DataElementId="PrimarySiteQuestion_2" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
+					
 						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</IntegerDataElement>
-		<ChoiceDataElement Id="Whatisthenecknodetype_neck" DisplaySequence="20">
+		
+		<ChoiceDataElement Id="nodetype_neck" DisplaySequence="20">
+			<Label>Is this a new node or an abnormal node?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>abnormalnode</Value>
+					<Label>Abnormal node </Label>
+				</Choice>
+				<Choice>
+					<Value>Residualneworenlargingnode</Value>
+					<Label> Residual, new or enlarging node </Label>
+				</Choice>
+		
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
+						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>	
+		
+		<ChoiceDataElement Id="Whatisthenecknodetype_neck" DisplaySequence="21">
 			<Label>Which of the following best characterizes the abnormal node?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Nonewnodeorabnormalnode</Value>
-					<Label>No new node or abnormal node </Label>
+					<Label> No residual abnormal, new or enlarging node </Label>
 				</Choice>
-				<Choice>
-					<Value>Residualneworenlargingnode</Value>
-					<Label>Residual, new or enlarging node  </Label>
-				</Choice>
+				
 				<Choice>
 					<Value>Definitenodalrecurrence</Value>
 					<Label>Definite nodal recurrence³ </Label>
@@ -508,10 +538,24 @@
 						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
-				</ConditionalProperty>		
+				</ConditionalProperty>	
+               
+                 
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="NeckNodeQUestion_neck" />
+						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="nodetype_neck"/>
+						<NotEqualCondition DataElementId="nodetype_neck" ComparisonValue="abnormalnode"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		 
 			</ConditionalProperties>
-		</ChoiceDataElement>			
-		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE_neck" DisplaySequence="21">
+		</ChoiceDataElement>	
+		
+	
+		
+		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE_neck" DisplaySequence="22">
 			<Label>Does the node have new necrosis or ENE ?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -529,14 +573,15 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck" />
 						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<SectionIfNot DataElementId="Whatisthenecknodetype_neck"/>
-						<NotEqualCondition DataElementId="Whatisthenecknodetype_neck" ComparisonValue="Residualneworenlargingnode"/>
+						<SectionIfNot DataElementId="nodetype_neck"/>
+						<NotEqualCondition DataElementId="nodetype_neck" ComparisonValue="Residualneworenlargingnode"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="neworenlarginnode_neck" DisplaySequence="22">
+		
+		<ChoiceDataElement Id="neworenlarginnode_neck" DisplaySequence="23">
 			<Label>What best describes the FDG uptake associated with this node?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -562,8 +607,8 @@
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck" />
 						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
 
-						<SectionIfNot DataElementId="Whatisthenecknodetype_neck" />
-						<NotEqualCondition DataElementId="Whatisthenecknodetype_neck" ComparisonValue="Residualneworenlargingnode"/>
+						<SectionIfNot DataElementId="nodetype_neck" />
+						<NotEqualCondition DataElementId="nodetype_neck" ComparisonValue="Residualneworenlargingnode"/>
 
 						<SectionIfNot DataElementId="DoesthenodehavenewnecrosisorENE_neck"/>
 						<NotEqualCondition DataElementId="DoesthenodehavenewnecrosisorENE_neck" ComparisonValue="No"/>
@@ -659,24 +704,24 @@
 				<Label>Primary Site_2</Label>
 				<EqualCondition DataElementId="PrimarySiteQuestion_2" ComparisonValue="Yes"/>
 				<DecisionPoint Id="WhatistheprimarysitenodetypeDp_2">
-					<Label>Primary Site Node type</Label>
+					<Label>Primary Site Node type </Label>
 					<Branch>
-						<Label>Superficial/mucosal</Label>
+						<Label> Superficial/mucosal</Label>
 						<EqualCondition DataElementId="Whatistheprimarysitenodetype_2" ComparisonValue="Superficialmucosal"/>
 						<DecisionPoint Id="ConditionofthisSuperficialmucosalnodeDp_2">
-							<Label>Condition of this Superficial/mucosal node</Label>
+							<Label> Condition of this Superficial/mucosal node </Label>
 							<Branch>
-								<Label>Diffuse linear C+</Label>
+								<Label> Diffuse linear C+ </Label>
 								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_2" ComparisonValue="DiffuselinearC"/>
 								<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_2"/>
 							</Branch>
 							<Branch>
-								<Label>Focal C+ /ulcer or FDG uptake, esp if initial post treatment scan</Label>
+								<Label> Focal C+ /ulcer or FDG uptake, esp if initial post treatment scan </Label>
 								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_2" ComparisonValue="FocalCulcerorFDGuptakeespifinitialposttreatmentscan"/>
 								<EndPointRef EndPointId="Cat2aLowSuspicion_2"/>
 							</Branch>									
 							<Branch>
-								<Label>Nodular C+, esp if develops after initial post treatment scan </Label>
+								<Label> Nodular C+, esp if develops after initial post treatment scan </Label>
 								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_2" ComparisonValue="NodularCespifdevelopsafterinitialposttreatmentscan"/>
 								<EndPointRef EndPointId="Cat3HighSuspicion_2"/>
 							</Branch>
@@ -686,14 +731,14 @@
 						<Label>Deep</Label>
 						<EqualCondition DataElementId="Whatistheprimarysitenodetype_2" ComparisonValue="Deep"/>
 						<DecisionPoint Id="ConditionofthisDeepnodeDp">
-							<Label>Codition of this deep node</Label>
+							<Label> Codition of this deep node </Label>
 							<Branch>
-								<Label>Ill-defined enhancing with No FDG uptake </Label>
+								<Label> Ill-defined enhancing with No FDG uptake </Label>
 								<EqualCondition DataElementId="Deepnode_Illed_2" ComparisonValue="NoFDGuptake"/>
 								<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_2"/>
 							</Branch>
 							<Branch>
-								<Label>Ill-defined enhancing with Mild/ mod FDG uptake or no PET</Label>
+								<Label> Ill-defined enhancing with Mild/ mod FDG uptake or no PET </Label>
 								<EqualCondition DataElementId="Deepnode_Illed_2" ComparisonValue="MildmodFDGuptake"/>
 								<EndPointRef EndPointId="Cat2bLowSuspicion_2"/>
 							</Branch>
@@ -728,7 +773,7 @@
 					</Branch>
 					<Branch>
 						<Label>Residual, new or enlarging node</Label>
-						<EqualCondition DataElementId="Whatisthenecknodetype_neck" ComparisonValue="Residualneworenlargingnode" />
+						<EqualCondition DataElementId="nodetype_neck" ComparisonValue="Residualneworenlargingnode" />
 						<DecisionPoint Id="DoesthenodehavenewnecrosisorENEDp_neck">
 							<Label>Does the node have new necrosis or ENE ?</Label>
 							<Branch>
