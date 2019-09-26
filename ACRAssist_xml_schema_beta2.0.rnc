@@ -60,8 +60,9 @@ baseElementContents =
     element Hint { text }?,
     Diagrams?,
     element VoiceCommand { text }?,
+    attribute IsVisible { "true" | "false" }?,
     attribute Editable { "true" | "false" }?,
-    attribute Hasprefilled { "true" | "false" }?,
+    attribute CanPrefillFromSource { "true" | "false" }?,
     attribute Output { "true" | "false" }?,
     attribute Unit { text }?,
     Source?
@@ -348,6 +349,7 @@ EndPoints =
             element Label { text }?,              
             Diagnosis?,
             #ReportTexts,
+            SetValues?,
             ReportSections,
             ActionableFinding?,
             ImagingFollowup?
@@ -393,6 +395,18 @@ ActionableFinding =
         attribute Category { text },
         empty
     }
+
+SetValues = element SetValues {
+    SetDataElementValue +
+    }
+
+SetDataElementValue =
+    element SetDataElementValue{
+        attribute DataElementId {text},
+        attribute Value {text}
+    }
+
+
 Exam =
     element Exam {
         attribute Code { text },
