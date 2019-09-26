@@ -367,9 +367,9 @@ EndPoints =
 #ReportText = element ReportText { sectionIdAttr, Branch }+
 
 sectionIdAttr =
-    attribute SectionId {
-        "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation"
-    }
+    attribute SectionId { "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation" },
+    attribute SubSectionName {text}?
+    
 recommendationBase =
     element ClinicalCondition { text }?,
     element References { Citation+ }?,
