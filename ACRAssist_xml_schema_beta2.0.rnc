@@ -89,7 +89,7 @@ ChoiceNotRelevant =  element ChoiceNotRelevant
 {
   attribute ChoiceValue {text}, 
   empty
-}+
+}
 
 baseConditionalPropertyContents =
       ConditionType,
@@ -99,7 +99,7 @@ baseConditionalPropertyContents =
 
 choiceConditionalProperty = element ConditionalProperty { 
         baseConditionalPropertyContents,
-        ChoiceNotRelevant?
+        (ChoiceNotRelevant?)+
     }
 
 numericConditionalProperty = element ConditionalProperty {

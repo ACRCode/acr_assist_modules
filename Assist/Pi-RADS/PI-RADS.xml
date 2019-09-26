@@ -2015,6 +2015,7 @@
 				<Label>PZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
 					<SectionIf DataElementId="DCE_2" ></SectionIf>
@@ -2068,6 +2069,7 @@
 				<Label>TZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
 					<SectionIf DataElementId="DCE_2" ></SectionIf>
@@ -2122,6 +2124,7 @@
 				<Label>PZ and TZ without DWI</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
 					<SectionIf DataElementId="DCE_2" ></SectionIf>
@@ -2190,6 +2193,7 @@
 				<Label>PZ and TZ without DCE</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_2" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_2" ></SectionIf>
 					<SectionIf DataElementId="DCE_2" ></SectionIf>
@@ -2281,6 +2285,8 @@
 				<Label>PZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
 					<SectionIf DataElementId="DCE_3" ></SectionIf>
@@ -2334,6 +2340,8 @@
 				<Label>TZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
 					<SectionIf DataElementId="DCE_3" ></SectionIf>
@@ -2388,6 +2396,8 @@
 				<Label>PZ and TZ without DWI</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
 					<SectionIf DataElementId="DCE_3" ></SectionIf>
@@ -2456,6 +2466,8 @@
 				<Label>PZ and TZ without DCE</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_3" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_3" ></SectionIf>
 					<SectionIf DataElementId="DCE_3" ></SectionIf>
@@ -2547,6 +2559,9 @@
 				<Label>PZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
 					<SectionIf DataElementId="DCE_4" ></SectionIf>
@@ -2600,6 +2615,9 @@
 				<Label>TZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
 					<SectionIf DataElementId="DCE_4" ></SectionIf>
@@ -2654,6 +2672,9 @@
 				<Label>PZ and TZ without DWI</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
 					<SectionIf DataElementId="DCE_4" ></SectionIf>
@@ -2722,6 +2743,9 @@
 				<Label>PZ and TZ without DCE</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_4" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_4" ></SectionIf>
 					<SectionIf DataElementId="DCE_4" ></SectionIf>
@@ -2813,6 +2837,10 @@
 				<Label>PZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="PZ"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
 					<SectionIf DataElementId="DCE_5" ></SectionIf>
@@ -2866,6 +2894,10 @@
 				<Label>TZ</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="TZ"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
 					<SectionIf DataElementId="DCE_5" ></SectionIf>
@@ -2920,6 +2952,10 @@
 				<Label>PZ and TZ without DWI</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="PZ_TZ_NO_DWI"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
 					<SectionIf DataElementId="DCE_5" ></SectionIf>
@@ -2988,6 +3024,10 @@
 				<Label>PZ and TZ without DCE</Label>
 				
 				<AndCondition>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="Y" />
+					<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="Y" />
 					<EqualCondition DataElementId="Zoneselection_5" ComparisonValue="PZ_TZ_NO_DCE"/>
 					<SectionIf DataElementId="DWI_5" ></SectionIf>
 					<SectionIf DataElementId="DCE_5" ></SectionIf>
