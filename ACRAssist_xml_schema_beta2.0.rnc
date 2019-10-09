@@ -60,7 +60,7 @@ baseElementContents =
     element Hint { text }?,
     Diagrams?,
     element VoiceCommand { text }?,
-    attribute IsVisible { "true" | "false" }?,
+    attribute IsRelevant { "true" | "false" }?,
     attribute Editable { "true" | "false" }?,
     attribute CanPrefillFromSource { "true" | "false" }?,
     attribute Output { "true" | "false" }?,
@@ -402,7 +402,7 @@ SetValues = element SetValues {
 
 SetDataElementValue =
     element SetDataElementValue{
-        attribute DataElementId {text},
+        attribute DataElementId {xsd:IDREF},
         attribute Value {text}
     }
 
