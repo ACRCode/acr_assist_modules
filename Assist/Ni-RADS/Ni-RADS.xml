@@ -7,7 +7,7 @@
 		<SchemaVersion>2.0</SchemaVersion>
 		<ModuleVersion>1.0</ModuleVersion>
 		<CreatedDate>2019-07-02</CreatedDate>
-		<LastModifiedDate>2019-08-20</LastModifiedDate>
+		<LastModifiedDate>2019-10-10</LastModifiedDate>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
 
@@ -88,9 +88,9 @@
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<SectionIfNot DataElementId="PrimarySiteQuestion_1"/>
-						<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="No"/>
-					
+						
+					    <SectionIfNot DataElementId="PriorImage_1"/>
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -158,7 +158,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Deepnode_1" DisplaySequence="6">
-			<Label>Is there an ill-defined enhancement or discrete mass?</Label>
+			<Label>What best characterizes the deep abnormality at the primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Illdefined</Value>
@@ -258,44 +258,9 @@
 			</ConditionalProperties>
 		 </ChoiceDataElement>
 		 
-		<ChoiceDataElement Id="PriorImage_2" DisplaySequence="10">
-			<Label>Is there a prior image study available for this second primary site?</Label>
-				<ChoiceInfo>
-					<Choice>
-						<Value>Yes</Value>
-						<Label>Yes </Label>
-					</Choice>
-					<Choice>
-						<Value>No</Value>
-						<Label>No</Label>
-					</Choice>
-				 </ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="PrimarySiteQuestion_2"/>
-						<EqualCondition DataElementId="PrimarySiteQuestion_2" ComparisonValue="No"/>
-					
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>		
-				</ConditionalProperty>		
-			</ConditionalProperties>
-		</ChoiceDataElement>
 		
-		<IntegerDataElement Id="Whatistheimagenumber_2" IsRequired="true" DisplaySequence="11">
-			<Label>What is the image number for the suspicious finding at the second primary site</Label>
-			<Minimum>1 </Minimum>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="PrimarySiteQuestion_2"/>
-						<EqualCondition DataElementId="PrimarySiteQuestion_2" ComparisonValue="No"/>
-					
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>		
-				</ConditionalProperty>		
-			</ConditionalProperties>
-		</IntegerDataElement>
+		
+	
 		
 		<ChoiceDataElement Id="Whatistheprimarysitenodetype_2" DisplaySequence="12">
 			<Label>Which of the following best characterizes the suspicious finding at the second primary site?</Label>
@@ -318,7 +283,7 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="PrimarySiteQuestion_2"/>
 						<EqualCondition DataElementId="PrimarySiteQuestion_2" ComparisonValue="No"/>
-						<EqualCondition DataElementId="PriorImage_2" ComparisonValue="No"/>
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -355,7 +320,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="Deepnode_2" DisplaySequence="14">
-			<Label>Which best characterizes the deep abnormality at the primary site?</Label>
+			<Label>What best characterizes the deep abnormality at the second primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Illdefined</Value>
@@ -432,25 +397,8 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="PriorImage_neck" IsRequired="true" DisplaySequence="17">
-			<Label>Is there a prior comparison image study available for a neck node?</Label>
-				<ChoiceInfo>
-					<Choice>
-						<Value>Yes</Value>
-						<Label>Yes </Label>
-					</Choice>
-					<Choice>
-						<Value>No</Value>
-						<Label>No</Label>
-					</Choice>
-				 </ChoiceInfo>
-			
-		</ChoiceDataElement>
-	
-		
-		
-		<ChoiceDataElement Id="NeckNodeQUestion_neck" IsRequired="true" DisplaySequence="18">
-			<Label>Is there a suspicious neck node?</Label>
+		<ChoiceDataElement Id="Neckcomp_image" IsRequired="true" DisplaySequence="18">
+			<Label>Is there prior comparison study available for neck node ?</Label>
 				<ChoiceInfo>
 					<Choice>
 						<Value>Yes</Value>
@@ -462,42 +410,62 @@
 					</Choice>
 				 </ChoiceInfo>
 				 
-				<ConditionalProperties>
+				 
+				 <ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						<SectionIfNot DataElementId="PriorImage_neck"/>
-						<EqualCondition DataElementId="PriorImage_neck" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="PriorImage_1" />
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="Yes"/>
+						
 					</OrCondition>
-					<IsRelevant>false</IsRelevant>		
+					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
 			</ConditionalProperties>
-				
-				
+				 	
+		 </ChoiceDataElement>
+
+	
+		
+		
+		<ChoiceDataElement Id="NeckNodeQUestion_neck" IsRequired="true" DisplaySequence="19">
+			<Label>Is there a suspicious neck node?</Label>
+				<ChoiceInfo>
+					<Choice>
+						<Value>Yes</Value>
+						<Label>Yes </Label>
+					</Choice>
+					<Choice>
+						<Value>No</Value>
+						<Label>No</Label>
+					</Choice>
+				 </ChoiceInfo>
+				 	
 		 </ChoiceDataElement>
 		
 		
 		
-		<IntegerDataElement Id="Whatistheimagenumber_neck" IsRequired="true" DisplaySequence="19">
+		<IntegerDataElement Id="Whatistheimagenumber_neck" IsRequired="true" DisplaySequence="20">
 			<Label>What is the image number of the suspicious neck node?</Label>
 			<Minimum>1 </Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
-					
-						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+					    <EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="Neckcomp_image"/>
+					    <EqualCondition DataElementId="Neckcomp_image" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<ChoiceDataElement Id="nodetype_neck" DisplaySequence="20">
-			<Label>Is this a new node or an abnormal node?</Label>
+		<ChoiceDataElement Id="nodetype_neck" DisplaySequence="21">
+			<Label>Which of the following best describes the suspicious neck node ?</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>abnormalnode</Value>
-					<Label>Abnormal node </Label>
+					<Value>Definitenodalrecurrence</Value>
+					<Label>Definite nodal recurrence</Label>
 				</Choice>
 				<Choice>
 					<Value>Residualneworenlargingnode</Value>
@@ -510,48 +478,13 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
 						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
+						<EqualCondition DataElementId="Neckcomp_image" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>	
 		
-		<ChoiceDataElement Id="Whatisthenecknodetype_neck" DisplaySequence="21">
-			<Label>Which of the following best characterizes the abnormal node?</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>Nonewnodeorabnormalnode</Value>
-					<Label> No residual abnormal, new or enlarging node </Label>
-				</Choice>
-				
-				<Choice>
-					<Value>Definitenodalrecurrence</Value>
-					<Label>Definite nodal recurrence³ </Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
-						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>		
-				</ConditionalProperty>	
-               
-                 
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="NeckNodeQUestion_neck" />
-						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<SectionIfNot DataElementId="nodetype_neck"/>
-						<NotEqualCondition DataElementId="nodetype_neck" ComparisonValue="abnormalnode"/>
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		 
-			</ConditionalProperties>
-		</ChoiceDataElement>	
 		
 	
 		
@@ -627,16 +560,8 @@
 				<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 				<EndPointRef EndPointId="Cat0Incomplete_1"/>
 			</Branch>
-			<Branch>
-				<Label>incomplete_noprior</Label>
-				<EqualCondition DataElementId="PriorImage_2" ComparisonValue="No"/>
-				<EndPointRef EndPointId="Cat0Incomplete_2"/>
-			</Branch>	
-			<Branch>
-				<Label>incomplete_noprior</Label>
-				<EqualCondition DataElementId="PriorImage_neck" ComparisonValue="No"/>
-				<EndPointRef EndPointId="Cat0Incomplete_neck"/>
-			</Branch>
+			
+		
 
 			<Branch>
 				<Label>Primary Site_1</Label>
@@ -760,17 +685,20 @@
 						<EndPointRef EndPointId="Cat4DefinitiveRecurrence_2"/>
 					</Branch>						
 				</DecisionPoint>
-			</Branch>
+			</Branch>		
 			<Branch>
 				<Label>Neck</Label>
 				<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="Yes"/>
 				<DecisionPoint Id="WhatisthenecknodetypeDp_1">
 					<Label>Neck node type</Label>
+					
 					<Branch>
 						<Label>No new node or abnormal node</Label>
-						<EqualCondition DataElementId="Whatisthenecknodetype_neck" ComparisonValue="Nonewnodeorabnormalnode"/>
-						<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_neck"/>
+						<EqualCondition DataElementId="nodetype_neck" ComparisonValue="Definitenodalrecurrence"/>
+						<EndPointRef EndPointId="Cat4DefinitiveRecurrence_neck"/>
 					</Branch>
+					
+					
 					<Branch>
 						<Label>Residual, new or enlarging node</Label>
 						<EqualCondition DataElementId="nodetype_neck" ComparisonValue="Residualneworenlargingnode" />
@@ -810,16 +738,20 @@
 							</Branch>
 						</DecisionPoint>
 					</Branch>
-					<Branch>
-						<Label>Definite nodal recurrence</Label>
-						<EqualCondition DataElementId="Whatisthenecknodetype_neck" ComparisonValue="Definitenodalrecurrence"/>
-						<EndPointRef EndPointId="Cat4DefinitiveRecurrence_neck"/>
-					</Branch>
+					
 				</DecisionPoint>
-
+            <Branch>
+			
+			<Label>Not suspicious neck node</Label>
+						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+						<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_neck"/>
+			
 			</Branch>
+			
+			</Branch>
+	   </DecisionPoint>
 
-		</DecisionPoint>
+    
 	</Rules>
 	<EndPoints>
 		<TemplatePartial Id="QuestionText_1">
@@ -832,9 +764,9 @@
 		</TemplatePartial>
 		<TemplatePartial Id="QuestionText_2">
 			<Branch>
-				<SectionIf DataElementId="Whatistheimagenumber_2" />
+				<SectionIf DataElementId="Whatistheimagenumber_1" />
 				<ReportText Type="PlainText">Image Number: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Whatistheimagenumber_2" />
+				<ReportText Type="InsertDataElementValue" Value="Whatistheimagenumber_1" />
 				<ReportText Type="Newline" />
 			</Branch>
 		</TemplatePartial>
