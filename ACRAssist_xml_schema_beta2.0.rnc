@@ -3,10 +3,11 @@ start = ReportingModule
 ReportingModule = element ReportingModule {external "Metadata.rnc", DataElements, Rules, EndPoints }
 Citation =
     element Citation {
-        attribute PubmedId { xsd:token }?,
+        Coding?,
         attribute Url { xsd:anyURI }?,
-        text
+        element Description {text}
     }+
+
 # definitions for other parts of the schema
 codingSystemAttr = attribute CodingSystem { text }
 codeAttrs =
@@ -59,9 +60,10 @@ baseElementContents =
     element Hint { text }?,
     Diagrams?,
     element VoiceCommand { text }?,
+    attribute IsInput { "true" | "false" }?,
     attribute Editable { "true" | "false" }?,
-    attribute Hasprefilled { "true" | "false" }?,
-    attribute Output { "true" | "false" }?,
+    attribute CanPrefillFromSource { "true" | "false" }?,
+    attribute IsOutput { "true" | "false" }?,
     attribute Unit { text }?,
     Source?
     
@@ -71,12 +73,16 @@ baseElementContents =
     }
     
     Coding = element Coding{
-         element System { attribute Value{"RadElement" | "Loinc" | "SnomedCT" } },
-         element Version { attribute Value{text}},
-         element Code { attribute Value{xsd:token}},
-         element Display { attribute Value{text}},
-         element UserSelected { attribute Value{"true" | "false"}} ?,
-         element Url { attribute Value{text}} ?
+        element System { attribute Value{"https://www.radelement.org/set" | 
+                                            "https://www.radelement.org/element" | 
+                                            "http://loinc.org" | 
+                                            "http://snomed.info/sct" | 
+                                            "http://www.ncbi.nlm.nih.gov/pubmed"} },
+        element Version { attribute Value{text}},
+        element Code { attribute Value{xsd:token}},
+        element Display { attribute Value{text}},
+        element UserSelected { attribute Value{"true" | "false"}} ?,
+        element Url { attribute Value{text}} ?
     }+
     
     Source = element Source{
@@ -195,7 +201,8 @@ Choice =
         element Hint { text }?,
         element VoiceCommand { text }?,
         attribute IsDefault { "true" | "false" }?,
-        element ReportText { text }?
+        element ReportText { text }?,
+        Diagrams?
     }
 ChoiceInfo = element ChoiceInfo {
 Choice+ }
@@ -343,6 +350,7 @@ EndPoints =
             element Label { text }?,              
             Diagnosis?,
             #ReportTexts,
+            SetValues?,
             ReportSections,
             ActionableFinding?,
             ImagingFollowup?
@@ -362,9 +370,9 @@ EndPoints =
 #ReportText = element ReportText { sectionIdAttr, Branch }+
 
 sectionIdAttr =
-    attribute SectionId {
-        "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation"
-    }
+    attribute SectionId { "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation" },
+    attribute SubSectionName {text}?
+    
 recommendationBase =
     element ClinicalCondition { text }?,
     element References { Citation+ }?,
@@ -388,6 +396,18 @@ ActionableFinding =
         attribute Category { text },
         empty
     }
+
+SetValues = element SetValues {
+    SetDataElementValue +
+    }
+
+SetDataElementValue =
+    element SetDataElementValue{
+        attribute DataElementId {xsd:IDREF},
+        attribute Value {text}
+    }
+
+
 Exam =
     element Exam {
         attribute Code { text },
