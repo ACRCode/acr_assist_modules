@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../CARDS_Schema_2.0.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>IF-Pancreatic </Label>
+		<ID>IF-Pancreatic </ID>
+		<SchemaVersion>2.0 </SchemaVersion>
+		<ModuleVersion>1.0 </ModuleVersion>
+		<CreatedDate>2019-07-23 </CreatedDate>
+		<LastModifiedDate>2019-07-23 </LastModifiedDate>
+		<DevelopedBy>American College of Radiology </DevelopedBy>
+		<Info>
+			<Description>IF-Pancreatic</Description>
+			<References>
+				<Citation Url="https://www.jacr.org/article/S1546-1440(17)30318-6/pdf">
+                ACR Pancreatic Cysts</Citation>
+			</References>
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>KeyImage_1.jpg</Location>
+					<Label>KeyImage_1</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>KeyImage_2.jpg</Location>
+					<Label>KeyImage_2A</Label>
+				</Diagram>
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Location>KeyImage_2B.jpg</Location>
+					<Label>KeyImage_2B</Label>
+				</Diagram>
+				<Diagram DisplaySequence="4" IsKeyDiagram="true">
+					<Location>KeyImage_3.jpg</Location>
+					<Label>KeyImage_3</Label>
+				</Diagram>
+				<Diagram DisplaySequence="5" IsKeyDiagram="true">
+					<Location>KeyImage_4.jpg</Location>
+					<Label>KeyImage_4</Label>
+				</Diagram>
+			</Diagrams>	
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>IF-Pancreatic</ReportCitationText>
+		<ApplicableSexes Value="Both"></ApplicableSexes>
+ </Metadata>
+	<DataElements>
+
+		<IntegerDataElement Id="Whatistheimagenumber" IsRequired="true" DisplaySequence="1">
+			<Label>What is the image number? </Label>
+		</IntegerDataElement>
+		
+		<IntegerDataElement Id="Whatisthepatientage" IsRequired="true" DisplaySequence="2">
+			<Label>What is the patient age? </Label>
+		</IntegerDataElement>
+		
+	
+		<ChoiceDataElement Id="Isthepatientbothanadultandasymptomatic" IsRequired="true" DisplaySequence="3">
+			<Label>Is the patient both an adult and asymptomatic?</Label>
+			<Hint>Inclusion criteria -- First question  </Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Yes</Value>
+					<Label>Yes</Label>
+				 </Choice>
+				<Choice>
+					<Value>No</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		 </ChoiceDataElement>
+		 
+		<DateTimeDataElement Id="Whatistheexaminationdateforfuturefollowup" IsRequired="true" DisplaySequence="4">
+			<Label>What is the examination date - (?for future follow up)</Label>
+			<Hint>The date of a prior study can be used as a baseline to establish a follow-up schedule </Hint>
+		</DateTimeDataElement>
+		
+		<ChoiceDataElement Id="Cystmorphologylocation" IsRequired="true" DisplaySequence="4">
+			<Label>Cyst morphology, location </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>IPMN </Value>
+					<Label>IPMN </Label>
+				 </Choice>
+				<Choice>
+					<Value>SCA </Value>
+					<Label>SCA </Label>
+				 </Choice>
+				<Choice>
+					<Value>MCN </Value>
+					<Label>MCN </Label>
+				 </Choice>
+				<Choice>
+					<Value>solidpseudopapillaryXXX </Value>
+					<Label>solid pseudopapillary XXX </Label>
+				 </Choice>
+				<Choice>
+					<Value>cPNET </Value>
+					<Label>cPNET </Label>
+				 </Choice>
+				<Choice>
+					<Value>pseudocyst </Value>
+					<Label>pseudocyst </Label>
+				 </Choice>
+			 </ChoiceInfo>
+		</ChoiceDataElement>
+		 
+		<ChoiceDataElement Id="Whatisthepancreaticcystsizecategory" IsRequired="true" DisplaySequence="5">
+			<Label>What is the pancreatic cyst size category </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>15cm </Value>
+					<Label> less than 1.5 cm </Label>
+				</Choice>
+				<Choice>
+					<Value>1525cm </Value>
+					<Label>1.5-2.5 cm </Label>
+				 </Choice>
+				<Choice>
+					<Value>25cm </Value>
+					<Label> >=2.5 cm </Label>
+				</Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="Whatisthepatientagegroup" IsRequired="true" DisplaySequence="6">
+			<Label>What is the patient age group </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>65yearsatpresent </Value>
+					<Label>65 years at present </Label>
+				 </Choice>
+				<Choice>
+					<Value>6579yearsatpresent </Value>
+					<Label>65-79 years at present </Label>
+				 </Choice>
+				<Choice>
+					<Value>80yearsatpresent </Value>
+					<Label>>=80 years at present </Label>
+				 </Choice>
+			 </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="PossiblecommunicationwithMPD" IsRequired="true" DisplaySequence="7">
+			<Label>Possible communication with MPD </Label>
+			<Hint>Need explanation  </Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>MPDcommunicationestablished </Value>
+					<Label>MPD communication established  </Label>
+				 </Choice>
+				<Choice>
+					<Value>MPDcommunicationabsent </Value>
+					<Label>MPD communication absent </Label>
+				 </Choice>
+			</ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<MultiChoiceDataElement Id="WorrisomeFeatures" IsRequired="true" DisplaySequence="8">
+			<Label>Worrisome Features </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Cyst3cm</Value>
+					<Label>Cyst>= 3cm</Label>
+				 </Choice>
+				<Choice>
+					<Value>Thickenedenhancingcystwall</Value>
+					<Label>Thickened/enhancing cyst wall</Label>
+				 </Choice>
+				<Choice>
+					<Value>Nonenhancingmuralnodule</Value>
+					<Label>Nonenhancing mural nodule</Label>
+				 </Choice>
+				<Choice>
+					<Value>Mainpancreaticduct</Value>
+					<Label>Main pancreatic duct caliber >=7 m</Label>
+				 </Choice>
+			 </ChoiceInfo>
+		 </MultiChoiceDataElement>
+			 
+		<MultiChoiceDataElement Id="HighRiskStigmata" IsRequired="true" DisplaySequence="9">
+			<Label>High-Risk Stigmata </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Obstructivejaundice</Value>
+					<Label>Obstructive jaundice with cyst in head of pancreas</Label>
+				 </Choice>
+				<Choice>
+					<Value>Enhancingsolid</Value>
+					<Label>Enhancing solid component within cyst</Label>
+				 </Choice>
+				<Choice>
+					<Value>Mainpancreaticduct</Value>
+					<Label>Main pancreatic duct caliber >=10 mm in absence of obstruction</Label>
+				 </Choice>
+			 </ChoiceInfo>
+		</MultiChoiceDataElement>
+		
+		<ChoiceDataElement Id="GrowthonFollowupExamination" IsRequired="true" DisplaySequence="10">
+			<Label>Growth on Follow-up Examination  </Label>
+			<Hint>From paper  </Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>cysts05cm100increasein</Value>
+					<Label>cysts&amp;lt; 0.5 cm, 100% increase in  long-axis diameter</Label>
+				 </Choice>
+				<Choice>
+					<Value>cysts0515cm50increase</Value>
+					<Label>cysts 0.5-1.5 cm, 50% increase in long-axis diameter </Label>
+				 </Choice>
+				<Choice>
+					<Value>cysts15cm20increase</Value>
+					<Label>cysts >==1.5 cm, 20% increase in long-axis diameter</Label>
+				 </Choice>
+				<Choice>
+					<Value>noincrease</Value>
+					<Label>no increase</Label>
+				 </Choice>
+			 </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="growthratemmyear" DisplaySequence="11">
+			<Label>Growth rate (mm/year)</Label>
+			<Hint>possible question for step 5</Hint>
+		</NumericDataElement>
+				
+		<ChoiceDataElement Id="Multiplicityisthereanymorecysts" IsRequired="true" DisplaySequence="12" Editable="false">
+			<Label>Multiplicity, is there any more cysts?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Yes</Value>
+					<Label>Yes</Label>
+				 </Choice>
+				<Choice>
+					<Value>No</Value>
+					<Label>No</Label>
+				 </Choice>
+			 </ChoiceInfo>
+		</ChoiceDataElement>
+			
+	</DataElements>
+	<Rules>
+		<DecisionPoint Id="DecisionPointPancreatic">
+			<Label>Decision Point Label</Label>
+			<Description>Decision Point Description</Description>
+			<Branch>
+					<Label>Decision Point Label</Label>
+					<AndCondition>
+					<EqualCondition DataElementId="Whatisthepancreaticcystsizecategory" ComparisonValue="15cm" />
+					<NotEqualCondition DataElementId="Whatisthepatientagegroup" ComparisonValue="80yearsatpresent" />
+					<EqualCondition DataElementId="Isthepatientbothanadultandasymptomatic" ComparisonValue="Yes" />
+					 </AndCondition>
+					<EndPointRef EndPointId="Endpoint1"/>
+			</Branch>
+			<Branch>
+					<Label>Decision Point Label </Label>
+					<AndCondition>
+					<EqualCondition DataElementId="Isthepatientbothanadultandasymptomatic" ComparisonValue="Yes" />
+					<NotEqualCondition DataElementId="Whatisthepatientagegroup" ComparisonValue="80yearsatpresent" />
+					<EqualCondition DataElementId="Whatisthepancreaticcystsizecategory" ComparisonValue="1525cm" />
+					<EqualCondition DataElementId="PossiblecommunicationwithMPD" ComparisonValue="MPDcommunicationestablished" />
+					 </AndCondition>
+					<EndPointRef EndPointId="Endpoint2A" />
+			</Branch>
+			<Branch>
+					<Label>Decision Point Label </Label>
+					<AndCondition>
+					<EqualCondition DataElementId="Isthepatientbothanadultandasymptomatic" ComparisonValue="Yes" />
+					<EqualCondition DataElementId="Whatisthepancreaticcystsizecategory" ComparisonValue="1525cm" />
+					<EqualCondition DataElementId="PossiblecommunicationwithMPD" ComparisonValue="MPDcommunicationabsent" />
+					 </AndCondition>
+					<EndPointRef EndPointId="Endpoint2B" />
+			 </Branch>
+			<Branch>
+					<Label>Decision Point Label </Label>
+					<AndCondition>
+					<EqualCondition DataElementId="Isthepatientbothanadultandasymptomatic" ComparisonValue="Yes" />
+					<EqualCondition DataElementId="Whatisthepancreaticcystsizecategory" ComparisonValue="25cm" />
+					<NotEqualCondition DataElementId="Whatisthepatientagegroup" ComparisonValue="80yearsatpresent" />
+					 </AndCondition>
+					<EndPointRef EndPointId="Endpoint3" />
+			 </Branch>
+			<Branch>
+					<Label>Rule Decision Point Branch </Label>
+					<AndCondition>
+					<EqualCondition DataElementId="Isthepatientbothanadultandasymptomatic" ComparisonValue="Yes" />
+					<EqualCondition DataElementId="Whatisthepatientagegroup" ComparisonValue="80yearsatpresent" />
+					 </AndCondition>
+					<EndPointRef EndPointId="Endpoint4" />
+			 </Branch>
+		</DecisionPoint>
+	</Rules>
+	<EndPoints>
+		<EndPoint Id="Endpoint1">
+			<Label>Endpoint1 Label </Label>
+			<ReportSections>
+			<ReportSection SectionId="findings">
+			<Branch>
+			<AndCondition>
+			<NotEqualCondition DataElementId="Whatisthepatientagegroup" ComparisonValue="80yearsatpresent" />
+			<EqualCondition DataElementId="Whatisthepancreaticcystsizecategory" ComparisonValue="15cm" />
+			 </AndCondition>
+			<ReportText Type="PlainText">Group 1 </ReportText>
+			 </Branch>
+			 </ReportSection>
+			 </ReportSections>
+		</EndPoint>
+		<EndPoint Id="Endpoint2A">
+			<Label>Endpoint2A Label </Label>
+			<ReportSections>
+			<ReportSection SectionId="findings">
+			<Branch>
+			<AndCondition />
+			 </Branch>
+			 </ReportSection>
+			 </ReportSections>
+		</EndPoint>
+		<EndPoint Id="Endpoint2B">
+<Label>Endpoint2B Label </Label>
+<ReportSections>
+<ReportSection SectionId="findings">
+<Branch>
+<AndCondition />
+ </Branch>
+ </ReportSection>
+ </ReportSections>
+ </EndPoint>
+		<EndPoint Id="Endpoint3">
+<Label>Endpoint3 Label </Label>
+<ReportSections>
+<ReportSection SectionId="findings">
+<Branch>
+<AndCondition />
+ </Branch>
+ </ReportSection>
+ </ReportSections>
+ </EndPoint>
+		<EndPoint Id="Endpoint4">
+<Label>Endpoint4 Label </Label>
+<ReportSections>
+<ReportSection SectionId="findings">
+<Branch>
+<AndCondition />
+ </Branch>
+ </ReportSection>
+ </ReportSections>
+ </EndPoint>
+ </EndPoints>
+ </ReportingModule>
