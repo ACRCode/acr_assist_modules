@@ -68,7 +68,7 @@
 				 </ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="PrimarySiteQuestion_1" IsRequired="true" DisplaySequence="2">
+		<ChoiceDataElement Id="PrimarySiteQuestion_1" IsRequired="true" DisplaySequence="3">
 			<Label>Is there a finding suspicious for residual or recurrent tumor at the primary site?</Label>
 				<ChoiceInfo>
 					<Choice>
@@ -82,7 +82,7 @@
 				 </ChoiceInfo>
 		 </ChoiceDataElement>
 		
-		<IntegerDataElement Id="Whatistheimagenumber_1" IsRequired="true" DisplaySequence="3">
+		<IntegerDataElement Id="Whatistheimagenumber_1" IsRequired="true" DisplaySequence="2">
 			<Label>What is the image number for the suspicious finding at the primary site?</Label>
 			<Minimum>1 </Minimum>
 			<ConditionalProperties>
@@ -396,33 +396,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		
-		<ChoiceDataElement Id="Neckcomp_image" IsRequired="true" DisplaySequence="18">
-			<Label>Is there prior comparison study available for neck node ?</Label>
-				<ChoiceInfo>
-					<Choice>
-						<Value>Yes</Value>
-						<Label>Yes </Label>
-					</Choice>
-					<Choice>
-						<Value>No</Value>
-						<Label>No</Label>
-					</Choice>
-				 </ChoiceInfo>
-				 
-				 
-				 <ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="PriorImage_1" />
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="Yes"/>
-						
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>		
-			</ConditionalProperties>
-				 	
-		 </ChoiceDataElement>
+
 
 	
 		
@@ -452,8 +426,8 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
 					    <EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<SectionIfNot DataElementId="Neckcomp_image"/>
-					    <EqualCondition DataElementId="Neckcomp_image" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="PriorImage_1"/>
+					    <EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -478,7 +452,7 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
 						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<EqualCondition DataElementId="Neckcomp_image" ComparisonValue="No"/>
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -564,6 +538,15 @@
 		
 
 			<Branch>
+			    <DecisionPoint Id ="Ques_Site" >
+				<Label>Question_Site_1</Label>
+				<Branch>
+				    <Label>trial</Label>
+					<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="No"/> 
+					<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_1"/>
+				</Branch>
+				
+				<Branch>
 				<Label>Primary Site_1</Label>
 				<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
 				<DecisionPoint Id="WhatistheprimarysitenodetypeDp_1">
@@ -624,6 +607,8 @@
 						<EndPointRef EndPointId="Cat4DefinitiveRecurrence_1"/>
 					</Branch>						
 				</DecisionPoint>
+				</Branch>
+			</DecisionPoint>
 			</Branch>
 			<Branch>
 				<Label>Primary Site_2</Label>
@@ -687,6 +672,15 @@
 				</DecisionPoint>
 			</Branch>		
 			<Branch>
+			     <DecisionPoint Id="neck_ques">
+				 <Label> Neck ques </Label>
+			     <Branch>
+				 <Label> branch_neck_ques </Label>
+				 <EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+				 <EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_neck"/>
+				 </Branch>
+				 
+			     <Branch>          
 				<Label>Neck</Label>
 				<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="Yes"/>
 				<DecisionPoint Id="WhatisthenecknodetypeDp_1">
@@ -740,14 +734,9 @@
 					</Branch>
 					
 				</DecisionPoint>
-            <Branch>
-			
-			<Label>Not suspicious neck node</Label>
-						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_neck"/>
-			
+            
 			</Branch>
-			
+			</DecisionPoint>
 			</Branch>
 	   </DecisionPoint>
 
