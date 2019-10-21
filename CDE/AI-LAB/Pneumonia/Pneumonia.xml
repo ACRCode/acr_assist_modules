@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Pneumonia</Label>
+		<ID>Pneumonia</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Pneumonia</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Pneumonia key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+	
+	<DataElements>
+	
+	   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>	  
+	         <Hint>Age in years at time of procedure</Hint>
+			<Minimum>0.00</Minimum>
+			<Maximum>90.00</Maximum>
+		</NumericDataElement>
+	
+	    <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+		    <Hint>Sex at birth</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		 <ChoiceDataElement Id="fewer" IsRequired="true" DisplaySequence="3">
+			<Label>History of fewer</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		 <ChoiceDataElement Id="dyspnea" IsRequired="true" DisplaySequence="4">
+			<Label>History of dyspnea</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		 <ChoiceDataElement Id="hypoxia" IsRequired="true" DisplaySequence="5">
+			<Label>History of hypoxia</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		 <ChoiceDataElement Id="oxygen_saturation" IsRequired="true" DisplaySequence="6">
+			<Label>History of decreased oxygen saturation</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="fluid_level" IsRequired="true" DisplaySequence="7">
+			<Label>Pleural fluid level</Label>
+			<Hint>pleural fluid (including air/fluid levels)</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="disease" IsRequired="true" DisplaySequence="8">
+			<Label>Presence of lung disease</Label>
+			<Hint>Pneumonia/lung abscess, bullous, emphysema, bronchiectasis</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="Pneumomediastinum" IsRequired="true" DisplaySequence="9">
+			<Label>Pneumomediastinum</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="other_air" IsRequired="true" DisplaySequence="10">
+			<Label>Presence of other extrapleural air collections</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="atelectasis" IsRequired="true" DisplaySequence="11">
+			<Label>Atelectasis</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="lobar_collapse" IsRequired="true" DisplaySequence="12">
+			<Label>Lobar collapse</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="malignancy" IsRequired="true" DisplaySequence="13">
+			<Label>Presence of malignancy</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="heart_failure" IsRequired="true" DisplaySequence="14">
+			<Label>Presence of left-sided congestive heart failure</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+
+		
+		<ChoiceDataElement Id="edema" IsRequired="true" DisplaySequence="16">
+			<Label>Presence of Pulmonary edema</Label>
+			<ChoiceInfo>
+			<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Undetermined</Label>
+				</Choice>						
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="chest_surgery" IsRequired="true" DisplaySequence="17">
+			<Label>Prior chest surgery</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="lung_injury" IsRequired="true" DisplaySequence="18">
+			<Label>Prior lung injury</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="treated_healed" IsRequired="true" DisplaySequence="19">
+			<Label>Prior treated/healed lung disease</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="lung_involvement" IsRequired="true" DisplaySequence="20">
+			<Label>Lung tissue involvement</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>0</Value>
+					<Label>Segmental</Label>	
+				</Choice>
+				<Choice>
+					<Value>1</Value>
+					<Label>Patchy</Label>
+				</Choice>
+                 <Choice>
+					<Value>3</Value>
+					<Label>Lobar</Label>
+				</Choice>
+                 <Choice>
+					<Value>4</Value>
+					<Label>Multilobar</Label>
+				</Choice>	
+                <Choice>
+					<Value>5</Value>
+					<Label>Diffuse</Label>
+				</Choice>	
+                <Choice>
+					<Value>6</Value>
+					<Label>Cavitary</Label>
+				</Choice>	
+                <Choice>
+					<Value>7</Value>
+					<Label>Nodular</Label>
+				</Choice>					
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="presentation" IsRequired="true" DisplaySequence="21">
+			<Label>Presentation - Subtle pneumonia, include cases in which opacities project below the diaphragms on the frontal view</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Yes</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>No</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="penumonia_detection" IsRequired="true" DisplaySequence="22">
+			<Label>Detection of pneumonia in adult patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Absent</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Present</Label>
+				</Choice>
+                <Choice>
+					<Value>3</Value>
+					<Label>Unknown</Label>
+				</Choice>				
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		
+		
+			
+		</DataElements>
+
+	<Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>
+		
+	</Rules>
+
+	<EndPoints>
+		
+	 
+	 
+		<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		 <ReportTexts>
+				<ReportText SectionId="findings">	
+				</ReportText>			
+		</ReportTexts>		
+		</EndPoint>
+	</EndPoints>
+
+</ReportingModule>
