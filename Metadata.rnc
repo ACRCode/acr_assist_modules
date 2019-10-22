@@ -70,7 +70,11 @@ Metadata =
     }
     
     Coding = element Coding{
-         element System { attribute Value{"RadElement" | "Loinc" | "SnomedCT" } },
+         element System { attribute Value{"https://www.radelement.org/set" | 
+                                            "https://www.radelement.org/element" | 
+                                            "http://loinc.org" | 
+                                            "http://snomed.info/sct" | 
+                                            "http://www.ncbi.nlm.nih.gov/pubmed"} },
          element Version { attribute Value{text}},
          element Code { attribute Value{xsd:token}},
          element Display { attribute Value{text}},
@@ -91,9 +95,9 @@ Metadata =
     
     Citation =
     element Citation {
-        attribute PubmedId { xsd:token }?,
+        Coding?,
         attribute Url { xsd:anyURI }?,
-        text
+        element Description {text}
     }+
     
     Diagnosis = element Diagnosis { codeAttrs, text }
