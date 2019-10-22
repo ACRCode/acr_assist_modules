@@ -68,7 +68,7 @@
 				 </ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="PrimarySiteQuestion_1" IsRequired="true" DisplaySequence="3">
+		<ChoiceDataElement Id="PrimarySiteQuestion_1" IsRequired="true" DisplaySequence="2">
 			<Label>Is there a finding suspicious for residual or recurrent tumor at the primary site?</Label>
 				<ChoiceInfo>
 					<Choice>
@@ -82,19 +82,20 @@
 				 </ChoiceInfo>
 		 </ChoiceDataElement>
 		
-		<IntegerDataElement Id="Whatistheimagenumber_1" IsRequired="true" DisplaySequence="2">
+		<IntegerDataElement Id="Whatistheimagenumber_1" IsRequired="true" DisplaySequence="3">
 			<Label>What is the image number for the suspicious finding at the primary site?</Label>
 			<Minimum>1 </Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
-						
-					    <SectionIfNot DataElementId="PriorImage_1"/>
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="PrimarySiteQuestion_1"/>
+						<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="No"/>
+
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
+	
 		</IntegerDataElement>
 		
 		<ChoiceDataElement Id="Whatistheprimarysitenodetype_1" DisplaySequence="4">
@@ -118,7 +119,7 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="PrimarySiteQuestion_1"/>
 						<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="No"/>
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
+
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -150,7 +151,6 @@
 						<SectionIfNot DataElementId="Whatistheprimarysitenodetype_1" />
 						<NotEqualCondition DataElementId="Whatistheprimarysitenodetype_1" ComparisonValue="Superficialmucosal"/>
 						
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>		
@@ -283,7 +283,6 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="PrimarySiteQuestion_2"/>
 						<EqualCondition DataElementId="PrimarySiteQuestion_2" ComparisonValue="No"/>
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -402,7 +401,7 @@
 		
 		
 		<ChoiceDataElement Id="NeckNodeQUestion_neck" IsRequired="true" DisplaySequence="19">
-			<Label>Is there a suspicious neck node?</Label>
+			<Label>Are there one or more suspicious neck node(s)?</Label>
 				<ChoiceInfo>
 					<Choice>
 						<Value>Yes</Value>
@@ -415,27 +414,114 @@
 				 </ChoiceInfo>
 				 	
 		 </ChoiceDataElement>
+		 
+		 
+		 
+		 
+		 <ChoiceDataElement Id="nodetype_abnormal" DisplaySequence="20">
+			<Label>Which of the following best describes the abormal lymph node(s)?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>contra</Value>
+					<Label>Contralateral</Label>
+				</Choice>
+				<Choice>
+					<Value>ispi</Value>
+					<Label>Ispilateral</Label>
+				</Choice>
+				<Choice>
+					<Value>bilateral</Value>
+					<Label>Bi-lateral</Label>
+				</Choice>
+		
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
+						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>	
 		
 		
 		
-		<IntegerDataElement Id="Whatistheimagenumber_neck" IsRequired="true" DisplaySequence="20">
-			<Label>What is the image number of the suspicious neck node?</Label>
+		
+		
+		<IntegerDataElement Id="Whatistheimagenumber_neck" IsRequired="true" DisplaySequence="21">
+			<Label>What is the image number of the most suspicious neck node?</Label>
 			<Minimum>1 </Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
 					    <EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<SectionIfNot DataElementId="PriorImage_1"/>
-					    <EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<ChoiceDataElement Id="nodetype_neck" DisplaySequence="21">
-			<Label>Which of the following best describes the suspicious neck node ?</Label>
+		
+		
+		<ChoiceDataElement Id="nodetype_level" DisplaySequence="22">
+			<Label>What is the nodal level of the most suspicious neck node?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>onea</Value>
+					<Label>1a</Label>
+				</Choice>
+				<Choice>
+					<Value>oneb</Value>
+					<Label>1b</Label>
+				</Choice>
+				<Choice>
+					<Value>twoa</Value>
+					<Label>2a</Label>
+				</Choice>
+				<Choice>
+					<Value>twob</Value>
+					<Label>2b</Label>
+				</Choice>
+				<Choice>
+					<Value>three</Value>
+					<Label>3</Label>
+				</Choice>
+				<Choice>
+					<Value>four</Value>
+					<Label>4</Label>
+				</Choice>
+				
+				<Choice>
+					<Value>five</Value>
+					<Label>5</Label>
+				</Choice>
+				<Choice>
+					<Value>six</Value>
+					<Label>6</Label>
+				</Choice>
+				
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
+						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>	
+		
+		
+		
+		
+		
+		
+		<ChoiceDataElement Id="nodetype_neck" DisplaySequence="23">
+			<Label>Which of the following best describes the most suspicious neck node ?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Definitenodalrecurrence</Value>
@@ -452,7 +538,6 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
 						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
-						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -462,7 +547,7 @@
 		
 	
 		
-		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE_neck" DisplaySequence="22">
+		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE_neck" DisplaySequence="24">
 			<Label>Does the node have new necrosis or ENE ?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -488,7 +573,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="neworenlarginnode_neck" DisplaySequence="23">
+		<ChoiceDataElement Id="neworenlarginnode_neck" DisplaySequence="25">
 			<Label>What best describes the FDG uptake associated with this node?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -525,6 +610,8 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 </DataElements>
+
+
 	<Rules>
 		<DecisionPoint Id="Category-DP">
 			<Label>Node Information</Label>
@@ -931,7 +1018,7 @@
 				</ReportSection>
 				<ReportSection SectionId="Recommendation">
 					<Branch>
-						<ReportText Type="PlainText">Category 4: Clinical management </ReportText>
+						<ReportText Type="PlainText">Category 4: Clinical management of definitive recurrence for ENT/Oncology guideline.</ReportText>
 						<ReportText Type="Newline" />
 					</Branch>
 				</ReportSection>
@@ -1094,13 +1181,13 @@
 						<ReportText Type="PlainText">Category 4: Definitive recurrence</ReportText>
 						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Pathologically proven or definite radiologic and clinical progression.</ReportText>
-						<ReportText Type="Newline" />	
+						<ReportText Type="Newline"/>	
 					</Branch>
 				</ReportSection>
 				<ReportSection SectionId="Recommendation">
 					<Branch>
-						<ReportText Type="PlainText">Category 4: Clinical management </ReportText>
-						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Category 4: Clinical management of definitive recurrence for ENT/Oncology guideline..</ReportText>
+						<ReportText Type="Newline"/>
 					</Branch>
 				</ReportSection>
 			</ReportSections>
@@ -1269,7 +1356,7 @@
 				</ReportSection>
 				<ReportSection SectionId="Recommendation">
 					<Branch>
-						<ReportText Type="PlainText">Category 4: Clinical management </ReportText>
+						<ReportText Type="PlainText">Category 4: Clinical management of definitive recurrence for ENT/Oncology guideline.</ReportText>
 						<ReportText Type="Newline" />
 					</Branch>
 				</ReportSection>
