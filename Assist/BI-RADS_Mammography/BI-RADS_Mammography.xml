@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../CARDS_Schema_2.0.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+<Metadata>
+<Label>BI-RADS </Label>
+<ID>BI-RADS </ID>
+      <SchemaVersion>2.0 </SchemaVersion>
+      <ModuleVersion>1.0 </ModuleVersion>
+       <CreatedDate>2019-10-15 </CreatedDate>
+        <LastModifiedDate>2019-10-15 </LastModifiedDate>
+        <DevelopedBy>American College of Radiology </DevelopedBy>
+        <Info>
+        <Description>BI-RADS </Description>
+        <Contact>
+        <Name>Ritu Doijad </Name>
+        <Institution>American College of Radiology </Institution>
+        </Contact>
+         </Info>
+ </Metadata>
+ 
+ <DataElements>
+		<ChoiceDataElement Id="breastcomposition" IsRequired="true" DisplaySequence="1">
+			<Label>What is the breast composition?</Label>
+			<Hint>Density and composition evidenced from mammography reports</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>fatty</Value>
+					<Label>a. The breasts are almost entirely fatty.</Label>
+				 </Choice>
+				<Choice>
+					<Value>fibrograndular</Value>
+					<Label>b. There are scattered areas of fibrograndular density.</Label>
+				</Choice>
+				<Choice>
+					<Value>heterodense</Value>
+					<Label>c. The breasts are heterogeneously dense, which may obscure small masses.</Label>
+				</Choice>
+				<Choice>
+					<Value>extrdense</Value>
+					<Label>d. The breasts are extremely dense, which lowers the sensitivity of mammography.</Label>
+				</Choice>
+			</ChoiceInfo>
+		 </ChoiceDataElement>
+		 
+		 
+		 
+		 
+		 <ChoiceDataElement Id="shape" IsRequired="true" DisplaySequence="2">
+			<Label>Shape</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>oval</Value>
+					<Label>Oval</Label>
+				 </Choice>
+				<Choice>
+					<Value>round</Value>
+					<Label>Round</Label>
+				 </Choice>
+				<Choice>
+					<Value>irregular</Value>
+					<Label>Irregular</Label>
+				 </Choice>
+			 </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="margin" IsRequired="true" DisplaySequence="3">
+			<Label>Margin</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>circum</Value>
+					<Label>Circumscribed</Label>
+				 </Choice>
+				<Choice>
+					<Value>obscure</Value>
+					<Label>Obscured</Label>
+				 </Choice>
+				<Choice>
+					<Value>micro</Value>
+					<Label>Microlobulated</Label>
+				 </Choice>
+				 <Choice>
+					<Value>indistinct</Value>
+					<Label>Indistinct</Label>
+				 </Choice>
+				<Choice>
+					<Value>spiculated</Value>
+					<Label>Spiculated</Label>
+				 </Choice>
+				 			 
+			 </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="density" IsRequired="true" DisplaySequence="4">
+			<Label>Density</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>highden</Value>
+					<Label>High density</Label>
+				 </Choice>
+				<Choice>
+					<Value>eqden</Value>
+					<Label>Equal Density</Label>
+				 </Choice>
+				<Choice>
+					<Value>lowden</Value>
+					<Label>Low Density</Label>
+				 </Choice>
+				 <Choice>
+					<Value>fat</Value>
+					<Label>Fat-containing</Label>
+				 </Choice>
+		   </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="benigncalci" IsRequired="true" DisplaySequence="5">
+			<Label> Calcification : Typically benign</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>skin</Value>
+					<Label>Skin</Label>
+				 </Choice>
+				<Choice>
+					<Value>vascular</Value>
+					<Label>Vascular</Label>
+				 </Choice>
+				<Choice>
+					<Value>coarse</Value>
+					<Label>Coarse or popcorn-like</Label>
+				 </Choice>
+				 <Choice>
+					<Value>rod</Value>
+					<Label>Large rod-like</Label>
+				 </Choice>
+				 <Choice>
+					<Value>rim</Value>
+					<Label>Rim</Label>
+				 </Choice>
+				 <Choice>
+					<Value>dystrophic</Value>
+					<Label>Dystrophic</Label>
+				 </Choice>
+				 <Choice>
+					<Value>milkcal</Value>
+					<Label>Milk of calcium</Label>
+				 </Choice>
+				 <Choice>
+					<Value>suture</Value>
+					<Label>Suture</Label>
+				 </Choice>
+		   </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="suspiciouscalci" IsRequired="true" DisplaySequence="5">
+			<Label> Calcification : Suspicious Morphology</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>amorphous</Value>
+					<Label>Amorphous</Label>
+				 </Choice>
+				<Choice>
+					<Value>coarsehetero</Value>
+					<Label>Coarse heterogeneous</Label>
+				 </Choice>
+				<Choice>
+					<Value>finepheo</Value>
+					<Label>Fine pheomorphic</Label>
+				 </Choice>
+				 <Choice>
+					<Value>finelinear</Value>
+					<Label>Fine linear or fine-linear branching</Label>
+				 </Choice>
+		   </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="distributioncalci" IsRequired="true" DisplaySequence="6">
+			<Label> Calcification : Distribution</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>diffuse</Value>
+					<Label>Diffuse</Label>
+				 </Choice>
+				<Choice>
+					<Value>regional</Value>
+					<Label>Regional</Label>
+				 </Choice>
+				<Choice>
+					<Value>grouped</Value>
+					<Label>Grouped</Label>
+				 </Choice>
+				 <Choice>
+					<Value>linear</Value>
+					<Label>Linear</Label>
+				 </Choice>
+				 <Choice>
+					<Value>segmental</Value>
+					<Label>Segmental</Label>
+				 </Choice>
+		   </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="archidistortasymm" IsRequired="true" DisplaySequence="7">
+			<Label>Architectural distortion </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>asymmetry</Value>
+					<Label>Asymmetry</Label>
+				 </Choice>
+				<Choice>
+					<Value>globalasymmetry</Value>
+					<Label>Global Asymmetry</Label>
+				 </Choice>
+				<Choice>
+					<Value>focalasymmetry</Value>
+					<Label>Focal Asymmetry</Label>
+				 </Choice>
+				 <Choice>
+					<Value>developasymmetry</Value>
+					<Label>Developing Asymmetry</Label>
+				 </Choice>
+		   </ChoiceInfo>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="lymphnode" IsRequired="true" DisplaySequence="8">
+			<Label>Is there an intramammary lymph node?</Label>
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>Yes</Value>
+					<Label>Yes</Label>
+				 </Choice>
+				<Choice>
+					<Value>No</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		 </ChoiceDataElement>
+		 
+		 	
+		<ChoiceDataElement Id="skinlesion" IsRequired="true" DisplaySequence="9">
+			<Label>Is there a skin lesion?</Label>
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				 </Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		 </ChoiceDataElement>
+		
+		
+			
+		<ChoiceDataElement Id="dilatedduct" IsRequired="true" DisplaySequence="10">
+			<Label>Is there a solitary dilated duct?</Label>
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				 </Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+			</ChoiceInfo>
+		 </ChoiceDataElement>
+		
+		
+		
+		
+		<MulChoiceDataElement Id="assofeatures" IsRequired="true" DisplaySequence="8">
+			<Label>Associated features</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>skinretract</Value>
+					<Label>Skin retraction</Label>
+				 </Choice>
+				<Choice>
+					<Value>nippleretract</Value>
+					<Label>Nipple Retraction</Label>
+				 </Choice>
+				<Choice>
+					<Value>skinthick</Value>
+					<Label>Skin thickening</Label>
+				 </Choice>
+				 <Choice>
+					<Value>trabthick</Value>
+					<Label>Trabecular thickening</Label>
+				 </Choice>
+				 <Choice>
+					<Value>axiladeno</Value>
+					<Label>Axillary adenopathy</Label>
+				 </Choice>
+				 <Choice>
+					<Value>archidistortf</Value>
+					<Label>Architectural distortion</Label>
+				 </Choice>
+				 <Choice>
+					<Value>calcimain</Value>
+					<Label>Calcification</Label>
+				 </Choice>
+		   </ChoiceInfo>
+		</MulChoiceDataElement>
+		
+		<IntegerDataElement Id="laterality" IsRequired="true" DisplaySequence="9">
+			<Label>What is the laterality of the lesion? </Label>
+		</IntegerDataElement>
+		
+		<IntegerDataElement Id="quadrant" IsRequired="true" DisplaySequence="10">
+			<Label>Which quadrant and clock face does the lesion lie in? </Label>
+		</IntegerDataElement>
+		
+		<IntegerDataElement Id="depth" IsRequired="true" DisplaySequence="11">
+		<Label>What is the depth of the lesion?</Label>
+		</IntegerDataElement>
+		
+		<IntegerDataElement Id="distance" IsRequired="true" DisplaySequence="12">
+			<Label>What is the distance of the lesion from the nipple? </Label>
+		</IntegerDataElement>
+		
+</DataElements>		 
+
+<Rules>
+		<DecisionPoint Id="HelloAssist">
+			<Label>Hello Assist</Label>
+			<Branch>
+				<Label>No follow-up required</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="Size" ComparisonValue="1"/>
+				</AndCondition>
+				<EndPointRef EndPointId="NoFU" DiagramId="KeyDiagramBranch_1"></EndPointRef>
+			</Branch>
+			<Branch>
+				<Label>Follow-up is recommended in 6 months</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
+					<EqualCondition DataElementId="Enhancement" ComparisonValue="N"/>
+				</AndCondition>
+				<EndPointRef EndPointId="moFU" DiagramId="KeyDiagramBranch_3"></EndPointRef>
+			</Branch> 
+			<Branch>
+				<Label>Schedule an immediate follow-up</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
+					<EqualCondition DataElementId="Enhancement" ComparisonValue="Y"/>
+				</AndCondition>
+				<EndPointRef EndPointId="mustFU" DiagramId="KeyDiagramBranch_2"></EndPointRef>
+			</Branch>
+		</DecisionPoint>
+	</Rules>
+
+
+
+
+
+	<EndPoints>
+		<EndPoint Id="Cat0">
+			<Label>Cat 0</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 0: Incomplete - Need Additonal Imaging Evaluation and/or Prior Mammograms for comparison.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Recall for additional imaging and/or comparison with prior examination.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+
+        <EndPoint Id="Cat1">
+			<Label>Cat 1</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 1: Negative.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Routine mammography screening.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+    <EndPoint Id="Cat2">
+			<Label>Cat 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 2: Benign.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Routine mammography screening.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+	
+
+       <EndPoint Id="Cat3">
+			<Label>Cat 3</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 3: Probably Benign.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Short interval (6-month) follow-up or continued surveillance mammography.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+
+       <EndPoint Id="Cat4">
+			<Label>Cat 4</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 4: Suspicious.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Tissue diagnosis.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="Cat4A">
+			<Label>Cat 4A</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 4A: Low suspicion for malignancy.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Tissue diagnosis.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		
+		<EndPoint Id="Cat4B">
+			<Label>Cat 4B</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 4B: Moderate suspicion for malignancy.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Tissue diagnosis.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		
+		<EndPoint Id="Cat4C">
+			<Label>Cat 4C</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 4C: High suspicion for malignancy.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Tissue diagnosis.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		
+		   <EndPoint Id="Cat5">
+			<Label>Cat 5</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 5: Highly Suggestive of Malignancy.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Tissue diagnosis.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		 <EndPoint Id="Cat6">
+			<Label>Cat 6</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Category 6: Known Biopsy-Proven Malignancy.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Surgical excision when clinically appropriate.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		
+	</EndPoints>
+	
+</ReportingModule>
