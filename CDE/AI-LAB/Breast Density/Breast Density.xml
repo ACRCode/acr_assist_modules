@@ -1,127 +1,65 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-<Metadata>
-<Label>Breast_Density </Label>
-<ID>Breast_Density </ID>
-<SchemaVersion>2.0 </SchemaVersion>
-<ModuleVersion>1.0 </ModuleVersion>
-<CreatedDate>2019-10-04 </CreatedDate>
-<LastModifiedDate>2019-10-4 </LastModifiedDate>
-<DevelopedBy>American College of Radiology </DevelopedBy>
-<CodableConcept />
-<Info>
-<Description>Breast_Density </Description>
-<References />
-<Diagrams />
-<Contact>
-<Name>Smita K </Name>
-<Institution>American College of Radiology </Institution>
- </Contact>
- </Info>
-<Ontology>
-<AnatomicRegions />
-<PossibleDiagnoses />
- </Ontology>
-<ApplicableExams />
-<ApplicableSexes Value="Female" />
-<ApplicableAgeGroups />
-<TextCues>
-<ContextPhrases />
-<KeyWords />
-<NegationPhrases />
- </TextCues>
-<VoiceActivation />
- </Metadata>
-<DataElements>
-<ChoiceDataElement Id="BIRADSbreastcompositioncategory" IsRequired="true" DisplaySequence="1">
-<Label>BI-RADS breast composition category </Label>
-<ChoiceInfo>
-<Choice>
-<Value>Unknown </Value>
-<Label>Unknown </Label>
- </Choice>
-<Choice>
-<Value>Thebreastsarealmost </Value>
-<Label><ReportingModule>
-<Metadata>
-<Label>Breast_Density </Label>
-<ID>Breast_Density </ID>
-<SchemaVersion>2.0 </SchemaVersion>
-<ModuleVersion>1.0 </ModuleVersion>
-<CreatedDate>2019-10-04 </CreatedDate>
-<LastModifiedDate>2019-10-4 </LastModifiedDate>
-<DevelopedBy>American College of Radiology </DevelopedBy>
-<CodableConcept />
-<Info>
-<Description>Breast_Density </Description>
-<References />
-<Diagrams />
-<Contact>
-<Name>Smita K </Name>
-<Institution>American College of Radiology </Institution>
- </Contact>
- </Info>
-<Ontology>
-<AnatomicRegions />
-<PossibleDiagnoses />
- </Ontology>
-<ApplicableExams />
-<ApplicableSexes Value="Female" />
-<ApplicableAgeGroups />
-<TextCues>
-<ContextPhrases />
-<KeyWords />
-<NegationPhrases />
- </TextCues>
-<VoiceActivation />
- </Metadata>
-<DataElements>
-<ChoiceDataElement Id="BIRADSbreastcompositioncategory" IsRequired="true" DisplaySequence="1">
-<Label>BI-RADS breast composition category </Label>
-<ChoiceInfo>
-<Choice>
-<Value>Unknown </Value>
-<Label>Unknown </Label>
- </Choice>
-<Choice>
-<Value>Thebreastsarealmost </Value>
-<Label>TThe breasts are almost entirely fatty</Label>
- </Choice>
-<Choice>
-<Value>Therearescatteredareas </Value>
-<Label>There are scattered areas of fibroglandular density.</Label>
- </Choice>
-<Choice>
-<Value>Thebreastsareheterogeneously </Value>
-<Label>The breasts are heterogeneously dense, which may obscure small masses.</Label>
- </Choice>
-<Choice>
-<Value>Thebreastsareextremelydense </Value>
-<Label>The breasts are extremely dense, which lowers the sensitivity of mammography.</Label>
- </Choice>
- </ChoiceInfo>
- </ChoiceDataElement>
- </DataElements>
-<Rules />
-<EndPoints />
- </ReportingModule> </Label>
- </Choice>
-<Choice>
-<Value>Therearescatteredareas </Value>
-<Label>There are scattered areas </Label>
- </Choice>
-<Choice>
-<Value>Thebreastsareheterogeneously </Value>
-<Label>The breasts are heterogeneously </Label>
- </Choice>
-<Choice>
-<Value>Thebreastsareextremelydense </Value>
-<Label>The breasts are extremely dense </Label>
- </Choice>
- </ChoiceInfo>
- </ChoiceDataElement>
- </DataElements>
-<Rules />
-<EndPoints />
- </ReportingModule>
+    <Metadata>
+        <Label>Breast Density</Label>
+        <ID>Breast_Density</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-10-14</CreatedDate>
+        <LastModifiedDate>2019-10-23</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept />
+        <Info>
+            <Description>Breast Density</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Smita K</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Female" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="BIRADSbreastcompositioncategory" IsRequired="true" DisplaySequence="1">
+            <CodableConcept />
+            <Label>BI-RADS breast composition category</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown </Label>
+                </Choice>
+                <Choice>
+                    <Value>Thebreastsarealmostentirelyfatty</Value>
+                    <Label>The breasts are almost entirely fatty</Label>
+                </Choice>
+                <Choice>
+                    <Value>Therearescatteredareasoffibroglandulardensity</Value>
+                    <Label>There are scattered areas of fibroglandular density</Label>
+                </Choice>
+                <Choice>
+                    <Value>Thebreastsareheterogeneouslydense,whichmayobscuresmallmasses</Value>
+                    <Label>The breasts are heterogeneously dense, which may obscure small masses</Label>
+                </Choice>
+                <Choice>
+                    <Value>Thebreastsareextremelydense,whichlowersthesensitivityofmammography</Value>
+                    <Label>The breasts are extremely dense, which lowers the sensitivity of mammography</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>
