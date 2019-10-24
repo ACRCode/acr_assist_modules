@@ -40,6 +40,8 @@
         <VoiceActivation />
     </Metadata>
     <DataElements>
+		<GlobalValue Id="conditionConst">10</GlobalValue>
+		
         <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
             <Label>Age of the patient</Label>
             <Hint>Age in years at time of procedure</Hint>
@@ -370,18 +372,30 @@
             </ChoiceInfo>
         </ChoiceDataElement>
     </DataElements>
-    <Rules>
-        <DecisionPoint Id="macrodp">
-            <Label>Macro Banch</Label>
-            <Branch>
-                <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
-                <EndPointRef EndPointId="macroEndpoint" />
-            </Branch>
-        </DecisionPoint>
-    </Rules>
+	<Rules>
+		<DecisionPoint Id="categoryFinding">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+			    <EndPointRef EndPointId="categoryEndPoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
     <EndPoints>
-        <EndPoint Id="macroEndpoint">
-            <Label>A</Label>
+        <EndPoint Id="categoryEndPoint">
+            <Label>Report</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+
+                        <SectionIf DataElementId="disease"/>
+						<ReportText Type="PlainText">Presence of lung disease: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="disease"></ReportText>
+						
+						<!-- Add more findings here -->
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
         </EndPoint>
     </EndPoints>
 </ReportingModule>

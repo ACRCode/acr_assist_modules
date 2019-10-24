@@ -40,6 +40,7 @@
         <VoiceActivation />
     </Metadata>
     <DataElements>
+		<GlobalValue Id="conditionConst">10</GlobalValue>
         <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
             <Label>Age of the patient</Label>
             <Minimum>0.00</Minimum>
@@ -257,17 +258,35 @@
         </ChoiceDataElement>
     </DataElements>
     <Rules>
-        <DecisionPoint Id="macrodp">
-            <Label>Macro Banch</Label>
-            <Branch>
-                <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
-                <EndPointRef EndPointId="macroEndpoint" />
-            </Branch>
-        </DecisionPoint>
-    </Rules>
+		<DecisionPoint Id="categoryFinding">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+			    <EndPointRef EndPointId="categoryEndPoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
     <EndPoints>
-        <EndPoint Id="macroEndpoint">
-            <Label>A</Label>
+        <EndPoint Id="categoryEndPoint">
+            <Label>Report</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <SectionIf DataElementId="pneumothorax_detection"/>
+						<ReportText Type="PlainText">Pneumothorax detection: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="pneumothorax_detection"></ReportText>
+                    </Branch>
+					
+					<Branch>
+						<SectionIf DataElementId="size"/>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText">Pneumothorax size: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="size"></ReportText>	
+					</Branch>
+					
+					<!-- Add more findings here -->
+                </ReportSection>
+            </ReportSections>
         </EndPoint>
     </EndPoints>
 </ReportingModule>
