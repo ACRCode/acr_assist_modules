@@ -2,12 +2,12 @@
 <?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 	<Metadata>
-		<Label>Breast Density</Label>
-		<ID>Breast Density</ID>
+		<Label>cardiomegaly </Label>
+		<ID>ardiomegaly</ID>
 		<SchemaVersion>1.0</SchemaVersion>
 		<ModuleVersion>1.0</ModuleVersion>
 		<Info>
-			<Description>This module describes the Common Data elements and Macros for Breast Density</Description>
+			<Description>This module describes the Common Data elements and Macros for cardiomegaly</Description>
 			
 			<References>
 				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
@@ -16,7 +16,7 @@
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
 					<Location>keydiagram.jpg</Location>
-					<Label>Breast Density key image</Label>
+					<Label>cardiomegaly key image</Label>
 				</Diagram>
 			</Diagrams>
 			<Contact>
@@ -33,8 +33,9 @@
 	
 	<DataElements>
 	
-	 <ChoiceDataElement Id="Breast_Density" IsRequired="true" DisplaySequence="1">
-			<Label>Classification</Label>
+	 <ChoiceDataElement Id="Cardiothoracic Ratio" IsRequired="true" DisplaySequence="1">
+			<Label>Cardiothoracic ratio</Label>
+			<Hint>Cardiac size expressed as cardiothoracic ratio</Hint>
 			<ChoiceInfo>
 				<Choice>
 					<Value>fat</Value>
