@@ -3,7 +3,7 @@
 <ReportingModule>
 	<Metadata>
 		<Label>cardiomegaly </Label>
-		<ID>ardiomegaly</ID>
+		<ID>cardiomegaly</ID>
 		<SchemaVersion>1.0</SchemaVersion>
 		<ModuleVersion>1.0</ModuleVersion>
 		<Info>
@@ -33,28 +33,34 @@
 	
 	<DataElements>
 	
-	 <ChoiceDataElement Id="Cardiothoracic Ratio" IsRequired="true" DisplaySequence="1">
+	<GlobalValue Id="conditionConst">10</GlobalValue>
+	
+	   <NumericDataElement Id="cardiothoracicratio" IsRequired="true" DisplaySequence="1">
 			<Label>Cardiothoracic ratio</Label>
-			<Hint>Cardiac size expressed as cardiothoracic ratio</Hint>
+		</NumericDataElement>
+	
+		
+		<ChoiceDataElement Id="cardiodetection" IsRequired="true" DisplaySequence="2">
+			<Label>Cardiomegaly detection</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>fat</Value>
-					<Label>Almost entirely fat</Label>	
+					<Value>absent</Value>
+					<Label>0 - Cardiomegaly absent</Label>	
 				</Choice>
 				<Choice>
-					<Value>scattered</Value>
-					<Label>Scattered fibroglandular densities</Label>
+					<Value>present</Value>
+					<Label>1 - Cardiomegaly present</Label>
 				</Choice>
-				<Choice>
-					<Value>het_dense</Value>
-					<Label>Heterogeneously dense</Label>
-				</Choice>
-				<Choice>
-					<Value>Extremely_dense</Value>
-					<Label>Extremely dense</Label>
-				</Choice>			
+                <Choice>
+					<Value>indeterminate</Value>
+					<Label>2 - Indeterminate</Label>
+				</Choice>				
 			</ChoiceInfo>			
 		</ChoiceDataElement>
+		
+		<NumericDataElement Id="carinaangle" IsRequired="true" DisplaySequence="3">
+			<Label>Carina Angle</Label>
+		</NumericDataElement>
 		
 	</DataElements>
 	
@@ -62,93 +68,52 @@
 	
 	
 	<Rules>
-	<DecisionPoint Id="Breast Density">
-	<Label>Breast Density</Label>
-	<Branch>
-		<Label>The_breasts_are_fatty</Label>
-		   <AndCondition>
-			<EqualCondition DataElementId="Breast_Density" ComparisonValue="fat"/>
-           </AndCondition>
-			<EndPointRef EndPointId="Fatty"></EndPointRef>
-	 </Branch>
-	 <Branch>
-		<Label>Scattered_density</Label>
-		   <AndCondition>
-			<EqualCondition DataElementId="Breast_Density" ComparisonValue="scattered"/>
-           </AndCondition>
-			<EndPointRef EndPointId="Scattered"></EndPointRef>
-	 </Branch> 
-	  <Branch>
-		<Label>Small_masses</Label>
-		   <AndCondition>
-			<EqualCondition DataElementId="Breast_Density" ComparisonValue="het_dense"/>
-           </AndCondition>
-			<EndPointRef EndPointId="Masses"></EndPointRef>
-	 </Branch>
-	 <Branch>
-		<Label>Extremely_dense</Label>
-		   <AndCondition>
-			<EqualCondition DataElementId="Breast_Density" ComparisonValue="Extremely_dense"/>
-           </AndCondition>
-			<EndPointRef EndPointId="Dense"></EndPointRef>
-	 </Branch>
-	 
-	 </DecisionPoint>
-    </Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
 
 	
+    <EndPoints>		
 
-
-
-
-	<EndPoints>
-			
-	 <EndPoint Id="Fatty">
-	  	<Label>The_breasts_are_fatty</Label>
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
 		<ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">The breasts density is almost entirely fatty.</ReportText>
+					<ReportText Type="PlainText"> Cardiomegaly evaluation results: </ReportText>
+					<ReportText Type="Newline"/>
 				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>
-	  
-	   <EndPoint Id="Scattered">
-	  	<Label>Scattered_density</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">The breast density shows scattered areas of fibroglandular density.</ReportText>
+				    <SectionIf DataElementId="cardiothoracicratio" />
+					<ReportText Type="PlainText"> Cardiothoracic ratio is : </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="cardiothoracicratio"/>
+					<ReportText Type="Newline"/>
 				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>
-	  
-	  <EndPoint Id="Masses">
-	  	<Label>Small_masses</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">The breasts density is heterogeneously dense, which may obscure small masses.</ReportText>
+				    <SectionIf DataElementId="cardiodetection" />
+					<ReportText Type="PlainText"> Cardiomegaly detection class is : </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="cardiodetection"/>
+					<ReportText Type="Newline"/>
 				</Branch>
-			</ReportSection>
-		</ReportSections>
-      </EndPoint>
-	  
-	  <EndPoint Id="Dense">
-	  	<Label>Extremely_dense</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
+
 				<Branch>
-					<ReportText Type="PlainText">The breasts density is extremely dense, which lowers the sensitivity of mammography.</ReportText>
+				    <SectionIf DataElementId="carinaangle" />
+					<ReportText Type="PlainText"> Carina angle is : </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="carinaangle"/>
+					<ReportText Type="Newline"/>
 				</Branch>
-			</ReportSection>
+				
+				
+            
+	    </ReportSection>
 		</ReportSections>
-      </EndPoint>	
-			
+		</EndPoint>	
 	</EndPoints>
-
 </ReportingModule>
 
 	
