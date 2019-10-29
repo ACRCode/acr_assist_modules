@@ -387,12 +387,8 @@
             <ReportSections>
                 <ReportSection SectionId="findings">
                     <Branch>
-
-                        <SectionIf DataElementId="disease"/>
 						<ReportText Type="PlainText">Presence of lung disease: </ReportText>
                         <ReportText Type="InsertDataElementValue" Value="disease"></ReportText>
-						
-						<!-- Add more findings here -->
                     </Branch>
                 </ReportSection>
             </ReportSections>
