@@ -41,12 +41,17 @@
     </Metadata>
     <DataElements>
 		<GlobalValue Id="conditionConst">10</GlobalValue>
-        <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+		<DateTimeDataElement Id="dateofexam" DisplaySequence="1" IsRequired="true" Editable="true" Hasprefilled="false" Output="false">
+    		<Label>Date of Exam</Label>   		
+    		<VoiceCommand>Consultation Date</VoiceCommand>
+    	</DateTimeDataElement>
+		
+        <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="2">
             <Label>Age of the patient</Label>
             <Minimum>0.00</Minimum>
             <Maximum>90.00</Maximum>
         </NumericDataElement>
-        <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+        <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="3">
             <Label>Sex of the patient</Label>
             <ChoiceInfo>
                 <Choice>
@@ -59,7 +64,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="chest_trauma" IsRequired="true" DisplaySequence="3">
+        <ChoiceDataElement Id="chest_trauma" IsRequired="true" DisplaySequence="4">
             <Label>Chest trauma</Label>
             <ChoiceInfo>
                 <Choice>
@@ -76,7 +81,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="disease" IsRequired="true" DisplaySequence="4">
+        <ChoiceDataElement Id="disease" IsRequired="true" DisplaySequence="5">
             <Label>Presence of lung disease</Label>
             <ChoiceInfo>
                 <Choice>
@@ -93,7 +98,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="Pneumomediastinum" IsRequired="true" DisplaySequence="5">
+        <ChoiceDataElement Id="Pneumomediastinum" IsRequired="true" DisplaySequence="6">
             <Label>Pneumomediastinum</Label>
             <ChoiceInfo>
                 <Choice>
@@ -110,7 +115,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="lung_involvement" IsRequired="true" DisplaySequence="6">
+        <ChoiceDataElement Id="lung_involvement" IsRequired="true" DisplaySequence="7">
             <Label>Lung tissue involvement</Label>
             <ChoiceInfo>
                 <Choice>
@@ -123,7 +128,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="tension" IsRequired="true" DisplaySequence="7">
+        <ChoiceDataElement Id="tension" IsRequired="true" DisplaySequence="8">
             <Label>Tension pneumothorax</Label>
             <ChoiceInfo>
                 <Choice>
@@ -140,7 +145,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="skin_artifact" IsRequired="true" DisplaySequence="8">
+        <ChoiceDataElement Id="skin_artifact" IsRequired="true" DisplaySequence="9">
             <Label>Skin fold artifact</Label>
             <ChoiceInfo>
                 <Choice>
@@ -157,7 +162,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="pneumothorax_detection" IsRequired="true" DisplaySequence="9">
+        <ChoiceDataElement Id="pneumothorax_detection" IsRequired="true" DisplaySequence="10">
             <Label>Pneumothorax detection</Label>
             <ChoiceInfo>
                 <Choice>
@@ -174,12 +179,12 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <NumericDataElement Id="separation" IsRequired="true" DisplaySequence="10">
+        <NumericDataElement Id="separation" IsRequired="true" DisplaySequence="11">
             <Label>Pleural separation in mm</Label>
             <Minimum>0.00</Minimum>
             <Maximum>40.00</Maximum>
         </NumericDataElement>
-        <ChoiceDataElement Id="side" IsRequired="true" DisplaySequence="11">
+        <ChoiceDataElement Id="side" IsRequired="true" DisplaySequence="12">
             <Label>Pneumothorax side</Label>
             <ChoiceInfo>
                 <Choice>
@@ -196,7 +201,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="size" IsRequired="true" DisplaySequence="12">
+        <ChoiceDataElement Id="size" IsRequired="true" DisplaySequence="13">
             <Label>Pneumothorax size</Label>
             <ChoiceInfo>
                 <Choice>
@@ -213,7 +218,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="chest_tube" IsRequired="true" DisplaySequence="13">
+        <ChoiceDataElement Id="chest_tube" IsRequired="true" DisplaySequence="14">
             <Label>Presence of chest tube</Label>
             <ChoiceInfo>
                 <Choice>
@@ -230,7 +235,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="scanner_manufacturer" IsRequired="true" DisplaySequence="14">
+        <ChoiceDataElement Id="scanner_manufacturer" IsRequired="true" DisplaySequence="15">
             <Label>Scanner manufacturer</Label>
             <ChoiceInfo>
                 <Choice>
@@ -243,7 +248,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="scanner_model" IsRequired="true" DisplaySequence="15">
+        <ChoiceDataElement Id="scanner_model" IsRequired="true" DisplaySequence="16">
             <Label>Scanner model</Label>
             <ChoiceInfo>
                 <Choice>

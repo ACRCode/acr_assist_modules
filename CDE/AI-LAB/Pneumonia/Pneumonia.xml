@@ -41,14 +41,22 @@
     </Metadata>
     <DataElements>
 		<GlobalValue Id="conditionConst">10</GlobalValue>
+			
+	  	<DateTimeDataElement Id="dateofexam" DisplaySequence="1" IsRequired="true" Editable="true" Hasprefilled="false" Output="false">
+    		<Label>Date of Exam</Label>   		
+    		<VoiceCommand>Consultation Date</VoiceCommand>
+    	</DateTimeDataElement>
 		
-        <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+        <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="2">
             <Label>Age of the patient</Label>
             <Hint>Age in years at time of procedure</Hint>
             <Minimum>0.00</Minimum>
             <Maximum>90.00</Maximum>
         </NumericDataElement>
-        <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+		
+		
+		
+        <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="3">
             <Label>Sex of the patient</Label>
             <Hint>Sex at birth</Hint>
             <ChoiceInfo>
@@ -62,7 +70,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="fewer" IsRequired="true" DisplaySequence="3">
+        <ChoiceDataElement Id="fewer" IsRequired="true" DisplaySequence="4">
             <Label>History of fewer</Label>
             <ChoiceInfo>
                 <Choice>
@@ -75,7 +83,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="dyspnea" IsRequired="true" DisplaySequence="4">
+        <ChoiceDataElement Id="dyspnea" IsRequired="true" DisplaySequence="5">
             <Label>History of dyspnea</Label>
             <ChoiceInfo>
                 <Choice>
@@ -88,7 +96,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="hypoxia" IsRequired="true" DisplaySequence="5">
+        <ChoiceDataElement Id="hypoxia" IsRequired="true" DisplaySequence="6">
             <Label>History of hypoxia</Label>
             <ChoiceInfo>
                 <Choice>
@@ -101,7 +109,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="oxygen_saturation" IsRequired="true" DisplaySequence="6">
+        <ChoiceDataElement Id="oxygen_saturation" IsRequired="true" DisplaySequence="7">
             <Label>History of decreased oxygen saturation</Label>
             <ChoiceInfo>
                 <Choice>
@@ -114,7 +122,27 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="fluid_level" IsRequired="true" DisplaySequence="7">
+		
+		        <ChoiceDataElement Id="penumonia_detection" IsRequired="true" DisplaySequence="8">
+            <Label>Detection of pneumonia in adult patient</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>1</Value>
+                    <Label>Absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>2</Value>
+                    <Label>Present</Label>
+                </Choice>
+                <Choice>
+                    <Value>3</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+		
+		
+        <ChoiceDataElement Id="fluid_level" IsRequired="true" DisplaySequence="9">
             <Label>Pleural fluid level</Label>
             <Hint>pleural fluid (including air/fluid levels)</Hint>
             <ChoiceInfo>
@@ -132,7 +160,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="disease" IsRequired="true" DisplaySequence="8">
+        <ChoiceDataElement Id="disease" IsRequired="true" DisplaySequence="10">
             <Label>Presence of lung disease</Label>
             <Hint>Pneumonia/lung abscess, bullous, emphysema, bronchiectasis</Hint>
             <ChoiceInfo>
@@ -150,7 +178,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="Pneumomediastinum" IsRequired="true" DisplaySequence="9">
+        <ChoiceDataElement Id="Pneumomediastinum" IsRequired="true" DisplaySequence="11">
             <Label>Pneumomediastinum</Label>
             <ChoiceInfo>
                 <Choice>
@@ -167,7 +195,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="other_air" IsRequired="true" DisplaySequence="10">
+        <ChoiceDataElement Id="other_air" IsRequired="true" DisplaySequence="12">
             <Label>Presence of other extrapleural air collections</Label>
             <ChoiceInfo>
                 <Choice>
@@ -184,7 +212,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="atelectasis" IsRequired="true" DisplaySequence="11">
+        <ChoiceDataElement Id="atelectasis" IsRequired="true" DisplaySequence="13">
             <Label>Atelectasis</Label>
             <ChoiceInfo>
                 <Choice>
@@ -201,7 +229,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="lobar_collapse" IsRequired="true" DisplaySequence="12">
+        <ChoiceDataElement Id="lobar_collapse" IsRequired="true" DisplaySequence="14">
             <Label>Lobar collapse</Label>
             <ChoiceInfo>
                 <Choice>
@@ -218,7 +246,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="malignancy" IsRequired="true" DisplaySequence="13">
+        <ChoiceDataElement Id="malignancy" IsRequired="true" DisplaySequence="15">
             <Label>Presence of malignancy</Label>
             <ChoiceInfo>
                 <Choice>
@@ -235,7 +263,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="heart_failure" IsRequired="true" DisplaySequence="14">
+        <ChoiceDataElement Id="heart_failure" IsRequired="true" DisplaySequence="16">
             <Label>Presence of left-sided congestive heart failure</Label>
             <ChoiceInfo>
                 <Choice>
@@ -252,7 +280,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="edema" IsRequired="true" DisplaySequence="16">
+        <ChoiceDataElement Id="edema" IsRequired="true" DisplaySequence="17">
             <Label>Presence of Pulmonary edema</Label>
             <ChoiceInfo>
                 <Choice>
@@ -269,7 +297,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="chest_surgery" IsRequired="true" DisplaySequence="17">
+        <ChoiceDataElement Id="chest_surgery" IsRequired="true" DisplaySequence="18">
             <Label>Prior chest surgery</Label>
             <ChoiceInfo>
                 <Choice>
@@ -282,7 +310,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="lung_injury" IsRequired="true" DisplaySequence="18">
+        <ChoiceDataElement Id="lung_injury" IsRequired="true" DisplaySequence="19">
             <Label>Prior lung injury</Label>
             <ChoiceInfo>
                 <Choice>
@@ -295,7 +323,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="treated_healed" IsRequired="true" DisplaySequence="19">
+        <ChoiceDataElement Id="treated_healed" IsRequired="true" DisplaySequence="20">
             <Label>Prior treated/healed lung disease</Label>
             <ChoiceInfo>
                 <Choice>
@@ -308,7 +336,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="lung_involvement" IsRequired="true" DisplaySequence="20">
+        <ChoiceDataElement Id="lung_involvement" IsRequired="true" DisplaySequence="21">
             <Label>Lung tissue involvement</Label>
             <ChoiceInfo>
                 <Choice>
@@ -341,7 +369,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="presentation" IsRequired="true" DisplaySequence="21">
+        <ChoiceDataElement Id="presentation" IsRequired="true" DisplaySequence="22">
             <Label>Presentation - Subtle pneumonia, include cases in which opacities project below the diaphragms on the frontal view</Label>
             <ChoiceInfo>
                 <Choice>
@@ -354,23 +382,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="penumonia_detection" IsRequired="true" DisplaySequence="22">
-            <Label>Detection of pneumonia in adult patient</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
+
     </DataElements>
 	<Rules>
 		<DecisionPoint Id="categoryFinding">

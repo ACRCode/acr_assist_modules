@@ -33,7 +33,12 @@
 	
 	<DataElements>
 	
-	 <ChoiceDataElement Id="Breast_Density" IsRequired="true" DisplaySequence="1">
+	  	<DateTimeDataElement Id="dateofexam" DisplaySequence="1" IsRequired="true" Editable="true" Hasprefilled="false" Output="false">
+    		<Label>Date of Exam</Label>   		
+    		<VoiceCommand>Consultation Date</VoiceCommand>
+    	</DateTimeDataElement>
+	
+	 <ChoiceDataElement Id="Breast_Density" IsRequired="true" DisplaySequence="2">
 			<Label>Classification</Label>
 			<ChoiceInfo>
 				<Choice>

@@ -35,12 +35,19 @@
 	
 	<GlobalValue Id="conditionConst">10</GlobalValue>
 	
-	   <NumericDataElement Id="cardiothoracicratio" IsRequired="true" DisplaySequence="1">
+	<DataElements>
+	
+	  	<DateTimeDataElement Id="dateofexam" DisplaySequence="1" IsRequired="true" Editable="true" Hasprefilled="false" Output="false">
+    		<Label>Date of Exam</Label>   		
+    		<VoiceCommand>Consultation Date</VoiceCommand>
+    	</DateTimeDataElement>
+	
+	   <NumericDataElement Id="cardiothoracicratio" IsRequired="true" DisplaySequence="2">
 			<Label>Cardiothoracic ratio</Label>
 		</NumericDataElement>
 	
 		
-		<ChoiceDataElement Id="cardiodetection" IsRequired="true" DisplaySequence="2">
+		<ChoiceDataElement Id="cardiodetection" IsRequired="true" DisplaySequence="3">
 			<Label>Cardiomegaly detection</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -58,7 +65,7 @@
 			</ChoiceInfo>			
 		</ChoiceDataElement>
 		
-		<NumericDataElement Id="carinaangle" IsRequired="true" DisplaySequence="3">
+		<NumericDataElement Id="carinaangle" IsRequired="true" DisplaySequence="4">
 			<Label>Carina Angle</Label>
 		</NumericDataElement>
 		
