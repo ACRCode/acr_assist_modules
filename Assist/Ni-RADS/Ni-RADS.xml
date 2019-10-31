@@ -27,7 +27,7 @@
 			<Description>NI-RADS level determination</Description>
 			<References>
 				<Citation Url="https://www.jacr.org/article/S1546-1440(18)30598-2/pdf">
-                ACR Ni-RADS</Citation>
+                ACR NI-RADS</Citation>
 			</References>
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
@@ -40,7 +40,7 @@
 				</Diagram>
 				<Diagram DisplaySequence="3" IsKeyDiagram="true">
 					<Location>Recommendation.jpg</Location>
-					<Label>NiRADS Recommendation</Label>
+					<Label>NIRADS Recommendation</Label>
 				</Diagram>
 			</Diagrams>	
 			<Contact>
@@ -246,16 +246,6 @@
 						<Label>No</Label>
 					</Choice>
 				 </ChoiceInfo>
-				<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="PrimarySiteQuestion_1"/>
-						<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="No"/>
-
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>		
-				</ConditionalProperty>		
-			</ConditionalProperties>
 		 </ChoiceDataElement>
 		 
 		
