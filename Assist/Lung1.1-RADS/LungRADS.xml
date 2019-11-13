@@ -3162,13 +3162,11 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 		<DecisionPoint Id="categorydp">
 			<Label>Category of findings?</Label>
 			<!-- A -->
-			<Branch>
-				<Label>0: Prior CT being located</Label>
-				<!--
-				<EqualCondition DataElementId="evaluate_1" ComparisonValue="no"/>
-				-->
-				<EndPointRef EndPointId="cat0NoPriorsEp_1"/>
-			</Branch>
+			<!-- <Branch> -->
+				<!-- <Label>0: Prior CT being located</Label> -->
+				<!-- <EqualCondition DataElementId="evaluate_1" ComparisonValue="no"/> -->
+				<!-- <EndPointRef EndPointId="cat0NoPriorsEp_1"/> -->
+			<!-- </Branch> -->
 
 			<!-- B -->
 			<Branch>
@@ -3846,11 +3844,11 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 			</Branch>
 
 			<!--S-->		  
-			<Branch>
-				<Label>S:</Label>
-				<EqualCondition DataElemCatentId="baseCategory_5" ComparisonValue="CatSModifier"/>
-				<EndPointRef EndPointId="CatSModifierEp_5"/>
-			</Branch>
+			<!-- <Branch> -->
+				<!-- <Label>S:</Label> -->
+				<!-- <EqualCondition DataElemCatentId="baseCategory_5" ComparisonValue="CatSModifier"/> -->
+				<!-- <EndPointRef EndPointId="CatSModifierEp_5"/> -->
+			<!-- </Branch> -->
 
 			<!--Decision point _Nodule 6-->
 			<!-- A -->
@@ -5641,7 +5639,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="PlainText">The prior chest CT examination is being located for comparison.</ReportText>
@@ -5668,7 +5666,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
@@ -5695,7 +5693,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 
@@ -5725,7 +5723,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="PlainText"> Negative study as the identified </ReportText>
@@ -5757,7 +5755,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>						
@@ -5789,7 +5787,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>						
@@ -5822,7 +5820,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -5854,7 +5852,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -5886,7 +5884,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -5916,7 +5914,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -5948,7 +5946,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -5980,7 +5978,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -6012,7 +6010,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -6043,7 +6041,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -6074,7 +6072,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -6105,7 +6103,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -6136,7 +6134,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -6167,7 +6165,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 3 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_3"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_3"></ReportText>
@@ -6300,7 +6298,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="PlainText">The prior chest CT examination is being located for comparison.</ReportText>
@@ -6327,7 +6325,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
@@ -6354,7 +6352,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="PlainText"> Negative study as there are no nodules present.</ReportText>
@@ -6383,7 +6381,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="PlainText"> Negative study as the identified </ReportText>
@@ -6415,7 +6413,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>						
@@ -6447,7 +6445,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>						
@@ -6480,7 +6478,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6512,7 +6510,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6545,7 +6543,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6575,7 +6573,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6607,7 +6605,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6639,7 +6637,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6671,7 +6669,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6702,7 +6700,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6733,7 +6731,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6764,7 +6762,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6795,7 +6793,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
@@ -6827,7 +6825,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 4 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_4"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_4"></ReportText>
@@ -6958,7 +6956,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 			<ReportSections>                 
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="PlainText">The prior chest CT examination is being located for comparison.</ReportText>
@@ -6985,7 +6983,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
@@ -7012,7 +7010,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="PlainText"> Negative study as there are no nodules present.</ReportText>
@@ -7041,7 +7039,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="PlainText"> Negative study as the identified </ReportText>
@@ -7073,7 +7071,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>						
@@ -7105,7 +7103,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>						
@@ -7138,7 +7136,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7170,7 +7168,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7202,7 +7200,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7232,7 +7230,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7265,7 +7263,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7297,7 +7295,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7329,7 +7327,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7360,7 +7358,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7391,7 +7389,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7422,7 +7420,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7453,7 +7451,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7484,7 +7482,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 5 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_5"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_5"></ReportText>
@@ -7618,7 +7616,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="PlainText">The prior chest CT examination is being located for comparison.</ReportText>
@@ -7645,7 +7643,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
@@ -7672,7 +7670,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="PlainText"> Negative study as there are no nodules present.</ReportText>
@@ -7702,7 +7700,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="PlainText"> Negative study as the identified </ReportText>
@@ -7735,7 +7733,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>						
@@ -7767,7 +7765,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>						
@@ -7800,7 +7798,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -7832,7 +7830,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -7864,7 +7862,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -7895,7 +7893,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -7927,7 +7925,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -7959,7 +7957,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -7991,7 +7989,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -8023,7 +8021,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -8054,7 +8052,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -8086,7 +8084,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -8117,7 +8115,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>
@@ -8148,7 +8146,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 				<ReportSection SectionId="Nodule 6 - Findings">
 					<Branch>
 
-						<ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText>
+						<!-- <ReportText Type="InsertPartialTemplate" Value="imagecat_6"></ReportText> -->
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="CategoryTp_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="multipleNodulesTp_6"></ReportText>

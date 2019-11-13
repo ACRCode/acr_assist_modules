@@ -69,9 +69,7 @@
     </Metadata>
 	
     <DataElements>
-    	
-  	
-    	      
+    	    	      
     	<ChoiceDataElement Id="ObservationCharacter" IsRequired="true" DisplaySequence="1" Editable="true" Hasprefilled="false" Output="false">        	
     		<CodableConcept Name="ObservationCharacter">
     			<Coding>
@@ -451,7 +449,7 @@
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
-        			<LessThanCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+        			<LessThanCondition DataElementId="diameter" ComparisonValue="2"/>
         			<AndCondition>
         				<EqualCondition DataElementId="washout" ComparisonValue="no"/>
         				<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
@@ -466,7 +464,7 @@
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
-        			<LessThanCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+        			<LessThanCondition DataElementId="diameter" ComparisonValue="2"/>
         			<OrCondition>
         				<AndCondition>
         					<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes -->
@@ -493,7 +491,7 @@
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
-        			<LessThanCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+        			<LessThanCondition DataElementId="diameter" ComparisonValue="2"/>
         			<OrCondition>
         				<AndCondition>
         					<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes -->
@@ -526,7 +524,7 @@
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
         			<AndCondition>
-        				<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+        				<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="2"/>
         				<LessThanOrEqualsCondition DataElementId="diameter" ComparisonValue="19"/>
         			</AndCondition>
         			<AndCondition>
@@ -544,7 +542,7 @@
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
         			<AndCondition>
-        				<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+        				<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="2"/>
         				<LessThanOrEqualsCondition DataElementId="diameter" ComparisonValue="19"/>
         			</AndCondition>
         			<OrCondition>
@@ -574,7 +572,7 @@
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
         			<AndCondition>
-        				<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterSmall"/>
+        				<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="2"/>
         				<LessThanOrEqualsCondition DataElementId="diameter" ComparisonValue="19"/>
         			</AndCondition>
         			<OrCondition>
@@ -609,7 +607,7 @@
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
-        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="4"/>
         			<AndCondition>
         				<EqualCondition DataElementId="washout" ComparisonValue="no"/>
         				<EqualCondition DataElementId="capsule" ComparisonValue="no"/>
@@ -624,7 +622,7 @@
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
-        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="4"/>
         			<OrCondition>
         				<AndCondition>
         					<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes -->
@@ -652,7 +650,7 @@
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
         			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hyperEnhancing"/>
-        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="4"/>
         			<OrCondition>
         				<AndCondition>
         					<EqualCondition DataElementId="washout" ComparisonValue="yes"/>  <!-- Washout = Yes, Capsule = Yes -->
@@ -683,7 +681,7 @@
         		<Label>Hypo/Iso-enhancing - Diameter</Label> 
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
-        			<LessThanCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<LessThanCondition DataElementId="diameter" ComparisonValue="4"/>
 	        		<OrCondition>
 	        			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hypoEnhancing"/>
 	        			<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="isoEnhancing"/>
@@ -701,7 +699,7 @@
         		<Label>Hypo/Iso-enhancing - One</Label> 
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
-        			<LessThanCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<LessThanCondition DataElementId="diameter" ComparisonValue="4"/>
         			<OrCondition>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hypoEnhancing"/>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="isoEnhancing"/>
@@ -731,7 +729,7 @@
         		<Label>Hypo/Iso-enhancing - Two or More</Label>
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
-        			<LessThanCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<LessThanCondition DataElementId="diameter" ComparisonValue="4"/>
         			<OrCondition>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hypoEnhancing"/>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="isoEnhancing"/>
@@ -766,7 +764,7 @@
         		<Label>Hypo/Iso-enhancing - &gt;= 20</Label>
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
-        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="4"/>
         			<OrCondition>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hypoEnhancing"/>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="isoEnhancing"/>
@@ -784,7 +782,7 @@
         		<Label>Hypo/Iso-enhancing - One</Label>
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
-        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="4"/>
         			<OrCondition>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hypoEnhancing"/>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="isoEnhancing"/>
@@ -814,7 +812,7 @@
         		<Label>Hypo/Iso-enhancing - Two or More</Label>
         		<AndCondition>
         			<EqualCondition DataElementId="ObservationCharacter" ComparisonValue="notDefProbBenign"/>
-        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="DiameterLarge"/>
+        			<GreaterThanOrEqualsCondition DataElementId="diameter" ComparisonValue="4"/>
         			<OrCondition>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="hypoEnhancing"/>
         				<EqualCondition DataElementId="ArterialEnhancement" ComparisonValue="isoEnhancing"/>
