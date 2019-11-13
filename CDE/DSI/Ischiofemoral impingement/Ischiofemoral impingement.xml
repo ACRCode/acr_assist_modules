@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Ischiofemoral Impingement</Label>
+		<ID>Ischiofemoral Impingement</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Calcium Scoring of the Ischiofemoral Impingement</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Ischiofemoral Impingement key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>7.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+		
+		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+	
+	<ChoiceDataElement Id="diagnoses" IsRequired="true" DisplaySequence="3">
+      <Label>Differential diagnoses</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>absence of anatomic abnormality</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>presence of anatomic abnormality</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="view" IsRequired="true" DisplaySequence="4">
+      <Label>View of MRI</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>MRI Axial T1</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>MRI Axial T2</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>MRI Axial T1 FS (arthrogram)</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="status" IsRequired="true" DisplaySequence="5">
+      <Label>IFI Status</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Normal</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Abnormal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+   
+   
+   </DataElements>
+	
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Ischiofemoral Impingement Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Ischiofemoral Impingement evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="diagnoses" />
+					<ReportText Type="PlainText"> Diagnoses: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="diagnoses"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="view" />
+					<ReportText Type="PlainText"> MRI view: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="view"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="status" />
+					<ReportText Type="PlainText"> IFI Status: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="status"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

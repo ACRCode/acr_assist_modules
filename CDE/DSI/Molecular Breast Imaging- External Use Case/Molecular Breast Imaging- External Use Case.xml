@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Molecular Breast Imaging- External Use Case</Label>
+		<ID>Molecular Breast Imaging- External Use Case</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Molecular Breast Imaging- External Use Case</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Molecular Breast Imaging- External Use Case key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>40.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+	
+	<ChoiceDataElement Id="pain" IsRequired="true" DisplaySequence="2">
+      <Label>Pain</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<NumericDataElement Id="size" IsRequired="true" DisplaySequence="3">
+			<Label>Tumor size in mm</Label>
+			<Minimum>0</Minimum>
+			<Maximum>125</Maximum>
+		</NumericDataElement>
+		
+		<NumericDataElement Id="resolution" IsRequired="true" DisplaySequence="4">
+			<Label>High resolution MBI image in Pixel</Label>
+			<Minimum>0</Minimum>
+			<Maximum>125</Maximum>
+		</NumericDataElement>
+	
+	
+	
+	    
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Molecular Breast Imaging- External Use Case Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Molecular Breast Imaging- External Use Case evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="pain" />
+					<ReportText Type="PlainText"> Pain: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="pain"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="size" />
+					<ReportText Type="PlainText"> Tumor size: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="size"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="resolution" />
+					<ReportText Type="PlainText"> High resolution MBI image: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="resolution"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Diverticulitis Detection</Label>
+		<ID>Diverticulitis Detection</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Diverticulitis Detection</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Diverticulitis Detection key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>20.00</Minimum>
+			<Maximum>90.00</Maximum>
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+  
+  <ChoiceDataElement Id="procedure" IsRequired="true" DisplaySequence="3">
+      <Label>Procedure performed</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>CT Abdomen with contrast</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>CT Abdomen without contrast</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>CT Abdomen and pelvis with contrast</Label>
+        </Choice>
+         <Choice>
+          <Value>2</Value>
+          <Label>CT Abdomen and pelvis without contrast</Label>
+        </Choice>		
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="4">
+      <Label>US views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Sagittal</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Axial</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Coronal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<NumericDataElement Id="measurement" IsRequired="true" DisplaySequence="5">
+			<Label>Sigmoid colonic wall thickness measurement in mm</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+	
+	<ChoiceDataElement Id="detection1" IsRequired="true" DisplaySequence="6">
+      <Label>Detection of pericolonic infiltrative changes</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Pericolonic infiltrative changes absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Pericolonic infiltrative change present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  
+  <ChoiceDataElement Id="detection2" IsRequired="true" DisplaySequence="7">
+      <Label>Pericolonic lymph node Detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="extramural" IsRequired="true" DisplaySequence="8">
+      <Label>Extramural fluid detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+
+  
+    <ChoiceDataElement Id="classification" IsRequired="true" DisplaySequence="9">
+      <Label>Extramural fluid classification</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="air" IsRequired="true" DisplaySequence="10">
+      <Label>Free air detection in abdomen CT</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+ 
+  
+       
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Diverticulitis Detection EVALUATION</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Diverticulitis Detection evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="procedure" />
+					<ReportText Type="PlainText"> Procedure performed: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="procedure"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="views" />
+					<ReportText Type="PlainText"> US views: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="views"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="measurement" />
+					<ReportText Type="PlainText"> Sigmoid colonic wall thickness: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="measurement"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="detection1" />
+					<ReportText Type="PlainText">Detection of pericolonic infiltrative changes: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="detection1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="detection2" />
+					<ReportText Type="PlainText">Pericolonic lymph node Detection: </ReportText>      
+					<ReportText Type="InsertDataElementValue" Value="detection2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="extramural" />
+					<ReportText Type="PlainText">Extramural fluid detection: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="extramural"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="classification" />
+					<ReportText Type="PlainText">Extramural fluid classification: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="classification"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="air" />
+					<ReportText Type="PlainText">Free air detection in abdomen CT: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="air"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+
+</ReportingModule>

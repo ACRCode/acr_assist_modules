@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Subdural Hematoma</Label>
+		<ID>Subdural Hematoma</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Subdural Hematoma</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Subdural Hematoma key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>100.00</Maximum>
+		</NumericDataElement>
+		
+		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+	
+	<ChoiceDataElement Id="procedures" IsRequired="true" DisplaySequence="3">
+      <Label>Procedures</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>CT of the brain with contrast</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>MRI of the brain with contrast</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>CT of the brain without contrast</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>MRI of the brain without contrast</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="hem1" IsRequired="true" DisplaySequence="4">
+      <Label>Hematoma of the brain</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="thick" IsRequired="true" DisplaySequence="5">
+      <Label>Dural thickening</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="location" IsRequired="true" DisplaySequence="6">
+      <Label>Location</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Right frontal</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Left frontal</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Right parietal</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>Left parietal</Label>
+        </Choice>
+		<Choice>
+          <Value>4</Value>
+          <Label>Right temporal</Label>
+        </Choice>
+		<Choice>
+          <Value>5</Value>
+          <Label>Left temporal</Label>
+        </Choice>
+		<Choice>
+          <Value>6</Value>
+          <Label>Right occipital</Label>
+        </Choice>
+		<Choice>
+          <Value>7</Value>
+          <Label>Left occipital</Label>
+        </Choice>
+		<Choice>
+          <Value>8</Value>
+          <Label>Right parafalcine</Label>
+        </Choice>
+		<Choice>
+          <Value>9</Value>
+          <Label>Left parafalcine</Label>
+        </Choice>
+		<Choice>
+          <Value>10</Value>
+          <Label>Right cerebellar</Label>
+        </Choice>
+		<Choice>
+          <Value>11</Value>
+          <Label>Left cerebellar</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="hem2" IsRequired="true" DisplaySequence="7">
+      <Label>Hematoma Shape/Configuration</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Crescentic</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Lentiform</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="hema" IsRequired="true" DisplaySequence="8">
+      <Label>Hematoma laterality</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Unilateral</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Bilateral</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="location1" IsRequired="true" DisplaySequence="9">
+      <Label>Hematoma location</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Frontal</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Parietal</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>Temporal</Label>
+        </Choice>
+		<Choice>
+          <Value>4</Value>
+          <Label>Occipital</Label>
+        </Choice>
+		<Choice>
+          <Value>5</Value>
+          <Label>Parafalcine</Label>
+        </Choice>
+		<Choice>
+          <Value>6</Value>
+          <Label>Cerebellar</Label>
+        </Choice>
+		<Choice>
+          <Value>7</Value>
+          <Label>Multiple locations</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<NumericDataElement Id="width" IsRequired="true" DisplaySequence="10">
+			<Label>Hematoma width in mm</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>190.00</Maximum>
+		</NumericDataElement>
+		
+		<NumericDataElement Id="volume" IsRequired="true" DisplaySequence="11">
+			<Label> Hematoma volume in mm3</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>200.00</Maximum>
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="hematoma" IsRequired="true" DisplaySequence="12">
+      <Label>Hematoma density</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Indeterminate</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>High homogeneous</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Low homogeneous</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>High heterogeneous</Label>
+        </Choice>
+		<Choice>
+          <Value>4</Value>
+          <Label>Low heterogeneous</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+		
+	<NumericDataElement Id="a" IsRequired="true" DisplaySequence="13">
+			<Label>Hematoma T1 Intensity in MR Units</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>		
+		
+		<NumericDataElement Id="b" IsRequired="true" DisplaySequence="14">
+			<Label>Hematoma T2 Intensity</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+		
+		
+	<ChoiceDataElement Id="c" IsRequired="true" DisplaySequence="15">
+      <Label>Hematoma septations</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Indeterminate</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>	
+		
+	
+	
+   
+   </DataElements>
+	
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">Subdural Hematoma Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Subdural Hematoma evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="procedures" />
+					<ReportText Type="PlainText"> Procedures: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="procedures"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="hem1" />
+					<ReportText Type="PlainText"> Hematoma: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="hem1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="thick" />
+					<ReportText Type="PlainText"> Dural thickening: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="thick"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="location" />
+					<ReportText Type="PlainText"> Location: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="location"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="hem2" />
+					<ReportText Type="PlainText"> Hematoma Shape/Configuration: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="hem2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="hema" />
+					<ReportText Type="PlainText"> Hematoma laterality: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="hema"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="location1" />
+					<ReportText Type="PlainText"> Hematoma location: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="location1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				
+				
+				<Branch>
+				    <SectionIf DataElementId="width" />
+					<ReportText Type="PlainText"> Hematoma width: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="width"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="volume" />
+					<ReportText Type="PlainText"> Hematoma volume: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="volume"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="hematoma" />
+					<ReportText Type="PlainText"> Density: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="hematoma"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="a" />
+					<ReportText Type="PlainText"> Hematoma T1 Intensity: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="a"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="b" />
+					<ReportText Type="PlainText"> Hematoma T2 Intensity: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="b"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="c" />
+					<ReportText Type="PlainText"> Hematoma Septations: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="c"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

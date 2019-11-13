@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Malignancy of breast lesions on diffusion weighted images</Label>
+		<ID>Malignancy of breast lesions on diffusion weighted images</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Malignancy of breast lesions on diffusion weighted images</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Malignancy of breast lesions on diffusion weighted images key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>30.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+	
+	<ChoiceDataElement Id="lesion" IsRequired="true" DisplaySequence="2">
+      <Label>Malignant lesion</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Invasive ductal carcinomas</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Ductal carcinoma in situ</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Invasive lobular carcinoma</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>Lobular carcinoma in situ</Label>
+        </Choice>
+		<Choice>
+          <Value>4</Value>
+          <Label>Angiosarcomas</Label>
+        </Choice>
+		<Choice>
+          <Value>5</Value>
+          <Label>Inflammatory breast cancer</Label>
+        </Choice>
+		<Choice>
+          <Value>6</Value>
+          <Label>Paget disease of the breast</Label>
+        </Choice>
+		<Choice>
+          <Value>7</Value>
+          <Label>Phyllodes tumors</Label>
+        </Choice>
+		<Choice>
+          <Value>8</Value>
+          <Label>Other</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<NumericDataElement Id="size" IsRequired="true" DisplaySequence="3">
+			<Label>Lesion size in mm</Label>
+			<Minimum>0</Minimum>
+			<Maximum>125</Maximum>
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="mal" IsRequired="true" DisplaySequence="4">
+      <Label>Malignant breast lesion detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Benign Lesion</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Malignant Lesion</Label>
+        </Choice>
+		 <Choice>
+          <Value>2</Value>
+          <Label>Unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+		
+		<NumericDataElement Id="adc" IsRequired="true" DisplaySequence="5">
+			<Label>ADC Values on ROI in mm2/s</Label>
+			<Minimum>0</Minimum>
+			<Maximum>125</Maximum>
+		</NumericDataElement>
+	
+	
+	
+	    
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Malignancy of breast lesions on diffusion weighted images Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Malignancy of breast lesions on diffusion weighted images evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="lesion" />
+					<ReportText Type="PlainText"> Malignant lesion: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="lesion"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="size" />
+					<ReportText Type="PlainText"> Tumor size: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="size"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="mal" />
+					<ReportText Type="PlainText"> Malignant breast lesion detection: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="mal"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="adc" />
+					<ReportText Type="PlainText"> ADC Values on ROI in mm2/s: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="adc"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Cervical Rib Detection X-ray</Label>
+		<ID>Cervical Rib Detection X-ray</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Calcium Scoring of the Cervical Rib Detection X-ray</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Cervical Rib Detection X-ray key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>18.00</Minimum>
+			<Maximum>60.00</Maximum>
+		</NumericDataElement>
+		
+		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+	
+	<ChoiceDataElement Id="procedures" IsRequired="true" DisplaySequence="3">
+      <Label>Procedures</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Cervical spine x-ray</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Shoulder x-ray</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Chest x-ray</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="rib" IsRequired="true" DisplaySequence="4">
+      <Label>Cervical Rib Detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Not present</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="lat" IsRequired="true" DisplaySequence="5">
+      <Label>Cervical Rib Laterality</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Unknown</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>Left</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Right</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>Bilateral</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+   
+   
+   </DataElements>
+	
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Cervical Rib Detection X-ray Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Cervical Rib Detection X-ray evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="procedures" />
+					<ReportText Type="PlainText"> Procedures: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="procedures"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="rib" />
+					<ReportText Type="PlainText"> Cervical Rib Detection: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="rib"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="lat" />
+					<ReportText Type="PlainText"> Cervical Rib Laterality: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="lat"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

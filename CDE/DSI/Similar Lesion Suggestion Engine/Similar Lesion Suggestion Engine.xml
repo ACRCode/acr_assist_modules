@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Similar Lesion Suggestion Engine</Label>
+		<ID>Similar Lesion Suggestion Engine</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Similar Lesion Suggestion Engine</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Similar Lesion Suggestion Engine key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>18.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+	
+	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="2">
+      <Label>Mammography Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>CC</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>MLO</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>LM</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>XCCM</Label>
+        </Choice>
+		<Choice>
+          <Value>4</Value>
+          <Label>XCCL</Label>
+        </Choice>
+		<Choice>
+          <Value>5</Value>
+          <Label>Cleavage view</Label>
+        </Choice>
+		<Choice>
+          <Value>6</Value>
+          <Label>Other</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<NumericDataElement Id="similarity" IsRequired="true" DisplaySequence="3">
+			<Label>Similarity score between the lesions selected</Label>
+			<Minimum>0</Minimum>
+			<Maximum>25</Maximum>
+		</NumericDataElement>
+	
+	<ChoiceDataElement Id="diagnosis" IsRequired="true" DisplaySequence="4">
+      <Label>Pathologic Diagnosis For Similar Lesions</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>A</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>B</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>C</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  
+	
+	<ChoiceDataElement Id="history" IsRequired="true" DisplaySequence="5">
+      <Label>Breast Cancer History</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Patient with a history of breast cancer</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Patient with no history of breast cancer</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Unknown</Label>
+        </Choice>	
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	    
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Similar Lesion Suggestion Engine Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Similar Lesion Suggestion Engine evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="views" />
+					<ReportText Type="PlainText"> Mammography Views: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="views"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="similarity" />
+					<ReportText Type="PlainText"> Similarity score between the lesions selected: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="similarity"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="diagnosis" />
+					<ReportText Type="PlainText"> Pathologic Diagnosis For Similar Lesions: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="diagnosis"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="history" />
+					<ReportText Type="PlainText"> Breast Cancer History: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="history"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

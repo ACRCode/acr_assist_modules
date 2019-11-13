@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>LV T2 Mapping Quantification</Label>
+		<ID>LV T2 Mapping Quantification</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for LV T2 Mapping Quantification</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>LV T2 Mapping Quantification key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>20.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+		
+		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="weight" IsRequired="true" DisplaySequence="3">
+			<Label>Weight of the patient</Label>
+			<Minimum>90.00</Minimum>
+			<Maximum>350.00</Maximum>
+		</NumericDataElement>
+		
+		
+		<NumericDataElement Id="t2" IsRequired="true" DisplaySequence="4">
+			<Label>Native T2 in ms</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+	
+	<ChoiceDataElement Id="myo" IsRequired="true" DisplaySequence="5">
+      <Label>Presence of myocardial edema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Suspected edema</Label>
+        </Choice>
+		<Choice>
+          <Value>1</Value>
+          <Label>No edema</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: LV T2 Mapping Quantification Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">LV T2 Mapping Quantification evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="weight" />
+					<ReportText Type="PlainText"> Weight: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="weight"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="t2" />
+					<ReportText Type="PlainText"> Native T2: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="t2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="myo" />
+					<ReportText Type="PlainText"> Presence of myocardial edema: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="myo"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

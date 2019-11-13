@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Breast Lesion Malignancy Evaluation</Label>
+		<ID>Breast Lesion Malignancy Evaluation</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Breast Lesion Malignancy Evaluation</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Breast Lesion Malignancy Evaluation key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>40.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="history" IsRequired="true" DisplaySequence="2">
+      <Label>Previous history</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Prior surgery</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Implants</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Not significant</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="3">
+      <Label>US Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Standard craniocaudal</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Standard mediolateral</Label>
+        </Choice>
+		<Choice>
+          <Value>2</Value>
+          <Label>Long radial</Label>
+        </Choice>
+		<Choice>
+          <Value>3</Value>
+          <Label>Short radial</Label>
+        </Choice>
+		<Choice>
+          <Value>4</Value>
+          <Label>Long antiradial</Label>
+        </Choice>
+		<Choice>
+          <Value>5</Value>
+          <Label>Short antiradial</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  
+	
+	<ChoiceDataElement Id="suspicious" IsRequired="true" DisplaySequence="4">
+      <Label>Suspicious Breast Lesion Detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Benign lesion</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Malignant lesion</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Indeterminate</Label>
+        </Choice>	
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="classification" IsRequired="true" DisplaySequence="5">
+      <Label>Breast Lesion Classification</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Concordant benign</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Concordant but high risk</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Discordant</Label>
+        </Choice>		
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+
+	
+	<ChoiceDataElement Id="plan" IsRequired="true" DisplaySequence="6">
+      <Label>Follow Up Plan Recommendation</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>6 month follow up</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Routine annual</Label>
+        </Choice>
+		 <Choice>
+          <Value>3</Value>
+          <Label>6 month follow up with possible breast MRI</Label>
+        </Choice>
+		 <Choice>
+          <Value>4</Value>
+          <Label>Surgical excision</Label>
+        </Choice>
+		<Choice>
+          <Value>5</Value>
+          <Label>Repeat biopsy</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  
+  
+       
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Breast Lesion Malignancy Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Breast Lesion Malignancy Evaluation evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="history" />
+					<ReportText Type="PlainText"> Previous history: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="history"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="views" />
+					<ReportText Type="PlainText"> Views: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="views"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="suspicious" />
+					<ReportText Type="PlainText"> Suspicious Breast Lesion Detection: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="suspicious"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="classification" />
+					<ReportText Type="PlainText"> Breast Lesion Classification: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="classification"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="plan" />
+					<ReportText Type="PlainText"> Follow Up Plan Recommendation: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="plan"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+
+</ReportingModule>

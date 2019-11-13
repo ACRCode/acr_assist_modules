@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Cholecystitis-US</Label>
+		<ID>Cholecystitis-US</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Cholecystitis-US</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Cholecystitis-US key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>90.00</Maximum>
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+  
+  <ChoiceDataElement Id="procedure" IsRequired="true" DisplaySequence="3">
+      <Label>Procedure performed</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Ultrasound limited</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Ultrasound of the abdomen complete</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Ultrasound of the right upper quadrant</Label>
+        </Choice>	
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="4">
+      <Label>US views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Transverse</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Long</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="detection1" IsRequired="true" DisplaySequence="5">
+      <Label>Presence of cholecystitis</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Acute cholecystitis</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Equivocal</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Complicated</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  
+  <ChoiceDataElement Id="detection2" IsRequired="true" DisplaySequence="6">
+      <Label>Detection of gallstone</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="Murphy" IsRequired="true" DisplaySequence="7">
+      <Label>Detection of Sonographic Murphy's sign</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<NumericDataElement Id="measurement" IsRequired="true" DisplaySequence="8">
+			<Label>Gallbladder wall thickness measurement in mm</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+  
+    <ChoiceDataElement Id="fluid_detection" IsRequired="true" DisplaySequence="9">
+      <Label>Pericholecystic fluid detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>0</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+ 
+  
+       
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Cholecystitis-US EVALUATION</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Cholecystitis-US evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="procedure" />
+					<ReportText Type="PlainText"> Procedure performed: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="procedure"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="views" />
+					<ReportText Type="PlainText"> US views: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="views"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="detection1" />
+					<ReportText Type="PlainText">Presence of cholecystitis: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="detection1"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="detection2" />
+					<ReportText Type="PlainText">Detection of gallstone: </ReportText>      
+					<ReportText Type="InsertDataElementValue" Value="detection2"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Murphy" />
+					<ReportText Type="PlainText">Detection of Sonographic Murphy's sign: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Murphy"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="measurement" />
+					<ReportText Type="PlainText">Gallbladder wall thickness measurement in mm: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="measurement"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="fluid_detection" />
+					<ReportText Type="PlainText">Pericholecystic fluid detection: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="fluid_detection"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+
+</ReportingModule>

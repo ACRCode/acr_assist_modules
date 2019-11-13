@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Automated Volumetric Quantification of Pericardial Effusion on CCTA</Label>
+		<ID>Automated Volumetric Quantification of Pericardial Effusion on CCTA</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Evaluation of Automated Volumetric Quantification of Pericardial Effusion on CCTA</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Automated Volumetric Quantification of Pericardial Effusion on CCTA key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>20.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+		
+		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="peri" IsRequired="true" DisplaySequence="3">
+			<Label>Pericardium thickness</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>120.00</Maximum>
+		</NumericDataElement>
+		
+		 <ChoiceDataElement Id="spread" IsRequired="true" DisplaySequence="4">
+			<Label>Spread</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Global effusion</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Locaulated effusions</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="ratio" IsRequired="true" DisplaySequence="5">
+			<Label>Cardiothoracic ratio</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1200.00</Maximum>
+		</NumericDataElement>
+		
+		<ChoiceDataElement Id="edema" IsRequired="true" DisplaySequence="6">
+			<Label>Pulmonary edema</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Present</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Absent</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="lesion" IsRequired="true" DisplaySequence="7">
+			<Label>Pericardial lesions</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Present</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Absent</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="const" IsRequired="true" DisplaySequence="8">
+			<Label>Constrictive pericarditis</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Present</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Absent</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="pev" IsRequired="true" DisplaySequence="9">
+			<Label>Pericardial effusion volume in ml</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1200.00</Maximum>
+		</NumericDataElement>
+		
+		<NumericDataElement Id="ave" IsRequired="true" DisplaySequence="10">
+			<Label>Average density of the effusion</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1200.00</Maximum>
+		</NumericDataElement>
+		
+		
+		
+		
+		
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE: Evaluation of Automated Volumetric Quantification of Pericardial Effusion on CCTA</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Automated Volumetric Quantification of Pericardial Effusion on CCTA evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="peri" />
+					<ReportText Type="PlainText"> Pericardium thickness: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="peri"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="spread" />
+					<ReportText Type="PlainText"> Spread: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="spread"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="ratio" />
+					<ReportText Type="PlainText"> Cardiothoracic ratio: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="ratio"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="edema" />
+					<ReportText Type="PlainText"> Pulmonary edema: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="edema"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="lesion" />
+					<ReportText Type="PlainText"> Pericardial lesions: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="lesion"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="const" />
+					<ReportText Type="PlainText"> Constrictive pericarditis: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="const"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="pev" />
+					<ReportText Type="PlainText"> Pericardial effusion volume: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="pev"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="ave" />
+					<ReportText Type="PlainText"> Average density of the effusion: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="ave"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Coronary CTA</Label>
+		<ID>Coronary CTA</ID>
+		<SchemaVersion>1.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Coronary CTA</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Coronary CTA key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+
+  <DataElements>
+  
+   <GlobalValue Id="conditionConst">10</GlobalValue>
+  
+   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+			<Label>Age of the patient</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>105.00</Maximum>
+		</NumericDataElement>
+		
+		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+			<Label>Sex of the patient</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>1</Value>
+					<Label>Female</Label>	
+				</Choice>
+				<Choice>
+					<Value>2</Value>
+					<Label>Male</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+		<NumericDataElement Id="stenosis" IsRequired="true" DisplaySequence="3">
+			<Label>Percent Stenosis of the Coronary Arteries</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>190.00</Maximum>
+		</NumericDataElement>
+		
+		<NumericDataElement Id="left" IsRequired="true" DisplaySequence="4">
+			<Label>Maximum Percent Stenosis of the left main coronary artery</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>190.00</Maximum>
+		</NumericDataElement>
+		
+		
+		<NumericDataElement Id="max" IsRequired="true" DisplaySequence="5">
+			<Label>Maximum percent stenosis of the left anterior descending coronary artery</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+	
+	
+		<NumericDataElement Id="min" IsRequired="true" DisplaySequence="6">
+			<Label>Minimum percent stenosis of the diagonal branches</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+		
+		<NumericDataElement Id="ramus" IsRequired="true" DisplaySequence="7">
+			<Label>Minimum percent stenosis of the ramus branch</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+		
+		
+		<NumericDataElement Id="artery" IsRequired="true" DisplaySequence="8">
+			<Label>Minimum percent stenosis of the left circumflex artery</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+		
+		
+		<NumericDataElement Id="marginal" IsRequired="true" DisplaySequence="9">
+			<Label>Minimum percent stenosis of the obtuse marginal branch</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+		
+		
+		<NumericDataElement Id="right" IsRequired="true" DisplaySequence="10">
+			<Label>Minimum percent stenosis of the right coronary artery</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+		
+		<NumericDataElement Id="pda" IsRequired="true" DisplaySequence="11">
+			<Label>Minimum percent stenosis of the PDA</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+		
+		
+		<NumericDataElement Id="lat" IsRequired="true" DisplaySequence="12">
+			<Label>Minimum percent stenosis of the posterior lateral branch</Label>
+			<Minimum>0.00</Minimum>
+			<Maximum>1000.00</Maximum>
+		</NumericDataElement>
+	
+	
+
+   </DataElements>
+   
+  <Rules>
+		<DecisionPoint Id="macrodp">
+			<Label>Macro Banch</Label>
+			<Branch>
+				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
+				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
+			</Branch>
+		</DecisionPoint>		
+	</Rules>
+
+	
+    <EndPoints>		
+	 <TemplatePartial Id ="ExamPartial">
+	 	<Branch>
+	 		<ReportText Type="PlainText">EXAM TYPE:  Coronary CTA Evaluation</ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
+	 		<ReportText Type="Newline"></ReportText>
+	 	</Branch>
+	 </TemplatePartial>
+
+
+	<EndPoint Id="macroEndpoint">
+		<Label>A</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
+					<ReportText Type="Newline"/>
+					<ReportText Type="PlainText">Coronary CTA evaluation results:</ReportText>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Age" />
+					<ReportText Type="PlainText"> Patient's age: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Age"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="Sex" />
+					<ReportText Type="PlainText"> Patient's sex: </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="Sex"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="stenosis" />
+					<ReportText Type="PlainText"> Percent Stenosis of the Coronary Arteries: </ReportText>   
+					<ReportText Type="InsertDataElementValue" Value="stenosis"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				<Branch>
+				    <SectionIf DataElementId="left" />
+					<ReportText Type="PlainText"> Maximum Percent Stenosis of the left main coronary artery: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="left"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="max" />
+					<ReportText Type="PlainText"> Maximum percent stenosis of the left anterior descending coronary artery: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="max"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="min" />
+					<ReportText Type="PlainText"> Minimum percent stenosis of the diagonal branches: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="min"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="ramus" />
+					<ReportText Type="PlainText"> Minimum percent stenosis of the ramus branch: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="ramus"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="artery" />
+					<ReportText Type="PlainText"> Minimum percent stenosis of the left circumflex artery: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="artery"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="marginal" />
+					<ReportText Type="PlainText"> Minimum percent stenosis of the obtuse marginal branch: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="marginal"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="right" />
+					<ReportText Type="PlainText"> Minimum percent stenosis of the right coronary artery: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="right"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="pda" />
+					<ReportText Type="PlainText"> Minimum percent stenosis of the PDA: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="pda"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				<Branch>
+				    <SectionIf DataElementId="lat" />
+					<ReportText Type="PlainText"> Minimum percent stenosis of the posterior lateral branch: </ReportText> 
+					<ReportText Type="InsertDataElementValue" Value="lat"/>
+					<ReportText Type="Newline"/>
+				</Branch>
+				
+				</ReportSection>
+		</ReportSections>
+		</EndPoint>	
+	</EndPoints>
+	</ReportingModule>
