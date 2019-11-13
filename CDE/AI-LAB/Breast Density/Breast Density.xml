@@ -4,7 +4,7 @@
 	<Metadata>
 		<Label>Breast Density</Label>
 		<ID>Breast Density</ID>
-		<SchemaVersion>1.0</SchemaVersion>
+		<SchemaVersion>2.0</SchemaVersion>
 		<ModuleVersion>1.0</ModuleVersion>
 		<Info>
 			<Description>This module describes the Common Data elements and Macros for Breast Density</Description>
@@ -40,7 +40,23 @@
 	
 	 <ChoiceDataElement Id="Breast_Density" IsRequired="true" DisplaySequence="2">
 			<Label>Classification</Label>
+			<CodableConcept Name="Breast_Density">
+			<Coding>
+			<System Value="RadElement" />
+			<Version Value="1.0" />
+			<Code Value="RDE341" />
+			<Display Value="RDE341" />
+			<Url Value="https://radelement.org/element/RDE341" />
+			<UserSelected Value="true" />
+			 </Coding>
+			</CodableConcept>
+			
+			
 			<ChoiceInfo>
+				<Choice>
+					<Value>unknown</Value>
+					<Label>Unknown</Label>	
+				</Choice>
 				<Choice>
 					<Value>fat</Value>
 					<Label>Almost entirely fat</Label>	
@@ -51,11 +67,11 @@
 				</Choice>
 				<Choice>
 					<Value>het_dense</Value>
-					<Label>Heterogeneously dense</Label>
+					<Label>Heterogeneous fibroglandular tissue</Label>
 				</Choice>
 				<Choice>
 					<Value>Extremely_dense</Value>
-					<Label>Extremely dense</Label>
+					<Label>Extreme fibroglandular tissue</Label>
 				</Choice>			
 			</ChoiceInfo>			
 		</ChoiceDataElement>
@@ -68,6 +84,13 @@
 	<Rules>
 	<DecisionPoint Id="Breast Density">
 	<Label>Breast Density</Label>
+	<Branch>
+		<Label>The_breasts_are_unknwon</Label>
+		   <AndCondition>
+			<EqualCondition DataElementId="Breast_Density" ComparisonValue="unknown"/>
+           </AndCondition>
+			<EndPointRef EndPointId="unknownbreast"></EndPointRef>
+	 </Branch>
 	<Branch>
 		<Label>The_breasts_are_fatty</Label>
 		   <AndCondition>
@@ -106,6 +129,17 @@
 
 
 	<EndPoints>
+	<EndPoint Id="unknownbreast">
+	  	<Label>The_breasts_are_unknwon</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">The breasts density is unknown.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	
 			
 	 <EndPoint Id="Fatty">
 	  	<Label>The_breasts_are_fatty</Label>
