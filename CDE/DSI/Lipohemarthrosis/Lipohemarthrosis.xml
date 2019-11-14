@@ -1,144 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Lipohemarthrosis</Label>
-    <ID>Lipohemarthrosis</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Lipohemarthrosis">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES103" />
-        <Display Value="RDES103" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES103" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Lipohemarthrosis</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <IntegerDataElement Id="age_1" DisplaySequence="2" Unit="years">
-      <CodableConcept Name="codableConcept_RDES103_age_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE532" />
-          <Display Value="RDE532" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE532" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-      <Minimum>5</Minimum>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Lipohemarthrosisdetection_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES103_Lipohemarthrosisdetection_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE533" />
-          <Display Value="RDE533" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE533" />
-        </Coding>
-      </CodableConcept>
-      <Label>Lipohemarthrosis detection</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="sexatbirth_2" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES103_sexatbirth_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE534" />
-          <Display Value="RDE534" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE534" />
-        </Coding>
-      </CodableConcept>
-      <Label>sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="knee_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES103_knee_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE535" />
-          <Display Value="RDE535" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE535" />
-        </Coding>
-      </CodableConcept>
-      <Label>knee</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>rightknee</Value>
-          <Label>right knee</Label>
-        </Choice>
-        <Choice>
-          <Value>leftknee</Value>
-          <Label>left knee</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <ChoiceDataElement Id="PostSurgicalpatient_4" DisplaySequence="5">
-      <CodableConcept Name="codableConcept_RDES103_PostSurgicalpatient_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE536" />
-          <Display Value="RDE536" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE536" />
-        </Coding>
-      </CodableConcept>
-      <Label>Post Surgical patient</Label>
-      <Hint>imaging post surgery (&lt; 1 year)</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>yes</Value>
-          <Label>yes</Label>
-        </Choice>
-        <Choice>
-          <Value>no</Value>
-          <Label>no</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Lipohemarthrosis</Label>
+        <ID>Lipohemarthrosis</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Lipohemarthrosis" />
+        <Info>
+            <Description>Lipohemarthrosis</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="age_1" DisplaySequence="2" Unit="years">
+            <Label>age</Label>
+            <Minimum>5</Minimum>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Lipohemarthrosisdetection_0" IsRequired="true" DisplaySequence="1">
+            <Label>Lipohemarthrosis detection</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="sexatbirth_2" DisplaySequence="3">
+            <Label>sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="PostSurgicalpatient_4" DisplaySequence="5">
+            <Label>Post Surgical patient</Label>
+            <Hint>imaging post surgery (&lt; 1 year)</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="knee_3" DisplaySequence="4">
+            <Label>knee</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>rightknee</Value>
+                    <Label>right knee</Label>
+                </Choice>
+                <Choice>
+                    <Value>leftknee</Value>
+                    <Label>left knee</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

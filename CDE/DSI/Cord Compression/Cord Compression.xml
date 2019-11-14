@@ -1,256 +1,182 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Cord Compression</Label>
-    <ID>Cord_Compression</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-12</CreatedDate>
-    <LastModifiedDate>2019-11-12</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Cord_Compression">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES124" />
-        <Display Value="RDES124" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES124" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Cord Compression</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="Cordvolume_6" DisplaySequence="7" Unit="mm3">
-      <CodableConcept Name="codableConcept_RDES124_Cordvolume_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE683" />
-          <Display Value="RDE683" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE683" />
-        </Coding>
-      </CodableConcept>
-      <Label>Cord volume</Label>
-      <Hint>cord volume</Hint>
-    </NumericDataElement>
-    <IntegerDataElement Id="age_4" IsRequired="true" DisplaySequence="5" Unit="years">
-      <CodableConcept Name="codableConcept_RDES124_age_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE684" />
-          <Display Value="RDE684" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE684" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Presenceofanycordshapedeformity_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES124_Presenceofanycordshapedeformity_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE685" />
-          <Display Value="RDE685" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE685" />
-        </Coding>
-      </CodableConcept>
-      <Label>Presence of any cord shape deformity</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Compressivemyelopathy_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES124_Compressivemyelopathy_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE686" />
-          <Display Value="RDE686" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE686" />
-        </Coding>
-      </CodableConcept>
-      <Label>Compressive myelopathy</Label>
-      <Hint>Cord edema based on intramedullary T2 hypertense signal</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Cordcompressiondegree_2" IsRequired="true" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES124_Cordcompressiondegree_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE687" />
-          <Display Value="RDE687" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE687" />
-        </Coding>
-      </CodableConcept>
-      <Label>Cord compression degree</Label>
-      <Hint>severity of cord compression</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>deformitywithCSFvisible</Value>
-          <Label>deformity with CSF visible</Label>
-        </Choice>
-        <Choice>
-          <Value>deformitywithnoCSFvisible</Value>
-          <Label>deformity with no CSF visible</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="sexatbirth_5" DisplaySequence="6">
-      <CodableConcept Name="codableConcept_RDES124_sexatbirth_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE688" />
-          <Display Value="RDE688" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE688" />
-        </Coding>
-      </CodableConcept>
-      <Label>sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="Locationofcordcompression_3" IsRequired="true" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES124_Locationofcordcompression_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE689" />
-          <Display Value="RDE689" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE689" />
-        </Coding>
-      </CodableConcept>
-      <Label>Location of cord compression</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>C2</Value>
-          <Label>C2</Label>
-        </Choice>
-        <Choice>
-          <Value>C3</Value>
-          <Label>C3</Label>
-        </Choice>
-        <Choice>
-          <Value>C4</Value>
-          <Label>C4</Label>
-        </Choice>
-        <Choice>
-          <Value>C5</Value>
-          <Label>C5</Label>
-        </Choice>
-        <Choice>
-          <Value>C6</Value>
-          <Label>C6</Label>
-        </Choice>
-        <Choice>
-          <Value>C7</Value>
-          <Label>C7</Label>
-        </Choice>
-        <Choice>
-          <Value>C8</Value>
-          <Label>C8</Label>
-        </Choice>
-        <Choice>
-          <Value>T1</Value>
-          <Label>T1</Label>
-        </Choice>
-        <Choice>
-          <Value>T2</Value>
-          <Label>T2</Label>
-        </Choice>
-        <Choice>
-          <Value>T3</Value>
-          <Label>T3</Label>
-        </Choice>
-        <Choice>
-          <Value>T4</Value>
-          <Label>T4</Label>
-        </Choice>
-        <Choice>
-          <Value>T5</Value>
-          <Label>T5</Label>
-        </Choice>
-        <Choice>
-          <Value>T6</Value>
-          <Label>T6</Label>
-        </Choice>
-        <Choice>
-          <Value>T7</Value>
-          <Label>T7</Label>
-        </Choice>
-        <Choice>
-          <Value>L1</Value>
-          <Label>L1</Label>
-        </Choice>
-        <Choice>
-          <Value>L2</Value>
-          <Label>L2</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <ChoiceDataElement Id="cordedema_7" DisplaySequence="8">
-      <CodableConcept Name="codableConcept_RDES124_cordedema_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE690" />
-          <Display Value="RDE690" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE690" />
-        </Coding>
-      </CodableConcept>
-      <Label>cord edema</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Cord Compression</Label>
+        <ID>Cord_Compression</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-12</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Cord_Compression" />
+        <Info>
+            <Description>Cord Compression</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="Cordvolume_6" DisplaySequence="7" Unit="mm3">
+            <Label>Cord volume</Label>
+            <Hint>cord volume</Hint>
+        </NumericDataElement>
+        <IntegerDataElement Id="age_4" IsRequired="true" DisplaySequence="5" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Presenceofanycordshapedeformity_0" IsRequired="true" DisplaySequence="1">
+            <Label>Presence of any cord shape deformity</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Compressivemyelopathy_1" IsRequired="true" DisplaySequence="2">
+            <Label>Compressive myelopathy</Label>
+            <Hint>Cord edema based on intramedullary T2 hypertense signal</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Cordcompressiondegree_2" IsRequired="true" DisplaySequence="3">
+            <Label>Cord compression degree</Label>
+            <Hint>severity of cord compression</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>deformitywithCSFvisible</Value>
+                    <Label>deformity with CSF visible</Label>
+                </Choice>
+                <Choice>
+                    <Value>deformitywithnoCSFvisible</Value>
+                    <Label>deformity with no CSF visible</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="sexatbirth_5" DisplaySequence="6">
+            <Label>sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="cordedema_7" DisplaySequence="8">
+            <Label>cord edema</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="Locationofcordcompression_3" IsRequired="true" DisplaySequence="4">
+            <Label>Location of cord compression</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>C2</Value>
+                    <Label>C2</Label>
+                </Choice>
+                <Choice>
+                    <Value>C3</Value>
+                    <Label>C3</Label>
+                </Choice>
+                <Choice>
+                    <Value>C4</Value>
+                    <Label>C4</Label>
+                </Choice>
+                <Choice>
+                    <Value>C5</Value>
+                    <Label>C5</Label>
+                </Choice>
+                <Choice>
+                    <Value>C6</Value>
+                    <Label>C6</Label>
+                </Choice>
+                <Choice>
+                    <Value>C7</Value>
+                    <Label>C7</Label>
+                </Choice>
+                <Choice>
+                    <Value>C8</Value>
+                    <Label>C8</Label>
+                </Choice>
+                <Choice>
+                    <Value>T1</Value>
+                    <Label>T1</Label>
+                </Choice>
+                <Choice>
+                    <Value>T2</Value>
+                    <Label>T2</Label>
+                </Choice>
+                <Choice>
+                    <Value>T3</Value>
+                    <Label>T3</Label>
+                </Choice>
+                <Choice>
+                    <Value>T4</Value>
+                    <Label>T4</Label>
+                </Choice>
+                <Choice>
+                    <Value>T5</Value>
+                    <Label>T5</Label>
+                </Choice>
+                <Choice>
+                    <Value>T6</Value>
+                    <Label>T6</Label>
+                </Choice>
+                <Choice>
+                    <Value>T7</Value>
+                    <Label>T7</Label>
+                </Choice>
+                <Choice>
+                    <Value>L1</Value>
+                    <Label>L1</Label>
+                </Choice>
+                <Choice>
+                    <Value>L2</Value>
+                    <Label>L2</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

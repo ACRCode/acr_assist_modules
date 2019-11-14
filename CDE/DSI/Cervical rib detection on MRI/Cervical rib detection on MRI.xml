@@ -1,151 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Cervical rib detection on MRI</Label>
-    <ID>Cervical_rib_detection_on_MRI</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Cervical_rib_detection_on_MRI">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES98" />
-        <Display Value="RDES98" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES98" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Cervical rib detection on MRI</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <ChoiceDataElement Id="Cervicalribdetection_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES98_Cervicalribdetection_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE510" />
-          <Display Value="RDE510" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE510" />
-        </Coding>
-      </CodableConcept>
-      <Label>Cervical rib detection</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="cervicalriblateriality_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES98_cervicalriblateriality_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE511" />
-          <Display Value="RDE511" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE511" />
-        </Coding>
-      </CodableConcept>
-      <Label>cervical rib lateriality</Label>
-      <Hint>cervical rib location</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>left</Value>
-          <Label>left</Label>
-        </Choice>
-        <Choice>
-          <Value>right</Value>
-          <Label>right</Label>
-        </Choice>
-        <Choice>
-          <Value>bilateral</Value>
-          <Label>bilateral</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="views_2" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES98_views_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE512" />
-          <Display Value="RDE512" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE512" />
-        </Coding>
-      </CodableConcept>
-      <Label>views</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>axial</Value>
-          <Label>axial</Label>
-        </Choice>
-        <Choice>
-          <Value>coronal</Value>
-          <Label>coronal</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="sexatbirth_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES98_sexatbirth_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE513" />
-          <Display Value="RDE513" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE513" />
-        </Coding>
-      </CodableConcept>
-      <Label>sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
-      <CodableConcept Name="codableConcept_RDES98_age_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE514" />
-          <Display Value="RDE514" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE514" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Cervical rib detection on MRI</Label>
+        <ID>Cervical_rib_detection_on_MRI</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Cervical_rib_detection_on_MRI" />
+        <Info>
+            <Description>Cervical rib detection on MRI</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Cervicalribdetection_0" IsRequired="true" DisplaySequence="1">
+            <Label>Cervical rib detection</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="cervicalriblateriality_1" IsRequired="true" DisplaySequence="2">
+            <Label>cervical rib lateriality</Label>
+            <Hint>cervical rib location</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>left</Value>
+                    <Label>left</Label>
+                </Choice>
+                <Choice>
+                    <Value>right</Value>
+                    <Label>right</Label>
+                </Choice>
+                <Choice>
+                    <Value>bilateral</Value>
+                    <Label>bilateral</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="views_2" DisplaySequence="3">
+            <Label>views</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>axial</Value>
+                    <Label>axial</Label>
+                </Choice>
+                <Choice>
+                    <Value>coronal</Value>
+                    <Label>coronal</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="sexatbirth_3" DisplaySequence="4">
+            <Label>sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

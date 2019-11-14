@@ -1,182 +1,138 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Rib fracture identification- CT chest in emergency setting</Label>
-    <ID>Rib_fracture_identification-_CT_chest_in_emergency_setting</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Rib_fracture_identification-_CT_chest_in_emergency_setting">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES114" />
-        <Display Value="RDES114" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES114" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Rib fracture identification- CT chest in emergency setting</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="Totalribdisplacement_3" IsRequired="true" DisplaySequence="4" Unit="mm">
-      <CodableConcept Name="codableConcept_RDES114_Totalribdisplacement_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE597" />
-          <Display Value="RDE597" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE597" />
-        </Coding>
-      </CodableConcept>
-      <Label>Total rib displacement</Label>
-      <Hint>Total euclidean displacement of a rib fracture
+    <Metadata>
+        <Label>Rib fracture identification- CT chest in emergency setting</Label>
+        <ID>Rib_fracture_identification-_CT_chest_in_emergency_setting</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Rib_fracture_identification-_CT_chest_in_emergency_setting" />
+        <Info>
+            <Description>Rib fracture identification- CT chest in emergency setting</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="Totalribdisplacement_3" IsRequired="true" DisplaySequence="4" Unit="mm">
+            <Label>Total rib displacement</Label>
+            <Hint>Total euclidean displacement of a rib fracture
 </Hint>
-    </NumericDataElement>
-    <IntegerDataElement Id="Countofribfractures_1" IsRequired="true" DisplaySequence="2" Unit="rib fractures">
-      <CodableConcept Name="codableConcept_RDES114_Countofribfractures_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE598" />
-          <Display Value="RDE598" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE598" />
-        </Coding>
-      </CodableConcept>
-      <Label>Count of rib fractures</Label>
-      <Hint>number of rib fractures</Hint>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="ribfracture_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES114_ribfracture_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE599" />
-          <Display Value="RDE599" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE599" />
-        </Coding>
-      </CodableConcept>
-      <Label>rib fracture</Label>
-      <Hint>detection of rib fracture</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>fractureabsent</Value>
-          <Label>fracture absent</Label>
-        </Choice>
-        <Choice>
-          <Value>fracturepresent</Value>
-          <Label>fracture present</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="EnumeratedRibswithfracture_2" IsRequired="true" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES114_EnumeratedRibswithfracture_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE600" />
-          <Display Value="RDE600" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE600" />
-        </Coding>
-      </CodableConcept>
-      <Label>Enumerated Rib(s) with fracture</Label>
-      <Hint>Enumerated rib(s) with fracture</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>1</Value>
-          <Label>1</Label>
-        </Choice>
-        <Choice>
-          <Value>2</Value>
-          <Label>2</Label>
-        </Choice>
-        <Choice>
-          <Value>3</Value>
-          <Label>3</Label>
-        </Choice>
-        <Choice>
-          <Value>4</Value>
-          <Label>4</Label>
-        </Choice>
-        <Choice>
-          <Value>5</Value>
-          <Label>5</Label>
-        </Choice>
-        <Choice>
-          <Value>6</Value>
-          <Label>6</Label>
-        </Choice>
-        <Choice>
-          <Value>7</Value>
-          <Label>7</Label>
-        </Choice>
-        <Choice>
-          <Value>8</Value>
-          <Label>8</Label>
-        </Choice>
-        <Choice>
-          <Value>9</Value>
-          <Label>9</Label>
-        </Choice>
-        <Choice>
-          <Value>10</Value>
-          <Label>10</Label>
-        </Choice>
-        <Choice>
-          <Value>11</Value>
-          <Label>11</Label>
-        </Choice>
-        <Choice>
-          <Value>12</Value>
-          <Label>12</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <ChoiceDataElement Id="Associatedcomplications_4" DisplaySequence="5">
-      <CodableConcept Name="codableConcept_RDES114_Associatedcomplications_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE601" />
-          <Display Value="RDE601" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE601" />
-        </Coding>
-      </CodableConcept>
-      <Label>Associated complications</Label>
-      <Hint>presence of complications such as pneumothorax, hemothorax, lung contusion, hematoma, and laceration</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>complication(s)present</Value>
-          <Label>complication(s) present</Label>
-        </Choice>
-        <Choice>
-          <Value>complications(s)absent</Value>
-          <Label>complications(s) absent</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+        </NumericDataElement>
+        <IntegerDataElement Id="Countofribfractures_1" IsRequired="true" DisplaySequence="2" Unit="rib fractures">
+            <Label>Count of rib fractures</Label>
+            <Hint>number of rib fractures</Hint>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="ribfracture_0" IsRequired="true" DisplaySequence="1">
+            <Label>rib fracture</Label>
+            <Hint>detection of rib fracture</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>fractureabsent</Value>
+                    <Label>fracture absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>fracturepresent</Value>
+                    <Label>fracture present</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Associatedcomplications_4" DisplaySequence="5">
+            <Label>Associated complications</Label>
+            <Hint>presence of complications such as pneumothorax, hemothorax, lung contusion, hematoma, and laceration</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>complication(s)present</Value>
+                    <Label>complication(s) present</Label>
+                </Choice>
+                <Choice>
+                    <Value>complications(s)absent</Value>
+                    <Label>complications(s) absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="EnumeratedRibswithfracture_2" IsRequired="true" DisplaySequence="3">
+            <Label>Enumerated Rib(s) with fracture</Label>
+            <Hint>Enumerated rib(s) with fracture</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>1</Value>
+                    <Label>1</Label>
+                </Choice>
+                <Choice>
+                    <Value>2</Value>
+                    <Label>2</Label>
+                </Choice>
+                <Choice>
+                    <Value>3</Value>
+                    <Label>3</Label>
+                </Choice>
+                <Choice>
+                    <Value>4</Value>
+                    <Label>4</Label>
+                </Choice>
+                <Choice>
+                    <Value>5</Value>
+                    <Label>5</Label>
+                </Choice>
+                <Choice>
+                    <Value>6</Value>
+                    <Label>6</Label>
+                </Choice>
+                <Choice>
+                    <Value>7</Value>
+                    <Label>7</Label>
+                </Choice>
+                <Choice>
+                    <Value>8</Value>
+                    <Label>8</Label>
+                </Choice>
+                <Choice>
+                    <Value>9</Value>
+                    <Label>9</Label>
+                </Choice>
+                <Choice>
+                    <Value>10</Value>
+                    <Label>10</Label>
+                </Choice>
+                <Choice>
+                    <Value>11</Value>
+                    <Label>11</Label>
+                </Choice>
+                <Choice>
+                    <Value>12</Value>
+                    <Label>12</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

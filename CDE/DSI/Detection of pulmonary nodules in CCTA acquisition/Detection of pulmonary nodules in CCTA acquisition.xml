@@ -1,242 +1,168 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Detection of pulmonary nodules in CCTA acquisition</Label>
-    <ID>Detection_of_pulmonary_nodules_in_CCTA_acquisition</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Detection_of_pulmonary_nodules_in_CCTA_acquisition">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES118" />
-        <Display Value="RDES118" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES118" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Detection of pulmonary nodules in CCTA acquisition</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
-      <CodableConcept Name="codableConcept_RDES118_age_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE628" />
-          <Display Value="RDE628" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE628" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Pulmonarynoduledetection_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES118_Pulmonarynoduledetection_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE625" />
-          <Display Value="RDE625" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE625" />
-        </Coding>
-      </CodableConcept>
-      <Label>Pulmonary nodule detection</Label>
-      <Hint>detection of pulmonary nodules during CCTA acquistion</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Pulmonarynoduleabsent</Value>
-          <Label>Pulmonary nodule absent</Label>
-        </Choice>
-        <Choice>
-          <Value>Pulmonarynodulepresent</Value>
-          <Label>Pulmonary nodule present</Label>
-        </Choice>
-        <Choice>
-          <Value>Unknown</Value>
-          <Label>Unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Pulmonarynoduleattenuation_1" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES118_Pulmonarynoduleattenuation_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE626" />
-          <Display Value="RDE626" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE626" />
-        </Coding>
-      </CodableConcept>
-      <Label>Pulmonary nodule attenuation</Label>
-      <Hint>define the attenuation of pulmonary nodules</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>fatdensity</Value>
-          <Label>fat density</Label>
-        </Choice>
-        <Choice>
-          <Value>groundglass</Value>
-          <Label>groundglass</Label>
-        </Choice>
-        <Choice>
-          <Value>partsolid</Value>
-          <Label>part solid</Label>
-        </Choice>
-        <Choice>
-          <Value>solid</Value>
-          <Label>solid</Label>
-        </Choice>
-        <Choice>
-          <Value>calcification</Value>
-          <Label>calcification</Label>
-        </Choice>
-        <Choice>
-          <Value>cavitation</Value>
-          <Label>cavitation</Label>
-        </Choice>
-        <Choice>
-          <Value>cysticlucencies</Value>
-          <Label>cystic lucencies</Label>
-        </Choice>
-        <Choice>
-          <Value>airbronchograms</Value>
-          <Label>air bronchograms</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Pleuralinvolvement_2" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES118_Pleuralinvolvement_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE627" />
-          <Display Value="RDE627" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE627" />
-        </Coding>
-      </CodableConcept>
-      <Label>Pleural involvement</Label>
-      <Hint>Evaluation of pleural involvement</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Pleuralinvolvementpresent</Value>
-          <Label>Pleural involvement present</Label>
-        </Choice>
-        <Choice>
-          <Value>Pleuralinvolvementabsent</Value>
-          <Label>Pleural involvement absent</Label>
-        </Choice>
-        <Choice>
-          <Value>Unknown</Value>
-          <Label>Unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Sexatbirth_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES118_Sexatbirth_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE629" />
-          <Display Value="RDE629" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE629" />
-        </Coding>
-      </CodableConcept>
-      <Label>Sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Chronicobstructivepulmonarydisease_5" DisplaySequence="6">
-      <CodableConcept Name="codableConcept_RDES118_Chronicobstructivepulmonarydisease_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE630" />
-          <Display Value="RDE630" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE630" />
-        </Coding>
-      </CodableConcept>
-      <Label>Chronic obstructive pulmonary disease</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Breathartifacts_6" DisplaySequence="7">
-      <CodableConcept Name="codableConcept_RDES118_Breathartifacts_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE631" />
-          <Display Value="RDE631" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE631" />
-        </Coding>
-      </CodableConcept>
-      <Label>Breath artifacts</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Limphonodes_7" DisplaySequence="8">
-      <CodableConcept Name="codableConcept_RDES118_Limphonodes_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE632" />
-          <Display Value="RDE632" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE632" />
-        </Coding>
-      </CodableConcept>
-      <Label>Limphonodes</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Detection of pulmonary nodules in CCTA acquisition</Label>
+        <ID>Detection_of_pulmonary_nodules_in_CCTA_acquisition</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Detection_of_pulmonary_nodules_in_CCTA_acquisition" />
+        <Info>
+            <Description>Detection of pulmonary nodules in CCTA acquisition</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Pulmonarynoduledetection_0" IsRequired="true" DisplaySequence="1">
+            <Label>Pulmonary nodule detection</Label>
+            <Hint>detection of pulmonary nodules during CCTA acquistion</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Pulmonarynoduleabsent</Value>
+                    <Label>Pulmonary nodule absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>Pulmonarynodulepresent</Value>
+                    <Label>Pulmonary nodule present</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Pulmonarynoduleattenuation_1" DisplaySequence="2">
+            <Label>Pulmonary nodule attenuation</Label>
+            <Hint>define the attenuation of pulmonary nodules</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>fatdensity</Value>
+                    <Label>fat density</Label>
+                </Choice>
+                <Choice>
+                    <Value>groundglass</Value>
+                    <Label>groundglass</Label>
+                </Choice>
+                <Choice>
+                    <Value>partsolid</Value>
+                    <Label>part solid</Label>
+                </Choice>
+                <Choice>
+                    <Value>solid</Value>
+                    <Label>solid</Label>
+                </Choice>
+                <Choice>
+                    <Value>calcification</Value>
+                    <Label>calcification</Label>
+                </Choice>
+                <Choice>
+                    <Value>cavitation</Value>
+                    <Label>cavitation</Label>
+                </Choice>
+                <Choice>
+                    <Value>cysticlucencies</Value>
+                    <Label>cystic lucencies</Label>
+                </Choice>
+                <Choice>
+                    <Value>airbronchograms</Value>
+                    <Label>air bronchograms</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Pleuralinvolvement_2" DisplaySequence="3">
+            <Label>Pleural involvement</Label>
+            <Hint>Evaluation of pleural involvement</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Pleuralinvolvementpresent</Value>
+                    <Label>Pleural involvement present</Label>
+                </Choice>
+                <Choice>
+                    <Value>Pleuralinvolvementabsent</Value>
+                    <Label>Pleural involvement absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Sexatbirth_3" DisplaySequence="4">
+            <Label>Sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Chronicobstructivepulmonarydisease_5" DisplaySequence="6">
+            <Label>Chronic obstructive pulmonary disease</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Breathartifacts_6" DisplaySequence="7">
+            <Label>Breath artifacts</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Limphonodes_7" DisplaySequence="8">
+            <Label>Limphonodes</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

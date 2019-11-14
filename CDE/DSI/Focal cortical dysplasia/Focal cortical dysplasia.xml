@@ -1,272 +1,178 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Focal cortical dysplasia</Label>
-    <ID>Focal_cortical_dysplasia</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Focal_cortical_dysplasia">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES119" />
-        <Display Value="RDES119" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES119" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Focal cortical dysplasia</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="focalcorticalthickness_1" IsRequired="true" DisplaySequence="2" Unit="mm">
-      <CodableConcept Name="codableConcept_RDES119_focalcorticalthickness_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE633" />
-          <Display Value="RDE633" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE633" />
-        </Coding>
-      </CodableConcept>
-      <Label>focal cortical thickness</Label>
-      <Hint>Thickness of the focal cortical. Thickening or thinning may suggest focal cortical dysplasia.</Hint>
-    </NumericDataElement>
-    <IntegerDataElement Id="age_7" DisplaySequence="8" Unit="years">
-      <CodableConcept Name="codableConcept_RDES119_age_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE634" />
-          <Display Value="RDE634" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE634" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Focalcorticaldysplasia_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES119_Focalcorticaldysplasia_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE635" />
-          <Display Value="RDE635" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE635" />
-        </Coding>
-      </CodableConcept>
-      <Label>Focal cortical dysplasia</Label>
-      <Hint>detection of focal cortical dysplasia</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Focalbrainatrophy_2" IsRequired="true" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES119_Focalbrainatrophy_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE636" />
-          <Display Value="RDE636" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE636" />
-        </Coding>
-      </CodableConcept>
-      <Label>Focal brain atrophy</Label>
-      <Hint>focal brain atrophy</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>noatrophy</Value>
-          <Label>no atrophy</Label>
-        </Choice>
-        <Choice>
-          <Value>atrophy</Value>
-          <Label>atrophy</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="GrayWhiteJunctionBlurring_3" IsRequired="true" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES119_GrayWhiteJunctionBlurring_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE637" />
-          <Display Value="RDE637" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE637" />
-        </Coding>
-      </CodableConcept>
-      <Label>Gray-White Junction Blurring</Label>
-      <Hint>Blurring of the gray-white junction</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Noblurring</Value>
-          <Label>No blurring</Label>
-        </Choice>
-        <Choice>
-          <Value>Blurring</Value>
-          <Label>Blurring</Label>
-        </Choice>
-        <Choice>
-          <Value>Unknown</Value>
-          <Label>Unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="IncreasedsignalonT2FLAIRingrayandsubcorticalwhitematter_4" IsRequired="true" DisplaySequence="5">
-      <CodableConcept Name="codableConcept_RDES119_IncreasedsignalonT2FLAIRingrayandsubcorticalwhitematter_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE638" />
-          <Display Value="RDE638" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE638" />
-        </Coding>
-      </CodableConcept>
-      <Label> Increased signal on T2/FLAIR in gray and subcortical white matter</Label>
-      <Hint>Increased signal on T2/FLAIR in gray and subcortical white matter</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>nosignalincrease</Value>
-          <Label>no signal increase</Label>
-        </Choice>
-        <Choice>
-          <Value>signalincrease</Value>
-          <Label>signal increase</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="T2FLAIRsignalhyperintensityofwhitematter_5" DisplaySequence="6">
-      <CodableConcept Name="codableConcept_RDES119_T2FLAIRsignalhyperintensityofwhitematter_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE639" />
-          <Display Value="RDE639" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE639" />
-        </Coding>
-      </CodableConcept>
-      <Label>T2/FLAIR signal hyperintensity of white matter</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>withtransmantlesign</Value>
-          <Label>with transmantle sign</Label>
-        </Choice>
-        <Choice>
-          <Value>withouttransmantlesign</Value>
-          <Label>without transmantle sign</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Location_6" DisplaySequence="7">
-      <CodableConcept Name="codableConcept_RDES119_Location_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE640" />
-          <Display Value="RDE640" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE640" />
-        </Coding>
-      </CodableConcept>
-      <Label>Location</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Outsidetemporallobe</Value>
-          <Label>Outside temporal lobe</Label>
-        </Choice>
-        <Choice>
-          <Value>Insidetemporallobe</Value>
-          <Label>Inside temporal lobe</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Comorbidities_8" DisplaySequence="9">
-      <CodableConcept Name="codableConcept_RDES119_Comorbidities_8">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE641" />
-          <Display Value="RDE641" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE641" />
-        </Coding>
-      </CodableConcept>
-      <Label>Comorbidities</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>epilepsy</Value>
-          <Label>epilepsy</Label>
-        </Choice>
-        <Choice>
-          <Value>mentalretardation</Value>
-          <Label>mental retardation</Label>
-        </Choice>
-        <Choice>
-          <Value>earlyseizureonset</Value>
-          <Label>early seizure onset</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="FocalCorticalDysplasiaClassification_9" DisplaySequence="10">
-      <CodableConcept Name="codableConcept_RDES119_FocalCorticalDysplasiaClassification_9">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE642" />
-          <Display Value="RDE642" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE642" />
-        </Coding>
-      </CodableConcept>
-      <Label>Focal Cortical Dysplasia Classification</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>TypeI</Value>
-          <Label>Type I</Label>
-        </Choice>
-        <Choice>
-          <Value>TypeII</Value>
-          <Label>Type II</Label>
-        </Choice>
-        <Choice>
-          <Value>TypeIII</Value>
-          <Label>Type III</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Focal cortical dysplasia</Label>
+        <ID>Focal_cortical_dysplasia</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Focal_cortical_dysplasia" />
+        <Info>
+            <Description>Focal cortical dysplasia</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="focalcorticalthickness_1" IsRequired="true" DisplaySequence="2" Unit="mm">
+            <Label>focal cortical thickness</Label>
+            <Hint>Thickness of the focal cortical. Thickening or thinning may suggest focal cortical dysplasia.</Hint>
+        </NumericDataElement>
+        <IntegerDataElement Id="age_7" DisplaySequence="8" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Focalcorticaldysplasia_0" IsRequired="true" DisplaySequence="1">
+            <Label>Focal cortical dysplasia</Label>
+            <Hint>detection of focal cortical dysplasia</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Focalbrainatrophy_2" IsRequired="true" DisplaySequence="3">
+            <Label>Focal brain atrophy</Label>
+            <Hint>focal brain atrophy</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>noatrophy</Value>
+                    <Label>no atrophy</Label>
+                </Choice>
+                <Choice>
+                    <Value>atrophy</Value>
+                    <Label>atrophy</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="GrayWhiteJunctionBlurring_3" IsRequired="true" DisplaySequence="4">
+            <Label>Gray-White Junction Blurring</Label>
+            <Hint>Blurring of the gray-white junction</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Noblurring</Value>
+                    <Label>No blurring</Label>
+                </Choice>
+                <Choice>
+                    <Value>Blurring</Value>
+                    <Label>Blurring</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="IncreasedsignalonT2FLAIRingrayandsubcorticalwhitematter_4" IsRequired="true" DisplaySequence="5">
+            <Label> Increased signal on T2/FLAIR in gray and subcortical white matter</Label>
+            <Hint>Increased signal on T2/FLAIR in gray and subcortical white matter</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>nosignalincrease</Value>
+                    <Label>no signal increase</Label>
+                </Choice>
+                <Choice>
+                    <Value>signalincrease</Value>
+                    <Label>signal increase</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="T2FLAIRsignalhyperintensityofwhitematter_5" DisplaySequence="6">
+            <Label>T2/FLAIR signal hyperintensity of white matter</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>withtransmantlesign</Value>
+                    <Label>with transmantle sign</Label>
+                </Choice>
+                <Choice>
+                    <Value>withouttransmantlesign</Value>
+                    <Label>without transmantle sign</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Location_6" DisplaySequence="7">
+            <Label>Location</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Outsidetemporallobe</Value>
+                    <Label>Outside temporal lobe</Label>
+                </Choice>
+                <Choice>
+                    <Value>Insidetemporallobe</Value>
+                    <Label>Inside temporal lobe</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Comorbidities_8" DisplaySequence="9">
+            <Label>Comorbidities</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>epilepsy</Value>
+                    <Label>epilepsy</Label>
+                </Choice>
+                <Choice>
+                    <Value>mentalretardation</Value>
+                    <Label>mental retardation</Label>
+                </Choice>
+                <Choice>
+                    <Value>earlyseizureonset</Value>
+                    <Label>early seizure onset</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="FocalCorticalDysplasiaClassification_9" DisplaySequence="10">
+            <Label>Focal Cortical Dysplasia Classification</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>TypeI</Value>
+                    <Label>Type I</Label>
+                </Choice>
+                <Choice>
+                    <Value>TypeII</Value>
+                    <Label>Type II</Label>
+                </Choice>
+                <Choice>
+                    <Value>TypeIII</Value>
+                    <Label>Type III</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

@@ -1,302 +1,208 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Subarachnoid hemorrhage</Label>
-    <ID>Subarachnoid_hemorrhage</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-12</CreatedDate>
-    <LastModifiedDate>2019-11-12</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Subarachnoid_hemorrhage">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES125" />
-        <Display Value="RDES125" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES125" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Subarachnoid hemorrhage</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="SAHVolume_2" IsRequired="true" DisplaySequence="3" Unit="mm3">
-      <CodableConcept Name="codableConcept_RDES125_SAHVolume_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE691" />
-          <Display Value="RDE691" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE691" />
-        </Coding>
-      </CodableConcept>
-      <Label>SAH Volume</Label>
-    </NumericDataElement>
-    <IntegerDataElement Id="age_5" DisplaySequence="6" Unit="years">
-      <CodableConcept Name="codableConcept_RDES125_age_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE692" />
-          <Display Value="RDE692" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE692" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="SAHLaterality_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES125_SAHLaterality_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE693" />
-          <Display Value="RDE693" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE693" />
-        </Coding>
-      </CodableConcept>
-      <Label>SAH Laterality</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Undetermined</Value>
-          <Label>Undetermined</Label>
-        </Choice>
-        <Choice>
-          <Value>Unilateral</Value>
-          <Label>Unilateral</Label>
-        </Choice>
-        <Choice>
-          <Value>Bilateral</Value>
-          <Label>Bilateral</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="SAHDensity_3" IsRequired="true" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES125_SAHDensity_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE694" />
-          <Display Value="RDE694" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE694" />
-        </Coding>
-      </CodableConcept>
-      <Label>SAH Density</Label>
-      <Hint>Density of SAH</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Indeterminate</Value>
-          <Label>Indeterminate</Label>
-        </Choice>
-        <Choice>
-          <Value>highhomogeneous</Value>
-          <Label>high homogeneous</Label>
-        </Choice>
-        <Choice>
-          <Value>lowhomogeneous</Value>
-          <Label>low homogeneous</Label>
-        </Choice>
-        <Choice>
-          <Value>highheterogeneous</Value>
-          <Label>high heterogeneous</Label>
-        </Choice>
-        <Choice>
-          <Value>lowheterogeneous</Value>
-          <Label>low heterogeneous</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="SAHEtiology_4" IsRequired="true" DisplaySequence="5">
-      <CodableConcept Name="codableConcept_RDES125_SAHEtiology_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE695" />
-          <Display Value="RDE695" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE695" />
-        </Coding>
-      </CodableConcept>
-      <Label>SAH Etiology</Label>
-      <Hint>determination of etiology of SAH</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Indeterminate</Value>
-          <Label>Indeterminate</Label>
-        </Choice>
-        <Choice>
-          <Value>Traumatic</Value>
-          <Label>Traumatic </Label>
-        </Choice>
-        <Choice>
-          <Value>Aneurysmal</Value>
-          <Label>Aneurysmal</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="sexatbirth_6" DisplaySequence="7">
-      <CodableConcept Name="codableConcept_RDES125_sexatbirth_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE696" />
-          <Display Value="RDE696" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE696" />
-        </Coding>
-      </CodableConcept>
-      <Label>sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Intraaxialhematoma_7" DisplaySequence="8">
-      <CodableConcept Name="codableConcept_RDES125_Intraaxialhematoma_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE697" />
-          <Display Value="RDE697" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE697" />
-        </Coding>
-      </CodableConcept>
-      <Label>Intra-axial hematoma</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Extraaxialhematoma_8" DisplaySequence="9">
-      <CodableConcept Name="codableConcept_RDES125_Extraaxialhematoma_8">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE698" />
-          <Display Value="RDE698" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE698" />
-        </Coding>
-      </CodableConcept>
-      <Label>Extra-axial hematoma</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="SAHLocation_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES125_SAHLocation_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE699" />
-          <Display Value="RDE699" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE699" />
-        </Coding>
-      </CodableConcept>
-      <Label>SAH Location</Label>
-      <Hint>Location of SAH</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Undetermined</Value>
-          <Label>Undetermined</Label>
-        </Choice>
-        <Choice>
-          <Value>Frontal</Value>
-          <Label>Frontal</Label>
-        </Choice>
-        <Choice>
-          <Value>Parietal</Value>
-          <Label>Parietal</Label>
-        </Choice>
-        <Choice>
-          <Value>Temporal</Value>
-          <Label>Temporal</Label>
-        </Choice>
-        <Choice>
-          <Value>Occipital</Value>
-          <Label>Occipital</Label>
-        </Choice>
-        <Choice>
-          <Value>SUprasellarcistern</Value>
-          <Label>SUprasellar cistern</Label>
-        </Choice>
-        <Choice>
-          <Value>Prepontinecistern</Value>
-          <Label>Prepontine cistern</Label>
-        </Choice>
-        <Choice>
-          <Value>Medullaycistern</Value>
-          <Label>Medullay cistern</Label>
-        </Choice>
-        <Choice>
-          <Value>Perimesencephaliccistern</Value>
-          <Label>Perimesencephalic cistern</Label>
-        </Choice>
-        <Choice>
-          <Value>Supracerebeller/pinealcistern</Value>
-          <Label>Supracerebeller/pineal cistern</Label>
-        </Choice>
-        <Choice>
-          <Value>Cerebellar</Value>
-          <Label>Cerebellar</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <ChoiceDataElement Id="Intracranialmass_9" DisplaySequence="10">
-      <CodableConcept Name="codableConcept_RDES125_Intracranialmass_9">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE700" />
-          <Display Value="RDE700" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE700" />
-        </Coding>
-      </CodableConcept>
-      <Label>Intra-cranial mass</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Subarachnoid hemorrhage</Label>
+        <ID>Subarachnoid_hemorrhage</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-12</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Subarachnoid_hemorrhage" />
+        <Info>
+            <Description>Subarachnoid hemorrhage</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="SAHVolume_2" IsRequired="true" DisplaySequence="3" Unit="mm3">
+            <Label>SAH Volume</Label>
+        </NumericDataElement>
+        <IntegerDataElement Id="age_5" DisplaySequence="6" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="SAHLaterality_0" IsRequired="true" DisplaySequence="1">
+            <Label>SAH Laterality</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Undetermined</Value>
+                    <Label>Undetermined</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unilateral</Value>
+                    <Label>Unilateral</Label>
+                </Choice>
+                <Choice>
+                    <Value>Bilateral</Value>
+                    <Label>Bilateral</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="SAHDensity_3" IsRequired="true" DisplaySequence="4">
+            <Label>SAH Density</Label>
+            <Hint>Density of SAH</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Indeterminate</Value>
+                    <Label>Indeterminate</Label>
+                </Choice>
+                <Choice>
+                    <Value>highhomogeneous</Value>
+                    <Label>high homogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>lowhomogeneous</Value>
+                    <Label>low homogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>highheterogeneous</Value>
+                    <Label>high heterogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>lowheterogeneous</Value>
+                    <Label>low heterogeneous</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="SAHEtiology_4" IsRequired="true" DisplaySequence="5">
+            <Label>SAH Etiology</Label>
+            <Hint>determination of etiology of SAH</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Indeterminate</Value>
+                    <Label>Indeterminate</Label>
+                </Choice>
+                <Choice>
+                    <Value>Traumatic</Value>
+                    <Label>Traumatic </Label>
+                </Choice>
+                <Choice>
+                    <Value>Aneurysmal</Value>
+                    <Label>Aneurysmal</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="sexatbirth_6" DisplaySequence="7">
+            <Label>sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Intraaxialhematoma_7" DisplaySequence="8">
+            <Label>Intra-axial hematoma</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Extraaxialhematoma_8" DisplaySequence="9">
+            <Label>Extra-axial hematoma</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Intracranialmass_9" DisplaySequence="10">
+            <Label>Intra-cranial mass</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="SAHLocation_1" IsRequired="true" DisplaySequence="2">
+            <Label>SAH Location</Label>
+            <Hint>Location of SAH</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Undetermined</Value>
+                    <Label>Undetermined</Label>
+                </Choice>
+                <Choice>
+                    <Value>Frontal</Value>
+                    <Label>Frontal</Label>
+                </Choice>
+                <Choice>
+                    <Value>Parietal</Value>
+                    <Label>Parietal</Label>
+                </Choice>
+                <Choice>
+                    <Value>Temporal</Value>
+                    <Label>Temporal</Label>
+                </Choice>
+                <Choice>
+                    <Value>Occipital</Value>
+                    <Label>Occipital</Label>
+                </Choice>
+                <Choice>
+                    <Value>SUprasellarcistern</Value>
+                    <Label>SUprasellar cistern</Label>
+                </Choice>
+                <Choice>
+                    <Value>Prepontinecistern</Value>
+                    <Label>Prepontine cistern</Label>
+                </Choice>
+                <Choice>
+                    <Value>Medullaycistern</Value>
+                    <Label>Medullay cistern</Label>
+                </Choice>
+                <Choice>
+                    <Value>Perimesencephaliccistern</Value>
+                    <Label>Perimesencephalic cistern</Label>
+                </Choice>
+                <Choice>
+                    <Value>Supracerebeller/pinealcistern</Value>
+                    <Label>Supracerebeller/pineal cistern</Label>
+                </Choice>
+                <Choice>
+                    <Value>Cerebellar</Value>
+                    <Label>Cerebellar</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>
