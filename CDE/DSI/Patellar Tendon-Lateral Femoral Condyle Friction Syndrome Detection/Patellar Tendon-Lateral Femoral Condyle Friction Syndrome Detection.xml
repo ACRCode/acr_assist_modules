@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label> Patellar Tendon-Lateral Femoral Condyle Friction Syndrome Detection</Label>
+    <ID>Patellar_Tendon-Lateral_Femoral_Condyle_Friction_Syndrome_Detection</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Patellar_Tendon-Lateral_Femoral_Condyle_Friction_Syndrome_Detection">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES109" />
+        <Display Value="RDES109" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES109" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description> Patellar Tendon-Lateral Femoral Condyle Friction Syndrome Detection</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <ChoiceDataElement Id="PatellarTendonLateralFemoralCondyleFrictionSyndromeDetection_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES109_PatellarTendonLateralFemoralCondyleFrictionSyndromeDetection_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE560" />
+          <Display Value="RDE560" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE560" />
+        </Coding>
+      </CodableConcept>
+      <Label> Patellar Tendon-Lateral Femoral Condyle Friction Syndrome Detection</Label>
+      <Hint>Patellar tendon-lateral femoral condyle friction syndrome</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="views_1" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES109_views_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE561" />
+          <Display Value="RDE561" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE561" />
+        </Coding>
+      </CodableConcept>
+      <Label>view(s)</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>axial</Value>
+          <Label>axial</Label>
+        </Choice>
+        <Choice>
+          <Value>sagittal</Value>
+          <Label>sagittal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="sexatbirth_2" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES109_sexatbirth_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE562" />
+          <Display Value="RDE562" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE562" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <IntegerDataElement Id="age_3" DisplaySequence="4" Unit="years">
+      <CodableConcept Name="codableConcept_RDES109_age_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE563" />
+          <Display Value="RDE563" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE563" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+      <Minimum>12</Minimum>
+      <Maximum>60</Maximum>
+    </IntegerDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>
