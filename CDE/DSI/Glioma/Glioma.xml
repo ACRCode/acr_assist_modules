@@ -33,33 +33,31 @@
         <VoiceActivation />
     </Metadata>
     <DataElements>
-        <NumericDataElement Id="Survivalprobability_3" IsRequired="true" DisplaySequence="4" Unit="probability of survival for a window of time">
-            <Label>Survival probability</Label>
-            <Minimum>0</Minimum>
-            <Maximum>1</Maximum>
+        <NumericDataElement Id="Survivalprobability_3" IsRequired="true" DisplaySequence="4" Unit="probability of survival for a window of time (months)">
+            <Label>Survival probability </Label>
         </NumericDataElement>
         <NumericDataElement Id="Pseudoprogressionprobability_4" IsRequired="true" DisplaySequence="5" Unit="probability of pseudo-progression after treatment">
             <Label>Pseudo-progression probability</Label>
             <Minimum>0</Minimum>
-            <Maximum>1</Maximum>
+            <Maximum>100</Maximum>
         </NumericDataElement>
         <NumericDataElement Id="Pseudoresponseprobability_5" IsRequired="true" DisplaySequence="6" Unit="probability of pseudo-response after treatment">
             <Label>Pseudo-response probability</Label>
             <Hint>probability of pseudo-response after treatment</Hint>
             <Minimum>0</Minimum>
-            <Maximum>1</Maximum>
+            <Maximum>100</Maximum>
         </NumericDataElement>
         <NumericDataElement Id="Recurrenceprobability_6" IsRequired="true" DisplaySequence="7" Unit="probability of recurrence after treatment">
             <Label>Recurrence probability</Label>
             <Hint>probability of recurrence after treatment</Hint>
             <Minimum>0</Minimum>
-            <Maximum>1</Maximum>
+            <Maximum>100</Maximum>
         </NumericDataElement>
         <NumericDataElement Id="Radiationnecrosisprobability_7" IsRequired="true" DisplaySequence="8" Unit="probability of radiation necrosis after treatment">
             <Label>Radiation necrosis probability</Label>
             <Hint>probability of radiation necrosis after treatment</Hint>
             <Minimum>0</Minimum>
-            <Maximum>1</Maximum>
+            <Maximum>100</Maximum>
         </NumericDataElement>
         <ChoiceDataElement Id="Gliomaclassification_0" IsRequired="true" DisplaySequence="1">
             <Label>Glioma classification</Label>
@@ -83,6 +81,9 @@
                 <Choice>
                     <Value>Ganglioglioma</Value>
                     <Label>Ganglioglioma</Label>
+                </Choice>                <Choice>
+                    <Value>OtherprimaryCNStumor</Value>
+                    <Label>Other primary CNS tumor given the WHO classification</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
