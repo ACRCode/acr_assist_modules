@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+	<Metadata>
+		<Label>Breast Density</Label>
+		<ID>Breast Density</ID>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ModuleVersion>1.0</ModuleVersion>
+		<ApprovedBy>American College of Radiology</ApprovedBy>
+		<ReviewedBy>American College of Radiology</ReviewedBy>
+		<DevelopedBy>American College of Radiology</DevelopedBy>
+		
+		<CodableConcept Name="codableConcept_breastdensity">
+			<Coding>
+				<System Value="RadElement"></System>
+				<Version Value="1.0"></Version>
+				<Code Value="RDES75"></Code>
+				<Display Value="RDES75"></Display>
+				<Url Value="https://radelement.org/set/RDES75"></Url>
+				<UserSelected Value="false"></UserSelected>
+			</Coding> 
+        </CodableConcept>
+		<Info>
+			<Description>This module describes the Common Data elements and Macros for Breast Density</Description>
+			
+			<References>
+				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
+			</References>
+			
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>keydiagram.jpg</Location>
+					<Label>Breast Density key image</Label>
+				</Diagram>
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+		</Info>
+		<ReportCitationText>C</ReportCitationText>
+        <ApplicableSexes Value="Both"></ApplicableSexes>
+		
+	</Metadata>
+
+	
+	<DataElements>
+	
+	  	<DateTimeDataElement Id="dateofexam" DisplaySequence="1" IsRequired="true" Editable="true" Hasprefilled="false" Output="false">
+    		<Label>Date of Exam</Label>   		
+    		<VoiceCommand>Consultation Date</VoiceCommand>
+    	</DateTimeDataElement>
+	
+	 <ChoiceDataElement Id="Breast_Density" IsRequired="true" DisplaySequence="2">
+			<Label>Classification</Label>
+			<CodableConcept Name="Breast_Density">
+			<Coding>
+			<System Value="RadElement" />
+			<Version Value="1.0" />
+			<Code Value="RDE341" />
+			<Display Value="RDE341" />
+			<Url Value="https://radelement.org/element/RDE341" />
+			<UserSelected Value="true" />
+			 </Coding>
+			</CodableConcept>
+			
+			
+			<ChoiceInfo>
+				<Choice>
+					<Value>unknown</Value>
+					<Label>Unknown</Label>	
+				</Choice>
+				<Choice>
+					<Value>fat</Value>
+					<Label>Almost entirely fat</Label>	
+				</Choice>
+				<Choice>
+					<Value>scattered</Value>
+					<Label>Scattered fibroglandular densities</Label>
+				</Choice>
+				<Choice>
+					<Value>het_dense</Value>
+					<Label>Heterogeneous fibroglandular tissue</Label>
+				</Choice>
+				<Choice>
+					<Value>Extremely_dense</Value>
+					<Label>Extreme fibroglandular tissue</Label>
+				</Choice>			
+			</ChoiceInfo>			
+		</ChoiceDataElement>
+		
+	</DataElements>
+	
+	
+	
+	
+	<Rules>
+	<DecisionPoint Id="Breast Density">
+	<Label>Breast Density</Label>
+	<Branch>
+		<Label>The_breasts_are_unknwon</Label>
+		   <AndCondition>
+			<EqualCondition DataElementId="Breast_Density" ComparisonValue="unknown"/>
+           </AndCondition>
+			<EndPointRef EndPointId="unknownbreast"></EndPointRef>
+	 </Branch>
+	<Branch>
+		<Label>The_breasts_are_fatty</Label>
+		   <AndCondition>
+			<EqualCondition DataElementId="Breast_Density" ComparisonValue="fat"/>
+           </AndCondition>
+			<EndPointRef EndPointId="Fatty"></EndPointRef>
+	 </Branch>
+	 <Branch>
+		<Label>Scattered_density</Label>
+		   <AndCondition>
+			<EqualCondition DataElementId="Breast_Density" ComparisonValue="scattered"/>
+           </AndCondition>
+			<EndPointRef EndPointId="Scattered"></EndPointRef>
+	 </Branch> 
+	  <Branch>
+		<Label>Small_masses</Label>
+		   <AndCondition>
+			<EqualCondition DataElementId="Breast_Density" ComparisonValue="het_dense"/>
+           </AndCondition>
+			<EndPointRef EndPointId="Masses"></EndPointRef>
+	 </Branch>
+	 <Branch>
+		<Label>Extremely_dense</Label>
+		   <AndCondition>
+			<EqualCondition DataElementId="Breast_Density" ComparisonValue="Extremely_dense"/>
+           </AndCondition>
+			<EndPointRef EndPointId="Dense"></EndPointRef>
+	 </Branch>
+	 
+	 </DecisionPoint>
+    </Rules>
+
+	
+
+
+
+
+	<EndPoints>
+	<EndPoint Id="unknownbreast">
+	  	<Label>The_breasts_are_unknwon</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">The breasts density is unknown.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	
+			
+	 <EndPoint Id="Fatty">
+	  	<Label>The_breasts_are_fatty</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">The breasts density is almost entirely fatty.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	  
+	   <EndPoint Id="Scattered">
+	  	<Label>Scattered_density</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">The breast density shows scattered areas of fibroglandular density.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	  
+	  <EndPoint Id="Masses">
+	  	<Label>Small_masses</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">The breasts density is heterogeneously dense, which may obscure small masses.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>
+	  
+	  <EndPoint Id="Dense">
+	  	<Label>Extremely_dense</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">The breasts density is extremely dense, which lowers the sensitivity of mammography.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+      </EndPoint>	
+			
+	</EndPoints>
+
+</ReportingModule>
+
+	

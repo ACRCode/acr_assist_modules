@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Fracture of the distal radius in adults</Label>
+    <ID>Fracture_of_the_distal_radius_in_adults</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-12</CreatedDate>
+    <LastModifiedDate>2019-11-12</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Fracture_of_the_distal_radius_in_adults">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES128" />
+        <Display Value="RDES128" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES128" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Fracture of the distal radius in adults</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <ChoiceDataElement Id="Detectfractureindistalradius_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES128_Detectfractureindistalradius_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE715" />
+          <Display Value="RDE715" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE715" />
+        </Coding>
+      </CodableConcept>
+      <Label>Detect fracture in distal radius</Label>
+      <Hint>Subtle cortical deformity, buckling or angulation in the distal radius.</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>none</Value>
+          <Label>none</Label>
+        </Choice>
+        <Choice>
+          <Value>fracture</Value>
+          <Label>fracture</Label>
+        </Choice>
+        <Choice>
+          <Value>indeterminant</Value>
+          <Label>indeterminant</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="sexatbirth_2" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES128_sexatbirth_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE716" />
+          <Display Value="RDE716" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE716" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <MultiChoiceDataElement Id="views_1" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES128_views_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE717" />
+          <Display Value="RDE717" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE717" />
+        </Coding>
+      </CodableConcept>
+      <Label>views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>AP</Value>
+          <Label>AP</Label>
+        </Choice>
+        <Choice>
+          <Value>Lat</Value>
+          <Label>Lat</Label>
+        </Choice>
+        <Choice>
+          <Value>Oblique</Value>
+          <Label>Oblique</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+    <IntegerDataElement Id="age_3" DisplaySequence="4" Unit="years">
+      <CodableConcept Name="codableConcept_RDES128_age_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE718" />
+          <Display Value="RDE718" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE718" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

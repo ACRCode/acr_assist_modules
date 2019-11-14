@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label> Alpha angle measurement by CT</Label>
+    <ID>Alpha_angle_measurement_by_CT</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Alpha_angle_measurement_by_CT">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES102" />
+        <Display Value="RDES102" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES102" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description> Alpha angle measurement by CT</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Alphaangle_0" IsRequired="true" DisplaySequence="1" Unit="degrees">
+      <CodableConcept Name="codableConcept_RDES102_Alphaangle_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE529" />
+          <Display Value="RDE529" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE529" />
+        </Coding>
+      </CodableConcept>
+      <Label>Alpha angle</Label>
+      <Hint>alpha angle</Hint>
+    </NumericDataElement>
+    <ChoiceDataElement Id="sexatbirth_1" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES102_sexatbirth_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE530" />
+          <Display Value="RDE530" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE530" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <IntegerDataElement Id="age_2" DisplaySequence="3" Unit="years">
+      <CodableConcept Name="codableConcept_RDES102_age_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE531" />
+          <Display Value="RDE531" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE531" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+      <Minimum>18</Minimum>
+      <Maximum>50</Maximum>
+    </IntegerDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

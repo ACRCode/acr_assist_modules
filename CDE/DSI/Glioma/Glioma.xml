@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Glioma</Label>
+    <ID>Glioma</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-13</CreatedDate>
+    <LastModifiedDate>2019-11-13</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Glioma">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES78" />
+        <Display Value="RDES78" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES78" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Glioma</Description>
+      <Contact>
+        <Name>Natalia Farish</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Survivalprobability_3" IsRequired="true" DisplaySequence="4" Unit="probability of survival for a window of time">
+      <CodableConcept Name="codableConcept_RDES78_Survivalprobability_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE363" />
+          <Display Value="RDE363" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE363" />
+        </Coding>
+      </CodableConcept>
+      <Label>Survival probability</Label>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="Pseudoprogressionprobability_4" IsRequired="true" DisplaySequence="5" Unit="probability of pseudo-progression after treatment">
+      <CodableConcept Name="codableConcept_RDES78_Pseudoprogressionprobability_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE364" />
+          <Display Value="RDE364" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE364" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pseudo-progression probability</Label>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="Pseudoresponseprobability_5" IsRequired="true" DisplaySequence="6" Unit="probability of pseudo-response after treatment">
+      <CodableConcept Name="codableConcept_RDES78_Pseudoresponseprobability_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE365" />
+          <Display Value="RDE365" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE365" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pseudo-response probability</Label>
+      <Hint>probability of pseudo-response after treatment</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="Recurrenceprobability_6" IsRequired="true" DisplaySequence="7" Unit="probability of recurrence after treatment">
+      <CodableConcept Name="codableConcept_RDES78_Recurrenceprobability_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE366" />
+          <Display Value="RDE366" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE366" />
+        </Coding>
+      </CodableConcept>
+      <Label>Recurrence probability</Label>
+      <Hint>probability of recurrence after treatment</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="Gliomaclassification_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES78_Gliomaclassification_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE367" />
+          <Display Value="RDE367" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE367" />
+        </Coding>
+      </CodableConcept>
+      <Label>Glioma classification</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Astrocytoma</Value>
+          <Label>Astrocytoma</Label>
+        </Choice>
+        <Choice>
+          <Value>Oligdendroglioma</Value>
+          <Label>Oligdendroglioma</Label>
+        </Choice>
+        <Choice>
+          <Value>Oligastrocytoma</Value>
+          <Label>Oligastrocytoma</Label>
+        </Choice>
+        <Choice>
+          <Value>Ependymoma</Value>
+          <Label>Ependymoma</Label>
+        </Choice>
+        <Choice>
+          <Value>Ganglioglioma</Value>
+          <Label>Ganglioglioma</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Tumorgrade_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES78_Tumorgrade_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE368" />
+          <Display Value="RDE368" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE368" />
+        </Coding>
+      </CodableConcept>
+      <Label>Tumor grade</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>gradeI</Value>
+          <Label>grade I</Label>
+        </Choice>
+        <Choice>
+          <Value>gradeII</Value>
+          <Label>grade II</Label>
+        </Choice>
+        <Choice>
+          <Value>gradeIII</Value>
+          <Label>grade III</Label>
+        </Choice>
+        <Choice>
+          <Value>gradeIV</Value>
+          <Label>grade IV</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Identifymutatedgenesassociatedwithgliomas_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES78_Identifymutatedgenesassociatedwithgliomas_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE369" />
+          <Display Value="RDE369" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE369" />
+        </Coding>
+      </CodableConcept>
+      <Label>Identify mutated genes associated with gliomas</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>EGFR</Value>
+          <Label>EGFR</Label>
+        </Choice>
+        <Choice>
+          <Value>ERBB2</Value>
+          <Label>ERBB2</Label>
+        </Choice>
+        <Choice>
+          <Value>IDH1</Value>
+          <Label>IDH1</Label>
+        </Choice>
+        <Choice>
+          <Value>NF1</Value>
+          <Label>NF1</Label>
+        </Choice>
+        <Choice>
+          <Value>PIK3CA</Value>
+          <Label>PIK3CA</Label>
+        </Choice>
+        <Choice>
+          <Value>PIK3R1</Value>
+          <Label>PIK3R1</Label>
+        </Choice>
+        <Choice>
+          <Value>PTEN</Value>
+          <Label>PTEN</Label>
+        </Choice>
+        <Choice>
+          <Value>PTPRD</Value>
+          <Label>PTPRD</Label>
+        </Choice>
+        <Choice>
+          <Value>RB1</Value>
+          <Label>RB1</Label>
+        </Choice>
+        <Choice>
+          <Value>TP53</Value>
+          <Label>TP53</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <NumericDataElement Id="Radiationnecrosisprobability_7" IsRequired="true" DisplaySequence="8" Unit="probability of radiation necrosis after treatment">
+      <CodableConcept Name="codableConcept_RDES78_Radiationnecrosisprobability_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE370" />
+          <Display Value="RDE370" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE370" />
+        </Coding>
+      </CodableConcept>
+      <Label>Radiation necrosis probability</Label>
+      <Hint>probability of radiation necrosis after treatment</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </NumericDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Buckle fracture of the distal radius on pediatric wrist</Label>
+    <ID>Buckle_fracture_of_the_distal_radius_on_pediatric_wrist</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Buckle_fracture_of_the_distal_radius_on_pediatric_wrist">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES104" />
+        <Display Value="RDES104" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES104" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Buckle fracture of the distal radius on pediatric wrist</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <ChoiceDataElement Id="Forearmdetectionofthedistalradiusbucklefracure_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES104_Forearmdetectionofthedistalradiusbucklefracure_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE537" />
+          <Display Value="RDE537" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE537" />
+        </Coding>
+      </CodableConcept>
+      <Label>Forearm detection of the distal radius buckle fracure</Label>
+      <Hint>Subtle cortical deformity, buckling or angulation in the distal radius.</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Fracture</Value>
+          <Label>Fracture</Label>
+        </Choice>
+        <Choice>
+          <Value>Indeterminate</Value>
+          <Label>Indeterminate</Label>
+        </Choice>
+        <Choice>
+          <Value>NoFracture</Value>
+          <Label>No Fracture</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Views_1" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES104_Views_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE538" />
+          <Display Value="RDE538" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE538" />
+        </Coding>
+      </CodableConcept>
+      <Label>Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>AP</Value>
+          <Label>AP</Label>
+        </Choice>
+        <Choice>
+          <Value>Lateral</Value>
+          <Label>Lateral</Label>
+        </Choice>
+        <Choice>
+          <Value>Oblique</Value>
+          <Label>Oblique</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES104_Sexatbirth_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE539" />
+          <Display Value="RDE539" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE539" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <IntegerDataElement Id="age_3" DisplaySequence="4" Unit="years">
+      <CodableConcept Name="codableConcept_RDES104_age_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE540" />
+          <Display Value="RDE540" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE540" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label> Automated calculation of TT-TG distance</Label>
+    <ID>Automated_calculation_of_TT-TG_distance</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Automated_calculation_of_TT-TG_distance">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES105" />
+        <Display Value="RDES105" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES105" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description> Automated calculation of TT-TG distance</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="TTTGDistance_0" IsRequired="true" DisplaySequence="1" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES105_TTTGDistance_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE541" />
+          <Display Value="RDE541" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE541" />
+        </Coding>
+      </CodableConcept>
+      <Label>TT-TG Distance</Label>
+      <Hint>Lateral offset of tibial tuberosity from center of trochlear groove of femur</Hint>
+    </NumericDataElement>
+    <ChoiceDataElement Id="sexatbirth_1" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES105_sexatbirth_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE542" />
+          <Display Value="RDE542" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE542" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <IntegerDataElement Id="age_2" IsRequired="true" DisplaySequence="3" Unit="years">
+      <CodableConcept Name="codableConcept_RDES105_age_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE543" />
+          <Display Value="RDE543" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE543" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

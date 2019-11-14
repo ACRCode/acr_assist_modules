@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Epidural Hematoma</Label>
+        <ID>Epidural_Hematoma</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-12</CreatedDate>
+        <LastModifiedDate>2019-11-12</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <Info>
+            <Description>Epidural Hematoma</Description>
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="Hematomawidth_3" IsRequired="true" DisplaySequence="4" Unit="mm">
+            <Label>Hematoma width</Label>
+            <Hint>max width of extra-axial hematoma/collection</Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="Hematomavolume_4" IsRequired="true" DisplaySequence="5" Unit="mm3">
+            <Label>Hematoma volume</Label>
+            <Hint>volume of hematoma</Hint>
+        </NumericDataElement>
+        <IntegerDataElement Id="age_7" DisplaySequence="8" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Hematomashapeconfiguration_0" IsRequired="true" DisplaySequence="1">
+            <Label>Hematoma shape/configuration</Label>
+            <Hint>shape/configuration of the extra-axial hematoma/collection</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>undetermined</Value>
+                    <Label>undetermined</Label>
+                </Choice>
+                <Choice>
+                    <Value>crescentic</Value>
+                    <Label>crescentic</Label>
+                </Choice>
+                <Choice>
+                    <Value>lentiform</Value>
+                    <Label>lentiform</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Hematomalaterality_1" IsRequired="true" DisplaySequence="2">
+            <Label>Hematoma laterality</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>undetermined</Value>
+                    <Label>undetermined</Label>
+                </Choice>
+                <Choice>
+                    <Value>unilateral</Value>
+                    <Label>unilateral</Label>
+                </Choice>
+                <Choice>
+                    <Value>bilateral</Value>
+                    <Label>bilateral</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Hematomadensity_5" IsRequired="true" DisplaySequence="6">
+            <Label>Hematoma density</Label>
+            <Hint>Density of extra-axial hematoma/collection</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Indeterminate</Value>
+                    <Label>Indeterminate</Label>
+                </Choice>
+                <Choice>
+                    <Value>highhomogeneous</Value>
+                    <Label>high homogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>lowhomogeneous</Value>
+                    <Label>low homogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>highheterogeneous</Value>
+                    <Label>high heterogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>lowheterogeneous</Value>
+                    <Label>low heterogeneous</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Hematomaseptations_6" IsRequired="true" DisplaySequence="7">
+            <Label>Hematoma septations</Label>
+            <Hint>presence of exta-axial hematoma septations</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>indeterminate</Value>
+                    <Label>indeterminate</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="Hematomalocation_2" IsRequired="true" DisplaySequence="3">
+            <Label>Hematoma location</Label>
+            <Hint>location of extra-axial hematoma/collection</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>undetermined</Value>
+                    <Label>undetermined</Label>
+                </Choice>
+                <Choice>
+                    <Value>frontal</Value>
+                    <Label>frontal</Label>
+                </Choice>
+                <Choice>
+                    <Value>parietal</Value>
+                    <Label>parietal</Label>
+                </Choice>
+                <Choice>
+                    <Value>temporal</Value>
+                    <Label>temporal</Label>
+                </Choice>
+                <Choice>
+                    <Value>occipital</Value>
+                    <Label>occipital</Label>
+                </Choice>
+                <Choice>
+                    <Value>parafalcine</Value>
+                    <Label>parafalcine</Label>
+                </Choice>
+                <Choice>
+                    <Value>cerebellar</Value>
+                    <Label>cerebellar</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <ChoiceDataElement Id="sexatbirth_8" IsRequired="true" DisplaySequence="9">
+            <Label>sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>

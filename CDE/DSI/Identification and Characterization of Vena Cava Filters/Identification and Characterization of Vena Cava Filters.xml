@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Identification and Characterization of Vena Cava Filters</Label>
+    <ID>Identification_and_Characterization_of_Vena_Cava_Filters</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-12</CreatedDate>
+    <LastModifiedDate>2019-11-12</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Identification_and_Characterization_of_Vena_Cava_Filters">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES126" />
+        <Display Value="RDES126" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES126" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Identification and Characterization of Vena Cava Filters</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Filtercomponentcount_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES126_Filtercomponentcount_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE701" />
+          <Display Value="RDE701" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE701" />
+        </Coding>
+      </CodableConcept>
+      <Label>Filter component count</Label>
+      <Hint>count of filter components</Hint>
+    </NumericDataElement>
+    <IntegerDataElement Id="age_6" DisplaySequence="7" Unit="years">
+      <CodableConcept Name="codableConcept_RDES126_age_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE702" />
+          <Display Value="RDE702" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE702" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Filterpresent_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES126_Filterpresent_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE703" />
+          <Display Value="RDE703" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE703" />
+        </Coding>
+      </CodableConcept>
+      <Label>Filter present</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Absent</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>Present</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>Unknown</Value>
+          <Label>Unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="sexatbirth_5" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES126_sexatbirth_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE704" />
+          <Display Value="RDE704" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE704" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <MultiChoiceDataElement Id="Filtertype_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES126_Filtertype_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE705" />
+          <Display Value="RDE705" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE705" />
+        </Coding>
+      </CodableConcept>
+      <Label>Filter type</Label>
+      <Hint>For each filter identified, return the type of filter</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>OptionEliterfilter</Value>
+          <Label>Option Eliter filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Gunthertulipfilter</Value>
+          <Label>Gunther tulip filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Celectfilter</Value>
+          <Label>Celect filter</Label>
+        </Choice>
+        <Choice>
+          <Value>ALNfilter</Value>
+          <Label>ALN filter</Label>
+        </Choice>
+        <Choice>
+          <Value>G2filter</Value>
+          <Label>G2 filter</Label>
+        </Choice>
+        <Choice>
+          <Value>G2Xfilter</Value>
+          <Label>G2 X filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Exlipsefilter</Value>
+          <Label>Exlipse filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Meridianfilter</Value>
+          <Label>Meridian filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Sentryfilter</Value>
+          <Label>Sentry filter</Label>
+        </Choice>
+        <Choice>
+          <Value>OptEasefilter</Value>
+          <Label>OptEase filter</Label>
+        </Choice>
+        <Choice>
+          <Value>TrapEasefilter</Value>
+          <Label>TrapEase filter</Label>
+        </Choice>
+        <Choice>
+          <Value>RecoveryOptionfilter</Value>
+          <Label>Recovery Option filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Denalifilter</Value>
+          <Label>Denali filter</Label>
+        </Choice>
+        <Choice>
+          <Value>VenaTech-LGMfilter</Value>
+          <Label>VenaTech - LGM filter</Label>
+        </Choice>
+        <Choice>
+          <Value>VenaTech-LPfilter</Value>
+          <Label>VenaTech- LP filter</Label>
+        </Choice>
+        <Choice>
+          <Value>VenaTechConvertiblefilter</Value>
+          <Label>VenaTech Convertible filter</Label>
+        </Choice>
+        <Choice>
+          <Value>SimonNitinolfilter</Value>
+          <Label>Simon Nitinol filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Greenfiledfilter-stainlesssteel</Value>
+          <Label>Greenfiled filter- stainless steel</Label>
+        </Choice>
+        <Choice>
+          <Value>Greenfieldfilter-titanium</Value>
+          <Label>Greenfield filter - titanium</Label>
+        </Choice>
+        <Choice>
+          <Value>Bird'snestfilter</Value>
+          <Label>Bird's nest filter</Label>
+        </Choice>
+        <Choice>
+          <Value>Other</Value>
+          <Label>Other</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+    <MultiChoiceDataElement Id="Filterorfiltercomponentlocations_3" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES126_Filterorfiltercomponentlocations_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE706" />
+          <Display Value="RDE706" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE706" />
+        </Coding>
+      </CodableConcept>
+      <Label>Filter or filter component locations</Label>
+      <Hint>Anatomic location of filter(s) or filter components</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Infrarenalvenacava</Value>
+          <Label>Infrarenal vena cava</Label>
+        </Choice>
+        <Choice>
+          <Value>suprarenalvenacava</Value>
+          <Label>suprarenal vena cava</Label>
+        </Choice>
+        <Choice>
+          <Value>sightcommoniliacvein</Value>
+          <Label>sight common iliac vein</Label>
+        </Choice>
+        <Choice>
+          <Value>leftcommoniliacvein</Value>
+          <Label>left common iliac vein</Label>
+        </Choice>
+        <Choice>
+          <Value>righttesticularvein</Value>
+          <Label>right testicular vein</Label>
+        </Choice>
+        <Choice>
+          <Value>lefttesticularvein</Value>
+          <Label>left testicular vein</Label>
+        </Choice>
+        <Choice>
+          <Value>rightovarianvein</Value>
+          <Label>right ovarian vein</Label>
+        </Choice>
+        <Choice>
+          <Value>leftovarianvein</Value>
+          <Label>left ovarian vein</Label>
+        </Choice>
+        <Choice>
+          <Value>rightrenalvein</Value>
+          <Label>right renal vein</Label>
+        </Choice>
+        <Choice>
+          <Value>leftrenalvein</Value>
+          <Label>left renal vein</Label>
+        </Choice>
+        <Choice>
+          <Value>superiorvenacava</Value>
+          <Label>superior vena cava</Label>
+        </Choice>
+        <Choice>
+          <Value>rightatrium</Value>
+          <Label>right atrium</Label>
+        </Choice>
+        <Choice>
+          <Value>rightventricle</Value>
+          <Label>right ventricle</Label>
+        </Choice>
+        <Choice>
+          <Value>leftventricle</Value>
+          <Label>left ventricle</Label>
+        </Choice>
+        <Choice>
+          <Value>interventricularseptum</Value>
+          <Label>interventricular septum</Label>
+        </Choice>
+        <Choice>
+          <Value>mainpulmonaryarter</Value>
+          <Label>main pulmonary arter</Label>
+        </Choice>
+        <Choice>
+          <Value>rightmainpulmonaryartery</Value>
+          <Label>right main pulmonary artery</Label>
+        </Choice>
+        <Choice>
+          <Value>leftmainpulmonaryartery</Value>
+          <Label>left main pulmonary artery</Label>
+        </Choice>
+        <Choice>
+          <Value>segmentalrightpulmonaryartery</Value>
+          <Label>segmental right pulmonary artery</Label>
+        </Choice>
+        <Choice>
+          <Value>segmentalleftpulmonaryartery</Value>
+          <Label>segmental left pulmonary artery</Label>
+        </Choice>
+        <Choice>
+          <Value>other</Value>
+          <Label>other</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+    <MultiChoiceDataElement Id="Filtercomplications_4" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES126_Filtercomplications_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE707" />
+          <Display Value="RDE707" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE707" />
+        </Coding>
+      </CodableConcept>
+      <Label>Filter complications</Label>
+      <Hint>radiographically evident filter complications</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Filterthrombosis</Value>
+          <Label>Filter thrombosis</Label>
+        </Choice>
+        <Choice>
+          <Value>Filtertilt</Value>
+          <Label>Filter tilt</Label>
+        </Choice>
+        <Choice>
+          <Value>Filterperforation</Value>
+          <Label>Filter perforation</Label>
+        </Choice>
+        <Choice>
+          <Value>Filterfracture</Value>
+          <Label>Filter fracture</Label>
+        </Choice>
+        <Choice>
+          <Value>Filtermigration</Value>
+          <Label>Filter migration</Label>
+        </Choice>
+        <Choice>
+          <Value>Pulmonaryembolism</Value>
+          <Label>Pulmonary embolism</Label>
+        </Choice>
+        <Choice>
+          <Value>Filterassociatedinfection</Value>
+          <Label>Filter associated infection</Label>
+        </Choice>
+        <Choice>
+          <Value>Filtermalposition</Value>
+          <Label>Filter malposition</Label>
+        </Choice>
+        <Choice>
+          <Value>Incompletedeployment</Value>
+          <Label>Incomplete deployment</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+    <NumericDataElement Id="Filterindwellingtime_7" DisplaySequence="8" Unit="months">
+      <CodableConcept Name="codableConcept_RDES126_Filterindwellingtime_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE708" />
+          <Display Value="RDE708" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE708" />
+        </Coding>
+      </CodableConcept>
+      <Label>Filter indwelling time</Label>
+    </NumericDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

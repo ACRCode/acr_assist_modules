@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Genu varus and valgus quantification</Label>
+    <ID>Genu_varus_and_valgus_quantification</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Genu_varus_and_valgus_quantification">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES100" />
+        <Display Value="RDES100" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES100" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Genu varus and valgus quantification</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Bilateralquantitativealignmentoftheknee_1" IsRequired="true" DisplaySequence="2" Unit="degrees">
+      <CodableConcept Name="codableConcept_RDES100_Bilateralquantitativealignmentoftheknee_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE520" />
+          <Display Value="RDE520" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE520" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral quantitative alignment of the knee</Label>
+      <Hint>Measure genu varus or valgus. 
+1) Mechanical axis of femur (MAF) = line from top of femoral head through intercondylar notch
+2) Tibial axis (TA) = line from intercondylar eminence to mid tibial plafond
+3) Angle between continuation of MAF to level of tibia and TA
+</Hint>
+    </NumericDataElement>
+    <ChoiceDataElement Id="Bilateralqualitativealignmentoftheknee_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES100_Bilateralqualitativealignmentoftheknee_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE521" />
+          <Display Value="RDE521" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE521" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral qualitative alignment of the knee</Label>
+      <Hint>Genu varus, valgus or normal alignment.  
+Mechanical axis (MA) = line from top of femoral head to mid tibial plafond. If MA medial to intercondylar notch = genu varus.  
+If MA lateral to intercondylar notch = genu valgus. 
+If MA within the intercondylar notch = normal alignment.  </Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>normalalignment</Value>
+          <Label>normal alignment</Label>
+        </Choice>
+        <Choice>
+          <Value>genuvarus</Value>
+          <Label>genu varus</Label>
+        </Choice>
+        <Choice>
+          <Value>genuvalgus</Value>
+          <Label>genu valgus</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES100_Sexatbirth_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE522" />
+          <Display Value="RDE522" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE522" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <IntegerDataElement Id="age_3" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES100_age_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE523" />
+          <Display Value="RDE523" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE523" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

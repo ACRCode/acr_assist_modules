@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Thoracic pulmonary parenchymal emphysema</Label>
+    <ID>Thoracic_pulmonary_parenchymal_emphysema</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-13</CreatedDate>
+    <LastModifiedDate>2019-11-13</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Thoracic_pulmonary_parenchymal_emphysema">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES81" />
+        <Display Value="RDES81" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES81" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Thoracic pulmonary parenchymal emphysema</Description>
+      <Contact>
+        <Name>Natalia Farish</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES81_Age_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE399" />
+          <Display Value="RDE399" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE399" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age</Label>
+      <Minimum>0</Minimum>
+      <Maximum>105</Maximum>
+    </IntegerDataElement>
+    <IntegerDataElement Id="Percentoflungzoneinvolvementwithemphysema_27" IsRequired="true" DisplaySequence="28" Unit="percent of lung lobe with emphysema">
+      <CodableConcept Name="codableConcept_RDES81_Percentoflungzoneinvolvementwithemphysema_27">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE400" />
+          <Display Value="RDE400" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE400" />
+        </Coding>
+      </CodableConcept>
+      <Label>Percent of lung zone involvement with emphysema</Label>
+      <Hint>for any detected emphysema, measure the percent of the lobe with emphysema</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Sexatbirth_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES81_Sexatbirth_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE401" />
+          <Display Value="RDE401" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE401" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>m</Value>
+          <Label>m</Label>
+        </Choice>
+        <Choice>
+          <Value>f</Value>
+          <Label>f</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="SMokinghistory_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES81_SMokinghistory_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE402" />
+          <Display Value="RDE402" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE402" />
+        </Coding>
+      </CodableConcept>
+      <Label>Smoking history</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>yes</Value>
+          <Label>yes</Label>
+        </Choice>
+        <Choice>
+          <Value>no</Value>
+          <Label>no</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Chesthyperinflation_3" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES81_Chesthyperinflation_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE403" />
+          <Display Value="RDE403" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE403" />
+        </Coding>
+      </CodableConcept>
+      <Label>Chest hyperinflation</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Centrilobularemphysema_4" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES81_Centrilobularemphysema_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE404" />
+          <Display Value="RDE404" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE404" />
+        </Coding>
+      </CodableConcept>
+      <Label>Centrilobular emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Panlobularemphysema_5" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES81_Panlobularemphysema_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE405" />
+          <Display Value="RDE405" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE405" />
+        </Coding>
+      </CodableConcept>
+      <Label>Panlobular emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Paraseptalemphysema_6" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES81_Paraseptalemphysema_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE406" />
+          <Display Value="RDE406" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE406" />
+        </Coding>
+      </CodableConcept>
+      <Label>Paraseptal emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Paracicatricialemphysema_7" IsRequired="true" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES81_Paracicatricialemphysema_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE407" />
+          <Display Value="RDE407" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE407" />
+        </Coding>
+      </CodableConcept>
+      <Label>Paracicatricial emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Localizedemphysema_8" IsRequired="true" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES81_Localizedemphysema_8">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE408" />
+          <Display Value="RDE408" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE408" />
+        </Coding>
+      </CodableConcept>
+      <Label>Localized emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Idiopathicgiantbullousemphysema_9" IsRequired="true" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES81_Idiopathicgiantbullousemphysema_9">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE409" />
+          <Display Value="RDE409" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE409" />
+        </Coding>
+      </CodableConcept>
+      <Label>Idiopathic giant bullous emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Congenitallobaremphysema_10" IsRequired="true" DisplaySequence="11">
+      <CodableConcept Name="codableConcept_RDES81_Congenitallobaremphysema_10">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE410" />
+          <Display Value="RDE410" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE410" />
+        </Coding>
+      </CodableConcept>
+      <Label>Congenital lobar emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Pulmonaryinterstitialemphysema_11" IsRequired="true" DisplaySequence="12">
+      <CodableConcept Name="codableConcept_RDES81_Pulmonaryinterstitialemphysema_11">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE411" />
+          <Display Value="RDE411" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE411" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pulmonary interstitial emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Pulmonaryarterialhypertension_12" IsRequired="true" DisplaySequence="13">
+      <CodableConcept Name="codableConcept_RDES81_Pulmonaryarterialhypertension_12">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE412" />
+          <Display Value="RDE412" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE412" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pulmonary arterial hypertension</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Lymphangiomyomatosis_13" IsRequired="true" DisplaySequence="14">
+      <CodableConcept Name="codableConcept_RDES81_Lymphangiomyomatosis_13">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE413" />
+          <Display Value="RDE413" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE413" />
+        </Coding>
+      </CodableConcept>
+      <Label>Lymphangiomyomatosis</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="PulmonaryLangerhanscellhistiocytosis_14" IsRequired="true" DisplaySequence="15">
+      <CodableConcept Name="codableConcept_RDES81_PulmonaryLangerhanscellhistiocytosis_14">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE414" />
+          <Display Value="RDE414" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE414" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pulmonary Langerhans cell histiocytosis</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Honeycomblung_15" IsRequired="true" DisplaySequence="16">
+      <CodableConcept Name="codableConcept_RDES81_Honeycomblung_15">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE415" />
+          <Display Value="RDE415" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE415" />
+        </Coding>
+      </CodableConcept>
+      <Label>Honeycomb lung</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Bronchialandbronchiolarwallthickening_16" IsRequired="true" DisplaySequence="17">
+      <CodableConcept Name="codableConcept_RDES81_Bronchialandbronchiolarwallthickening_16">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE416" />
+          <Display Value="RDE416" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE416" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bronchial and bronchiolar wall thickening</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Severeairtrapping_17" IsRequired="true" DisplaySequence="18">
+      <CodableConcept Name="codableConcept_RDES81_Severeairtrapping_17">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE417" />
+          <Display Value="RDE417" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE417" />
+        </Coding>
+      </CodableConcept>
+      <Label>Severe air trapping</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="CTviews_18" IsRequired="true" DisplaySequence="19">
+      <CodableConcept Name="codableConcept_RDES81_CTviews_18">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE418" />
+          <Display Value="RDE418" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE418" />
+        </Coding>
+      </CodableConcept>
+      <Label>CT views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>axial</Value>
+          <Label>axial</Label>
+        </Choice>
+        <Choice>
+          <Value>sagittal</Value>
+          <Label>sagittal</Label>
+        </Choice>
+        <Choice>
+          <Value>coronal</Value>
+          <Label>coronal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Presenceofemphysema_19" IsRequired="true" DisplaySequence="20">
+      <CodableConcept Name="codableConcept_RDES81_Presenceofemphysema_19">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE419" />
+          <Display Value="RDE419" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE419" />
+        </Coding>
+      </CodableConcept>
+      <Label>Presence of emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Emphysemainrightlung_20" IsRequired="true" DisplaySequence="21">
+      <CodableConcept Name="codableConcept_RDES81_Emphysemainrightlung_20">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE420" />
+          <Display Value="RDE420" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE420" />
+        </Coding>
+      </CodableConcept>
+      <Label>Emphysema in right lung</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Emphysemainleftlung_21" IsRequired="true" DisplaySequence="22">
+      <CodableConcept Name="codableConcept_RDES81_Emphysemainleftlung_21">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE421" />
+          <Display Value="RDE421" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE421" />
+        </Coding>
+      </CodableConcept>
+      <Label>Emphysema in left lung</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Emphysemainleftupperlobe_22" IsRequired="true" DisplaySequence="23">
+      <CodableConcept Name="codableConcept_RDES81_Emphysemainleftupperlobe_22">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE422" />
+          <Display Value="RDE422" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE422" />
+        </Coding>
+      </CodableConcept>
+      <Label>Emphysema in left upper lobe</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Emphysemainleftlowerlobe_23" IsRequired="true" DisplaySequence="24">
+      <CodableConcept Name="codableConcept_RDES81_Emphysemainleftlowerlobe_23">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE423" />
+          <Display Value="RDE423" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE423" />
+        </Coding>
+      </CodableConcept>
+      <Label>Emphysema in left lower lobe</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Emphysemainrightupperlobe_24" IsRequired="true" DisplaySequence="25">
+      <CodableConcept Name="codableConcept_RDES81_Emphysemainrightupperlobe_24">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE424" />
+          <Display Value="RDE424" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE424" />
+        </Coding>
+      </CodableConcept>
+      <Label>Emphysema in right upper lobe</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Emphysemainrightmiddlelobe_25" IsRequired="true" DisplaySequence="26">
+      <CodableConcept Name="codableConcept_RDES81_Emphysemainrightmiddlelobe_25">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE425" />
+          <Display Value="RDE425" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE425" />
+        </Coding>
+      </CodableConcept>
+      <Label>Emphysema in right middle lobe</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Emphysemainrightlowerlobe_26" IsRequired="true" DisplaySequence="27">
+      <CodableConcept Name="codableConcept_RDES81_Emphysemainrightlowerlobe_26">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE426" />
+          <Display Value="RDE426" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE426" />
+        </Coding>
+      </CodableConcept>
+      <Label>Emphysema in right lower lobe</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Dominanttypeofemphysema_28" IsRequired="true" DisplaySequence="29">
+      <CodableConcept Name="codableConcept_RDES81_Dominanttypeofemphysema_28">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE427" />
+          <Display Value="RDE427" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE427" />
+        </Coding>
+      </CodableConcept>
+      <Label>Dominant type of emphysema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>centriacinar</Value>
+          <Label>centriacinar</Label>
+        </Choice>
+        <Choice>
+          <Value>panacinar</Value>
+          <Label>panacinar</Label>
+        </Choice>
+        <Choice>
+          <Value>paraseptal</Value>
+          <Label>paraseptal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <IntegerDataElement Id="Percentvolumeofeachemphysematype_29" IsRequired="true" DisplaySequence="30" Unit="percent volume of lung">
+      <CodableConcept Name="codableConcept_RDES81_Percentvolumeofeachemphysematype_29">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE428" />
+          <Display Value="RDE428" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE428" />
+        </Coding>
+      </CodableConcept>
+      <Label>Percent volume of each emphysema type</Label>
+      <Hint>Percent volume of each emphysema type (centriacinar, panacinar, and paraseptal)</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </IntegerDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

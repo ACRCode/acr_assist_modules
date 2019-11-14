@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Shunt Detector</Label>
+    <ID>Shunt_Detector</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Shunt_Detector">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES117" />
+        <Display Value="RDES117" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES117" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Shunt Detector</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="ShuntTipLocation_1" IsRequired="true" DisplaySequence="2" Unit="coordinates">
+      <CodableConcept Name="codableConcept_RDES117_ShuntTipLocation_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE619" />
+          <Display Value="RDE619" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE619" />
+        </Coding>
+      </CodableConcept>
+      <Label>Shunt Tip Location</Label>
+      <Hint>location of the catheter tip</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Programmablevalvesetting_2" IsRequired="true" DisplaySequence="3" Unit="cm H2O">
+      <CodableConcept Name="codableConcept_RDES117_Programmablevalvesetting_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE620" />
+          <Display Value="RDE620" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE620" />
+        </Coding>
+      </CodableConcept>
+      <Label>Programmable valve setting</Label>
+      <Hint>setting of the programmable valve</Hint>
+    </NumericDataElement>
+    <IntegerDataElement Id="age_4" IsRequired="true" DisplaySequence="5" Unit="years">
+      <CodableConcept Name="codableConcept_RDES117_age_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE621" />
+          <Display Value="RDE621" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE621" />
+        </Coding>
+      </CodableConcept>
+      <Label>age </Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="ShuntCatheterStatus_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES117_ShuntCatheterStatus_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE622" />
+          <Display Value="RDE622" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE622" />
+        </Coding>
+      </CodableConcept>
+      <Label>Shunt Catheter Status</Label>
+      <Hint>status of the VP shunt</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>intact</Value>
+          <Label>intact</Label>
+        </Choice>
+        <Choice>
+          <Value>discontinuous</Value>
+          <Label>discontinuous</Label>
+        </Choice>
+        <Choice>
+          <Value>kinked</Value>
+          <Label>kinked</Label>
+        </Choice>
+        <Choice>
+          <Value>discontinuousandkinked</Value>
+          <Label>discontinuous and kinked</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <MultiChoiceDataElement Id="Views_3" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES117_Views_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE623" />
+          <Display Value="RDE623" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE623" />
+        </Coding>
+      </CodableConcept>
+      <Label>Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>APSkull</Value>
+          <Label>AP Skull</Label>
+        </Choice>
+        <Choice>
+          <Value>LatSkull</Value>
+          <Label>Lat Skull</Label>
+        </Choice>
+        <Choice>
+          <Value>APChest</Value>
+          <Label>AP Chest</Label>
+        </Choice>
+        <Choice>
+          <Value>APAbdomen</Value>
+          <Label>AP Abdomen</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+    <ChoiceDataElement Id="Abandonedshuntcatheters_5" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES117_Abandonedshuntcatheters_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE624" />
+          <Display Value="RDE624" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE624" />
+        </Coding>
+      </CodableConcept>
+      <Label>Abandoned shunt catheters</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

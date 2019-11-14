@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Automated leg length discrepancy</Label>
+    <ID>Automated_leg_length_discrepancy</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Automated_leg_length_discrepancy">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES101" />
+        <Display Value="RDES101" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES101" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Automated leg length discrepancy</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Bilaterallowerextremitylength_0" IsRequired="true" DisplaySequence="1" Unit="cm">
+      <CodableConcept Name="codableConcept_RDES101_Bilaterallowerextremitylength_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE524" />
+          <Display Value="RDE524" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE524" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral lower extremity length</Label>
+      <Hint>Distance from top of femoral head to mid tibial plafond</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Bilaterallowerextremitylengthcoordinates_1" IsRequired="true" DisplaySequence="2" Unit="coordinates">
+      <CodableConcept Name="codableConcept_RDES101_Bilaterallowerextremitylengthcoordinates_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE525" />
+          <Display Value="RDE525" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE525" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral lower extremity length coordinates</Label>
+      <Hint>Line from top of femoral head to mid tibial plafond</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Bilateralfemurlength_2" IsRequired="true" DisplaySequence="3" Unit="cm">
+      <CodableConcept Name="codableConcept_RDES101_Bilateralfemurlength_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE526" />
+          <Display Value="RDE526" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE526" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral femur length</Label>
+      <Hint>Distance from top of femoral head to medial condyle articular surface</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Bilateraltibialength_3" IsRequired="true" DisplaySequence="4" Unit="cm">
+      <CodableConcept Name="codableConcept_RDES101_Bilateraltibialength_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE527" />
+          <Display Value="RDE527" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE527" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral tibia length</Label>
+      <Hint>Distance  from top of tibial intercondylar eminence to the mid-tibial plafond </Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Bilateralbonelength_4" IsRequired="true" DisplaySequence="5" Unit="cm">
+      <CodableConcept Name="codableConcept_RDES101_Bilateralbonelength_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE528" />
+          <Display Value="RDE528" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE528" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral bone length</Label>
+      <Hint>Femur length + tibia length</Hint>
+    </NumericDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

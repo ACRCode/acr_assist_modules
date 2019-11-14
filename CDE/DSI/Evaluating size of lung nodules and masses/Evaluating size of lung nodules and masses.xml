@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Evaluating size of lung nodules and masses</Label>
+    <ID>Evaluating_size_of_lung_nodules_and_masses</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-11</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Evaluating_size_of_lung_nodules_and_masses">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES115" />
+        <Display Value="RDES115" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES115" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Evaluating size of lung nodules and masses</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Currenttumorvolume_1" IsRequired="true" DisplaySequence="2" Unit="mm3">
+      <CodableConcept Name="codableConcept_RDES115_Currenttumorvolume_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE602" />
+          <Display Value="RDE602" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE602" />
+        </Coding>
+      </CodableConcept>
+      <Label>Current tumor volume</Label>
+      <Hint>lung tumor volume on Chest CT</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="tumormaxdiameter_3" IsRequired="true" DisplaySequence="4" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES115_tumormaxdiameter_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE603" />
+          <Display Value="RDE603" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE603" />
+        </Coding>
+      </CodableConcept>
+      <Label>tumor max diameter</Label>
+      <Hint>tumor max length (mm) in any plane</Hint>
+    </NumericDataElement>
+    <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
+      <CodableConcept Name="codableConcept_RDES115_age_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE604" />
+          <Display Value="RDE604" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE604" />
+        </Coding>
+      </CodableConcept>
+      <Label>age </Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Changeinmasssize_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES115_Changeinmasssize_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE605" />
+          <Display Value="RDE605" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE605" />
+        </Coding>
+      </CodableConcept>
+      <Label>Change in mass size</Label>
+      <Hint>signal a change in mass size</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>massdecreasedinsize</Value>
+          <Label>mass decreased in size</Label>
+        </Choice>
+        <Choice>
+          <Value>nochangeinsize</Value>
+          <Label>no change in size</Label>
+        </Choice>
+        <Choice>
+          <Value>massincreasedinsize</Value>
+          <Label>mass increased in size</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Tumorvolumechange_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES115_Tumorvolumechange_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE606" />
+          <Display Value="RDE606" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE606" />
+        </Coding>
+      </CodableConcept>
+      <Label>Tumor volume change</Label>
+      <Hint>signal a change in tumor volume</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>decreaseintumorvolume</Value>
+          <Label>decrease in tumor volume</Label>
+        </Choice>
+        <Choice>
+          <Value>nochangeintumorvolume</Value>
+          <Label>no change in tumor volume</Label>
+        </Choice>
+        <Choice>
+          <Value>increaseintumorvolume</Value>
+          <Label>increase in tumor volume</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="sexatbirth_5" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES115_sexatbirth_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE607" />
+          <Display Value="RDE607" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE607" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="smokinghistory_6" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES115_smokinghistory_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE608" />
+          <Display Value="RDE608" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE608" />
+        </Coding>
+      </CodableConcept>
+      <Label>smoking history</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>yes</Value>
+          <Label>yes</Label>
+        </Choice>
+        <Choice>
+          <Value>no</Value>
+          <Label>no</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Chronicobstructivepulmonarydisease_7" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES115_Chronicobstructivepulmonarydisease_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE609" />
+          <Display Value="RDE609" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE609" />
+        </Coding>
+      </CodableConcept>
+      <Label>Chronic obstructive pulmonary disease</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Diffuselungfibrosis_8" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES115_Diffuselungfibrosis_8">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE610" />
+          <Display Value="RDE610" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE610" />
+        </Coding>
+      </CodableConcept>
+      <Label>Diffuse lung fibrosis</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Tumorhistology_9" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES115_Tumorhistology_9">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE611" />
+          <Display Value="RDE611" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE611" />
+        </Coding>
+      </CodableConcept>
+      <Label>Tumor histology</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>adenocarcinoma</Value>
+          <Label>adenocarcinoma</Label>
+        </Choice>
+        <Choice>
+          <Value>squamouscell</Value>
+          <Label>squamous cell</Label>
+        </Choice>
+        <Choice>
+          <Value>largecell</Value>
+          <Label>large cell</Label>
+        </Choice>
+        <Choice>
+          <Value>smallcell</Value>
+          <Label>small cell</Label>
+        </Choice>
+        <Choice>
+          <Value>carcinoid</Value>
+          <Label>carcinoid</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <MultiChoiceDataElement Id="Views_10" DisplaySequence="11">
+      <CodableConcept Name="codableConcept_RDES115_Views_10">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE612" />
+          <Display Value="RDE612" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE612" />
+        </Coding>
+      </CodableConcept>
+      <Label>Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>axial</Value>
+          <Label>axial</Label>
+        </Choice>
+        <Choice>
+          <Value>sagittal</Value>
+          <Label>sagittal</Label>
+        </Choice>
+        <Choice>
+          <Value>coronal</Value>
+          <Label>coronal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>
