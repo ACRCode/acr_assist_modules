@@ -1,152 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Evaluation of pulmonary trunk and arteries dimensions</Label>
-    <ID>Evaluation_of_pulmonary_trunk_and_arteries_dimensions</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-12</CreatedDate>
-    <LastModifiedDate>2019-11-12</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Evaluation_of_pulmonary_trunk_and_arteries_dimensions">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES127" />
-        <Display Value="RDES127" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES127" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Evaluation of pulmonary trunk and arteries dimensions</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="Dimensionsofpulmonaryarteries_0" DisplaySequence="1" Unit="mm">
-      <CodableConcept Name="codableConcept_RDES127_Dimensionsofpulmonaryarteries_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE709" />
-          <Display Value="RDE709" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE709" />
-        </Coding>
-      </CodableConcept>
-      <Label>Dimensions of pulmonary arteries</Label>
-      <Hint>measure pulmonary artery dimensions</Hint>
-    </NumericDataElement>
-    <NumericDataElement Id="Dimensionsofsegmentalandlobarpulmonaryarterydimensions_2" DisplaySequence="3" Unit="mm">
-      <CodableConcept Name="codableConcept_RDES127_Dimensionsofsegmentalandlobarpulmonaryarterydimensions_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE710" />
-          <Display Value="RDE710" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE710" />
-        </Coding>
-      </CodableConcept>
-      <Label>Dimensions of segmental and lobar pulmonary artery dimensions</Label>
-      <Hint>Defines dimensions of lobar and segmental pulmonary arteries</Hint>
-    </NumericDataElement>
-    <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
-      <CodableConcept Name="codableConcept_RDES127_age_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE711" />
-          <Display Value="RDE711" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE711" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Pulmonaryarteriesevaluation_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES127_Pulmonaryarteriesevaluation_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE712" />
-          <Display Value="RDE712" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE712" />
-        </Coding>
-      </CodableConcept>
-      <Label>Pulmonary arteries evaluation</Label>
-      <Hint>compare pulmonary artery measurements to reference values to determine status</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>normal</Value>
-          <Label>normal</Label>
-        </Choice>
-        <Choice>
-          <Value>enlarged</Value>
-          <Label>enlarged</Label>
-        </Choice>
-        <Choice>
-          <Value>reduced</Value>
-          <Label>reduced</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="sexatbirth_3" IsRequired="true" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES127_sexatbirth_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE713" />
-          <Display Value="RDE713" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE713" />
-        </Coding>
-      </CodableConcept>
-      <Label>sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="breathartifacts_5" DisplaySequence="6">
-      <CodableConcept Name="codableConcept_RDES127_breathartifacts_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE714" />
-          <Display Value="RDE714" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE714" />
-        </Coding>
-      </CodableConcept>
-      <Label>breath artifacts</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Evaluation of pulmonary trunk and arteries dimensions</Label>
+        <ID>Evaluation_of_pulmonary_trunk_and_arteries_dimensions</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-12</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Evaluation_of_pulmonary_trunk_and_arteries_dimensions" />
+        <Info>
+            <Description>Evaluation of pulmonary trunk and arteries dimensions</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="Dimensionsofpulmonaryarteries_0" DisplaySequence="1" Unit="mm">
+            <Label>Dimensions of pulmonary arteries</Label>
+            <Hint>measure pulmonary artery dimensions</Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="Dimensionsofsegmentalandlobarpulmonaryarterydimensions_2" DisplaySequence="3" Unit="mm">
+            <Label>Dimensions of segmental and lobar pulmonary artery dimensions</Label>
+            <Hint>Defines dimensions of lobar and segmental pulmonary arteries</Hint>
+        </NumericDataElement>
+        <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Pulmonaryarteriesevaluation_1" IsRequired="true" DisplaySequence="2">
+            <Label>Pulmonary arteries evaluation</Label>
+            <Hint>compare pulmonary artery measurements to reference values to determine status</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>normal</Value>
+                    <Label>normal</Label>
+                </Choice>
+                <Choice>
+                    <Value>enlarged</Value>
+                    <Label>enlarged</Label>
+                </Choice>
+                <Choice>
+                    <Value>reduced</Value>
+                    <Label>reduced</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="sexatbirth_3" IsRequired="true" DisplaySequence="4">
+            <Label>sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="breathartifacts_5" DisplaySequence="6">
+            <Label>breath artifacts</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

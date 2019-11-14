@@ -1,306 +1,192 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Reduce MS surveillance MRI scan time</Label>
-    <ID>Reduce_MS_surveillance_MRI_scan_time</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-12</CreatedDate>
-    <LastModifiedDate>2019-11-12</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Reduce_MS_surveillance_MRI_scan_time">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES123" />
-        <Display Value="RDES123" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES123" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Reduce MS surveillance MRI scan time</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="Comparisonoverlay_3" DisplaySequence="4" Unit="coordinates">
-      <CodableConcept Name="codableConcept_RDES123_Comparisonoverlay_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE671" />
-          <Display Value="RDE671" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE671" />
-        </Coding>
-      </CodableConcept>
-      <Label>Comparison overlay</Label>
-      <Hint>Visual representation of comparison of lesion(s) between prior and current imaging. For example, subtraction or heat map overlay images of the change in demyelinating lesions. </Hint>
-    </NumericDataElement>
-    <IntegerDataElement Id="Lesioncount_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES123_Lesioncount_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE672" />
-          <Display Value="RDE672" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE672" />
-        </Coding>
-      </CodableConcept>
-      <Label>Lesion count</Label>
-      <Hint>number of lesions detected
+    <Metadata>
+        <Label>Reduce MS surveillance MRI scan time</Label>
+        <ID>Reduce_MS_surveillance_MRI_scan_time</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-12</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Reduce_MS_surveillance_MRI_scan_time" />
+        <Info>
+            <Description>Reduce MS surveillance MRI scan time</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="Comparisonoverlay_3" DisplaySequence="4" Unit="coordinates">
+            <Label>Comparison overlay</Label>
+            <Hint>Visual representation of comparison of lesion(s) between prior and current imaging. For example, subtraction or heat map overlay images of the change in demyelinating lesions. </Hint>
+        </NumericDataElement>
+        <IntegerDataElement Id="Lesioncount_0" IsRequired="true" DisplaySequence="1">
+            <Label>Lesion count</Label>
+            <Hint>number of lesions detected
 </Hint>
-    </IntegerDataElement>
-    <IntegerDataElement Id="age_5" IsRequired="true" DisplaySequence="6" Unit="years">
-      <CodableConcept Name="codableConcept_RDES123_age_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE673" />
-          <Display Value="RDE673" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE673" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Newlesiondetected_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES123_Newlesiondetected_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE674" />
-          <Display Value="RDE674" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE674" />
-        </Coding>
-      </CodableConcept>
-      <Label>New lesion detected</Label>
-      <Hint>detect new lesions from prior imaging</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Nonewlesions</Value>
-          <Label>No new lesions</Label>
-        </Choice>
-        <Choice>
-          <Value>Newlesions</Value>
-          <Label>New lesions</Label>
-        </Choice>
-        <Choice>
-          <Value>Indeterminate</Value>
-          <Label>Indeterminate</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="LesionsExtentChange_2" IsRequired="true" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES123_LesionsExtentChange_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE675" />
-          <Display Value="RDE675" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE675" />
-        </Coding>
-      </CodableConcept>
-      <Label>Lesions Extent Change</Label>
-      <Hint>For each lesion, compare with prior and alert if the lesion has changed in size based on the facility threshold (ex. if the lesion has increased in size by 10% from prior, send alert)</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>nochangefromprior</Value>
-          <Label>no change from prior</Label>
-        </Choice>
-        <Choice>
-          <Value>changeinlesionsize</Value>
-          <Label>change in lesion size</Label>
-        </Choice>
-        <Choice>
-          <Value>indeterminate</Value>
-          <Label>indeterminate</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Sexatbirth_4" DisplaySequence="5">
-      <CodableConcept Name="codableConcept_RDES123_Sexatbirth_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE676" />
-          <Display Value="RDE676" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE676" />
-        </Coding>
-      </CodableConcept>
-      <Label>Sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="BlackholesfromMS_6" DisplaySequence="7">
-      <CodableConcept Name="codableConcept_RDES123_BlackholesfromMS_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE677" />
-          <Display Value="RDE677" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE677" />
-        </Coding>
-      </CodableConcept>
-      <Label>Black holes from MS</Label>
-      <Hint>compared to demyelination</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="PML_7" DisplaySequence="8">
-      <CodableConcept Name="codableConcept_RDES123_PML_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE678" />
-          <Display Value="RDE678" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE678" />
-        </Coding>
-      </CodableConcept>
-      <Label>PML</Label>
-      <Hint>Progressive multicfocal leukoencephalopathy</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Volumeloss_8" DisplaySequence="9">
-      <CodableConcept Name="codableConcept_RDES123_Volumeloss_8">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE679" />
-          <Display Value="RDE679" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE679" />
-        </Coding>
-      </CodableConcept>
-      <Label>Volume loss</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Chronicwhitematterleukoaraiosis_9" DisplaySequence="10">
-      <CodableConcept Name="codableConcept_RDES123_Chronicwhitematterleukoaraiosis_9">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE680" />
-          <Display Value="RDE680" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE680" />
-        </Coding>
-      </CodableConcept>
-      <Label>Chronic white matter/ leukoaraiosis</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Midlineshift_10" DisplaySequence="11">
-      <CodableConcept Name="codableConcept_RDES123_Midlineshift_10">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE681" />
-          <Display Value="RDE681" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE681" />
-        </Coding>
-      </CodableConcept>
-      <Label>Midline shift</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="Tissueinvolvement_11" DisplaySequence="12">
-      <CodableConcept Name="codableConcept_RDES123_Tissueinvolvement_11">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE682" />
-          <Display Value="RDE682" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE682" />
-        </Coding>
-      </CodableConcept>
-      <Label>Tissue involvement</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>cortical/juxtacortical</Value>
-          <Label>cortical/juxtacortical</Label>
-        </Choice>
-        <Choice>
-          <Value>subcortical</Value>
-          <Label>subcortical</Label>
-        </Choice>
-        <Choice>
-          <Value>pericentricular</Value>
-          <Label>pericentricular</Label>
-        </Choice>
-        <Choice>
-          <Value>involvingcorpuscallosum</Value>
-          <Label>involving corpus callosum</Label>
-        </Choice>
-        <Choice>
-          <Value>infratentorial</Value>
-          <Label>infratentorial</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+        </IntegerDataElement>
+        <IntegerDataElement Id="age_5" IsRequired="true" DisplaySequence="6" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Newlesiondetected_1" IsRequired="true" DisplaySequence="2">
+            <Label>New lesion detected</Label>
+            <Hint>detect new lesions from prior imaging</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Nonewlesions</Value>
+                    <Label>No new lesions</Label>
+                </Choice>
+                <Choice>
+                    <Value>Newlesions</Value>
+                    <Label>New lesions</Label>
+                </Choice>
+                <Choice>
+                    <Value>Indeterminate</Value>
+                    <Label>Indeterminate</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="LesionsExtentChange_2" IsRequired="true" DisplaySequence="3">
+            <Label>Lesions Extent Change</Label>
+            <Hint>For each lesion, compare with prior and alert if the lesion has changed in size based on the facility threshold (ex. if the lesion has increased in size by 10% from prior, send alert)</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>nochangefromprior</Value>
+                    <Label>no change from prior</Label>
+                </Choice>
+                <Choice>
+                    <Value>changeinlesionsize</Value>
+                    <Label>change in lesion size</Label>
+                </Choice>
+                <Choice>
+                    <Value>indeterminate</Value>
+                    <Label>indeterminate</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Sexatbirth_4" DisplaySequence="5">
+            <Label>Sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="BlackholesfromMS_6" DisplaySequence="7">
+            <Label>Black holes from MS</Label>
+            <Hint>compared to demyelination</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="PML_7" DisplaySequence="8">
+            <Label>PML</Label>
+            <Hint>Progressive multicfocal leukoencephalopathy</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Volumeloss_8" DisplaySequence="9">
+            <Label>Volume loss</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Chronicwhitematterleukoaraiosis_9" DisplaySequence="10">
+            <Label>Chronic white matter/ leukoaraiosis</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Midlineshift_10" DisplaySequence="11">
+            <Label>Midline shift</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="Tissueinvolvement_11" DisplaySequence="12">
+            <Label>Tissue involvement</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>cortical/juxtacortical</Value>
+                    <Label>cortical/juxtacortical</Label>
+                </Choice>
+                <Choice>
+                    <Value>subcortical</Value>
+                    <Label>subcortical</Label>
+                </Choice>
+                <Choice>
+                    <Value>pericentricular</Value>
+                    <Label>pericentricular</Label>
+                </Choice>
+                <Choice>
+                    <Value>involvingcorpuscallosum</Value>
+                    <Label>involving corpus callosum</Label>
+                </Choice>
+                <Choice>
+                    <Value>infratentorial</Value>
+                    <Label>infratentorial</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

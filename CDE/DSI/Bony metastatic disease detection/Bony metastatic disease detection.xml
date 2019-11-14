@@ -1,328 +1,214 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Bony metastatic disease detection</Label>
-    <ID>Bony_metastatic_disease_detection</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Bony_metastatic_disease_detection">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES94" />
-        <Display Value="RDES94" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES94" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Bony metastatic disease detection</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="BMI_2" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES94_BMI_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE475" />
-          <Display Value="RDE475" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE475" />
-        </Coding>
-      </CodableConcept>
-      <Label>BMI</Label>
-    </NumericDataElement>
-    <NumericDataElement Id="Segmentationofskeletalmatastasiscoordinates_10" IsRequired="true" DisplaySequence="11">
-      <CodableConcept Name="codableConcept_RDES94_Segmentationofskeletalmatastasiscoordinates_10">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE476" />
-          <Display Value="RDE476" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE476" />
-        </Coding>
-      </CodableConcept>
-      <Label>Segmentation of skeletal matastasis (coordinates) </Label>
-      <Hint>Segmentation of skeletal matastasis (coordinates) </Hint>
-    </NumericDataElement>
-    <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES94_Age_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE477" />
-          <Display Value="RDE477" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE477" />
-        </Coding>
-      </CodableConcept>
-      <Label>Age</Label>
-      <Hint>Age in years</Hint>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Sexatbirth_1" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES94_Sexatbirth_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE478" />
-          <Display Value="RDE478" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE478" />
-        </Coding>
-      </CodableConcept>
-      <Label>Sex at birth</Label>
-      <Hint />
-      <ChoiceInfo>
-        <Choice>
-          <Value>Male</Value>
-          <Label>Male</Label>
-        </Choice>
-        <Choice>
-          <Value>Female</Value>
-          <Label>Female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Primarytumorlocation_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES94_Primarytumorlocation_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE479" />
-          <Display Value="RDE479" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE479" />
-        </Coding>
-      </CodableConcept>
-      <Label>Primary tumor location</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>prostate</Value>
-          <Label>prostate</Label>
-        </Choice>
-        <Choice>
-          <Value>lung</Value>
-          <Label>lung</Label>
-        </Choice>
-        <Choice>
-          <Value>bowel</Value>
-          <Label>bowel</Label>
-        </Choice>
-        <Choice>
-          <Value>bladder</Value>
-          <Label>bladder</Label>
-        </Choice>
-        <Choice>
-          <Value>breast</Value>
-          <Label>breast</Label>
-        </Choice>
-        <Choice>
-          <Value>uterus/cervix/ovary</Value>
-          <Label>uterus/cervix/ovary</Label>
-        </Choice>
-        <Choice>
-          <Value>melanoma</Value>
-          <Label>melanoma</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Painpresent_4" DisplaySequence="5">
-      <CodableConcept Name="codableConcept_RDES94_Painpresent_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE480" />
-          <Display Value="RDE480" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE480" />
-        </Coding>
-      </CodableConcept>
-      <Label>Pain present</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>yes</Value>
-          <Label>yes</Label>
-        </Choice>
-        <Choice>
-          <Value>no</Value>
-          <Label>no</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Characteristicsofdisease_6" DisplaySequence="7">
-      <CodableConcept Name="codableConcept_RDES94_Characteristicsofdisease_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE481" />
-          <Display Value="RDE481" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE481" />
-        </Coding>
-      </CodableConcept>
-      <Label>Characteristics of disease</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>diffuse</Value>
-          <Label>diffuse</Label>
-        </Choice>
-        <Choice>
-          <Value>focal</Value>
-          <Label>focal</Label>
-        </Choice>
-        <Choice>
-          <Value>expansile</Value>
-          <Label>expansile</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="diseaseclassification_7" IsRequired="true" DisplaySequence="8">
-      <CodableConcept Name="codableConcept_RDES94_diseaseclassification_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE482" />
-          <Display Value="RDE482" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE482" />
-        </Coding>
-      </CodableConcept>
-      <Label>disease classification</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>lyticdisease</Value>
-          <Label>lytic disease</Label>
-        </Choice>
-        <Choice>
-          <Value>blasticdisease</Value>
-          <Label>blastic disease</Label>
-        </Choice>
-        <Choice>
-          <Value>mixed</Value>
-          <Label>mixed</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Procedure_8" IsRequired="true" DisplaySequence="9">
-      <CodableConcept Name="codableConcept_RDES94_Procedure_8">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE483" />
-          <Display Value="RDE483" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE483" />
-        </Coding>
-      </CodableConcept>
-      <Label>Procedure</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>ChestCT</Value>
-          <Label>Chest CT</Label>
-        </Choice>
-        <Choice>
-          <Value>Abdomen/pelvisCT</Value>
-          <Label>Abdomen/pelvis CT</Label>
-        </Choice>
-        <Choice>
-          <Value>NeckCT</Value>
-          <Label>Neck CT</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Presenceofskeletalmetastasis_9" IsRequired="true" DisplaySequence="10">
-      <CodableConcept Name="codableConcept_RDES94_Presenceofskeletalmetastasis_9">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE484" />
-          <Display Value="RDE484" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE484" />
-        </Coding>
-      </CodableConcept>
-      <Label>Presence of skeletal metastasis</Label>
-      <Hint />
-      <ChoiceInfo>
-        <Choice>
-          <Value>Present</Value>
-          <Label>Present</Label>
-        </Choice>
-        <Choice>
-          <Value>Absent</Value>
-          <Label>Absent</Label>
-        </Choice>
-        <Choice>
-          <Value>Unknown</Value>
-          <Label>Unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="Location_5" DisplaySequence="6">
-      <CodableConcept Name="codableConcept_RDES94_Location_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE485" />
-          <Display Value="RDE485" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE485" />
-        </Coding>
-      </CodableConcept>
-      <Label>Location</Label>
-      <Hint>location of bony metastatic disease
+    <Metadata>
+        <Label>Bony metastatic disease detection</Label>
+        <ID>Bony_metastatic_disease_detection</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Bony_metastatic_disease_detection" />
+        <Info>
+            <Description>Bony metastatic disease detection</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="BMI_2" DisplaySequence="3">
+            <Label>BMI</Label>
+        </NumericDataElement>
+        <NumericDataElement Id="Segmentationofskeletalmatastasiscoordinates_10" IsRequired="true" DisplaySequence="11">
+            <Label>Segmentation of skeletal matastasis (coordinates) </Label>
+            <Hint>Segmentation of skeletal matastasis (coordinates) </Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="maxwidthofskeletalmetasis_11" IsRequired="true" DisplaySequence="12" Unit="mm">
+            <Label>max width of skeletal metasis</Label>
+            <Hint>in mm</Hint>
+        </NumericDataElement>
+        <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
+            <Label>Age</Label>
+            <Hint>Age in years</Hint>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Sexatbirth_1" DisplaySequence="2">
+            <Label>Sex at birth</Label>
+            <Hint />
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Male</Value>
+                    <Label>Male</Label>
+                </Choice>
+                <Choice>
+                    <Value>Female</Value>
+                    <Label>Female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Primarytumorlocation_3" DisplaySequence="4">
+            <Label>Primary tumor location</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>prostate</Value>
+                    <Label>prostate</Label>
+                </Choice>
+                <Choice>
+                    <Value>lung</Value>
+                    <Label>lung</Label>
+                </Choice>
+                <Choice>
+                    <Value>bowel</Value>
+                    <Label>bowel</Label>
+                </Choice>
+                <Choice>
+                    <Value>bladder</Value>
+                    <Label>bladder</Label>
+                </Choice>
+                <Choice>
+                    <Value>breast</Value>
+                    <Label>breast</Label>
+                </Choice>
+                <Choice>
+                    <Value>uterus/cervix/ovary</Value>
+                    <Label>uterus/cervix/ovary</Label>
+                </Choice>
+                <Choice>
+                    <Value>melanoma</Value>
+                    <Label>melanoma</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Painpresent_4" DisplaySequence="5">
+            <Label>Pain present</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Characteristicsofdisease_6" DisplaySequence="7">
+            <Label>Characteristics of disease</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>diffuse</Value>
+                    <Label>diffuse</Label>
+                </Choice>
+                <Choice>
+                    <Value>focal</Value>
+                    <Label>focal</Label>
+                </Choice>
+                <Choice>
+                    <Value>expansile</Value>
+                    <Label>expansile</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="diseaseclassification_7" IsRequired="true" DisplaySequence="8">
+            <Label>disease classification</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>lyticdisease</Value>
+                    <Label>lytic disease</Label>
+                </Choice>
+                <Choice>
+                    <Value>blasticdisease</Value>
+                    <Label>blastic disease</Label>
+                </Choice>
+                <Choice>
+                    <Value>mixed</Value>
+                    <Label>mixed</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Procedure_8" IsRequired="true" DisplaySequence="9">
+            <Label>Procedure</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>ChestCT</Value>
+                    <Label>Chest CT</Label>
+                </Choice>
+                <Choice>
+                    <Value>Abdomen/pelvisCT</Value>
+                    <Label>Abdomen/pelvis CT</Label>
+                </Choice>
+                <Choice>
+                    <Value>NeckCT</Value>
+                    <Label>Neck CT</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Presenceofskeletalmetastasis_9" IsRequired="true" DisplaySequence="10">
+            <Label>Presence of skeletal metastasis</Label>
+            <Hint />
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Present</Value>
+                    <Label>Present</Label>
+                </Choice>
+                <Choice>
+                    <Value>Absent</Value>
+                    <Label>Absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="Location_5" DisplaySequence="6">
+            <Label>Location</Label>
+            <Hint>location of bony metastatic disease
 </Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>vertebrae</Value>
-          <Label>vertebrae</Label>
-        </Choice>
-        <Choice>
-          <Value>pelvis</Value>
-          <Label>pelvis</Label>
-        </Choice>
-        <Choice>
-          <Value>femus</Value>
-          <Label>femus</Label>
-        </Choice>
-        <Choice>
-          <Value>humerus</Value>
-          <Label>humerus</Label>
-        </Choice>
-        <Choice>
-          <Value>skull</Value>
-          <Label>skull</Label>
-        </Choice>
-        <Choice>
-          <Value>appendicularskeleton</Value>
-          <Label>appendicular skeleton</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <NumericDataElement Id="maxwidthofskeletalmetasis_11" IsRequired="true" DisplaySequence="12" Unit="mm">
-      <CodableConcept Name="codableConcept_RDES94_maxwidthofskeletalmetasis_11">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE486" />
-          <Display Value="RDE486" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE486" />
-        </Coding>
-      </CodableConcept>
-      <Label>max width of skeletal metasis</Label>
-      <Hint>in mm</Hint>
-    </NumericDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+            <ChoiceInfo>
+                <Choice>
+                    <Value>vertebrae</Value>
+                    <Label>vertebrae</Label>
+                </Choice>
+                <Choice>
+                    <Value>pelvis</Value>
+                    <Label>pelvis</Label>
+                </Choice>
+                <Choice>
+                    <Value>femus</Value>
+                    <Label>femus</Label>
+                </Choice>
+                <Choice>
+                    <Value>humerus</Value>
+                    <Label>humerus</Label>
+                </Choice>
+                <Choice>
+                    <Value>skull</Value>
+                    <Label>skull</Label>
+                </Choice>
+                <Choice>
+                    <Value>appendicularskeleton</Value>
+                    <Label>appendicular skeleton</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

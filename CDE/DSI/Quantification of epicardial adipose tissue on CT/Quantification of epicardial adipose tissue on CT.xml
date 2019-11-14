@@ -1,323 +1,179 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Quantification of epicardial adipose tissue on CT</Label>
-    <ID>Quantification_of_epicardial_adipose_tissue_on_CT</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Quantification_of_epicardial_adipose_tissue_on_CT">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES95" />
-        <Display Value="RDES95" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES95" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Quantification of epicardial adipose tissue on CT</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="EATVolume_0" IsRequired="true" DisplaySequence="1" Unit="mm3">
-      <CodableConcept Name="codableConcept_RDES95_EATVolume_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE487" />
-          <Display Value="RDE487" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE487" />
-        </Coding>
-      </CodableConcept>
-      <Label>EAT Volume</Label>
-      <Hint>Volume of epicardial adipose tissue</Hint>
-    </NumericDataElement>
-    <NumericDataElement Id="EATAverageattuation_1" IsRequired="true" DisplaySequence="2" Unit="HU">
-      <CodableConcept Name="codableConcept_RDES95_EATAverageattuation_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE488" />
-          <Display Value="RDE488" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE488" />
-        </Coding>
-      </CodableConcept>
-      <Label>EAT Average attuation</Label>
-      <Hint>average attenuation of the epicardial adipose tissue</Hint>
-    </NumericDataElement>
-    <NumericDataElement Id="EATSegmentation_2" IsRequired="true" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES95_EATSegmentation_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE489" />
-          <Display Value="RDE489" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE489" />
-        </Coding>
-      </CodableConcept>
-      <Label>EAT Segmentation</Label>
-      <Hint>segmentation of the epicardial adipose tissue</Hint>
-    </NumericDataElement>
-    <NumericDataElement Id="EATsize_4" DisplaySequence="5" Unit="cm">
-      <CodableConcept Name="codableConcept_RDES95_EATsize_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE490" />
-          <Display Value="RDE490" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE490" />
-        </Coding>
-      </CodableConcept>
-      <Label>EAT size</Label>
-      <Hint>size of EAT</Hint>
-    </NumericDataElement>
-    <NumericDataElement Id="BMI_6" DisplaySequence="7">
-      <CodableConcept Name="codableConcept_RDES95_BMI_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE491" />
-          <Display Value="RDE491" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE491" />
-        </Coding>
-      </CodableConcept>
-      <Label>BMI</Label>
-    </NumericDataElement>
-    <NumericDataElement Id="Cardiacheight_11" DisplaySequence="12" Unit="cm">
-      <CodableConcept Name="codableConcept_RDES95_Cardiacheight_11">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE492" />
-          <Display Value="RDE492" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE492" />
-        </Coding>
-      </CodableConcept>
-      <Label>Cardiac height</Label>
-    </NumericDataElement>
-    <NumericDataElement Id="Framinghamriskscore_13" DisplaySequence="14">
-      <CodableConcept Name="codableConcept_RDES95_Framinghamriskscore_13">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE493" />
-          <Display Value="RDE493" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE493" />
-        </Coding>
-      </CodableConcept>
-      <Label>Framingham risk score</Label>
-    </NumericDataElement>
-    <IntegerDataElement Id="age_5" DisplaySequence="6">
-      <CodableConcept Name="codableConcept_RDES95_age_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE494" />
-          <Display Value="RDE494" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE494" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <IntegerDataElement Id="Slicethickness_14" DisplaySequence="15" Unit="mm">
-      <CodableConcept Name="codableConcept_RDES95_Slicethickness_14">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE495" />
-          <Display Value="RDE495" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE495" />
-        </Coding>
-      </CodableConcept>
-      <Label>Slice thickness</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="Arterialhypertension_7" IsRequired="true" DisplaySequence="8">
-      <CodableConcept Name="codableConcept_RDES95_Arterialhypertension_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE496" />
-          <Display Value="RDE496" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE496" />
-        </Coding>
-      </CodableConcept>
-      <Label>Arterial hypertension</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Activesmoking_8" DisplaySequence="9">
-      <CodableConcept Name="codableConcept_RDES95_Activesmoking_8">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE497" />
-          <Display Value="RDE497" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE497" />
-        </Coding>
-      </CodableConcept>
-      <Label>Active smoking</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>yes</Value>
-          <Label>yes</Label>
-        </Choice>
-        <Choice>
-          <Value>no</Value>
-          <Label>no</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="diabetes_9" DisplaySequence="10">
-      <CodableConcept Name="codableConcept_RDES95_diabetes_9">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE498" />
-          <Display Value="RDE498" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE498" />
-        </Coding>
-      </CodableConcept>
-      <Label>diabetes</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="hypercholesterolemia_10" DisplaySequence="11">
-      <CodableConcept Name="codableConcept_RDES95_hypercholesterolemia_10">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE499" />
-          <Display Value="RDE499" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE499" />
-        </Coding>
-      </CodableConcept>
-      <Label>hypercholesterolemia</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Arrhythmias_12" DisplaySequence="13">
-      <CodableConcept Name="codableConcept_RDES95_Arrhythmias_12">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE500" />
-          <Display Value="RDE500" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE500" />
-        </Coding>
-      </CodableConcept>
-      <Label>Arrhythmias</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="EATLocation_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES95_EATLocation_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE501" />
-          <Display Value="RDE501" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE501" />
-        </Coding>
-      </CodableConcept>
-      <Label>EAT Location</Label>
-      <Hint>location of the EAT</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>surroundingthehaeart</Value>
-          <Label>surrounding the haeart</Label>
-        </Choice>
-        <Choice>
-          <Value>moreprominentatthebaseandtheapex</Value>
-          <Label>more prominent at the base and the apex</Label>
-        </Choice>
-        <Choice>
-          <Value>atrioventricularsulci</Value>
-          <Label>atrioventricular sulci</Label>
-        </Choice>
-        <Choice>
-          <Value>entiresurfaceoftherightventricle</Value>
-          <Label>entire surface of the right ventricle</Label>
-        </Choice>
-        <Choice>
-          <Value>aroundthegreatcoronaryvesselswiththeirorigins</Value>
-          <Label>around the great coronary vessels with their origins</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-  </DataElements>
-  <Rules>
-    <DecisionPoint Id="DecisionPoint1">
-      <Label>DecisionPoint Label</Label>
-      <Description>DecisionPoint Description</Description>
-      <Branch>
-        <Label>Branch Label</Label>
-        <EndPointRef EndPointId="Endpoint1" />
-      </Branch>
-    </DecisionPoint>
-  </Rules>
-  <EndPoints>
-    <EndPoint Id="Endpoint1">
-      <Label>Endpoint1 Label</Label>
-      <ReportSections>
-        <ReportSection SectionId="findings">
-          <Branch />
-        </ReportSection>
-      </ReportSections>
-    </EndPoint>
-  </EndPoints>
+    <Metadata>
+        <Label>Quantification of epicardial adipose tissue on CT</Label>
+        <ID>Quantification_of_epicardial_adipose_tissue_on_CT</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Quantification_of_epicardial_adipose_tissue_on_CT" />
+        <Info>
+            <Description>Quantification of epicardial adipose tissue on CT</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="EATVolume_0" IsRequired="true" DisplaySequence="1" Unit="mm3">
+            <Label>EAT Volume</Label>
+            <Hint>Volume of epicardial adipose tissue</Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="EATAverageattuation_1" IsRequired="true" DisplaySequence="2" Unit="HU">
+            <Label>EAT Average attuation</Label>
+            <Hint>average attenuation of the epicardial adipose tissue</Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="EATSegmentation_2" IsRequired="true" DisplaySequence="3">
+            <Label>EAT Segmentation</Label>
+            <Hint>segmentation of the epicardial adipose tissue</Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="EATsize_4" DisplaySequence="5" Unit="cm">
+            <Label>EAT size</Label>
+            <Hint>size of EAT</Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="BMI_6" DisplaySequence="7">
+            <Label>BMI</Label>
+        </NumericDataElement>
+        <NumericDataElement Id="Cardiacheight_11" DisplaySequence="12" Unit="cm">
+            <Label>Cardiac height</Label>
+        </NumericDataElement>
+        <NumericDataElement Id="Framinghamriskscore_13" DisplaySequence="14">
+            <Label>Framingham risk score</Label>
+        </NumericDataElement>
+        <IntegerDataElement Id="age_5" DisplaySequence="6">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <IntegerDataElement Id="Slicethickness_14" DisplaySequence="15" Unit="mm">
+            <Label>Slice thickness</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Arterialhypertension_7" IsRequired="true" DisplaySequence="8">
+            <Label>Arterial hypertension</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Activesmoking_8" DisplaySequence="9">
+            <Label>Active smoking</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="diabetes_9" DisplaySequence="10">
+            <Label>diabetes</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="hypercholesterolemia_10" DisplaySequence="11">
+            <Label>hypercholesterolemia</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Arrhythmias_12" DisplaySequence="13">
+            <Label>Arrhythmias</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="EATLocation_3" DisplaySequence="4">
+            <Label>EAT Location</Label>
+            <Hint>location of the EAT</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>surroundingthehaeart</Value>
+                    <Label>surrounding the haeart</Label>
+                </Choice>
+                <Choice>
+                    <Value>moreprominentatthebaseandtheapex</Value>
+                    <Label>more prominent at the base and the apex</Label>
+                </Choice>
+                <Choice>
+                    <Value>atrioventricularsulci</Value>
+                    <Label>atrioventricular sulci</Label>
+                </Choice>
+                <Choice>
+                    <Value>entiresurfaceoftherightventricle</Value>
+                    <Label>entire surface of the right ventricle</Label>
+                </Choice>
+                <Choice>
+                    <Value>aroundthegreatcoronaryvesselswiththeirorigins</Value>
+                    <Label>around the great coronary vessels with their origins</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="DecisionPoint1">
+            <Label>DecisionPoint Label</Label>
+            <Description>DecisionPoint Description</Description>
+            <Branch>
+                <Label>Branch Label</Label>
+                <EndPointRef EndPointId="Endpoint1" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="Endpoint1">
+            <Label>Endpoint1 Label</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch />
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
 </ReportingModule>

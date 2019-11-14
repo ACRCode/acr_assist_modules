@@ -1,180 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Automated Insall-Salvatti Index (ISI)</Label>
-    <ID>Automated_Insall-Salvatti_Index_(ISI)</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Automated_Insall-Salvatti_Index_(ISI)">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES106" />
-        <Display Value="RDES106" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES106" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Automated Insall-Salvatti Index (ISI)</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <NumericDataElement Id="TLMeasurement_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES106_TLMeasurement_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE544" />
-          <Display Value="RDE544" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE544" />
-        </Coding>
-      </CodableConcept>
-      <Label>TL Measurement</Label>
-      <Hint>Length of the inner border of the patellar tendon from the lower pole of the patella to the notch in the tibial cortex at the superior border of the tibial tubercle. </Hint>
-    </NumericDataElement>
-    <NumericDataElement Id="PLMeasurement_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES106_PLMeasurement_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE545" />
-          <Display Value="RDE545" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE545" />
-        </Coding>
-      </CodableConcept>
-      <Label>PL Measurement</Label>
-      <Hint>Oblique line connecting the inner margin of the upper pole of the patella with the most inferior point of the lower pole. This measurement should be obtained in the mid patella.</Hint>
-    </NumericDataElement>
-    <NumericDataElement Id="ISI_2" IsRequired="true" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES106_ISI_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE546" />
-          <Display Value="RDE546" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE546" />
-        </Coding>
-      </CodableConcept>
-      <Label>ISI</Label>
-      <Hint>ISI = TL/PL</Hint>
-    </NumericDataElement>
-    <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
-      <CodableConcept Name="codableConcept_RDES106_age_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE547" />
-          <Display Value="RDE547" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE547" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-    </IntegerDataElement>
-    <ChoiceDataElement Id="sexatbirth_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES106_sexatbirth_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE548" />
-          <Display Value="RDE548" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE548" />
-        </Coding>
-      </CodableConcept>
-      <Label>sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Patellarmorphology_5" DisplaySequence="6">
-      <CodableConcept Name="codableConcept_RDES106_Patellarmorphology_5">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE549" />
-          <Display Value="RDE549" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE549" />
-        </Coding>
-      </CodableConcept>
-      <Label>Patellar morphology</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>elongatedinferiorpoleofthepatella</Value>
-          <Label>elongated inferior pole of the patella</Label>
-        </Choice>
-        <Choice>
-          <Value>truncatedlowerpoleofthepatella</Value>
-          <Label>truncated lower pole of the patella</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Osgoodschlatter_6" DisplaySequence="7">
-      <CodableConcept Name="codableConcept_RDES106_Osgoodschlatter_6">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE550" />
-          <Display Value="RDE550" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE550" />
-        </Coding>
-      </CodableConcept>
-      <Label>Osgood schlatter</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="singinglarsenjohanssenorperiostealsleeveavulsion_7" DisplaySequence="8">
-      <CodableConcept Name="codableConcept_RDES106_singinglarsenjohanssenorperiostealsleeveavulsion_7">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE551" />
-          <Display Value="RDE551" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE551" />
-        </Coding>
-      </CodableConcept>
-      <Label>singing larsen johanssen or periosteal sleeve avulsion</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Automated Insall-Salvatti Index (ISI)</Label>
+        <ID>Automated_Insall-Salvatti_Index_(ISI)</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Automated_Insall-Salvatti_Index_(ISI)" />
+        <Info>
+            <Description>Automated Insall-Salvatti Index (ISI)</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <NumericDataElement Id="TLMeasurement_0" IsRequired="true" DisplaySequence="1">
+            <Label>TL Measurement</Label>
+            <Hint>Length of the inner border of the patellar tendon from the lower pole of the patella to the notch in the tibial cortex at the superior border of the tibial tubercle. </Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="PLMeasurement_1" IsRequired="true" DisplaySequence="2">
+            <Label>PL Measurement</Label>
+            <Hint>Oblique line connecting the inner margin of the upper pole of the patella with the most inferior point of the lower pole. This measurement should be obtained in the mid patella.</Hint>
+        </NumericDataElement>
+        <NumericDataElement Id="ISI_2" IsRequired="true" DisplaySequence="3">
+            <Label>ISI</Label>
+            <Hint>ISI = TL/PL</Hint>
+        </NumericDataElement>
+        <IntegerDataElement Id="age_4" DisplaySequence="5" Unit="years">
+            <Label>age</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="sexatbirth_3" DisplaySequence="4">
+            <Label>sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Patellarmorphology_5" DisplaySequence="6">
+            <Label>Patellar morphology</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>elongatedinferiorpoleofthepatella</Value>
+                    <Label>elongated inferior pole of the patella</Label>
+                </Choice>
+                <Choice>
+                    <Value>truncatedlowerpoleofthepatella</Value>
+                    <Label>truncated lower pole of the patella</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Osgoodschlatter_6" DisplaySequence="7">
+            <Label>Osgood schlatter</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="singinglarsenjohanssenorperiostealsleeveavulsion_7" DisplaySequence="8">
+            <Label>singing larsen johanssen or periosteal sleeve avulsion</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

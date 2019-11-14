@@ -1,253 +1,209 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Tuberculosis, Triage</Label>
-    <ID>Tuberculosis,_Triage</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Tuberculosis,_Triage">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES110" />
-        <Display Value="RDES110" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES110" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Tuberculosis, Triage</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <ChoiceDataElement Id="TuberculosisDetection_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES110_TuberculosisDetection_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE564" />
-          <Display Value="RDE564" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE564" />
-        </Coding>
-      </CodableConcept>
-      <Label>Tuberculosis Detection</Label>
-      <Hint>Detection of Tuberculosis in symptomatic adult patient</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Unknown</Value>
-          <Label>Unknown</Label>
-        </Choice>
-        <Choice>
-          <Value>tuberculosispresent</Value>
-          <Label>tuberculosis present</Label>
-        </Choice>
-        <Choice>
-          <Value>tuberculosislikely</Value>
-          <Label>tuberculosis likely</Label>
-        </Choice>
-        <Choice>
-          <Value>tuberculosisabsent(other)</Value>
-          <Label>tuberculosis absent (other)</Label>
-        </Choice>
-        <Choice>
-          <Value>tuberculosisabsent(normal)</Value>
-          <Label>tuberculosis absent (normal)</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Views_1" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES110_Views_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE565" />
-          <Display Value="RDE565" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE565" />
-        </Coding>
-      </CodableConcept>
-      <Label>Views</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>AP</Value>
-          <Label>AP</Label>
-        </Choice>
-        <Choice>
-          <Value>PA</Value>
-          <Label>PA</Label>
-        </Choice>
-        <Choice>
-          <Value>PA/Lat</Value>
-          <Label>PA/Lat</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES110_Sexatbirth_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE566" />
-          <Display Value="RDE566" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE566" />
-        </Coding>
-      </CodableConcept>
-      <Label>Sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <MultiChoiceDataElement Id="comorbidities_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES110_comorbidities_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE567" />
-          <Display Value="RDE567" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE567" />
-        </Coding>
-      </CodableConcept>
-      <Label>comorbidities</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>pleuralfluid</Value>
-          <Label>pleural fluid</Label>
-        </Choice>
-        <Choice>
-          <Value>otherlungdisease</Value>
-          <Label>other lung disease</Label>
-        </Choice>
-        <Choice>
-          <Value>bullousemphysema</Value>
-          <Label>bullous emphysema</Label>
-        </Choice>
-        <Choice>
-          <Value>malignancy</Value>
-          <Label>malignancy</Label>
-        </Choice>
-        <Choice>
-          <Value>leftsidedcongestiveheartfailure</Value>
-          <Label>left sided congestive heart failure</Label>
-        </Choice>
-        <Choice>
-          <Value>pulmonaryedema</Value>
-          <Label>pulmonary edema</Label>
-        </Choice>
-        <Choice>
-          <Value>priorchestsurgery</Value>
-          <Label>prior chest surgery</Label>
-        </Choice>
-        <Choice>
-          <Value>priorlunginjury</Value>
-          <Label>prior lung injury</Label>
-        </Choice>
-        <Choice>
-          <Value>sarcoid</Value>
-          <Label>sarcoid</Label>
-        </Choice>
-        <Choice>
-          <Value>nontuberculousmycobacterialinfection</Value>
-          <Label>non tuberculous mycobacterial infection</Label>
-        </Choice>
-        <Choice>
-          <Value>apicalradiationfibrosis</Value>
-          <Label>apical radiation fibrosis</Label>
-        </Choice>
-        <Choice>
-          <Value>chronicaspergillosis</Value>
-          <Label>chronic aspergillosis</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <MultiChoiceDataElement Id="Lungtissueinvolvement_4" DisplaySequence="5">
-      <CodableConcept Name="codableConcept_RDES110_Lungtissueinvolvement_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE568" />
-          <Display Value="RDE568" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE568" />
-        </Coding>
-      </CodableConcept>
-      <Label>Lung tissue involvement</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>right</Value>
-          <Label>right</Label>
-        </Choice>
-        <Choice>
-          <Value>left</Value>
-          <Label>left</Label>
-        </Choice>
-        <Choice>
-          <Value>bilateral</Value>
-          <Label>bilateral</Label>
-        </Choice>
-        <Choice>
-          <Value>upper</Value>
-          <Label>upper</Label>
-        </Choice>
-        <Choice>
-          <Value>middle</Value>
-          <Label>middle</Label>
-        </Choice>
-        <Choice>
-          <Value>lower</Value>
-          <Label>lower</Label>
-        </Choice>
-        <Choice>
-          <Value>difuse</Value>
-          <Label>difuse</Label>
-        </Choice>
-        <Choice>
-          <Value>segmental</Value>
-          <Label>segmental</Label>
-        </Choice>
-        <Choice>
-          <Value>lobar</Value>
-          <Label>lobar</Label>
-        </Choice>
-        <Choice>
-          <Value>cavitary</Value>
-          <Label>cavitary</Label>
-        </Choice>
-        <Choice>
-          <Value>micronodular</Value>
-          <Label>micronodular</Label>
-        </Choice>
-        <Choice>
-          <Value>nodular</Value>
-          <Label>nodular</Label>
-        </Choice>
-        <Choice>
-          <Value>calcifications</Value>
-          <Label>calcifications</Label>
-        </Choice>
-        <Choice>
-          <Value>linearscarring</Value>
-          <Label>linear scarring</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Tuberculosis, Triage</Label>
+        <ID>Tuberculosis,_Triage</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Tuberculosis,_Triage" />
+        <Info>
+            <Description>Tuberculosis, Triage</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="TuberculosisDetection_0" IsRequired="true" DisplaySequence="1">
+            <Label>Tuberculosis Detection</Label>
+            <Hint>Detection of Tuberculosis in symptomatic adult patient</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+                <Choice>
+                    <Value>tuberculosispresent</Value>
+                    <Label>tuberculosis present</Label>
+                </Choice>
+                <Choice>
+                    <Value>tuberculosislikely</Value>
+                    <Label>tuberculosis likely</Label>
+                </Choice>
+                <Choice>
+                    <Value>tuberculosisabsent(other)</Value>
+                    <Label>tuberculosis absent (other)</Label>
+                </Choice>
+                <Choice>
+                    <Value>tuberculosisabsent(normal)</Value>
+                    <Label>tuberculosis absent (normal)</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Views_1" DisplaySequence="2">
+            <Label>Views</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>AP</Value>
+                    <Label>AP</Label>
+                </Choice>
+                <Choice>
+                    <Value>PA</Value>
+                    <Label>PA</Label>
+                </Choice>
+                <Choice>
+                    <Value>PA/Lat</Value>
+                    <Label>PA/Lat</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
+            <Label>Sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="comorbidities_3" DisplaySequence="4">
+            <Label>comorbidities</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>pleuralfluid</Value>
+                    <Label>pleural fluid</Label>
+                </Choice>
+                <Choice>
+                    <Value>otherlungdisease</Value>
+                    <Label>other lung disease</Label>
+                </Choice>
+                <Choice>
+                    <Value>bullousemphysema</Value>
+                    <Label>bullous emphysema</Label>
+                </Choice>
+                <Choice>
+                    <Value>malignancy</Value>
+                    <Label>malignancy</Label>
+                </Choice>
+                <Choice>
+                    <Value>leftsidedcongestiveheartfailure</Value>
+                    <Label>left sided congestive heart failure</Label>
+                </Choice>
+                <Choice>
+                    <Value>pulmonaryedema</Value>
+                    <Label>pulmonary edema</Label>
+                </Choice>
+                <Choice>
+                    <Value>priorchestsurgery</Value>
+                    <Label>prior chest surgery</Label>
+                </Choice>
+                <Choice>
+                    <Value>priorlunginjury</Value>
+                    <Label>prior lung injury</Label>
+                </Choice>
+                <Choice>
+                    <Value>sarcoid</Value>
+                    <Label>sarcoid</Label>
+                </Choice>
+                <Choice>
+                    <Value>nontuberculousmycobacterialinfection</Value>
+                    <Label>non tuberculous mycobacterial infection</Label>
+                </Choice>
+                <Choice>
+                    <Value>apicalradiationfibrosis</Value>
+                    <Label>apical radiation fibrosis</Label>
+                </Choice>
+                <Choice>
+                    <Value>chronicaspergillosis</Value>
+                    <Label>chronic aspergillosis</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <MultiChoiceDataElement Id="Lungtissueinvolvement_4" DisplaySequence="5">
+            <Label>Lung tissue involvement</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>right</Value>
+                    <Label>right</Label>
+                </Choice>
+                <Choice>
+                    <Value>left</Value>
+                    <Label>left</Label>
+                </Choice>
+                <Choice>
+                    <Value>bilateral</Value>
+                    <Label>bilateral</Label>
+                </Choice>
+                <Choice>
+                    <Value>upper</Value>
+                    <Label>upper</Label>
+                </Choice>
+                <Choice>
+                    <Value>middle</Value>
+                    <Label>middle</Label>
+                </Choice>
+                <Choice>
+                    <Value>lower</Value>
+                    <Label>lower</Label>
+                </Choice>
+                <Choice>
+                    <Value>difuse</Value>
+                    <Label>difuse</Label>
+                </Choice>
+                <Choice>
+                    <Value>segmental</Value>
+                    <Label>segmental</Label>
+                </Choice>
+                <Choice>
+                    <Value>lobar</Value>
+                    <Label>lobar</Label>
+                </Choice>
+                <Choice>
+                    <Value>cavitary</Value>
+                    <Label>cavitary</Label>
+                </Choice>
+                <Choice>
+                    <Value>micronodular</Value>
+                    <Label>micronodular</Label>
+                </Choice>
+                <Choice>
+                    <Value>nodular</Value>
+                    <Label>nodular</Label>
+                </Choice>
+                <Choice>
+                    <Value>calcifications</Value>
+                    <Label>calcifications</Label>
+                </Choice>
+                <Choice>
+                    <Value>linearscarring</Value>
+                    <Label>linear scarring</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>

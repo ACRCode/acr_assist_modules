@@ -1,154 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>Iliopsoas Tendinopathy (Snapping Hip Syndrome) Detection</Label>
-    <ID>Iliopsoas_Tendinopathy_(Snapping_Hip_Syndrome)_Detection</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-11-11</CreatedDate>
-    <LastModifiedDate>2019-11-11</LastModifiedDate>
-    <DevelopedBy>American College of Radiology</DevelopedBy>
-    <CodableConcept Name="codableConcept_Iliopsoas_Tendinopathy_(Snapping_Hip_Syndrome)_Detection">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES107" />
-        <Display Value="RDES107" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES107" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>Iliopsoas Tendinopathy (Snapping Hip Syndrome) Detection</Description>
-      <Contact>
-        <Name>Jordan Meyer</Name>
-        <Institution>American College of Radiology</Institution>
-      </Contact>
-    </Info>
-  </Metadata>
-  <DataElements>
-    <ChoiceDataElement Id="IliopsoasTendinopathyDetection_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES107_IliopsoasTendinopathyDetection_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE552" />
-          <Display Value="RDE552" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE552" />
-        </Coding>
-      </CodableConcept>
-      <Label> Iliopsoas Tendinopathy Detection</Label>
-      <Hint>Iliopsoas tendinopathy</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>present</Value>
-          <Label>present</Label>
-        </Choice>
-        <Choice>
-          <Value>absent</Value>
-          <Label>absent</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="IliopsoasTendinopathyLaterality_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES107_IliopsoasTendinopathyLaterality_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE553" />
-          <Display Value="RDE553" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE553" />
-        </Coding>
-      </CodableConcept>
-      <Label> Iliopsoas Tendinopathy Laterality</Label>
-      <Hint>Iliopsoas Tendinopathy Laterality</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>right</Value>
-          <Label>right</Label>
-        </Choice>
-        <Choice>
-          <Value>left</Value>
-          <Label>left</Label>
-        </Choice>
-        <Choice>
-          <Value>bilateral</Value>
-          <Label>bilateral</Label>
-        </Choice>
-        <Choice>
-          <Value>unknown</Value>
-          <Label>unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Procedures_2" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES107_Procedures_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE554" />
-          <Display Value="RDE554" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE554" />
-        </Coding>
-      </CodableConcept>
-      <Label>Procedures</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>MRIPelvis</Value>
-          <Label>MRI Pelvis</Label>
-        </Choice>
-        <Choice>
-          <Value>MRIHip</Value>
-          <Label>MRI Hip</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <ChoiceDataElement Id="Sexatbirth_3" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES107_Sexatbirth_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE555" />
-          <Display Value="RDE555" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE555" />
-        </Coding>
-      </CodableConcept>
-      <Label>Sex at birth</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>male</Value>
-          <Label>male</Label>
-        </Choice>
-        <Choice>
-          <Value>female</Value>
-          <Label>female</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-    <IntegerDataElement Id="age_4" IsRequired="true" DisplaySequence="5" Unit="years">
-      <CodableConcept Name="codableConcept_RDES107_age_4">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE556" />
-          <Display Value="RDE556" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE556" />
-        </Coding>
-      </CodableConcept>
-      <Label>age</Label>
-      <Minimum>15</Minimum>
-      <Maximum>60</Maximum>
-    </IntegerDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+    <Metadata>
+        <Label>Iliopsoas Tendinopathy (Snapping Hip Syndrome) Detection</Label>
+        <ID>Iliopsoas_Tendinopathy_(Snapping_Hip_Syndrome)_Detection</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-11-11</CreatedDate>
+        <LastModifiedDate>2019-11-14</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Iliopsoas_Tendinopathy_(Snapping_Hip_Syndrome)_Detection" />
+        <Info>
+            <Description>Iliopsoas Tendinopathy (Snapping Hip Syndrome) Detection</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Jordan Meyer</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="age_4" IsRequired="true" DisplaySequence="5" Unit="years">
+            <Label>age</Label>
+            <Minimum>15</Minimum>
+            <Maximum>60</Maximum>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="IliopsoasTendinopathyDetection_0" IsRequired="true" DisplaySequence="1">
+            <Label> Iliopsoas Tendinopathy Detection</Label>
+            <Hint>Iliopsoas tendinopathy</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="IliopsoasTendinopathyLaterality_1" IsRequired="true" DisplaySequence="2">
+            <Label> Iliopsoas Tendinopathy Laterality</Label>
+            <Hint>Iliopsoas Tendinopathy Laterality</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>right</Value>
+                    <Label>right</Label>
+                </Choice>
+                <Choice>
+                    <Value>left</Value>
+                    <Label>left</Label>
+                </Choice>
+                <Choice>
+                    <Value>bilateral</Value>
+                    <Label>bilateral</Label>
+                </Choice>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Procedures_2" DisplaySequence="3">
+            <Label>Procedures</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>MRIPelvis</Value>
+                    <Label>MRI Pelvis</Label>
+                </Choice>
+                <Choice>
+                    <Value>MRIHip</Value>
+                    <Label>MRI Hip</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Sexatbirth_3" DisplaySequence="4">
+            <Label>Sex at birth</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>male</Value>
+                    <Label>male</Label>
+                </Choice>
+                <Choice>
+                    <Value>female</Value>
+                    <Label>female</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>
