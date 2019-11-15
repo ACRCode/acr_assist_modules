@@ -249,7 +249,7 @@
 		 </ChoiceDataElement>
 		 
 		
-		<IntegerDataElement Id="Whatistheimagenumber_2" IsRequired="true" DisplaySequence="3">
+		<IntegerDataElement Id="Whatistheimagenumber_2" IsRequired="true" DisplaySequence="10">
 			<Label>What is the image number for the suspicious finding at the second primary site?</Label>
 			<Minimum>1 </Minimum>
 			<ConditionalProperties>
@@ -264,7 +264,7 @@
 			</ConditionalProperties>
 		</IntegerDataElement>
 	
-		<ChoiceDataElement Id="secondprimary_location" DisplaySequence="20" AllowFreetext="true">
+		<ChoiceDataElement Id="secondprimary_location" DisplaySequence="11" AllowFreetext="true">
 			<Label>Which of the following best describes the location of the suspicious finding at the second primary site?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -303,7 +303,7 @@
 		
 		
 		
-		<ChoiceDataElement Id="NeckNodeQUestion_neck" IsRequired="true" DisplaySequence="19">
+		<ChoiceDataElement Id="NeckNodeQUestion_neck" IsRequired="true" DisplaySequence="12">
 			<Label>Are there one or more suspicious neck node(s)?</Label>
 				<ChoiceInfo>
 					<Choice>
@@ -318,7 +318,7 @@
 				 	
 		 </ChoiceDataElement>
 		 
-		<IntegerDataElement Id="Whatistheimagenumber_neck" IsRequired="true" DisplaySequence="21">
+		<IntegerDataElement Id="Whatistheimagenumber_neck" IsRequired="true" DisplaySequence="13">
 			<Label>What is the image number of the most suspicious neck node?</Label>
 			<Minimum>1</Minimum>
 			<ConditionalProperties>
@@ -335,7 +335,7 @@
 		 
 		 
 		 
-		 <ChoiceDataElement Id="nodetype_abnormal" DisplaySequence="20">
+		 <ChoiceDataElement Id="nodetype_abnormal" DisplaySequence="14">
 			<Label>Which of the following best describes the abormal lymph node(s)?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -380,7 +380,7 @@
 		
 		
 		
-		<ChoiceDataElement Id="nodetype_level" DisplaySequence="22">
+		<ChoiceDataElement Id="nodetype_level" DisplaySequence="15">
 			<Label>What is the nodal level of the most suspicious neck node?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -430,11 +430,43 @@
 		</ChoiceDataElement>	
 		
 		
+		<ChoiceDataElement Id="nodetype_noprior" DisplaySequence="16">
+			<Label>Which of the following best describes the most suspicious neck node ?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>enlargedneck</Value>
+					<Label>Enlarged</Label>
+				</Choice>
+				<Choice>
+					<Value>extranodal</Value>
+					<Label>Extra nodal extension</Label>
+				</Choice>
+				<Choice>
+					<Value>abnormalenhance</Value>
+					<Label>Abnormal enhanced pattern</Label>
+				</Choice>
+				<Choice>
+					<Value>necrosisneck</Value>
+					<Label>Necrosis</Label>
+				</Choice>
+		
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
+						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="PriorImage_1" />
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="Yes"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>	
 		
 		
 		
-		
-		<ChoiceDataElement Id="nodetype_neck" DisplaySequence="23">
+		<ChoiceDataElement Id="nodetype_neck" DisplaySequence="16">
 			<Label>Which of the following best describes the most suspicious neck node ?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -452,6 +484,8 @@
 					<OrCondition>
 						<SectionIfNot DataElementId="NeckNodeQUestion_neck"/>
 						<EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+						<SectionIfNot DataElementId="PriorImage_1" />
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
@@ -461,7 +495,7 @@
 		
 	
 		
-		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE_neck" DisplaySequence="24">
+		<ChoiceDataElement Id="DoesthenodehavenewnecrosisorENE_neck" DisplaySequence="17">
 			<Label>Does the node have new necrosis or ENE ?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -487,7 +521,7 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="neworenlarginnode_neck" DisplaySequence="25">
+		<ChoiceDataElement Id="neworenlarginnode_neck" DisplaySequence="18">
 			<Label>What best describes the FDG uptake associated with this node?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -744,6 +778,48 @@
 				<ReportText Type="Newline" />
 			</Branch>
 		</TemplatePartial>
+		
+		
+		<TemplatePartial Id="findings_template_1">
+			<Branch>
+				<SectionIf DataElementId="secondprimary_location"></SectionIf>
+				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="PlainText"> Location: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="secondprimary_location"></ReportText>
+				
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="findings_neck_1">
+			<Branch>
+				<SectionIf DataElementId="nodetype_abnormal"></SectionIf>
+				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="PlainText"> Abnormal node type: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="nodetype_abnormal"></ReportText>
+				
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="findings_neck_2">
+			<Branch>
+				<SectionIf DataElementId="nodetype_level"></SectionIf>
+				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="PlainText"> Abnormal node level: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="nodetype_level"></ReportText>
+				
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="findings_neck_3">
+			<Branch>
+				<SectionIf DataElementId="nodetype_noprior"></SectionIf>
+				<ReportText Type="Newline"></ReportText>
+				<ReportText Type="PlainText"> Type of suspicious node: </ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="nodetype_noprior"></ReportText>
+				
+			</Branch>
+		</TemplatePartial>
+		
 		<!--Incomplete-->
 		<EndPoint Id="Cat0Incomplete_1">
 			<Label>InComplete</Label>
@@ -946,6 +1022,8 @@
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="QuestionText_2" />
 						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_template_1" />
+						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Category: Comparison to prior study</ReportText>
 						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">* Relevant clinical follow up required</ReportText>
@@ -962,101 +1040,10 @@
 			</ReportSections>
 		</EndPoint>
 		
-		<EndPoint Id="Cat2aLowSuspicion_2">
-			<Label>Low Suspicion</Label>
-
-			<ReportSections>
-				<ReportSection SectionId="Second Primary Site Findings">
-					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="QuestionText_2" />
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">Category 2a: Low suspicion</ReportText>
-						<ReportText Type="Newline" />						
-						<ReportText Type="PlainText">* Focal mucosal enhancement or FDG uptake on initial post treatment scan </ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-				<ReportSection SectionId="Recommendation">
-					<Branch>
-						<ReportText Type="PlainText">Category 2a: Direct visual inspection  </ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-		<EndPoint Id="Cat2bLowSuspicion_2">
-			<Label>Low Suspicion</Label>
-			<ReportSections>
-				<ReportSection SectionId="Second Primary Site Findings">
-					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="QuestionText_2" />						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">Category 2b: Low suspicion </ReportText>
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* Short interval follow-up (3 months) or PET if scoring on CECT alone.</ReportText>
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* Any discordance between PET and CECT: discrete CECT abnormality but little to no FDG uptake or focal FDG uptake but no CT correlate** </ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-				<ReportSection SectionId="Recommendation">
-					<Branch>
-						<ReportText Type="PlainText">Category 2b: Short interval follow-up (3 months) or PET if scoring on CECT alone.</ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-		<EndPoint Id="Cat2LowSuspicion_2">
-			<Label>Low Suspicion</Label>
-
-			<ReportSections>
-				<ReportSection SectionId="Second Primary Site Findings">
-					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="QuestionText_2" />
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">Category 2: Low suspicion </ReportText>
-						<ReportText Type="Newline" />						
-						<ReportText Type="PlainText">* Mild/ mod FDG in residual nodal tissue,</ReportText>
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* Enlarging or new lymph node without definitive abnormal morphologic features *</ReportText>			
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* Any discordance between PET and CECT: enlarging lymph node  or discrete neck mass but little to no FDG uptake or focal uptake with no CT correlate**</ReportText>	
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-				<ReportSection SectionId="Recommendation">
-					<Branch>
-						<ReportText Type="PlainText">Category 2: Short interval follow-up (3 months) or PET if scoring on CECT alone High.</ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-			</ReportSections>			
-		</EndPoint>
-		<EndPoint Id="Cat3HighSuspicion_2">
-			<Label>High Suspicion</Label>
-			<ReportSections>
-				<ReportSection SectionId="Second Primary Site Findings">
-					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="QuestionText_2" />
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">Category 3: High suspicion </ReportText>
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* Discrete nodule or mass at the primary site with intense focal FDG uptake if PET available </ReportText>
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* Residual nodal tissue with intense FDG</ReportText>
-						<ReportText Type="Newline" />
-						<ReportText Type="PlainText">* New enlarged lymph node or enlarging lymph node with abnormal morphologic features*** on CECT only or focal intense FDG uptake if PET available </ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-				<ReportSection SectionId="Recommendation">
-					<Branch>
-						<ReportText Type="PlainText">Category 3: Image guided or clinical biopsy if clinically indicated</ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>	
+	
+		
+		
+		
 		<EndPoint Id="Cat4DefinitiveRecurrence_2">
 			<Label>Definitive Recurrence</Label>
 			<ReportSections>
@@ -1108,6 +1095,10 @@
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />
 						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_2" />
+						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Category 1: No evidence of recurrence</ReportText>
 						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">* Expected post treatment changes</ReportText>
@@ -1139,6 +1130,10 @@
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />
 						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_2" />
+						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Category 2a: Low suspicion</ReportText>
 						<ReportText Type="Newline" />						
 						<ReportText Type="PlainText">* Focal mucosal enhancement or FDG uptake on initial post treatment scan </ReportText>
@@ -1159,7 +1154,12 @@
 			<ReportSections>
 				<ReportSection SectionId="Neck Node Findings">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />						
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_2" />
+						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Category 2b: Low suspicion </ReportText>
 						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">* Short interval follow-up (3 months) or PET if scoring on CECT alone.</ReportText>
@@ -1183,6 +1183,10 @@
 				<ReportSection SectionId="Neck Node Findings">
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_2" />
 						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Category 2: Low suspicion </ReportText>
 						<ReportText Type="Newline" />						
@@ -1209,6 +1213,10 @@
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />
 						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_2" />
+						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Category 3: High suspicion </ReportText>
 						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">* Discrete nodule or mass at the primary site with intense focal FDG uptake if PET available </ReportText>
@@ -1234,6 +1242,10 @@
 					<Branch>
 						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />
 						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_2" />
+						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Category 4: Definitive recurrence</ReportText>
 						<ReportText Type="Newline" />
 						<ReportText Type="PlainText">Pathologically proven or definite radiologic and clinical progression.</ReportText>
@@ -1243,6 +1255,34 @@
 				<ReportSection SectionId="Recommendation">
 					<Branch>
 						<ReportText Type="PlainText">Category 4: Clinical management of definitive recurrence for ENT/Oncology guideline.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="Catnoprior_neck">
+			<Label>Neck No prior imaging</Label>
+			<ReportSections>
+				<ReportSection SectionId="Neck Node Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="QuestionText_neck" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_2" />
+						<ReportText Type="Newline" />
+						<ReportText Type="InsertPartialTemplate" Value="findings_neck_3" />
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Category: Comparison to prior study</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">*Relevant clinical follow up required</ReportText>
+						<ReportText Type="Newline" />	
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category: Comparison to prior study or Relevant clinical follow up required.</ReportText>
 						<ReportText Type="Newline" />
 					</Branch>
 				</ReportSection>
