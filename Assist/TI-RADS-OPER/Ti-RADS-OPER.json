@@ -1,16 +1,9 @@
 {
-  "id": "Unique Id of Test case document",
-  "description": "Unique Id of Test case document",
-  "moduleId": "ACR TI-RADS",
   "moduleName": "ACR TI-RADS",
-  "schemaVersion": "2.0",
   "moduleVersion": "1.0",
-  "excludeForFiltering" :["nodulequestion_1", "nodulequestion_2","nodulequestion_3"],
-  "testCases": [
+  "scenarios": [
     {
-      "testCaseId": "TI-RADS_1",
-      "endpointId": "ReporttextTR1_1",
-      "endpointlabel": "TR1 Benign no FNA",
+      "scenario_id": "TI-RADS_1",
       "inputs": [
 	    {
           "dataElementId": "nodulenumber_1",
@@ -51,10 +44,8 @@
         }
       ]
     },
-	    {
-      "testCaseId": "TI-RADS_2",
-      "endpointId": "ReporttextTR1_1",
-      "endpointlabel": "TR1 Benign no FNA",
+	{
+      "scenario_id": "TI-RADS_2",
       "inputs": [
 	    {
           "dataElementId": "nodulenumber_1",
@@ -97,9 +88,7 @@
       ]
     },
     {
-      "testCaseId": "TI-RADS_3",
-      "endpointId": "ReporttextTR2_1",
-      "endpointlabel": "TR2 Not Suspicious no FNA",
+      "scenario_id": "TI-RADS_3",
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -145,9 +134,7 @@
       ]
     },
        {
-      "testCaseId": "TI-RADS_4",
-      "endpointId": "ReporttextTR2_1",
-      "endpointlabel": "TR2 Not Suspicious no FNA",
+      "scenario_id": "TI-RADS_4",
       "inputs": [
          {
           "dataElementId": "nodulenumber_1",
@@ -202,9 +189,7 @@
 	    
 	
 	    {
-      "testCaseId": "TI-RADS_5",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 No FNA or Follow-up",
+      "scenario_id": "TI-RADS_5",
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -252,9 +237,8 @@
       ]
     },
 		    {
-      "testCaseId": "TI-RADS_6",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 No FNA or Follow-up",
+      "scenario_id": "TI-RADS_6",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -307,9 +291,8 @@
       ]
     },
 			    {
-      "testCaseId": "TI-RADS_7",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 Mildly Suspicious",
+      "scenario_id": "TI-RADS_7",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -361,9 +344,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_8",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 Mildly Suspicious",
+      "scenario_id": "TI-RADS_8",
+     
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -416,9 +398,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_9",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
+      "scenario_id": "TI-RADS_9",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -471,9 +452,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_10",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
+      "scenario_id": "TI-RADS_10",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -526,9 +506,8 @@
       ]
     },
 			    {
-      "testCaseId": "TI-RADS_11",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
+      "scenario_id": "TI-RADS_11",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -581,9 +560,8 @@
       ]
     },
 	    {
-      "testCaseId": "TI-RADS_12",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
+      "scenario_id": "TI-RADS_12",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -631,9 +609,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_13",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
+      "scenario_id": "TI-RADS_13",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -686,9 +663,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_14",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
+      "scenario_id": "TI-RADS_14",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -741,9 +717,8 @@
       ]
     },
 	 {
-      "testCaseId": "TI-RADS_15",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
+      "scenario_id": "TI-RADS_15",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -796,9 +771,8 @@
       ]
     },
 	    {
-      "testCaseId": "TI-RADS_16",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
+      "scenario_id": "TI-RADS_16",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -847,9 +821,8 @@
     },
 	
 	    {
-      "testCaseId": "TI-RADS_17",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
+      "scenario_id": "TI-RADS_17",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -897,9 +870,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_18",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
+      "scenario_id": "TI-RADS_18",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -952,9 +924,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_19",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
+      "scenario_id": "TI-RADS_19",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1007,9 +978,8 @@
       ]
     },
 	 {
-      "testCaseId": "TI-RADS_20",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
+      "scenario_id": "TI-RADS_20",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1061,9 +1031,8 @@
       ]
     },
 	    {
-      "testCaseId": "TI-RADS_21",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
+      "scenario_id": "TI-RADS_21",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1115,279 +1084,9 @@
 		
       ]
     },
-	   	    {
-      "testCaseId": "TI-RADS_17",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-		  "dataElementDisplayValue":"Solid or almost completely solid "
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_18",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-		  "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
+	   	   
 	{
-      "testCaseId": "TI-RADS_19",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	 {
-      "testCaseId": "TI-RADS_20",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.5
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_21",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.5
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_22",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_22",
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1439,9 +1138,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_23",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_23",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1491,9 +1189,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_24",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_24",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1544,9 +1241,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_25",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_25",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1598,9 +1294,8 @@
     },
 	
 	{
-      "testCaseId": "TI-RADS_26",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_26",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1652,9 +1347,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_27",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_27",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1704,9 +1398,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_28",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_28",
+     
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1759,9 +1452,8 @@
 	
 	
 		{
-      "testCaseId": "TI-RADS_29",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_29",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1813,9 +1505,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_30",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_30",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1865,9 +1556,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_31",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_31",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1918,9 +1608,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_32",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_32",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -1972,9 +1661,8 @@
     },
 	
 	{
-      "testCaseId": "TI-RADS_33",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_33",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2026,9 +1714,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_34",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_34",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2078,9 +1765,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_35",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_35",
+     
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2131,9 +1817,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_36",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_36",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2169,9 +1854,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_37",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_37",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2207,9 +1891,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_38",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_38",
+     
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2261,9 +1944,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_39",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_39",
+     
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2313,9 +1995,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_40",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_40",
+     
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2366,9 +2047,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_41",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
+      "scenario_id": "TI-RADS_41",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2423,9 +2103,8 @@
 	
 	
 		{
-      "testCaseId": "TI-RADS_42",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_42",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2477,9 +2156,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_43",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_43",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2530,9 +2208,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_44",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_44",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2584,9 +2261,8 @@
       ]
     },
 	{
-      "testCaseId": "TI-RADS_45",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_45",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2638,9 +2314,8 @@
     },
 	
 	{
-      "testCaseId": "TI-RADS_46",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_46",
+     
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2692,9 +2367,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_47",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_47",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2745,9 +2419,8 @@
       ]
     },
 		{
-      "testCaseId": "TI-RADS_48",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
+      "scenario_id": "TI-RADS_48",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2799,9 +2472,8 @@
       ]
     },
     {
-      "testCaseId": "TI-RADS_49",
-      "endpointId": "ReporttextTR14_1",
-      "endpointlabel": "TR5 Moderately Suspicious",
+      "scenario_id": "TI-RADS_49",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
@@ -2853,9 +2525,8 @@
       ]
     },
     {
-      "testCaseId": "TI-RADS_50",
-      "endpointId": "ReporttextTR14_1",
-      "endpointlabel": "TR5 Moderately Suspicious",
+      "scenario_id": "TI-RADS_50",
+      
       "inputs": [
 	  	    {
           "dataElementId": "nodulenumber_1",
