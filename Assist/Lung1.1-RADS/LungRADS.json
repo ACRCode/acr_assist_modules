@@ -1,0 +1,196 @@
+{
+  "module_name": "Lung RADS",
+  "module_version": "2.0",
+  "scenarios": [
+    {
+      "scenario_id": "Lung-RADS_2.0_1",
+      "inputs": [
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_2",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat0NoPriors",
+          "dataelement_display_value": "0: Prior CT being located"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_3",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat0NoEvaluation",
+          "dataelement_display_value": "0: Lungs cannot be evaluated"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_4",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat1NoLungNodules",
+          "dataelement_display_value": "1: No lung nodules"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_5",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat1NoduleSpecific",
+          "dataelement_display_value": "1: Nodule(s) with specific calcifications: complete, central, popcorn, concentric rings and fat containing nodules"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_6",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "Cat2PerifissuralNodule",
+          "dataelement_display_value": "2: Perifissural Nodule: <10 mm(523.6mm³) "
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_7",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat2SolidNodule",
+          "dataelement_display_value": "2: Sol <6 mm (113.1 mm³)/ new <4 mm ( 33.5 mm³) "
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_8",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat2PartSolidNodule",
+          "dataelement_display_value": "2: Part-sol <6mm (113.1 mm³) total diameter on baseline screening"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_9",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat2NonSolidNodule",
+          "dataelement_display_value": "2: GGN <30mm (14137.2 mm³)/ >=30mm(14137.2 mm³) slow grow"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_10",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat2NodulesUnchanged",
+          "dataelement_display_value": "2: Category 3 or 4 stable >=3 months"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_11",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat3SolidNodule",
+          "dataelement_display_value": "3: Sol >=6 to <8mm(> 113.1 to < 268.1 mm³) / new 4 mm to<6mm(> 33.5 to < 113.1 mm³)"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_12",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat3PartSolidNodule",
+          "dataelement_display_value": "3: Part-sol >6 mm (>113.1mm³) with sol <6mm(<113.1mm³) / new <6mm(<113.1mm³) total diameter"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_13",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat3NonSolidNodule",
+          "dataelement_display_value": "3: GGN >=30mm(> 14137.2 mm³) on baseline CT or new"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_14",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat4ASolidNodule",
+          "dataelement_display_value": "4A: Sol >=8 to <15mm (>= 268.1 to < 1767.1 mm³)/ growing <8mm (268.1mm³)/ new 6 to <8 mm(113.1 to <268.1 mm³)"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_15",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat4APartSolidNodule",
+          "dataelement_display_value": "4A: Part-sol>6mm(113,1mm³) with solid component >=6 mm to <8 mm(113.1 to 268.1 mm³)/ with a new or growing <4 mm (<33.5 mm³)solid component"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_16",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat4AEndobronchialNodule",
+          "dataelement_display_value": "4A: Endobronchial nodule"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_17",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat4BSolidNodule",
+          "dataelement_display_value": "4B: Sol >=15 mm (1767.1 mm³)/ new\tor growing, and >=8mm(268.1 mm³)"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_18",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat4BPartSolidNodule",
+          "dataelement_display_value": "4B: Part-sol with a solid component >= 8 mm (268.1 mm³)/ a new or growing >= 4 mm (33.5 mm³) solid component"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Lung-RADS_2.0_19",
+      "inputs": [
+        {
+          "dataelement_id": "baseCategory_1",
+          "dataelement_value": "cat4XMalignancy",
+          "dataelement_display_value": "4X:Category 3 or 4 nodules with additional features or imaging findings that increases the suspicion of malignancy"
+        }
+      ]
+    }
+  ]
+}

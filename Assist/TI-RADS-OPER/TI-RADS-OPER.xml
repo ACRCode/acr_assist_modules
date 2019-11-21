@@ -183,7 +183,7 @@
 					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Echogenicity</Value>
+					<Value>Nonevaluable</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
@@ -191,7 +191,7 @@
 					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Very</Value>
+					<Value>Very_Hypoechoic</Value>
 					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -284,7 +284,7 @@
 				<Branch>
 					<OrCondition>
 						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Echogenicity"/>
+						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Nonevaluable"/>
 					</OrCondition>
 					<TextExpression>1</TextExpression>
 				</Branch>
@@ -296,7 +296,7 @@
 				</Branch>
 				<Branch>
 					<OrCondition>
-						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Very"/>
+						<EqualCondition DataElementId="echogenicity_1" ComparisonValue="Very_Hypoechoic"/>
 					</OrCondition>
 					<TextExpression>3</TextExpression>
 				</Branch>
@@ -538,7 +538,7 @@
 					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Echogenicity</Value>
+					<Value>Nonevaluable</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
@@ -546,7 +546,7 @@
 					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Very</Value>
+					<Value>Very_Hypoechoic</Value>
 					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -636,7 +636,7 @@
 				<Branch>
 					<OrCondition>
 						<EqualCondition DataElementId="echogenicity_2" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_2" ComparisonValue="Echogenicity"/>
+						<EqualCondition DataElementId="echogenicity_2" ComparisonValue="Nonevaluable"/>
 					</OrCondition>
 					<TextExpression>1</TextExpression>
 				</Branch>
@@ -645,7 +645,7 @@
 					<TextExpression>2</TextExpression>
 				</Branch>
 				<Branch>
-					<EqualCondition DataElementId="echogenicity_2" ComparisonValue="Very"/>
+					<EqualCondition DataElementId="echogenicity_2" ComparisonValue="Very_Hypoechoic"/>
 					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>
@@ -906,7 +906,7 @@
 					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Echogenicity</Value>
+					<Value>Nonevaluable</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
@@ -914,7 +914,7 @@
 					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Very</Value>
+					<Value>Very_Hypoechoic</Value>
 					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -1006,7 +1006,7 @@
 				<Branch>
 					<OrCondition>
 						<EqualCondition DataElementId="echogenicity_3" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_3" ComparisonValue="Echogenicity"/>
+						<EqualCondition DataElementId="echogenicity_3" ComparisonValue="Nonevaluable"/>
 					</OrCondition>
 					<TextExpression>1</TextExpression>
 				</Branch>
@@ -1015,7 +1015,7 @@
 					<TextExpression>2</TextExpression>
 				</Branch>
 				<Branch>
-					<EqualCondition DataElementId="echogenicity_3" ComparisonValue="Very"/>
+					<EqualCondition DataElementId="echogenicity_3" ComparisonValue="Very_Hypoechoic"/>
 					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>
@@ -1285,7 +1285,7 @@
 					<Label>Hyperechoic or isoechoic (1 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Echogenicity</Value>
+					<Value>Nonevaluable</Value>
 					<Label>Echogenicity cannot be determined (1 points)</Label>
 				</Choice>
 				<Choice>
@@ -1293,7 +1293,7 @@
 					<Label>Hypoechoic (2 points)</Label>
 				</Choice>
 				<Choice>
-					<Value>Very</Value>
+					<Value>Very_Hypoechoic</Value>
 					<Label>Very hypoechoic (3 points)</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -1387,7 +1387,7 @@
 				<Branch>
 					<OrCondition>
 						<EqualCondition DataElementId="echogenicity_4" ComparisonValue="Hyperechoic"/>
-						<EqualCondition DataElementId="echogenicity_4" ComparisonValue="Echogenicity"/>
+						<EqualCondition DataElementId="echogenicity_4" ComparisonValue="Nonevaluable"/>
 					</OrCondition>
 					<TextExpression>1</TextExpression>
 				</Branch>
@@ -1396,7 +1396,7 @@
 					<TextExpression>2</TextExpression>
 				</Branch>
 				<Branch>
-					<EqualCondition DataElementId="echogenicity_4" ComparisonValue="Very"/>
+					<EqualCondition DataElementId="echogenicity_4" ComparisonValue="Very_Hypoechoic"/>
 					<TextExpression>3</TextExpression>
 				</Branch>
 			</DecisionPoint>

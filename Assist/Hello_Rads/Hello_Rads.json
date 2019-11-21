@@ -1,2105 +1,1497 @@
 {
-  'id': 'Unique Id of Test case document',
-  'description': 'Unique Id of Test case document',
-  'moduleId': 'ACR Hello Assist',
-  'moduleName': 'ACR Hello Assist',
-  'schemaVersion': '1.0',
-  'moduleVersion': '1.0',
-  'testCases': [
+  "module_name": "Hello RADS",
+  "module_version": "1.5",
+  "scenarios": [
     {
-      'testCaseId': 'HA-1',
-	  'endpointId': 'LRtreatedEp',
-	  'endpointlabel': 'LR-Treated',
-      'inputs': [
-	  
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'treatedObservation'
+      "scenario_id": "Hello_Assist_1_0_1",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "treatedObservation"
         }
-		
       ]
-
     },
     {
-      'testCaseId': 'HA-2',
-      'endpointId': 'LR1Ep',
-	  'endpointlabel': 'LR-1',
-      'inputs': [
-	   
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'definitelyBenign'
+      "scenario_id": "Hello_Assist_1_0_2",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "definitelyBenign"
         }
       ]
-
     },
-	{
-      'testCaseId': 'HA-3',
-      'endpointId': 'LR2Ep',
-	  'endpointlabel': 'LR-2',
-      'inputs': [
-	   
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'probablyBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_3",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "probablyBenign"
         }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-4',
-	  'endpointId': 'LRmEp',
-	  'endpointlabel': 'LR-M',
-      'inputs': [
-	   
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notspecificforLR'
+    {
+      "scenario_id": "Hello_Assist_1_0_4",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notspecificforLR"
         }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-5',
-	  'endpointId': 'LR5vEp',
-	  'endpointlabel': 'LR-5V',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'tumorInVein'
+    {
+      "scenario_id": "Hello_Assist_1_0_5",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "tumorInVein"
         }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-6',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_6",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '11'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-7',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_7",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-8',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_8",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-	
-	{
-      'testCaseId': 'HA-9',
-      'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_9",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-		
-	{
-      'testCaseId': 'HA-10',
-      'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_10",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-		{
-      'testCaseId': 'HA-11',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_11",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-12',
-      'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_12",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-13',
-      'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_13",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 1.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-		{
-      'testCaseId': 'HA-14',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_14",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-15',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_15",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-
-{
-      'testCaseId': 'HA-16',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_16",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
-    },	
-	
-	{
-      'testCaseId': 'HA-17',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
-      ]
-
     },
-	
-	{
-      'testCaseId': 'HA-18',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_17",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-19',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_18",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-
-	{
-      'testCaseId': 'HA-20',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_19",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '25'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hypoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-21',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_20",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-22',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_21",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 2.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 19.0
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-23',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_22",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-	
-	{
-      'testCaseId': 'HA-24',
-      'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_23",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-		
-	{
-      'testCaseId': 'HA-25',
-       'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_24",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-26',
-       'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_25",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-27',
-       'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_26",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-		{
-      'testCaseId': 'HA-28',
-       'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_27",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-		{
-      'testCaseId': 'HA-29',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_28",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-30',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_29",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hyperEnhancing"
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-
-		{
-      'testCaseId': 'HA-31',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_30",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'isoEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-		{
-      'testCaseId': 'HA-32',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_31",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "isoEnhancing"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-33',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_32",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-34',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_33",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "isoEnhancing"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-35',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_34",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-36',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_35",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	
-		{
-      'testCaseId': 'HA-37',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_36",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-		{
-      'testCaseId': 'HA-38',
-      'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_37",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "isoEnhancing"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-39',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_38",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-40',
-	  'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_39",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '9'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-41',
-	  'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_40",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 3.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-42',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_41",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-43',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_42",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "isoEnhancing"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-44',
-	  'endpointId': 'LR4_5',
-	  'endpointlabel': 'LR-4/LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_43",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	
-	{
-      'testCaseId': 'HA-45',
-	  'endpointId': 'LR4_5',
-	  'endpointlabel': 'LR-4/LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_44",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "isoEnhancing"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-46',
-	  'endpointId': 'LR4_5',
-	  'endpointlabel': 'LR-4/LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_45",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '10'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-47',
-	  'endpointId': 'LR3Ep',
-	  'endpointlabel': 'LR-3',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_46",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-48',
-	  'endpointId': 'LR4_5',
-	  'endpointlabel': 'LR-4/LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_47",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "no"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-49',
-	  'endpointId': 'LR4_5',
-	  'endpointlabel': 'LR-4/LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_48",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "isoEnhancing"
+        }
       ]
-
     },
-		{
-      'testCaseId': 'HA-50',
-	  'endpointId': 'LR4_5',
-	  'endpointlabel': 'LR-4/LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_49",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-51',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_50",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "no"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
     },
-	{
-      'testCaseId': 'HA-52',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
+    {
+      "scenario_id": "Hello_Assist_1_0_51",
+      "inputs": [
+        {
+          "dataelement_id": "ObservationCharacter",
+          "dataelement_value": "notDefProbBenign"
         },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
+        {
+          "dataelement_id": "diameter",
+          "dataelement_value": 4.0,
+          "range": {
+            "Minimum": -3.40282347E+38,
+            "Maximum": 3.40282347E+38
+          }
         },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
+        {
+          "dataelement_id": "ArterialEnhancement",
+          "dataelement_value": "hypoEnhancing"
         },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
+        {
+          "dataelement_id": "washout",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
+        {
+          "dataelement_id": "capsule",
+          "dataelement_value": "yes"
         },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
+        {
+          "dataelement_id": "thresholdgrowth",
+          "dataelement_value": "yes"
+        }
       ]
-
-    },
-	{
-      'testCaseId': 'HA-53',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
-      ]
-
-    },
-	{
-      'testCaseId': 'HA-54',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '19'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
-      ]
-
-    },
-	{
-      'testCaseId': 'HA-55',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
-      ]
-
-    },	
-		{
-      'testCaseId': 'HA-56',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
-      ]
-
-    },
-		{
-      'testCaseId': 'HA-57',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
-      ]
-
-    },
-		{
-      'testCaseId': 'HA-58',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
-      ]
-
-    },
-			{
-      'testCaseId': 'HA-59',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'yes'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
-      ]
-
-    },
-			{
-      'testCaseId': 'HA-60',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'yes'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
-      ]
-
-    },
-		{
-      'testCaseId': 'HA-61',
-	  'endpointId': 'LR5Ep',
-	  'endpointlabel': 'LR-5',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'yes'
-        },
-      ]
-
-    },
-			{
-      'testCaseId': 'HA-62',
-	  'endpointId': 'LR4Ep',
-	  'endpointlabel': 'LR-4',
-      'inputs': [
-
-	    {   
-          'dataElementId': 'ObservationCharacter',
-          'dataElementValue': 'notDefProbBenign'
-        },
-		{
-          'dataElementId': 'diameter',
-          'dataElementValue': '20'
-        },
-		{
-          'dataElementId': 'washout',
-          'dataElementValue': 'no'
-        },
-		{
-          'dataElementId': 'capsule',
-          'dataElementValue': 'no'
-        },
-
-		{
-          'dataElementId': 'ArterialEnhancement',
-          'dataElementValue': 'hyperEnhancing'
-        },
-
-		{
-          'dataElementId': 'thresholdgrowth',
-          'dataElementValue': 'no'
-        },
-      ]
-
     }
-	
-	
-	
   ]
 }

@@ -1,2909 +1,1840 @@
 {
-  "id": "Unique Id of Test case document",
-  "description": "Unique Id of Test case document",
-  "moduleId": "ACR TI-RADS",
-  "moduleName": "ACR TI-RADS",
-  "schemaVersion": "2.0",
-  "moduleVersion": "1.0",
-  "excludeForFiltering" :["nodulequestion_1", "nodulequestion_2","nodulequestion_3"],
-  "testCases": [
-    {
-      "testCaseId": "TI-RADS_1",
-      "endpointId": "ReporttextTR1_1",
-      "endpointlabel": "TR1 Benign no FNA",
-      "inputs": [
-	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
+	"module_name": "ACR TI-RADS",
+	"module_version": "1.0",
+	"scenarios": [
 		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-		{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 15.0
-          }
-        },
-	  
-        {
-          "dataElementId": "composition_1",
-          "dataElementValue": "cystic",
-		  "dataElementDisplayValue":"Cystic or almost completely cystic"
-        },
-
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        },
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_2",
-      "endpointId": "ReporttextTR1_1",
-      "endpointlabel": "TR1 Benign no FNA",
-      "inputs": [
-	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-		{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 15.0
-          }
-        },
-	  
-        {
-          "dataElementId": "composition_1",
-          "dataElementValue": "spongiform",
-		  "dataElementDisplayValue":"Spongiform"
-        },
-      
-
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-    {
-      "testCaseId": "TI-RADS_3",
-      "endpointId": "ReporttextTR2_1",
-      "endpointlabel": "TR2 Not Suspicious no FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
+			"scenario_id": "TI-RADS_1",
+			"inputs": [
 				{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 15.0
-          }
-        },
-        {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-       {
-      "testCaseId": "TI-RADS_4",
-      "endpointId": "ReporttextTR2_1",
-      "endpointlabel": "TR2 Not Suspicious no FNA",
-      "inputs": [
-         {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-			{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 15.0
-          }
-        },
-        {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-	
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	    
-	
-	    {
-      "testCaseId": "TI-RADS_5",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 No FNA or Follow-up",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.4",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 1.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		    {
-      "testCaseId": "TI-RADS_6",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 No FNA or Follow-up",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.4",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 1.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-			    {
-      "testCaseId": "TI-RADS_7",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 Mildly Suspicious",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.4",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 1.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_8",
-      "endpointId": "ReporttextTR8_1",
-      "endpointlabel": "TR3 Mildly Suspicious",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.4",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 1.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Lobulated or irregular margin"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_9",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Lobulated or irregular margin"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_10",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-			    {
-      "testCaseId": "TI-RADS_11",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_12",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_13",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Lobulated or irregular margin"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_14",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	 {
-      "testCaseId": "TI-RADS_15",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_16",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-		  "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	
-	    {
-      "testCaseId": "TI-RADS_17",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-		  "dataElementDisplayValue":"Solid or almost completely solid "
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_18",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-		  "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_19",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	 {
-      "testCaseId": "TI-RADS_20",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.5
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_21",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.5
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	   	    {
-      "testCaseId": "TI-RADS_17",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.4
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-		  "dataElementDisplayValue":"Solid or almost completely solid "
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_18",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-		  "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_19",
-      "endpointId": "ReporttextTR7_1",
-      "endpointlabel": "TR3 Mildly Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "2.5",
-		  "range": {
-            "minimum": 2.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	 {
-      "testCaseId": "TI-RADS_20",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.5
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	    {
-      "testCaseId": "TI-RADS_21",
-      "endpointId": "ReporttextTR6_1",
-      "endpointlabel": "TR3 Mildly Suspicious follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 2.5
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "0",
-		  "dataElementDisplayValue":"Anechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-	
-		
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_22",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-      
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_23",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_24",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_25",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
 				{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	
-	{
-      "testCaseId": "TI-RADS_26",
-      "endpointId": "ReporttextTR9_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
 				{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "1",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_27",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
 				{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "cystic",
+					"dataelement_display_value": "Cystic or almost completely cystic"
+				}
+			]
+		},
 		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
+			"scenario_id": "TI-RADS_2",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "spongiform",
+					"dataelement_display_value": "Spongiform"
+				}
+			]
+		},
 		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
+			"scenario_id": "TI-RADS_3",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				}
+			]
+		},
 		{
-      "testCaseId": "TI-RADS_28",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
+			"scenario_id": "TI-RADS_4",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
 		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
+			"scenario_id": "TI-RADS_5",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.4",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				}
+			]
+		},
 		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-			{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.5",
-		  "range": {
-            "minimum": 1.5,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "nonevaluable",
-	      "dataElementDisplayValue":"Composition cannot be determined"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
+			"scenario_id": "TI-RADS_6",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.4",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
 		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
+			"scenario_id": "TI-RADS_7",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.4",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral"
+					]
+				}
+			]
+		},
 		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
+			"scenario_id": "TI-RADS_8",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.4",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Lobulated"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_9",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 2.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Lobulated"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_10",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 2.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_11",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 2.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
 		
-      ]
-    },
-	
-	
-		{
-      "testCaseId": "TI-RADS_29",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-       
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_30",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_31",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_32",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	
-	{
-      "testCaseId": "TI-RADS_33",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_34",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_35",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "nonevaluable",
-	      "dataElementDisplayValue":"Composition cannot be determined"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_36",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_37",
-      "endpointId": "ReporttextTR10_1",
-      "endpointlabel": "TR4 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 1.4
-          }
-		  },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_38",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2", "3"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-      
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_39",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-        {
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2", "3"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_40",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-        {
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": [ "2", "3"],
-		  "dataElementDisplayValue":"Taller-than-wide"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_41",
-      "endpointId": "ReporttextTR12_1",
-      "endpointlabel": "TR5 Moderately Suspicious FNA",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-        {
-          "dataElementId": "diameter_1",
-          "dataElementValue": "1.0",
-		  "range": {
-            "minimum": 1.0,
-            "maximum": 15.0
-          }
-        },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": [ "3", "3"]
-
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	
-
-	
-	
-		{
-      "testCaseId": "TI-RADS_42",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.5",
-		  "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1","2"]
-
-        },
-       
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_43",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.5",
-		  "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["2","3"]
-
-        },
-       
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_44",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.5",
-		  "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "mixed_cystic_solid",
-	      "dataElementDisplayValue":"Mixed cystic and solid"
-        },
-        {
-          "dataElementId": "echogenicity_1",
-          "dataElementValue": "2",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoic"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["3","3"]
-
-        },
-       
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	{
-      "testCaseId": "TI-RADS_45",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.5",
-		  "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "3",
-		  "dataElementDisplayValue":"Hyperechoic or isoechoicd"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-	
-	{
-      "testCaseId": "TI-RADS_46",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.5",
-		  "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "1",
-		  "dataElementDisplayValue":"Echogenicity cannot be determined"
-        },
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1","2","3"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_47",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.5",
-		  "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Solid or almost completely solid"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "4",
-		  "dataElementDisplayValue":"Hypoechoic"
-        },
-
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1", "2"],
-		  "dataElementDisplayValue":"Peripheral (rim) calcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-      ]
-    },
-		{
-      "testCaseId": "TI-RADS_48",
-      "endpointId": "ReporttextTR13_1",
-      "endpointlabel": "TR5 Moderately Suspicious Follow",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.5",
-		  "range": {
-            "minimum": 0.5,
-            "maximum": 0.9
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "nonevaluable",
-	      "dataElementDisplayValue":"Composition cannot be determined"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "4",
-		  "dataElementDisplayValue":"Hypoechoic"
-        },
-
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-    {
-      "testCaseId": "TI-RADS_49",
-      "endpointId": "ReporttextTR14_1",
-      "endpointlabel": "TR5 Moderately Suspicious",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-					{
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.4",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 0.4
-          }
-		  },
-          {
-          "dataElementId": "composition_1",
-          "dataElementValue": "solid",
-	      "dataElementDisplayValue":"Composition cannot be determined"
-        },
-        {
-          "dataElementId": "echogenicity_solid_1",
-          "dataElementValue": "4",
-		  "dataElementDisplayValue":"Hypoechoic"
-        },
-
-		{
-          "dataElementId": "other_1",
-          "dataElementValue": ["1"],
-		  "dataElementDisplayValue":"Macrocalcifications"
-        },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    },
-    {
-      "testCaseId": "TI-RADS_50",
-      "endpointId": "ReporttextTR14_1",
-      "endpointlabel": "TR5 Moderately Suspicious",
-      "inputs": [
-	  	    {
-          "dataElementId": "nodulenumber_1",
-          "dataElementValue": "1"
-        },
-		{
-          "dataElementId": "lobe_1",
-          "dataElementValue": "Rightlobe"
-        },
-		{
-          "dataElementId": "lobe_location_1",
-          "dataElementValue": "Upper"
-        },
-        {
-          "dataElementId": "diameter_1",
-          "dataElementValue": "0.4",
-		  "range": {
-            "minimum": 0.1,
-            "maximum": 0.4
-          }
-		  },
-      {
-        "dataElementId": "composition_1",
-        "dataElementValue": "mixed_cystic_solid",
-      "dataElementDisplayValue":"Mixed cystic and solid"
-      },
-      {
-        "dataElementId": "echogenicity_1",
-        "dataElementValue": "2",
-    "dataElementDisplayValue":"Hyperechoic or isoechoic"
-      },
-  {
-        "dataElementId": "other_1",
-        "dataElementValue": ["2","3"]
-      },
-        {
-          "dataElementId": "nodulequestion_2",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 2 not present"
-        } ,
-		{
-          "dataElementId": "nodulequestion_3",
-          "dataElementValue": "no",
-		  "dataElementDisplayValue":"Nodule 3 not present"
-        }
-		
-      ]
-    }
-	
-  ]
+		{
+			"scenario_id": "TI-RADS_13",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "2.5",
+					"range": {
+						"minimum": 2.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Lobulated"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_14",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "2.5",
+					"range": {
+						"minimum": 2.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_15",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "2.5",
+					"range": {
+						"minimum": 2.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_17",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 2.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid "
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_18",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "2.5",
+					"range": {
+						"minimum": 2.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_19",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "2.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_20",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 2.5
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_21",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 2.5
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Anechoic",
+					"dataelement_display_value": "Anechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_22",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_23",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_25",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_26",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_27",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_28",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.5",
+					"range": {
+						"minimum": 1.5,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "nonevaluable",
+					"dataelement_display_value": "Composition cannot be determined"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_29",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_30",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_31",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_32",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_33",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_34",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_35",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "nonevaluable",
+					"dataelement_display_value": "Composition cannot be determined"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_36",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_37",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 1.4
+					}
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_38",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral",
+						"Definite"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_40",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral",
+						"Punctate"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_41",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "1.0",
+					"range": {
+						"minimum": 1.0,
+						"maximum": 15.0
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Punctate",
+						"Taller"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_42",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.5",
+					"range": {
+						"minimum": 0.5,
+						"maximum": 0.9
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_43",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.5",
+					"range": {
+						"minimum": 0.5,
+						"maximum": 0.9
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral",
+						"Punctate"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_44",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.5",
+					"range": {
+						"minimum": 0.5,
+						"maximum": 0.9
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Punctate",
+						"Taller"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_45",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.5",
+					"range": {
+						"minimum": 0.5,
+						"maximum": 0.9
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hypoechoic",
+					"dataelement_display_value": "Hypoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_46",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.5",
+					"range": {
+						"minimum": 0.5,
+						"maximum": 0.9
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Nonevaluable",
+					"dataelement_display_value": "Echogenicity cannot be determined"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral",
+						"Punctate"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_47",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.5",
+					"range": {
+						"minimum": 0.5,
+						"maximum": 0.9
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Solid or almost completely solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Very_Hypoechoic",
+					"dataelement_display_value": "Very hypoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications",
+						"Peripheral"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_48",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.5",
+					"range": {
+						"minimum": 0.5,
+						"maximum": 0.9
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "nonevaluable",
+					"dataelement_display_value": "Composition cannot be determined"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Very_Hypoechoic",
+					"dataelement_display_value": "Very hypoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_49",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.4",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 0.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "solid",
+					"dataelement_display_value": "Composition cannot be determined"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Very_Hypoechoic",
+					"dataelement_display_value": "Very hypoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Macrocalcifications"
+					]
+				}
+			]
+		},
+		{
+			"scenario_id": "TI-RADS_50",
+			"inputs": [
+				{
+					"dataelement_id": "nodulenumber_1",
+					"dataelement_value": "1"
+				},
+				{
+					"dataelement_id": "lobe_1",
+					"dataelement_value": "Rightlobe"
+				},
+				{
+					"dataelement_id": "lobe_location_1",
+					"dataelement_value": "Upper"
+				},
+				{
+					"dataelement_id": "diameter_1",
+					"dataelement_value": "0.4",
+					"range": {
+						"minimum": 0.1,
+						"maximum": 0.4
+					}
+				},
+				{
+					"dataelement_id": "composition_1",
+					"dataelement_value": "mixed_cystic_solid",
+					"dataelement_display_value": "Mixed cystic and solid"
+				},
+				{
+					"dataelement_id": "echogenicity_1",
+					"dataelement_value": "Hyperechoic",
+					"dataelement_display_value": "Hyperechoic or isoechoic"
+				},
+				{
+					"dataelement_id": "other_1",
+					"dataelement_value": [
+						"Peripheral",
+						"Punctate"
+					]
+				}
+			]
+		}
+	]
 }
