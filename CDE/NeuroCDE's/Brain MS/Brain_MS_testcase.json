@@ -1,47 +1,44 @@
 {
-  "id": "Unique Id of Test case document",
-  "description": "Unique Id of Test case document",
-  "moduleId": "Brain MS",
-  "moduleName": "Brain MS",
-  "schemaVersion": "1.0",
-  "moduleVersion": "1.0",
-  "testCases": [
+  
+  "module_name": "Brain MS",
+  "module_version": "1.0",
+   "scenarios": [
     {
-      "testCaseId": "BRMS-1",
+      "scenario_id": "BRMS-1",
       "inputs": [
 	  
 	    {   
-          "dataElementId": "supratentoriallesionnumber",
-          "dataElementValue": "10"
+          "dataelement_id": "supratentoriallesionnumber",
+          "dataelement_value": "10"
         },
 
 		{   
-          "dataElementId": "supratentoriallesionlocations",
-          "dataElementValue": ["frontal", "parietal", "temporal"]
+          "dataelement_id": "supratentoriallesionlocations",
+          "dataelement_value": ["frontal", "parietal", "temporal"]
         },
         {   
-          "dataElementId": "lesionlocationsubtype",
-          "dataElementValue": ["juxtacortical", "periventricular"]
+          "dataelement_id": "lesionlocationsubtype",
+          "dataelement_value": ["juxtacortical", "periventricular"]
         },
 		{   
-          "dataElementId": "infratentoriallesionnumber",
-          "dataElementValue": "4"
+          "dataelement_id": "infratentoriallesionnumber",
+          "dataelement_value": "4"
         },
 		{   
-          "dataElementId": "infratentoriallocations",
-          "dataElementValue": ["leftpons", "leftbrachiumpontis", "rightcerebellum"]
+          "dataelement_id": "infratentoriallocations",
+          "dataelement_value": ["leftpons", "leftbrachiumpontis", "rightcerebellum"]
         },
 		{   
-          "dataElementId": "cervico-medullary",
-          "dataElementValue": "yes"
+          "dataelement_id": "cervico-medullary",
+          "dataelement_value": "yes"
         },
 		{   
-          "dataElementId": "masseffect",
-          "dataElementValue": "no"
+          "dataelement_id": "masseffect",
+          "dataelement_value": "no"
         },
 		{   
-          "dataElementId": "BlackHolesT1hypointense",
-          "dataElementValue": "yes"
+          "dataelement_id": "BlackHolesT1hypointense",
+          "dataelement_value": "yes"
         }
 		
 	  ]
