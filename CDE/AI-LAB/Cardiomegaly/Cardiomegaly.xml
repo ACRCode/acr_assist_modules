@@ -1,124 +1,148 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>Cardiomegaly</Label>
-		<ID>cardiomegaly</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<Info>
-			<Description>This module describes the Common Data elements and Macros for cardiomegaly</Description>
-			
-			<References>
-				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
-			</References>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>keydiagram.jpg</Location>
-					<Label>cardiomegaly key image</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>ACR Assist</Name>
-				<Email>acr-assist@acr.org</Email>
-				<Institution>American College of Radiology</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>C</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
-	</Metadata>
-
-	
-	<DataElements>
-	
-	<GlobalValue Id="conditionConst">10</GlobalValue>
-	
-	  	<DateTimeDataElement Id="dateofexam" DisplaySequence="1" IsRequired="true" Editable="true" Hasprefilled="false" Output="false">
-    		<Label>Date of Exam</Label>   		
-    		<VoiceCommand>Consultation Date</VoiceCommand>
-    	</DateTimeDataElement>
-	
-	   <NumericDataElement Id="cardiothoracicratio" IsRequired="true" DisplaySequence="2">
-			<Label>Cardiothoracic ratio</Label>
-		</NumericDataElement>
-	
-		
-		<ChoiceDataElement Id="cardiodetection" IsRequired="true" DisplaySequence="3">
-			<Label>Cardiomegaly detection</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>absent</Value>
-					<Label>0 - Cardiomegaly absent</Label>	
-				</Choice>
-				<Choice>
-					<Value>present</Value>
-					<Label>1 - Cardiomegaly present</Label>
-				</Choice>
-                <Choice>
-					<Value>indeterminate</Value>
-					<Label>2 - Indeterminate</Label>
-				</Choice>				
-			</ChoiceInfo>			
-		</ChoiceDataElement>
-		
-		<NumericDataElement Id="carinaangle" IsRequired="true" DisplaySequence="4">
-			<Label>Carina Angle</Label>
-		</NumericDataElement>
-		
-	</DataElements>
-	
-	
-	
-	
-	<Rules>
-		<DecisionPoint Id="macrodp">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-
-	
-    <EndPoints>		
-
-	<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="PlainText"> Cardiomegaly evaluation results: </ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="cardiothoracicratio" />
-					<ReportText Type="PlainText"> Cardiothoracic ratio is : </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="cardiothoracicratio"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="cardiodetection" />
-					<ReportText Type="PlainText"> Cardiomegaly detection class is : </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="cardiodetection"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-
-				<Branch>
-				    <SectionIf DataElementId="carinaangle" />
-					<ReportText Type="PlainText"> Carina angle is : </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="carinaangle"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				
-            
-	    </ReportSection>
-		</ReportSections>
-		</EndPoint>	
-	</EndPoints>
+  <Metadata>
+    <Label>Cardiomegaly</Label>
+    <ID>cardiomegaly</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CodableConcept Name="codableConcept_cardiomegaly">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES27" />
+        <Display Value="RDES27" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES27" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for cardiomegaly</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>cardiomegaly key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <ApplicableSexes Value="Both" />
+  </Metadata>
+  <DataElements>
+    <GlobalValue Id="conditionConst">10</GlobalValue>
+    <DateTimeDataElement Id="dateofexam" IsRequired="true" DisplaySequence="1" Editable="true" Hasprefilled="false" Output="false">
+      <CodableConcept Name="codableConcept_RDES27_dateofexam">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE428" />
+          <Display Value="RDE428" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE428" />
+        </Coding>
+      </CodableConcept>
+      <Label>Date of Exam</Label>
+      <VoiceCommand>Consultation Date</VoiceCommand>
+    </DateTimeDataElement>
+    <NumericDataElement Id="cardiothoracicratio" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES27_cardiothoracicratio">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE429" />
+          <Display Value="RDE429" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE429" />
+        </Coding>
+      </CodableConcept>
+      <Label>Cardiothoracic ratio</Label>
+    </NumericDataElement>
+    <ChoiceDataElement Id="cardiodetection" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES27_cardiodetection">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE430" />
+          <Display Value="RDE430" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE430" />
+        </Coding>
+      </CodableConcept>
+      <Label>Cardiomegaly detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>0 - Cardiomegaly absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>1 - Cardiomegaly present</Label>
+        </Choice>
+        <Choice>
+          <Value>indeterminate</Value>
+          <Label>2 - Indeterminate</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <NumericDataElement Id="carinaangle" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES27_carinaangle">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE431" />
+          <Display Value="RDE431" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE431" />
+        </Coding>
+      </CodableConcept>
+      <Label>Carina Angle</Label>
+    </NumericDataElement>
+  </DataElements>
+  <Rules>
+    <DecisionPoint Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="macroEndpoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <EndPoint Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <ReportText Type="PlainText"> Cardiomegaly evaluation results: </ReportText>
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="cardiothoracicratio" />
+            <ReportText Type="PlainText"> Cardiothoracic ratio is : </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="cardiothoracicratio" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="cardiodetection" />
+            <ReportText Type="PlainText"> Cardiomegaly detection class is : </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="cardiodetection" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="carinaangle" />
+            <ReportText Type="PlainText"> Carina angle is : </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="carinaangle" />
+            <ReportText Type="Newline" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
 </ReportingModule>
-
-	

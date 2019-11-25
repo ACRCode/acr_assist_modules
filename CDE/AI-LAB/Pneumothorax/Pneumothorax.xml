@@ -1,297 +1,461 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Pneumothorax</Label>
-        <ID>Pneumothorax</ID>
-        <SchemaVersion>1.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <LastModifiedDate>2019-10-23</LastModifiedDate>
-        <CodableConcept />
-        <Info>
-            <Description>This module describes the Common Data elements and Macros for Pneumothorax</Description>
-            <References>
-                <Citation Url="http://radelement.org/"> CDE URL </Citation>
-            </References>
-            <Diagrams>
-                <Diagram DisplaySequence="1" IsKeyDiagram="true">
-                    <Location>keydiagram.jpg</Location>
-                    <Label>Pneumothorax key image</Label>
-                </Diagram>
-            </Diagrams>
-            <Contact>
-                <Name>ACR Assist</Name>
-                <Email>acr-assist@acr.org</Email>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <ReportCitationText>C</ReportCitationText>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Both" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-		<GlobalValue Id="conditionConst">10</GlobalValue>
-		<DateTimeDataElement Id="dateofexam" DisplaySequence="1" IsRequired="true" Editable="true" Hasprefilled="false" Output="false">
-    		<Label>Date of Exam</Label>   		
-    		<VoiceCommand>Consultation Date</VoiceCommand>
-    	</DateTimeDataElement>
-		
-        <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="2">
-            <Label>Age of the patient</Label>
-            <Minimum>0.00</Minimum>
-            <Maximum>90.00</Maximum>
-        </NumericDataElement>
-        <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="3">
-            <Label>Sex of the patient</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Female</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Male</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="chest_trauma" IsRequired="true" DisplaySequence="4">
-            <Label>Chest trauma</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Undetermined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="disease" IsRequired="true" DisplaySequence="5">
-            <Label>Presence of lung disease</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Undetermined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Pneumomediastinum" IsRequired="true" DisplaySequence="6">
-            <Label>Pneumomediastinum</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Undetermined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="lung_involvement" IsRequired="true" DisplaySequence="7">
-            <Label>Lung tissue involvement</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Complete collapse</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Partial collapse</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="tension" IsRequired="true" DisplaySequence="8">
-            <Label>Tension pneumothorax</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Undetermined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="skin_artifact" IsRequired="true" DisplaySequence="9">
-            <Label>Skin fold artifact</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Undetermined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="pneumothorax_detection" IsRequired="true" DisplaySequence="10">
-            <Label>Pneumothorax detection</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Undetermined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <NumericDataElement Id="separation" IsRequired="true" DisplaySequence="11">
-            <Label>Pleural separation in mm</Label>
-            <Minimum>0.00</Minimum>
-            <Maximum>40.00</Maximum>
-        </NumericDataElement>
-        <ChoiceDataElement Id="side" IsRequired="true" DisplaySequence="12">
-            <Label>Pneumothorax side</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Right</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Left</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Bilateral</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="size" IsRequired="true" DisplaySequence="13">
-            <Label>Pneumothorax size</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Small</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Medium</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Large</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="chest_tube" IsRequired="true" DisplaySequence="14">
-            <Label>Presence of chest tube</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>Absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>Present</Label>
-                </Choice>
-                <Choice>
-                    <Value>3</Value>
-                    <Label>Undetermined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="scanner_manufacturer" IsRequired="true" DisplaySequence="15">
-            <Label>Scanner manufacturer</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>A</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>B</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="scanner_model" IsRequired="true" DisplaySequence="16">
-            <Label>Scanner model</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>1</Value>
-                    <Label>A</Label>
-                </Choice>
-                <Choice>
-                    <Value>2</Value>
-                    <Label>B</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules>
-		<DecisionPoint Id="categoryFinding">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-			    <EndPointRef EndPointId="categoryEndPoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-    <EndPoints>
-        <EndPoint Id="categoryEndPoint">
-            <Label>Report</Label>
-            <ReportSections>
-                <ReportSection SectionId="findings">
-                    <Branch>
-                        <SectionIf DataElementId="pneumothorax_detection"/>
-						<ReportText Type="PlainText">Pneumothorax detection: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="pneumothorax_detection"></ReportText>
-                    </Branch>
-					
-					<Branch>
-						<SectionIf DataElementId="size"/>
-						<ReportText Type="Newline"></ReportText>
-						<ReportText Type="PlainText">Pneumothorax size: </ReportText>
-                        <ReportText Type="InsertDataElementValue" Value="size"></ReportText>	
-					</Branch>
-					
-					<!-- Add more findings here -->
-                </ReportSection>
-            </ReportSections>
-        </EndPoint>
-    </EndPoints>
+  <Metadata>
+    <Label>Pneumothorax</Label>
+    <ID>Pneumothorax</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <LastModifiedDate>2019-10-23</LastModifiedDate>
+    <CodableConcept Name="codableConcept_Pneumothorax">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES44" />
+        <Display Value="RDES44" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES44" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for Pneumothorax</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>Pneumothorax key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Both" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES44_Age">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE413" />
+          <Display Value="RDE413" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE413" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age of the patient</Label>
+      <Minimum>0.00</Minimum>
+      <Maximum>90.00</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="separation" IsRequired="true" DisplaySequence="11" Unit="mm">
+      <CodableConcept Name="Pleural separation">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE422" />
+          <Display Value="RDE422" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE422" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pleural separation</Label>
+      <Minimum>0</Minimum>
+      <Maximum>40</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES44_Sex">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE414" />
+          <Display Value="RDE414" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE414" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex of the patient</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Female</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Male</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="chest_trauma" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES44_chest_trauma">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE415" />
+          <Display Value="RDE415" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE415" />
+        </Coding>
+      </CodableConcept>
+      <Label>Chest trauma</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="disease" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES44_disease">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE416" />
+          <Display Value="RDE416" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE416" />
+        </Coding>
+      </CodableConcept>
+      <Label>Presence of lung disease</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Pneumomediastinum" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES44_Pneumomediastinum">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE417" />
+          <Display Value="RDE417" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE417" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pneumomediastinum</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="lung_involvement" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES44_lung_involvement">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE418" />
+          <Display Value="RDE418" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE418" />
+        </Coding>
+      </CodableConcept>
+      <Label>Lung tissue involvement</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Complete collapse</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Partial collapse</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="tension" IsRequired="true" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES44_tension">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE419" />
+          <Display Value="RDE419" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE419" />
+        </Coding>
+      </CodableConcept>
+      <Label>Tension pneumothorax</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="skin_artifact" IsRequired="true" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES44_skin_artifact">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE420" />
+          <Display Value="RDE420" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE420" />
+        </Coding>
+      </CodableConcept>
+      <Label>Skin fold artifact</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="pneumothorax_detection" IsRequired="true" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES44_pneumothorax_detection">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE421" />
+          <Display Value="RDE421" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE421" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pneumothorax detection</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="side" IsRequired="true" DisplaySequence="12">
+      <CodableConcept Name="codableConcept_RDES44_side">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE423" />
+          <Display Value="RDE423" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE423" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pneumothorax side</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Right</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Left</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Bilateral</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="size" IsRequired="true" DisplaySequence="13">
+      <CodableConcept Name="codableConcept_RDES44_size">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE424" />
+          <Display Value="RDE424" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE424" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pneumothorax size</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Small</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Medium</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Large</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="chest_tube" IsRequired="true" DisplaySequence="14">
+      <CodableConcept Name="codableConcept_RDES44_chest_tube">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE425" />
+          <Display Value="RDE425" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE425" />
+        </Coding>
+      </CodableConcept>
+      <Label>Presence of chest tube</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Absent</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Present</Label>
+        </Choice>
+        <Choice>
+          <Value>3</Value>
+          <Label>Undetermined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="scanner_manufacturer" IsRequired="true" DisplaySequence="15">
+      <CodableConcept Name="codableConcept_RDES44_scanner_manufacturer">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE426" />
+          <Display Value="RDE426" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE426" />
+        </Coding>
+      </CodableConcept>
+      <Label>Scanner manufacturer</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>A</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>B</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="scanner_model" IsRequired="true" DisplaySequence="16">
+      <CodableConcept Name="codableConcept_RDES44_scanner_model">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE427" />
+          <Display Value="RDE427" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE427" />
+        </Coding>
+      </CodableConcept>
+      <Label>Scanner model</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>A</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>B</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <DateTimeDataElement Id="dateofexam" IsRequired="true" DisplaySequence="1" Editable="true" Hasprefilled="false" Output="false">
+      <CodableConcept Name="codableConcept_RDES44_dateofexam">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE412" />
+          <Display Value="RDE412" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE412" />
+        </Coding>
+      </CodableConcept>
+      <Label>Date of Exam</Label>
+      <VoiceCommand>Consultation Date</VoiceCommand>
+    </DateTimeDataElement>
+  </DataElements>
+  <Rules>
+    <DecisionPoint Id="categoryFinding">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="categoryEndPoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <EndPoint Id="categoryEndPoint">
+      <Label>Report</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <SectionIf DataElementId="pneumothorax_detection" />
+            <ReportText Type="PlainText">Pneumothorax detection: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="pneumothorax_detection" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="size" />
+            <ReportText Type="Newline" />
+            <ReportText Type="PlainText">Pneumothorax size: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="size" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
 </ReportingModule>
