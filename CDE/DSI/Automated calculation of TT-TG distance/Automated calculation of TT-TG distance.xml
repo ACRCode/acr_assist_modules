@@ -1,59 +1,98 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Automated calculation of TT-TG distance</Label>
-        <ID>Automated_calculation_of_TT-TG_distance</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-11</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Automated_calculation_of_TT-TG_distance" />
-        <Info>
-            <Description> Automated calculation of TT-TG distance</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Jordan Meyer</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <NumericDataElement Id="TTTGDistance_0" IsRequired="true" DisplaySequence="1" Unit="mm">
-            <Label>TT-TG Distance</Label>
-            <Hint>Lateral offset of tibial tuberosity from center of trochlear groove of femur</Hint>
-        </NumericDataElement>
-        <IntegerDataElement Id="age_2" IsRequired="true" DisplaySequence="3" Unit="years">
-            <Label>age</Label>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="sexatbirth_1" DisplaySequence="2">
-            <Label>sex at birth</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>male</Value>
-                    <Label>male</Label>
-                </Choice>
-                <Choice>
-                    <Value>female</Value>
-                    <Label>female</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>Automated calculation of TT-TG distance</Label>
+    <ID>Automated_calculation_of_TT-TG_distance</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Automated_calculation_of_TT-TG_distance">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES87" />
+        <Display Value="RDES87" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES87" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description> Automated calculation of TT-TG distance</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="TTTGDistance_0" IsRequired="true" DisplaySequence="1" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES87_TTTGDistance_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE510" />
+          <Display Value="RDE510" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE510" />
+        </Coding>
+      </CodableConcept>
+      <Label>TT-TG Distance</Label>
+      <Hint>Lateral offset of tibial tuberosity from center of trochlear groove of femur</Hint>
+    </NumericDataElement>
+    <IntegerDataElement Id="age_2" IsRequired="true" DisplaySequence="3" Unit="years">
+      <CodableConcept Name="codableConcept_RDES87_age_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE511" />
+          <Display Value="RDE511" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE511" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="sexatbirth_1" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES87_sexatbirth_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE512" />
+          <Display Value="RDE512" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE512" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

@@ -1,81 +1,128 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>Hematocrit estimation for myocardial ECV</Label>
-		<ID>Hematocrit estimation for myocardial ECV</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<Info>
-			<Description>This module describes the Common Data elements and Macros for Hematocrit estimation for myocardial ECV</Description>
-			
-			<References>
-				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
-			</References>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>keydiagram.jpg</Location>
-					<Label>Hematocrit estimation for myocardial ECV key image</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>ACR Assist</Name>
-				<Email>acr-assist@acr.org</Email>
-				<Institution>American College of Radiology</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>C</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
-	</Metadata>
-
-
+  <Metadata>
+    <Label>Hematocrit estimation for myocardial ECV</Label>
+    <ID>Hematocrit estimation for myocardial ECV</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CodableConcept Name="codableConcept_Hematocrit estimation for myocardial ECV">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES125" />
+        <Display Value="RDES125" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES125" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for Hematocrit estimation for myocardial ECV</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>Hematocrit estimation for myocardial ECV key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <ApplicableSexes Value="Both" />
+  </Metadata>
   <DataElements>
-  
-   <GlobalValue Id="conditionConst">10</GlobalValue>
-  
-   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
-			<Label>Age of the patient</Label>
-			<Minimum>20.00</Minimum>
-			<Maximum>120.00</Maximum>
-		</NumericDataElement>
-		
-		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
-			<Label>Sex of the patient</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>1</Value>
-					<Label>Female</Label>	
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Male</Label>
-				</Choice>			
-			</ChoiceInfo>			
-		</ChoiceDataElement>
-		
-		<NumericDataElement Id="rate" IsRequired="true" DisplaySequence="3">
-			<Label>Heart rate of the patient per minute</Label>
-			<Minimum>0.00</Minimum>
-			<Maximum>190.00</Maximum>
-		</NumericDataElement>
-		
-		
-		<NumericDataElement Id="red" IsRequired="true" DisplaySequence="4">
-			<Label>Measure of the red blood cell in a patient's blood in %</Label>
-			<Minimum>0.00</Minimum>
-			<Maximum>1.00</Maximum>
-		</NumericDataElement>
-	
-	<ChoiceDataElement Id="pulse" IsRequired="true" DisplaySequence="5">
+    <GlobalValue Id="conditionConst">10</GlobalValue>
+    <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES125_Age">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE812" />
+          <Display Value="RDE812" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE812" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age of the patient</Label>
+      <Minimum>20.00</Minimum>
+      <Maximum>120.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES125_Sex">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE813" />
+          <Display Value="RDE813" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE813" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex of the patient</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Female</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Male</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <NumericDataElement Id="rate" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES125_rate">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE814" />
+          <Display Value="RDE814" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE814" />
+        </Coding>
+      </CodableConcept>
+      <Label>Heart rate of the patient per minute</Label>
+      <Minimum>0.00</Minimum>
+      <Maximum>190.00</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="red" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES125_red">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE815" />
+          <Display Value="RDE815" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE815" />
+        </Coding>
+      </CodableConcept>
+      <Label>Measure of the red blood cell in a patient's blood in %</Label>
+      <Minimum>0.00</Minimum>
+      <Maximum>1.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="pulse" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES125_pulse">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE816" />
+          <Display Value="RDE816" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE816" />
+        </Coding>
+      </CodableConcept>
       <Label>Pulse sequence type</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>spin echo sequences</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>inversion recovery sequences</Label>
         </Choice>
@@ -83,11 +130,11 @@
           <Value>2</Value>
           <Label>gradient echo sequences</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>3</Value>
           <Label>diffusion weighted sequences</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>4</Value>
           <Label>saturation recovery sequences</Label>
         </Choice>
@@ -95,83 +142,75 @@
           <Value>5</Value>
           <Label>echo-planar pulse sequences</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>6</Value>
           <Label>spiral pulse sequences</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-
-   </DataElements>
-   
+  </DataElements>
   <Rules>
-		<DecisionPoint Id="macrodp">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-
-	
-    <EndPoints>		
-	 <TemplatePartial Id ="ExamPartial">
-	 	<Branch>
-	 		<ReportText Type="PlainText">EXAM TYPE: Hematocrit estimation for myocardial ECV Evaluation</ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 	</Branch>
-	 </TemplatePartial>
-
-
-	<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Hematocrit estimation for myocardial ECV evaluation results:</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Age" />
-					<ReportText Type="PlainText"> Patient's age: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Age"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Sex" />
-					<ReportText Type="PlainText"> Patient's sex: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Sex"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="rate" />
-					<ReportText Type="PlainText"> Heart rate: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="rate"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="red" />
-					<ReportText Type="PlainText"> Red blood cells measured: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="red"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="pulse" />
-					<ReportText Type="PlainText"> Pulse sequence type: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="pulse"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				</ReportSection>
-		</ReportSections>
-		</EndPoint>	
-	</EndPoints>
-	</ReportingModule>
+    <DecisionPoint Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="macroEndpoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <TemplatePartial Id="ExamPartial">
+      <Branch>
+        <ReportText Type="PlainText">EXAM TYPE: Hematocrit estimation for myocardial ECV Evaluation</ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">COMPARISON: NONE </ReportText>
+        <ReportText Type="Newline" />
+      </Branch>
+    </TemplatePartial>
+    <EndPoint Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <ReportText Type="InsertPartialTemplate" Value="ExamPartial" />
+            <ReportText Type="Newline" />
+            <ReportText Type="PlainText">Hematocrit estimation for myocardial ECV evaluation results:</ReportText>
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Age" />
+            <ReportText Type="PlainText"> Patient's age: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Age" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Sex" />
+            <ReportText Type="PlainText"> Patient's sex: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Sex" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="rate" />
+            <ReportText Type="PlainText"> Heart rate: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="rate" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="red" />
+            <ReportText Type="PlainText"> Red blood cells measured: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="red" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="pulse" />
+            <ReportText Type="PlainText"> Pulse sequence type: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="pulse" />
+            <ReportText Type="Newline" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

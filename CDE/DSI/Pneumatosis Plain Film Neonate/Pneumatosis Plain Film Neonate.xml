@@ -1,131 +1,200 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Pneumatosis Plain Film Neonate</Label>
-        <ID>Pneumatosis_Plain_Film_Neonate</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-11</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Pneumatosis_Plain_Film_Neonate" />
-        <Info>
-            <Description>Pneumatosis Plain Film Neonate</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Jordan Meyer</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <IntegerDataElement Id="age_5" DisplaySequence="6" Unit="months">
-            <Label>age</Label>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="BowelGasPattern_0" IsRequired="true" DisplaySequence="1">
-            <Label>Bowel Gas Pattern </Label>
-            <Hint>Description of the pattern of air in loops of bowel</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>normal</Value>
-                    <Label>normal</Label>
-                </Choice>
-                <Choice>
-                    <Value>paucityofbowelgas</Value>
-                    <Label>paucity of bowel gas</Label>
-                </Choice>
-                <Choice>
-                    <Value>dilated/distendedair-filledloops</Value>
-                    <Label>dilated/distended air-filled loops</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="pneumatosisdetection_1" IsRequired="true" DisplaySequence="2">
-            <Label>pneumatosis detection</Label>
-            <Hint>locules of air within the wall of bowel</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Portalvenousgasdetection_2" IsRequired="true" DisplaySequence="3">
-            <Label>Portal venous gas detection</Label>
-            <Hint>Air within the portal vein and intrahepatic portal venous system</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Intraperitonealfreeairdetection_3" IsRequired="true" DisplaySequence="4">
-            <Label>Intraperitoneal free air detection</Label>
-            <Hint>air within the abdomen, outside of loops of bowel</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Positioning_4" DisplaySequence="5">
-            <Label>Positioning</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>APSupine</Value>
-                    <Label>AP Supine</Label>
-                </Choice>
-                <Choice>
-                    <Value>Cross-tablelateral</Value>
-                    <Label>Cross-table lateral</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>Pneumatosis Plain Film Neonate</Label>
+    <ID>Pneumatosis_Plain_Film_Neonate</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Pneumatosis_Plain_Film_Neonate">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES96" />
+        <Display Value="RDES96" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES96" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Pneumatosis Plain Film Neonate</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <IntegerDataElement Id="age_5" DisplaySequence="6" Unit="months">
+      <CodableConcept Name="codableConcept_RDES96_age_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE581" />
+          <Display Value="RDE581" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE581" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="BowelGasPattern_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES96_BowelGasPattern_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE582" />
+          <Display Value="RDE582" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE582" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bowel Gas Pattern </Label>
+      <Hint>Description of the pattern of air in loops of bowel</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>normal</Value>
+          <Label>normal</Label>
+        </Choice>
+        <Choice>
+          <Value>paucityofbowelgas</Value>
+          <Label>paucity of bowel gas</Label>
+        </Choice>
+        <Choice>
+          <Value>dilated/distendedair-filledloops</Value>
+          <Label>dilated/distended air-filled loops</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="pneumatosisdetection_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES96_pneumatosisdetection_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE583" />
+          <Display Value="RDE583" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE583" />
+        </Coding>
+      </CodableConcept>
+      <Label>pneumatosis detection</Label>
+      <Hint>locules of air within the wall of bowel</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Portalvenousgasdetection_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES96_Portalvenousgasdetection_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE584" />
+          <Display Value="RDE584" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE584" />
+        </Coding>
+      </CodableConcept>
+      <Label>Portal venous gas detection</Label>
+      <Hint>Air within the portal vein and intrahepatic portal venous system</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Intraperitonealfreeairdetection_3" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES96_Intraperitonealfreeairdetection_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE585" />
+          <Display Value="RDE585" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE585" />
+        </Coding>
+      </CodableConcept>
+      <Label>Intraperitoneal free air detection</Label>
+      <Hint>air within the abdomen, outside of loops of bowel</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Positioning_4" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES96_Positioning_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE586" />
+          <Display Value="RDE586" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE586" />
+        </Coding>
+      </CodableConcept>
+      <Label>Positioning</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>APSupine</Value>
+          <Label>AP Supine</Label>
+        </Choice>
+        <Choice>
+          <Value>Cross-tablelateral</Value>
+          <Label>Cross-table lateral</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

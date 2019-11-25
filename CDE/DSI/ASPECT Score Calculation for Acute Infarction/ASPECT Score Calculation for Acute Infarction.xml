@@ -1,94 +1,163 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>ASPECT Score Calculation for Acute Infarction</Label>
-        <ID>ASPECT_Score_Calculation_for_Acute_Infarction</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-12</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_ASPECT_Score_Calculation_for_Acute_Infarction" />
-        <Info>
-            <Description>ASPECT Score Calculation for Acute Infarction</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Jordan Meyer</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <NumericDataElement Id="ASPECTScoreLeftHemisphere_0" IsRequired="true" DisplaySequence="1">
-            <Label>ASPECT Score (Left Hemisphere)</Label>
-            <Hint>Loss of grey-white differentiation in left hemisphere</Hint>
-            <Minimum>0</Minimum>
-            <Maximum>10</Maximum>
-        </NumericDataElement>
-        <NumericDataElement Id="ASPECTScoreRightHemisphere_1" IsRequired="true" DisplaySequence="2">
-            <Label>ASPECT Score (Right Hemisphere)</Label>
-            <Hint>Loss of grey-white differentiation in right hemisphere</Hint>
-            <Minimum>0</Minimum>
-            <Maximum>10</Maximum>
-        </NumericDataElement>
-        <IntegerDataElement Id="age_3" IsRequired="true" DisplaySequence="4" Unit="years">
-            <Label>age</Label>
-            <Minimum>2</Minimum>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
-            <Label>Sex at birth</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>male</Value>
-                    <Label>male</Label>
-                </Choice>
-                <Choice>
-                    <Value>female</Value>
-                    <Label>female</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Acuteintracranialhemorrhage_4" DisplaySequence="5">
-            <Label>Acute intracranial hemorrhage</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <MultiChoiceDataElement Id="Laterality_5" DisplaySequence="6">
-            <Label>Laterality</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>left</Value>
-                    <Label>left</Label>
-                </Choice>
-                <Choice>
-                    <Value>right</Value>
-                    <Label>right</Label>
-                </Choice>
-            </ChoiceInfo>
-        </MultiChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>ASPECT Score Calculation for Acute Infarction</Label>
+    <ID>ASPECT_Score_Calculation_for_Acute_Infarction</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-12</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_ASPECT_Score_Calculation_for_Acute_Infarction">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES108" />
+        <Display Value="RDES108" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES108" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>ASPECT Score Calculation for Acute Infarction</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="ASPECTScoreLeftHemisphere_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES108_ASPECTScoreLeftHemisphere_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE692" />
+          <Display Value="RDE692" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE692" />
+        </Coding>
+      </CodableConcept>
+      <Label>ASPECT Score (Left Hemisphere)</Label>
+      <Hint>Loss of grey-white differentiation in left hemisphere</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="ASPECTScoreRightHemisphere_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES108_ASPECTScoreRightHemisphere_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE693" />
+          <Display Value="RDE693" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE693" />
+        </Coding>
+      </CodableConcept>
+      <Label>ASPECT Score (Right Hemisphere)</Label>
+      <Hint>Loss of grey-white differentiation in right hemisphere</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>10</Maximum>
+    </NumericDataElement>
+    <IntegerDataElement Id="age_3" IsRequired="true" DisplaySequence="4" Unit="years">
+      <CodableConcept Name="codableConcept_RDES108_age_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE694" />
+          <Display Value="RDE694" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE694" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+      <Minimum>2</Minimum>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES108_Sexatbirth_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE695" />
+          <Display Value="RDE695" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE695" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Acuteintracranialhemorrhage_4" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES108_Acuteintracranialhemorrhage_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE696" />
+          <Display Value="RDE696" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE696" />
+        </Coding>
+      </CodableConcept>
+      <Label>Acute intracranial hemorrhage</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <MultiChoiceDataElement Id="Laterality_5" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES108_Laterality_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE697" />
+          <Display Value="RDE697" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE697" />
+        </Coding>
+      </CodableConcept>
+      <Label>Laterality</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>left</Value>
+          <Label>left</Label>
+        </Choice>
+        <Choice>
+          <Value>right</Value>
+          <Label>right</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

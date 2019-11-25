@@ -1,196 +1,365 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Aging Brain</Label>
-        <ID>Aging_Brain</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-13</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Aging_Brain" />
-        <Info>
-            <Description>Aging Brain</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Natalia Farish</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <NumericDataElement Id="GlobalcorticalatrophyGCAscale_3" IsRequired="true" DisplaySequence="4">
-            <Label>Global cortical atrophy (GCA) scale</Label>
-            <Hint>system to assess cerebral atrophy, especially in the context of neurodegenerative diseases</Hint>
-            <Minimum>0</Minimum>
-            <Maximum>3</Maximum>
-        </NumericDataElement>
-        <NumericDataElement Id="PosteriorParietalAtrophyscoreKoedmanScore_5" IsRequired="true" DisplaySequence="6">
-            <Label>Posterior Parietal Atrophy score (Koedman Score)</Label>
-            <Minimum>0</Minimum>
-            <Maximum>3</Maximum>
-        </NumericDataElement>
-        <NumericDataElement Id="Totalbrainvolume_10" IsRequired="true" DisplaySequence="11" Unit="mm3">
-            <Label>Total brain volume</Label>
-        </NumericDataElement>
-        <NumericDataElement Id="Ventricularsystemvolume_11" IsRequired="true" DisplaySequence="12" Unit="mm3">
-            <Label>Ventricular system volume</Label>
-        </NumericDataElement>
-        <NumericDataElement Id="Hippocampivolume_12" IsRequired="true" DisplaySequence="13" Unit="mm3">
-            <Label>Hippocampi volume</Label>
-        </NumericDataElement>
-        <NumericDataElement Id="Frontallobesvolume_13" IsRequired="true" DisplaySequence="14" Unit="mm3">
-            <Label>Frontal lobes volume</Label>
-        </NumericDataElement>
-        <NumericDataElement Id="Temporallobesvolume_14" IsRequired="true" DisplaySequence="15" Unit="mm3">
-            <Label>Temporal lobes volume</Label>
-        </NumericDataElement>
-        <NumericDataElement Id="FzekasScalefromFLAIRsequence_15" IsRequired="true" DisplaySequence="16">
-            <Label>Fzekas Scale (from FLAIR sequence)</Label>
-            <Minimum>0</Minimum>
-            <Maximum>6</Maximum>
-        </NumericDataElement>
-        <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
-            <Label>Age</Label>
-            <Minimum>1</Minimum>
-            <Maximum>105</Maximum>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="Sexatbirth_1" IsRequired="true" DisplaySequence="2">
-            <Label>Sex at birth</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>M</Value>
-                    <Label>M</Label>
-                </Choice>
-                <Choice>
-                    <Value>F</Value>
-                    <Label>F</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Procedure_2" IsRequired="true" DisplaySequence="3">
-            <Label>Procedure</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>MRI:3DT1</Value>
-                    <Label>MRI: 3D T1</Label>
-                </Choice>
-                <Choice>
-                    <Value>MRI3DFLAIR</Value>
-                    <Label>MRI 3D FLAIR</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="MedialTemporalatrophyscore_4" IsRequired="true" DisplaySequence="5">
-            <Label>Medial Temporal atrophy score</Label>
-            <Hint>Visual score of the brain using coronal T1 weighted images through the hippocampus at the level of the anterior pons, based on width of the choroid fissure, width of the temporal horn of the lateral ventricle, and height of the hippocampus</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>noCSFisvisiblearoundthehippocampus</Value>
-                    <Label>no CSF is visible around the hippocampus</Label>
-                </Choice>
-                <Choice>
-                    <Value>choroidfissureisslightlywidened</Value>
-                    <Label>choroid fissure is slightly widened</Label>
-                </Choice>
-                <Choice>
-                    <Value>moderatewideningofthechoroidfissure,mildenlargementofthetemporalhornandmildlossofhippocampalheight</Value>
-                    <Label>moderate widening of the choroid fissure, mild enlargement of the temporal horn and mild loss of hippocampal height</Label>
-                </Choice>
-                <Choice>
-                    <Value>markedwideningofthechoroidfissure,moderateenlargementofthetemporalhorn,andmoderatelossofhippocampalheight</Value>
-                    <Label>marked widening of the choroid fissure, moderate enlargement of the temporal horn, and moderate loss of hippocampal height</Label>
-                </Choice>
-                <Choice>
-                    <Value>markedwideningofthechoroidfissure,markedenlargementofthetemporalhorn,andthehippocampusismarkedlyatrophiedandinternalstructureislost</Value>
-                    <Label> marked widening of the choroid fissure, marked enlargement of the temporal horn, and the hippocampus is markedly atrophied and internal structure is lost</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="PresenceofFrontotemporalatrophy_6" IsRequired="true" DisplaySequence="7">
-            <Label>Presence of Frontotemporal atrophy</Label>
-            <Hint>Shrinkage of the frontotemporal lobes</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Presenceofmidbrainatrophy_7" IsRequired="true" DisplaySequence="8">
-            <Label>Presence of midbrain atrophy</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="PresenceofCaudateheadatrophy_8" IsRequired="true" DisplaySequence="9">
-            <Label>Presence of Caudate head atrophy</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Presenceofcerebellaratrophy_9" IsRequired="true" DisplaySequence="10">
-            <Label>Presence of cerebellar atrophy</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>Aging Brain</Label>
+    <ID>Aging_Brain</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-13</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Aging_Brain">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES116" />
+        <Display Value="RDES116" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES116" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Aging Brain</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Natalia Farish</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="GlobalcorticalatrophyGCAscale_3" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES116_GlobalcorticalatrophyGCAscale_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE749" />
+          <Display Value="RDE749" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE749" />
+        </Coding>
+      </CodableConcept>
+      <Label>Global cortical atrophy (GCA) scale</Label>
+      <Hint>system to assess cerebral atrophy, especially in the context of neurodegenerative diseases</Hint>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="PosteriorParietalAtrophyscoreKoedmanScore_5" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES116_PosteriorParietalAtrophyscoreKoedmanScore_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE750" />
+          <Display Value="RDE750" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE750" />
+        </Coding>
+      </CodableConcept>
+      <Label>Posterior Parietal Atrophy score (Koedman Score)</Label>
+      <Minimum>0</Minimum>
+      <Maximum>3</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="Totalbrainvolume_10" IsRequired="true" DisplaySequence="11" Unit="mm3">
+      <CodableConcept Name="codableConcept_RDES116_Totalbrainvolume_10">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE751" />
+          <Display Value="RDE751" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE751" />
+        </Coding>
+      </CodableConcept>
+      <Label>Total brain volume</Label>
+    </NumericDataElement>
+    <NumericDataElement Id="Ventricularsystemvolume_11" IsRequired="true" DisplaySequence="12" Unit="mm3">
+      <CodableConcept Name="codableConcept_RDES116_Ventricularsystemvolume_11">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE752" />
+          <Display Value="RDE752" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE752" />
+        </Coding>
+      </CodableConcept>
+      <Label>Ventricular system volume</Label>
+    </NumericDataElement>
+    <NumericDataElement Id="Hippocampivolume_12" IsRequired="true" DisplaySequence="13" Unit="mm3">
+      <CodableConcept Name="codableConcept_RDES116_Hippocampivolume_12">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE753" />
+          <Display Value="RDE753" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE753" />
+        </Coding>
+      </CodableConcept>
+      <Label>Hippocampi volume</Label>
+    </NumericDataElement>
+    <NumericDataElement Id="Frontallobesvolume_13" IsRequired="true" DisplaySequence="14" Unit="mm3">
+      <CodableConcept Name="codableConcept_RDES116_Frontallobesvolume_13">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE754" />
+          <Display Value="RDE754" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE754" />
+        </Coding>
+      </CodableConcept>
+      <Label>Frontal lobes volume</Label>
+    </NumericDataElement>
+    <NumericDataElement Id="Temporallobesvolume_14" IsRequired="true" DisplaySequence="15" Unit="mm3">
+      <CodableConcept Name="codableConcept_RDES116_Temporallobesvolume_14">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE755" />
+          <Display Value="RDE755" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE755" />
+        </Coding>
+      </CodableConcept>
+      <Label>Temporal lobes volume</Label>
+    </NumericDataElement>
+    <NumericDataElement Id="FzekasScalefromFLAIRsequence_15" IsRequired="true" DisplaySequence="16">
+      <CodableConcept Name="codableConcept_RDES116_FzekasScalefromFLAIRsequence_15">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE756" />
+          <Display Value="RDE756" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE756" />
+        </Coding>
+      </CodableConcept>
+      <Label>Fzekas Scale (from FLAIR sequence)</Label>
+      <Minimum>0</Minimum>
+      <Maximum>6</Maximum>
+    </NumericDataElement>
+    <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES116_Age_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE757" />
+          <Display Value="RDE757" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE757" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age</Label>
+      <Minimum>1</Minimum>
+      <Maximum>105</Maximum>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Sexatbirth_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES116_Sexatbirth_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE758" />
+          <Display Value="RDE758" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE758" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>M</Value>
+          <Label>M</Label>
+        </Choice>
+        <Choice>
+          <Value>F</Value>
+          <Label>F</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Procedure_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES116_Procedure_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE759" />
+          <Display Value="RDE759" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE759" />
+        </Coding>
+      </CodableConcept>
+      <Label>Procedure</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>MRI:3DT1</Value>
+          <Label>MRI: 3D T1</Label>
+        </Choice>
+        <Choice>
+          <Value>MRI3DFLAIR</Value>
+          <Label>MRI 3D FLAIR</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="MedialTemporalatrophyscore_4" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES116_MedialTemporalatrophyscore_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE760" />
+          <Display Value="RDE760" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE760" />
+        </Coding>
+      </CodableConcept>
+      <Label>Medial Temporal atrophy score</Label>
+      <Hint>Visual score of the brain using coronal T1 weighted images through the hippocampus at the level of the anterior pons, based on width of the choroid fissure, width of the temporal horn of the lateral ventricle, and height of the hippocampus</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>noCSFisvisiblearoundthehippocampus</Value>
+          <Label>no CSF is visible around the hippocampus</Label>
+        </Choice>
+        <Choice>
+          <Value>choroidfissureisslightlywidened</Value>
+          <Label>choroid fissure is slightly widened</Label>
+        </Choice>
+        <Choice>
+          <Value>moderatewideningofthechoroidfissure,mildenlargementofthetemporalhornandmildlossofhippocampalheight</Value>
+          <Label>moderate widening of the choroid fissure, mild enlargement of the temporal horn and mild loss of hippocampal height</Label>
+        </Choice>
+        <Choice>
+          <Value>markedwideningofthechoroidfissure,moderateenlargementofthetemporalhorn,andmoderatelossofhippocampalheight</Value>
+          <Label>marked widening of the choroid fissure, moderate enlargement of the temporal horn, and moderate loss of hippocampal height</Label>
+        </Choice>
+        <Choice>
+          <Value>markedwideningofthechoroidfissure,markedenlargementofthetemporalhorn,andthehippocampusismarkedlyatrophiedandinternalstructureislost</Value>
+          <Label> marked widening of the choroid fissure, marked enlargement of the temporal horn, and the hippocampus is markedly atrophied and internal structure is lost</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="PresenceofFrontotemporalatrophy_6" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES116_PresenceofFrontotemporalatrophy_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE761" />
+          <Display Value="RDE761" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE761" />
+        </Coding>
+      </CodableConcept>
+      <Label>Presence of Frontotemporal atrophy</Label>
+      <Hint>Shrinkage of the frontotemporal lobes</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Presenceofmidbrainatrophy_7" IsRequired="true" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES116_Presenceofmidbrainatrophy_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE762" />
+          <Display Value="RDE762" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE762" />
+        </Coding>
+      </CodableConcept>
+      <Label>Presence of midbrain atrophy</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="PresenceofCaudateheadatrophy_8" IsRequired="true" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES116_PresenceofCaudateheadatrophy_8">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE763" />
+          <Display Value="RDE763" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE763" />
+        </Coding>
+      </CodableConcept>
+      <Label>Presence of Caudate head atrophy</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Presenceofcerebellaratrophy_9" IsRequired="true" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES116_Presenceofcerebellaratrophy_9">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE764" />
+          <Display Value="RDE764" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE764" />
+        </Coding>
+      </CodableConcept>
+      <Label>Presence of cerebellar atrophy</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

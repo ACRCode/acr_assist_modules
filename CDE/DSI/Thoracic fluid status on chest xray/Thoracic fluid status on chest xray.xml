@@ -1,309 +1,498 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Thoracic fluid status on chest xray</Label>
-        <ID>Thoracic_fluid_status_on_chest_xray</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-13</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Thoracic_fluid_status_on_chest_xray" />
-        <Info>
-            <Description>Thoracic fluid status on chest xray</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Natalia Farish</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
-            <Label>Age</Label>
-            <Minimum>18</Minimum>
-            <Maximum>100</Maximum>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="Sexatbirht_1" IsRequired="true" DisplaySequence="2">
-            <Label>Sex at birht</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>m</Value>
-                    <Label>m</Label>
-                </Choice>
-                <Choice>
-                    <Value>f</Value>
-                    <Label>f</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Views_2" IsRequired="true" DisplaySequence="3">
-            <Label>Views</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>ap</Value>
-                    <Label>ap</Label>
-                </Choice>
-                <Choice>
-                    <Value>pa</Value>
-                    <Label>pa</Label>
-                </Choice>
-                <Choice>
-                    <Value>lat</Value>
-                    <Label>lat</Label>
-                </Choice>
-                <Choice>
-                    <Value>inclination</Value>
-                    <Label>inclination</Label>
-                </Choice>
-                <Choice>
-                    <Value>upright</Value>
-                    <Label>upright</Label>
-                </Choice>
-                <Choice>
-                    <Value>semi-upright</Value>
-                    <Label>semi-upright</Label>
-                </Choice>
-                <Choice>
-                    <Value>supine</Value>
-                    <Label>supine</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Comorbidities_3" IsRequired="true" DisplaySequence="4">
-            <Label>Comorbidities</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>pleuralairorfluid</Value>
-                    <Label>pleural air or fluid</Label>
-                </Choice>
-                <Choice>
-                    <Value>lungdisease</Value>
-                    <Label>lung disease</Label>
-                </Choice>
-                <Choice>
-                    <Value>pneumomediastinum</Value>
-                    <Label>pneumomediastinum</Label>
-                </Choice>
-                <Choice>
-                    <Value>otherextrapleuralaircollections</Value>
-                    <Label>other extrapleural air collections</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="SKinfoldartifact_4" IsRequired="true" DisplaySequence="5">
-            <Label>SKin fold artifact</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="heartsize_5" IsRequired="true" DisplaySequence="6">
-            <Label>heart size</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>normal</Value>
-                    <Label>normal</Label>
-                </Choice>
-                <Choice>
-                    <Value>enlarged</Value>
-                    <Label>enlarged</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Noncardiogenicpumonaryedema_6" IsRequired="true" DisplaySequence="7">
-            <Label>Non-cardiogenic pumonary edema</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Pleuraleffusionsofotheretiology_7" IsRequired="true" DisplaySequence="8">
-            <Label>Pleural effusions of other etiology</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Congestiveheartfailure_8" IsRequired="true" DisplaySequence="9">
-            <Label>Congestive heart failure</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Airspaceedema_9" IsRequired="true" DisplaySequence="10">
-            <Label>Airspace edema</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Pleuraleffusions_10" IsRequired="true" DisplaySequence="11">
-            <Label>Pleural effusions</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Pulmonaryvascularcephalization_11" IsRequired="true" DisplaySequence="12">
-            <Label>Pulmonary vascular cephalization</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Perivascularcuffing_12" IsRequired="true" DisplaySequence="13">
-            <Label>Perivascular cuffing</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Peribronchialcuffing_13" IsRequired="true" DisplaySequence="14">
-            <Label>Peribronchial cuffing</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Interstitialedema_14" IsRequired="true" DisplaySequence="15">
-            <Label>Interstitial edema</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>present</Value>
-                    <Label>present</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Views_15" IsRequired="true" DisplaySequence="16">
-            <Label>Views</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>ap</Value>
-                    <Label>ap</Label>
-                </Choice>
-                <Choice>
-                    <Value>pa</Value>
-                    <Label>pa</Label>
-                </Choice>
-                <Choice>
-                    <Value>lat</Value>
-                    <Label>lat</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Fluidvolume_16" IsRequired="true" DisplaySequence="17">
-            <Label>Fluid volume</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>none</Value>
-                    <Label>none</Label>
-                </Choice>
-                <Choice>
-                    <Value>mild</Value>
-                    <Label>mild</Label>
-                </Choice>
-                <Choice>
-                    <Value>moderate</Value>
-                    <Label>moderate</Label>
-                </Choice>
-                <Choice>
-                    <Value>severe</Value>
-                    <Label>severe</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Changeinfluidvolume_17" IsRequired="true" DisplaySequence="18">
-            <Label>Change in fluid volume</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>decreaseinfluidvolumefromprior</Value>
-                    <Label>decrease in fluid volume from prior</Label>
-                </Choice>
-                <Choice>
-                    <Value>nochangeinfluidvolumefromprior</Value>
-                    <Label>no change in fluid volume from prior</Label>
-                </Choice>
-                <Choice>
-                    <Value>increaseinfluidvolumefromprior</Value>
-                    <Label>increase in fluid volume from prior</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>Thoracic fluid status on chest xray</Label>
+    <ID>Thoracic_fluid_status_on_chest_xray</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-13</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Thoracic_fluid_status_on_chest_xray">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES114" />
+        <Display Value="RDES114" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES114" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Thoracic fluid status on chest xray</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Natalia Farish</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES114_Age_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE723" />
+          <Display Value="RDE723" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE723" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age</Label>
+      <Minimum>18</Minimum>
+      <Maximum>100</Maximum>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Sexatbirht_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES114_Sexatbirht_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE724" />
+          <Display Value="RDE724" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE724" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birht</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>m</Value>
+          <Label>m</Label>
+        </Choice>
+        <Choice>
+          <Value>f</Value>
+          <Label>f</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Views_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES114_Views_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE725" />
+          <Display Value="RDE725" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE725" />
+        </Coding>
+      </CodableConcept>
+      <Label>Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>ap</Value>
+          <Label>ap</Label>
+        </Choice>
+        <Choice>
+          <Value>pa</Value>
+          <Label>pa</Label>
+        </Choice>
+        <Choice>
+          <Value>lat</Value>
+          <Label>lat</Label>
+        </Choice>
+        <Choice>
+          <Value>inclination</Value>
+          <Label>inclination</Label>
+        </Choice>
+        <Choice>
+          <Value>upright</Value>
+          <Label>upright</Label>
+        </Choice>
+        <Choice>
+          <Value>semi-upright</Value>
+          <Label>semi-upright</Label>
+        </Choice>
+        <Choice>
+          <Value>supine</Value>
+          <Label>supine</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Comorbidities_3" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES114_Comorbidities_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE726" />
+          <Display Value="RDE726" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE726" />
+        </Coding>
+      </CodableConcept>
+      <Label>Comorbidities</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>pleuralairorfluid</Value>
+          <Label>pleural air or fluid</Label>
+        </Choice>
+        <Choice>
+          <Value>lungdisease</Value>
+          <Label>lung disease</Label>
+        </Choice>
+        <Choice>
+          <Value>pneumomediastinum</Value>
+          <Label>pneumomediastinum</Label>
+        </Choice>
+        <Choice>
+          <Value>otherextrapleuralaircollections</Value>
+          <Label>other extrapleural air collections</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="SKinfoldartifact_4" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES114_SKinfoldartifact_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE727" />
+          <Display Value="RDE727" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE727" />
+        </Coding>
+      </CodableConcept>
+      <Label>SKin fold artifact</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="heartsize_5" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES114_heartsize_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE728" />
+          <Display Value="RDE728" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE728" />
+        </Coding>
+      </CodableConcept>
+      <Label>heart size</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>normal</Value>
+          <Label>normal</Label>
+        </Choice>
+        <Choice>
+          <Value>enlarged</Value>
+          <Label>enlarged</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Noncardiogenicpumonaryedema_6" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES114_Noncardiogenicpumonaryedema_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE729" />
+          <Display Value="RDE729" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE729" />
+        </Coding>
+      </CodableConcept>
+      <Label>Non-cardiogenic pumonary edema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Pleuraleffusionsofotheretiology_7" IsRequired="true" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES114_Pleuraleffusionsofotheretiology_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE730" />
+          <Display Value="RDE730" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE730" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pleural effusions of other etiology</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Congestiveheartfailure_8" IsRequired="true" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES114_Congestiveheartfailure_8">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE731" />
+          <Display Value="RDE731" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE731" />
+        </Coding>
+      </CodableConcept>
+      <Label>Congestive heart failure</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Airspaceedema_9" IsRequired="true" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES114_Airspaceedema_9">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE732" />
+          <Display Value="RDE732" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE732" />
+        </Coding>
+      </CodableConcept>
+      <Label>Airspace edema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Pleuraleffusions_10" IsRequired="true" DisplaySequence="11">
+      <CodableConcept Name="codableConcept_RDES114_Pleuraleffusions_10">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE733" />
+          <Display Value="RDE733" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE733" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pleural effusions</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Pulmonaryvascularcephalization_11" IsRequired="true" DisplaySequence="12">
+      <CodableConcept Name="codableConcept_RDES114_Pulmonaryvascularcephalization_11">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE734" />
+          <Display Value="RDE734" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE734" />
+        </Coding>
+      </CodableConcept>
+      <Label>Pulmonary vascular cephalization</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Perivascularcuffing_12" IsRequired="true" DisplaySequence="13">
+      <CodableConcept Name="codableConcept_RDES114_Perivascularcuffing_12">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE735" />
+          <Display Value="RDE735" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE735" />
+        </Coding>
+      </CodableConcept>
+      <Label>Perivascular cuffing</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Peribronchialcuffing_13" IsRequired="true" DisplaySequence="14">
+      <CodableConcept Name="codableConcept_RDES114_Peribronchialcuffing_13">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE736" />
+          <Display Value="RDE736" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE736" />
+        </Coding>
+      </CodableConcept>
+      <Label>Peribronchial cuffing</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Interstitialedema_14" IsRequired="true" DisplaySequence="15">
+      <CodableConcept Name="codableConcept_RDES114_Interstitialedema_14">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE737" />
+          <Display Value="RDE737" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE737" />
+        </Coding>
+      </CodableConcept>
+      <Label>Interstitial edema</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Views_15" IsRequired="true" DisplaySequence="16">
+      <CodableConcept Name="codableConcept_RDES114_Views_15">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE738" />
+          <Display Value="RDE738" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE738" />
+        </Coding>
+      </CodableConcept>
+      <Label>Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>ap</Value>
+          <Label>ap</Label>
+        </Choice>
+        <Choice>
+          <Value>pa</Value>
+          <Label>pa</Label>
+        </Choice>
+        <Choice>
+          <Value>lat</Value>
+          <Label>lat</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Fluidvolume_16" IsRequired="true" DisplaySequence="17">
+      <CodableConcept Name="codableConcept_RDES114_Fluidvolume_16">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE739" />
+          <Display Value="RDE739" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE739" />
+        </Coding>
+      </CodableConcept>
+      <Label>Fluid volume</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>none</Value>
+          <Label>none</Label>
+        </Choice>
+        <Choice>
+          <Value>mild</Value>
+          <Label>mild</Label>
+        </Choice>
+        <Choice>
+          <Value>moderate</Value>
+          <Label>moderate</Label>
+        </Choice>
+        <Choice>
+          <Value>severe</Value>
+          <Label>severe</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Changeinfluidvolume_17" IsRequired="true" DisplaySequence="18">
+      <CodableConcept Name="codableConcept_RDES114_Changeinfluidvolume_17">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE740" />
+          <Display Value="RDE740" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE740" />
+        </Coding>
+      </CodableConcept>
+      <Label>Change in fluid volume</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>decreaseinfluidvolumefromprior</Value>
+          <Label>decrease in fluid volume from prior</Label>
+        </Choice>
+        <Choice>
+          <Value>nochangeinfluidvolumefromprior</Value>
+          <Label>no change in fluid volume from prior</Label>
+        </Choice>
+        <Choice>
+          <Value>increaseinfluidvolumefromprior</Value>
+          <Label>increase in fluid volume from prior</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

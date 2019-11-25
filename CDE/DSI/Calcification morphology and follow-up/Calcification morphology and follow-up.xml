@@ -1,47 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>Calcification morphology and follow-up</Label>
-		<ID>Calcification morphology and follow-up</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<Info>
-			<Description>This module describes the Common Data elements and Macros for Calcification morphology and follow-up</Description>
-			
-			<References>
-				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
-			</References>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>keydiagram.jpg</Location>
-					<Label>Calcification morphology and follow-up key image</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>ACR Assist</Name>
-				<Email>acr-assist@acr.org</Email>
-				<Institution>American College of Radiology</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>C</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
-	</Metadata>
-
-
+  <Metadata>
+    <Label>Calcification morphology and follow-up</Label>
+    <ID>Calcification morphology and follow-up</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CodableConcept Name="codableConcept_Calcification morphology and follow-up">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES130" />
+        <Display Value="RDES130" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES130" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for Calcification morphology and follow-up</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>Calcification morphology and follow-up key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <ApplicableSexes Value="Both" />
+  </Metadata>
   <DataElements>
-  
-   <GlobalValue Id="conditionConst">10</GlobalValue>
-  
-   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
-			<Label>Age of the patient</Label>
-			<Minimum>40.00</Minimum>
-			<Maximum>120.00</Maximum>
-		</NumericDataElement>
-		
-		<ChoiceDataElement Id="biopsy" IsRequired="true" DisplaySequence="2">
+    <GlobalValue Id="conditionConst">10</GlobalValue>
+    <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES130_Age">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE854" />
+          <Display Value="RDE854" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE854" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age of the patient</Label>
+      <Minimum>40.00</Minimum>
+      <Maximum>120.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="biopsy" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES130_biopsy">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE855" />
+          <Display Value="RDE855" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE855" />
+        </Coding>
+      </CodableConcept>
       <Label>Biopsy-proven calcifications</Label>
       <ChoiceInfo>
         <Choice>
@@ -52,14 +73,23 @@
           <Value>1</Value>
           <Label>Malignant</Label>
         </Choice>
-		 <Choice>
+        <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="3">
+    <ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES130_views">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE856" />
+          <Display Value="RDE856" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE856" />
+        </Coding>
+      </CodableConcept>
       <Label>Mammography Views</Label>
       <ChoiceInfo>
         <Choice>
@@ -70,11 +100,19 @@
           <Value>1</Value>
           <Label>Magnification in lateral projection</Label>
         </Choice>
-
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="breast" IsRequired="true" DisplaySequence="4">
+    <ChoiceDataElement Id="breast" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES130_breast">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE857" />
+          <Display Value="RDE857" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE857" />
+        </Coding>
+      </CodableConcept>
       <Label>Breast calcification morphology</Label>
       <ChoiceInfo>
         <Choice>
@@ -85,35 +123,35 @@
           <Value>1</Value>
           <Label>Vascular</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>2</Value>
           <Label>Coarse or “popcorn-like”</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>3</Value>
           <Label>Large rod-like</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>4</Value>
           <Label>Round</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>5</Value>
           <Label>Rim</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>6</Value>
           <Label>Dystrophic</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>7</Value>
           <Label>Milk of calcium</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>8</Value>
           <Label>Suture</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>9</Value>
           <Label>Amorphous</Label>
         </Choice>
@@ -121,38 +159,47 @@
           <Value>10</Value>
           <Label>Coarse heterogeneous</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>11</Value>
           <Label>Fine pleomorphic</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>12</Value>
           <Label>Fine linear or fine linear branching</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>13</Value>
           <Label>Diffuse</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>14</Value>
           <Label>Regional</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>15</Value>
           <Label>Grouped</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>16</Value>
           <Label>Linear</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>17</Value>
           <Label>Segmental</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="follow" IsRequired="true" DisplaySequence="5">
+    <ChoiceDataElement Id="follow" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES130_follow">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE858" />
+          <Display Value="RDE858" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE858" />
+        </Coding>
+      </CodableConcept>
       <Label>Follow up recommendation from BI-RADS</Label>
       <ChoiceInfo>
         <Choice>
@@ -163,101 +210,91 @@
           <Value>1</Value>
           <Label>Negative </Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>2</Value>
           <Label>Benign</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>3</Value>
           <Label>Probably benign - initial short-interval follow-up suggested</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>4</Value>
           <Label>Suspicious abnormality - biopsy should be considered</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>5</Value>
           <Label>Highly suggestive of malignancy- appropriate action should be taken</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>6</Value>
           <Label>Known biopsy-proven malignancy- appropriate action should be taken</Label>
         </Choice>
-		
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	
-	    
-   </DataElements>
-   
+  </DataElements>
   <Rules>
-		<DecisionPoint Id="macrodp">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-
-	
-    <EndPoints>		
-	 <TemplatePartial Id ="ExamPartial">
-	 	<Branch>
-	 		<ReportText Type="PlainText">EXAM TYPE: Calcification morphology and follow-up Evaluation</ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 	</Branch>
-	 </TemplatePartial>
-
-
-	<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Calcification morphology and follow-up evaluation results:</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Age" />
-					<ReportText Type="PlainText"> Patient's age: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Age"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="biopsy" />
-					<ReportText Type="PlainText"> Biopsy-proven calcifications: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="biopsy"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="views" />
-					<ReportText Type="PlainText"> Mammography Views: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="views"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="breast" />
-					<ReportText Type="PlainText"> Breast calcification morphology: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="breast"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="follow" />
-					<ReportText Type="PlainText"> Follow up recommendations from BI-RADS: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="follow"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				</ReportSection>
-		</ReportSections>
-		</EndPoint>	
-	</EndPoints>
-	</ReportingModule>
+    <DecisionPoint Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="macroEndpoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <TemplatePartial Id="ExamPartial">
+      <Branch>
+        <ReportText Type="PlainText">EXAM TYPE: Calcification morphology and follow-up Evaluation</ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">COMPARISON: NONE </ReportText>
+        <ReportText Type="Newline" />
+      </Branch>
+    </TemplatePartial>
+    <EndPoint Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <ReportText Type="InsertPartialTemplate" Value="ExamPartial" />
+            <ReportText Type="Newline" />
+            <ReportText Type="PlainText">Calcification morphology and follow-up evaluation results:</ReportText>
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Age" />
+            <ReportText Type="PlainText"> Patient's age: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Age" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="biopsy" />
+            <ReportText Type="PlainText"> Biopsy-proven calcifications: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="biopsy" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="views" />
+            <ReportText Type="PlainText"> Mammography Views: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="views" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="breast" />
+            <ReportText Type="PlainText"> Breast calcification morphology: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="breast" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="follow" />
+            <ReportText Type="PlainText"> Follow up recommendations from BI-RADS: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="follow" />
+            <ReportText Type="Newline" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

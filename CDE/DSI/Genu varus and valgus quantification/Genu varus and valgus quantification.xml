@@ -1,88 +1,137 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Genu varus and valgus quantification</Label>
-        <ID>Genu_varus_and_valgus_quantification</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-11</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Genu_varus_and_valgus_quantification" />
-        <Info>
-            <Description>Genu varus and valgus quantification</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Jordan Meyer</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <NumericDataElement Id="Bilateralquantitativealignmentoftheknee_1" IsRequired="true" DisplaySequence="2" Unit="degrees">
-            <Label>Bilateral quantitative alignment of the knee</Label>
-            <Hint>Measure genu varus or valgus. 
+  <Metadata>
+    <Label>Genu varus and valgus quantification</Label>
+    <ID>Genu_varus_and_valgus_quantification</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Genu_varus_and_valgus_quantification">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES106" />
+        <Display Value="RDES106" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES106" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Genu varus and valgus quantification</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Bilateralquantitativealignmentoftheknee_1" IsRequired="true" DisplaySequence="2" Unit="degrees">
+      <CodableConcept Name="codableConcept_RDES106_Bilateralquantitativealignmentoftheknee_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE684" />
+          <Display Value="RDE684" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE684" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral quantitative alignment of the knee</Label>
+      <Hint>Measure genu varus or valgus. 
 1) Mechanical axis of femur (MAF) = line from top of femoral head through intercondylar notch
 2) Tibial axis (TA) = line from intercondylar eminence to mid tibial plafond
 3) Angle between continuation of MAF to level of tibia and TA
 </Hint>
-        </NumericDataElement>
-        <IntegerDataElement Id="age_3" DisplaySequence="4">
-            <Label>age</Label>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="Bilateralqualitativealignmentoftheknee_0" IsRequired="true" DisplaySequence="1">
-            <Label>Bilateral qualitative alignment of the knee</Label>
-            <Hint>Genu varus, valgus or normal alignment.  
+    </NumericDataElement>
+    <IntegerDataElement Id="age_3" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES106_age_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE685" />
+          <Display Value="RDE685" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE685" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Bilateralqualitativealignmentoftheknee_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES106_Bilateralqualitativealignmentoftheknee_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE686" />
+          <Display Value="RDE686" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE686" />
+        </Coding>
+      </CodableConcept>
+      <Label>Bilateral qualitative alignment of the knee</Label>
+      <Hint>Genu varus, valgus or normal alignment.  
 Mechanical axis (MA) = line from top of femoral head to mid tibial plafond. If MA medial to intercondylar notch = genu varus.  
 If MA lateral to intercondylar notch = genu valgus. 
 If MA within the intercondylar notch = normal alignment.  </Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>normalalignment</Value>
-                    <Label>normal alignment</Label>
-                </Choice>
-                <Choice>
-                    <Value>genuvarus</Value>
-                    <Label>genu varus</Label>
-                </Choice>
-                <Choice>
-                    <Value>genuvalgus</Value>
-                    <Label>genu valgus</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
-            <Label>Sex at birth</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>male</Value>
-                    <Label>male</Label>
-                </Choice>
-                <Choice>
-                    <Value>female</Value>
-                    <Label>female</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+      <ChoiceInfo>
+        <Choice>
+          <Value>normalalignment</Value>
+          <Label>normal alignment</Label>
+        </Choice>
+        <Choice>
+          <Value>genuvarus</Value>
+          <Label>genu varus</Label>
+        </Choice>
+        <Choice>
+          <Value>genuvalgus</Value>
+          <Label>genu valgus</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES106_Sexatbirth_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE687" />
+          <Display Value="RDE687" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE687" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

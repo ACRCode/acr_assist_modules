@@ -1,289 +1,398 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Craniosynostosis</Label>
-        <ID>Craniosynostosis</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-13</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Craniosynostosis" />
-        <Info>
-            <Description>Craniosynostosis</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Natalia Farish</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
-            <Label>Age</Label>
-            <Minimum>0</Minimum>
-            <Maximum>4</Maximum>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="Sexatbirth_1" IsRequired="true" DisplaySequence="2">
-            <Label>Sex at birth</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>M</Value>
-                    <Label>M</Label>
-                </Choice>
-                <Choice>
-                    <Value>F</Value>
-                    <Label>F</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Metopic_2" IsRequired="true" DisplaySequence="3">
-            <Label>Metopic	</Label>
-            <Hint>Status of the midline frontal (metopic) suture</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,normalforage</Value>
-                    <Label>open, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,normalforage</Value>
-                    <Label>closed, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,abnormalforage</Value>
-                    <Label>open, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,abnormalforage</Value>
-                    <Label>closed, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closedwithridging</Value>
-                    <Label>closed with ridging</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Sagittal_3" IsRequired="true" DisplaySequence="4">
-            <Label>Sagittal	</Label>
-            <Hint>Status of the midline sagittal suture</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,normalforage</Value>
-                    <Label>open, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,normalforage</Value>
-                    <Label>closed, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,abnormalforage</Value>
-                    <Label>open, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,abnormalforage</Value>
-                    <Label>closed, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closedwithridging</Value>
-                    <Label>closed with ridging</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Leftcoronal_4" IsRequired="true" DisplaySequence="5">
-            <Label>Left coronal</Label>
-            <Hint>Status of the left coronal suture</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,normalforage</Value>
-                    <Label>open, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,normalforage</Value>
-                    <Label>closed, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,abnormalforage</Value>
-                    <Label>open, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,abnormalforage</Value>
-                    <Label>closed, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closedwithridging</Value>
-                    <Label>closed with ridging</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Rightlambdoidsuture_5" IsRequired="true" DisplaySequence="6">
-            <Label>Right lambdoid suture</Label>
-            <Hint>Status of the right lambdoid suture</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,normalforage</Value>
-                    <Label>open, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,normalforage</Value>
-                    <Label>closed, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,abnormalforage</Value>
-                    <Label>open, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,abnormalforage</Value>
-                    <Label>closed, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closedwithridging</Value>
-                    <Label>closed with ridging</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Leftlambdoid_6" IsRequired="true" DisplaySequence="7">
-            <Label>Left lambdoid </Label>
-            <Hint>Status of the left lambdoid suture</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,normalforage</Value>
-                    <Label>open, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,normalforage</Value>
-                    <Label>closed, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,abnormalforage</Value>
-                    <Label>open, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,abnormalforage</Value>
-                    <Label>closed, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closedwithridging</Value>
-                    <Label>closed with ridging</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="RightSquamosal_7" IsRequired="true" DisplaySequence="8">
-            <Label>Right Squamosal</Label>
-            <Hint>Status of the right squamosal/temporosquamosal suture</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,normalforage</Value>
-                    <Label>open, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,normalforage</Value>
-                    <Label>closed, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,abnormalforage</Value>
-                    <Label>open, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,abnormalforage</Value>
-                    <Label>closed, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closedwithridging</Value>
-                    <Label>closed with ridging</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="LeftSquamosal_8" IsRequired="true" DisplaySequence="9">
-            <Label>Left Squamosal</Label>
-            <Hint>Status of the left  squamosal/temporosquamosal suture</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,normalforage</Value>
-                    <Label>open, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,normalforage</Value>
-                    <Label>closed, normal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>open,abnormalforage</Value>
-                    <Label>open, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closed,abnormalforage</Value>
-                    <Label>closed, abnormal for age</Label>
-                </Choice>
-                <Choice>
-                    <Value>closedwithridging</Value>
-                    <Label>closed with ridging</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Wormianbones_9" IsRequired="true" DisplaySequence="10">
-            <Label>Wormian bones</Label>
-            <Hint>Presence of wormian bones</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>absent</Value>
-                    <Label>absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>1-10wormianbonespresent(withinnormallimits)</Value>
-                    <Label>1-10 wormian bones present (within normal limits)</Label>
-                </Choice>
-                <Choice>
-                    <Value>morethan10wormianbones(abnormal)</Value>
-                    <Label>more than 10 wormian bones (abnormal)</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>Craniosynostosis</Label>
+    <ID>Craniosynostosis</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-13</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Craniosynostosis">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES92" />
+        <Display Value="RDES92" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES92" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Craniosynostosis</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Natalia Farish</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <IntegerDataElement Id="Age_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES92_Age_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE550" />
+          <Display Value="RDE550" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE550" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age</Label>
+      <Minimum>0</Minimum>
+      <Maximum>4</Maximum>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Sexatbirth_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES92_Sexatbirth_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE551" />
+          <Display Value="RDE551" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE551" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>M</Value>
+          <Label>M</Label>
+        </Choice>
+        <Choice>
+          <Value>F</Value>
+          <Label>F</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Metopic_2" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES92_Metopic_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE552" />
+          <Display Value="RDE552" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE552" />
+        </Coding>
+      </CodableConcept>
+      <Label>Metopic	</Label>
+      <Hint>Status of the midline frontal (metopic) suture</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>open,normalforage</Value>
+          <Label>open, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,normalforage</Value>
+          <Label>closed, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>open,abnormalforage</Value>
+          <Label>open, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,abnormalforage</Value>
+          <Label>closed, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closedwithridging</Value>
+          <Label>closed with ridging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Sagittal_3" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES92_Sagittal_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE553" />
+          <Display Value="RDE553" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE553" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sagittal	</Label>
+      <Hint>Status of the midline sagittal suture</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>open,normalforage</Value>
+          <Label>open, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,normalforage</Value>
+          <Label>closed, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>open,abnormalforage</Value>
+          <Label>open, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,abnormalforage</Value>
+          <Label>closed, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closedwithridging</Value>
+          <Label>closed with ridging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Leftcoronal_4" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES92_Leftcoronal_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE554" />
+          <Display Value="RDE554" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE554" />
+        </Coding>
+      </CodableConcept>
+      <Label>Left coronal</Label>
+      <Hint>Status of the left coronal suture</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>open,normalforage</Value>
+          <Label>open, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,normalforage</Value>
+          <Label>closed, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>open,abnormalforage</Value>
+          <Label>open, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,abnormalforage</Value>
+          <Label>closed, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closedwithridging</Value>
+          <Label>closed with ridging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Rightlambdoidsuture_5" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES92_Rightlambdoidsuture_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE555" />
+          <Display Value="RDE555" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE555" />
+        </Coding>
+      </CodableConcept>
+      <Label>Right lambdoid suture</Label>
+      <Hint>Status of the right lambdoid suture</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>open,normalforage</Value>
+          <Label>open, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,normalforage</Value>
+          <Label>closed, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>open,abnormalforage</Value>
+          <Label>open, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,abnormalforage</Value>
+          <Label>closed, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closedwithridging</Value>
+          <Label>closed with ridging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Leftlambdoid_6" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES92_Leftlambdoid_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE556" />
+          <Display Value="RDE556" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE556" />
+        </Coding>
+      </CodableConcept>
+      <Label>Left lambdoid </Label>
+      <Hint>Status of the left lambdoid suture</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>open,normalforage</Value>
+          <Label>open, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,normalforage</Value>
+          <Label>closed, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>open,abnormalforage</Value>
+          <Label>open, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,abnormalforage</Value>
+          <Label>closed, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closedwithridging</Value>
+          <Label>closed with ridging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="RightSquamosal_7" IsRequired="true" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES92_RightSquamosal_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE557" />
+          <Display Value="RDE557" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE557" />
+        </Coding>
+      </CodableConcept>
+      <Label>Right Squamosal</Label>
+      <Hint>Status of the right squamosal/temporosquamosal suture</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>open,normalforage</Value>
+          <Label>open, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,normalforage</Value>
+          <Label>closed, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>open,abnormalforage</Value>
+          <Label>open, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,abnormalforage</Value>
+          <Label>closed, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closedwithridging</Value>
+          <Label>closed with ridging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="LeftSquamosal_8" IsRequired="true" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES92_LeftSquamosal_8">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE558" />
+          <Display Value="RDE558" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE558" />
+        </Coding>
+      </CodableConcept>
+      <Label>Left Squamosal</Label>
+      <Hint>Status of the left  squamosal/temporosquamosal suture</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>open,normalforage</Value>
+          <Label>open, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,normalforage</Value>
+          <Label>closed, normal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>open,abnormalforage</Value>
+          <Label>open, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closed,abnormalforage</Value>
+          <Label>closed, abnormal for age</Label>
+        </Choice>
+        <Choice>
+          <Value>closedwithridging</Value>
+          <Label>closed with ridging</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Wormianbones_9" IsRequired="true" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES92_Wormianbones_9">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE559" />
+          <Display Value="RDE559" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE559" />
+        </Coding>
+      </CodableConcept>
+      <Label>Wormian bones</Label>
+      <Hint>Presence of wormian bones</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+        <Choice>
+          <Value>1-10wormianbonespresent(withinnormallimits)</Value>
+          <Label>1-10 wormian bones present (within normal limits)</Label>
+        </Choice>
+        <Choice>
+          <Value>morethan10wormianbones(abnormal)</Value>
+          <Label>more than 10 wormian bones (abnormal)</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

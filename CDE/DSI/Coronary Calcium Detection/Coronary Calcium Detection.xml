@@ -1,210 +1,266 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>Coronary Calcium Detection</Label>
-		<ID>Coronary Calcium Detection</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<Info>
-			<Description>This module describes the Common Data elements and Macros for Coronary Calcium Detection</Description>
-			
-			<References>
-				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
-			</References>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>keydiagram.jpg</Location>
-					<Label>Coronary Calcium Detection key image</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>ACR Assist</Name>
-				<Email>acr-assist@acr.org</Email>
-				<Institution>American College of Radiology</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>C</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
-	</Metadata>
-
-
+  <Metadata>
+    <Label>Coronary Calcium Detection</Label>
+    <ID>Coronary Calcium Detection</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CodableConcept Name="codableConcept_Coronary Calcium Detection">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES139" />
+        <Display Value="RDES139" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES139" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for Coronary Calcium Detection</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>Coronary Calcium Detection key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <ApplicableSexes Value="Both" />
+  </Metadata>
   <DataElements>
-  
-   <GlobalValue Id="conditionConst">10</GlobalValue>
-  
-   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
-			<Label>Age of the patient</Label>
-			<Minimum>20.00</Minimum>
-			<Maximum>120.00</Maximum>
-		</NumericDataElement>
-		
-		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
-			<Label>Sex of the patient</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>1</Value>
-					<Label>Female</Label>	
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Male</Label>
-				</Choice>			
-			</ChoiceInfo>			
-		</ChoiceDataElement>
-		
-		<ChoiceDataElement Id="procedure" IsRequired="true" DisplaySequence="3">
+    <GlobalValue Id="conditionConst">10</GlobalValue>
+    <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES139_Age">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE920" />
+          <Display Value="RDE920" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE920" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age of the patient</Label>
+      <Minimum>20.00</Minimum>
+      <Maximum>120.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES139_Sex">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE921" />
+          <Display Value="RDE921" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE921" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex of the patient</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Female</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Male</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="procedure" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES139_procedure">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE922" />
+          <Display Value="RDE922" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE922" />
+        </Coding>
+      </CodableConcept>
       <Label>Procedures</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>ECG triggered</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>Non-contrast CT</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="4">
+    <ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES139_views">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE923" />
+          <Display Value="RDE923" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE923" />
+        </Coding>
+      </CodableConcept>
       <Label>Views</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>Short</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>Axis</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-		
-		
-		<NumericDataElement Id="score" IsRequired="true" DisplaySequence="5">
-			<Label>Agatston score</Label>
-			<Minimum>0.00</Minimum>
-			<Maximum>10000.00</Maximum>
-		</NumericDataElement>
-		
-		<NumericDataElement Id="volume" IsRequired="true" DisplaySequence="6">
-			<Label>Calcium volume in ml</Label>
-			<Minimum>0.00</Minimum>
-			<Maximum>10000.00</Maximum>
-		</NumericDataElement>
-	
-	<ChoiceDataElement Id="risk" IsRequired="true" DisplaySequence="7">
+    <NumericDataElement Id="score" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES139_score">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE924" />
+          <Display Value="RDE924" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE924" />
+        </Coding>
+      </CodableConcept>
+      <Label>Agatston score</Label>
+      <Minimum>0.00</Minimum>
+      <Maximum>10000.00</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="volume" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES139_volume">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE925" />
+          <Display Value="RDE925" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE925" />
+        </Coding>
+      </CodableConcept>
+      <Label>Calcium volume in ml</Label>
+      <Minimum>0.00</Minimum>
+      <Maximum>10000.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="risk" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES139_risk">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE926" />
+          <Display Value="RDE926" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE926" />
+        </Coding>
+      </CodableConcept>
       <Label>Risk category</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>no evidence of CAD: 0 calcium score</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>minimal: 1-10</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>2</Value>
           <Label>mild: 11-100</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>3</Value>
           <Label>moderate: 101-400</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>4</Value>
-          <Label>severe: >400</Label>
+          <Label>severe: &gt;400</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	
-
-   </DataElements>
-   
+  </DataElements>
   <Rules>
-		<DecisionPoint Id="macrodp">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-
-	
-    <EndPoints>		
-	 <TemplatePartial Id ="ExamPartial">
-	 	<Branch>
-	 		<ReportText Type="PlainText">EXAM TYPE:  Coronary Calcium Detection Evaluation</ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 	</Branch>
-	 </TemplatePartial>
-
-
-	<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Coronary Calcium Detection evaluation results:</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Age" />
-					<ReportText Type="PlainText"> Patient's age: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Age"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Sex" />
-					<ReportText Type="PlainText"> Patient's sex: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Sex"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="procedure" />
-					<ReportText Type="PlainText"> Procedure performed: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="procedure"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="views" />
-					<ReportText Type="PlainText"> Views: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="views"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="score" />
-					<ReportText Type="PlainText"> Agatston score: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="score"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-		        <Branch>
-				    <SectionIf DataElementId="volume" />
-					<ReportText Type="PlainText"> Calcium volume: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="volume"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-                 <Branch>
-				    <SectionIf DataElementId="risk" />
-					<ReportText Type="PlainText"> Risk category: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="risk"/>
-					<ReportText Type="Newline"/>
-				</Branch>					
-				
-				</ReportSection>
-		</ReportSections>
-		</EndPoint>	
-	</EndPoints>
-	</ReportingModule>
+    <DecisionPoint Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="macroEndpoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <TemplatePartial Id="ExamPartial">
+      <Branch>
+        <ReportText Type="PlainText">EXAM TYPE:  Coronary Calcium Detection Evaluation</ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">COMPARISON: NONE </ReportText>
+        <ReportText Type="Newline" />
+      </Branch>
+    </TemplatePartial>
+    <EndPoint Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <ReportText Type="InsertPartialTemplate" Value="ExamPartial" />
+            <ReportText Type="Newline" />
+            <ReportText Type="PlainText">Coronary Calcium Detection evaluation results:</ReportText>
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Age" />
+            <ReportText Type="PlainText"> Patient's age: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Age" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Sex" />
+            <ReportText Type="PlainText"> Patient's sex: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Sex" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="procedure" />
+            <ReportText Type="PlainText"> Procedure performed: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="procedure" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="views" />
+            <ReportText Type="PlainText"> Views: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="views" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="score" />
+            <ReportText Type="PlainText"> Agatston score: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="score" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="volume" />
+            <ReportText Type="PlainText"> Calcium volume: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="volume" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="risk" />
+            <ReportText Type="PlainText"> Risk category: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="risk" />
+            <ReportText Type="Newline" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

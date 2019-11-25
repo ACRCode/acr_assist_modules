@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Fleishner1</Label>
+        <ID>Fleishner</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-10-09</CreatedDate>
+        <LastModifiedDate>2019-10-9</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept />
+        <Info>
+            <Description>Fleishner</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Smita K</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Both" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="NoduleSize" IsRequired="true" DisplaySequence="3" Unit="mm">
+            <Label>Nodule Size</Label>
+            <Hint>Size in mm</Hint>
+        </IntegerDataElement>
+        <IntegerDataElement Id="Series" IsRequired="true" DisplaySequence="6">
+            <Label>Series</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Plurality" IsRequired="true" DisplaySequence="1">
+            <Label>Plurality</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Single</Value>
+                    <Label>Single</Label>
+                </Choice>
+                <Choice>
+                    <Value>Multiple</Value>
+                    <Label>Multiple</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Solidity" IsRequired="true" DisplaySequence="2">
+            <Label>Solidity</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Solid</Value>
+                    <Label>Solid</Label>
+                </Choice>
+                <Choice>
+                    <Value>Groundgrass</Value>
+                    <Label>Ground-grass</Label>
+                </Choice>
+                <Choice>
+                    <Value>SubSolid</Value>
+                    <Label>Sub-Solid</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Lobes" IsRequired="true" DisplaySequence="4">
+            <Label>Lobes</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>RUL</Value>
+                    <Label>RUL</Label>
+                </Choice>
+                <Choice>
+                    <Value>Lingula</Value>
+                    <Label>Lingula</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Patientrisklevel" IsRequired="true" DisplaySequence="5">
+            <Label>Patient risk level</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>unknown</Value>
+                    <Label>unknown </Label>
+                </Choice>
+                <Choice>
+                    <Value>low</Value>
+                    <Label>low</Label>
+                </Choice>
+                <Choice>
+                    <Value>medium</Value>
+                    <Label>medium</Label>
+                </Choice>
+                <Choice>
+                    <Value>high</Value>
+                    <Label>high</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <IntegerDataElement Id="Image" IsRequired="true" DisplaySequence="7">
+            <Label>Image</Label>
+        </IntegerDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>

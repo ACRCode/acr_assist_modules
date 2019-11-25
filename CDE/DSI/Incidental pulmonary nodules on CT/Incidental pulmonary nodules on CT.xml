@@ -1,307 +1,456 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Incidental pulmonary nodules on CT</Label>
-        <ID>Incidental_pulmonary_nodules_on_CT</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-11</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Incidental_pulmonary_nodules_on_CT" />
-        <Info>
-            <Description>Incidental pulmonary nodules on CT</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Jordan Meyer</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <NumericDataElement Id="Nodulediameter_2" IsRequired="true" DisplaySequence="3" Unit="mm">
-            <Label>Nodule diameter</Label>
-            <Hint>Measure largest diameters of nodule(s) in any plane, including 3D. Optional: For part solid nodule, return both the overall diameter and solid component diameter. </Hint>
-        </NumericDataElement>
-        <NumericDataElement Id="Nodulevolume_3" IsRequired="true" DisplaySequence="4" Unit="mm3">
-            <Label>Nodule volume</Label>
-            <Hint>Measure the volume of the nodule(s). Optional: Measure volume of nodule(s) from all planes. Also optional: if part solid nodule, return both the overall diameter and solid component diameter in mm.</Hint>
-        </NumericDataElement>
-        <NumericDataElement Id="probabilityofmalignancy_8" DisplaySequence="9">
-            <Label>probability of malignancy</Label>
-            <Hint>Likelihood the nodule is malignant </Hint>
-            <Minimum>0</Minimum>
-            <Maximum>1</Maximum>
-        </NumericDataElement>
-        <NumericDataElement Id="Smokinghistory_9" DisplaySequence="10" Unit="packs/year">
-            <Label>Smoking history</Label>
-            <Hint>estimated quantity of packs per year the patient smoked</Hint>
-        </NumericDataElement>
-        <IntegerDataElement Id="age_11" DisplaySequence="12" Unit="years">
-            <Label>age</Label>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="detectionofnodule_0" IsRequired="true" DisplaySequence="1">
-            <Label>detection of nodule</Label>
-            <Hint>The definition of pulmonary nodule detection includes 1.) The center x, y, and z coordinate of a candidate nodule bounding box with reference to the superior, anterior, and right-most pixel in the volume (referencing the patient for sidedness, zero indexed) and 2.) the dimensions of a bounding box in pixels (x, y, z).</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>noduleabsent</Value>
-                    <Label>nodule absent</Label>
-                </Choice>
-                <Choice>
-                    <Value>nodulepresent</Value>
-                    <Label>nodule present</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="noduleattenuation_1" IsRequired="true" DisplaySequence="2">
-            <Label>nodule attenuation</Label>
-            <Hint>Determine mean and range of HU density of nodule</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>fatdensity</Value>
-                    <Label>fat density</Label>
-                </Choice>
-                <Choice>
-                    <Value>groundglass</Value>
-                    <Label>groundglass</Label>
-                </Choice>
-                <Choice>
-                    <Value>partsolid</Value>
-                    <Label>part solid</Label>
-                </Choice>
-                <Choice>
-                    <Value>solid</Value>
-                    <Label>solid</Label>
-                </Choice>
-                <Choice>
-                    <Value>calcification</Value>
-                    <Label>calcification</Label>
-                </Choice>
-                <Choice>
-                    <Value>cavitation</Value>
-                    <Label>cavitation</Label>
-                </Choice>
-                <Choice>
-                    <Value>cysticlucencies</Value>
-                    <Label>cystic lucencies</Label>
-                </Choice>
-                <Choice>
-                    <Value>airbronchograms</Value>
-                    <Label>air bronchograms</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="noduleshape_4" DisplaySequence="5">
-            <Label>nodule shape</Label>
-            <Hint>classify shape of nodule</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>round</Value>
-                    <Label>round</Label>
-                </Choice>
-                <Choice>
-                    <Value>oval</Value>
-                    <Label>oval</Label>
-                </Choice>
-                <Choice>
-                    <Value>triangular</Value>
-                    <Label>triangular</Label>
-                </Choice>
-                <Choice>
-                    <Value>irregular</Value>
-                    <Label>irregular</Label>
-                </Choice>
-                <Choice>
-                    <Value>lobular</Value>
-                    <Label>lobular</Label>
-                </Choice>
-                <Choice>
-                    <Value>other</Value>
-                    <Label>other</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="nodulemargin_5" DisplaySequence="6">
-            <Label>nodule margin</Label>
-            <Hint>classify shape/margin of nodule</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-                <Choice>
-                    <Value>smooth</Value>
-                    <Label>smooth</Label>
-                </Choice>
-                <Choice>
-                    <Value>lobulated</Value>
-                    <Label>lobulated</Label>
-                </Choice>
-                <Choice>
-                    <Value>spiculated</Value>
-                    <Label>spiculated</Label>
-                </Choice>
-                <Choice>
-                    <Value>illdefined</Value>
-                    <Label>ill defined</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Nodulelocation_6" DisplaySequence="7">
-            <Label>Nodule location</Label>
-            <Hint>State on which lung lobe nodule is located. Ideally pull the image with the incidental nodule</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>rightupperlobe</Value>
-                    <Label>right upper lobe</Label>
-                </Choice>
-                <Choice>
-                    <Value>rightlowerlobe</Value>
-                    <Label>right lower lobe</Label>
-                </Choice>
-                <Choice>
-                    <Value>rightmidlobe</Value>
-                    <Label>right mid lobe</Label>
-                </Choice>
-                <Choice>
-                    <Value>leftupperlobe</Value>
-                    <Label>left upper lobe</Label>
-                </Choice>
-                <Choice>
-                    <Value>leftlowerlobe</Value>
-                    <Label>left lower lobe</Label>
-                </Choice>
-                <Choice>
-                    <Value>fissural</Value>
-                    <Label>fissural</Label>
-                </Choice>
-                <Choice>
-                    <Value>intraluminal</Value>
-                    <Label>intraluminal</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="nodulegrowth_7" DisplaySequence="8">
-            <Label>nodule growth</Label>
-            <Hint>Change in diameter, volume, or attenuation over time if comparison CTs are available</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>unchanged</Value>
-                    <Label>unchanged</Label>
-                </Choice>
-                <Choice>
-                    <Value>growth</Value>
-                    <Label>growth</Label>
-                </Choice>
-                <Choice>
-                    <Value>shrinkage</Value>
-                    <Label>shrinkage</Label>
-                </Choice>
-                <Choice>
-                    <Value>decreaseattenuation</Value>
-                    <Label>decrease attenuation</Label>
-                </Choice>
-                <Choice>
-                    <Value>increaseattenuation</Value>
-                    <Label>increase attenuation</Label>
-                </Choice>
-                <Choice>
-                    <Value>unknown</Value>
-                    <Label>unknown</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="sexatbirth_10" DisplaySequence="11">
-            <Label>sex at birth</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>male</Value>
-                    <Label>male</Label>
-                </Choice>
-                <Choice>
-                    <Value>female</Value>
-                    <Label>female</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <MultiChoiceDataElement Id="comorbidities_12" DisplaySequence="13">
-            <Label>comorbidities</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>smokers</Value>
-                    <Label>smokers</Label>
-                </Choice>
-                <Choice>
-                    <Value>non-smoker</Value>
-                    <Label>non-smoker</Label>
-                </Choice>
-                <Choice>
-                    <Value>emphysema</Value>
-                    <Label>emphysema</Label>
-                </Choice>
-                <Choice>
-                    <Value>bronchitis</Value>
-                    <Label>bronchitis</Label>
-                </Choice>
-                <Choice>
-                    <Value>bronchiolitis</Value>
-                    <Label>bronchiolitis</Label>
-                </Choice>
-                <Choice>
-                    <Value>focalinflammatorylesions</Value>
-                    <Label>focal inflammatory lesions</Label>
-                </Choice>
-                <Choice>
-                    <Value>usualintersitialpneumonia</Value>
-                    <Label>usual intersitial pneumonia</Label>
-                </Choice>
-                <Choice>
-                    <Value>otherprimarymalignancyorhistoryofprimarymalignancy</Value>
-                    <Label>other primary malignancy or history of primary malignancy</Label>
-                </Choice>
-            </ChoiceInfo>
-        </MultiChoiceDataElement>
-        <MultiChoiceDataElement Id="pathologicdiagnosis_13" DisplaySequence="14">
-            <Label>pathologic diagnosis</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>fineneedleaspiration</Value>
-                    <Label>fine needle aspiration</Label>
-                </Choice>
-                <Choice>
-                    <Value>coreneedlebiopsy</Value>
-                    <Label>core needle biopsy</Label>
-                </Choice>
-                <Choice>
-                    <Value>surgicalspecimen</Value>
-                    <Label>surgical specimen</Label>
-                </Choice>
-            </ChoiceInfo>
-        </MultiChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>Incidental pulmonary nodules on CT</Label>
+    <ID>Incidental_pulmonary_nodules_on_CT</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Incidental_pulmonary_nodules_on_CT">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES99" />
+        <Display Value="RDES99" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES99" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Incidental pulmonary nodules on CT</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Nodulediameter_2" IsRequired="true" DisplaySequence="3" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES99_Nodulediameter_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE607" />
+          <Display Value="RDE607" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE607" />
+        </Coding>
+      </CodableConcept>
+      <Label>Nodule diameter</Label>
+      <Hint>Measure largest diameters of nodule(s) in any plane, including 3D. Optional: For part solid nodule, return both the overall diameter and solid component diameter. </Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Nodulevolume_3" IsRequired="true" DisplaySequence="4" Unit="mm3">
+      <CodableConcept Name="codableConcept_RDES99_Nodulevolume_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE608" />
+          <Display Value="RDE608" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE608" />
+        </Coding>
+      </CodableConcept>
+      <Label>Nodule volume</Label>
+      <Hint>Measure the volume of the nodule(s). Optional: Measure volume of nodule(s) from all planes. Also optional: if part solid nodule, return both the overall diameter and solid component diameter in mm.</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="probabilityofmalignancy_8" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES99_probabilityofmalignancy_8">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE609" />
+          <Display Value="RDE609" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE609" />
+        </Coding>
+      </CodableConcept>
+      <Label>probability of malignancy</Label>
+      <Hint>Likelihood the nodule is malignant </Hint>
+      <Minimum>0</Minimum>
+      <Maximum>1</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="Smokinghistory_9" DisplaySequence="10" Unit="packs/year">
+      <CodableConcept Name="codableConcept_RDES99_Smokinghistory_9">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE610" />
+          <Display Value="RDE610" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE610" />
+        </Coding>
+      </CodableConcept>
+      <Label>Smoking history</Label>
+      <Hint>estimated quantity of packs per year the patient smoked</Hint>
+    </NumericDataElement>
+    <IntegerDataElement Id="age_11" DisplaySequence="12" Unit="years">
+      <CodableConcept Name="codableConcept_RDES99_age_11">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE611" />
+          <Display Value="RDE611" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE611" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="detectionofnodule_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES99_detectionofnodule_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE612" />
+          <Display Value="RDE612" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE612" />
+        </Coding>
+      </CodableConcept>
+      <Label>detection of nodule</Label>
+      <Hint>The definition of pulmonary nodule detection includes 1.) The center x, y, and z coordinate of a candidate nodule bounding box with reference to the superior, anterior, and right-most pixel in the volume (referencing the patient for sidedness, zero indexed) and 2.) the dimensions of a bounding box in pixels (x, y, z).</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>noduleabsent</Value>
+          <Label>nodule absent</Label>
+        </Choice>
+        <Choice>
+          <Value>nodulepresent</Value>
+          <Label>nodule present</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="noduleattenuation_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES99_noduleattenuation_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE613" />
+          <Display Value="RDE613" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE613" />
+        </Coding>
+      </CodableConcept>
+      <Label>nodule attenuation</Label>
+      <Hint>Determine mean and range of HU density of nodule</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>fatdensity</Value>
+          <Label>fat density</Label>
+        </Choice>
+        <Choice>
+          <Value>groundglass</Value>
+          <Label>groundglass</Label>
+        </Choice>
+        <Choice>
+          <Value>partsolid</Value>
+          <Label>part solid</Label>
+        </Choice>
+        <Choice>
+          <Value>solid</Value>
+          <Label>solid</Label>
+        </Choice>
+        <Choice>
+          <Value>calcification</Value>
+          <Label>calcification</Label>
+        </Choice>
+        <Choice>
+          <Value>cavitation</Value>
+          <Label>cavitation</Label>
+        </Choice>
+        <Choice>
+          <Value>cysticlucencies</Value>
+          <Label>cystic lucencies</Label>
+        </Choice>
+        <Choice>
+          <Value>airbronchograms</Value>
+          <Label>air bronchograms</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="noduleshape_4" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES99_noduleshape_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE614" />
+          <Display Value="RDE614" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE614" />
+        </Coding>
+      </CodableConcept>
+      <Label>nodule shape</Label>
+      <Hint>classify shape of nodule</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>round</Value>
+          <Label>round</Label>
+        </Choice>
+        <Choice>
+          <Value>oval</Value>
+          <Label>oval</Label>
+        </Choice>
+        <Choice>
+          <Value>triangular</Value>
+          <Label>triangular</Label>
+        </Choice>
+        <Choice>
+          <Value>irregular</Value>
+          <Label>irregular</Label>
+        </Choice>
+        <Choice>
+          <Value>lobular</Value>
+          <Label>lobular</Label>
+        </Choice>
+        <Choice>
+          <Value>other</Value>
+          <Label>other</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="nodulemargin_5" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES99_nodulemargin_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE615" />
+          <Display Value="RDE615" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE615" />
+        </Coding>
+      </CodableConcept>
+      <Label>nodule margin</Label>
+      <Hint>classify shape/margin of nodule</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+        <Choice>
+          <Value>smooth</Value>
+          <Label>smooth</Label>
+        </Choice>
+        <Choice>
+          <Value>lobulated</Value>
+          <Label>lobulated</Label>
+        </Choice>
+        <Choice>
+          <Value>spiculated</Value>
+          <Label>spiculated</Label>
+        </Choice>
+        <Choice>
+          <Value>illdefined</Value>
+          <Label>ill defined</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Nodulelocation_6" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES99_Nodulelocation_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE616" />
+          <Display Value="RDE616" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE616" />
+        </Coding>
+      </CodableConcept>
+      <Label>Nodule location</Label>
+      <Hint>State on which lung lobe nodule is located. Ideally pull the image with the incidental nodule</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>rightupperlobe</Value>
+          <Label>right upper lobe</Label>
+        </Choice>
+        <Choice>
+          <Value>rightlowerlobe</Value>
+          <Label>right lower lobe</Label>
+        </Choice>
+        <Choice>
+          <Value>rightmidlobe</Value>
+          <Label>right mid lobe</Label>
+        </Choice>
+        <Choice>
+          <Value>leftupperlobe</Value>
+          <Label>left upper lobe</Label>
+        </Choice>
+        <Choice>
+          <Value>leftlowerlobe</Value>
+          <Label>left lower lobe</Label>
+        </Choice>
+        <Choice>
+          <Value>fissural</Value>
+          <Label>fissural</Label>
+        </Choice>
+        <Choice>
+          <Value>intraluminal</Value>
+          <Label>intraluminal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="nodulegrowth_7" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES99_nodulegrowth_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE617" />
+          <Display Value="RDE617" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE617" />
+        </Coding>
+      </CodableConcept>
+      <Label>nodule growth</Label>
+      <Hint>Change in diameter, volume, or attenuation over time if comparison CTs are available</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>unchanged</Value>
+          <Label>unchanged</Label>
+        </Choice>
+        <Choice>
+          <Value>growth</Value>
+          <Label>growth</Label>
+        </Choice>
+        <Choice>
+          <Value>shrinkage</Value>
+          <Label>shrinkage</Label>
+        </Choice>
+        <Choice>
+          <Value>decreaseattenuation</Value>
+          <Label>decrease attenuation</Label>
+        </Choice>
+        <Choice>
+          <Value>increaseattenuation</Value>
+          <Label>increase attenuation</Label>
+        </Choice>
+        <Choice>
+          <Value>unknown</Value>
+          <Label>unknown</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="sexatbirth_10" DisplaySequence="11">
+      <CodableConcept Name="codableConcept_RDES99_sexatbirth_10">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE618" />
+          <Display Value="RDE618" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE618" />
+        </Coding>
+      </CodableConcept>
+      <Label>sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <MultiChoiceDataElement Id="comorbidities_12" DisplaySequence="13">
+      <CodableConcept Name="codableConcept_RDES99_comorbidities_12">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE619" />
+          <Display Value="RDE619" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE619" />
+        </Coding>
+      </CodableConcept>
+      <Label>comorbidities</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>smokers</Value>
+          <Label>smokers</Label>
+        </Choice>
+        <Choice>
+          <Value>non-smoker</Value>
+          <Label>non-smoker</Label>
+        </Choice>
+        <Choice>
+          <Value>emphysema</Value>
+          <Label>emphysema</Label>
+        </Choice>
+        <Choice>
+          <Value>bronchitis</Value>
+          <Label>bronchitis</Label>
+        </Choice>
+        <Choice>
+          <Value>bronchiolitis</Value>
+          <Label>bronchiolitis</Label>
+        </Choice>
+        <Choice>
+          <Value>focalinflammatorylesions</Value>
+          <Label>focal inflammatory lesions</Label>
+        </Choice>
+        <Choice>
+          <Value>usualintersitialpneumonia</Value>
+          <Label>usual intersitial pneumonia</Label>
+        </Choice>
+        <Choice>
+          <Value>otherprimarymalignancyorhistoryofprimarymalignancy</Value>
+          <Label>other primary malignancy or history of primary malignancy</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+    <MultiChoiceDataElement Id="pathologicdiagnosis_13" DisplaySequence="14">
+      <CodableConcept Name="codableConcept_RDES99_pathologicdiagnosis_13">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE620" />
+          <Display Value="RDE620" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE620" />
+        </Coding>
+      </CodableConcept>
+      <Label>pathologic diagnosis</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>fineneedleaspiration</Value>
+          <Label>fine needle aspiration</Label>
+        </Choice>
+        <Choice>
+          <Value>coreneedlebiopsy</Value>
+          <Label>core needle biopsy</Label>
+        </Choice>
+        <Choice>
+          <Value>surgicalspecimen</Value>
+          <Label>surgical specimen</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>

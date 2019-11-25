@@ -1,47 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>Technical Repeats in Mammography Practices</Label>
-		<ID>Technical Repeats in Mammography Practices</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<Info>
-			<Description>This module describes the Common Data elements and Macros for Technical Repeats in Mammography Practices</Description>
-			
-			<References>
-				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
-			</References>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>keydiagram.jpg</Location>
-					<Label>Technical Repeats in Mammography Practices key image</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>ACR Assist</Name>
-				<Email>acr-assist@acr.org</Email>
-				<Institution>American College of Radiology</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>C</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
-	</Metadata>
-
-
+  <Metadata>
+    <Label>Technical Repeats in Mammography Practices</Label>
+    <ID>Technical Repeats in Mammography Practices</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CodableConcept Name="codableConcept_Technical Repeats in Mammography Practices">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES140" />
+        <Display Value="RDES140" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES140" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for Technical Repeats in Mammography Practices</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>Technical Repeats in Mammography Practices key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <ApplicableSexes Value="Both" />
+  </Metadata>
   <DataElements>
-  
-   <GlobalValue Id="conditionConst">10</GlobalValue>
-  
-   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
-			<Label>Age of the patient</Label>
-			<Minimum>40.00</Minimum>
-			<Maximum>120.00</Maximum>
-		</NumericDataElement>
-	
-	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="2">
+    <GlobalValue Id="conditionConst">10</GlobalValue>
+    <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES140_Age">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE927" />
+          <Display Value="RDE927" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE927" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age of the patient</Label>
+      <Minimum>40.00</Minimum>
+      <Maximum>120.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES140_views">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE928" />
+          <Display Value="RDE928" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE928" />
+        </Coding>
+      </CodableConcept>
       <Label>Mammography Views</Label>
       <ChoiceInfo>
         <Choice>
@@ -52,32 +73,39 @@
           <Value>1</Value>
           <Label>MLO</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>2</Value>
           <Label>LM</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>3</Value>
           <Label>XCCM</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>4</Value>
           <Label>XCCL</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>5</Value>
           <Label>Cleavage view</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>6</Value>
           <Label>Other</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	
-	
-	<ChoiceDataElement Id="fat" IsRequired="true" DisplaySequence="3">
+    <ChoiceDataElement Id="fat" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES140_fat">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE929" />
+          <Display Value="RDE929" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE929" />
+        </Coding>
+      </CodableConcept>
       <Label>Retropectoral Fat Plane Visible on CC</Label>
       <ChoiceInfo>
         <Choice>
@@ -88,23 +116,31 @@
           <Value>1</Value>
           <Label>Retropectoral fat plane partially in view</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>2</Value>
           <Label>Nipple partially identified but inappropriately positioned</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>3</Value>
           <Label>Retropectoral fat plane fully in view</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>4</Value>
           <Label>Unknown</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-  
-	
-	<ChoiceDataElement Id="nipple" IsRequired="true" DisplaySequence="4">
+    <ChoiceDataElement Id="nipple" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES140_nipple">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE930" />
+          <Display Value="RDE930" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE930" />
+        </Coding>
+      </CodableConcept>
       <Label>Nipple In Profile</Label>
       <ChoiceInfo>
         <Choice>
@@ -118,11 +154,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="blur" IsRequired="true" DisplaySequence="5">
+    <ChoiceDataElement Id="blur" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES140_blur">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE931" />
+          <Display Value="RDE931" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE931" />
+        </Coding>
+      </CodableConcept>
       <Label>Motion Blur</Label>
       <ChoiceInfo>
         <Choice>
@@ -136,11 +181,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="posterior" IsRequired="true" DisplaySequence="6">
+    <ChoiceDataElement Id="posterior" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES140_posterior">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE932" />
+          <Display Value="RDE932" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE932" />
+        </Coding>
+      </CodableConcept>
       <Label>Adequate visualization of posterior breast tissue</Label>
       <ChoiceInfo>
         <Choice>
@@ -154,11 +208,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="sagging" IsRequired="true" DisplaySequence="7">
+    <ChoiceDataElement Id="sagging" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES140_sagging">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE933" />
+          <Display Value="RDE933" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE933" />
+        </Coding>
+      </CodableConcept>
       <Label>Sagging of the breast on MLO View</Label>
       <ChoiceInfo>
         <Choice>
@@ -172,11 +235,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="fold" IsRequired="true" DisplaySequence="8">
+    <ChoiceDataElement Id="fold" IsRequired="true" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES140_fold">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE934" />
+          <Display Value="RDE934" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE934" />
+        </Coding>
+      </CodableConcept>
       <Label>Inframammary Fold On MLO</Label>
       <ChoiceInfo>
         <Choice>
@@ -190,11 +262,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="image" IsRequired="true" DisplaySequence="9">
+    <ChoiceDataElement Id="image" IsRequired="true" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES140_image">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE935" />
+          <Display Value="RDE935" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE935" />
+        </Coding>
+      </CodableConcept>
       <Label>Breast height on Image Receptor</Label>
       <ChoiceInfo>
         <Choice>
@@ -208,17 +289,35 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<NumericDataElement Id="cm" IsRequired="true" DisplaySequence="10">
-			<Label>Posterior nipple line on the CC view measured in cm</Label>
-			<Minimum>0.00</Minimum>
-			<Maximum>1.00</Maximum>
-		</NumericDataElement>
-	
-	<ChoiceDataElement Id="skin" IsRequired="true" DisplaySequence="11">
+    <NumericDataElement Id="cm" IsRequired="true" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES140_cm">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE936" />
+          <Display Value="RDE936" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE936" />
+        </Coding>
+      </CodableConcept>
+      <Label>Posterior nipple line on the CC view measured in cm</Label>
+      <Minimum>0.00</Minimum>
+      <Maximum>1.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="skin" IsRequired="true" DisplaySequence="11">
+      <CodableConcept Name="codableConcept_RDES140_skin">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE937" />
+          <Display Value="RDE937" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE937" />
+        </Coding>
+      </CodableConcept>
       <Label>Skin folds obscuring visualization</Label>
       <ChoiceInfo>
         <Choice>
@@ -232,11 +331,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="excess" IsRequired="true" DisplaySequence="12">
+    <ChoiceDataElement Id="excess" IsRequired="true" DisplaySequence="12">
+      <CodableConcept Name="codableConcept_RDES140_excess">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE938" />
+          <Display Value="RDE938" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE938" />
+        </Coding>
+      </CodableConcept>
       <Label>Excessive Exaggeration</Label>
       <ChoiceInfo>
         <Choice>
@@ -250,11 +358,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="other" IsRequired="true" DisplaySequence="13">
+    <ChoiceDataElement Id="other" IsRequired="true" DisplaySequence="13">
+      <CodableConcept Name="codableConcept_RDES140_other">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE939" />
+          <Display Value="RDE939" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE939" />
+        </Coding>
+      </CodableConcept>
       <Label>Other Body Parts Obscuring Image</Label>
       <ChoiceInfo>
         <Choice>
@@ -268,11 +385,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="off" IsRequired="true" DisplaySequence="14">
+    <ChoiceDataElement Id="off" IsRequired="true" DisplaySequence="14">
+      <CodableConcept Name="codableConcept_RDES140_off">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE940" />
+          <Display Value="RDE940" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE940" />
+        </Coding>
+      </CodableConcept>
       <Label>Breast Cut off</Label>
       <ChoiceInfo>
         <Choice>
@@ -286,11 +412,20 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="additional" IsRequired="true" DisplaySequence="15">
+    <ChoiceDataElement Id="additional" IsRequired="true" DisplaySequence="15">
+      <CodableConcept Name="codableConcept_RDES140_additional">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE941" />
+          <Display Value="RDE941" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE941" />
+        </Coding>
+      </CodableConcept>
       <Label>Additional View Necessary</Label>
       <ChoiceInfo>
         <Choice>
@@ -304,140 +439,132 @@
         <Choice>
           <Value>2</Value>
           <Label>Unknown</Label>
-        </Choice>	
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	
-   </DataElements>
-   
+  </DataElements>
   <Rules>
-		<DecisionPoint Id="macrodp">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-
-	
-    <EndPoints>		
-	 <TemplatePartial Id ="ExamPartial">
-	 	<Branch>
-	 		<ReportText Type="PlainText">EXAM TYPE: Technical Repeats in Mammography Practices Evaluation</ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 	</Branch>
-	 </TemplatePartial>
-
-
-	<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Technical Repeats in Mammography Practices evaluation results:</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Age" />
-					<ReportText Type="PlainText"> Patient's age: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Age"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="views" />
-					<ReportText Type="PlainText"> Mammography Views: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="views"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="fat" />
-					<ReportText Type="PlainText"> Retropectoral Fat Plane Visible on CC: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="fat"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="nipple" />
-					<ReportText Type="PlainText"> Nipple In Profile: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="nipple"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="blur" />
-					<ReportText Type="PlainText"> Motion Blur: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="blur"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="posterior" />
-					<ReportText Type="PlainText"> Adequate visualization of posterior breast tissue: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="posterior"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="sagging" />
-					<ReportText Type="PlainText"> Sagging of the breast on MLO View: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="sagging"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="fold" />
-					<ReportText Type="PlainText"> Inframammary Fold On MLO: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="fold"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="image" />
-					<ReportText Type="PlainText"> Breast height on Image Receptor: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="image"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="cm" />
-					<ReportText Type="PlainText"> Posterior nipple line on the CC view: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="cm"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="skin" />
-					<ReportText Type="PlainText"> Skin folds obscuring visualization: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="skin"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="excess" />
-					<ReportText Type="PlainText">Excessive Exaggeration: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="excess"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="other" />
-					<ReportText Type="PlainText">Other Body Parts Obscuring Image: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="other"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="off" />
-					<ReportText Type="PlainText">Breast Cut off: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="off"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="additional" />
-					<ReportText Type="PlainText">Additional View Necessary: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="additional"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				</ReportSection>
-		</ReportSections>
-		</EndPoint>	
-	</EndPoints>
-	</ReportingModule>
+    <DecisionPoint Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="macroEndpoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <TemplatePartial Id="ExamPartial">
+      <Branch>
+        <ReportText Type="PlainText">EXAM TYPE: Technical Repeats in Mammography Practices Evaluation</ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">COMPARISON: NONE </ReportText>
+        <ReportText Type="Newline" />
+      </Branch>
+    </TemplatePartial>
+    <EndPoint Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <ReportText Type="InsertPartialTemplate" Value="ExamPartial" />
+            <ReportText Type="Newline" />
+            <ReportText Type="PlainText">Technical Repeats in Mammography Practices evaluation results:</ReportText>
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Age" />
+            <ReportText Type="PlainText"> Patient's age: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Age" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="views" />
+            <ReportText Type="PlainText"> Mammography Views: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="views" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="fat" />
+            <ReportText Type="PlainText"> Retropectoral Fat Plane Visible on CC: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="fat" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="nipple" />
+            <ReportText Type="PlainText"> Nipple In Profile: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="nipple" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="blur" />
+            <ReportText Type="PlainText"> Motion Blur: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="blur" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="posterior" />
+            <ReportText Type="PlainText"> Adequate visualization of posterior breast tissue: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="posterior" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="sagging" />
+            <ReportText Type="PlainText"> Sagging of the breast on MLO View: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="sagging" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="fold" />
+            <ReportText Type="PlainText"> Inframammary Fold On MLO: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="fold" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="image" />
+            <ReportText Type="PlainText"> Breast height on Image Receptor: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="image" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="cm" />
+            <ReportText Type="PlainText"> Posterior nipple line on the CC view: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="cm" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="skin" />
+            <ReportText Type="PlainText"> Skin folds obscuring visualization: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="skin" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="excess" />
+            <ReportText Type="PlainText">Excessive Exaggeration: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="excess" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="other" />
+            <ReportText Type="PlainText">Other Body Parts Obscuring Image: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="other" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="off" />
+            <ReportText Type="PlainText">Breast Cut off: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="off" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="additional" />
+            <ReportText Type="PlainText">Additional View Necessary: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="additional" />
+            <ReportText Type="Newline" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

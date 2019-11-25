@@ -1,96 +1,156 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>Calcium Scoring of the Aortic Valve before TAVR</Label>
-		<ID>Calcium Scoring of the Aortic Valve before TAVR</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<Info>
-			<Description>This module describes the Common Data elements and Macros for Calcium Scoring of the Aortic Valve before TAVR</Description>
-			
-			<References>
-				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
-			</References>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>keydiagram.jpg</Location>
-					<Label>Calcium Scoring of the Aortic Valve before TAVR key image</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>ACR Assist</Name>
-				<Email>acr-assist@acr.org</Email>
-				<Institution>American College of Radiology</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>C</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
-	</Metadata>
-
-
+  <Metadata>
+    <Label>Calcium Scoring of the Aortic Valve before TAVR</Label>
+    <ID>Calcium Scoring of the Aortic Valve before TAVR</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CodableConcept Name="codableConcept_Calcium Scoring of the Aortic Valve before TAVR">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES129" />
+        <Display Value="RDES129" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES129" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for Calcium Scoring of the Aortic Valve before TAVR</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>Calcium Scoring of the Aortic Valve before TAVR key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <ApplicableSexes Value="Both" />
+  </Metadata>
   <DataElements>
-  
-   <GlobalValue Id="conditionConst">10</GlobalValue>
-  
-   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
-			<Label>Age of the patient</Label>
-			<Minimum>20.00</Minimum>
-			<Maximum>120.00</Maximum>
-		</NumericDataElement>
-		
-		 <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
-			<Label>Sex of the patient</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>1</Value>
-					<Label>Female</Label>	
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Male</Label>
-				</Choice>			
-			</ChoiceInfo>			
-		</ChoiceDataElement>
-	
-	<ChoiceDataElement Id="contrast" IsRequired="true" DisplaySequence="3">
+    <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES129_Age">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE847" />
+          <Display Value="RDE847" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE847" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age of the patient</Label>
+      <Minimum>20.00</Minimum>
+      <Maximum>120.00</Maximum>
+    </NumericDataElement>
+    <NumericDataElement Id="agatston" IsRequired="true" DisplaySequence="6" Unit="calcium score">
+      <CodableConcept Name="Calcium score according to Agatston convention">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE852" />
+          <Display Value="RDE852" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE852" />
+        </Coding>
+      </CodableConcept>
+      <Label>Calcium score according to Agatston convention</Label>
+    </NumericDataElement>
+    <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES129_Sex">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE848" />
+          <Display Value="RDE848" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE848" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex of the patient</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Female</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Male</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="contrast" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES129_contrast">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE849" />
+          <Display Value="RDE849" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE849" />
+        </Coding>
+      </CodableConcept>
       <Label>Contrast material</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>CT w/ IV arterial-phase contrast</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>CT w/o arterial-phase contrast</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="position" IsRequired="true" DisplaySequence="4">
+    <ChoiceDataElement Id="position" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES129_position">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE850" />
+          <Display Value="RDE850" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE850" />
+        </Coding>
+      </CodableConcept>
       <Label>Position of the patient</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>Weight bearing</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>Non-weight bearing</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="interest" IsRequired="true" DisplaySequence="5">
+    <ChoiceDataElement Id="interest" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES129_interest">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE851" />
+          <Display Value="RDE851" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE851" />
+        </Coding>
+      </CodableConcept>
       <Label>Detect calcifications of interest</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>Calcification absent</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>Calcification present</Label>
         </Choice>
@@ -100,33 +160,24 @@
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-   
-   <ChoiceDataElement Id="agatston" IsRequired="true" DisplaySequence="6">
-      <Label>Calcium score according to Agatston convention</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>0</Value>
-          <Label>Acute aortic syndrome absent</Label>
-        </Choice>
-		<Choice>
-          <Value>1</Value>
-          <Label>Acute aortic syndrome present</Label>
-        </Choice>
-        <Choice>
-          <Value>2</Value>
-          <Label>Unknown</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-   
-   <ChoiceDataElement Id="treatment" IsRequired="true" DisplaySequence="7">
+    <ChoiceDataElement Id="treatment" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES129_treatment">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE853" />
+          <Display Value="RDE853" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE853" />
+        </Coding>
+      </CodableConcept>
       <Label>Recommended treatment with respect to calcification</Label>
       <ChoiceInfo>
         <Choice>
           <Value>0</Value>
           <Label>TAVR</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>1</Value>
           <Label>SAVR</Label>
         </Choice>
@@ -136,89 +187,81 @@
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-   
-   </DataElements>
-	
-   
+  </DataElements>
   <Rules>
-		<DecisionPoint Id="macrodp">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-
-	
-    <EndPoints>		
-	 <TemplatePartial Id ="ExamPartial">
-	 	<Branch>
-	 		<ReportText Type="PlainText">EXAM TYPE: Calcium Scoring of the Aortic Valve before TAVR Evaluation</ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 	</Branch>
-	 </TemplatePartial>
-
-
-	<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Calcium Scoring of the Aortic Valve before TAVR evaluation results:</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Age" />
-					<ReportText Type="PlainText"> Patient's age: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Age"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Sex" />
-					<ReportText Type="PlainText"> Patient's sex: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Sex"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="contrast" />
-					<ReportText Type="PlainText"> Contrast used: </ReportText>   
-					<ReportText Type="InsertDataElementValue" Value="contrast"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="position" />
-					<ReportText Type="PlainText"> Position: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="position"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="interest" />
-					<ReportText Type="PlainText"> Detect calcifications of interest: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="interest"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="agatston" />
-					<ReportText Type="PlainText"> Calcium score according to Agatston convention: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="agatston"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="treatment" />
-					<ReportText Type="PlainText"> Recommended treatment with respect to calcification: </ReportText> 
-					<ReportText Type="InsertDataElementValue" Value="treatment"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				</ReportSection>
-		</ReportSections>
-		</EndPoint>	
-	</EndPoints>
-	</ReportingModule>
+    <DecisionPoint Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="macroEndpoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <TemplatePartial Id="ExamPartial">
+      <Branch>
+        <ReportText Type="PlainText">EXAM TYPE: Calcium Scoring of the Aortic Valve before TAVR Evaluation</ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">COMPARISON: NONE </ReportText>
+        <ReportText Type="Newline" />
+      </Branch>
+    </TemplatePartial>
+    <EndPoint Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <ReportText Type="InsertPartialTemplate" Value="ExamPartial" />
+            <ReportText Type="Newline" />
+            <ReportText Type="PlainText">Calcium Scoring of the Aortic Valve before TAVR evaluation results:</ReportText>
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Age" />
+            <ReportText Type="PlainText"> Patient's age: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Age" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Sex" />
+            <ReportText Type="PlainText"> Patient's sex: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Sex" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="contrast" />
+            <ReportText Type="PlainText"> Contrast used: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="contrast" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="position" />
+            <ReportText Type="PlainText"> Position: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="position" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="interest" />
+            <ReportText Type="PlainText"> Detect calcifications of interest: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="interest" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="agatston" />
+            <ReportText Type="PlainText"> Calcium score according to Agatston convention: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="agatston" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="treatment" />
+            <ReportText Type="PlainText"> Recommended treatment with respect to calcification: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="treatment" />
+            <ReportText Type="Newline" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
+</ReportingModule>

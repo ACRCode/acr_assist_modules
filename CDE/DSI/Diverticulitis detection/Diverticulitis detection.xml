@@ -1,61 +1,91 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../../../XML Schema/ACRAssist_xml_schema.rnc" type="application/relax-ng-compact-syntax"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>Diverticulitis Detection</Label>
-		<ID>Diverticulitis Detection</ID>
-		<SchemaVersion>1.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<Info>
-			<Description>This module describes the Common Data elements and Macros for Diverticulitis Detection</Description>
-			
-			<References>
-				<Citation Url="http://radelement.org/"> CDE URL </Citation> 
-			</References>
-			
-			<Diagrams>
-				<Diagram DisplaySequence="1" IsKeyDiagram="true">
-					<Location>keydiagram.jpg</Location>
-					<Label>Diverticulitis Detection key image</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>ACR Assist</Name>
-				<Email>acr-assist@acr.org</Email>
-				<Institution>American College of Radiology</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>C</ReportCitationText>
-        <ApplicableSexes Value="Both"></ApplicableSexes>
-		
-	</Metadata>
-
-
+  <Metadata>
+    <Label>Diverticulitis Detection</Label>
+    <ID>Diverticulitis Detection</ID>
+    <SchemaVersion>1.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CodableConcept Name="codableConcept_Diverticulitis Detection">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES138" />
+        <Display Value="RDES138" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES138" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>This module describes the Common Data elements and Macros for Diverticulitis Detection</Description>
+      <References>
+        <Citation Url="http://radelement.org/"> CDE URL </Citation>
+      </References>
+      <Diagrams>
+        <Diagram DisplaySequence="1" IsKeyDiagram="true">
+          <Location>keydiagram.jpg</Location>
+          <Label>Diverticulitis Detection key image</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>ACR Assist</Name>
+        <Email>acr-assist@acr.org</Email>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>C</ReportCitationText>
+    <ApplicableSexes Value="Both" />
+  </Metadata>
   <DataElements>
-  
-   <GlobalValue Id="conditionConst">10</GlobalValue>
-  
-   <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
-			<Label>Age of the patient</Label>
-			<Minimum>20.00</Minimum>
-			<Maximum>90.00</Maximum>
-		</NumericDataElement>
-		
-		<ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
-			<Label>Sex of the patient</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>1</Value>
-					<Label>Female</Label>	
-				</Choice>
-				<Choice>
-					<Value>2</Value>
-					<Label>Male</Label>
-				</Choice>			
-			</ChoiceInfo>			
-		</ChoiceDataElement>
-  
-  <ChoiceDataElement Id="procedure" IsRequired="true" DisplaySequence="3">
+    <GlobalValue Id="conditionConst">10</GlobalValue>
+    <NumericDataElement Id="Age" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES138_Age">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE910" />
+          <Display Value="RDE910" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE910" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age of the patient</Label>
+      <Minimum>20.00</Minimum>
+      <Maximum>90.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="Sex" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES138_Sex">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE911" />
+          <Display Value="RDE911" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE911" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex of the patient</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>1</Value>
+          <Label>Female</Label>
+        </Choice>
+        <Choice>
+          <Value>2</Value>
+          <Label>Male</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="procedure" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES138_procedure">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE912" />
+          <Display Value="RDE912" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE912" />
+        </Coding>
+      </CodableConcept>
       <Label>Procedure performed</Label>
       <ChoiceInfo>
         <Choice>
@@ -70,14 +100,23 @@
           <Value>2</Value>
           <Label>CT Abdomen and pelvis with contrast</Label>
         </Choice>
-         <Choice>
+        <Choice>
           <Value>2</Value>
           <Label>CT Abdomen and pelvis without contrast</Label>
-        </Choice>		
+        </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="4">
+    <ChoiceDataElement Id="views" IsRequired="true" DisplaySequence="4">
+      <CodableConcept Name="codableConcept_RDES138_views">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE913" />
+          <Display Value="RDE913" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE913" />
+        </Coding>
+      </CodableConcept>
       <Label>US views</Label>
       <ChoiceInfo>
         <Choice>
@@ -88,20 +127,38 @@
           <Value>1</Value>
           <Label>Axial</Label>
         </Choice>
-		<Choice>
+        <Choice>
           <Value>2</Value>
           <Label>Coronal</Label>
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<NumericDataElement Id="measurement" IsRequired="true" DisplaySequence="5">
-			<Label>Sigmoid colonic wall thickness measurement in mm</Label>
-			<Minimum>0.00</Minimum>
-			<Maximum>1000.00</Maximum>
-		</NumericDataElement>
-	
-	<ChoiceDataElement Id="detection1" IsRequired="true" DisplaySequence="6">
+    <NumericDataElement Id="measurement" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES138_measurement">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE914" />
+          <Display Value="RDE914" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE914" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sigmoid colonic wall thickness measurement in mm</Label>
+      <Minimum>0.00</Minimum>
+      <Maximum>1000.00</Maximum>
+    </NumericDataElement>
+    <ChoiceDataElement Id="detection1" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES138_detection1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE915" />
+          <Display Value="RDE915" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE915" />
+        </Coding>
+      </CodableConcept>
       <Label>Detection of pericolonic infiltrative changes</Label>
       <ChoiceInfo>
         <Choice>
@@ -118,8 +175,17 @@
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-  
-  <ChoiceDataElement Id="detection2" IsRequired="true" DisplaySequence="7">
+    <ChoiceDataElement Id="detection2" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES138_detection2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE916" />
+          <Display Value="RDE916" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE916" />
+        </Coding>
+      </CodableConcept>
       <Label>Pericolonic lymph node Detection</Label>
       <ChoiceInfo>
         <Choice>
@@ -136,8 +202,17 @@
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="extramural" IsRequired="true" DisplaySequence="8">
+    <ChoiceDataElement Id="extramural" IsRequired="true" DisplaySequence="8">
+      <CodableConcept Name="codableConcept_RDES138_extramural">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE917" />
+          <Display Value="RDE917" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE917" />
+        </Coding>
+      </CodableConcept>
       <Label>Extramural fluid detection</Label>
       <ChoiceInfo>
         <Choice>
@@ -154,9 +229,17 @@
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-
-  
     <ChoiceDataElement Id="classification" IsRequired="true" DisplaySequence="9">
+      <CodableConcept Name="codableConcept_RDES138_classification">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE918" />
+          <Display Value="RDE918" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE918" />
+        </Coding>
+      </CodableConcept>
       <Label>Extramural fluid classification</Label>
       <ChoiceInfo>
         <Choice>
@@ -173,8 +256,17 @@
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="air" IsRequired="true" DisplaySequence="10">
+    <ChoiceDataElement Id="air" IsRequired="true" DisplaySequence="10">
+      <CodableConcept Name="codableConcept_RDES138_air">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE919" />
+          <Display Value="RDE919" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE919" />
+        </Coding>
+      </CodableConcept>
       <Label>Free air detection in abdomen CT</Label>
       <ChoiceInfo>
         <Choice>
@@ -191,109 +283,99 @@
         </Choice>
       </ChoiceInfo>
     </ChoiceDataElement>
- 
-  
-       
-   </DataElements>
-   
+  </DataElements>
   <Rules>
-		<DecisionPoint Id="macrodp">
-			<Label>Macro Banch</Label>
-			<Branch>
-				<EqualCondition DataElementId="conditionConst" ComparisonValue="10"/>
-				<EndPointRef EndPointId="macroEndpoint"></EndPointRef>
-			</Branch>
-		</DecisionPoint>		
-	</Rules>
-
-	
-    <EndPoints>		
-	 <TemplatePartial Id ="ExamPartial">
-	 	<Branch>
-	 		<ReportText Type="PlainText">EXAM TYPE: Diverticulitis Detection EVALUATION</ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 		<ReportText Type="PlainText" >COMPARISON: NONE </ReportText>
-	 		<ReportText Type="Newline"></ReportText>
-	 	</Branch>
-	 </TemplatePartial>
-
-
-	<EndPoint Id="macroEndpoint">
-		<Label>A</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
-				<Branch>
-					<ReportText Type="InsertPartialTemplate" Value="ExamPartial"></ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Diverticulitis Detection evaluation results:</ReportText>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Age" />
-					<ReportText Type="PlainText"> Patient's age: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Age"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="Sex" />
-					<ReportText Type="PlainText"> Patient's sex: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="Sex"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="procedure" />
-					<ReportText Type="PlainText"> Procedure performed: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="procedure"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="views" />
-					<ReportText Type="PlainText"> US views: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="views"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="measurement" />
-					<ReportText Type="PlainText"> Sigmoid colonic wall thickness: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="measurement"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="detection1" />
-					<ReportText Type="PlainText">Detection of pericolonic infiltrative changes: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="detection1"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="detection2" />
-					<ReportText Type="PlainText">Pericolonic lymph node Detection: </ReportText>      
-					<ReportText Type="InsertDataElementValue" Value="detection2"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="extramural" />
-					<ReportText Type="PlainText">Extramural fluid detection: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="extramural"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="classification" />
-					<ReportText Type="PlainText">Extramural fluid classification: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="classification"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				<Branch>
-				    <SectionIf DataElementId="air" />
-					<ReportText Type="PlainText">Free air detection in abdomen CT: </ReportText>
-					<ReportText Type="InsertDataElementValue" Value="air"/>
-					<ReportText Type="Newline"/>
-				</Branch>
-				
-				</ReportSection>
-		</ReportSections>
-		</EndPoint>	
-	</EndPoints>
-
+    <DecisionPoint Id="macrodp">
+      <Label>Macro Banch</Label>
+      <Branch>
+        <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+        <EndPointRef EndPointId="macroEndpoint" />
+      </Branch>
+    </DecisionPoint>
+  </Rules>
+  <EndPoints>
+    <TemplatePartial Id="ExamPartial">
+      <Branch>
+        <ReportText Type="PlainText">EXAM TYPE: Diverticulitis Detection EVALUATION</ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">INDICATION: detailed examination </ReportText>
+        <ReportText Type="Newline" />
+        <ReportText Type="PlainText">COMPARISON: NONE </ReportText>
+        <ReportText Type="Newline" />
+      </Branch>
+    </TemplatePartial>
+    <EndPoint Id="macroEndpoint">
+      <Label>A</Label>
+      <ReportSections>
+        <ReportSection SectionId="findings">
+          <Branch>
+            <ReportText Type="InsertPartialTemplate" Value="ExamPartial" />
+            <ReportText Type="Newline" />
+            <ReportText Type="PlainText">Diverticulitis Detection evaluation results:</ReportText>
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Age" />
+            <ReportText Type="PlainText"> Patient's age: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Age" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="Sex" />
+            <ReportText Type="PlainText"> Patient's sex: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="Sex" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="procedure" />
+            <ReportText Type="PlainText"> Procedure performed: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="procedure" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="views" />
+            <ReportText Type="PlainText"> US views: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="views" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="measurement" />
+            <ReportText Type="PlainText"> Sigmoid colonic wall thickness: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="measurement" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="detection1" />
+            <ReportText Type="PlainText">Detection of pericolonic infiltrative changes: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="detection1" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="detection2" />
+            <ReportText Type="PlainText">Pericolonic lymph node Detection: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="detection2" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="extramural" />
+            <ReportText Type="PlainText">Extramural fluid detection: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="extramural" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="classification" />
+            <ReportText Type="PlainText">Extramural fluid classification: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="classification" />
+            <ReportText Type="Newline" />
+          </Branch>
+          <Branch>
+            <SectionIf DataElementId="air" />
+            <ReportText Type="PlainText">Free air detection in abdomen CT: </ReportText>
+            <ReportText Type="InsertDataElementValue" Value="air" />
+            <ReportText Type="Newline" />
+          </Branch>
+        </ReportSection>
+      </ReportSections>
+    </EndPoint>
+  </EndPoints>
 </ReportingModule>

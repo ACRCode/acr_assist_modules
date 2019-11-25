@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+  <Metadata>
+    <Label>Aortic Diameter Measurements</Label>
+    <ID>Aortic_Diameter_Measurements</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-21</CreatedDate>
+    <LastModifiedDate>2019-11-21</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Aortic_Diameter_Measurements">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES147" />
+        <Display Value="RDES147" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES147" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Aortic Diameter Measurements</Description>
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+  </Metadata>
+  <DataElements>
+    <NumericDataElement Id="Sizeofaneurysm_3" IsRequired="true" DisplaySequence="4" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES147_Sizeofaneurysm_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE983" />
+          <Display Value="RDE983" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE983" />
+        </Coding>
+      </CodableConcept>
+      <Label>Size of aneurysm</Label>
+    </NumericDataElement>
+    <NumericDataElement Id="Aorticrootdiameter_7" IsRequired="true" DisplaySequence="8" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES147_Aorticrootdiameter_7">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE984" />
+          <Display Value="RDE984" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE984" />
+        </Coding>
+      </CodableConcept>
+      <Label>Aortic root diameter</Label>
+      <Hint>diameter of the aortic root</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Sinotubularjunction_8" IsRequired="true" DisplaySequence="9" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES147_Sinotubularjunction_8">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE985" />
+          <Display Value="RDE985" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE985" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sinotubular junction</Label>
+      <Hint>sinotubular junction size</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="midascendingaortadiameter_9" IsRequired="true" DisplaySequence="10" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES147_midascendingaortadiameter_9">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE986" />
+          <Display Value="RDE986" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE986" />
+        </Coding>
+      </CodableConcept>
+      <Label>mid-ascending aorta diameter</Label>
+      <Hint>diameter of the mid-ascending aorta</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Midarch_10" IsRequired="true" DisplaySequence="11" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES147_Midarch_10">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE987" />
+          <Display Value="RDE987" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE987" />
+        </Coding>
+      </CodableConcept>
+      <Label>Mid-arch</Label>
+      <Hint>diameter of the aortic arch at mid-point</Hint>
+    </NumericDataElement>
+    <NumericDataElement Id="Proxdescending_11" IsRequired="true" DisplaySequence="12" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES147_Proxdescending_11">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE988" />
+          <Display Value="RDE988" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE988" />
+        </Coding>
+      </CodableConcept>
+      <Label>Prox descending</Label>
+      <Hint>diameter of the descending aorta</Hint>
+    </NumericDataElement>
+    <IntegerDataElement Id="Age_2" IsRequired="true" DisplaySequence="3" Unit="years">
+      <CodableConcept Name="codableConcept_RDES147_Age_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE989" />
+          <Display Value="RDE989" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE989" />
+        </Coding>
+      </CodableConcept>
+      <Label>Age</Label>
+      <Hint>age in years</Hint>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Sexatbirth_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES147_Sexatbirth_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE990" />
+          <Display Value="RDE990" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE990" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Paint_4" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_RDES147_Paint_4">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE991" />
+          <Display Value="RDE991" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE991" />
+        </Coding>
+      </CodableConcept>
+      <Label>Paint</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="LeakRupture_5" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_RDES147_LeakRupture_5">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE992" />
+          <Display Value="RDE992" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE992" />
+        </Coding>
+      </CodableConcept>
+      <Label>Leak/Rupture</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>present</Value>
+          <Label>present</Label>
+        </Choice>
+        <Choice>
+          <Value>absent</Value>
+          <Label>absent</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Shape_6" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_RDES147_Shape_6">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE993" />
+          <Display Value="RDE993" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE993" />
+        </Coding>
+      </CodableConcept>
+      <Label>Shape</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>saccular</Value>
+          <Label>saccular</Label>
+        </Choice>
+        <Choice>
+          <Value>fusiform</Value>
+          <Label>fusiform</Label>
+        </Choice>
+        <Choice>
+          <Value>eccentric</Value>
+          <Label>eccentric</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <MultiChoiceDataElement Id="Views_0" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES147_Views_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE994" />
+          <Display Value="RDE994" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE994" />
+        </Coding>
+      </CodableConcept>
+      <Label>Views</Label>
+      <Hint />
+      <ChoiceInfo>
+        <Choice>
+          <Value>axial</Value>
+          <Label>axial</Label>
+        </Choice>
+        <Choice>
+          <Value>sagittal</Value>
+          <Label>sagittal</Label>
+        </Choice>
+        <Choice>
+          <Value>coronal</Value>
+          <Label>coronal</Label>
+        </Choice>
+      </ChoiceInfo>
+    </MultiChoiceDataElement>
+    <NumericDataElement Id="Diaphragmandceliacorigin_12" IsRequired="true" DisplaySequence="13" Unit="mm">
+      <CodableConcept Name="codableConcept_RDES147_Diaphragmandceliacorigin_12">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE995" />
+          <Display Value="RDE995" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE995" />
+        </Coding>
+      </CodableConcept>
+      <Label>Diaphragm and celiac origin</Label>
+      <Hint>diameter of the aorta at the level of the diaphragm and at the celicac artery origin</Hint>
+    </NumericDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
+</ReportingModule>

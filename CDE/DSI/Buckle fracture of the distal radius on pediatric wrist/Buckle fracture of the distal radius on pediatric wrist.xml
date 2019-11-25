@@ -1,90 +1,139 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-    <Metadata>
-        <Label>Buckle fracture of the distal radius on pediatric wrist</Label>
-        <ID>Buckle_fracture_of_the_distal_radius_on_pediatric_wrist</ID>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ModuleVersion>1.0</ModuleVersion>
-        <CreatedDate>2019-11-11</CreatedDate>
-        <LastModifiedDate>2019-11-14</LastModifiedDate>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_Buckle_fracture_of_the_distal_radius_on_pediatric_wrist" />
-        <Info>
-            <Description>Buckle fracture of the distal radius on pediatric wrist</Description>
-            <References />
-            <Diagrams />
-            <Contact>
-                <Name>Jordan Meyer</Name>
-                <Institution>American College of Radiology</Institution>
-            </Contact>
-        </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
-        <ApplicableExams />
-        <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
-    </Metadata>
-    <DataElements>
-        <IntegerDataElement Id="age_3" DisplaySequence="4" Unit="years">
-            <Label>age</Label>
-        </IntegerDataElement>
-        <ChoiceDataElement Id="Forearmdetectionofthedistalradiusbucklefracure_0" IsRequired="true" DisplaySequence="1">
-            <Label>Forearm detection of the distal radius buckle fracure</Label>
-            <Hint>Subtle cortical deformity, buckling or angulation in the distal radius.</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>Fracture</Value>
-                    <Label>Fracture</Label>
-                </Choice>
-                <Choice>
-                    <Value>Indeterminate</Value>
-                    <Label>Indeterminate</Label>
-                </Choice>
-                <Choice>
-                    <Value>NoFracture</Value>
-                    <Label>No Fracture</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Views_1" DisplaySequence="2">
-            <Label>Views</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>AP</Value>
-                    <Label>AP</Label>
-                </Choice>
-                <Choice>
-                    <Value>Lateral</Value>
-                    <Label>Lateral</Label>
-                </Choice>
-                <Choice>
-                    <Value>Oblique</Value>
-                    <Label>Oblique</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
-            <Label>Sex at birth</Label>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>male</Value>
-                    <Label>male</Label>
-                </Choice>
-                <Choice>
-                    <Value>female</Value>
-                    <Label>female</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-    </DataElements>
-    <Rules />
-    <EndPoints />
+  <Metadata>
+    <Label>Buckle fracture of the distal radius on pediatric wrist</Label>
+    <ID>Buckle_fracture_of_the_distal_radius_on_pediatric_wrist</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>1.0</ModuleVersion>
+    <CreatedDate>2019-11-11</CreatedDate>
+    <LastModifiedDate>2019-11-14</LastModifiedDate>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Buckle_fracture_of_the_distal_radius_on_pediatric_wrist">
+      <Coding>
+        <System Value="RadElement" />
+        <Version Value="1.0" />
+        <Code Value="RDES107" />
+        <Display Value="RDES107" />
+        <UserSelected Value="false" />
+        <Url Value="http://radelement.org/set/RDES107" />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Buckle fracture of the distal radius on pediatric wrist</Description>
+      <References />
+      <Diagrams />
+      <Contact>
+        <Name>Jordan Meyer</Name>
+        <Institution>American College of Radiology</Institution>
+      </Contact>
+    </Info>
+    <Ontology>
+      <AnatomicRegions />
+      <PossibleDiagnoses />
+    </Ontology>
+    <ApplicableExams />
+    <ApplicableSexes Value="Male" />
+    <ApplicableAgeGroups />
+    <TextCues>
+      <ContextPhrases />
+      <KeyWords />
+      <NegationPhrases />
+    </TextCues>
+    <VoiceActivation />
+  </Metadata>
+  <DataElements>
+    <IntegerDataElement Id="age_3" DisplaySequence="4" Unit="years">
+      <CodableConcept Name="codableConcept_RDES107_age_3">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE688" />
+          <Display Value="RDE688" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE688" />
+        </Coding>
+      </CodableConcept>
+      <Label>age</Label>
+    </IntegerDataElement>
+    <ChoiceDataElement Id="Forearmdetectionofthedistalradiusbucklefracure_0" IsRequired="true" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_RDES107_Forearmdetectionofthedistalradiusbucklefracure_0">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE689" />
+          <Display Value="RDE689" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE689" />
+        </Coding>
+      </CodableConcept>
+      <Label>Forearm detection of the distal radius buckle fracure</Label>
+      <Hint>Subtle cortical deformity, buckling or angulation in the distal radius.</Hint>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Fracture</Value>
+          <Label>Fracture</Label>
+        </Choice>
+        <Choice>
+          <Value>Indeterminate</Value>
+          <Label>Indeterminate</Label>
+        </Choice>
+        <Choice>
+          <Value>NoFracture</Value>
+          <Label>No Fracture</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Views_1" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_RDES107_Views_1">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE690" />
+          <Display Value="RDE690" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE690" />
+        </Coding>
+      </CodableConcept>
+      <Label>Views</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>AP</Value>
+          <Label>AP</Label>
+        </Choice>
+        <Choice>
+          <Value>Lateral</Value>
+          <Label>Lateral</Label>
+        </Choice>
+        <Choice>
+          <Value>Oblique</Value>
+          <Label>Oblique</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="Sexatbirth_2" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_RDES107_Sexatbirth_2">
+        <Coding>
+          <System Value="RadElement" />
+          <Version Value="1.0" />
+          <Code Value="RDE691" />
+          <Display Value="RDE691" />
+          <UserSelected Value="false" />
+          <Url Value="http://radelement.org/element/RDE691" />
+        </Coding>
+      </CodableConcept>
+      <Label>Sex at birth</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>male</Value>
+          <Label>male</Label>
+        </Choice>
+        <Choice>
+          <Value>female</Value>
+          <Label>female</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+  </DataElements>
+  <Rules />
+  <EndPoints />
 </ReportingModule>
