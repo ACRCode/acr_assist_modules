@@ -1,120 +1,105 @@
 {
-  "id": "Unique Id of Test case document",
-  "description": "Unique Id of Test case document",
-  "moduleId": "ACR PituitaryCTMRI",
-  "moduleName": "ACR PituitaryCTMRI",
-  "schemaVersion": "2.0",
-  "moduleVersion": "1.0",
-  "testCases": [
+  
+  "module_name": "ACR PituitaryCTMRI",
+  "module_version": "1.0",
+  "scenarios": [
     
 
     {
-      "testCaseId": "PituitaryFDGPET_1",
-      "endpointId": "Nofurtherevaluation",
-      "endpointlabel": "No Further Evaluation",
+      "scenario_id": "PituitaryFDGPET_1",
       "inputs": [
   
         {
-          "dataElementId": "typeofcyst",
-          "dataElementValue": "simplecyst"
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "simplecyst"
         },
 
 		{
-          "dataElementId": "masseffect",
-          "dataElementValue": "no"
+          "dataelement_id": "masseffect",
+          "dataelement_value": "no"
         }
 		
       ]
     },
    {
-      "testCaseId": "PituitaryFDGPET_2",
-      "endpointId": "referral",
-      "endpointlabel": "Referral for endocrine and/or neurosurgical management",
+      "scenario_id": "PituitaryFDGPET_2",
       "inputs": [
 
         {
-          "dataElementId": "typeofcyst",
-          "dataElementValue": "simplecyst"
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "simplecyst"
         },
 
 		{
-          "dataElementId": "masseffect",
-          "dataElementValue": "yes"
+          "dataelement_id": "masseffect",
+          "dataelement_value": "yes"
         }
       ]
     },
    {
-      "testCaseId": "PituitaryFDGPET_3",
-      "endpointId": "Nofurtherimgaing",
-      "endpointlabel": "No further imaging Correlate with history of pituitary hypersecretion",
+      "scenario_id": "PituitaryFDGPET_3",
       "inputs": [
 
         {
-          "dataElementId": "typeofcyst",
-          "dataElementValue": "mixed"
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed"
         },
 		{
-          "dataElementId": "mixedcystsize",
-          "dataElementValue": "lessthan5mm"
+          "dataelement_id": "mixedcystsize",
+          "dataelement_value": "lessthan5mm"
         }
 
       ]
     },
 	{
-      "testCaseId": "PituitaryFDGPET_4",
-      "endpointId": "Nofurtherimgaingabove5",
-      "endpointlabel": "No further imaging Correlate with history of pituitary hypersecretion and consider endocrine function tests",
+      "scenario_id": "PituitaryFDGPET_4",
       "inputs": [
 
         {
-          "dataElementId": "typeofcyst",
-          "dataElementValue": "mixed"
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed"
         },
 		{
-          "dataElementId": "mixedcystsize",
-          "dataElementValue": "between5and10mm"
+          "dataelement_id": "mixedcystsize",
+          "dataelement_value": "between5and10mm"
         }
       ]
     },
 	{
-      "testCaseId": "PituitaryFDGPET_5",
-      "endpointId": "recommend",
-      "endpointlabel": "Recommend endocrine function tests 6-12 month follow-up pituitary MRI",
+      "scenario_id": "PituitaryFDGPET_5",
       "inputs": [
 
         {
-          "dataElementId": "typeofcyst",
-          "dataElementValue": "mixed"
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed"
         },
         {
-          "dataElementId": "mixedcystsize",
-          "dataElementValue": "greaterthan10mm"
+          "dataelement_id": "mixedcystsize",
+          "dataelement_value": "greaterthan10mm"
         },
 		{
-          "dataElementId": "masseffect",
-          "dataElementValue": "no"
+          "dataelement_id": "masseffect",
+          "dataelement_value": "no"
         }
 
       ]
     },
 
 	{
-      "testCaseId": "PituitaryFDGPET_6",
-      "endpointId": "referral",
-      "endpointlabel": "Referral for endocrine and/or neurosurgical management",
+      "scenario_id": "PituitaryFDGPET_6",
       "inputs": [
 
         {
-          "dataElementId": "typeofcyst",
-          "dataElementValue": "mixed"
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed"
         },
         {
-          "dataElementId": "mixedcystsize",
-          "dataElementValue": "greaterthan10mm"
+          "dataelement_id": "mixedcystsize",
+          "dataelement_value": "greaterthan10mm"
         },
 		{
-          "dataElementId": "masseffect",
-          "dataElementValue": "yes"
+          "dataelement_id": "masseffect",
+          "dataelement_value": "yes"
         }
       ]
     }
