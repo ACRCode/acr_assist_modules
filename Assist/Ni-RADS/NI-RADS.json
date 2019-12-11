@@ -29,7 +29,7 @@
     },
     
     {
-      "scenario_id": "NI-RADS_3",
+      "scenario_id": "NI-RADS_2",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_4",
+      "scenario_id": "NI-RADS_3",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_5",
+      "scenario_id": "NI-RADS_4",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -161,7 +161,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_6",
+      "scenario_id": "NI-RADS_5",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_7",
+      "scenario_id": "NI-RADS_6",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -253,6 +253,55 @@
         },
         {
           "dataelement_id": "Deepnode_Illed_1",
+          "dataelement_value": "MildmodFDGuptake",
+          "dataelement_display_value": "Mild/mod FDG uptake or no PET"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_7",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Deep",
+          "dataelement_display_value": "Deep²"
+        },
+		{
+          "dataelement_id": "Deepnode_1",
+          "dataelement_value": "Discrete",
+          "dataelement_display_value": "Discrete"
+        },
+        {
+          "dataelement_id": "Deepnode_Discrete_1",
           "dataelement_value": "MildmodFDGuptake",
           "dataelement_display_value": "Mild/mod FDG uptake or no PET"
         }
@@ -302,62 +351,13 @@
         },
         {
           "dataelement_id": "Deepnode_Discrete_1",
-          "dataelement_value": "MildmodFDGuptake",
-          "dataelement_display_value": "Mild/mod FDG uptake or no PET"
-        }
-      ]
-    },
-    {
-      "scenario_id": "NI-RADS_9",
-      "inputs": [
-	     {
-          "dataelement_id": "PriorImage_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "Whatistheimagenumber_1",
-          "dataelement_value": "1",
-          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
-		  "range": {
-            "Minimum": 1,
-            "Maximum": 100
-          }
-        },
-        {
-          "dataelement_id": "PrimarySiteQuestion_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes "
-        },
-		{
-          "dataelement_id": "NeckNodeQUestion_neck",
-          "dataelement_value": "No",
-          "dataelement_display_value": "No"
-        },
-        {
-          "dataelement_id": "PrimarySiteQuestion_2",
-          "dataelement_value": "No",
-          "dataelement_display_value": "No"
-        },
-        {
-          "dataelement_id": "Whatistheprimarysitenodetype_1",
-          "dataelement_value": "Deep",
-          "dataelement_display_value": "Deep²"
-        },
-		{
-          "dataelement_id": "Deepnode_1",
-          "dataelement_value": "Discrete",
-          "dataelement_display_value": "Discrete"
-        },
-        {
-          "dataelement_id": "Deepnode_Discrete_1",
           "dataelement_value": "IntenseFDGuptake",
           "dataelement_display_value": "Intense FDG uptake"
         }
       ]
     },
     {
-      "scenario_id": "NI-RADS_10",
+      "scenario_id": "NI-RADS_9",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -396,7 +396,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_11",
+      "scenario_id": "NI-RADS_10",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -435,7 +435,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_12",
+      "scenario_id": "NI-RADS_11",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -465,7 +465,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_13",
+      "scenario_id": "NI-RADS_12",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -495,7 +495,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_14",
+      "scenario_id": "NI-RADS_13",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
@@ -525,7 +525,7 @@
       ]
     },
     {
-      "scenario_id": "NI-RADS_15",
+      "scenario_id": "NI-RADS_14",
       "inputs": [
 	     {
           "dataelement_id": "PriorImage_1",
