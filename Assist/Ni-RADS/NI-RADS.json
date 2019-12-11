@@ -1,0 +1,558 @@
+{
+  "module_name": "NI-9-0",
+  "module_version": "1.0",
+  "scenarios": [
+    {
+      "scenario_id": "NI-RADS_1",
+      "inputs": [
+        {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+    
+    {
+      "scenario_id": "NI-RADS_3",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Superficialmucosal",
+          "dataelement_display_value": "Superficial/mucosal"
+        },
+        {
+          "dataelement_id": "ConditionofthisSuperficialmucosalnode_1",
+          "dataelement_value": "DiffuselinearC",
+          "dataelement_display_value": "Diffuse linear C+ "
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_4",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Superficialmucosal",
+          "dataelement_display_value": "Superficial/mucosal"
+        },
+        {
+          "dataelement_id": "ConditionofthisSuperficialmucosalnode_1",
+          "dataelement_value": "FocalCulcerorFDGuptakeespifinitialposttreatmentscan",
+          "dataelement_display_value": "Focal C+ /ulcer or FDG uptake, esp if initial post treatment scan¹ "
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_5",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Superficialmucosal",
+          "dataelement_display_value": "Superficial/mucosal"
+        },
+        {
+          "dataelement_id": "ConditionofthisSuperficialmucosalnode_1",
+          "dataelement_value": "NodularCespifdevelopsafterinitialposttreatmentscan",
+          "dataelement_display_value": "Nodular C+, esp if develops after initial post treatment scan¹ "
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_6",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Deep",
+          "dataelement_display_value": "Deep²"
+        },
+		{
+          "dataelement_id": "Deepnode_1",
+          "dataelement_value": "Illdefined",
+          "dataelement_display_value": "Ill-defined enhancing"
+        },
+        {
+          "dataelement_id": "Deepnode_Illed_1",
+          "dataelement_value": "NoFDGuptake",
+          "dataelement_display_value": "No FDG uptake"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_7",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Deep",
+          "dataelement_display_value": "Deep²"
+        },
+		{
+          "dataelement_id": "Deepnode_1",
+          "dataelement_value": "Illdefined",
+          "dataelement_display_value": "Ill-defined enhancing"
+        },
+        {
+          "dataelement_id": "Deepnode_Illed_1",
+          "dataelement_value": "MildmodFDGuptake",
+          "dataelement_display_value": "Mild/mod FDG uptake or no PET"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_8",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Deep",
+          "dataelement_display_value": "Deep²"
+        },
+		{
+          "dataelement_id": "Deepnode_1",
+          "dataelement_value": "Discrete",
+          "dataelement_display_value": "Discrete"
+        },
+        {
+          "dataelement_id": "Deepnode_Discrete_1",
+          "dataelement_value": "MildmodFDGuptake",
+          "dataelement_display_value": "Mild/mod FDG uptake or no PET"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_9",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Deep",
+          "dataelement_display_value": "Deep²"
+        },
+		{
+          "dataelement_id": "Deepnode_1",
+          "dataelement_value": "Discrete",
+          "dataelement_display_value": "Discrete"
+        },
+        {
+          "dataelement_id": "Deepnode_Discrete_1",
+          "dataelement_value": "IntenseFDGuptake",
+          "dataelement_display_value": "Intense FDG uptake"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_10",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "Whatistheprimarysitenodetype_1",
+          "dataelement_value": "Definiteprimarysiterecurrence",
+          "dataelement_display_value": "Definite primary site recurrence³"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_11",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+		{
+          "dataelement_id": "Whatistheimagenumber_2",
+          "dataelement_value": "1",
+          "dataelement_display_value": "What is the image number for the suspicious finding at the second primary site?",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "secondprimary_location",
+          "dataelement_value": "oro",
+          "dataelement_display_value": "Oropharynx"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_12",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+        {
+          "dataelement_id": "secondprimary_location",
+          "dataelement_value": "hypo",
+          "dataelement_display_value": "Hypopharynx"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_13",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+        {
+          "dataelement_id": "secondprimary_location",
+          "dataelement_value": "naso",
+          "dataelement_display_value": "Nasopharynx"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_14",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+        {
+          "dataelement_id": "secondprimary_location",
+          "dataelement_value": "glo",
+          "dataelement_display_value": "Glottic Larynx"
+        }
+      ]
+    },
+    {
+      "scenario_id": "NI-RADS_15",
+      "inputs": [
+	     {
+          "dataelement_id": "PriorImage_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "PrimarySiteQuestion_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "NeckNodeQUestion_neck",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        {
+          "dataelement_id": "PrimarySiteQuestion_2",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes "
+        },
+        {
+          "dataelement_id": "secondprimary_location",
+          "dataelement_value": "supra",
+          "dataelement_display_value": "Supraglottic Larynx"
+        }
+      ]
+    }
+  ]
+}
