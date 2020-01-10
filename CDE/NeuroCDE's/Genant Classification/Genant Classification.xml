@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Genant Classification</Label>
+        <ID>Genant_Classification</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-12-28</CreatedDate>
+        <LastModifiedDate>2020-01-4</LastModifiedDate>
+        <DevelopedBy>American Society of Neuroradiology ASNR</DevelopedBy>
+        <CodableConcept Name="codableConcept_Genant_Classification">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES150" />
+                <Display Value="RDES150" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES150" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>Genant Classification</Description>
+            <References>
+                <Citation PubmedId="8797120" Url="">Assessment of Prevalent and Incident Vertebral Fractures in Osteoporosis Research
+HK Genant et al.  Osteoporos Int 14 Suppl 3, S43-55.  2003.</Citation>
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="false">
+                    <Location>image.png</Location>
+                    <Label>image</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>Adam Flanders</Name>
+                <Institution>American Society of Neuroradiology ASNR</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions CodingSystem="NEURORADIOLOGY">
+                <Region Code="NEURORADIOLOGY" Url="">NEURORADIOLOGY</Region>
+            </AnatomicRegions>
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams>
+            <ApplicableExamCategory Axis="Modality">Radiography</ApplicableExamCategory>
+            <ApplicableExamCategory Axis="Anatomy">Spine</ApplicableExamCategory>
+        </ApplicableExams>
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups>
+            <MinimumAge>18</MinimumAge>
+        </ApplicableAgeGroups>
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords>
+                <KeyWord>insufficiency fracture</KeyWord>
+                <KeyWord>vertebral body</KeyWord>
+                <KeyWord>osteoporosis</KeyWord>
+            </KeyWords>
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation>
+            <VoiceCommandPhrase>Genant classification</VoiceCommandPhrase>
+        </VoiceActivation>
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="Genantgradingscale_0" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="Genant grading scale for vertebral compression fractures">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE1003" />
+                    <Display Value="RDE1003" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE1003" />
+                </Coding>
+            </CodableConcept>
+            <Label>Genant grading scale for vertebral compression fractures</Label>
+            <Hint>Thoracic and lumbar vertebrae from T4 to L4 are graded as normal (grade 0); mildly deformed (grade 1: approximately a 20–25% reduction in anterior, middle and/or posterior height and a 10–20% reduction in the projected vertebral area); moderately deformed (grade 2: approximately a 25–40% reduction in anterior, middle and/or posterior height and a 20–40% reduction of the projected vertebral area); and severely deformed (grade 3: approximately a 40% or greater reduction in anterior, middle and/or posterior height and thedeformity (&gt;25-40%), 3: severe deformity (&gt;40% in height). projected vertebral area). A grade 0.5 to designate ‘‘borderline’’ vertebrae that show some deformation but cannot be clearly assigned to grade 1 fractures is some- times also employed. In addition to height reductions, the reader pays careful attention to alterations in the shape and configuration of the vertebrae relative to ad- jacent vertebrae and expected normal appearances.</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Label>0</Label>
+                </Choice>
+                <Choice>
+                    <Label>0.5</Label>
+                </Choice>
+                <Choice>
+                    <Label>1</Label>
+                </Choice>
+                <Choice>
+                    <Label>2</Label>
+                </Choice>
+                <Choice>
+                    <Label>3</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="DecisionPoint1">
+            <Label>DecisionPoint Label</Label>
+            <Description>DecisionPoint Description</Description>
+            <Branch>
+                <Label>Branch Label</Label>
+                <EndPointRef EndPointId="Endpoint1" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="Endpoint1">
+            <Label>Endpoint1 Label</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <OrCondition>
+                            <EqualCondition DataElementId="Genantgradingscale_0" ComparisonValue="Grade0.5" />
+                        </OrCondition>
+                        <ReportText Type="InsertDataElementValue" Value="Genantgradingscale_0" />
+                        <ReportText Type="PlainText"> Fracture is indeterminate at this level</ReportText>
+                    </Branch>
+                    <Branch>
+                        <OrCondition>
+                            <EqualCondition DataElementId="Genantgradingscale_0" ComparisonValue="Grade1" />
+                        </OrCondition>
+                        <ReportText Type="InsertDataElementValue" Value="Genantgradingscale_0" />
+                        <ReportText Type="PlainText"> There is a MILD deformity with 20-25% reduction in anterior, middle and/or posterior vertebral height accompanied by a reduction in area of approximately 10-20%.</ReportText>
+                    </Branch>
+                    <Branch>
+                        <OrCondition>
+                            <EqualCondition DataElementId="Genantgradingscale_0" ComparisonValue="Grade2" />
+                        </OrCondition>
+                        <ReportText Type="PlainText">There is a MODERATE deformity with a &gt;25-40% reduction in vertebral height and approximate 20-40% reduction in area.</ReportText>
+                    </Branch>
+                    <Branch>
+                        <OrCondition>
+                            <EqualCondition DataElementId="Genantgradingscale_0" ComparisonValue="Grade3" />
+                        </OrCondition>
+                        <ReportText Type="PlainText"> There is a SEVERE deformity of the vertebral body with a reduction of &gt;40% in height.</ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
+</ReportingModule>
