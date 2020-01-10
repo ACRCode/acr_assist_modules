@@ -197,32 +197,126 @@
 		
 		
 <Rules>
-		<DecisionPoint Id="HelloAssist">
-			<Label>Hello Assist</Label>
+		<DecisionPoint Id="first question">
+			<Label>Other Char</Label>
 			<Branch>
-				<Label>No follow-up required</Label>
+				<Label>Other char 2</Label>
 				<AndCondition>
-					<EqualCondition DataElementId="Size" ComparisonValue="1"/>
+					<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 				</AndCondition>
-				<EndPointRef EndPointId="NoFU" DiagramId="KeyDiagramBranch_1"></EndPointRef>
+				<EndPointRef EndPointId="Cat2"></EndPointRef>
 			</Branch>
+			    
 			<Branch>
-				<Label>Follow-up is recommended in 6 months</Label>
+			<Label>Other char 3</Label>
 				<AndCondition>
-					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
-					<EqualCondition DataElementId="Enhancement" ComparisonValue="N"/>
+				<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
 				</AndCondition>
-				<EndPointRef EndPointId="moFU" DiagramId="KeyDiagramBranch_3"></EndPointRef>
-			</Branch> 
-			<Branch>
-				<Label>Schedule an immediate follow-up</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
-					<EqualCondition DataElementId="Enhancement" ComparisonValue="Y"/>
-				</AndCondition>
-				<EndPointRef EndPointId="mustFU" DiagramId="KeyDiagramBranch_2"></EndPointRef>
+				<EndPointRef EndPointId="Cat3"></EndPointRef>
 			</Branch>
-		</DecisionPoint>
+			
+			<Branch>
+			<Label> Char 1 option </Label>
+			<EqualCondition DataElementId="adnexaltype" ComparisonValue="lessten"/>
+			<DecisionPoint Id= "char1decision">
+			<Label> decision point char 1</Label>
+			    <Branch>
+					<Label>ONECOND</Label>
+						<EqualCondition DataElementId="simpletype" ComparisonValue="premeno"/>
+						<DecisionPoint Id = "oneconddesi">
+						<Label>pre label</Label>
+						<Branch>
+						<Label>pre label 1</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="premenooptions" ComparisonValue="greatthan5"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>pre label 2</Label>
+				        <EqualCondition DataElementId="premenooptions" ComparisonValue="lessthan5"/>
+				        <DecisionPoint Id ="prelessfive">
+						<Label>pre label 3</Label>
+						<Branch>
+						<Label>first5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less5op" ComparisonValue="prelimassess"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>second5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less5op" ComparisonValue="prenotlim"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat4A"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>third5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less5op" ComparisonValue="prefullychar"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat3"></EndPointRef>
+						</Branch>
+	                    </DecisionPoint>
+						</Branch>
+						
+						</DecisionPoint>
+			    </Branch>
+				<Branch>
+					<Label>TWOCOND</Label>
+							<EqualCondition DataElementId="simpletype" ComparisonValue="postmeno"/>
+							<DecisionPoint Id = "oneconddesi">
+						<Label>post label</Label>
+						<Branch>
+						<Label>post label 1</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="postmenooptions" ComparisonValue="less3"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>pre label 2</Label>
+				        <EqualCondition DataElementId="postmenooptions" ComparisonValue="great3"/>
+				        <DecisionPoint Id ="postgreathree">
+						<Label>post label 3</Label>
+						<Branch>
+						<Label>first3</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less3op" ComparisonValue="postlimassess"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>second5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less3op" ComparisonValue="postnotlim"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat4A"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>third5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less3op" ComparisonValue="postfulychar"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat2A"></EndPointRef>
+						</Branch>
+	                    </DecisionPoint>
+							
+				    </Branch>
+			
+			     </DecisionPoint>
+            </Branch>
+
+
+
+
+           
+
+			</DecisionPoint>
+		</Branch>
+	</DecisionPoint>
+		
 	</Rules>
 
 
@@ -267,6 +361,18 @@
 				<ReportSection SectionId="Recommendation">
 					<Branch>
 						<ReportText Type="PlainText"> See table 1.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+    <EndPoint Id="Cat2A">
+			<Label>Cat 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText"> Not fully characterized by MR</ReportText>
 						<ReportText Type="Newline" />
 					</Branch>
 				</ReportSection>
