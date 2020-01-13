@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../CARDS_Schema_2.0.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+<Metadata>
+<Label>IF-Adnexal</Label>
+<ID>IF-Adnexal</ID>
+      <SchemaVersion>2.0 </SchemaVersion>
+      <ModuleVersion>1.0 </ModuleVersion>
+       <CreatedDate>2019-10-15 </CreatedDate>
+        <LastModifiedDate>2019-10-15 </LastModifiedDate>
+        <DevelopedBy>American College of Radiology </DevelopedBy>
+        <Info>
+        <Description>IF-Adnexal</Description>
+        <Contact>
+        <Name>Ritu Doijad </Name>
+        <Institution>American College of Radiology </Institution>
+        </Contact>
+         </Info>
+ </Metadata>
+ 
+ <DataElements>
+		<ChoiceDataElement Id="adnexaltype" IsRequired="true" DisplaySequence="1">
+			<Label>What is the incidental mass on CT or MRI?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>lessten</Value>
+					<Label>Simple appearing cyst less &lt; 10cm </Label>
+				 </Choice>
+				<Choice>
+					<Value>chardiag</Value>
+					<Label> Other characteristic diagnoses</Label>
+				</Choice>
+				<Choice>
+					<Value>uncertaindiag</Value>
+					<Label>Diagnosis uncertain or simple-appearing cyst &gt;= 10 cm</Label>
+				</Choice>
+
+			</ChoiceInfo>
+			
+		 </ChoiceDataElement>
+		 
+		 
+		 
+		 
+		 <ChoiceDataElement Id="simpletype" IsRequired="true" DisplaySequence="2">
+			<Label>What is the type of simple-appearing cyst ?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>premeno</Value>
+					<Label>Premenopausal &lt;= 50 years if status unknown</Label>
+				 </Choice>
+				<Choice>
+					<Value>postmeno</Value>
+					<Label>Postmenopausal &gt; 50 years if status unknown</Label>
+				 </Choice>
+			 </ChoiceInfo>
+			 <ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="premenooptions" IsRequired="false" DisplaySequence="3">
+			<Label>Pre meno options</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>lessthan5</Value>
+					<Label> &lt;=5 cms</Label>
+				 </Choice>
+				<Choice>
+					<Value>greatthan5</Value>
+					<Label> &gt;5 cms</Label>
+				 </Choice> 			 
+			 </ChoiceInfo>
+			 <ConditionalProperties>
+			 <ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+						
+						<SectionIfNot DataElementId="simpletype"/>
+						<EqualCondition DataElementId="simpletype" ComparisonValue="postmeno"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+              </ConditionalProperty>					
+				</ConditionalProperties>	
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="postmenooptions" IsRequired="false" DisplaySequence="4">
+			<Label>Postmenopausal options</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>less3</Value>
+					<Label>&lt;= 3 cms</Label>
+				 </Choice>
+				<Choice>
+					<Value>great3</Value>
+					<Label>&gt; 3 cms</Label>
+				 </Choice>
+			
+		   </ChoiceInfo>
+		   <ConditionalProperties>
+		   <ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+						
+						<SectionIfNot DataElementId="simpletype"/>
+						<EqualCondition DataElementId="simpletype" ComparisonValue="premeno"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+                   </ConditionalProperty>					
+				</ConditionalProperties>	
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="less5op" IsRequired="true" DisplaySequence="5">
+			<Label>Premenopausal greater 5 option</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>prelimassess</Value>
+					<Label>Limited assessment</Label>
+				 </Choice>
+				<Choice>
+					<Value>prenotlim</Value>
+					<Label>Not limited asessment but not fully characterized by MR</Label>
+				 </Choice>
+				<Choice>
+					<Value>prefullychar</Value>
+					<Label>Fully characterized by MR</Label>
+				 </Choice>
+				 
+		   </ChoiceInfo>
+		   <ConditionalProperties>
+		   <ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+						
+						<SectionIfNot DataElementId="premenooptions"/>
+						<EqualCondition DataElementId="premenooptions" ComparisonValue="greatthan5"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>	
+				</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		
+		<ChoiceDataElement Id="less3op" IsRequired="true" DisplaySequence="6">
+			<Label>Postmenopausal greater 3 options</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>postlimassess</Value>
+					<Label>Limited assessment</Label>
+				 </Choice>
+				<Choice>
+					<Value>postnotlim</Value>
+					<Label>Not limited asessment but not fully characterized by MR</Label>
+				 </Choice>
+				<Choice>
+					<Value>postfulychar</Value>
+					<Label>Fully characterized by MR</Label>
+				 </Choice>
+				
+		   </ChoiceInfo>
+		   <ConditionalProperties>
+		   <ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+						
+						<SectionIfNot DataElementId="postmenooptions"/>
+						<EqualCondition DataElementId="postmenooptions" ComparisonValue="less3"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>	
+				</ConditionalProperties>
+		</ChoiceDataElement>
+	</DataElements>	
+		
+		
+<Rules>
+		<DecisionPoint Id="first question">
+			<Label>Other Char</Label>
+			<Branch>
+				<Label>Other char 2</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
+				</AndCondition>
+				<EndPointRef EndPointId="Cat2"></EndPointRef>
+			</Branch>
+			    
+			<Branch>
+			<Label>Other char 3</Label>
+				<AndCondition>
+				<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+				</AndCondition>
+				<EndPointRef EndPointId="Cat3"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+			<Label> Char 1 option </Label>
+			<EqualCondition DataElementId="adnexaltype" ComparisonValue="lessten"/>
+			<DecisionPoint Id= "char1decision">
+			<Label> decision point char 1</Label>
+			    <Branch>
+					<Label>ONECOND</Label>
+						<EqualCondition DataElementId="simpletype" ComparisonValue="premeno"/>
+						<DecisionPoint Id = "oneconddesi">
+						<Label>pre label</Label>
+						<Branch>
+						<Label>pre label 1</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="premenooptions" ComparisonValue="greatthan5"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>pre label 2</Label>
+				        <EqualCondition DataElementId="premenooptions" ComparisonValue="lessthan5"/>
+				        <DecisionPoint Id ="prelessfive">
+						<Label>pre label 3</Label>
+						<Branch>
+						<Label>first5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less5op" ComparisonValue="prelimassess"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>second5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less5op" ComparisonValue="prenotlim"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat4A"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>third5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less5op" ComparisonValue="prefullychar"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat3"></EndPointRef>
+						</Branch>
+	                    </DecisionPoint>
+						</Branch>
+						
+						</DecisionPoint>
+			    </Branch>
+				<Branch>
+					<Label>TWOCOND</Label>
+							<EqualCondition DataElementId="simpletype" ComparisonValue="postmeno"/>
+							<DecisionPoint Id = "oneconddesi">
+						<Label>post label</Label>
+						<Branch>
+						<Label>post label 1</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="postmenooptions" ComparisonValue="less3"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>pre label 2</Label>
+				        <EqualCondition DataElementId="postmenooptions" ComparisonValue="great3"/>
+				        <DecisionPoint Id ="postgreathree">
+						<Label>post label 3</Label>
+						<Branch>
+						<Label>first3</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less3op" ComparisonValue="postlimassess"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat1"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>second5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less3op" ComparisonValue="postnotlim"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat4A"></EndPointRef>
+						</Branch>
+						<Branch>
+						<Label>third5</Label>
+						<AndCondition>
+				        <EqualCondition DataElementId="less3op" ComparisonValue="postfulychar"/>
+				        </AndCondition>
+	                    <EndPointRef EndPointId="Cat2A"></EndPointRef>
+						</Branch>
+	                    </DecisionPoint>
+							
+				    </Branch>
+			
+			     </DecisionPoint>
+            </Branch>
+
+
+
+
+           
+
+			</DecisionPoint>
+		</Branch>
+	</DecisionPoint>
+		
+	</Rules>
+
+
+
+
+
+	<EndPoints>
+		<EndPoint Id="Cat0">
+			<Label>Cat 0</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">No further imaging required</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+
+        <EndPoint Id="Cat1">
+			<Label>Cat 1</Label>
+			<ReportSections>
+			<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Limited Assessment</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Ultrasound (US) to characterize</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+    <EndPoint Id="Cat2">
+			<Label>Cat 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText"> See table 1.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+    <EndPoint Id="Cat2A">
+			<Label>Cat 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText"> Not fully characterized by MR</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+    <EndPoint Id="Cat3">
+			<Label>Cat 3</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">US or MR to characterize</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		
+		<EndPoint Id="Cat4A">
+			<Label>Cat 4A</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="PlainText">Not limited assessment but not fully characterized by MR</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">US follow up in 6-12 months</ReportText>
+						<ReportText Type="Newline"/>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		 <EndPoint Id="Cat3">
+			<Label>Cat 3</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">US follow up in 6-12 months</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+
+		
+	</EndPoints>
+	
+</ReportingModule>
