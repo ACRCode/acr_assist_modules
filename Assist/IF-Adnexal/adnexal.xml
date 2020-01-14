@@ -12,10 +12,13 @@
 		<Info>
 			<Description>IF-Adnexal</Description>
 			<Contact>
-				<Name>Ritu Doijad </Name>
-				<Institution>American College of Radiology </Institution>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
 			</Contact>
 		</Info>
+		<ReportCitationText> Add report citation text here ..</ReportCitationText>
+		<ApplicableSexes Value="Both"></ApplicableSexes>
 	</Metadata>
 
 	<DataElements>
@@ -197,7 +200,7 @@
 
 
 	<Rules>
-		<DecisionPoint Id="first question">
+		<DecisionPoint Id="first_question">
 			<Label>Other Char</Label>
 			<Branch>
 				<Label>Other char 2</Label>
@@ -266,7 +269,7 @@
 					<Branch>
 						<Label>TWOCOND</Label>
 						<EqualCondition DataElementId="simpletype" ComparisonValue="postmeno"/>
-						<DecisionPoint Id = "oneconddesi">
+						<DecisionPoint Id = "oneconddesi_1">
 							<Label>post label</Label>
 							<Branch>
 								<Label>post label 1</Label>
@@ -410,7 +413,7 @@
 			</ReportSections>
 		</EndPoint>
 
-		<EndPoint Id="Cat3">
+		<EndPoint Id="Cat3_duplicate">
 			<Label>Cat 3</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -421,8 +424,6 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
-
-
 	</EndPoints>
 
 </ReportingModule>
