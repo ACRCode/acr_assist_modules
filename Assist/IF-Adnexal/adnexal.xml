@@ -68,18 +68,10 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="premenooptions" IsRequired="false" DisplaySequence="3">
-			<Label>Pre meno options</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>lessthan5</Value>
-					<Label> &lt;=5 cms</Label>
-				 </Choice>
-				<Choice>
-					<Value>greatthan5</Value>
-					<Label> &gt;5 cms</Label>
-				 </Choice> 			 
-			 </ChoiceInfo>
+		<NumericDataElement Id="premenopausalsize" IsRequired="false" DisplaySequence="3">
+			<Label>Pre menopausal size</Label>
+			<Minimum>1</Minimum>		
+		
 			 <ConditionalProperties>
 			 <ConditionalProperty>
 					<OrCondition>
@@ -94,22 +86,12 @@
 					<IsRelevant>false</IsRelevant>	
               </ConditionalProperty>					
 				</ConditionalProperties>	
-		</ChoiceDataElement>
+		</NumericDataElement>
 		
-		
-		<ChoiceDataElement Id="postmenooptions" IsRequired="false" DisplaySequence="4">
-			<Label>Postmenopausal options</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>less3</Value>
-					<Label>&lt;= 3 cms</Label>
-				 </Choice>
-				<Choice>
-					<Value>great3</Value>
-					<Label>&gt; 3 cms</Label>
-				 </Choice>
+		<NumericDataElement Id="postmenopausalsize" IsRequired="false" DisplaySequence="4">
+			<Label>Post menopausal size</Label>
+			<Minimum>1</Minimum>
 			
-		   </ChoiceInfo>
 		   <ConditionalProperties>
 		   <ConditionalProperty>
 					<OrCondition>
@@ -124,7 +106,7 @@
 					<IsRelevant>false</IsRelevant>	
                    </ConditionalProperty>					
 				</ConditionalProperties>	
-		</ChoiceDataElement>
+		</NumericDataElement>
 		
 		
 		<ChoiceDataElement Id="great5op" IsRequired="true" DisplaySequence="5">
@@ -151,8 +133,8 @@
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
 						
-						<SectionIfNot DataElementId="premenooptions"/>
-						<EqualCondition DataElementId="premenooptions" ComparisonValue="lessthan5"/>
+						<SectionIfNot DataElementId="premenopausalsize"/>
+						<EqualCondition DataElementId="premenopausalsize" ComparisonValue="lessthan5"/>
 
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
@@ -185,8 +167,8 @@
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
 						
-						<SectionIfNot DataElementId="postmenooptions"/>
-						<EqualCondition DataElementId="postmenooptions" ComparisonValue="less3"/>
+						<SectionIfNot DataElementId="postmenopausalsize"/>
+						<EqualCondition DataElementId="postmenopausalsize" ComparisonValue="less3"/>
 
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
@@ -194,18 +176,9 @@
 				</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="fullycharbyMRI" IsRequired="true" DisplaySequence="7">
+		<NumericDataElement Id="fullycharbyMRI" IsRequired="true" DisplaySequence="7">
 			<Label>Assessment for MR characterization : Premenopausal</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>lessthan7</Value>
-					<Label>&lt;= 7 cms</Label>
-				 </Choice>
-				<Choice>
-					<Value>greatthan7</Value>
-					<Label>&gt; 7 cms</Label>
-				 </Choice>
-		   </ChoiceInfo>
+			<Minimum>1</Minimum>
 		   <ConditionalProperties>
 		   <ConditionalProperty>
 					<OrCondition>
@@ -221,20 +194,11 @@
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
 				</ConditionalProperties>
-		</ChoiceDataElement>
+		</NumericDataElement>
 		
-		<ChoiceDataElement Id="fullycharbyMRIpostmenopausal" IsRequired="true" DisplaySequence="8">
+		<NumericDataElement Id="fullycharbyMRIpostmenopausal" IsRequired="true" DisplaySequence="8">
 			<Label>Assessment for MR characterization : Postmenopausal </Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>lessthan5post</Value>
-					<Label>&lt;= 5 cms</Label>
-				 </Choice>
-				<Choice>
-					<Value>greatthan5post</Value>
-					<Label>&gt; 5 cms</Label>
-				 </Choice>
-		   </ChoiceInfo>
+			<Minimum>1</Minimum>
 		   <ConditionalProperties>
 		   <ConditionalProperty>
 					<OrCondition>
@@ -250,7 +214,7 @@
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
 				</ConditionalProperties>
-		</ChoiceDataElement>
+		</NumericDataElement>
 		
 		
 	</DataElements>	
@@ -286,15 +250,15 @@
 						<DecisionPoint Id = "oneconddesi">
 						<Label>pre label</Label>
 						<Branch>
-						<Label>pre label 1</Label>
+						<Label> less than 5 premenopausal</Label>
 						<AndCondition>
-				        <EqualCondition DataElementId="premenooptions" ComparisonValue="lessthan5"/>
+				        <LessthanCondition DataElementId="premenopausalsize" ComparisonValue="5"/>
 				        </AndCondition>
 	                    <EndPointRef EndPointId="Noimaging"></EndPointRef>
 						</Branch>
 						<Branch>
-						<Label>pre label 2</Label>
-				        <EqualCondition DataElementId="premenooptions" ComparisonValue="greatthan5"/>
+						<Label> greater than 5 premenopausal size</Label>
+				        <GreaterthanOrEqualsCondition DataElementId="premenopausalsize" ComparisonValue="5"/>
 				        <DecisionPoint Id ="prelessfive">
 						<Label>pre label 3</Label>
 						<Branch>
@@ -319,14 +283,14 @@
 							<Branch>
 							<Label> MRI characterization branch for no imaging</Label>
 							<AndCondition>
-							<EqualCondition DataElementId="fullycharbyMRI" ComparisonValue="lessthan7"/>
+							<LessthanCondition DataElementId="fullycharbyMRI" ComparisonValue="7"/>
 				            </AndCondition>
 	                        <EndPointRef EndPointId="Noimaging"></EndPointRef>
 							</Branch>
 							<Branch>
 							<Label> MRI characterization branch for follow up</Label>
 							<AndCondition>
-							<EqualCondition DataElementId="fullycharbyMRI" ComparisonValue="greatthan7"/>
+							<GreaterthanOrEqualsCondition DataElementId="fullycharbyMRI" ComparisonValue="7"/>
 				            </AndCondition>
 	                        <EndPointRef EndPointId="USfollowup"></EndPointRef>
 							</Branch>
@@ -346,15 +310,15 @@
 							<DecisionPoint Id = "oneconddesi">
 						<Label>post label</Label>
 						<Branch>
-						<Label>post label 1</Label>
+						<Label>postmenopausal size less 3</Label>
 						<AndCondition>
-				        <EqualCondition DataElementId="postmenooptions" ComparisonValue="less3"/>
+				        <LessthanCondition DataElementId="postmenopausalsize" ComparisonValue="3"/>
 				        </AndCondition>
 	                    <EndPointRef EndPointId="Noimaging"></EndPointRef>
 						</Branch>
 						<Branch>
-						<Label>pre label 2</Label>
-				        <EqualCondition DataElementId="postmenooptions" ComparisonValue="great3"/>
+						<Label>postmenopausal size great 3</Label>
+				        <GreaterthanOrEqualsCondition DataElementId="postmenopausalsize" ComparisonValue="3"/>
 				        <DecisionPoint Id ="postgreathree">
 						<Label>post label 3</Label>
 						<Branch>
@@ -379,14 +343,14 @@
 							<Branch>
 							<Label> post MRI characterization branch for no imaging</Label>
 							<AndCondition>
-							<EqualCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="lessthan5post"/>
+							<LessthanCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="5"/>
 				            </AndCondition>
 	                        <EndPointRef EndPointId="Noimaging"></EndPointRef>
 							</Branch>
 							<Branch>
 							<Label> post MRI characterization branch for follow up</Label>
 							<AndCondition>
-							<EqualCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="greatthan5post"/>
+							<GreaterthanOrEqualsCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="5"/>
 				            </AndCondition>
 	                        <EndPointRef EndPointId="USfollowup"></EndPointRef>
 							</Branch>
