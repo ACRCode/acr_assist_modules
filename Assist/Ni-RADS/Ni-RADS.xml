@@ -650,36 +650,11 @@
 				<EqualCondition DataElementId="PrimarySiteQuestion_2" ComparisonValue="Yes"/>
 				<DecisionPoint Id="WhatistheprimarysitenodetypeDp_2">
 					<Label>Primary Site Node type </Label>
-					
 							<Branch>
 								<Label>ONECOND</Label>
-								<EqualCondition DataElementId="secondprimary_location" ComparisonValue="oro"/>
-								<EndPointRef EndPointId="Catsecondprimary_2"/>
-							</Branch>
-							<Branch>
-								<Label>TWOCOND</Label>
-								<EqualCondition DataElementId="secondprimary_location" ComparisonValue="hypo"/>
+								<SectionIf DataElementId="secondprimary_location"/>
 								<EndPointRef EndPointId="Catsecondprimary_2"/>
 							</Branch>									
-							<Branch>
-								<Label>THREECOND</Label>
-								<EqualCondition DataElementId="secondprimary_location" ComparisonValue="naso"/>
-								<EndPointRef EndPointId="Catsecondprimary_2"/>
-							</Branch>
-							<Branch>
-								<Label>FOURCOND</Label>
-								<EqualCondition DataElementId="secondprimary_location" ComparisonValue="glo"/>
-								<EndPointRef EndPointId="Catsecondprimary_2"/>
-							</Branch>									
-							<Branch>
-								<Label>FIVECOND</Label>
-								<EqualCondition DataElementId="secondprimary_location" ComparisonValue="supra"/>
-								<EndPointRef EndPointId="Catsecondprimary_2"/>
-							</Branch>
-						
-					
-					
-											
 				</DecisionPoint>
 			</Branch>		
 			<Branch>
