@@ -216,6 +216,109 @@
 				</ConditionalProperties>
 		</NumericDataElement>
 		
+		<ChoiceDataElement Id="adnexaltypemasses" IsRequired="true" DisplaySequence="9">
+			<Label>What is the adnexal mass on CT or MRI?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>hemorrhagiccyst</Value>
+					<Label>Hemorrhagic cyst</Label>
+				 </Choice>
+				<Choice>
+					<Value>paraovariancyst</Value>
+					<Label>Para-ovarian cyst</Label>
+				</Choice>
+				<Choice>
+					<Value>peritonealcyst</Value>
+					<Label>Peritoneal inclusion cyst</Label>
+				</Choice>
+				<Choice>
+					<Value>hydrosalpinx</Value>
+					<Label>Simple hydrosalpinx</Label>
+				</Choice>
+				<Choice>
+					<Value>ovarianfibroma</Value>
+					<Label>Ovarian fibroma</Label>
+				</Choice>
+				<Choice>
+					<Value>uterineleiyoma</Value>
+					<Label>Uterine leiomyoma</Label>
+				</Choice>
+				<Choice>
+					<Value>endometrioma</Value>
+					<Label>Endometrioma</Label>
+				</Choice>
+				<Choice>
+				    <Value>dermoid</Value>
+					<Label>Dermoid</Label>
+				</Choice>
+				<Choice>
+				<Value>suspectedmalignancy</Value>
+				<Label>Suspected malignancy</Label>
+				</Choice>
+			</ChoiceInfo>
+			
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+			
+		 </ChoiceDataElement>
+		 
+		 
+		 
+		 
+		 <ChoiceDataElement Id="hemorrhaghic_menopausal_status" IsRequired="true" DisplaySequence="10">
+			<Label>What is the menopausal status?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>premeno</Value>
+					<Label>Premenopausal or &lt;= 50 years if status unknown</Label>
+				 </Choice>
+				<Choice>
+					<Value>postmeno</Value>
+					<Label>Postmenopausal or &gt; 50 years if status unknown</Label>
+				 </Choice>
+			 </ChoiceInfo>
+			 
+			 <ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+			 
+		</ChoiceDataElement>
+		
+		
+		<NumericDataElement Id="Hemorrhagiccystsize" IsRequired="false" DisplaySequence="11">
+			<Label>Pre menopausal size</Label>
+			<Minimum>1</Minimum>		
+		<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+			 
+		</NumericDataElement>
+		
 		
 	</DataElements>	
 		
@@ -225,10 +328,101 @@
 			<Label>Other Char</Label>
 			<Branch>
 				<Label>Other char 2</Label>
-				<AndCondition>
 					<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
-				</AndCondition>
-				<EndPointRef EndPointId="seetable"></EndPointRef>
+				    <DecisionPoint Id = "decisionchardiag">
+						<Label>decision characteristic features for adnexal mass</Label>
+						<Branch>
+						<Label>option 1 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="paraovariancyst"/>
+						</AndCondition>
+						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
+						</Branch>
+						
+						<Branch>
+						<Label>option 2 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="peritonealcyst"/>
+						</AndCondition>
+						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
+						</Branch>
+						
+						<Branch>
+						<Label>option 3 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="hydrosalpinx"/>
+						</AndCondition>
+						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
+						</Branch>
+						
+						<Branch>
+						<Label>option 4 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="ovarianfibroma"/>
+						</AndCondition>
+						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
+						</Branch>
+						
+						<Branch>
+						<Label>option 5 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="uterineleiyoma"/>
+						</AndCondition>
+						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
+						</Branch>
+						
+						<Branch>
+						<Label>option 6 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="endometrioma"/>
+						</AndCondition>
+						<EndPointRef EndPointId="gynecologistmanaged"></EndPointRef>
+						</Branch>
+						
+						<Branch>
+						<Label>option 7 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="dermoid"/>
+						</AndCondition>
+						<EndPointRef EndPointId="gynecologistmanaged"></EndPointRef>
+						</Branch>
+						
+						
+						<Branch>
+						<Label>option 8 chardiag</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="suspectedmalignancy"/>
+						</AndCondition>
+						<EndPointRef EndPointId="USMRIcharacterize"></EndPointRef>
+						</Branch>
+						
+						<Branch>
+						<Label>option 9 chardiag</Label>
+						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="hemorrhagiccyst"/>
+						  <DecisionPoint Id ="decisionhemorrhagicyst">
+						  <Label>Decision hemorrhagic cyst</Label>
+						    <Branch>
+							<Label>hemorrhagic cyst premenopausal status</Label>
+							<AndCondition>
+							<EqualCondition DataElementId="hemorrhaghic_menopausal_status" ComparisonValue="premeno"/>
+						    </AndCondition>
+							<EndPointRef EndPointId="Noimaging"></EndPointRef>
+						    </Branch>
+							<Branch>
+							<Label>hemorrhagic cyst postmenopausal status</Label>
+							<AndCondition>
+							<EqualCondition DataElementId="hemorrhaghic_menopausal_status" ComparisonValue="postmeno"/>
+						    </AndCondition>
+							<EndPointRef EndPointId="USMRIcharacterize"></EndPointRef>
+						    </Branch>
+							
+							
+						  </DecisionPoint>
+						</Branch>
+						
+						</DecisionPoint>
+						
+				
 			</Branch>
 			    
 			<Branch>
@@ -293,10 +487,7 @@
 							<GreaterthanOrEqualsCondition DataElementId="fullycharbyMRI" ComparisonValue="7"/>
 				            </AndCondition>
 	                        <EndPointRef EndPointId="USfollowup"></EndPointRef>
-							</Branch>
-							
-						  
-						  
+							</Branch>  
 						  </DecisionPoint>
 						</Branch>
 	                    </DecisionPoint>
@@ -445,6 +636,42 @@
 				<ReportSection SectionId="finding">
 					<Branch>
 						<ReportText Type="PlainText">Fully characterized by MR</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="clinicalmanagement">
+			<Label>Clinical Management</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Usually further imaging is unnecessary; clinical management.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+	</EndPoint>	
+	
+	 <EndPoint Id="gynecologistmanaged">
+			<Label>gynecologist managed</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Usually managed by gynecologist; may require periodic imaging.</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="USfollowup2or3months">
+			<Label>US follow up 2 or 3 months</Label>
+			<ReportSections>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">US follow up in 2-3 months</ReportText>
 						<ReportText Type="Newline" />
 					</Branch>
 				</ReportSection>
