@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Keros Classification</Label>
+        <ID>Keros_Classification</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-01-27</CreatedDate>
+        <LastModifiedDate>2020-01-27</LastModifiedDate>
+        <DevelopedBy>Adam Flanders</DevelopedBy>
+        <CodableConcept />
+        <Info>
+            <Description>Keros Classification</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Adam Flanders</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams>
+            <ApplicableExamCategory Axis="Modality">CT</ApplicableExamCategory>
+            <ApplicableExamCategory Axis="Anatomy">SINUS, ETHMOID</ApplicableExamCategory>
+        </ApplicableExams>
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <MultiChoiceDataElement Id="KerosType_0" DisplaySequence="1">
+            <Label>Keros Type</Label>
+            <Hint>The Keros classification is a method of classifying the depth of the olfactory fossa. The ethmoid labyrinth is covered by the fovea ethmoidalis of the frontal bone and separates the ethmoidal cells from the anterior cranial fossa.</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>TypeI(0-3mm)</Value>
+                    <Label>Type I (0 - 3 mm)</Label>
+                </Choice>
+                <Choice>
+                    <Value>TypeII(3.1-7mm)</Value>
+                    <Label>Type II (3.1 - 7 mm)</Label>
+                </Choice>
+                <Choice>
+                    <Value>TypeIII(&gt;7mm)</Value>
+                    <Label>Type III (&gt; 7mm)</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="Endpoint">
+            <Label>Endpoint</Label>
+            <Branch>
+                <Label>Endpoint</Label>
+                <EndPointRef EndPointId="Endpoint" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="Endpoint" />
+    </EndPoints>
+</ReportingModule>

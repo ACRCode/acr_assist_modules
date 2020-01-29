@@ -49,9 +49,84 @@
         <ApplicableSexes Value="Both" />
     </Metadata>
     <DataElements>
-        <GlobalValue Id="conditionConst">10</GlobalValue>
+        <IntegerDataElement Id="maxillarysinuses" IsRequired="true" DisplaySequence="5" Unit="">
+            <CodableConcept Name="Maxillary sinuses">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE137" />
+                    <Display Value="RDE137" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE137" />
+                </Coding>
+            </CodableConcept>
+            <Label>Maxillary sinuses</Label>
+            <Hint />
+            <Minimum>1</Minimum>
+            <Maximum>1000</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="maxillaryinfundibulum" IsRequired="true" DisplaySequence="7" Unit="">
+            <CodableConcept Name="Maxillary Infundibulum">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE139" />
+                    <Display Value="RDE139" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE139" />
+                </Coding>
+            </CodableConcept>
+            <Label>Maxillary Infundibulum</Label>
+            <Hint>Maxillary Infundibulum</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="osteomeatalunits" IsRequired="true" DisplaySequence="8" Unit="">
+            <CodableConcept Name="Osteomeatalunits">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE140" />
+                    <Display Value="RDE140" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE140" />
+                </Coding>
+            </CodableConcept>
+            <Label>Osteomeatalunits</Label>
+            <Hint>Osteomeatalunits</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="sphenoethmoidalrecesses" IsRequired="true" DisplaySequence="9" Unit="">
+            <CodableConcept Name="Sphenoethmoidal recesses">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE141" />
+                    <Display Value="RDE141" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE141" />
+                </Coding>
+            </CodableConcept>
+            <Label>Sphenoethmoidal recesses</Label>
+            <Hint>Sphenoethmoidal recesses</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="sphenoidsinuses" IsRequired="true" DisplaySequence="10" Unit="">
+            <CodableConcept Name="Sphenoid sinuses">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE142" />
+                    <Display Value="RDE142" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE142" />
+                </Coding>
+            </CodableConcept>
+            <Label>Sphenoid sinuses</Label>
+            <Hint>Sphenoid sinuses</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
         <ChoiceDataElement Id="laterallamella" IsRequired="true" DisplaySequence="1">
-            <CodableConcept Name="laterallamella">
+            <CodableConcept Name="Lateral Lamella">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
@@ -62,23 +137,24 @@
                 </Coding>
             </CodableConcept>
             <Label>Lateral Lamella</Label>
+            <Hint>Lateral Lamella</Hint>
             <ChoiceInfo>
                 <Choice>
-                    <Value>left</Value>
+                    <Value>Left</Value>
                     <Label>Left</Label>
                 </Choice>
                 <Choice>
-                    <Value>right</Value>
+                    <Value>Right</Value>
                     <Label>Right</Label>
                 </Choice>
                 <Choice>
-                    <Value>bilateral</Value>
+                    <Value>Bilateral</Value>
                     <Label>Bilateral</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
         <ChoiceDataElement Id="lateralpositions" IsRequired="true" DisplaySequence="2">
-            <CodableConcept Name="lateralpositions">
+            <CodableConcept Name="Lateral Positions">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
@@ -89,19 +165,20 @@
                 </Coding>
             </CodableConcept>
             <Label>Lateral Positions</Label>
+            <Hint>Lateral Positions</Hint>
             <ChoiceInfo>
                 <Choice>
-                    <Value>normal</Value>
+                    <Value>Normal in position</Value>
                     <Label>Normal in position</Label>
                 </Choice>
                 <Choice>
-                    <Value>elongated</Value>
+                    <Value>Elongated</Value>
                     <Label>Elongated</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
         <ChoiceDataElement Id="kerosclass" IsRequired="true" DisplaySequence="3">
-            <CodableConcept Name="kerosclass">
+            <CodableConcept Name="Keros Class">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
@@ -112,9 +189,10 @@
                 </Coding>
             </CodableConcept>
             <Label>Keros Class</Label>
+            <Hint>Keros Class</Hint>
             <ChoiceInfo>
                 <Choice>
-                    <Value>none</Value>
+                    <Value>None</Value>
                     <Label>None</Label>
                 </Choice>
                 <Choice>
@@ -144,7 +222,7 @@
             </ChoiceInfo>
         </ChoiceDataElement>
         <ChoiceDataElement Id="ethmoidarteries" IsRequired="true" DisplaySequence="4">
-            <CodableConcept Name="ethmoidarteries">
+            <CodableConcept Name="Ethmoid arteries">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
@@ -155,34 +233,20 @@
                 </Coding>
             </CodableConcept>
             <Label>Ethmoid arteries</Label>
+            <Hint>Ethmoid arteries</Hint>
             <ChoiceInfo>
                 <Choice>
-                    <Value>normal</Value>
+                    <Value>Normal</Value>
                     <Label>Normal</Label>
                 </Choice>
                 <Choice>
-                    <Value>exposed</Value>
+                    <Value>Exposed</Value>
                     <Label>Exposed</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <IntegerDataElement Id="maxillarysinuses" IsRequired="true" DisplaySequence="5">
-            <CodableConcept Name="maxillarysinuses">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE137" />
-                    <Display Value="RDE137" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE137" />
-                </Coding>
-            </CodableConcept>
-            <Label>Maxillary sinuses</Label>
-            <Minimum>1</Minimum>
-            <Maximum>1000</Maximum>
-        </IntegerDataElement>
         <ChoiceDataElement Id="uncinateprocesses" IsRequired="true" DisplaySequence="6">
-            <CodableConcept Name="uncinateprocesses">
+            <CodableConcept Name="Uncinate Processes">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
@@ -193,77 +257,18 @@
                 </Coding>
             </CodableConcept>
             <Label>Uncinate Processes</Label>
+            <Hint>Uncinate Processes</Hint>
             <ChoiceInfo>
                 <Choice>
-                    <Value>normal</Value>
+                    <Value>Normal</Value>
                     <Label>Normal</Label>
                 </Choice>
                 <Choice>
-                    <Value>lateralized</Value>
+                    <Value>Lateralized</Value>
                     <Label>Lateralized</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <IntegerDataElement Id="maxillaryinfundibulum" IsRequired="true" DisplaySequence="7">
-            <CodableConcept Name="maxillaryinfundibulum">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE139" />
-                    <Display Value="RDE139" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE139" />
-                </Coding>
-            </CodableConcept>
-            <Label>Maxillary Infundibulum</Label>
-            <Minimum>1</Minimum>
-            <Maximum>1000</Maximum>
-        </IntegerDataElement>
-        <IntegerDataElement Id="osteomeatalunits" IsRequired="true" DisplaySequence="8">
-            <CodableConcept Name="osteomeatalunits">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE140" />
-                    <Display Value="RDE140" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE140" />
-                </Coding>
-            </CodableConcept>
-            <Label>Osteomeatalunits</Label>
-            <Minimum>1</Minimum>
-            <Maximum>1000</Maximum>
-        </IntegerDataElement>
-        <IntegerDataElement Id="sphenoethmoidalrecesses" IsRequired="true" DisplaySequence="9">
-            <CodableConcept Name="sphenoethmoidalrecesses">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE141" />
-                    <Display Value="RDE141" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE141" />
-                </Coding>
-            </CodableConcept>
-            <Label>Sphenoethmoidal recesses</Label>
-            <Minimum>1</Minimum>
-            <Maximum>1000</Maximum>
-        </IntegerDataElement>
-        <IntegerDataElement Id="sphenoidsinuses" IsRequired="true" DisplaySequence="10">
-            <CodableConcept Name="CompressionGrade">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE142" />
-                    <Display Value="RDE142" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE142" />
-                </Coding>
-            </CodableConcept>
-            <Label>Sphenoid sinuses</Label>
-            <Minimum>1</Minimum>
-            <Maximum>1000</Maximum>
-        </IntegerDataElement>
     </DataElements>
     <Rules>
         <DecisionPoint Id="macrodp">
