@@ -371,15 +371,6 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>	
 		
-
-		
-		
-		
-		
-		
-		
-		
-		
 		<ChoiceDataElement Id="nodetype_level" DisplaySequence="15">
 			<Label>What is the nodal level of the most suspicious neck node?</Label>
 			<ChoiceInfo>
@@ -430,7 +421,7 @@
 		</ChoiceDataElement>	
 		
 		
-		<ChoiceDataElement Id="nodetype_noprior" DisplaySequence="16">
+		<MultiChoiceDataElement Id="nodetype_noprior" DisplaySequence="16">
 			<Label>Which of the following best describes the most suspicious neck node ?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -462,7 +453,7 @@
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
-		</ChoiceDataElement>	
+		</MultiChoiceDataElement>	
 		
 		
 		
@@ -663,6 +654,7 @@
 			     <Branch>
 				 <Label> branch_neck_ques </Label>
 				 <EqualCondition DataElementId="NeckNodeQUestion_neck" ComparisonValue="No"/>
+				 
 				 <EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_neck"/>
 				 </Branch>
 			
@@ -725,7 +717,7 @@
 			</DecisionPoint>
 			</Branch>
 	   </DecisionPoint>
-
+ 
     
 	</Rules>
 	<EndPoints>
