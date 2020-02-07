@@ -19,7 +19,22 @@
  </Metadata>
  
  <DataElements>
-		<ChoiceDataElement Id="breastcomposition" IsRequired="true" DisplaySequence="1">
+         <ChoiceDataElement Id="question" IsRequired="true" DisplaySequence="1">
+			<Label>What is the kind of examination?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>screening</Value>
+					<Label>Screening examination</Label>
+				</Choice>
+				<Choice>
+					<Value>diagostic</Value>
+					<Label>Diagnostic examination</Label>
+				</Choice>
+			</ChoiceInfo>
+		 </ChoiceDataElement>
+ 
+ 
+		<ChoiceDataElement Id="breastcomposition" IsRequired="true" DisplaySequence="2">
 			<Label>What is the breast composition?</Label>
 			<Hint>Density and composition evidenced from mammography reports</Hint>
 			<ChoiceInfo>
@@ -45,7 +60,7 @@
 		 
 		 
 		 
-		 <ChoiceDataElement Id="shape" IsRequired="true" DisplaySequence="2">
+		 <ChoiceDataElement Id="shape" IsRequired="true" DisplaySequence="3">
 			<Label>Shape</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -64,7 +79,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="margin" IsRequired="true" DisplaySequence="3">
+		<ChoiceDataElement Id="margin" IsRequired="true" DisplaySequence="4">
 			<Label>Margin</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -92,7 +107,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="density" IsRequired="true" DisplaySequence="4">
+		<ChoiceDataElement Id="density" IsRequired="true" DisplaySequence="5">
 			<Label>Density</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -115,7 +130,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="benigncalci" IsRequired="true" DisplaySequence="5">
+		<ChoiceDataElement Id="benigncalci" IsRequired="true" DisplaySequence="6">
 			<Label> Calcification : Typically benign</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -154,7 +169,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="suspiciouscalci" IsRequired="true" DisplaySequence="5">
+		<ChoiceDataElement Id="suspiciouscalci" IsRequired="true" DisplaySequence="7">
 			<Label> Calcification : Suspicious Morphology</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -177,7 +192,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="distributioncalci" IsRequired="true" DisplaySequence="6">
+		<ChoiceDataElement Id="distributioncalci" IsRequired="true" DisplaySequence="8">
 			<Label> Calcification : Distribution</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -204,7 +219,7 @@
 		</ChoiceDataElement>
 		
 		
-		<ChoiceDataElement Id="archidistortasymm" IsRequired="true" DisplaySequence="7">
+		<ChoiceDataElement Id="archidistortasymm" IsRequired="true" DisplaySequence="9">
 			<Label>Architectural distortion </Label>
 			<ChoiceInfo>
 				<Choice>
@@ -225,108 +240,7 @@
 				 </Choice>
 		   </ChoiceInfo>
 		</ChoiceDataElement>
-		
-		
-		<ChoiceDataElement Id="lymphnode" IsRequired="true" DisplaySequence="8">
-			<Label>Is there an intramammary lymph node?</Label>
-			
-			<ChoiceInfo>
-				<Choice>
-					<Value>Yes</Value>
-					<Label>Yes</Label>
-				 </Choice>
-				<Choice>
-					<Value>No</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-		 </ChoiceDataElement>
-		 
-		 	
-		<ChoiceDataElement Id="skinlesion" IsRequired="true" DisplaySequence="9">
-			<Label>Is there a skin lesion?</Label>
-			
-			<ChoiceInfo>
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>
-				 </Choice>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-		 </ChoiceDataElement>
-		
-		
-			
-		<ChoiceDataElement Id="dilatedduct" IsRequired="true" DisplaySequence="10">
-			<Label>Is there a solitary dilated duct?</Label>
-			
-			<ChoiceInfo>
-				<Choice>
-					<Value>yes</Value>
-					<Label>Yes</Label>
-				 </Choice>
-				<Choice>
-					<Value>no</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-		 </ChoiceDataElement>
-		
-		
-		
-		
-		<MulChoiceDataElement Id="assofeatures" IsRequired="true" DisplaySequence="8">
-			<Label>Associated features</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>skinretract</Value>
-					<Label>Skin retraction</Label>
-				 </Choice>
-				<Choice>
-					<Value>nippleretract</Value>
-					<Label>Nipple Retraction</Label>
-				 </Choice>
-				<Choice>
-					<Value>skinthick</Value>
-					<Label>Skin thickening</Label>
-				 </Choice>
-				 <Choice>
-					<Value>trabthick</Value>
-					<Label>Trabecular thickening</Label>
-				 </Choice>
-				 <Choice>
-					<Value>axiladeno</Value>
-					<Label>Axillary adenopathy</Label>
-				 </Choice>
-				 <Choice>
-					<Value>archidistortf</Value>
-					<Label>Architectural distortion</Label>
-				 </Choice>
-				 <Choice>
-					<Value>calcimain</Value>
-					<Label>Calcification</Label>
-				 </Choice>
-		   </ChoiceInfo>
-		</MulChoiceDataElement>
-		
-		<IntegerDataElement Id="laterality" IsRequired="true" DisplaySequence="9">
-			<Label>What is the laterality of the lesion? </Label>
-		</IntegerDataElement>
-		
-		<IntegerDataElement Id="quadrant" IsRequired="true" DisplaySequence="10">
-			<Label>Which quadrant and clock face does the lesion lie in? </Label>
-		</IntegerDataElement>
-		
-		<IntegerDataElement Id="depth" IsRequired="true" DisplaySequence="11">
-		<Label>What is the depth of the lesion?</Label>
-		</IntegerDataElement>
-		
-		<IntegerDataElement Id="distance" IsRequired="true" DisplaySequence="12">
-			<Label>What is the distance of the lesion from the nipple? </Label>
-		</IntegerDataElement>
+	
 		
 </DataElements>		 
 
@@ -335,27 +249,11 @@
 			<Label>Hello Assist</Label>
 			<Branch>
 				<Label>No follow-up required</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="Size" ComparisonValue="1"/>
-				</AndCondition>
-				<EndPointRef EndPointId="NoFU" DiagramId="KeyDiagramBranch_1"></EndPointRef>
+				<SectionIf DataElementId = "breastcomposition" > </SectionIf>
+				<EndPointRef EndPointId="Cat0" ></EndPointRef>
 			</Branch>
-			<Branch>
-				<Label>Follow-up is recommended in 6 months</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
-					<EqualCondition DataElementId="Enhancement" ComparisonValue="N"/>
-				</AndCondition>
-				<EndPointRef EndPointId="moFU" DiagramId="KeyDiagramBranch_3"></EndPointRef>
-			</Branch> 
-			<Branch>
-				<Label>Schedule an immediate follow-up</Label>
-				<AndCondition>
-					<EqualCondition DataElementId="Size" ComparisonValue="2"/>
-					<EqualCondition DataElementId="Enhancement" ComparisonValue="Y"/>
-				</AndCondition>
-				<EndPointRef EndPointId="mustFU" DiagramId="KeyDiagramBranch_2"></EndPointRef>
-			</Branch>
+			
+		
 		</DecisionPoint>
 	</Rules>
 
@@ -364,18 +262,59 @@
 
 
 	<EndPoints>
+
+	
+	<TemplatePartial Id="BiTemplate">
+
+			<Branch>			
+				<AndCondition>
+				    <SectionIf DataElementId="question"></SectionIf>
+					<SectionIf DataElementId="breastcomposition"></SectionIf>
+					<SectionIf DataElementId="shape"></SectionIf>
+					<SectionIf DataElementId="margin"></SectionIf>
+					<SectionIf DataElementId="density"></SectionIf>
+					<SectionIf DataElementId="benigncalci"></SectionIf>
+					<SectionIf DataElementId="suspiciouscalci"></SectionIf>
+					<SectionIf DataElementId="distributioncalci"></SectionIf>
+					<SectionIf DataElementId="archidistortasymm"></SectionIf>
+					
+				</AndCondition>
+				<ReportText Type="PlainText">Examination is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="question"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The breast composition is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="breastcomposition"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The shape of the nodule is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="shape"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The margin of nodule is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="margin"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The density of the nodule is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="density"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The nature of the calcification is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="benigncalci"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The morphology of the suspicion is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="suspiciouscalci"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The distribution of the calcification is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="distributioncalci"></ReportText>
+				<ReportText Type="Newline"/>
+				<ReportText Type="PlainText">The distortion of the calcification is </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="archidistortasymm"></ReportText>
+				<ReportText Type="Newline"/>
+			</Branch>
+			
+		</TemplatePartial>
 		<EndPoint Id="Cat0">
 			<Label>Cat 0</Label>
 			<ReportSections>
 				<ReportSection SectionId="findings">
 					<Branch>
-						<ReportText Type="PlainText">Category 0: Incomplete - Need Additonal Imaging Evaluation and/or Prior Mammograms for comparison.</ReportText>
-						<ReportText Type="Newline" />
-					</Branch>
-				</ReportSection>
-				<ReportSection SectionId="Recommendation">
-					<Branch>
-						<ReportText Type="PlainText">Recall for additional imaging and/or comparison with prior examination.</ReportText>
+					    <ReportText Type="InsertPartialTemplate" Value="BiTemplate"></ReportText>
 						<ReportText Type="Newline" />
 					</Branch>
 				</ReportSection>
