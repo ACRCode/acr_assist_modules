@@ -557,7 +557,12 @@
 			<!--Incomplete-->
 			<Branch>
 				<Label>incomplete</Label>
+				<AndCondition>
 				<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
+				<SectionIfNot DataElementId="PrimarySiteQuestion_1"> </SectionIfNot>
+				<SectionIfNot DataElementId="PrimarySiteQuestion_2"> </SectionIfNot>
+				<SectionIfNot DataElementId="NeckNodeQUestion_neck"> </SectionIfNot>
+				</AndCondition>
 				<EndPointRef EndPointId="Cat0Incomplete_1"/>
 			</Branch>
 			
@@ -574,29 +579,79 @@
 				
 				<Branch>
 				<Label>Primary Site_1</Label>
-				<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+				<SectionIf DataElementId="PrimarySiteQuestion_1"/>
 				<DecisionPoint Id="WhatistheprimarysitenodetypeDp_1">
 					<Label>Primary Site Node type</Label>
 					<Branch>
 						<Label>Superficial/mucosal</Label>
+						<AndCondition>
+						<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+						<EqualCondition DataElementId="PriorImage_1" ComparisonValue="Yes"/>
 						<EqualCondition DataElementId="Whatistheprimarysitenodetype_1" ComparisonValue="Superficialmucosal"/>
+						</AndCondition>
 						<DecisionPoint Id="ConditionofthisSuperficialmucosalnodeDp_1">
 							<Label>Condition of this Superficial/mucosal node</Label>
+							
 							<Branch>
 								<Label>Diffuse linear C+</Label>
+								<AndCondition>
+								<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+								<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
 								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_1" ComparisonValue="DiffuselinearC"/>
+								</AndCondition>
 								<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_1"/>
 							</Branch>
+							
+							<Branch>
+								<Label>Diffuse linear C+</Label>
+								<AndCondition>
+								<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+								<EqualCondition DataElementId="PriorImage_1" ComparisonValue="Yes"/>
+								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_1" ComparisonValue="DiffuselinearC"/>
+								</AndCondition>
+								<EndPointRef EndPointId="Cat1NoEvidenceofRecurrence_1_no_prior"/>
+							</Branch>
+							
 							<Branch>
 								<Label>Focal C+ /ulcer or FDG uptake, esp if initial post treatment scan</Label>
+								<AndCondition>
+								<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+								<EqualCondition DataElementId="PriorImage_1" ComparisonValue="Yes"/>
 								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_1" ComparisonValue="FocalCulcerorFDGuptakeespifinitialposttreatmentscan"/>
+								</AndCondition>
 								<EndPointRef EndPointId="Cat2aLowSuspicion_1"/>
-							</Branch>									
+							</Branch>
+							
+							<Branch>
+								<Label>Focal C+ /ulcer or FDG uptake, esp if initial post treatment scan</Label>
+								<AndCondition>
+								<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+								<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
+								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_1" ComparisonValue="FocalCulcerorFDGuptakeespifinitialposttreatmentscan"/>
+								</AndCondition>
+								<EndPointRef EndPointId="Cat2aLowSuspicion_1_noprior"/>
+							</Branch>
+							
 							<Branch>
 								<Label>Nodular C+, esp if develops after initial post treatment scan </Label>
+								<AndCondition>
+								<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+								<EqualCondition DataElementId="PriorImage_1" ComparisonValue="Yes"/>
 								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_1" ComparisonValue="NodularCespifdevelopsafterinitialposttreatmentscan"/>
+								</AndCondition>
 								<EndPointRef EndPointId="Cat3HighSuspicion_1"/>
 							</Branch>
+							
+							<Branch>
+								<Label>Nodular C+, esp if develops after initial post treatment scan </Label>
+								<AndCondition>
+								<EqualCondition DataElementId="PrimarySiteQuestion_1" ComparisonValue="Yes"/>
+								<EqualCondition DataElementId="PriorImage_1" ComparisonValue="No"/>
+								<EqualCondition DataElementId="ConditionofthisSuperficialmucosalnode_1" ComparisonValue="NodularCespifdevelopsafterinitialposttreatmentscan"/>
+								</AndCondition>
+								<EndPointRef EndPointId="Cat3HighSuspicion_1_noprior"/>
+							</Branch>
+							
 						</DecisionPoint>							
 					</Branch>
 					<Branch>
@@ -840,6 +895,43 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
+		
+		
+		
+		<EndPoint Id="Cat1NoEvidenceofRecurrence_1_no_prior">
+			<Label>No Evidence of Recurrence no prior</Label>
+			<ReportSections>
+
+				<ReportSection  SectionId="Primary Site Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="QuestionText_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Category 1: No evidence of recurrence wih no prior imaging</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* Expected post treatment changes</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* Non-mass-like distortion of soft tissues</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* Low-density post-treatment mucosal edema</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* Diffuse linear mucosal enhancement or FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* If residual nodal tissue, no FDG uptake</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection 	SectionId="Recommendation">
+					<Branch>
+
+						<ReportText Type="PlainText">Category 1: Routine surveillance </ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		
+		
 		<EndPoint Id="Cat2aLowSuspicion_1">
 			<Label>Low Suspicion</Label>
 
@@ -862,6 +954,32 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
+		
+		<EndPoint Id="Cat2aLowSuspicion_1_noprior">
+			<Label>Low Suspicion no prior</Label>
+
+			<ReportSections>
+				<ReportSection SectionId="Primary Site Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="QuestionText_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Category 2a: Low suspicion No prior imaging</ReportText>
+						<ReportText Type="Newline" />						
+						<ReportText Type="PlainText">* Focal mucosal enhancement or FDG uptake on initial post treatment scan </ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category 2a: Direct visual inspection  </ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		
+		
 		<EndPoint Id="Cat2bLowSuspicion_1">
 			<Label>Low Suspicion</Label>
 
@@ -885,6 +1003,8 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
+		
+		
 		<EndPoint Id="Cat2LowSuspicion_1">
 			<Label>Low Suspicion</Label>
 
@@ -911,6 +1031,8 @@
 				</ReportSection>
 			</ReportSections>			
 		</EndPoint>
+		
+		
 		<EndPoint Id="Cat3HighSuspicion_1">
 			<Label>High Suspicion</Label>
 			<ReportSections>
@@ -936,6 +1058,34 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
+		
+		<EndPoint Id="Cat3HighSuspicion_1_noprior">
+			<Label>High Suspicion no prior</Label>
+			<ReportSections>
+				<ReportSection SectionId="Primary Site Findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="QuestionText_1" />
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">Category 3: High suspicion no prior imaging</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* Discrete nodule or mass at the primary site with intense focal FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* Residual nodal tissue with intense FDG</ReportText>
+						<ReportText Type="Newline" />
+						<ReportText Type="PlainText">* New enlarged lymph node or enlarging lymph node with abnormal morphologic features*** on CECT only or focal intense FDG uptake if PET available </ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Category 3: Image guided or clinical biopsy if clinically indicated</ReportText>
+						<ReportText Type="Newline" />
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		
 		<EndPoint Id="Cat4DefinitiveRecurrence_1">
 			<Label>Definitive Recurrence</Label>
 			<ReportSections>
@@ -957,6 +1107,8 @@
 				</ReportSection>
 			</ReportSections>
 		</EndPoint>
+		
+		
 		<!--Second Primary Site-->
 		<EndPoint Id="Cat0Incomplete_2">
 			<Label>InComplete</Label>
