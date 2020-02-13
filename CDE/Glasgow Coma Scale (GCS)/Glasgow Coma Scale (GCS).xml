@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Glasgow Coma Scale (GCS)</Label>
+        <ID>Glasgow_Coma_Scale_(GCS)</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-01-10</CreatedDate>
+        <LastModifiedDate>2020-01-10</LastModifiedDate>
+        <DevelopedBy>smita kabra</DevelopedBy>
+        <CodableConcept Name="codableConcept_Glasgow_Coma_Scale_(GCS)">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES6" />
+                <Display Value="RDES6" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES6" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>The Glasgow Coma Scale (GCS) is a standardized instrument for assessing the level of consciousness. It evaluates three aspects of responsiveness: eye opening, motor response, verbal response. From the National Institute of Neurological Disorders and Stroke (NIH / NINDS).</Description>
+            <Contact>
+                <Name />
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="GlasgowComaScaleGCSeyeresponsescale_1" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="Glasgow Coma Scale (GCS) - eye response scale">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE61" />
+                    <Display Value="RDE61" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE61" />
+                </Coding>
+            </CodableConcept>
+            <Label>Glasgow Coma Scale (GCS) - eye response scale</Label>
+            <Hint>Glasgow Coma Scale (GCS) - Best eye response (E). The GCS is a standardized instrument for assessing the level of consciousness. It evaluates three aspects of responsiveness: eye opening, motor response, verbal response.</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>No eye opening</Value>
+                    <Label>No eye opening</Label>
+                </Choice>
+                <Choice>
+                    <Value>Eye opening to pain</Value>
+                    <Label>Eye opening to pain</Label>
+                </Choice>
+                <Choice>
+                    <Value>Eye opening to speech/verbal command</Value>
+                    <Label>Eye opening to speech/verbal command</Label>
+                </Choice>
+                <Choice>
+                    <Value>Eyes open spontaneously</Value>
+                    <Label>Eyes open spontaneously</Label>
+                </Choice>
+                <Choice>
+                    <Value>Untestable</Value>
+                    <Label>Untestable</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="GlasgowComaScaleGCSmotorresponsescale_2" IsRequired="true" DisplaySequence="2">
+            <CodableConcept Name="Glasgow Coma Scale (GCS) - motor response scale">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE62" />
+                    <Display Value="RDE62" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE62" />
+                </Coding>
+            </CodableConcept>
+            <Label>Glasgow Coma Scale (GCS) - motor response scale</Label>
+            <Hint>Glasgow Coma Scale (GCS) - Best motor response (M). The GCS is a standardized instrument for assessing the level of consciousness. It evaluates three aspects of responsiveness: eye opening, motor response, verbal response.</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>No motor response</Value>
+                    <Label>No motor response</Label>
+                </Choice>
+                <Choice>
+                    <Value>Abnormal extension/Extensor response</Value>
+                    <Label>Abnormal extension/Extensor response</Label>
+                </Choice>
+                <Choice>
+                    <Value>Abnormal flexion</Value>
+                    <Label>Abnormal flexion</Label>
+                </Choice>
+                <Choice>
+                    <Value>Flexion withdrawal/withdraws from pain</Value>
+                    <Label>Flexion withdrawal/withdraws from pain</Label>
+                </Choice>
+                <Choice>
+                    <Value>Localizes pain</Value>
+                    <Label>Localizes pain</Label>
+                </Choice>
+                <Choice>
+                    <Value>Obeys command</Value>
+                    <Label>Obeys command</Label>
+                </Choice>
+                <Choice>
+                    <Value>Untestable</Value>
+                    <Label>Untestable</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="GlasgowComaScaleGCSverbalresponsescale_3" IsRequired="true" DisplaySequence="3">
+            <CodableConcept Name="Glasgow Coma Scale (GCS) - verbal response scale">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE63" />
+                    <Display Value="RDE63" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE63" />
+                </Coding>
+            </CodableConcept>
+            <Label>Glasgow Coma Scale (GCS) - verbal response scale</Label>
+            <Hint>Score that describes the participant's verbal response according to the Glasgow Coma Scale (GCS).</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>No verbal response/sounds</Value>
+                    <Label>No verbal response/sounds</Label>
+                </Choice>
+                <Choice>
+                    <Value>Incomprehensible sound</Value>
+                    <Label>Incomprehensible sound</Label>
+                </Choice>
+                <Choice>
+                    <Value>Inappropriate words</Value>
+                    <Label>Inappropriate words</Label>
+                </Choice>
+                <Choice>
+                    <Value>Confused</Value>
+                    <Label>Confused</Label>
+                </Choice>
+                <Choice>
+                    <Value>Oriented</Value>
+                    <Label>Oriented</Label>
+                </Choice>
+                <Choice>
+                    <Value>Untestable</Value>
+                    <Label>Untestable</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="GlasgowComaScaleGCStotalscore_4" IsRequired="true" DisplaySequence="4">
+            <CodableConcept Name="Glasgow Coma Scale (GCS) - total score">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE64" />
+                    <Display Value="RDE64" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE64" />
+                </Coding>
+            </CodableConcept>
+            <Label>Glasgow Coma Scale (GCS) - total score</Label>
+            <Hint>Glasgow Coma Scale (GCS) - Total Score. The GCS is a standardized instrument for assessing the level of consciousness. It evaluates three aspects of responsiveness: eye opening, motor response, verbal response. The total score is the sum of the scores for the three response types. (3-15)</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>3</Value>
+                    <Label>3</Label>
+                </Choice>
+                <Choice>
+                    <Value>4</Value>
+                    <Label>4</Label>
+                </Choice>
+                <Choice>
+                    <Value>5</Value>
+                    <Label>5</Label>
+                </Choice>
+                <Choice>
+                    <Value>6</Value>
+                    <Label>6</Label>
+                </Choice>
+                <Choice>
+                    <Value>7</Value>
+                    <Label>7</Label>
+                </Choice>
+                <Choice>
+                    <Value>8</Value>
+                    <Label>8</Label>
+                </Choice>
+                <Choice>
+                    <Value>9</Value>
+                    <Label>9</Label>
+                </Choice>
+                <Choice>
+                    <Value>10</Value>
+                    <Label>10</Label>
+                </Choice>
+                <Choice>
+                    <Value>11</Value>
+                    <Label>11</Label>
+                </Choice>
+                <Choice>
+                    <Value>12</Value>
+                    <Label>12</Label>
+                </Choice>
+                <Choice>
+                    <Value>13</Value>
+                    <Label>13</Label>
+                </Choice>
+                <Choice>
+                    <Value>14</Value>
+                    <Label>14</Label>
+                </Choice>
+                <Choice>
+                    <Value>15</Value>
+                    <Label>15</Label>
+                </Choice>
+                <Choice>
+                    <Value>Untestable</Value>
+                    <Label>Untestable</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unknown</Value>
+                    <Label>Unknown</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="Endpoint">
+            <Label>Endpoint</Label>
+            <Branch>
+                <Label>Endpoint</Label>
+                <EndPointRef EndPointId="Endpoint" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="Endpoint" />
+    </EndPoints>
+</ReportingModule>

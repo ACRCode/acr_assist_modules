@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Coronary Artery Disease</Label>
+        <ID>Coronary_Artery_Disease</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-01-10</CreatedDate>
+        <LastModifiedDate>2020-01-10</LastModifiedDate>
+        <DevelopedBy>Smita K</DevelopedBy>
+        <CodableConcept Name="codableConcept_Coronary_Artery_Disease">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES7" />
+                <Display Value="RDES7" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES7" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>The intent of CAD-RADS Coronary Artery Disease Reporting and Data System is to create a standardized method to communicate findings of coronary CT angiography (coronary CTA) in order to facilitate decision-making regarding further patient management. The suggested CAD-RADS classification is applied on a per-patient basis and represents the highest-grade coronary artery lesion documented by coronary CTA.</Description>
+            <Contact>
+                <Name />
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="CADRADSassessmentscore_1" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="CAD-RADS assessment score">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE66" />
+                    <Display Value="RDE66" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE66" />
+                </Coding>
+            </CodableConcept>
+            <Label>CAD-RADS assessment score</Label>
+            <Hint />
+            <ChoiceInfo>
+                <Choice>
+                    <Value>CAD-RADS 0</Value>
+                    <Label>CAD-RADS 0</Label>
+                </Choice>
+                <Choice>
+                    <Value>CAD-RADS 1</Value>
+                    <Label>CAD-RADS 1</Label>
+                </Choice>
+                <Choice>
+                    <Value>CAD-RADS 2</Value>
+                    <Label>CAD-RADS 2</Label>
+                </Choice>
+                <Choice>
+                    <Value>CAD-RADS 3</Value>
+                    <Label>CAD-RADS 3</Label>
+                </Choice>
+                <Choice>
+                    <Value>CAD-RADS 4A</Value>
+                    <Label>CAD-RADS 4A</Label>
+                </Choice>
+                <Choice>
+                    <Value>CAD-RADS 4B</Value>
+                    <Label>CAD-RADS 4B</Label>
+                </Choice>
+                <Choice>
+                    <Value>CAD-RADS 5</Value>
+                    <Label>CAD-RADS 5</Label>
+                </Choice>
+                <Choice>
+                    <Value>CAD-RADS N</Value>
+                    <Label>CAD-RADS N</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="Endpoint">
+            <Label>Endpoint</Label>
+            <Branch>
+                <Label>Endpoint</Label>
+                <EndPointRef EndPointId="Endpoint" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="Endpoint" />
+    </EndPoints>
+</ReportingModule>
