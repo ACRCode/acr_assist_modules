@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Pfirrmann Disc Degeneration Classification</Label>
+        <ID>Pfirrmann_Disc_Degeneration_Classification</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-02-14</CreatedDate>
+        <LastModifiedDate>2020-02-14</LastModifiedDate>
+        <DevelopedBy>Adam Flanders</DevelopedBy>
+        <CodableConcept />
+        <Info>
+            <Description>Pfirrmann Disc Degeneration Classification</Description>
+            <References />
+            <Diagrams />
+            <Contact>
+                <Name>Adam Flanders</Name>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams>
+            <ApplicableExamCategory Axis="Modality">MR</ApplicableExamCategory>
+            <ApplicableExamCategory Axis="Anatomy">Lumbar spine</ApplicableExamCategory>
+        </ApplicableExams>
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <MultiChoiceDataElement Id="PfirrmannGrade_0" DisplaySequence="1">
+            <Label>Pfirrmann Grade</Label>
+            <Hint>Disc degeneration can be graded on MRI T2 spin-echo sequence weighted images using a grading system proposed by Pfirrmann
+
+Grade I
+Disc is homogeneous with bright hyperintense white signal intensity and normal disc height.
+
+Grade II
+Disc is inhomogeneous, but keeping the hyperintense white signal. Nucleus and annulus are clearly differentiated and a horizontal gray band could be present. Disc height is normal.
+
+Grade III
+Disc is inhomogeneous with an intermittent gray signal intensity. Distinction between nucleus and annulus is unclear. Disc height is normal or slightly decreased.
+
+Grade IV
+Disc is inhomogeneous with a hypointense dark gray signal intensity. There is no more distinction between the nucleus and annulus. Disc height is slightly or moderately decreased. Moderate disk degeneration (Pfirrmann IV) in lower lumbar segments is a risk factor of disk herniation or foraminal stenosis requiring reoperation after MD in LSS 2).
+
+Grade V
+Disc is inhomogeneous with a hypointense black signal intensity. There is no more distinction between the nucleus and annulus.
+</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>GradeI</Value>
+                    <Label>Grade I</Label>
+                </Choice>
+                <Choice>
+                    <Value>GradeII</Value>
+                    <Label>Grade II</Label>
+                </Choice>
+                <Choice>
+                    <Value>GradeIII</Value>
+                    <Label>Grade III</Label>
+                </Choice>
+                <Choice>
+                    <Value>GradeIV</Value>
+                    <Label>Grade IV</Label>
+                </Choice>
+                <Choice>
+                    <Value>GradeV</Value>
+                    <Label>Grade V</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>
