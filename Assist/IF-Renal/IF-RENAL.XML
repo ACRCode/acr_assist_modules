@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../XML Schema/ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
+<ReportingModule>
+<Metadata>
+   <Label>RENAL RADS CT</Label>
+   <ID>test3456 </ID>
+   <SchemaVersion>2.0 </SchemaVersion>
+   <ModuleVersion>1.0 </ModuleVersion>
+   <CreatedDate>2019-07-16 </CreatedDate>
+   <LastModifiedDate>2019-07-16 </LastModifiedDate>
+    <DevelopedBy>American College of Radiology </DevelopedBy>
+   <Info>
+			<Description>RE-RADS level determination</Description>
+			<References>
+				<Citation Url="https://www.jacr.org/article/S1546-1440(17)30497-0/pdf">
+                ACR RE-RADS</Citation>
+			</References>
+			<Diagrams>
+				<Diagram DisplaySequence="1" IsKeyDiagram="true">
+					<Location>RENALFIG1.jpg</Location>
+					<Label>IF-RENAL FLOWCHART 1</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>RENALFIG2.jpg</Location>
+					<Label>IF-RENAL FLOWCHART 2</Label>
+				</Diagram>
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Location>RENALFIRG3.jpg</Location>
+					<Label>IF-RENAL FLOWCHART 3</Label>
+				</Diagram>
+				<Diagram DisplaySequence="4" IsKeyDiagram="true">
+					<Location>RENALFIG4.jpg</Location>
+					<Label>IF-RENAL FLOWCHART 4</Label>
+				</Diagram>
+				<Diagram DisplaySequence="5" IsKeyDiagram="true">
+					<Location>RENALFIG5.jpg</Location>
+					<Label>IF-RENAL FLOWCHART 5</Label>
+				</Diagram>	
+			</Diagrams>
+			<Contact>
+				<Name>ACR Assist</Name>
+				<Email>acr-assist@acr.org</Email>
+				<Institution>American College of Radiology</Institution>
+			</Contact>
+	</Info>
+		<ReportCitationText>RE-RADS</ReportCitationText>
+		<ApplicableSexes Value="Both"></ApplicableSexes>
+ </Metadata>
+
+ <DataElements>
+ 
+ 
+ 
+    <ChoiceDataElement Id="catfat" DisplaySequence="1">
+		<Label> Does the incidental renal mass contain fat? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes, it contains fat </Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No, it does not contain fat</Label>
+				</Choice>
+			</ChoiceInfo>
+	</ChoiceDataElement>
+ 
+
+ 
+	<ChoiceDataElement Id="catrenalmass" DisplaySequence="2">
+		<Label> What is the category of renal mass? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>Thomo</Value>
+					<Label>TSTC homogeneous</Label>
+				</Choice>
+				<Choice>
+					<Value>homo</Value>
+					<Label>Homogeneous on unenhanced CT</Label>
+				</Choice>
+				<Choice>
+					<Value>homoenhance</Value>
+					<Label>Homogeneous on enhanced CT</Label>
+				</Choice>
+				<Choice>
+					<Value>heter</Value>
+					<Label>Heterogeneous</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+             </ConditionalProperties>
+	</ChoiceDataElement>
+ 
+	<ChoiceDataElement Id="catThomo" DisplaySequence="3">
+		<Label> Which TSTC homogeneous category does the mass belong to? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>benigncys</Value>
+					<Label>Likely benign cyst</Label>
+				</Choice>
+				<Choice>
+					<Value>inconclu</Value>
+					<Label>Inconclusive based on subjective evaluation</Label>
+				</Choice>
+			</ChoiceInfo>
+			
+			<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="homo"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="heter"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+             <ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="homoenhance"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			 </ConditionalProperties>
+
+	</ChoiceDataElement>
+	
+	
+    <ChoiceDataElement Id="cathomo" DisplaySequence="4">
+		<Label> Which homogeneous category does the mass belong to? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>homolower</Value>
+					<Label>-10 to 20 HU</Label>
+				</Choice>
+				<Choice>
+					<Value>homomid</Value>
+					<Label>21-69 HU</Label>
+				</Choice>
+				<Choice>
+					<Value>homoupper</Value>
+					<Label>>=70 HU</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="Thomo"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="heter"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+              <ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="homoenhance"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+               <ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+			 </ConditionalProperties>
+					
+	</ChoiceDataElement>	
+	
+	<ChoiceDataElement Id="cystictype" IsRequired="true" DisplaySequence="5">
+		<Label>Type of contrast enhanced homegeneous CT</Label>
+		<Hint> For the mass that does not contain fat </Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>benigncystmass</Value>
+					<Label>-10 to 20 HU</Label>
+				</Choice>
+				<Choice>
+					<Value>solidcystmass</Value>
+					<Label>>20 HU</Label>
+				</Choice>
+			</ChoiceInfo>
+		<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="Thomo"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="heter"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+              <ConditionalProperty>
+				<EqualCondition DataElementId="catrenalmass" ComparisonValue="homo"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+              <ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+			 </ConditionalProperties>	
+	</ChoiceDataElement>	
+	
+	
+	<ChoiceDataElement Id="masstype" DisplaySequence="6">
+		<Label> What is the type of renal mass? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>cysticrm</Value>
+					<Label>Incidental cystic renal mass.</Label>
+				</Choice>
+				<Choice>
+					<Value>solidrm</Value>
+					<Label>Incidental solid renal mass.</Label>
+				</Choice>
+				
+		</ChoiceInfo>
+		<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catThomo" ComparisonValue="benigncys"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homoupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+              <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homolower"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cystictype" ComparisonValue="benigncystmass"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+							
+			 </ConditionalProperties>
+			
+		
+			
+	</ChoiceDataElement>
+ 
+   	<ChoiceDataElement Id="solidrenaltype" DisplaySequence="7">
+		<Label> What is the type of solid renal mass? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>TSTCsolid</Value>
+					<Label>TSTC</Label>
+				</Choice>
+				<Choice>
+					<Value>solidlower</Value>
+					<Label>Solid mass less than 1.0 cubic cm </Label>
+				</Choice>
+				<Choice>
+					<Value>solidmid</Value>
+					<Label>Solid mass 1.0-4.0 cubic cm </Label>
+				</Choice>
+				<Choice>
+					<Value>solidupper</Value>
+					<Label>Solid mass greater than 1.0 cubic cm </Label>
+				</Choice>
+				
+			</ChoiceInfo>
+			<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="masstype" ComparisonValue="cysticrm"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+				<EqualCondition DataElementId="catThomo" ComparisonValue="benigncys"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homoupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+              <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homolower"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cystictype" ComparisonValue="benigncystmass"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+							
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+				
+				
+				
+				
+				
+       	</ConditionalProperties>
+			
+			
+	</ChoiceDataElement>
+	
+	
+    <ChoiceDataElement Id="TSTCnature" DisplaySequence="8">
+		<Label> What is the nature of TSTC renal mass? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>tstcbenign</Value>
+					<Label>Benign Cyst</Label>
+				</Choice>
+				<Choice>
+					<Value>tstcincl</Value>
+					<Label>Inconclusive based on subject evaluation</Label>
+				</Choice>
+				
+			</ChoiceInfo>
+		<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidlower"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidmid"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="masstype" ComparisonValue="cysticrm"/>
+				 <IsRelevant>false</IsRelevant>					
+			</ConditionalProperty>
+            <ConditionalProperty>
+				<EqualCondition DataElementId="catThomo" ComparisonValue="benigncys"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homoupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+              <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homolower"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cystictype" ComparisonValue="benigncystmass"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			  <ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>								
+       	</ConditionalProperties>
+			
+	</ChoiceDataElement>
+	
+	
+	
+	<ChoiceDataElement Id="smallneonature" DisplaySequence="9">
+		<Label> What is the nature of small renal neoplasm? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>stableneo</Value>
+					<Label>Stable</Label>
+				</Choice>
+				<Choice>
+					<Value>growneo</Value>
+					<Label>Growth or morphologic change</Label>
+				</Choice>
+				
+			</ChoiceInfo>
+			
+		<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="solidrenaltype" ComparisonValue="TSTCsolid"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidmid"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				
+			<ConditionalProperty>
+				<EqualCondition DataElementId="masstype" ComparisonValue="cysticrm"/>
+				 <IsRelevant>false</IsRelevant>					
+			</ConditionalProperty>	
+          <ConditionalProperty>
+				<EqualCondition DataElementId="catThomo" ComparisonValue="benigncys"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homoupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+              <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homolower"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cystictype" ComparisonValue="benigncystmass"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>							
+      </ConditionalProperties>
+			
+			
+			
+			
+	</ChoiceDataElement>
+ 
+	<ChoiceDataElement Id="bosniak" DisplaySequence="10">
+		<Label> What is the bosniak class ? </Label>
+		<Hint> For cystic renal mass class </Hint>
+		<ChoiceInfo>
+				<Choice>
+					<Value>onetwoclass</Value>
+					<Label>Bosniak I or II.</Label>
+				</Choice>
+				<Choice>
+					<Value>twofclass</Value>
+					<Label>Bosniak IIF.</Label>
+				</Choice>
+				<Choice>
+					<Value>threefourclass</Value>
+					<Label>Bosniak III or IV.</Label>
+				</Choice>
+			</ChoiceInfo>
+		<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="masstype" ComparisonValue="solidrm"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catThomo" ComparisonValue="benigncys"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homoupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+              <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homolower"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cystictype" ComparisonValue="benigncystmass"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+							
+       	</ConditionalProperties>		
+				
+	</ChoiceDataElement>
+	
+	
+    <ChoiceDataElement Id="morphotype" DisplaySequence="11">
+		<Label> Is there a morphologic change? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>Yes</Label>
+				</Choice>
+				<Choice>
+					<Value>no</Value>
+					<Label>No</Label>
+				</Choice>
+				</ChoiceInfo>	
+		<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="bosniak" ComparisonValue="onetwoclass"/>
+				 <IsRelevant>false</IsRelevant>					
+			</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="bosniak" ComparisonValue="threefourclass"/>
+				 <IsRelevant>false</IsRelevant>					
+			</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="masstype" ComparisonValue="solidrm"/>
+				 <IsRelevant>false</IsRelevant>					
+			</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catThomo" ComparisonValue="benigncys"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homoupper"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+              <ConditionalProperty>
+				<EqualCondition DataElementId="cathomo" ComparisonValue="homolower"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>					
+             <ConditionalProperty>
+				<EqualCondition DataElementId="cystictype" ComparisonValue="benigncystmass"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="yes"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+							
+			
+       	</ConditionalProperties>		
+	</ChoiceDataElement>	
+	
+	
+	
+	
+	<ChoiceDataElement Id="renalcalcify" DisplaySequence="12">
+		<Label> What is the calcification for incidental renal mass containing fat? </Label>
+		<Hint> Contains a region of interest measuring less than -10 HU of fat attenuation</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>nocalcify</Value>
+					<Label>No calcification Angiomyolipoma (AML) </Label>
+				</Choice>
+				<Choice>
+					<Value>calcify</Value>
+					<Label>With Calcification Suspected Renal Cell Carcinoma</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="no"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+       	</ConditionalProperties>
+			
+			
+			
+	</ChoiceDataElement>
+ 	<ChoiceDataElement Id="renalnocalcify" DisplaySequence="13">
+		<Label> What is the nature of AML growth? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>lessgrowc</Value>
+					<Label>Solitary without documentation of growth</Label>
+				</Choice>
+				<Choice>
+					<Value>greatgrowc</Value>
+					<Label>Multiple or growth based on old studies</Label>
+				</Choice>
+			</ChoiceInfo>
+		<ConditionalProperties>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="renalcalcify" ComparisonValue="calcify"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="no"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+       	</ConditionalProperties>
+	</ChoiceDataElement>
+	
+    <ChoiceDataElement Id="amlslowgrow" DisplaySequence="14">
+		<Label> What is the size of AML? </Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>smallamlsize</Value>
+					<Label>size &lt; 4 cubic cm</Label>
+				</Choice>
+				<Choice>
+					<Value>greatamlsize</Value>
+					<Label>size &gt;=4 cubic cm; AML with potential for clinical symptoms</Label>
+				</Choice>
+			</ChoiceInfo>
+	    <ConditionalProperties>
+		    <ConditionalProperty>
+				<EqualCondition DataElementId="renalnocalcify" ComparisonValue="greatgrowc"/>
+				 <IsRelevant>false</IsRelevant>					
+			</ConditionalProperty>
+			<ConditionalProperty>
+				<EqualCondition DataElementId="renalcalcify" ComparisonValue="calcify"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+				<ConditionalProperty>
+				<EqualCondition DataElementId="catfat" ComparisonValue="no"/>
+				 <IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+       	</ConditionalProperties>
+			
+			
+	</ChoiceDataElement>
+
+ </DataElements>
+
+<Rules>
+  <DecisionPoint Id="rule1">
+     <Label>THomo</Label>
+      <Branch>
+		 <Label>labelone</Label>			  
+				  <EqualCondition DataElementId="catrenalmass" ComparisonValue="Thomo"/> 
+				  <DecisionPoint Id="rule2">	 
+				  <Label>ThomoTSTC</Label>
+					<Branch>
+					   <Label>Thomob</Label>
+						 <EqualCondition DataElementId="catThomo" ComparisonValue="benigncys"/>
+						    <EndPointRef EndPointId="endpointbenign" ></EndPointRef>	
+                       </Branch>
+					<Branch>
+					 <Label>Thomoi</Label>
+					  <EqualCondition DataElementId="catThomo" ComparisonValue="inconclu"/>
+				      <EndPointRef EndPointId="endpointfollowup"></EndPointRef>		
+                    </Branch>
+					</DecisionPoint>
+				
+       </Branch>
+ </DecisionPoint>
+ 
+ 
+ <DecisionPoint Id="rule3">
+     <Label>Homotwo</Label>
+      <Branch>
+		 <Label>labeltwo</Label>			  
+				  <EqualCondition DataElementId="catrenalmass" ComparisonValue="homo"/> 
+				  <DecisionPoint Id="rule4">	 
+				  <Label>homotwol</Label>
+					<Branch>
+					   <Label>homolow</Label>
+						 <EqualCondition DataElementId="cathomo" ComparisonValue="homolower"/>
+						    <EndPointRef EndPointId="endpointbenign" ></EndPointRef>	
+                       </Branch>
+					<Branch>
+					 <Label>homomi</Label>
+					  <EqualCondition DataElementId="cathomo" ComparisonValue="homomid"/>
+				      <EndPointRef EndPointId="endpointrecommend"></EndPointRef>		
+                    </Branch>
+					<Branch>
+					 <Label>homohi</Label>
+					  <EqualCondition DataElementId="cathomo" ComparisonValue="homoupper"/>
+				      <EndPointRef EndPointId="endpointhomo"></EndPointRef>		
+                    </Branch>
+					</DecisionPoint>
+				
+       </Branch>
+ </DecisionPoint>
+ 
+ <DecisionPoint Id="rule5">	 
+    <Label>heterocalci</Label>
+					<Branch>
+					   <Label>heterofollow</Label>
+						 <EqualCondition DataElementId="catrenalmass" ComparisonValue="heter"/>
+						    <EndPointRef EndPointId="endpointrecommend" ></EndPointRef>	
+                       </Branch>
+  </DecisionPoint>
+  
+  
+    <DecisionPoint Id="rule6">
+     <Label>CThomo</Label>
+      <Branch>
+		 <Label>CThomolabel</Label>			  
+				  <EqualCondition DataElementId="catrenalmass" ComparisonValue="homoenhance"/> 
+				  <DecisionPoint Id="rule2">	 
+				  <Label>homoenhancetwo</Label>
+					<Branch>
+					   <Label>homeoenhancethree</Label>
+						 <EqualCondition DataElementId="cystictype" ComparisonValue="benigncystmass"/>
+						    <EndPointRef EndPointId="endpointbenign" ></EndPointRef>	
+                       </Branch>
+					<Branch>
+					 <Label>Thomoenhancefour</Label>
+					  <EqualCondition DataElementId="cystictype" ComparisonValue="solidcystmass"/>
+				      <EndPointRef EndPointId="endpointCT"></EndPointRef>		
+                    </Branch>
+					</DecisionPoint>
+				
+       </Branch>
+ </DecisionPoint>
+ <DecisionPoint Id="rule1b">	 
+    <Label>rulebenignb</Label>
+			<Branch>
+				<Label>labelonetwob</Label>
+						 <EqualCondition DataElementId="bosniak" ComparisonValue="onetwoclass"/>
+						    <EndPointRef EndPointId="endpointbenignsimple" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint>
+  
+  
+ <DecisionPoint Id="rule2b">	 
+    <Label>rulecomplexb</Label>
+			<Branch>
+				<Label>labeltwofb</Label>
+						 <EqualCondition DataElementId="bosniak" ComparisonValue="twofclass"/>
+						    <EndPointRef EndPointId="endpointfollowup5" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint>
+  
+  
+  <DecisionPoint Id="rule3b">	 
+    <Label>rulenomorpho</Label>
+			<Branch>
+				<Label>labelnomorpho</Label>
+						 <EqualCondition DataElementId="morphotype" ComparisonValue="yes"/>
+						    <EndPointRef EndPointId="endpointbenigncomplex" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint>
+  
+  
+  <DecisionPoint Id="rule4b">	 
+    <Label>rulemorpho</Label>
+			<Branch>
+				<Label>labelmorpho</Label>
+						 <EqualCondition DataElementId="morphotype" ComparisonValue="no"/>
+						    <EndPointRef EndPointId="endpointmanage" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint>
+  
+  
+  <DecisionPoint Id="rule5b">	 
+    <Label>ruleman</Label>
+			<Branch>
+				<Label>labelthreefourb</Label>
+						 <EqualCondition DataElementId="bosniak" ComparisonValue="threefourclass"/>
+						 <EndPointRef EndPointId="endpointmanage" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint>
+  
+  
+  
+    <DecisionPoint Id="rule1s">
+     <Label>solid rule 1</Label>
+      <Branch>
+		 <Label>solid benign</Label>			  
+				  <EqualCondition DataElementId="solidrenaltype" ComparisonValue="TSTCsolid"/> 
+				  <DecisionPoint Id="rule2s">	 
+				  <Label>solidTSTC</Label>
+					<Branch>
+					   <Label>TSTCsb</Label>
+						 <EqualCondition DataElementId="TSTCnature" ComparisonValue="tstcbenign"/>
+						    <EndPointRef EndPointId="endpointbenignTSTC" ></EndPointRef>	
+                       </Branch>
+					<Branch>
+					 <Label>TSTCsi</Label>
+					  <EqualCondition DataElementId="TSTCnature" ComparisonValue="tstcincl"/>
+				      <EndPointRef EndPointId="endpointsixtw"></EndPointRef>		
+                    </Branch>
+					</DecisionPoint>
+				
+       </Branch>
+ </DecisionPoint>
+ 
+ 
+   <DecisionPoint Id="rule3s">
+     <Label>solid rule 2</Label>
+      <Branch>
+		 <Label>solid nature label</Label>			  
+				  <EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidlower"/> 
+				  <DecisionPoint Id="rule4s">	 
+				  <Label>solid low neo</Label>
+					<Branch>
+					   <Label>growth neo stable</Label>
+						 <EqualCondition DataElementId="smallneonature" ComparisonValue="stableneo"/>
+						    <EndPointRef EndPointId="endpointstable" ></EndPointRef>	
+                       </Branch>
+					<Branch>
+					 <Label>growth neo</Label>
+					  <EqualCondition DataElementId="smallneonature" ComparisonValue="growneo"/>
+				      <EndPointRef EndPointId="endpointbiopsy"></EndPointRef>		
+                    </Branch>
+					</DecisionPoint>
+				
+       </Branch>
+ </DecisionPoint>
+  
+  
+   <DecisionPoint Id="rule5s">	 
+    <Label>solid rule 3</Label>
+			<Branch>
+				<Label>solid mass lower rule</Label>
+						 <EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidlower"/>
+						 <EndPointRef EndPointId="endpointsmallneo" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint> 
+  
+  
+  <DecisionPoint Id="rule6s">	 
+    <Label>solid rule 4</Label>
+			<Branch>
+				<Label>solid mass mid rule</Label>
+						 <EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidmid"/>
+						 <EndPointRef EndPointId="endpointbiopsy" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint>
+  
+  <DecisionPoint Id="rule7s">	 
+    <Label>solid rule 5</Label>
+			<Branch>
+				<Label>solid mass upper rule</Label>
+						 <EqualCondition DataElementId="solidrenaltype" ComparisonValue="solidupper"/>
+						 <EndPointRef EndPointId="endpointneomanage" ></EndPointRef>	
+            </Branch>
+  </DecisionPoint>
+  
+   <DecisionPoint Id="rule1cal">
+     <Label>rule 1 cal</Label>
+      <Branch>
+		 <Label>with cal</Label>			  
+				  <EqualCondition DataElementId="renalcalcify" ComparisonValue="calcify"/> 
+				   <EndPointRef EndPointId="endpointcalcify"></EndPointRef>					   
+       </Branch>
+	 
+        <Branch>
+		 <Label>no cal</Label>			  
+				<EqualCondition DataElementId="renalcalcify" ComparisonValue="nocalcify"/> 
+                 <DecisionPoint Id="rule2cal">	 
+				  <Label>rule 2 cal</Label>
+					<Branch>
+					  <Label>branch 2 cal</Label>
+						 <EqualCondition DataElementId="renalnocalcify" ComparisonValue="greatgrowc"/>
+						    <EndPointRef EndPointId="endpointAMLmanage" ></EndPointRef>	
+                    </Branch>
+					<Branch>
+					<Label>branch 3 cal</Label>
+					      <EqualCondition DataElementId="renalnocalcify" ComparisonValue="lessgrowc"/>
+						   <DecisionPoint Id="rule3cal">	 
+				             <Label>rule 3 cal</Label>
+					               <Branch>
+					               <Label>branch 4 cal</Label>
+						            <EqualCondition DataElementId="amlslowgrow" ComparisonValue="smallamlsize"/>
+						            <EndPointRef EndPointId="endpointsmallAML"></EndPointRef>	
+                                    </Branch>
+					                <Branch>
+					                <Label>branch 3 cal</Label>
+					                <EqualCondition DataElementId="amlslowgrow" ComparisonValue="greatamlsize"/>
+						            <EndPointRef EndPointId="endpointAMLmanage" ></EndPointRef>	
+					                </Branch>  
+				            </DecisionPoint>
+					</Branch>  
+				 </DecisionPoint>
+	      </Branch>
+	</DecisionPoint>
+
+ 
+</Rules> 
+  
+ <EndPoints>
+	
+		
+	 <EndPoint Id="endpointbenign">
+		<Label>Benign endpoint</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Not fully characterized. No further W/U</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+		
+	<EndPoint Id="endpointhomo">
+		<Label>endpoint homogeneous</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Hemmorhagic or proteinaceous cyst, unlikely to be neoplastic. No further W/U</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="endpointfollowup">
+		<Label>endpoint follow up</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Indeterminate. WOW MR (preferred) or WOW CT within 6-12 months</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	
+	<EndPoint Id="endpointrecommend">
+		<Label>endpoint recommend</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Indeterminate. Recommend WOW MR or WOW CT</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="endpointCT">
+		<Label>endpoint mass CT</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Solid or complicated cystic mass</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+<EndPoint Id="endpointbenignsimple">
+		<Label>Benign simple endpoint</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Benign simple (Bosniak I) or minimally complicated (Bosniak II) cystic mass. No further W/U.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+		
+	<EndPoint Id="endpointbenigncomplex">
+		<Label>endpoint benign complex</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Benign complex cystic mass (Bosniak IIF). No further W/U.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="endpointfollowup5">
+		<Label>endpoint follow up 5 yrs</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">WOW CT or WOW MR AT 6 and 12 months, then yearly for 5 years.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	
+	<EndPoint Id="endpointmanage">
+		<Label>endpoint management</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Refer for management.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+		
+	<EndPoint Id="endpointbenignTSTC">
+		<Label>endpoint benign TSTC</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">No further W/U</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+		
+	<EndPoint Id="endpointsixtw">
+		<Label>endpoint 6-12</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Indeterminate. WO W MR(preferred) or WO W CT within 6-12 months </ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="endpointsmallneo">
+		<Label>endpoint small neoplasm</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Small plasma neoplasm. Follow up WO W MR(preferred) or WO W CT beginning at 6-12 months then yearly for 5 years. </ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+		
+	<EndPoint Id="endpointstable">
+		<Label>endpoint stable</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Unlikely clinical significance. No further W/U.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="endpointbiopsy">
+		<Label>endpoint biopsy</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Small renal neoplasm. Refer for management; consider biopsy.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	<EndPoint Id="endpointneomanage">
+		<Label>endpoint neoplasm manage</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">Renal neoplam. Refer for management.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+	</EndPoint>
+	
+	
+	
+	
+	<EndPoint Id="endpointsmallAML">
+		<Label>small AML endpoint</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText"> No further W/U.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+</EndPoint>
+		
+<EndPoint Id="endpointAMLmanage">
+		<Label> AML manage endpoint</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText"> Refer for management.</ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+</EndPoint>
+	
+<EndPoint Id="endpointcalcify">
+		<Label>calcify endpoint</Label>
+		<ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText"> CT or MR WOW IV contrast and refer for management. </ReportText>
+				</Branch>
+			</ReportSection>
+		</ReportSections>
+</EndPoint>
+	
+	
+	
+	
+	
+		
+ </EndPoints>
+
+ </ReportingModule>
