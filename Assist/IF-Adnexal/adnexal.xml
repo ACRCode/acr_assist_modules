@@ -28,19 +28,14 @@
 				</Choice>
 				<Choice>
 					<Value>chardiag</Value>
-					<Label> Other characteristic diagnoses</Label>
+					<Label>Other characteristic diagnoses</Label>
 				</Choice>
 				<Choice>
 					<Value>uncertaindiag</Value>
 					<Label>Diagnosis uncertain or simple-appearing cyst &gt;= 10 cm</Label>
 				</Choice>
-
 			</ChoiceInfo>
-
 		</ChoiceDataElement>
-
-
-
 
 		<ChoiceDataElement Id="menopausal_status" IsRequired="true" DisplaySequence="2">
 			<Label>What is the type of simple-appearing cyst ?</Label>
@@ -60,18 +55,15 @@
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
-
 		<NumericDataElement Id="premenopausalsize" IsRequired="false" DisplaySequence="3">
 			<Label>Pre menopausal size</Label>
-			<Minimum>1</Minimum>		
-
+			<Minimum>1</Minimum>
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -81,7 +73,6 @@
 
 						<SectionIfNot DataElementId="menopausal_status"/>
 						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmeno"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>					
@@ -91,7 +82,6 @@
 		<NumericDataElement Id="postmenopausalsize" IsRequired="false" DisplaySequence="4">
 			<Label>Post menopausal size</Label>
 			<Minimum>1</Minimum>
-
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -101,7 +91,6 @@
 
 						<SectionIfNot DataElementId="menopausal_status"/>
 						<EqualCondition DataElementId="menopausal_status" ComparisonValue="premeno"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
 				</ConditionalProperty>					
@@ -124,7 +113,6 @@
 					<Value>prefullychar</Value>
 					<Label>Fully characterized by MR</Label>
 				</Choice>
-
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -132,16 +120,13 @@
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-
 						<SectionIfNot DataElementId="premenopausalsize"/>
 						<EqualCondition DataElementId="premenopausalsize" ComparisonValue="lessthan5"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
 			</ConditionalProperties>
 		</ChoiceDataElement>
-
 
 		<ChoiceDataElement Id="less3op" IsRequired="true" DisplaySequence="6">
 			<Label>Postmenopausal greater 3 options</Label>
@@ -158,7 +143,6 @@
 					<Value>postfulychar</Value>
 					<Label>Fully characterized by MR</Label>
 				</Choice>
-
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -169,7 +153,6 @@
 
 						<SectionIfNot DataElementId="postmenopausalsize"/>
 						<EqualCondition DataElementId="postmenopausalsize" ComparisonValue="less3"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
@@ -185,11 +168,9 @@
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-
 						<SectionIfNot DataElementId="great5op"/>
 						<EqualCondition DataElementId="great5op" ComparisonValue="prelimassess"/>
 						<EqualCondition DataElementId="great5op" ComparisonValue="prenotlim"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
@@ -205,11 +186,9 @@
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-
 						<SectionIfNot DataElementId="less3op"/>
 						<EqualCondition DataElementId="less3op" ComparisonValue="postlimassess"/>
 						<EqualCondition DataElementId="less3op" ComparisonValue="postnotlim"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
@@ -304,15 +283,11 @@
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
-
 		</NumericDataElement>
-
-
 	</DataElements>	
 
 
