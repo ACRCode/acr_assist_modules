@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../CARDS_Schema_2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
-<Metadata>
-<Label>IF-Adnexal</Label>
-<ID>IF-Adnexal</ID>
-      <SchemaVersion>2.0 </SchemaVersion>
-      <ModuleVersion>1.0 </ModuleVersion>
-       <CreatedDate>2019-10-15 </CreatedDate>
-        <LastModifiedDate>2019-10-15 </LastModifiedDate>
-        <DevelopedBy>American College of Radiology </DevelopedBy>
-        <Info>
-        <Description>IF-Adnexal</Description>
-        <Contact>
-        <Name>Ritu Doijad </Name>
-        <Institution>American College of Radiology </Institution>
-        </Contact>
-         </Info>
- </Metadata>
- 
- <DataElements>
+	<Metadata>
+		<Label>IF-Adnexal</Label>
+		<ID>IF-Adnexal</ID>
+		<SchemaVersion>2.0 </SchemaVersion>
+		<ModuleVersion>1.0 </ModuleVersion>
+		<CreatedDate>2019-10-15 </CreatedDate>
+		<LastModifiedDate>2019-10-15 </LastModifiedDate>
+		<DevelopedBy>American College of Radiology </DevelopedBy>
+		<Info>
+			<Description>IF-Adnexal</Description>
+			<Contact>
+				<Name>Ritu Doijad </Name>
+				<Institution>American College of Radiology </Institution>
+			</Contact>
+		</Info>
+	</Metadata>
+
+	<DataElements>
 		<ChoiceDataElement Id="adnexaltype" IsRequired="true" DisplaySequence="1">
 			<Label>What is the incidental mass on CT or MRI?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>simplecysts</Value>
 					<Label>Simple appearing cyst  &lt; 10cm </Label>
-				 </Choice>
+				</Choice>
 				<Choice>
 					<Value>chardiag</Value>
 					<Label> Other characteristic diagnoses</Label>
@@ -36,25 +36,25 @@
 				</Choice>
 
 			</ChoiceInfo>
-			
-		 </ChoiceDataElement>
-		 
-		 
-		 
-		 
-		 <ChoiceDataElement Id="menopausal_status" IsRequired="true" DisplaySequence="2">
+
+		</ChoiceDataElement>
+
+
+
+
+		<ChoiceDataElement Id="menopausal_status" IsRequired="true" DisplaySequence="2">
 			<Label>What is the type of simple-appearing cyst ?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>premeno</Value>
 					<Label>Premenopausal or &lt;= 50 years if status unknown</Label>
-				 </Choice>
+				</Choice>
 				<Choice>
 					<Value>postmeno</Value>
 					<Label>Postmenopausal or &gt; 50 years if status unknown</Label>
-				 </Choice>
-			 </ChoiceInfo>
-			 <ConditionalProperties>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adnexaltype"/>
@@ -66,163 +66,163 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		
-		
+
+
 		<NumericDataElement Id="premenopausalsize" IsRequired="false" DisplaySequence="3">
 			<Label>Pre menopausal size</Label>
 			<Minimum>1</Minimum>		
-		
-			 <ConditionalProperties>
-			 <ConditionalProperty>
+
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-						
+
 						<SectionIfNot DataElementId="menopausal_status"/>
 						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmeno"/>
 
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
-              </ConditionalProperty>					
-				</ConditionalProperties>	
+				</ConditionalProperty>					
+			</ConditionalProperties>	
 		</NumericDataElement>
-		
+
 		<NumericDataElement Id="postmenopausalsize" IsRequired="false" DisplaySequence="4">
 			<Label>Post menopausal size</Label>
 			<Minimum>1</Minimum>
-			
-		   <ConditionalProperties>
-		   <ConditionalProperty>
+
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-						
+
 						<SectionIfNot DataElementId="menopausal_status"/>
 						<EqualCondition DataElementId="menopausal_status" ComparisonValue="premeno"/>
 
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>	
-                   </ConditionalProperty>					
-				</ConditionalProperties>	
+				</ConditionalProperty>					
+			</ConditionalProperties>	
 		</NumericDataElement>
-		
-		
+
+
 		<ChoiceDataElement Id="great5op" IsRequired="true" DisplaySequence="5">
 			<Label>Premenopausal greater 5 option</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>prelimassess</Value>
 					<Label>Limited assessment</Label>
-				 </Choice>
+				</Choice>
 				<Choice>
 					<Value>prenotlim</Value>
 					<Label>Not limited asessment but not fully characterized by MR</Label>
-				 </Choice>
+				</Choice>
 				<Choice>
 					<Value>prefullychar</Value>
 					<Label>Fully characterized by MR</Label>
-				 </Choice>
-				 
-		   </ChoiceInfo>
-		   <ConditionalProperties>
-		   <ConditionalProperty>
+				</Choice>
+
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-						
+
 						<SectionIfNot DataElementId="premenopausalsize"/>
 						<EqualCondition DataElementId="premenopausalsize" ComparisonValue="lessthan5"/>
 
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
-				</ConditionalProperties>
+			</ConditionalProperties>
 		</ChoiceDataElement>
-		
-		
+
+
 		<ChoiceDataElement Id="less3op" IsRequired="true" DisplaySequence="6">
 			<Label>Postmenopausal greater 3 options</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>postlimassess</Value>
 					<Label>Limited assessment</Label>
-				 </Choice>
+				</Choice>
 				<Choice>
 					<Value>postnotlim</Value>
 					<Label>Not limited asessment but not fully characterized by MR</Label>
-				 </Choice>
+				</Choice>
 				<Choice>
 					<Value>postfulychar</Value>
 					<Label>Fully characterized by MR</Label>
-				 </Choice>
-				
-		   </ChoiceInfo>
-		   <ConditionalProperties>
-		   <ConditionalProperty>
+				</Choice>
+
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-						
+
 						<SectionIfNot DataElementId="postmenopausalsize"/>
 						<EqualCondition DataElementId="postmenopausalsize" ComparisonValue="less3"/>
 
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
-				</ConditionalProperties>
+			</ConditionalProperties>
 		</ChoiceDataElement>
-		
+
 		<NumericDataElement Id="fullycharbyMRI" IsRequired="true" DisplaySequence="7">
 			<Label>Assessment for MR characterization : Premenopausal</Label>
 			<Minimum>1</Minimum>
-		   <ConditionalProperties>
-		   <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-						
+
 						<SectionIfNot DataElementId="great5op"/>
 						<EqualCondition DataElementId="great5op" ComparisonValue="prelimassess"/>
-                        <EqualCondition DataElementId="great5op" ComparisonValue="prenotlim"/>
-						
+						<EqualCondition DataElementId="great5op" ComparisonValue="prenotlim"/>
+
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
-				</ConditionalProperties>
+			</ConditionalProperties>
 		</NumericDataElement>
-		
+
 		<NumericDataElement Id="fullycharbyMRIpostmenopausal" IsRequired="true" DisplaySequence="8">
 			<Label>Assessment for MR characterization : Postmenopausal </Label>
 			<Minimum>1</Minimum>
-		   <ConditionalProperties>
-		   <ConditionalProperty>
+			<ConditionalProperties>
+				<ConditionalProperty>
 					<OrCondition>
 						<SectionIfNot DataElementId="adnexaltype"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
 						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-						
+
 						<SectionIfNot DataElementId="less3op"/>
 						<EqualCondition DataElementId="less3op" ComparisonValue="postlimassess"/>
-                        <EqualCondition DataElementId="less3op" ComparisonValue="postnotlim"/>
-						
+						<EqualCondition DataElementId="less3op" ComparisonValue="postnotlim"/>
+
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>	
-				</ConditionalProperties>
+			</ConditionalProperties>
 		</NumericDataElement>
-		
+
 		<ChoiceDataElement Id="adnexaltypemasses" IsRequired="true" DisplaySequence="9">
 			<Label>What is the adnexal mass on CT or MRI?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>hemorrhagiccyst</Value>
 					<Label>Hemorrhagic cyst</Label>
-				 </Choice>
+				</Choice>
 				<Choice>
 					<Value>paraovariancyst</Value>
 					<Label>Para-ovarian cyst</Label>
@@ -248,15 +248,56 @@
 					<Label>Endometrioma</Label>
 				</Choice>
 				<Choice>
-				    <Value>dermoid</Value>
+					<Value>dermoid</Value>
 					<Label>Dermoid</Label>
 				</Choice>
 				<Choice>
-				<Value>suspectedmalignancy</Value>
-				<Label>Suspected malignancy</Label>
+					<Value>suspectedmalignancy</Value>
+					<Label>Suspected malignancy</Label>
 				</Choice>
 			</ChoiceInfo>
-			
+
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+		<ChoiceDataElement Id="hemorrhaghic_menopausal_status" IsRequired="true" DisplaySequence="10">
+			<Label>What is the menopausal status?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>premeno</Value>
+					<Label>Premenopausal or &lt;= 50 years if status unknown</Label>
+				</Choice>
+				<Choice>
+					<Value>postmeno</Value>
+					<Label>Postmenopausal or &gt; 50 years if status unknown</Label>
+				</Choice>
+			</ChoiceInfo>
+
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="adnexaltype"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
+						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>		
+				</ConditionalProperty>		
+			</ConditionalProperties>
+		</ChoiceDataElement>
+
+
+		<NumericDataElement Id="Hemorrhagiccystsize" IsRequired="false" DisplaySequence="11">
+			<Label>Pre menopausal size</Label>
+			<Minimum>1</Minimum>		
 			<ConditionalProperties>
 				<ConditionalProperty>
 					<OrCondition>
@@ -268,307 +309,256 @@
 					<IsRelevant>false</IsRelevant>		
 				</ConditionalProperty>		
 			</ConditionalProperties>
-			
-		 </ChoiceDataElement>
-		 
-		 
-		 
-		 
-		 <ChoiceDataElement Id="hemorrhaghic_menopausal_status" IsRequired="true" DisplaySequence="10">
-			<Label>What is the menopausal status?</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>premeno</Value>
-					<Label>Premenopausal or &lt;= 50 years if status unknown</Label>
-				 </Choice>
-				<Choice>
-					<Value>postmeno</Value>
-					<Label>Postmenopausal or &gt; 50 years if status unknown</Label>
-				 </Choice>
-			 </ChoiceInfo>
-			 
-			 <ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="adnexaltype"/>
-						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
-						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
 
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>		
-				</ConditionalProperty>		
-			</ConditionalProperties>
-			 
-		</ChoiceDataElement>
-		
-		
-		<NumericDataElement Id="Hemorrhagiccystsize" IsRequired="false" DisplaySequence="11">
-			<Label>Pre menopausal size</Label>
-			<Minimum>1</Minimum>		
-		<ConditionalProperties>
-				<ConditionalProperty>
-					<OrCondition>
-						<SectionIfNot DataElementId="adnexaltype"/>
-						<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
-						<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
-
-					</OrCondition>
-					<IsRelevant>false</IsRelevant>		
-				</ConditionalProperty>		
-			</ConditionalProperties>
-			 
 		</NumericDataElement>
-		
-		
+
+
 	</DataElements>	
-		
-		
-<Rules>
+
+
+	<Rules>
 		<DecisionPoint Id="first question">
 			<Label>Other Char</Label>
 			<Branch>
 				<Label>Other char 2</Label>
-					<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
-				    <DecisionPoint Id = "decisionchardiag">
-						<Label>decision characteristic features for adnexal mass</Label>
-						<Branch>
+				<EqualCondition DataElementId="adnexaltype" ComparisonValue="chardiag"/>
+				<DecisionPoint Id = "decisionchardiag">
+					<Label>decision characteristic features for adnexal mass</Label>
+					<Branch>
 						<Label>option 1 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="paraovariancyst"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="paraovariancyst"/>
 						</AndCondition>
 						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
-						</Branch>
-						
-						<Branch>
+					</Branch>
+
+					<Branch>
 						<Label>option 2 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="peritonealcyst"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="peritonealcyst"/>
 						</AndCondition>
 						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
-						</Branch>
-						
-						<Branch>
+					</Branch>
+
+					<Branch>
 						<Label>option 3 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="hydrosalpinx"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="hydrosalpinx"/>
 						</AndCondition>
 						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
-						</Branch>
-						
-						<Branch>
+					</Branch>
+
+					<Branch>
 						<Label>option 4 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="ovarianfibroma"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="ovarianfibroma"/>
 						</AndCondition>
 						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
-						</Branch>
-						
-						<Branch>
+					</Branch>
+
+					<Branch>
 						<Label>option 5 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="uterineleiyoma"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="uterineleiyoma"/>
 						</AndCondition>
 						<EndPointRef EndPointId="clinicalmanagement"></EndPointRef>
-						</Branch>
-						
-						<Branch>
+					</Branch>
+
+					<Branch>
 						<Label>option 6 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="endometrioma"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="endometrioma"/>
 						</AndCondition>
 						<EndPointRef EndPointId="gynecologistmanaged"></EndPointRef>
-						</Branch>
-						
-						<Branch>
+					</Branch>
+
+					<Branch>
 						<Label>option 7 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="dermoid"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="dermoid"/>
 						</AndCondition>
 						<EndPointRef EndPointId="gynecologistmanaged"></EndPointRef>
-						</Branch>
-						
-						
-						<Branch>
+					</Branch>
+
+
+					<Branch>
 						<Label>option 8 chardiag</Label>
 						<AndCondition>
-						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="suspectedmalignancy"/>
+							<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="suspectedmalignancy"/>
 						</AndCondition>
 						<EndPointRef EndPointId="USMRIcharacterize"></EndPointRef>
-						</Branch>
-						
-						<Branch>
+					</Branch>
+
+					<Branch>
 						<Label>option 9 chardiag</Label>
 						<EqualCondition DataElementId="adnexaltypemasses" ComparisonValue="hemorrhagiccyst"/>
-						  <DecisionPoint Id ="decisionhemorrhagicyst">
-						  <Label>Decision hemorrhagic cyst</Label>
-						    <Branch>
-							<Label>hemorrhagic cyst premenopausal status</Label>
-							<AndCondition>
-							<EqualCondition DataElementId="hemorrhaghic_menopausal_status" ComparisonValue="premeno"/>
-						    </AndCondition>
-							<EndPointRef EndPointId="Noimaging"></EndPointRef>
-						    </Branch>
+						<DecisionPoint Id ="decisionhemorrhagicyst">
+							<Label>Decision hemorrhagic cyst</Label>
 							<Branch>
-							<Label>hemorrhagic cyst postmenopausal status</Label>
-							<AndCondition>
-							<EqualCondition DataElementId="hemorrhaghic_menopausal_status" ComparisonValue="postmeno"/>
-						    </AndCondition>
-							<EndPointRef EndPointId="USMRIcharacterize"></EndPointRef>
-						    </Branch>
-							
-							
-						  </DecisionPoint>
-						</Branch>
-						
+								<Label>hemorrhagic cyst premenopausal status</Label>
+								<AndCondition>
+									<EqualCondition DataElementId="hemorrhaghic_menopausal_status" ComparisonValue="premeno"/>
+								</AndCondition>
+								<EndPointRef EndPointId="Noimaging"></EndPointRef>
+							</Branch>
+							<Branch>
+								<Label>hemorrhagic cyst postmenopausal status</Label>
+								<AndCondition>
+									<EqualCondition DataElementId="hemorrhaghic_menopausal_status" ComparisonValue="postmeno"/>
+								</AndCondition>
+								<EndPointRef EndPointId="USMRIcharacterize"></EndPointRef>
+							</Branch>
+
+
 						</DecisionPoint>
-						
-				
+					</Branch>
+
+				</DecisionPoint>
+
+
 			</Branch>
-			    
+
 			<Branch>
-			<Label>Other char 3</Label>
+				<Label>Other char 3</Label>
 				<AndCondition>
-				<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
+					<EqualCondition DataElementId="adnexaltype" ComparisonValue="uncertaindiag"/>
 				</AndCondition>
 				<EndPointRef EndPointId="USMRIcharacterize"></EndPointRef>
 			</Branch>
-			
+
 			<Branch>
-			<Label> Char 1 option </Label>
-			<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
-			<DecisionPoint Id= "char1decision">
-			<Label> decision point char 1</Label>
-			    <Branch>
-					<Label>ONECOND</Label>
+				<Label> Char 1 option </Label>
+				<EqualCondition DataElementId="adnexaltype" ComparisonValue="simplecysts"/>
+				<DecisionPoint Id= "char1decision">
+					<Label> decision point char 1</Label>
+					<Branch>
+						<Label>ONECOND</Label>
 						<EqualCondition DataElementId="menopausal_status" ComparisonValue="premeno"/>
 						<DecisionPoint Id = "oneconddesi">
-						<Label>pre label</Label>
-						<Branch>
-						<Label> less than 5 premenopausal</Label>
-						<AndCondition>
-				        <LessthanCondition DataElementId="premenopausalsize" ComparisonValue="5"/>
-				        </AndCondition>
-	                    <EndPointRef EndPointId="Noimaging"></EndPointRef>
-						</Branch>
-						<Branch>
-						<Label> greater than 5 premenopausal size</Label>
-				        <GreaterthanOrEqualsCondition DataElementId="premenopausalsize" ComparisonValue="5"/>
-				        <DecisionPoint Id ="prelessfive">
-						<Label>pre label 3</Label>
-						<Branch>
-						<Label>first5</Label>
-						<AndCondition>
-				        <EqualCondition DataElementId="great5op" ComparisonValue="prelimassess"/>
-				        </AndCondition>
-	                    <EndPointRef EndPointId="UScharacterize"></EndPointRef>
-						</Branch>
-						<Branch>
-						<Label>second5</Label>
-						<AndCondition>
-				        <EqualCondition DataElementId="great5op" ComparisonValue="prenotlim"/>
-				        </AndCondition>
-	                    <EndPointRef EndPointId="USfollowup"></EndPointRef>
-						</Branch>
-						<Branch>
-						<Label>third5</Label>
-				        <EqualCondition DataElementId="great5op" ComparisonValue="prefullychar"/>
-				          <DecisionPoint Id = "decisionMRI">
-						    <Label> MRI characterization decision </Label>
+							<Label>pre label</Label>
 							<Branch>
-							<Label> MRI characterization branch for no imaging</Label>
-							<AndCondition>
-							<LessthanCondition DataElementId="fullycharbyMRI" ComparisonValue="7"/>
-				            </AndCondition>
-	                        <EndPointRef EndPointId="Noimaging"></EndPointRef>
+								<Label> less than 5 premenopausal</Label>
+								<AndCondition>
+									<LessthanCondition DataElementId="premenopausalsize" ComparisonValue="5"/>
+								</AndCondition>
+								<EndPointRef EndPointId="Noimaging"></EndPointRef>
 							</Branch>
 							<Branch>
-							<Label> MRI characterization branch for follow up</Label>
-							<AndCondition>
-							<GreaterthanOrEqualsCondition DataElementId="fullycharbyMRI" ComparisonValue="7"/>
-				            </AndCondition>
-	                        <EndPointRef EndPointId="USfollowup"></EndPointRef>
-							</Branch>  
-						  </DecisionPoint>
-						</Branch>
-	                    </DecisionPoint>
-						</Branch>
-						
+								<Label> greater than 5 premenopausal size</Label>
+								<GreaterthanOrEqualsCondition DataElementId="premenopausalsize" ComparisonValue="5"/>
+								<DecisionPoint Id ="prelessfive">
+									<Label>pre label 3</Label>
+									<Branch>
+										<Label>first5</Label>
+										<AndCondition>
+											<EqualCondition DataElementId="great5op" ComparisonValue="prelimassess"/>
+										</AndCondition>
+										<EndPointRef EndPointId="UScharacterize"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>second5</Label>
+										<AndCondition>
+											<EqualCondition DataElementId="great5op" ComparisonValue="prenotlim"/>
+										</AndCondition>
+										<EndPointRef EndPointId="USfollowup"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>third5</Label>
+										<EqualCondition DataElementId="great5op" ComparisonValue="prefullychar"/>
+										<DecisionPoint Id = "decisionMRI">
+											<Label> MRI characterization decision </Label>
+											<Branch>
+												<Label> MRI characterization branch for no imaging</Label>
+												<AndCondition>
+													<LessthanCondition DataElementId="fullycharbyMRI" ComparisonValue="7"/>
+												</AndCondition>
+												<EndPointRef EndPointId="Noimaging"></EndPointRef>
+											</Branch>
+											<Branch>
+												<Label> MRI characterization branch for follow up</Label>
+												<AndCondition>
+													<GreaterthanOrEqualsCondition DataElementId="fullycharbyMRI" ComparisonValue="7"/>
+												</AndCondition>
+												<EndPointRef EndPointId="USfollowup"></EndPointRef>
+											</Branch>  
+										</DecisionPoint>
+									</Branch>
+								</DecisionPoint>
+							</Branch>
+
 						</DecisionPoint>
-			    </Branch>
-				<Branch>
-					<Label>TWOCOND</Label>
-							<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmeno"/>
-							<DecisionPoint Id = "oneconddesi">
-						<Label>post label</Label>
-						<Branch>
-						<Label>postmenopausal size less 3</Label>
-						<AndCondition>
-				        <LessthanCondition DataElementId="postmenopausalsize" ComparisonValue="3"/>
-				        </AndCondition>
-	                    <EndPointRef EndPointId="Noimaging"></EndPointRef>
-						</Branch>
-						<Branch>
-						<Label>postmenopausal size great 3</Label>
-				        <GreaterthanOrEqualsCondition DataElementId="postmenopausalsize" ComparisonValue="3"/>
-				        <DecisionPoint Id ="postgreathree">
-						<Label>post label 3</Label>
-						<Branch>
-						<Label>first3</Label>
-						<AndCondition>
-				        <EqualCondition DataElementId="less3op" ComparisonValue="postlimassess"/>
-				        </AndCondition>
-	                    <EndPointRef EndPointId="UScharacterize"></EndPointRef>
-						</Branch>
-						<Branch>
-						<Label>second5</Label>
-						<AndCondition>
-				        <EqualCondition DataElementId="less3op" ComparisonValue="postnotlim"/>
-				        </AndCondition>
-	                    <EndPointRef EndPointId="USfollowup"></EndPointRef>
-						</Branch>
-						<Branch>
-						<Label>third55</Label>
-				        <EqualCondition DataElementId="less3op" ComparisonValue="postfulychar"/>
-				          <DecisionPoint Id = "decisionMRIpost">
-						    <Label> post MRI characterization decision </Label>
+					</Branch>
+					<Branch>
+						<Label>TWOCOND</Label>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmeno"/>
+						<DecisionPoint Id = "oneconddesi">
+							<Label>post label</Label>
 							<Branch>
-							<Label> post MRI characterization branch for no imaging</Label>
-							<AndCondition>
-							<LessthanCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="5"/>
-				            </AndCondition>
-	                        <EndPointRef EndPointId="Noimaging"></EndPointRef>
+								<Label>postmenopausal size less 3</Label>
+								<AndCondition>
+									<LessthanCondition DataElementId="postmenopausalsize" ComparisonValue="3"/>
+								</AndCondition>
+								<EndPointRef EndPointId="Noimaging"></EndPointRef>
 							</Branch>
 							<Branch>
-							<Label> post MRI characterization branch for follow up</Label>
-							<AndCondition>
-							<GreaterthanOrEqualsCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="5"/>
-				            </AndCondition>
-	                        <EndPointRef EndPointId="USfollowup"></EndPointRef>
+								<Label>postmenopausal size great 3</Label>
+								<GreaterthanOrEqualsCondition DataElementId="postmenopausalsize" ComparisonValue="3"/>
+								<DecisionPoint Id ="postgreathree">
+									<Label>post label 3</Label>
+									<Branch>
+										<Label>first3</Label>
+										<AndCondition>
+											<EqualCondition DataElementId="less3op" ComparisonValue="postlimassess"/>
+										</AndCondition>
+										<EndPointRef EndPointId="UScharacterize"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>second5</Label>
+										<AndCondition>
+											<EqualCondition DataElementId="less3op" ComparisonValue="postnotlim"/>
+										</AndCondition>
+										<EndPointRef EndPointId="USfollowup"></EndPointRef>
+									</Branch>
+									<Branch>
+										<Label>third55</Label>
+										<EqualCondition DataElementId="less3op" ComparisonValue="postfulychar"/>
+										<DecisionPoint Id = "decisionMRIpost">
+											<Label> post MRI characterization decision </Label>
+											<Branch>
+												<Label> post MRI characterization branch for no imaging</Label>
+												<AndCondition>
+													<LessthanCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="5"/>
+												</AndCondition>
+												<EndPointRef EndPointId="Noimaging"></EndPointRef>
+											</Branch>
+											<Branch>
+												<Label> post MRI characterization branch for follow up</Label>
+												<AndCondition>
+													<GreaterthanOrEqualsCondition DataElementId="fullycharbyMRIpostmenopausal" ComparisonValue="5"/>
+												</AndCondition>
+												<EndPointRef EndPointId="USfollowup"></EndPointRef>
+											</Branch>
+
+
+										</DecisionPoint>
+									</Branch>
+
+								</DecisionPoint>
+
 							</Branch>
-						
-						  
-						  </DecisionPoint>
-						</Branch>
-						
-	                    </DecisionPoint>
-							
-				    </Branch>
-			
-			     </DecisionPoint>
-            </Branch>
-			</DecisionPoint>
-		</Branch>
-	</DecisionPoint>
-		
+
+						</DecisionPoint>
+					</Branch>
+				</DecisionPoint>
+			</Branch>
+		</DecisionPoint>
+
 	</Rules>
 
 
-
-
-
 	<EndPoints>
-	
-    <EndPoint Id="seetable">
+
+		<EndPoint Id="seetable">
 			<Label>See table</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -578,9 +568,9 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
-		
-	<EndPoint Id="USMRIcharacterize">
+		</EndPoint>
+
+		<EndPoint Id="USMRIcharacterize">
 			<Label>Cat 3</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -590,10 +580,10 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
-		
-		
-	<EndPoint Id="Noimaging">
+		</EndPoint>
+
+
+		<EndPoint Id="Noimaging">
 			<Label>No further imaging</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -603,10 +593,10 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
+		</EndPoint>
 
-	
-	 <EndPoint Id="UScharacterize">
+
+		<EndPoint Id="UScharacterize">
 			<Label>Cat 1</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -616,9 +606,9 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
-		
-	<EndPoint Id="USfollowup">
+		</EndPoint>
+
+		<EndPoint Id="USfollowup">
 			<Label>US follow up</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -628,9 +618,9 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
+		</EndPoint>
 
-    <EndPoint Id="fullycharMRendpoint">
+		<EndPoint Id="fullycharMRendpoint">
 			<Label>Fully characteristic MR</Label>
 			<ReportSections>
 				<ReportSection SectionId="finding">
@@ -640,9 +630,9 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
-	
-	<EndPoint Id="clinicalmanagement">
+		</EndPoint>
+
+		<EndPoint Id="clinicalmanagement">
 			<Label>Clinical Management</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -652,9 +642,9 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>	
-	
-	 <EndPoint Id="gynecologistmanaged">
+		</EndPoint>	
+
+		<EndPoint Id="gynecologistmanaged">
 			<Label>gynecologist managed</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -664,9 +654,9 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
-	
-	<EndPoint Id="USfollowup2or3months">
+		</EndPoint>
+
+		<EndPoint Id="USfollowup2or3months">
 			<Label>US follow up 2 or 3 months</Label>
 			<ReportSections>
 				<ReportSection SectionId="Recommendation">
@@ -676,9 +666,8 @@
 					</Branch>
 				</ReportSection>
 			</ReportSections>
-	</EndPoint>
+		</EndPoint>
 
-		
 	</EndPoints>
-	
+
 </ReportingModule>
