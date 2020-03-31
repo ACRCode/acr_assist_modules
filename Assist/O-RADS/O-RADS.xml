@@ -562,16 +562,16 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>1to3</Value>
-					<Label>papillary projections/mural nodules (≥ 3 mm in ht) # 1-3</Label>
+					<Label>papillary projections/mural nodules (≥ 3 mm in ht) # 0-3</Label>
 				</Choice>
 				<Choice>
 					<Value>grt4</Value>
 					<Label>papillary projections/mural nodules (≥ 3 mm in ht) # ≥ 4</Label>
 				</Choice>
-				<Choice>
+				<!-- <Choice>
 					<Value>no_papillary_projection</Value>
 					<Label>larger solid component that does not meet criteria for papillary projection</Label>
-				</Choice>
+				</Choice> -->
 			</ChoiceInfo>
 			<ConditionalProperties>
 				<ConditionalProperty>
@@ -770,6 +770,7 @@
 						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
 						<OrCondition>
 							<SectionIfNot DataElementId="inner_margin"></SectionIfNot>
+							<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>							
 							<AndCondition>
 								<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
 								<SectionIfNot DataElementId="color_score"></SectionIfNot>
@@ -1290,7 +1291,7 @@
 						<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
 					</Branch>
 					
-					<Branch>
+					<!-- <Branch>
 						<Label>no_papillary_projection and peritoneal not present</Label>
 						<AndCondition>
 							<EqualCondition DataElementId="Papillary_projections" ComparisonValue="no_papillary_projection"/>
@@ -1306,7 +1307,8 @@
 							<EqualCondition DataElementId="peritoneal_nodules_present" ComparisonValue="yes"/>
 						</AndCondition>	
 						<EndPointRef EndPointId="ORADS5_REF_Gynec_Onco"></EndPointRef>
-					</Branch>
+					</Branch> -->
+					
 				</DecisionPoint>			
 			</Branch>			
 			
