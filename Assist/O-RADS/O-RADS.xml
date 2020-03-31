@@ -67,7 +67,7 @@
 				</Choice>
 				<Choice>
 					<Value>postmenopausal</Value>
-					<Label>postmenopausal</Label>
+					<Label>Postmenopausal (> 1 year without menses)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -77,7 +77,7 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>intraovarian</Value>
-					<Label>intraovarian/adnexal</Label>
+					<Label>Ovarian/Adnexal</Label>
 				</Choice>
 				<Choice>
 					<Value>extraovarian</Value>
@@ -287,7 +287,7 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="intraovarian_lesion_type" IsRequired="true" DisplaySequence="10">
-			<Label>Lesion type</Label>
+			<Label>Ovarian/adnexal Lesion Type</Label>
 			<Diagrams>
 				<Diagram>
 					<Location>hemorrhagic_cyst.png</Location>
@@ -359,6 +359,10 @@
 					<Label>retractile clot</Label>
 				</Choice>
 				<Choice>
+					<Value>no_internal_flow</Value>
+					<Label>no internal flow</Label>
+				</Choice>
+				<Choice>
 					<Value>hyperechoic_lines_and_dots</Value>
 					<Label>hyperechoic lines and dots</Label>
 				</Choice>
@@ -397,6 +401,7 @@
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<ChoiceNotRelevant ChoiceValue="reticular_pattern"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="retractile_clot"></ChoiceNotRelevant>
+					<ChoiceNotRelevant ChoiceValue="no_internal_flow"></ChoiceNotRelevant>					
 					<ChoiceNotRelevant ChoiceValue="low_level_echoes"></ChoiceNotRelevant>
 				</ConditionalProperty>
 				
@@ -404,6 +409,7 @@
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
 					<ChoiceNotRelevant ChoiceValue="reticular_pattern"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="retractile_clot"></ChoiceNotRelevant>
+					<ChoiceNotRelevant ChoiceValue="no_internal_flow"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="hyperechoic_lines_and_dots"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="acoustic_shadowing"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="echogenic_sphericles"></ChoiceNotRelevant>
@@ -530,7 +536,7 @@
 				</Choice>
 				<Choice>
 					<Value>scattered_echoes_nonsimple</Value>
-					<Label>Scattered echoes (nonsimple)</Label>
+					<Label>Internal Echoes (Non-simple Cyst)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -1130,7 +1136,7 @@
 							<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
 							<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="3"/>
 						</AndCondition>
-						<EndPointRef EndPointId="ORADS1_No_FU"></EndPointRef>
+						<EndPointRef EndPointId="ORADS2_No_FU"></EndPointRef>
 					</Branch>
 					
 					<Branch>
@@ -1141,7 +1147,7 @@
 							<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
 							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
 						</AndCondition>
-						<EndPointRef EndPointId="ORADS2_FU_US_1Year"></EndPointRef>
+						<EndPointRef EndPointId="ORADS2_FU_US_8_12W"></EndPointRef>
 					</Branch>
 					
 					<!-- <Branch>
@@ -2054,7 +2060,7 @@
 					<Branch>
 						<ReportText Type="PlainText">Category: O-RADS 3</ReportText>
 						<ReportText Type="Newline"></ReportText>
-						<ReportText Type="PlainText">Refer to US specialist or MRI</ReportText>
+						<ReportText Type="PlainText">Referral to an US specialist or for a MRI study</ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText">May be managed by gynecologist</ReportText>
 						
@@ -2104,7 +2110,7 @@
 					<Branch>
 						<ReportText Type="PlainText">Category: O-RADS 5</ReportText>
 						<ReportText Type="Newline"></ReportText>
-						<ReportText Type="PlainText">Refer to gynecologic-oncologist for management</ReportText>
+						<ReportText Type="PlainText">Referral to a gynecologic-oncologist</ReportText>
 						
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="Newline"></ReportText>
