@@ -1080,7 +1080,7 @@
 							<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
 							<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="5"/>
 						</AndCondition>
-						<EndPointRef EndPointId="ORADS1_No_FU"></EndPointRef>
+						<EndPointRef EndPointId="ORADS2_No_FU"></EndPointRef>
 					</Branch>
 					
 					<Branch>
@@ -1143,7 +1143,7 @@
 						<EndPointRef EndPointId="ORADS2_FU_US_1Year"></EndPointRef>
 					</Branch>
 					
-					<Branch>
+					<!-- <Branch>
 						<Label>Intraovarian - postmenopausal -cystic - Unilocular - no_solid - smooth - symple cyst 4-9 cm </Label>						
 						<AndCondition>
 							<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
@@ -1152,7 +1152,7 @@
 							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
 						</AndCondition>
 						<EndPointRef EndPointId="ORADS2_FU_US_1Year"></EndPointRef>
-					</Branch>
+					</Branch> -->
 					
 					<Branch>
 						<Label>Intraovarian - premenopausal -cystic - Unilocular - no_solid - smooth - no symple cyst less than equals 3 cm </Label>
