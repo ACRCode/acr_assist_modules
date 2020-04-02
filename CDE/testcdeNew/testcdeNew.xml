@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>testcdeNew</Label>
+        <ID>testcdeNew</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-04-02</CreatedDate>
+        <LastModifiedDate>2020-04-2</LastModifiedDate>
+        <DevelopedBy>sanjay KA</DevelopedBy>
+        <CodableConcept />
+        <Info>
+            <Description>testcdeNew</Description>
+            <References>
+                <Citation Url="https://assist.acr.org/marval/home">
+                    <Coding>
+                        <System Value="http://www.ncbi.nlm.nih.gov/pubmed" />
+                        <Version Value="2.0" />
+                        <Code Value="2" />
+                        <Display Value="2" />
+                        <UserSelected Value="false" />
+                        <Url Value="http://www.ncbi.nlm.nih.gov/pubmed/2" />
+                    </Coding>
+                    <Description>reference text</Description>
+                </Citation>
+            </References>
+            <Diagrams />
+            <Contact>
+                <Institution>ACR</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <MultiChoiceDataElement Id="choice" DisplaySequence="1">
+            <Label>choice</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>a</Value>
+                    <Label>a</Label>
+                </Choice>
+                <Choice>
+                    <Value>b</Value>
+                    <Label>b</Label>
+                </Choice>
+                <Choice>
+                    <Value>c</Value>
+                    <Label>c</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>
