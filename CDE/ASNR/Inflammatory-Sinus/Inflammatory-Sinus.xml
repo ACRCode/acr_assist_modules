@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Inflammatory Sinus</Label>
+        <ID>Inflammatory_Sinus</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>2.0</ModuleVersion>
+        <CreatedDate>2018-12-31</CreatedDate>
+        <LastModifiedDate>2019-12-3</LastModifiedDate>
+        <ApprovedBy>American College of Radiology</ApprovedBy>
+        <ReviewedBy>American College of Radiology</ReviewedBy>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept Name="codableConcept_Inflammatory_Sinus">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES19" />
+                <Display Value="RDES19" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES19" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>This module describes the Common Data elements and Macros for Inflammatory Sinus</Description>
+            <References>
+                <Citation Url="http://radelement.org/set/RDES19"> CDE URL </Citation>
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="true">
+                    <Location>keydiagram.png</Location>
+                    <Label>Inflammatory Sinus key image</Label>
+                </Diagram>
+                <Diagram DisplaySequence="2">
+                    <Location>algorithm for morphologic classification.png</Location>
+                    <Label>Algorithm for morphologic classification</Label>
+                </Diagram>
+                <Diagram DisplaySequence="3">
+                    <Location>supporting.jpg</Location>
+                    <Label>Supporting</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>Adam Flanders, MD</Name>
+                <Email>acr-assist@acr.org</Email>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <ReportCitationText>Inflammatory Sinus</ReportCitationText>
+        <ApplicableSexes Value="Both" />
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="maxillarysinuses" IsRequired="true" DisplaySequence="5" Unit="">
+            <CodableConcept Name="Maxillary sinuses">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE137" />
+                    <Display Value="RDE137" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE137" />
+                </Coding>
+            </CodableConcept>
+            <Label>Maxillary sinuses</Label>
+            <Hint />
+            <Minimum>1</Minimum>
+            <Maximum>1000</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="maxillaryinfundibulum" IsRequired="true" DisplaySequence="7" Unit="">
+            <CodableConcept Name="Maxillary Infundibulum">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE139" />
+                    <Display Value="RDE139" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE139" />
+                </Coding>
+            </CodableConcept>
+            <Label>Maxillary Infundibulum</Label>
+            <Hint>Maxillary Infundibulum</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="osteomeatalunits" IsRequired="true" DisplaySequence="8" Unit="">
+            <CodableConcept Name="Osteomeatalunits">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE140" />
+                    <Display Value="RDE140" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE140" />
+                </Coding>
+            </CodableConcept>
+            <Label>Osteomeatalunits</Label>
+            <Hint>Osteomeatalunits</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="sphenoethmoidalrecesses" IsRequired="true" DisplaySequence="9" Unit="">
+            <CodableConcept Name="Sphenoethmoidal recesses">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE141" />
+                    <Display Value="RDE141" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE141" />
+                </Coding>
+            </CodableConcept>
+            <Label>Sphenoethmoidal recesses</Label>
+            <Hint>Sphenoethmoidal recesses</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
+        <IntegerDataElement Id="sphenoidsinuses" IsRequired="true" DisplaySequence="10" Unit="">
+            <CodableConcept Name="Sphenoid sinuses">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE142" />
+                    <Display Value="RDE142" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE142" />
+                </Coding>
+            </CodableConcept>
+            <Label>Sphenoid sinuses</Label>
+            <Hint>Sphenoid sinuses</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="laterallamella" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="Lateral Lamella">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE133" />
+                    <Display Value="RDE133" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE133" />
+                </Coding>
+            </CodableConcept>
+            <Label>Lateral Lamella</Label>
+            <Hint>Lateral Lamella</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Left</Value>
+                    <Label>Left</Label>
+                </Choice>
+                <Choice>
+                    <Value>Right</Value>
+                    <Label>Right</Label>
+                </Choice>
+                <Choice>
+                    <Value>Bilateral</Value>
+                    <Label>Bilateral</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="lateralpositions" IsRequired="true" DisplaySequence="2">
+            <CodableConcept Name="Lateral Positions">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE134" />
+                    <Display Value="RDE134" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE134" />
+                </Coding>
+            </CodableConcept>
+            <Label>Lateral Positions</Label>
+            <Hint>Lateral Positions</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Normal in position</Value>
+                    <Label>Normal in position</Label>
+                </Choice>
+                <Choice>
+                    <Value>Elongated</Value>
+                    <Label>Elongated</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="kerosclass" IsRequired="true" DisplaySequence="3">
+            <CodableConcept Name="Keros Class">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE135" />
+                    <Display Value="RDE135" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE135" />
+                </Coding>
+            </CodableConcept>
+            <Label>Keros Class</Label>
+            <Hint>Keros Class</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>None</Value>
+                    <Label>None</Label>
+                </Choice>
+                <Choice>
+                    <Value>I</Value>
+                    <Label>I</Label>
+                </Choice>
+                <Choice>
+                    <Value>II</Value>
+                    <Label>II</Label>
+                </Choice>
+                <Choice>
+                    <Value>III</Value>
+                    <Label>III</Label>
+                </Choice>
+                <Choice>
+                    <Value>IV</Value>
+                    <Label>IV</Label>
+                </Choice>
+                <Choice>
+                    <Value>V</Value>
+                    <Label>V</Label>
+                </Choice>
+                <Choice>
+                    <Value>VI</Value>
+                    <Label>VI</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="ethmoidarteries" IsRequired="true" DisplaySequence="4">
+            <CodableConcept Name="Ethmoid arteries">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE136" />
+                    <Display Value="RDE136" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE136" />
+                </Coding>
+            </CodableConcept>
+            <Label>Ethmoid arteries</Label>
+            <Hint>Ethmoid arteries</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Normal</Value>
+                    <Label>Normal</Label>
+                </Choice>
+                <Choice>
+                    <Value>Exposed</Value>
+                    <Label>Exposed</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="uncinateprocesses" IsRequired="true" DisplaySequence="6">
+            <CodableConcept Name="Uncinate Processes">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE138" />
+                    <Display Value="RDE138" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE138" />
+                </Coding>
+            </CodableConcept>
+            <Label>Uncinate Processes</Label>
+            <Hint>Uncinate Processes</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Normal</Value>
+                    <Label>Normal</Label>
+                </Choice>
+                <Choice>
+                    <Value>Lateralized</Value>
+                    <Label>Lateralized</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="macrodp">
+            <Label>Macro Banch</Label>
+            <Branch>
+                <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+                <EndPointRef EndPointId="macroEndpoint" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <TemplatePartial Id="ExamPartial">
+            <Branch>
+                <ReportText Type="PlainText">EXAM TYPE: BRAIN MRI W/WO CONTRAST</ReportText>
+                <ReportText Type="Newline" />
+                <ReportText Type="PlainText">EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT</ReportText>
+                <ReportText Type="Newline" />
+                <ReportText Type="PlainText">INDICATION: r/o demyelinating disease </ReportText>
+                <ReportText Type="Newline" />
+                <ReportText Type="PlainText">COMPARISON: NONE</ReportText>
+                <ReportText Type="Newline" />
+            </Branch>
+        </TemplatePartial>
+        <EndPoint Id="macroEndpoint">
+            <Label>A</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="laterallamella" />
+                            <SectionIf DataElementId="lateralpositions" />
+                            <SectionIf DataElementId="kerosclass" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">The </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="laterallamella" />
+                        <ReportText Type="PlainText"> lateral lamella are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="lateralpositions" />
+                        <ReportText Type="PlainText"> with Keros class </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="kerosclass" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="ethmoidarteries" />
+                        <ReportText Type="PlainText">The anterior ethmoid arteries are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="ethmoidarteries" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="maxillarysinuses" />
+                        <ReportText Type="PlainText">The maxillary sinuses are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="maxillarysinuses" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="uncinateprocesses" />
+                        <ReportText Type="PlainText">The uncinate processes are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="uncinateprocesses" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="maxillaryinfundibulum" />
+                        <ReportText Type="PlainText">The maxillary infundibulum are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="maxillaryinfundibulum" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="osteomeatalunits" />
+                        <ReportText Type="PlainText">The osteomeatal units are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="osteomeatalunits" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="sphenoethmoidalrecesses" />
+                        <ReportText Type="PlainText">The sphenoethmoidal recesses are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="sphenoethmoidalrecesses" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="sphenoidsinuses" />
+                        <ReportText Type="PlainText">The sphenoid sinuses are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="sphenoidsinuses" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
+</ReportingModule>
