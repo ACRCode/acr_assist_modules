@@ -1,155 +1,211 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../../XML Schema/ACRAssist_xml_schema_2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 
-	<Metadata>
-		<Label>Lung RADS</Label>
-		<ID>Lung-RADS_2.0</ID>
-		<SchemaVersion>2.0</SchemaVersion>
-		<ModuleVersion>2.0</ModuleVersion>
-		<CreatedDate>2018-12-31</CreatedDate>
-		<LastModifiedDate>2019-08-13</LastModifiedDate>
-		<ApprovedBy>American College of Radiology</ApprovedBy>
-		<ReviewedBy>American College of Radiology</ReviewedBy>
-		<DevelopedBy>American College of Radiology</DevelopedBy>
-		<!-- <RadElementSetID>5689</RadElementSetID> -->
-		<Info>
-			<Description>Lung-RADS-based cancer screening on CT</Description>
-			<References>
-				<Citation PubmedId="24992501" Url="http://journals.lww.com/thoracicimaging/Citation/2014/09000/ACR_STR_Practice_Parameter_for_the_Performance_and.12.aspx">Kazerooni EA, Austin J, Black WC, Dyer DS, Hazelton T, Leung AN, McNitt-Gray MF, Munden RF, Pipavath S. ACR-STR Practice Parameter for the Performance and Reporting of Lung Cancer Screening Thoracic Computed Tomography (Resolution 4). Journal of Thoracic Imaging 2014;29(5):310-316</Citation>
-			</References>
-			<Diagrams>
-				<Diagram>
-					<Location>keyimage.jpg</Location>
-					<Label>ACR Lung Imaging Reporting and Data System (Lung-RADS) Assessment Categories</Label>
-				</Diagram>
-			</Diagrams>
-			<Contact>
-				<Name>Tarik Alkasab, MD, PhD</Name>
-				<Email>talkasab@mgh.harvard.edu</Email>
-				<Institution>Massachusetts General Hospital, Harvard Medical School</Institution>
-			</Contact>
-		</Info>
-		<ReportCitationText>Lung cancer screening categorization and recommendations per American College of Radiology Lung-RADS Version 1.0 (http://www.acr.org/Quality-Safety/Resources/LungRADS).</ReportCitationText>
-		<ApplicableExams>
-			<ApplicableExamCategory Axis="Modality">CT </ApplicableExamCategory>
-			<ApplicableExamCategory Axis="Anatomy"> Chest </ApplicableExamCategory>
-		</ApplicableExams>
-		<ApplicableSexes Value="Both"/>
-		<ApplicableAgeGroups>
-			<MinimumAge>19</MinimumAge>
-		</ApplicableAgeGroups>
-		<VoiceActivation>
-			<VoiceCommandPhrase>pulmonary nodule</VoiceCommandPhrase>
-			<VoiceCommandPhrase>lung nodule</VoiceCommandPhrase>
-			<VoiceCommandPhrase>ground-glass nodule</VoiceCommandPhrase>
-			<VoiceCommandPhrase>part-solid nodule</VoiceCommandPhrase>
-			<VoiceCommandPhrase>partly solid nodule</VoiceCommandPhrase>
-			<VoiceCommandPhrase>solid nodule</VoiceCommandPhrase>
-		</VoiceActivation>
-	</Metadata>
+  <Metadata>
+    <Label>Lung RADS</Label>
+    <ID>Lung-RADS_2.0</ID>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ModuleVersion>2.0</ModuleVersion>
+    <CreatedDate>2018-12-31</CreatedDate>
+    <LastModifiedDate>2019-08-13</LastModifiedDate>
+    <ApprovedBy>American College of Radiology</ApprovedBy>
+    <ReviewedBy>American College of Radiology</ReviewedBy>
+    <DevelopedBy>American College of Radiology</DevelopedBy>
+    <CodableConcept Name="codableConcept_Lung-RADS_2.0">
+      <Coding>
+        <System Value="https://www.radelement.org/home/sets/set" />
+        <Version />
+        <Code Value="RDES153" />
+        <Display Value="RDES153" />
+        <UserSelected />
+      </Coding>
+    </CodableConcept>
+    <Info>
+      <Description>Lung-RADS-based cancer screening on CT</Description>
+      <References>
+        <Citation PubmedId="24992501" Url="http://journals.lww.com/thoracicimaging/Citation/2014/09000/ACR_STR_Practice_Parameter_for_the_Performance_and.12.aspx">Kazerooni EA, Austin J, Black WC, Dyer DS, Hazelton T, Leung AN, McNitt-Gray MF, Munden RF, Pipavath S. ACR-STR Practice Parameter for the Performance and Reporting of Lung Cancer Screening Thoracic Computed Tomography (Resolution 4). Journal of Thoracic Imaging 2014;29(5):310-316</Citation>
+      </References>
+      <Diagrams>
+        <Diagram>
+          <Location>keyimage.jpg</Location>
+          <Label>ACR Lung Imaging Reporting and Data System (Lung-RADS) Assessment Categories</Label>
+        </Diagram>
+      </Diagrams>
+      <Contact>
+        <Name>Tarik Alkasab, MD, PhD</Name>
+        <Email>talkasab@mgh.harvard.edu</Email>
+        <Institution>Massachusetts General Hospital, Harvard Medical School</Institution>
+      </Contact>
+    </Info>
+    <ReportCitationText>Lung cancer screening categorization and recommendations per American College of Radiology Lung-RADS Version 1.0 (http://www.acr.org/Quality-Safety/Resources/LungRADS).</ReportCitationText>
+    <ApplicableExams>
+      <ApplicableExamCategory Axis="Modality">CT </ApplicableExamCategory>
+      <ApplicableExamCategory Axis="Anatomy"> Chest </ApplicableExamCategory>
+    </ApplicableExams>
+    <ApplicableSexes Value="Both" />
+    <ApplicableAgeGroups>
+      <MinimumAge>19</MinimumAge>
+    </ApplicableAgeGroups>
+    <VoiceActivation>
+      <VoiceCommandPhrase>pulmonary nodule</VoiceCommandPhrase>
+      <VoiceCommandPhrase>lung nodule</VoiceCommandPhrase>
+      <VoiceCommandPhrase>ground-glass nodule</VoiceCommandPhrase>
+      <VoiceCommandPhrase>part-solid nodule</VoiceCommandPhrase>
+      <VoiceCommandPhrase>partly solid nodule</VoiceCommandPhrase>
+      <VoiceCommandPhrase>solid nodule</VoiceCommandPhrase>
+    </VoiceActivation>
+  </Metadata>
 
-	<DataElements>
-		<!-- Nodule 1 dataelements -->
-		<IntegerDataElement DisplaySequence="1" IsRequired="false" Id="image_1">
-			<Label>What is the most suspicious image number</Label>	
-		</IntegerDataElement> <!-- is the image number integer? or could be string? -->
-
-		<ChoiceDataElement DisplaySequence="2" IsRequired="true" Id="evaluate_1">
-			<Label>Can this lung image be evaluated?</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>Yes</Value>
-					<Label>Yes</Label>
-				</Choice>
-				<Choice >
+  <DataElements>  
+	<!-- Nodule 1 dataelements -->
+    <IntegerDataElement Id="image_1" IsRequired="false" DisplaySequence="1">
+      <CodableConcept Name="codableConcept_image_1">
+        <Coding>
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
+          <Code Value="RDE1043" />
+          <Display Value="RDE1043" />
+          <UserSelected />
+        </Coding>
+      </CodableConcept>
+      <Label>What is the most suspicious image number</Label>
+	</IntegerDataElement> <!-- is the image number integer? or could be string? -->
+    <ChoiceDataElement Id="evaluate_1" IsRequired="true" DisplaySequence="2">
+      <CodableConcept Name="codableConcept_evaluate_1">
+        <Coding>
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
+          <Code Value="RDE1044" />
+          <Display Value="RDE1044" />
+          <UserSelected />
+        </Coding>
+      </CodableConcept>
+      <Label>Can this lung image be evaluated?</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Yes</Value>
+          <Label>Yes</Label>
+        </Choice>
+        <Choice>
 					<Value>No</Value><!--How to type cube?-->
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-		</ChoiceDataElement>
-
-		<ChoiceDataElement DisplaySequence="3" IsRequired="true" Id="unit_1">
-			<Label>Nodule 1: What is the unit of this nodule?</Label>
-			<ChoiceInfo>
-				<Choice IsDefault="true">
-					<Value>mm</Value>
-					<Label>mm</Label>
-				</Choice>
-				<Choice>
+          <Label>No</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="unit_1" IsRequired="true" DisplaySequence="3">
+      <CodableConcept Name="codableConcept_unit_1">
+        <Coding>
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
+          <Code Value="RDE1045" />
+          <Display Value="RDE1045" />
+          <UserSelected />
+        </Coding>
+      </CodableConcept>
+      <Label>Nodule 1: What is the unit of this nodule?</Label>
+      <ChoiceInfo>
+        <Choice IsDefault="true">
+          <Value>mm</Value>
+          <Label>mm</Label>
+        </Choice>
+        <Choice>
 					<Value>mm3</Value><!--How to type cube?-->
-					<Label>mm³</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</ChoiceDataElement>
+          <Label>mm³</Label>
+        </Choice>
+      </ChoiceInfo>
+      <ConditionalProperties>
+        <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+      </ConditionalProperties>
+    </ChoiceDataElement>
 		<!--Enter size need to be modified-->
-		<IntegerDataElement DisplaySequence="4" IsRequired="true" Unit="mm" Id="size_mm_1" >		
-			<Label>Nodule 1: Size threshold</Label>
-			<Minimum>0</Minimum>
-			<Maximum>100</Maximum>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</IntegerDataElement>
-
-		<NumericDataElement DisplaySequence="5" IsRequired="true" Unit="mm³" Id="size_mm3_1" >		
-			<Label>Nodule 1: Size threshold </Label>
-			<Minimum>0</Minimum>
-			<Maximum>1000000</Maximum>	
-			<ConditionalProperties>		
-				<ConditionalProperty>
-					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
+	<IntegerDataElement DisplaySequence="4" IsRequired="true" Unit="mm" Id="size_mm_1" >	
+      <CodableConcept Name="codableConcept_size_mm_1">
+        <Coding>
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
+          <Code Value="RDE1046" />
+          <Display Value="RDE1046" />
+          <UserSelected />
+        </Coding>
+      </CodableConcept>
+      <Label>Nodule 1: Size threshold</Label>
+      <Minimum>0</Minimum>
+      <Maximum>100</Maximum>
+      <ConditionalProperties>
+        <ConditionalProperty>
+          <EqualCondition DataElementId="unit_1" ComparisonValue="mm3" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+        <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+      </ConditionalProperties>
+    </IntegerDataElement>
+    <NumericDataElement Id="size_mm3_1" IsRequired="true" DisplaySequence="5" Unit="mm³">
+      <Label>Nodule 1: Size threshold </Label>
+      <Minimum>0</Minimum>
+      <Maximum>1000000</Maximum>
+      <ConditionalProperties>
+        <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+        <ConditionalProperty>
+          <EqualCondition DataElementId="unit_1" ComparisonValue="mm" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
-		</NumericDataElement>
-
-		<ChoiceDataElement DisplaySequence="6" IsRequired="true" Id="composition_1">
-			<Label>Nodue 1: Composition</Label>
-			<ChoiceInfo>
-				<Choice>
-					<Value>solid</Value>
-					<Label>Solid</Label>	
-				</Choice>
-				<Choice>
-					<Value>part_solid</Value>
-					<Label>Part Solid</Label>
-				</Choice>
-				<Choice>
-					<Value>non_solid</Value>
-					<Label>Non Solid</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>
-					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
-		</ChoiceDataElement>
-
-
-		<ChoiceDataElement  DisplaySequence="7" IsRequired= "true" Id="baseCategory_1">
-			<Label>Category of findings</Label>
-			<Hint>Lung-RADS category based on the paper</Hint>
-			<ChoiceInfo>
+    </NumericDataElement>
+    <ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="6">
+      <CodableConcept Name="codableConcept_composition_1">
+        <Coding>
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
+          <Code Value="RDE1047" />
+          <Display Value="RDE1047" />
+          <UserSelected />
+        </Coding>
+      </CodableConcept>
+      <Label>Nodue 1: Composition</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>solid</Value>
+          <Label>Solid</Label>
+        </Choice>
+        <Choice>
+          <Value>part_solid</Value>
+          <Label>Part Solid</Label>
+        </Choice>
+        <Choice>
+          <Value>non_solid</Value>
+          <Label>Non Solid</Label>
+        </Choice>
+      </ChoiceInfo>
+      <ConditionalProperties>
+        <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+      </ConditionalProperties>
+    </ChoiceDataElement>
+    <ChoiceDataElement Id="baseCategory_1" IsRequired="true" DisplaySequence="7">
+      <CodableConcept Name="codableConcept_baseCategory_1">
+        <Coding>
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
+          <Code Value="RDE1048" />
+          <Display Value="RDE1048" />
+          <UserSelected />
+        </Coding>
+      </CodableConcept>
+      <Label>Category of findings</Label>
+      <Hint>Lung-RADS category based on the paper</Hint>
+      <ChoiceInfo>
 				<!-- Category 0-->
 				<Choice>
 					<Value>cat0NoEvaluation</Value>
@@ -790,12 +846,12 @@
 						<EqualCondition DataElementId="baseCategory_2" ComparisonValue="catSModifier"/>
 					</OrCondition>
 					<TextExpression>true</TextExpression>
-				</Branch>
-				<DefaultBranch>
-					<TextExpression>false</TextExpression>
-				</DefaultBranch>
-			</DecisionPoint>
-		</ComputedDataElement>
+        </Branch>
+        <DefaultBranch>
+          <TextExpression>false</TextExpression>
+        </DefaultBranch>
+      </DecisionPoint>
+    </ComputedDataElement>
 
 
 		<ComputedDataElement Id="significantAdditionalFindingsText_2">  <!--Designed for text-->
@@ -2877,7 +2933,7 @@ Other interstitial lung disease (UIP/IPF, ILD other or ILD unknown)</Label>
 			</DecisionPoint>
 		</ComputedDataElement>
 
-	</DataElements>
+  </DataElements>
 	<Rules>
 		<!--Decision point-->
 		<DecisionPoint Id="categorydp">
