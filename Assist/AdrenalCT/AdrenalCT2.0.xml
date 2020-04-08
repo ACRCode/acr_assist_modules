@@ -13,12 +13,11 @@
 		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<CodableConcept Name="codableConcept_AdrenalCT">
 			<Coding>
-				<System Value="RadElement"></System>
+				<System Value="https://www.radelement.org/home/sets/set"></System>
 				<Version Value="1.0"></Version>
 				<Code Value="RDES3"></Code>
 				<Display Value="RDES3"></Display>
 				<UserSelected Value="false"></UserSelected>
-				<Url Value="http://radelement.org/set/RDES3"></Url>
 			</Coding>
 		</CodableConcept>	
 		<Info>
@@ -50,12 +49,11 @@
 		<ChoiceDataElement Id="side" DisplaySequence="4" IsRequired="true">
 			<CodableConcept Name="side">
 				<Coding>
-					<System Value="RadElement"></System>
+					<System Value="https://www.radelement.org/home/elements/element"></System>
 					<Version Value="1.0"></Version>
 					<Code Value="RDE42"></Code>
 					<Display Value="RDE42"></Display>
-					<UserSelected Value="true"></UserSelected>
-					<Url Value="http://radelement.org/element/RDE42"></Url>					
+					<UserSelected Value="true"></UserSelected>				
 				</Coding>
 			</CodableConcept>
 			<Label>Side</Label>
@@ -76,12 +74,11 @@
 		<NumericDataElement Id="adrenalmass" DisplaySequence="5" IsRequired="true">
 			<CodableConcept Name="adrenalmass">
 				<Coding>
-					<System Value="RadElement"></System>
+					<System Value="https://www.radelement.org/home/elements/element"></System>
 					<Version Value="1.0"></Version>
 					<Code Value="RDE41"></Code>
 					<Display Value="RDE41"></Display>
 					<UserSelected Value="true"></UserSelected>
-					<Url Value="http://radelement.org/element/RDE41"></Url>
 				</Coding>
 			</CodableConcept>
 			<Label>Size(cm)</Label>
@@ -156,12 +153,11 @@
 		<ChoiceDataElement Id="cancerhx" DisplaySequence="8" IsRequired="false">
 			<CodableConcept Name="cancerhx">
 				<Coding>
-					<System Value="RadElement"></System>
+					<System Value="https://www.radelement.org/home/elements/element"></System>
 					<Version Value="1.0"></Version>
 					<Code Value="RDE46"></Code>
 					<Display Value="RDE46"></Display>
 					<UserSelected Value="true"></UserSelected>
-					<Url Value="http://radelement.org/element/RDE46"></Url>
 				</Coding>
 			</CodableConcept>
 			<Label>Cancer Hx</Label>
