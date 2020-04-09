@@ -75,19 +75,6 @@
 				</Map>
 			</ImageMap>
 		</ChoiceDataElement>
-		<ChoiceDataElement Id="InsertCOVIDInformation" DisplaySequence="2">
-			<Label>Insert optional COVID language ?</Label>
-			<ChoiceInfo>
-				<Choice IsDefault="true">
-					<Value>Yes</Value>
-					<Label>Yes</Label>
-				</Choice>
-				<Choice>
-					<Value>No</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-		</ChoiceDataElement>
 		<ChoiceDataElement Id="InsertReportCoding" DisplaySequence="3">
 			<Label>Insert COVID Coding ?</Label>
 			<ChoiceInfo>
@@ -135,20 +122,11 @@
 		<EndPoint Id="endpoint_typical">
 			<Label>Typical</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="PlainText">Commonly reported imaging features of </ReportText>
+						<ReportText Type="PlainText">Commonly reported imaging features of COVID-19 pneumonia are present. Other processes such as influenza pneumonia and organizing pneumonia, as can be seen with drug toxicity and connective tissue disease, can cause a similar imaging pattern.</ReportText>
 					</Branch>
-					
-					<Branch>
-						<EqualCondition DataElementId="InsertCOVIDInformation" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText">COVID-19 </ReportText>
-					</Branch>
-					
-					<Branch>
-						<ReportText Type="PlainText">pneumonia are present. Other processes such as influenza pneumonia and organizing pneumonia, as can be seen with drug toxicity and connective tissue disease, can cause a similar imaging pattern.</ReportText>
-					</Branch>
-					
+				
 					<Branch>
 						<EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes"/>
 						<ReportText Type="PlainText"> [Cov19Typ] </ReportText>
@@ -160,20 +138,11 @@
 		<EndPoint Id="endpoint_Indeterminate">
 			<Label>Indeterminate</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="PlainText">Imaging features can be seen with </ReportText>
+						<ReportText Type="PlainText">Imaging features can be seen with COVID-19 pneumonia, though are nonspecific and can occur with a variety of infectious and noninfectious processes. </ReportText>
 					</Branch>
-					
-					<Branch>
-						<EqualCondition DataElementId="InsertCOVIDInformation" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText">COVID-19 </ReportText>
-					</Branch>
-					
-					<Branch>
-						<ReportText Type="PlainText">pneumonia, though are nonspecific and can occur with a variety of infectious and noninfectious processes.</ReportText>
-					</Branch>
-					
+										
 					<Branch>
 						<EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes"/>
 						<ReportText Type="PlainText"> [Cov19Ind] </ReportText>
@@ -186,20 +155,11 @@
 		<EndPoint Id="endpoint_Atypical">
 			<Label>Atypical</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="PlainText">Imaging features are atypical or uncommonly reported for </ReportText>
+						<ReportText Type="PlainText">Imaging features are atypical or uncommonly reported for COVID-19 pneumonia. Alternative diagnoses should be considered. </ReportText>
 					</Branch>
-					
-					<Branch>
-						<EqualCondition DataElementId="InsertCOVIDInformation" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText">COVID-19 </ReportText>
-					</Branch>
-					
-					<Branch>
-						<ReportText Type="PlainText">pneumonia. Alternative diagnoses should be considered.</ReportText>
-					</Branch>
-					
+									
 					<Branch>
 						<EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes"/>
 						<ReportText Type="PlainText"> [Cov19Aty] </ReportText>
@@ -211,14 +171,9 @@
 		<EndPoint Id="endpoint_Negative">
 			<Label>Negative</Label>
 			<ReportSections>
-				<ReportSection SectionId="findings">
+				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="PlainText">No CT findings present to indicate pneumonia. </ReportText>
-					</Branch>
-					
-					<Branch>
-						<EqualCondition DataElementId="InsertCOVIDInformation" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText">(Note: CT may be negative in the early stages of COVID-19.)</ReportText>
+						<ReportText Type="PlainText">No CT findings present to indicate pneumonia.(Note: CT may be negative in the early stages of COVID-19.) </ReportText>
 					</Branch>
 					
 					<Branch>
