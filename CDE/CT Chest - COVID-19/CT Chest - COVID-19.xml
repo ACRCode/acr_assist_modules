@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>CT Chest - COVID-19</Label>
+        <ID>CT_Chest_-_COVID-19</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-04-24</CreatedDate>
+        <LastModifiedDate>2020-05-27</LastModifiedDate>
+        <DevelopedBy>Susan Paull</DevelopedBy>
+        <CodableConcept />
+        <Info>
+            <Description>CT Chest - COVID-19</Description>
+            <References>
+                <Citation Url="https://www.rsna.org/-/media/Files/RSNA/Covid-19/RSNA-COVID19ChestCT-ReportExample">
+                    <Description>Example Reports of Typical, Indeterminate, Atypical, and
+Negative Category CTs, with some selected correlative
+image examples
+J. Azadi; C. Menias; J. Ko; J. Klein; C. Meltzer; M. Mossa-Basha; COVID-19 Task Force*</Description>
+                </Citation>
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="false">
+                    <Location>Figure 1 - Typical CT imaging features for COVID-19.gif</Location>
+                    <Label>nenhanced, thin-section axial
+images of the lungs in a 52-year-old man with a positive RT-PCR (A-D) show bilateral,
+multifocal rounded (asterisks) and peripheral GGO (arrows) with superimposed
+interlobular septal thickening and visible intralobular lines (“crazy-paving”). </Label>
+                </Diagram>
+                <Diagram DisplaySequence="2" IsKeyDiagram="false">
+                    <Location>Figure 2 - Typical CT imaging features for COVID-19.gif</Location>
+                    <Label>TTESTT</Label>
+                </Diagram>
+                <Diagram DisplaySequence="3" IsKeyDiagram="false">
+                    <Location>Figure 3 - Typical CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 3 - Typical CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="4" IsKeyDiagram="false">
+                    <Location>Figure 4a - Typical CT imaging features for COVID-19 and other diseases with similar findings.gif</Location>
+                    <Label>Figure 4a - Typical CT imaging features for COVID-19 and other diseases with similar findings</Label>
+                </Diagram>
+                <Diagram DisplaySequence="5" IsKeyDiagram="false">
+                    <Location>Figure 4b - Typical CT imaging features for COVID-19 and other diseases with similar findings.gif</Location>
+                    <Label>Figure 4b - Typical CT imaging features for COVID-19 and other diseases with similar findings</Label>
+                </Diagram>
+                <Diagram DisplaySequence="6" IsKeyDiagram="false">
+                    <Location>Figure 4c - Typical CT imaging features for COVID-19 and other diseases with similar findings.gif</Location>
+                    <Label>Figure 4c - Typical CT imaging features for COVID-19 and other diseases with similar findings</Label>
+                </Diagram>
+                <Diagram DisplaySequence="7" IsKeyDiagram="false">
+                    <Location>Figure 4d - Typical CT imaging features for COVID-19 and other diseases with similar findings.gif</Location>
+                    <Label>Figure 4d - Typical CT imaging features for COVID-19 and other diseases with similar findings</Label>
+                </Diagram>
+                <Diagram DisplaySequence="8" IsKeyDiagram="false">
+                    <Location>Figure 5 - Indeterminate CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 5 - Indeterminate CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="9" IsKeyDiagram="false">
+                    <Location>Figure 6a - Indeterminate CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 6a - Indeterminate CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="10" IsKeyDiagram="false">
+                    <Location>Figure 6b - Indeterminate CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 6b - Indeterminate CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="11" IsKeyDiagram="false">
+                    <Location>Figure 7 - Atypical CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 7 - Atypical CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="12" IsKeyDiagram="false">
+                    <Location>Figure 8a - Atypical CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 8a - Atypical CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="13" IsKeyDiagram="false">
+                    <Location>Figure 8b - Atypical CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 8b - Atypical CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="14" IsKeyDiagram="false">
+                    <Location>Figure 9a - Atypical CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 9a - Atypical CT imaging features for COVID-19</Label>
+                </Diagram>
+                <Diagram DisplaySequence="15" IsKeyDiagram="false">
+                    <Location>Figure 9b - Atypical CT imaging features for COVID-19.gif</Location>
+                    <Label>Figure 9b - Atypical CT imaging features for COVID-19</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Institution>Radiological Society of North America</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams />
+        <ApplicableSexes Value="Male" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="PresenceofgroundglassopacityGGO" DisplaySequence="1">
+            <Label>Presence of ground glass opacity (GGO)</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Present</Value>
+                    <Label>Present</Label>
+                </Choice>
+                <Choice>
+                    <Value>Absent</Value>
+                    <Label>Absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="LateralityofgroundglassopacityGGO" DisplaySequence="2">
+            <Label>Laterality of ground glass opacity (GGO)</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Right</Value>
+                    <Label>Right</Label>
+                </Choice>
+                <Choice>
+                    <Value>Left</Value>
+                    <Label>Left</Label>
+                </Choice>
+                <Choice>
+                    <Value>Bilateral</Value>
+                    <Label>Bilateral</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="LocationofgroundglassopacityGGO" DisplaySequence="3">
+            <Label>Location of ground glass opacity (GGO)</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>peripheral</Value>
+                    <Label>peripheral</Label>
+                </Choice>
+                <Choice>
+                    <Value>central</Value>
+                    <Label>central</Label>
+                </Choice>
+                <Choice>
+                    <Value>diffuse</Value>
+                    <Label>diffuse</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="PredominantdistributionofgroundglassopacityGGO" DisplaySequence="4">
+            <Label>Predominant distribution of ground glass opacity (GGO)</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>upper</Value>
+                    <Label>upper</Label>
+                </Choice>
+                <Choice>
+                    <Value>mid</Value>
+                    <Label>mid</Label>
+                </Choice>
+                <Choice>
+                    <Value>lower</Value>
+                    <Label>lower</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="QuantityofgroundglassopacityGGO" DisplaySequence="5">
+            <Label>Quantity of ground glass opacity (GGO)</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>single</Value>
+                    <Label>single</Label>
+                </Choice>
+                <Choice>
+                    <Value>multiple</Value>
+                    <Label>multiple</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="MorphologyofgroundglassopacityGGO" DisplaySequence="7">
+            <Label>Morphology of ground glass opacity (GGO)</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>rounded</Value>
+                    <Label>rounded</Label>
+                </Choice>
+                <Choice>
+                    <Value>nonrounded</Value>
+                    <Label>non rounded</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="CentrilobularnodulesTreeinbudsign" DisplaySequence="8">
+            <Label>Centrilobular nodules/Tree-in-bud sign</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Solidnodules" DisplaySequence="9">
+            <Label>Solid nodules</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Airspaceconsolidation" DisplaySequence="10">
+            <Label>Air space consolidation</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Presenceoflymphadenopathy" DisplaySequence="11">
+            <Label>Presence of lymphadenopathy</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Pleuraleffusionsize" DisplaySequence="13">
+            <Label>Pleural effusion size</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>none</Value>
+                    <Label>none</Label>
+                </Choice>
+                <Choice>
+                    <Value>small</Value>
+                    <Label>small</Label>
+                </Choice>
+                <Choice>
+                    <Value>medium</Value>
+                    <Label>medium</Label>
+                </Choice>
+                <Choice>
+                    <Value>large</Value>
+                    <Label>large</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Presenceofmucoidimpaction" DisplaySequence="14">
+            <Label>Presence of mucoid impaction</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Presenceofbronchialwallthickening" DisplaySequence="15">
+            <Label>Presence of bronchial wall thickening</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Smoothinterlobularseptalthickeningseverity" DisplaySequence="16">
+            <Label>Smooth interlobular septal thickening severity</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>none</Value>
+                    <Label>none</Label>
+                </Choice>
+                <Choice>
+                    <Value>mild</Value>
+                    <Label>mild</Label>
+                </Choice>
+                <Choice>
+                    <Value>moderate</Value>
+                    <Label>moderate</Label>
+                </Choice>
+                <Choice>
+                    <Value>severe</Value>
+                    <Label>severe</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Presenceofpulmonarycavities" DisplaySequence="17">
+            <Label>Presence of pulmonary cavities</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>present</Value>
+                    <Label>present</Label>
+                </Choice>
+                <Choice>
+                    <Value>absent</Value>
+                    <Label>absent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Endotrachealtube" DisplaySequence="18">
+            <Label>Endotracheal tube</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>none</Value>
+                    <Label>none</Label>
+                </Choice>
+                <Choice>
+                    <Value>appropriateposition</Value>
+                    <Label>appropriate position</Label>
+                </Choice>
+                <Choice>
+                    <Value>inappropriateposition</Value>
+                    <Label>inappropriate position</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Studyquality" DisplaySequence="19">
+            <Label>Study quality</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>adequate</Value>
+                    <Label>adequate</Label>
+                </Choice>
+                <Choice>
+                    <Value>motionartifact</Value>
+                    <Label>motion artifact</Label>
+                </Choice>
+                <Choice>
+                    <Value>incomplete</Value>
+                    <Label>incomplete</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <MultiChoiceDataElement Id="PatternofgroundglassopacitiesGGO" DisplaySequence="6">
+            <Label>Pattern of ground glass opacities (GGO)</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>mosaicattenuation</Value>
+                    <Label>mosaic attenuation</Label>
+                </Choice>
+                <Choice>
+                    <Value>crazypaving</Value>
+                    <Label>crazy paving</Label>
+                </Choice>
+                <Choice>
+                    <Value>withconsolidation</Value>
+                    <Label>with consolidation</Label>
+                </Choice>
+                <Choice>
+                    <Value>reversehalooratollsign</Value>
+                    <Label>reverse halo or atoll sign</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <MultiChoiceDataElement Id="Locationoflymphadenopathy" DisplaySequence="12">
+            <Label>Location of lymphadenopathy</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>hilar</Value>
+                    <Label>hilar</Label>
+                </Choice>
+                <Choice>
+                    <Value>mediastinal</Value>
+                    <Label>mediastinal</Label>
+                </Choice>
+                <Choice>
+                    <Value>other</Value>
+                    <Label>other</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <ChoiceDataElement Id="COVID19Classification" DisplaySequence="20">
+            <Label>COVID-19 Classification</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>1-NegativeforCOVID-19</Value>
+                    <Label>1 - Negative for COVID-19</Label>
+                </Choice>
+                <Choice>
+                    <Value>2-IndeterminateforCOVID-19</Value>
+                    <Label>2 - Indeterminate for COVID-19</Label>
+                </Choice>
+                <Choice>
+                    <Value>3-TypicalpatternofCOVID-19</Value>
+                    <Label>3 - Typical pattern of COVID-19</Label>
+                </Choice>
+                <Choice>
+                    <Value>4-AtypicalforCOVID-19</Value>
+                    <Label>4 - Atypical for COVID-19</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>
