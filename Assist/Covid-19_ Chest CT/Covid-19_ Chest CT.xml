@@ -65,15 +65,14 @@
 				</Choice>
 			</ChoiceInfo>
 			<ImageMap>
-				<Location>COVID19.jpg</Location>
-				<Map>
-					
-					<Area Shape="rect" Coords="1,40,1386,150" ChoiceValue="typical"/>
-					<Area Shape="rect" Coords="1,150,1382,275" ChoiceValue="indeterminate"/>
-					<Area Shape="rect" Coords="1,275,1387,410" ChoiceValue="atypical"/>
-					<Area Shape="rect" Coords="1,410,1387,468" ChoiceValue="negative"/>
-				</Map>
-			</ImageMap>
+                <Location>COVID19.jpg</Location>
+                <Map>                   
+                    <Area Shape="rect" Coords="1,25,1376,150" ChoiceValue="typical"/>
+                    <Area Shape="rect" Coords="1,152,1382,285" ChoiceValue="indeterminate"/>
+                    <Area Shape="rect" Coords="1,285,1387,430" ChoiceValue="atypical"/>
+                    <Area Shape="rect" Coords="1,430,1387,468" ChoiceValue="negative"/>
+                </Map>
+            </ImageMap>
 		</ChoiceDataElement>
 		<ChoiceDataElement Id="InsertReportCoding" DisplaySequence="3">
 			<Label>Insert COVID Coding ?</Label>
