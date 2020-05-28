@@ -1,186 +1,179 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-	<Metadata>
-		<Label>COVID-19</Label>
-		<ID>Covid-19:_Chest_CT</ID>
-		<SchemaVersion>2.0</SchemaVersion>
-		<ModuleVersion>1.0</ModuleVersion>
-		<CreatedDate>2020-03-30</CreatedDate>
-		<LastModifiedDate>2020-03-31</LastModifiedDate>
-		<DevelopedBy>American College of Radiology</DevelopedBy>
-		<CodableConcept />
-		<Info>
-			<Description>ACR/RSNA expert consensus on reporting Chest CT related to COVID-19</Description>
-			<References>
-				<Citation PubmedId="" Url="https://pubs.rsna.org/doi/10.1148/ryct.2020200152">S Simpson, FU Kay, S Abbara, et al. Radiological Society of North America Expert Consensus Statement on Reporting Chest CT Findings Related to COVID-19. Endorsed by the Society of Thoracic Radiology, the American College of Radiology, and RSNA. Radiology, Mar 25 2020.
+    <Metadata>
+        <Label>COVID-19</Label>
+        <ID>Covid-19:_Chest_CT</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-03-30</CreatedDate>
+        <LastModifiedDate>2020-05-28</LastModifiedDate>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <CodableConcept />
+        <Info>
+            <Description>ACR/RSNA expert consensus on reporting Chest CT related to COVID-19</Description>
+            <References>
+                <Citation PubmedId="" Url="https://pubs.rsna.org/doi/10.1148/ryct.2020200152">S Simpson, FU Kay, S Abbara, et al. Radiological Society of North America Expert Consensus Statement on Reporting Chest CT Findings Related to COVID-19. Endorsed by the Society of Thoracic Radiology, the American College of Radiology, and RSNA. Radiology, Mar 25 2020.
 </Citation>
-			</References>
-			<Diagrams />
-			<Contact>
-				<Institution>Informatics ACR</Institution>
-			</Contact>
-		</Info>
-		<Ontology>
-			<AnatomicRegions />
-			<PossibleDiagnoses />
-		</Ontology>
-		<ApplicableExams>
-			<ApplicableExamCategory Axis="Modality">CT</ApplicableExamCategory>
-			<ApplicableExamCategory Axis="Anatomy">Chest </ApplicableExamCategory>
-		</ApplicableExams>
-		<ApplicableSexes Value="Both" />
-		<ApplicableAgeGroups />
-		<TextCues>
-			<ContextPhrases />
-			<KeyWords />
-			<NegationPhrases />
-		</TextCues>
-		<VoiceActivation />
-	</Metadata>
-	<DataElements>
-		<ChoiceDataElement Id="Classification" IsRequired="true" DisplaySequence="1">
-			<Label>Classification </Label>
-			<Diagrams>
-				<Diagram>
-					<Location>COVID19.jpg</Location>
-					<Label>COVID19</Label>
-				</Diagram>
-			</Diagrams>
-			<ChoiceInfo>
-				<Choice>
-					<Value>typical</Value>
-					<Label>Typical</Label>
-				</Choice>
-				<Choice>
-					<Value>indeterminate</Value>
-					<Label>Indeterminate</Label>
-				</Choice>
-				<Choice>
-					<Value>atypical</Value>
-					<Label>Atypical</Label>
-				</Choice>
-				<Choice>
-					<Value>negative</Value>
-					<Label>Negative</Label>
-				</Choice>
-			</ChoiceInfo>
-			<ImageMap>
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="false">
+                    <Location>COVID19.jpg</Location>
+                    <Label>COVID19</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Institution>Informatics ACR</Institution>
+            </Contact>
+        </Info>
+        <Ontology>
+            <AnatomicRegions />
+            <PossibleDiagnoses />
+        </Ontology>
+        <ApplicableExams>
+            <ApplicableExamCategory Axis="Modality">CT</ApplicableExamCategory>
+            <ApplicableExamCategory Axis="Anatomy">Chest </ApplicableExamCategory>
+        </ApplicableExams>
+        <ApplicableSexes Value="Both" />
+        <ApplicableAgeGroups />
+        <TextCues>
+            <ContextPhrases />
+            <KeyWords />
+            <NegationPhrases />
+        </TextCues>
+        <VoiceActivation />
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="Classification" IsRequired="true" DisplaySequence="1">
+            <Label>Classification </Label>
+            <Diagrams>
+                <Diagram>
+                    <Location>COVID19.jpg</Location>
+                    <Label>COVID19</Label>
+                </Diagram>
+            </Diagrams>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>typical</Value>
+                    <Label>Typical</Label>
+                </Choice>
+                <Choice>
+                    <Value>indeterminate</Value>
+                    <Label>Indeterminate</Label>
+                </Choice>
+                <Choice>
+                    <Value>atypical</Value>
+                    <Label>Atypical</Label>
+                </Choice>
+                <Choice>
+                    <Value>negative</Value>
+                    <Label>Negative</Label>
+                </Choice>
+            </ChoiceInfo>
+            <ImageMap>
                 <Location>COVID19.jpg</Location>
-                <Map>                   
-                    <Area Shape="rect" Coords="1,25,1376,150" ChoiceValue="typical"/>
-                    <Area Shape="rect" Coords="1,152,1382,285" ChoiceValue="indeterminate"/>
-                    <Area Shape="rect" Coords="1,285,1387,430" ChoiceValue="atypical"/>
-                    <Area Shape="rect" Coords="1,430,1387,468" ChoiceValue="negative"/>
+                <Map>
+                    <Area Shape="rect" Coords="1,25,1376,150" ChoiceValue="typical" />
+                    <Area Shape="rect" Coords="1,152,1382,285" ChoiceValue="indeterminate" />
+                    <Area Shape="rect" Coords="1,285,1387,430" ChoiceValue="atypical" />
+                    <Area Shape="rect" Coords="1,430,1387,468" ChoiceValue="negative" />
                 </Map>
             </ImageMap>
-		</ChoiceDataElement>
-		<ChoiceDataElement Id="InsertReportCoding" DisplaySequence="3">
-			<Label>Insert COVID Coding ?</Label>
-			<ChoiceInfo>
-				<Choice IsDefault="true">
-					<Value>Yes</Value>
-					<Label>Yes</Label>
-				</Choice>
-				<Choice>
-					<Value>No</Value>
-					<Label>No</Label>
-				</Choice>
-			</ChoiceInfo>
-		</ChoiceDataElement>
-	</DataElements>
-	<Rules>
-		<DecisionPoint Id="check_classification">
-			<Label>Check classification</Label>
-			
-			<Branch>
-				<Label>If Typical</Label>
-				<EqualCondition DataElementId="Classification" ComparisonValue="typical"/>
-				<EndPointRef EndPointId="endpoint_typical"></EndPointRef>
-			</Branch>
-			
-			<Branch>
-				<Label>If Indeterminate</Label>
-				<EqualCondition DataElementId="Classification" ComparisonValue="indeterminate"/>
-				<EndPointRef EndPointId="endpoint_Indeterminate"></EndPointRef>
-			</Branch>
-			
-			<Branch>
-				<Label>If atypical</Label>
-				<EqualCondition DataElementId="Classification" ComparisonValue="atypical"/>
-				<EndPointRef EndPointId="endpoint_Atypical"></EndPointRef>
-			</Branch>
-			
-			<Branch>
-				<Label>If negative</Label>
-				<EqualCondition DataElementId="Classification" ComparisonValue="negative"/>
-				<EndPointRef EndPointId="endpoint_Negative"></EndPointRef>
-			</Branch>
-		</DecisionPoint>
-	</Rules>
-	<EndPoints>
-		<EndPoint Id="endpoint_typical">
-			<Label>Typical</Label>
-			<ReportSections>
-				<ReportSection SectionId="impression">
-					<Branch>
-						<ReportText Type="PlainText">Commonly reported imaging features of COVID-19 pneumonia are present. Other processes such as influenza pneumonia and organizing pneumonia, as can be seen with drug toxicity and connective tissue disease, can cause a similar imaging pattern.</ReportText>
-					</Branch>
-				
-					<Branch>
-						<EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText"> [Cov19Typ] </ReportText>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-		
-		<EndPoint Id="endpoint_Indeterminate">
-			<Label>Indeterminate</Label>
-			<ReportSections>
-				<ReportSection SectionId="impression">
-					<Branch>
-						<ReportText Type="PlainText">Imaging features can be seen with COVID-19 pneumonia, though are nonspecific and can occur with a variety of infectious and noninfectious processes. </ReportText>
-					</Branch>
-										
-					<Branch>
-						<EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText"> [Cov19Ind] </ReportText>
-					</Branch>
-					
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-		
-		<EndPoint Id="endpoint_Atypical">
-			<Label>Atypical</Label>
-			<ReportSections>
-				<ReportSection SectionId="impression">
-					<Branch>
-						<ReportText Type="PlainText">Imaging features are atypical or uncommonly reported for COVID-19 pneumonia. Alternative diagnoses should be considered. </ReportText>
-					</Branch>
-									
-					<Branch>
-						<EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText"> [Cov19Aty] </ReportText>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-		
-		<EndPoint Id="endpoint_Negative">
-			<Label>Negative</Label>
-			<ReportSections>
-				<ReportSection SectionId="impression">
-					<Branch>
-						<ReportText Type="PlainText">No CT findings present to indicate pneumonia.(Note: CT may be negative in the early stages of COVID-19.) </ReportText>
-					</Branch>
-					
-					<Branch>
-						<EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes"/>
-						<ReportText Type="PlainText"> [Cov19Neg] </ReportText>
-					</Branch>
-				</ReportSection>
-			</ReportSections>
-		</EndPoint>
-	</EndPoints>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="InsertReportCoding" DisplaySequence="3">
+            <Label>Insert COVID Coding ?</Label>
+            <ChoiceInfo>
+                <Choice IsDefault="true">
+                    <Value>Yes</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>No</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="check_classification">
+            <Label>Check classification</Label>
+            <Branch>
+                <Label>If Typical</Label>
+                <EqualCondition DataElementId="Classification" ComparisonValue="typical" />
+                <EndPointRef EndPointId="endpoint_typical" />
+            </Branch>
+            <Branch>
+                <Label>If Indeterminate</Label>
+                <EqualCondition DataElementId="Classification" ComparisonValue="indeterminate" />
+                <EndPointRef EndPointId="endpoint_Indeterminate" />
+            </Branch>
+            <Branch>
+                <Label>If atypical</Label>
+                <EqualCondition DataElementId="Classification" ComparisonValue="atypical" />
+                <EndPointRef EndPointId="endpoint_Atypical" />
+            </Branch>
+            <Branch>
+                <Label>If negative</Label>
+                <EqualCondition DataElementId="Classification" ComparisonValue="negative" />
+                <EndPointRef EndPointId="endpoint_Negative" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="endpoint_typical">
+            <Label>Typical</Label>
+            <ReportSections>
+                <ReportSection SectionId="impression">
+                    <Branch>
+                        <ReportText Type="PlainText">Commonly reported imaging features of COVID-19 pneumonia are present. Other processes such as influenza pneumonia and organizing pneumonia, as can be seen with drug toxicity and connective tissue disease, can cause a similar imaging pattern.</ReportText>
+                    </Branch>
+                    <Branch>
+                        <EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes" />
+                        <ReportText Type="PlainText"> [Cov19Typ] </ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+        <EndPoint Id="endpoint_Indeterminate">
+            <Label>Indeterminate</Label>
+            <ReportSections>
+                <ReportSection SectionId="impression">
+                    <Branch>
+                        <ReportText Type="PlainText">Imaging features can be seen with COVID-19 pneumonia, though are nonspecific and can occur with a variety of infectious and noninfectious processes. </ReportText>
+                    </Branch>
+                    <Branch>
+                        <EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes" />
+                        <ReportText Type="PlainText"> [Cov19Ind] </ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+        <EndPoint Id="endpoint_Atypical">
+            <Label>Atypical</Label>
+            <ReportSections>
+                <ReportSection SectionId="impression">
+                    <Branch>
+                        <ReportText Type="PlainText">Imaging features are atypical or uncommonly reported for COVID-19 pneumonia. Alternative diagnoses should be considered. </ReportText>
+                    </Branch>
+                    <Branch>
+                        <EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes" />
+                        <ReportText Type="PlainText"> [Cov19Aty] </ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+        <EndPoint Id="endpoint_Negative">
+            <Label>Negative</Label>
+            <ReportSections>
+                <ReportSection SectionId="impression">
+                    <Branch>
+                        <ReportText Type="PlainText">No CT findings present to indicate pneumonia.(Note: CT may be negative in the early stages of COVID-19.) </ReportText>
+                    </Branch>
+                    <Branch>
+                        <EqualCondition DataElementId="InsertReportCoding" ComparisonValue="Yes" />
+                        <ReportText Type="PlainText"> [Cov19Neg] </ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
 </ReportingModule>
