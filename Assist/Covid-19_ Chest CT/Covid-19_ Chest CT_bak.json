@@ -1,0 +1,66 @@
+{
+  "module_name": "COVID-19",
+  "module_version": "1.0",
+  "scenarios": [
+    {
+      "scenario_id": "Covid-19:_Chest_CT_1",
+      "inputs": [
+        {
+          "dataelement_id": "InsertReportCoding",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+        {
+          "dataelement_id": "Classification",
+          "dataelement_value": "typical",
+          "dataelement_display_value": "Typical"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Covid-19:_Chest_CT_2",
+      "inputs": [
+        {
+          "dataelement_id": "InsertReportCoding",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+        {
+          "dataelement_id": "Classification",
+          "dataelement_value": "indeterminate",
+          "dataelement_display_value": "Indeterminate"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Covid-19:_Chest_CT_3",
+      "inputs": [
+        {
+          "dataelement_id": "InsertReportCoding",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+        {
+          "dataelement_id": "Classification",
+          "dataelement_value": "atypical",
+          "dataelement_display_value": "Atypical"
+        }
+      ]
+    },
+    {
+      "scenario_id": "Covid-19:_Chest_CT_4",
+      "inputs": [
+        {
+          "dataelement_id": "InsertReportCoding",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+        {
+          "dataelement_id": "Classification",
+          "dataelement_value": "negative",
+          "dataelement_display_value": "Negative"
+        }
+      ]
+    }
+  ]
+}
