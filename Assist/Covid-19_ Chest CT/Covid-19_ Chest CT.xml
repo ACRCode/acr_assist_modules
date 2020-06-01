@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
 	<Metadata>
 		<Label>COVID-19</Label>
@@ -50,32 +50,14 @@
 				<Choice>
 					<Value>typical</Value>
 					<Label>Typical</Label>
-					<Diagrams>
-						<Diagram DisplaySequence="1" IsKeyDiagram="false">					
-							<Location>choicediagram.JPG</Location>
-							<Label>Classification</Label>
-						</Diagram>						
-					</Diagrams>
 				</Choice>
 				<Choice>
 					<Value>indeterminate</Value>
 					<Label>Indeterminate</Label>
-					<Diagrams>
-						<Diagram DisplaySequence="1" IsKeyDiagram="false">					
-							<Location>choicediagram2.JPG</Location>
-							<Label>Classification</Label>
-						</Diagram>						
-					</Diagrams>
 				</Choice>
 				<Choice>
 					<Value>atypical</Value>
 					<Label>Atypical</Label>
-					<Diagrams>
-						<Diagram DisplaySequence="1" IsKeyDiagram="false">					
-							<Location>choicediagram3.JPG</Location>
-							<Label>Classification</Label>
-						</Diagram>						
-					</Diagrams>
 				</Choice>
 				<Choice>
 					<Value>negative</Value>
@@ -83,14 +65,14 @@
 				</Choice>
 			</ChoiceInfo>
 			<ImageMap>
-				<Location>COVID19.jpg</Location>
-				<Map>					
-					<Area Shape="rect" Coords="1,40,1386,150" ChoiceValue="typical"/>
-					<Area Shape="rect" Coords="1,150,1382,275" ChoiceValue="indeterminate"/>
-					<Area Shape="rect" Coords="1,275,1387,410" ChoiceValue="atypical"/>
-					<Area Shape="rect" Coords="1,410,1387,468" ChoiceValue="negative"/>
-				</Map>
-			</ImageMap>
+                <Location>COVID19.jpg</Location>
+                <Map>                   
+					<Area Shape="rect" Coords="0,25,867,152" ChoiceValue="typical" />
+                    <Area Shape="rect" Coords="0,153,867,286" ChoiceValue="indeterminate" />
+                    <Area Shape="rect" Coords="0,287,867,430" ChoiceValue="atypical" />
+                    <Area Shape="rect" Coords="0,431,867,472" ChoiceValue="negative" />
+                </Map>
+            </ImageMap>
 		</ChoiceDataElement>
 		<ChoiceDataElement Id="InsertReportCoding" DisplaySequence="3">
 			<Label>Insert COVID Coding ?</Label>
