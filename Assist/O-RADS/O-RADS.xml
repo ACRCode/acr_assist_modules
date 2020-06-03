@@ -18,29 +18,32 @@
 					<Location>KeyDiagram.png</Location>
 					<Label>O-RADS image</Label>
 				</Diagram>
-				
 				<Diagram DisplaySequence="2" IsKeyDiagram="true">
-					<Location>O-RADS1.png</Location>
-					<Label>O-RADS1 image</Label>
-				</Diagram>
-				<Diagram DisplaySequence="3" IsKeyDiagram="true">
-					<Location>O-RADS2.png</Location>
-					<Label>O-RADS2 image</Label>
-				</Diagram>	
-				<Diagram DisplaySequence="4" IsKeyDiagram="true">
 					<Location>lexicon_terms.png</Location>
 					<Label>lexicon_terms</Label>
 				</Diagram>
 				
+				<Diagram DisplaySequence="3" IsKeyDiagram="true">
+					<Location>O-RADS1.png</Location>
+					<Label>O-RADS1 image</Label>
+				</Diagram>
+				<Diagram DisplaySequence="4" IsKeyDiagram="true">
+					<Location>O-RADS2.png</Location>
+					<Label>O-RADS2 image</Label>
+				</Diagram>	
 				<Diagram DisplaySequence="5" IsKeyDiagram="true">
+					<Location>o-radsimage2.png</Location>
+					<Label>O-RADS2 image2</Label>
+				</Diagram>			
+				<Diagram DisplaySequence="6" IsKeyDiagram="true">
 					<Location>O-RADS3.png</Location>
 					<Label>O-RADS3 image</Label>
 				</Diagram>
-				<Diagram DisplaySequence="6" IsKeyDiagram="true">
+				<Diagram DisplaySequence="7" IsKeyDiagram="true">
 					<Location>O-RADS4.png</Location>
 					<Label>O-RADS4 image</Label>
 				</Diagram>
-				<Diagram DisplaySequence="7" IsKeyDiagram="true">
+				<Diagram DisplaySequence="8" IsKeyDiagram="true">
 					<Location>O-RADS5.png</Location>
 					<Label>O-RADS5 image</Label>
 				</Diagram>
@@ -63,7 +66,7 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>premenopausal</Value>
-					<Label>premenopausal</Label>
+					<Label>Premenopausal</Label>
 				</Choice>
 				<Choice>
 					<Value>postmenopausal</Value>
@@ -74,6 +77,8 @@
 
 		<ChoiceDataElement Id="location" IsRequired="true" DisplaySequence="2">
 			<Label>Location</Label>
+			<Hint>NOTE: If you do not see ovarian tissue, and the lesion does not meet criteria for a hydrosalpinx, select “Ovarian/Adnexal”
+</Hint>
 			<ChoiceInfo>
 				<Choice>
 					<Value>intraovarian</Value>
@@ -81,7 +86,7 @@
 				</Choice>
 				<Choice>
 					<Value>extraovarian</Value>
-					<Label>extraovarian (paraovarian/peritoneal inclusion cyst/hydrosalpinx)</Label>
+					<Label>Extraovarian (paraovarian/peritoneal inclusion cyst/hydrosalpinx)</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
@@ -90,13 +95,13 @@
 			<Label>Laterality</Label>
 			<ChoiceInfo>
 				<Choice>
-					<Value>left</Value>
-					<Label>left</Label>
+					<Value>right</Value>
+					<Label>Right</Label>
 				</Choice>
 				<Choice>
-					<Value>right</Value>
-					<Label>right</Label>
-				</Choice>
+					<Value>left</Value>
+					<Label>Left</Label>
+				</Choice>				
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
@@ -108,31 +113,31 @@
 		<ChoiceDataElement Id="Extraovarian_lesion_type" IsRequired="true" DisplaySequence="5">
 			<Label>Extraovarian lesion types</Label>
 			<Diagrams>
-				<Diagram>
-					<Location>paraovarian_cyst.png</Location>
-					<Label>Paraovarian cyst</Label>
-				</Diagram>
-				<Diagram>
-					<Location>Peritoneal_inclusion_cyst.png</Location>
-					<Label>Peritoneal inclusion cyst</Label>
-				</Diagram>
-				<Diagram>
-					<Location>Hydrosalpinx.png</Location>
-					<Label>Hydrosalpinx</Label>
-				</Diagram>
-			</Diagrams>
+                <Diagram>
+                    <Location>PeritonealInclusionCysts.png</Location>
+                    <Label>PeritonealInclusionCysts</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>Hydrosalpinges.png</Location>
+                    <Label>Hydrosalpinges</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>ParaovarianCysts.png</Location>
+                    <Label>ParaovarianCysts</Label>
+                </Diagram>
+            </Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>paraovarian</Value>
-					<Label>paraovarian cyst</Label>
+					<Label>Paraovarian cyst (if not simple, select as per ovarian/adnexal and cystic)</Label>
 				</Choice>
 				<Choice>
 					<Value>peritoneal_inclusion_cyst</Value>
-					<Label>peritoneal inclusion cyst</Label>
+					<Label>Peritoneal inclusion cyst</Label>
 				</Choice>
 				<Choice>
 					<Value>hydrosalpinx</Value>
-					<Label>hydrosalpinx</Label>
+					<Label>Hydrosalpinx</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -157,11 +162,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>simplecyst</Value>
-					<Label>simple cyst separate from the ovary</Label>
+					<Label>Simple cyst separate from the ovary</Label>
 				</Choice>
 				<Choice>
 					<Value>transducer_pressure</Value>
-					<Label>moves independent of the ovary with transducer pressure</Label>
+					<Label>Moves independent of the ovary with transducer pressure</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -182,23 +187,23 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>adjacent_pelvic</Value>
-					<Label>follows the contour of the adjacent pelvic organs or peritoneum</Label>
+					<Label>Follows contour of adjacent pelvic organs or peritoneum</Label>						   
 				</Choice>
 				<Choice>
 					<Value>no_mass_effect</Value>
-					<Label>does no exert mass effect</Label>
+					<Label>Does not exert mass effect</Label>
 				</Choice>
 				<Choice>
 					<Value>septations</Value>
-					<Label>contains septations</Label>
+					<Label>Contains septations</Label>
 				</Choice>
 				<Choice>
 					<Value>feature4</Value>
-					<Label>ovary at the margin</Label>
+					<Label>Ovary at the margin</Label>
 				</Choice>
 				<Choice>
 					<Value>Ovary_suspended</Value>
-					<Label>ovary suspended within</Label>
+					<Label>Ovary suspended within</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -213,21 +218,21 @@
 				</ConditionalProperty>
 			</ConditionalProperties>				
 		</MultiChoiceDataElement>
-		
+			
 		<MultiChoiceDataElement Id="Hydrosalpinx_features" IsRequired="true" DisplaySequence="8">
 			<Label>Hydrosalpinx Features</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>incomplete_septation</Value>
-					<Label>incomplete septation</Label>
+					<Label>Incomplete septation</Label>
 				</Choice>
 				<Choice>
 					<Value>tubular</Value>
-					<Label>tubular</Label>
+					<Label>Tubular</Label>
 				</Choice>
 				<Choice>
 					<Value>endosalpingeal</Value>
-					<Label>endosalpingeal folds (short round projections around inner wall)</Label>
+					<Label>Endosalpingeal folds (short round projections around inner wall)</Label>
 				</Choice>	
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -288,48 +293,58 @@
 		
 		<ChoiceDataElement Id="intraovarian_lesion_type" IsRequired="true" DisplaySequence="10">
 			<Label>Ovarian/adnexal Lesion Type</Label>
+			<Hint>*NOTE: If &gt; 3 cm, select “Lesion” 
+</Hint>
 			<Diagrams>
-				<Diagram>
-					<Location>hemorrhagic_cyst.png</Location>
-					<Label>hemorrhagic_cyst</Label>
-				</Diagram>
-				<Diagram>
-					<Location>dermoid_cyst.png</Location>
-					<Label>dermoid_cyst</Label>
-				</Diagram>
-					<Diagram>
-					<Location>endometrioma.png</Location>
-					<Label>endometrioma</Label>
-				</Diagram>
-			</Diagrams>
+                <Diagram>
+                    <Location>Follicles.png</Location>
+                    <Label>Follicles</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>corporaLutea.png</Location>
+                    <Label>corporaLutea</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>Dermoid cysts.png</Location>
+                    <Label>Dermoid cysts</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>Endometriomas.png</Location>
+                    <Label>Endometriomas</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>Hemorrhagic cysts.png</Location>
+                    <Label>Hemorrhagic cysts</Label>
+                </Diagram>
+            </Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>follicle</Value>
-					<Label>follicle</Label>
+					<Label>Follicle (simple cyst ≤ 3 cm)</Label>
 				</Choice>
 				<Choice>
 					<Value>corpus_luteum</Value>
-					<Label>corpus luteum</Label>
+					<Label>Corpus luteum (thick-walled cyst/solid-appearing, peripheral vascularity, ≤ 3 cm)</Label>
 				</Choice>
 				<Choice>
 					<Value>hemorrhagic_cyst</Value>
-					<Label>hemorrhagic cyst</Label>
+					<Label>Hemorrhagic cyst</Label>
 				</Choice>
 				<Choice>
 					<Value>dermoid_cyst</Value>
-					<Label>dermoid cyst</Label>
+					<Label>Dermoid cyst</Label>
 				</Choice>
 				<Choice>
 					<Value>endometrioma</Value>
-					<Label>endometrioma</Label>
+					<Label>Endometrioma</Label>
 				</Choice>
 				<Choice>
 					<Value>cystic</Value>
-					<Label>cystic (must have no internal flow on Doppler)</Label>
+					<Label>Cystic (must have no internal flow on Doppler)</Label>
 				</Choice>
 				<Choice>
 					<Value>solid</Value>
-					<Label>solid/solid-appearing (≥ 80% solid)</Label>
+					<Label>Solid/solid-appearing (≥ 80% solid)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -338,6 +353,8 @@
 						<SectionIfNot DataElementId="location"></SectionIfNot>
 						<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
 						<SectionIfNot DataElementId="menopausal_status"></SectionIfNot>
+						
+						
 						<!-- <AndCondition> -->
 							<!-- <EqualCondition DataElementId="location" ComparisonValue="intraovarian"/> -->
 							<!-- <EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/> -->
@@ -354,11 +371,43 @@
 				</ConditionalProperty>
 				
 				<ConditionalProperty>
-					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+					<OrCondition>
+						<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
+						<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3" />
+					</OrCondition>					
 					<ChoiceNotRelevant ChoiceValue="follicle"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="corpus_luteum"></ChoiceNotRelevant>
 				</ConditionalProperty>
 				
+			</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement Id="Is_followup_exam" IsRequired="true" DisplaySequence="11">
+			<Label>If this is a follow-up exam, and lesion has not resolved or decreased?</Label>
+			<ChoiceInfo>
+				<Choice>
+					<Value>yes</Value>
+					<Label>yes</Label>
+				</Choice>
+				<Choice IsDefault="true">
+					<Value>no</Value>
+					<Label>no</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<OrCondition>
+						<SectionIfNot DataElementId="location"></SectionIfNot>
+						<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
+						<SectionIfNot DataElementId="menopausal_status"></SectionIfNot>
+						<SectionIfNot DataElementId="intraovarian_lesion_type"></SectionIfNot>
+						<SectionIfNot DataElementId="maximum_size"></SectionIfNot>
+						<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="5" />
+						<GreaterThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="10"  />
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>	
+				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
@@ -367,31 +416,31 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>reticular_pattern</Value>
-					<Label>reticular pattern</Label>
+					<Label>Reticular pattern</Label>
 				</Choice>
 				<Choice>
 					<Value>retractile_clot</Value>
-					<Label>retractile clot</Label>
-				</Choice>
-				<Choice>
-					<Value>no_internal_flow</Value>
-					<Label>no internal flow</Label>
+					<Label>Retractile clot</Label>
 				</Choice>
 				<Choice>
 					<Value>hyperechoic_lines_and_dots</Value>
-					<Label>hyperechoic lines and dots</Label>
+					<Label>Hyperechoic lines and dots</Label>
 				</Choice>
 				<Choice>
 					<Value>acoustic_shadowing</Value>
-					<Label>hyperechoic component with acoustic shadowing</Label>
+					<Label>Hyperechoic component with acoustic shadowing</Label>
 				</Choice>
 				<Choice>
 					<Value>echogenic_sphericles</Value>
-					<Label>floating echogenic sphericles</Label>
+					<Label>Floating echogenic sphericles</Label>
 				</Choice>
 				<Choice>
 					<Value>low_level_echoes</Value>
-					<Label>homogenous low-level echoes</Label>
+					<Label>Homogenous low-level echoes</Label>
+				</Choice>
+				<Choice>
+					<Value>no_internal_flow</Value>
+					<Label>No internal flow</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>				
@@ -417,8 +466,7 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
 					<ChoiceNotRelevant ChoiceValue="reticular_pattern"></ChoiceNotRelevant>
-					<ChoiceNotRelevant ChoiceValue="retractile_clot"></ChoiceNotRelevant>
-					<ChoiceNotRelevant ChoiceValue="no_internal_flow"></ChoiceNotRelevant>					
+					<ChoiceNotRelevant ChoiceValue="retractile_clot"></ChoiceNotRelevant>				
 					<ChoiceNotRelevant ChoiceValue="low_level_echoes"></ChoiceNotRelevant>
 				</ConditionalProperty>
 				
@@ -426,7 +474,6 @@
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
 					<ChoiceNotRelevant ChoiceValue="reticular_pattern"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="retractile_clot"></ChoiceNotRelevant>
-					<ChoiceNotRelevant ChoiceValue="no_internal_flow"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="hyperechoic_lines_and_dots"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="acoustic_shadowing"></ChoiceNotRelevant>
 					<ChoiceNotRelevant ChoiceValue="echogenic_sphericles"></ChoiceNotRelevant>
@@ -437,24 +484,27 @@
 		
 		<ChoiceDataElement Id="cystic_lesion" IsRequired="true" DisplaySequence="12">
 			<Label>Cystic lesion</Label>
+			<Hint>   *NOTE: A unilocular cyst may contain an incomplete septation
+**NOTE: Focal wall irregularity &lt; 3 mm in height, and blood or dermoid contents are NOT considered a “solid component” 
+</Hint>
 			<Diagrams>
-				<Diagram>
-					<Location>Unilocular.png</Location>
-					<Label>unilocular</Label>
-				</Diagram>
-				<Diagram>
-					<Location>Multilocular.png</Location>
-					<Label>multilocular</Label>
-				</Diagram>
-			</Diagrams>
+                <Diagram>
+                    <Location>UnilocularInnermarginSmoothVsIrregular.png</Location>
+                    <Label>UnilocularInnermarginSmoothVsIrregular</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>SolidOuterContour_Smooth-VS-Irregular.png</Location>
+                    <Label>SolidOuterContour_Smooth-VS-Irregular</Label>
+                </Diagram>
+            </Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Unilocular</Value>
-					<Label>unilocular</Label>
+					<Label>Unilocular</Label>
 				</Choice>
 				<Choice>
 					<Value>Multilocular</Value>
-					<Label>multilocular</Label>
+					<Label>Multilocular</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -487,11 +537,11 @@
 			<ChoiceInfo>
 				<Choice>
 					<Value>no_solid</Value>
-					<Label>no solid component</Label>
+					<Label>No solid component</Label>
 				</Choice>
 				<Choice>
 					<Value>with_solid</Value>
-					<Label>with solid component</Label>
+					<Label>With solid component</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -508,14 +558,26 @@
 		
 		<ChoiceDataElement Id="inner_margin" IsRequired="true" DisplaySequence="14">
 			<Label>Inner Margin</Label>
+			<Hint>*NOTE: An incomplete septation alone is NOT considered an irregular inner margin and would still qualify as smooth as long as no focal wall thickening is present
+</Hint>
+            <Diagrams>
+                <Diagram>
+                    <Location>MulilocularInnermargin.png</Location>
+                    <Label>MulilocularInnermargin</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>UnilocularInnerContent_Simple-VS-NonSimple.png</Location>
+                    <Label>UnilocularInnerContent_Simple-VS-NonSimple</Label>
+                </Diagram>
+            </Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>smooth</Value>
-					<Label>smooth</Label>
+					<Label>Smooth</Label>
 				</Choice>
 				<Choice>
 					<Value>irregular</Value>
-					<Label>irregular</Label>
+					<Label>Irregular</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -555,7 +617,7 @@
 				</Choice>
 				<Choice>
 					<Value>scattered_echoes_nonsimple</Value>
-					<Label>Internal Echoes (Non-simple Cyst)</Label>
+					<Label>Internal echoes (non-simple cyst)</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -578,11 +640,14 @@
 		
 		<ChoiceDataElement Id="Papillary_projections" IsRequired="true" DisplaySequence="15">
 			<Label>Papillary projections</Label>
+			<Hint>NOTE: A solid component is considered a papillary projection if it protrudes into a cyst lumen, is surrounded by fluid on 3 sides, and measures ≥ 3 mm in height. If the solid component does not meet this criteria, select “# 0 - 3”
+</Hint>
+
 			<Diagrams>
-				<Diagram>
-					<Location>papillary_projections.png</Location>
-					<Label>papillary_projections</Label>
-				</Diagram>
+                <Diagram>
+                    <Location>intracysticSolidcomponents.png</Location>
+                    <Label>intracysticSolidcomponents</Label>
+                </Diagram>
 			</Diagrams>
 			<ChoiceInfo>
 				<Choice>
@@ -616,6 +681,12 @@
 		
 		<ChoiceDataElement Id="color_score" IsRequired="true" DisplaySequence="16">
 			<Label>Color Score</Label>
+			<Diagrams>
+                <Diagram>
+                    <Location>ColorScore.png</Location>
+                    <Label>ColorScore</Label>
+                </Diagram>
+            </Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>score_1</Value>
@@ -694,15 +765,25 @@
 		</ChoiceDataElement>
 		
 		<ChoiceDataElement Id="peritoneal_nodules_present" IsRequired="true" DisplaySequence="17">
-			<Label>If ascites ± peritoneal nodules are present?</Label>
+			<Label>Is there ascites (fluid above the uterine fundus, ± echoes) ± peritoneal nodules?</Label>
+			<Diagrams>
+                <Diagram>
+                    <Location>Ascites.png</Location>
+                    <Label>Ascites</Label>
+                </Diagram>
+                <Diagram>
+                    <Location>Peritoneal nodules.png</Location>
+                    <Label>Peritoneal nodules</Label>
+                </Diagram>
+            </Diagrams>
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
-					<Label>yes</Label>
+					<Label>Yes</Label>
 				</Choice>
 				<Choice IsDefault="true">
 					<Value>no</Value>
-					<Label>no</Label>
+					<Label>No</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -812,28 +893,16 @@
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="peritoneal_features" IsRequired="true" DisplaySequence="18">
-			<Label>Peritoneal Features</Label>
+		<MultiChoiceDataElement Id="peritoneal_features_ascites" IsRequired="true" DisplaySequence="18">
+			<Label>Select all that apply</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>ascites</Value>
-					<Label>ascites</Label>
-				</Choice>
-				<Choice>
-					<Value>cul-de-sac_fluid</Value>
-					<Label>cul-de-sac fluid</Label>
-				</Choice>
-				<Choice>
-					<Value>anechoic</Value>
-					<Label>anechoic (simple)</Label>
-				</Choice>
-				<Choice>
-					<Value>contains_echoes</Value>
-					<Label>contains echoes (not simple)</Label>
+					<Label>Ascites</Label>
 				</Choice>
 				<Choice>
 					<Value>peritoneal_nodules</Value>
-					<Label>peritoneal nodules</Label>
+					<Label>Peritoneal nodules</Label>
 				</Choice>
 			</ChoiceInfo>
 			<ConditionalProperties>
@@ -878,6 +947,224 @@
 				</ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
+		
+		<ComputedDataElement Id="laterality_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="laterality" ComparisonValue="right"/>
+					<TextExpression>right</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="laterality" ComparisonValue="left"/>
+					<TextExpression>left</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="Extraovarian_lesion_type_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="Extraovarian_lesion_type" ComparisonValue="paraovarian"/>
+					<TextExpression>paraovarian cyst</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="Extraovarian_lesion_type" ComparisonValue="peritoneal_inclusion_cyst"/>
+					<TextExpression>peritoneal inclusion cyst</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="Extraovarian_lesion_type" ComparisonValue="hydrosalpinx"/>
+					<TextExpression>hydrosalpinx</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="intraovarian_lesion_type_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="follicle"/>
+					<TextExpression>follicle</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="corpus_luteum"/>
+					<TextExpression>corpus luteum</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+					<TextExpression>hemorrhagic cyst</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+					<TextExpression>dermoid cyst</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					<TextExpression>endometrioma</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<TextExpression>cystic</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+					<TextExpression>solid/solid-appearing</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="cystic_lesion_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Unilocular"/>
+					<TextExpression>unilocular</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="cystic_lesion" ComparisonValue="Multilocular"/>
+					<TextExpression>multilocular</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="solid_component_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="no_solid"/>
+					<TextExpression>no solid component</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="solid_component" ComparisonValue="with_solid"/>
+					<TextExpression>with solid component</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="inner_margin_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="smooth"/>
+					<TextExpression>smooth</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="inner_margin" ComparisonValue="irregular"/>
+					<TextExpression>irregular</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="inner_content_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple"/>
+					<TextExpression>anechoic (simple)</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
+					<TextExpression>internal echoes (non-simple cyst)</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="color_score_computed_value">
+			<DecisionPoint>
+				<Branch>
+					<EqualCondition DataElementId="color_score" ComparisonValue="score_1"/>
+					<TextExpression>score 1: no flow</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="color_score" ComparisonValue="score_2"/>
+					<TextExpression>score 2: minimal flow - hypovascular (difficult to find)</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="color_score" ComparisonValue="score_3"/>
+					<TextExpression>score 3: moderate flow</TextExpression>
+				</Branch>
+				
+				<Branch>
+					<EqualCondition DataElementId="color_score" ComparisonValue="score_4"/>
+					<TextExpression>score 4: strong flow</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="lesion_features_computed_value1">
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+					<TextExpression>reticular pattern</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		
+		<ComputedDataElement Id="lesion_features_computed_value2">
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+					<TextExpression>retractile clot</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+			
+		<ComputedDataElement Id="lesion_features_computed_value3">
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="hyperechoic_lines_and_dots"/>
+					<TextExpression>hyperechoic lines and dots</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="lesion_features_computed_value4">
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="acoustic_shadowing"/>
+					<TextExpression>floating echogenic sphericles</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="lesion_features_computed_value4">
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="acoustic_shadowing"/>
+					<TextExpression>floating echogenic sphericles</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="lesion_features_computed_value5">
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="low_level_echoes"/>
+					<TextExpression>homogenous low-level echoes</TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		<ComputedDataElement Id="lesion_features_computed_value6">
+			<DecisionPoint>
+				<Branch>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="no_internal_flow"/>
+					<TextExpression>no internal flow </TextExpression>
+				</Branch>
+			</DecisionPoint>
+		</ComputedDataElement>
+		
+		
 	</DataElements>
 
 	<Rules>
@@ -957,19 +1244,33 @@
 			</Branch>
 			
 			<Branch>
-				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - greater 5 and less than 10</Label>
+				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - greater 5 and less than 10 - followup no</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
 					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="5"/>
-					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>					
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
+					<EqualCondition DataElementId="Is_followup_exam" ComparisonValue="no"/>					
 				</AndCondition>
 				<EndPointRef EndPointId="ORADS2_FU_8_12W"></EndPointRef>
 			</Branch>
 			
 			<Branch>
-				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - less than 10</Label>
+				<Label>Intraovarian - premenopausal - Hemorrhagic cyst - greater 5 and less than 10 - followup yes</Label>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<EqualCondition DataElementId="menopausal_status" ComparisonValue="premenopausal"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+					<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="5"/>
+					<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>	
+					<EqualCondition DataElementId="Is_followup_exam" ComparisonValue="yes"/>					
+				</AndCondition>
+				<EndPointRef EndPointId="ORADS2_REF_US_MRI"></EndPointRef>
+			</Branch>
+			
+			<Branch>
+				<Label>Intraovarian - postmenopausal - Hemorrhagic cyst - less than 10</Label>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<EqualCondition DataElementId="menopausal_status" ComparisonValue="postmenopausal"/>
@@ -1172,7 +1473,7 @@
 							<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
 							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
 						</AndCondition>
-						<EndPointRef EndPointId="ORADS2_FU_US_8_12W"></EndPointRef>
+						<EndPointRef EndPointId="ORADS2_FU_US_8_12W_If_Conc_REF_US_MRI"></EndPointRef>
 					</Branch>
 					
 					<!-- <Branch>
@@ -1204,7 +1505,7 @@
 							<GreaterThanCondition DataElementId="maximum_size" ComparisonValue="3"/>
 							<LessThanCondition DataElementId="maximum_size" ComparisonValue="10"/>
 						</AndCondition>
-						<EndPointRef EndPointId="ORADS2_FU_US_8_12W"></EndPointRef>
+						<EndPointRef EndPointId="ORADS2_FU_US_8_12W_If_Conc_REF_US_MRI"></EndPointRef>
 					</Branch>
 					
 					<Branch>
@@ -1242,7 +1543,7 @@
 							<EqualCondition DataElementId="inner_content" ComparisonValue="scattered_echoes_nonsimple"/>
 							<LessThanOrEqualsCondition DataElementId="maximum_size" ComparisonValue="3"/>
 						</AndCondition>
-						<EndPointRef EndPointId="ORADS2_FU_US_1Year"></EndPointRef>
+						<EndPointRef EndPointId="ORADS2_FU_US_1Year_IF_Concer"></EndPointRef>
 					</Branch>
 					
 					<Branch>
@@ -1582,13 +1883,272 @@
 
 	<EndPoints>
 	
+		<TemplatePartial Id="paraovarian_features_computed_value_tp">
+			<Branch>
+				<ContainsCondition DataElementId="Paraovarian_features" ComparisonValue="simplecyst"/>
+				<ReportText Type="PlainText">simple cyst separate from the ovary</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="Paraovarian_features" ComparisonValue="simplecyst"/>
+					<ContainsCondition DataElementId="Paraovarian_features" ComparisonValue="transducer_pressure"/>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="Paraovarian_features" ComparisonValue="transducer_pressure"/>
+				<ReportText Type="PlainText">moves independent of the ovary with transducer pressure</ReportText>	
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="Peritoneal_features_computed_value_tp">
+			<Branch>
+				<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="adjacent_pelvic"/>
+				<ReportText Type="PlainText">follows contour of adjacent pelvic organs or peritoneum</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="adjacent_pelvic"/>
+					<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="no_mass_effect"/>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="no_mass_effect"/>
+				<ReportText Type="PlainText">does not exert mass effect</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="septations"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="adjacent_pelvic"/>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="no_mass_effect"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="septations"/>
+				<ReportText Type="PlainText">contains septations</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="feature4"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="adjacent_pelvic"/>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="no_mass_effect"/>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="septations"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="feature4"/>
+				<ReportText Type="PlainText">ovary at the margin</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="Ovary_suspended"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="adjacent_pelvic"/>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="no_mass_effect"/>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="septations"/>
+						<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="feature4"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="Ovary_suspended"/>
+				<ReportText Type="PlainText">ovary suspended within</ReportText>	
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="Hydrosalpinx_features_computed_value_tp">
+			<Branch>
+				<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="incomplete_septation"/>
+				<ReportText Type="PlainText">incomplete septation</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="incomplete_septation"/>
+					<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="tubular"/>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="tubular"/>
+				<ReportText Type="PlainText">tubular</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="endosalpingeal"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="incomplete_septation"/>
+						<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="tubular"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="endosalpingeal"/>
+				<ReportText Type="PlainText">endosalpingeal folds</ReportText>	
+			</Branch>
+			
+		</TemplatePartial>
+		
+		
+		<TemplatePartial Id="lesion_features_computed_value_tp">
+			<Branch>
+				<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+				<ReportText Type="PlainText">reticular pattern</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+				<ReportText Type="PlainText">retractile clot</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="hyperechoic_lines_and_dots"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="lesion_features" ComparisonValue="hyperechoic_lines_and_dots"/>
+				<ReportText Type="PlainText">hyperechoic lines and dots</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="acoustic_shadowing"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="hyperechoic_lines_and_dots"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="lesion_features" ComparisonValue="acoustic_shadowing"/>
+				<ReportText Type="PlainText">hyperechoic component with acoustic shadowing</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="echogenic_sphericles"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="hyperechoic_lines_and_dots"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="acoustic_shadowing"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="lesion_features" ComparisonValue="echogenic_sphericles"/>
+				<ReportText Type="PlainText">floating echogenic sphericles</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="low_level_echoes"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="hyperechoic_lines_and_dots"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="acoustic_shadowing"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="echogenic_sphericles"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="lesion_features" ComparisonValue="low_level_echoes"/>
+				<ReportText Type="PlainText">homogenous low-level echoes</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="lesion_features" ComparisonValue="no_internal_flow"/>
+					<OrCondition>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="reticular_pattern"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="retractile_clot"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="hyperechoic_lines_and_dots"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="acoustic_shadowing"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="echogenic_sphericles"/>
+						<ContainsCondition DataElementId="lesion_features" ComparisonValue="low_level_echoes"/>
+					</OrCondition>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="lesion_features" ComparisonValue="no_internal_flow"/>
+				<ReportText Type="PlainText">no internal flow</ReportText>
+			</Branch>
+			
+		</TemplatePartial>
+		
+		<TemplatePartial Id="peritoneal_features_ascites_computed_value_tp">
+			<Branch>
+				<ContainsCondition DataElementId="peritoneal_features_ascites" ComparisonValue="ascites"/>
+				<ReportText Type="PlainText">ascites</ReportText>	
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<ContainsCondition DataElementId="peritoneal_features_ascites" ComparisonValue="ascites"/>
+					<ContainsCondition DataElementId="peritoneal_features_ascites" ComparisonValue="peritoneal_nodules"/>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>
+			</Branch>
+			
+			<Branch>
+				<ContainsCondition DataElementId="peritoneal_features_ascites" ComparisonValue="peritoneal_nodules"/>
+				<ReportText Type="PlainText">peritoneal nodules</ReportText>	
+			</Branch>
+		</TemplatePartial>
 	
 		<TemplatePartial Id="findings_template">
 			<Branch>
 				<SectionIf DataElementId="laterality"></SectionIf>
 				<ReportText Type="Newline"></ReportText>
 				<ReportText Type="PlainText"> Laterality: </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="laterality"></ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="laterality_computed_value"></ReportText>				
 			</Branch>
 			
 			<Branch>
@@ -1600,8 +2160,19 @@
 				<AndCondition>
 					<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
 					<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
+					<NotEqualCondition DataElementId="Extraovarian_lesion_type" ComparisonValue="paraovarian"/>
 				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="Extraovarian_lesion_type"></ReportText>				
+				<ReportText Type="PlainText">cystic</ReportText>				
+			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
+					<EqualCondition DataElementId="location" ComparisonValue="extraovarian"/>
+					<NotEqualCondition DataElementId="Extraovarian_lesion_type" ComparisonValue="paraovarian"/>
+					<SectionIf DataElementId="Paraovarian_features"></SectionIf>	
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>	
 			</Branch>
 			
 			<Branch>
@@ -1609,8 +2180,7 @@
 					<EqualCondition DataElementId="Extraovarian_lesion_type" ComparisonValue="paraovarian"/>
 					<SectionIf DataElementId="Paraovarian_features"></SectionIf>					
 				</AndCondition>
-				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="Paraovarian_features"></ReportText>				
+				<ReportText Type="InsertPartialTemplate" Value="paraovarian_features_computed_value_tp"></ReportText>				
 			</Branch>
 			
 			<Branch>
@@ -1619,7 +2189,7 @@
 					<SectionIf DataElementId="Peritoneal_features"></SectionIf>
 				</AndCondition>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="Peritoneal_features"></ReportText>				
+				<ReportText Type="InsertPartialTemplate" Value="Peritoneal_features_computed_value_tp"></ReportText>				
 			</Branch>
 
 			<Branch>
@@ -1628,29 +2198,45 @@
 					<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
 				</AndCondition>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="Hydrosalpinx_features"></ReportText>				
+				<ReportText Type="InsertPartialTemplate" Value="Hydrosalpinx_features_computed_value_tp"></ReportText>				
 			</Branch>
 	
 			<Branch>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<SectionIf DataElementId="intraovarian_lesion_type"></SectionIf>
-					<OrCondition>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="follicle"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="corpus_luteum"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
-						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
-					</OrCondition>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="follicle"/>
 				</AndCondition>	
-				<ReportText Type="InsertDataElementValue" Value="intraovarian_lesion_type"></ReportText>				
+				<ReportText Type="PlainText"> follicle</ReportText>				
 			</Branch>
 			
 			<Branch>
 				<AndCondition>
 					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
 					<SectionIf DataElementId="intraovarian_lesion_type"></SectionIf>
-					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="corpus_luteum"/>
+				</AndCondition>	
+				<ReportText Type="PlainText"> corpus luteum</ReportText>			
+			</Branch>
+			
+<!-- 			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<SectionIf DataElementId="intraovarian_lesion_type"></SectionIf>
+					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+				</AndCondition>	
+				<ReportText Type="PlainText"> dermoid cyst</ReportText>			
+			</Branch> -->
+			
+			<Branch>
+				<AndCondition>
+					<EqualCondition DataElementId="location" ComparisonValue="intraovarian"/>
+					<SectionIf DataElementId="intraovarian_lesion_type"></SectionIf>					
+					<OrCondition>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="hemorrhagic_cyst"/>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="endometrioma"/>
+					</OrCondition>
 				</AndCondition>	
 				<ReportText Type="PlainText"> cystic</ReportText>			
 			</Branch>
@@ -1663,6 +2249,16 @@
 				</AndCondition>	
 				<ReportText Type="PlainText"> solid/solid-appearing</ReportText>			
 			</Branch>
+			
+			<Branch>
+				<AndCondition>
+					<SectionIf DataElementId="lesion_features"></SectionIf>
+					<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"/>
+					<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"/>
+					<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="dermoid_cyst"/>
+				</AndCondition>
+				<ReportText Type="PlainText">, </ReportText>
+			</Branch>
 
 			<Branch>
 				<AndCondition>
@@ -1672,35 +2268,33 @@
 					</OrCondition>
 					<SectionIf DataElementId="lesion_features"></SectionIf>
 				</AndCondition>
-					
-				<ReportText Type="PlainText">, </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lesion_features"></ReportText>				
+				<ReportText Type="InsertPartialTemplate" Value="lesion_features_computed_value_tp"></ReportText>				
 			</Branch>
 
 			<Branch>
 				<SectionIf DataElementId="cystic_lesion"></SectionIf>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="cystic_lesion"></ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="cystic_lesion_computed_value"></ReportText>				
 			</Branch>
 			
 			
 			<Branch>
 				<SectionIf DataElementId="solid_component"></SectionIf>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="solid_component"></ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="solid_component_computed_value"></ReportText>				
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="inner_margin"></SectionIf>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="inner_margin"></ReportText>
+				<ReportText Type="InsertDataElementValue" Value="inner_margin_computed_value"></ReportText>
 				<ReportText Type="PlainText"> inner margin</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="inner_content"></SectionIf>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="inner_content"></ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="inner_content_computed_value"></ReportText>				
 			</Branch>
 			
 			<Branch>
@@ -1712,13 +2306,13 @@
 			<Branch>
 				<SectionIf DataElementId="color_score"></SectionIf>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="color_score"></ReportText>				
+				<ReportText Type="InsertDataElementValue" Value="color_score_computed_value"></ReportText>				
 			</Branch>
 			
 			<Branch>
-				<SectionIf DataElementId="peritoneal_features"></SectionIf>
+				<SectionIf DataElementId="peritoneal_features_ascites"></SectionIf>
 				<ReportText Type="PlainText">, </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="peritoneal_features"></ReportText>				
+				<ReportText Type="InsertPartialTemplate" Value="peritoneal_features_ascites_computed_value_tp"></ReportText>				
 			</Branch>
 			
 			<Branch>
@@ -1730,216 +2324,6 @@
 			</Branch>
 			
 		</TemplatePartial>
-	
-		<TemplatePartial Id="findings_template_1">
-			<Branch>
-				<SectionIf DataElementId="laterality"></SectionIf>
-				<ReportText Type="Newline"></ReportText>
-				<ReportText Type="PlainText"> Laterality: </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="laterality"></ReportText>
-				
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="location"></SectionIf>
-				<ReportText Type="Newline"></ReportText>
-				<ReportText Type="PlainText"> Location: </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="location"></ReportText>
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
-				<ReportText Type="Newline"></ReportText>				
-				<ReportText Type="PlainText"> Type: </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="Extraovarian_lesion_type"></ReportText>
-			</Branch>
-
-			<Branch>
-				<OrCondition>
-					<SectionIf DataElementId="Paraovarian_features"></SectionIf>
-					<SectionIf DataElementId="Peritoneal_features"></SectionIf>
-					<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
-				</OrCondition>
-				<ReportText Type="Newline"></ReportText>
-				<ReportText Type="PlainText"> Descriptors: </ReportText>
-			</Branch>
-
-			<Branch>
-				<SectionIf DataElementId="Paraovarian_features"></SectionIf>
-				<ReportText Type="InsertDataElementValue" Value="Paraovarian_features"></ReportText>			
-			</Branch>
-			
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="Peritoneal_features"></SectionIf>
-					<SectionIf DataElementId="Paraovarian_features"></SectionIf>
-				</AndCondition>
-				<ReportText Type="PlainText">, </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Peritoneal_features"></ReportText>			
-			</Branch>
-			
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="Peritoneal_features"></SectionIf>
-					<SectionIfNot DataElementId="Paraovarian_features"></SectionIfNot>
-				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="Peritoneal_features"></ReportText>			
-			</Branch>
-			
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
-					<OrCondition>
-						<SectionIf DataElementId="Paraovarian_features"></SectionIf>
-						<SectionIf DataElementId="Peritoneal_features"></SectionIf>
-					</OrCondition>
-				</AndCondition>
-				<ReportText Type="PlainText">, </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Hydrosalpinx_features"></ReportText>			
-			</Branch>
-			
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
-					<SectionIfNot DataElementId="Paraovarian_features"></SectionIfNot>
-					<SectionIfNot DataElementId="Peritoneal_features"></SectionIfNot>
-				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="Hydrosalpinx_features"></ReportText>			
-			</Branch>
-
-			<Branch>
-				<SectionIf DataElementId="lesion_features"></SectionIf>
-				<ReportText Type="Newline"></ReportText>				
-				<ReportText Type="PlainText"> Lesion Features: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lesion_features"></ReportText>	
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="peritoneal_features"></SectionIf>
-				<ReportText Type="Newline"></ReportText>				
-				<ReportText Type="PlainText"> Peritoneal Features: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="peritoneal_features"></ReportText>
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="maximum_size"></SectionIf>
-				<ReportText Type="Newline"></ReportText>				
-				<ReportText Type="PlainText"> Maximum size: </ReportText>	
-				<ReportText Type="InsertDataElementValue" Value="maximum_size"></ReportText>
-			</Branch>
-		</TemplatePartial>
-		
-		<TemplatePartial Id="findings_template_2">
-		
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="location"></SectionIf>
-					<SectionIf DataElementId="laterality"></SectionIf>
-					<SectionIf DataElementId="maximum_size"></SectionIf>
-				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="laterality"></ReportText>
-							
-			</Branch>
-			
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="location"></SectionIf>
-					<SectionIf DataElementId="laterality"></SectionIf>
-					<SectionIf DataElementId="maximum_size"></SectionIf>
-					<EqualCondition DataElementId="location" ComparisonValue="extraovarian" ></EqualCondition>
-				</AndCondition>
-				<ReportText Type="PlainText"> (Extraovarian) </ReportText>		
-			</Branch>
-			
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="location"></SectionIf>
-					<SectionIf DataElementId="laterality"></SectionIf>
-					<SectionIf DataElementId="maximum_size"></SectionIf>
-					<EqualCondition DataElementId="location" ComparisonValue="intraovarian" ></EqualCondition>
-				</AndCondition>
-				<ReportText Type="PlainText"> (adnexal or ovarian or adnexal/ovarian) </ReportText>		
-			</Branch>
-			
-			<Branch>
-				<AndCondition>
-					<SectionIf DataElementId="location"></SectionIf>
-					<SectionIf DataElementId="laterality"></SectionIf>
-					<SectionIf DataElementId="maximum_size"></SectionIf>
-				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="maximum_size"></ReportText>
-				<ReportText Type="PlainText"> cm </ReportText>
-				
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
-				<ReportText Type="PlainText"> cystic lesion ( </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Extraovarian_lesion_type"></ReportText>
-				<ReportText Type="PlainText"> ) </ReportText>			
-			</Branch>
-			
-			
-			<Branch>
-				<SectionIf DataElementId="Paraovarian_features"></SectionIf>
-				<ReportText Type="PlainText"> with following features </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Paraovarian_features"></ReportText>			
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="Peritoneal_features"></SectionIf>
-				<ReportText Type="PlainText"> with following features </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Peritoneal_features"></ReportText>			
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="Hydrosalpinx_features"></SectionIf>
-				<ReportText Type="PlainText"> with following features </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="Hydrosalpinx_features"></ReportText>			
-			</Branch>
-			
-			
-			<Branch>
-				<SectionIf DataElementId="lesion_features"></SectionIf>
-				<ReportText Type="Newline"></ReportText>
-				<ReportText Type="PlainText"> Lesion Features: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="lesion_features"></ReportText>			
-			</Branch>
-			
-			<Branch>
-				<SectionIf DataElementId="peritoneal_features"></SectionIf>
-				<ReportText Type="Newline"></ReportText>
-				<ReportText Type="PlainText"> Peritoneal Features: </ReportText>
-				<ReportText Type="InsertDataElementValue" Value="peritoneal_features"></ReportText>			
-			</Branch>
-			
-		</TemplatePartial>
-
-		<TemplatePartial Id="footer_template">
-			
-			<Branch>
-			
-				<ReportText Type="PlainText">O-RADS 0 = Incomplete due to technical factors</ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">O-RADS 1 = Normal/physiologic ovary (0% likelihood of malignancy)</ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">O-RADS 2 = Almost certainly benign (&lt; 1% likelihood of malignancy)</ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">O-RADS 3 = Low risk (1 - &lt; 10% likelihood of malignancy)</ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">O-RADS 4 = Intermediate risk ( 10 - &lt; 50% likelihood of malignancy)</ReportText>
-				<ReportText Type="Newline"></ReportText>
-				
-				<ReportText Type="PlainText">O-RADS 5 = High risk (≥ 50% likelihood of malignancy)</ReportText>
-				<ReportText Type="Newline"></ReportText>
-
-			</Branch>
-			
-		</TemplatePartial >
 		
 		<TemplatePartial Id="impressionTemplate">	
 
@@ -1970,7 +2354,7 @@
 					<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"></NotEqualCondition>
 					<NotEqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="solid"></NotEqualCondition>
 				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="intraovarian_lesion_type"></ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="intraovarian_lesion_type_computed_value"></ReportText>	
 			</Branch>
 			
 			<Branch>
@@ -2002,7 +2386,7 @@
 					<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="cystic"></EqualCondition>
 					<SectionIf DataElementId="cystic_lesion"></SectionIf>
 				</AndCondition>
-				<ReportText Type="InsertDataElementValue" Value="cystic_lesion"></ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="cystic_lesion_computed_value"></ReportText>	
 				<ReportText Type="PlainText"> cystic lesion </ReportText>
 			</Branch>
 
@@ -2026,18 +2410,44 @@
 			
 			<Branch>
 				<SectionIf DataElementId="Extraovarian_lesion_type"></SectionIf>
-				<ReportText Type="InsertDataElementValue" Value="Extraovarian_lesion_type"></ReportText>	
+				<ReportText Type="InsertDataElementValue" Value="Extraovarian_lesion_type_computed_value"></ReportText>	
 			</Branch>
 			
 			
 			<Branch>
 				<ReportText Type="PlainText"> as described above, </ReportText>	
 			</Branch>
-
-						
-						
+			
+			<Branch>
+				<SectionIf DataElementId="peritoneal_features"></SectionIf>
+				<ReportText Type="PlainText">including </ReportText>
+				<ReportText Type="InsertDataElementValue" Value="peritoneal_features"></ReportText>
+				<ReportText Type="Space"></ReportText>
+			</Branch>						
 		</TemplatePartial>
-	
+			
+		<TemplatePartial Id="footer_template">			
+			<Branch>			
+				<ReportText Type="PlainText">O-RADS 0 = Incomplete due to technical factors</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 1 = Normal/physiologic ovary</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 2 = Almost certainly benign</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 3 = Low risk</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 4 = Intermediate risk</ReportText>
+				<ReportText Type="Newline"></ReportText>
+				
+				<ReportText Type="PlainText">O-RADS 5 = High risk</ReportText>
+				<ReportText Type="Newline"></ReportText>
+			</Branch>			
+		</TemplatePartial >
+		
 		<EndPoint Id="ORADS1_No_FU">
 			<Label>O-RADS 1</Label>
 			<ReportSections>
@@ -2049,9 +2459,28 @@
 				
 				<ReportSection SectionId="impression">
 					<Branch>
-						<ReportText Type="InsertPartialTemplate" Value="impressionTemplate"></ReportText>
+						<ReportText Type="PlainText"> Normal </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="laterality_computed_value"></ReportText>
+						<ReportText Type="PlainText"> ovary containing </ReportText>
+					</Branch>
+					
+					<Branch>		
+						<ReportText Type="InsertDataElementValue" Value="maximum_size"></ReportText>
+						<ReportText Type="PlainText"> cm </ReportText>
+					</Branch>	
+								
+					<Branch>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="follicle"></EqualCondition>
+						<ReportText Type="PlainText"> follicle, </ReportText>	
+					</Branch>
+					
+					<Branch>
+						<EqualCondition DataElementId="intraovarian_lesion_type" ComparisonValue="corpus_luteum"></EqualCondition>
+						<ReportText Type="PlainText"> corpus luteum, </ReportText>	
+					</Branch>
+			
+					<Branch>
 						<ReportText Type="PlainText">O-RADS 1. Recommend no additional imaging or follow-up</ReportText>
-						
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
@@ -2179,6 +2608,29 @@
 			</ReportSections>
 		</EndPoint>
 		
+		<EndPoint Id="ORADS2_FU_US_8_12W_If_Conc_REF_US_MRI">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+				<ReportSection SectionId="impression">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="impressionTemplate"></ReportText>
+						<ReportText Type="PlainText">O-RADS 2. Recommend follow-up US examination in 8-12 weeks. If concerning, recommend referral to an US specialist or for a MRI study</ReportText>
+						
+						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
 		<EndPoint Id="ORADS2_Physiologic_FU_US_8_12W">
 			<Label>O-RADS 2</Label>
 			<ReportSections>
@@ -2288,6 +2740,28 @@
 						<ReportText Type="PlainText">O-RADS 2. Recommend follow-up US examination in 1 year.</ReportText>
 						
 						
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
+					</Branch>
+				</ReportSection>
+				
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="ORADS2_FU_US_1Year_IF_Concer">
+			<Label>O-RADS 2</Label>
+			<ReportSections>
+				<ReportSection SectionId="findings">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="findings_template"></ReportText>
+					</Branch>
+				</ReportSection>
+							
+				<ReportSection SectionId="impression">
+					<Branch>
+						<ReportText Type="InsertPartialTemplate" Value="impressionTemplate"></ReportText>
+						<ReportText Type="PlainText">O-RADS 2. Recommend follow-up US examination in 1 year. If concerning, recommend referral to an US specialist or for a MRI study</ReportText>					
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="footer_template"></ReportText>
