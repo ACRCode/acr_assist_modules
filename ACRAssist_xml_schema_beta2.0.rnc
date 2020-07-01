@@ -1,13 +1,13 @@
 # Version 1.0
 start = ReportingModule
-ReportingModule = element ReportingModule {external "Metadata.rnc", DataElements, Rules, EndPoints }
+ReportingModule =
+    element ReportingModule { external "Metadata.rnc", DataElements, Rules, EndPoints }
 Citation =
     element Citation {
         Coding?,
         attribute Url { xsd:anyURI }?,
-        element Description {text}
+        element Description { text }
     }+
-
 # definitions for other parts of the schema
 codingSystemAttr = attribute CodingSystem { text }
 codeAttrs =
@@ -31,7 +31,6 @@ DataElementTypes =
     | ComputedDataElement
     | DateTimeDataElement
     | TimeSpanDataElement
-     
 GlobalValue =
     element GlobalValue {
         attribute Id { xsd:ID },
@@ -50,7 +49,6 @@ DisplaySequence =
     attribute DisplaySequence {
         xsd:integer { minInclusive = "0" }
     }
-    
 baseElementContents =
     attribute Id { xsd:ID },
     attribute IsRequired { "true" | "false" }?,
@@ -65,77 +63,101 @@ baseElementContents =
     attribute CanPrefillFromSource { "true" | "false" }?,
     attribute IsOutput { "true" | "false" }?,
     attribute Unit { text }?,
-    Source?
-    
-    CodableConcept = element CodableConcept{
-    attribute Name {text } ,
-    Coding+
+    Source?,
+    authors?,
+    element References { Citation+ }?
+CodableConcept =
+    element CodableConcept {
+        attribute Name { text },
+        Coding+
     }
-    
-    Coding = element Coding{
-        element System { attribute Value{"https://www.radelement.org/set" | 
-                                            "https://www.radelement.org/element" | 
-                                            "http://loinc.org" | 
-                                            "http://snomed.info/sct" | 
-                                            "http://www.ncbi.nlm.nih.gov/pubmed"} },
-        element Version { attribute Value{text}},
-        element Code { attribute Value{xsd:token}},
-        element Display { attribute Value{text}},
-        element UserSelected { attribute Value{"true" | "false"}} ?,
-        element Url { attribute Value{text}} ?
+Coding =
+    element Coding {
+        element System {
+            attribute Value {
+                "https://www.radelement.org/set"
+                | "https://www.radelement.org/element"
+                | "http://loinc.org"
+                | "http://snomed.info/sct"
+                | "http://www.ncbi.nlm.nih.gov/pubmed"
+            }
+        },
+        element Version {
+            attribute Value { text }
+        },
+        element Code {
+            attribute Value { xsd:token }
+        },
+        element Display {
+            attribute Value { text }
+        },
+        element UserSelected {
+            attribute Value { "true" | "false" }
+        }?,
+        element Url {
+            attribute Value { text }
+        }?
     }+
-    
-    Source = element Source{
+Source =
+    element Source {
         element Vendor { text },
         element Appname { text },
         element Version { text }
     }
-    
-ChoiceNotRelevant =  element ChoiceNotRelevant
-{
-  attribute ChoiceValue {text}, 
-  empty
-}
-
-baseConditionalPropertyContents =
-      ConditionType,
-      element IsRelevant {"true" | "false" }?,
-      element IsRequired {"true" | "false" }?,
-      element DisplaySequence {xsd:integer}?
-
-choiceConditionalProperty = element ConditionalProperty { 
-        baseConditionalPropertyContents,
-        (ChoiceNotRelevant?)+
+authors = element authors { person*, org* }
+person =
+    element person {
+        element name { text },
+        (element orcid_id { text }?
+         & element twitter_handle { text }*
+         & element url { text }*
+         & element role { "author" | "editor" | "translator" | "reviewer" | "contributor" }*)
     }
-
-numericConditionalProperty = element ConditionalProperty {
-      baseConditionalPropertyContents,
-      element Minimum {xsd:decimal}?,
-      element Maximum {xsd:decimal}?	  
-}
-
-integerConditionalProperty = element ConditionalProperty {
-      baseConditionalPropertyContents,
-      element Minimum {xsd:integer}?,
-      element Maximum {xsd:integer}?	  
-}
-
-datetimeConditionalProperty = element ConditionalProperty {
-      baseConditionalPropertyContents  
-}
-
-durationConditionalProperty = element ConditionalProperty {
-      baseConditionalPropertyContents,
-      element MinimumDay {xsd:integer}?,
-      element MaximumDay {xsd:integer}?,	  
-	  element MinimumHours {xsd:integer}?,
-	  element MaximumHours {xsd:integer}?,
-	  element MinimumMinutes {xsd:integer}?,
-	  element MaximumMinutes {xsd:integer}?,
-	  element MinimumSeconds {xsd:integer}?,
-	  element MaximumSeconds {xsd:integer}?
-}
-
+org =
+    element organization {
+        element name { text }
+        & element abbreviation { text }?
+        & element url { xsd:anyURI }?
+        & element comment { text }?
+        & element role { "contributor" | "sponsor" | "translator" | "reviewer" | "author" }*
+    }
+ChoiceNotRelevant =
+    element ChoiceNotRelevant {
+        attribute ChoiceValue { text },
+        empty
+    }
+baseConditionalPropertyContents =
+    ConditionType,
+    element IsRelevant { "true" | "false" }?,
+    element IsRequired { "true" | "false" }?,
+    element DisplaySequence { xsd:integer }?
+choiceConditionalProperty =
+    element ConditionalProperty { baseConditionalPropertyContents, (ChoiceNotRelevant?)+ }
+numericConditionalProperty =
+    element ConditionalProperty {
+        baseConditionalPropertyContents,
+        element Minimum { xsd:decimal }?,
+        element Maximum { xsd:decimal }?
+    }
+integerConditionalProperty =
+    element ConditionalProperty {
+        baseConditionalPropertyContents,
+        element Minimum { xsd:integer }?,
+        element Maximum { xsd:integer }?
+    }
+datetimeConditionalProperty = element ConditionalProperty { baseConditionalPropertyContents }
+durationConditionalProperty =
+    element ConditionalProperty {
+        baseConditionalPropertyContents,
+        element MinimumDay { xsd:integer }?,
+        element MaximumDay { xsd:integer }?,
+        element MinimumHours { xsd:integer }?,
+        element MaximumHours { xsd:integer }?,
+        element MinimumMinutes { xsd:integer }?,
+        element MaximumMinutes { xsd:integer }?,
+        element MinimumSeconds { xsd:integer }?,
+        element MaximumSeconds { xsd:integer }?
+    }
 computedValue =
     element ArithmeticExpression { text }
     | element TextExpression { (text | InsertValue)* }
@@ -167,33 +189,31 @@ IntegerDataElement =
         element Maximum { xsd:integer }?,
         element ConditionalProperties { integerConditionalProperty+ }?
     }
-    
- DateTimeDataElement = 
-     element DateTimeDataElement {
-          baseElementContents,
-          element ConditionalProperties { datetimeConditionalProperty+ }?
-          #element Format { text }
-      }
-      
- #DurationDataElement = 
- TimeSpanDataElement =
+DateTimeDataElement =
+    element DateTimeDataElement {
+        (baseElementContents,
+         element ConditionalProperties { datetimeConditionalProperty+ }?)
+        # element Format { text }
+        
+    }
+# DurationDataElement = 
+TimeSpanDataElement =
     element TimeSpanDataElement {
-            baseElementContents,
-            attribute ShowDays {xsd:boolean}?,
-            attribute ShowHours {xsd:boolean}?,
-            attribute ShowMinutes {xsd:boolean}?,
-            attribute ShowSeconds {xsd:boolean}?,            
-			element MinimumDay {xsd:integer}?,
-			element MaximumDay {xsd:integer}?,	  
-			element MinimumHours {xsd:integer}?,
-			element MaximumHours {xsd:integer}?,
-			element MinimumMinutes {xsd:integer}?,
-			element MaximumMinutes {xsd:integer}?,
-			element MinimumSeconds {xsd:integer}?,
-			element MaximumSeconds {xsd:integer}?,
-            element ConditionalProperties { durationConditionalProperty+ }?
-        }
-    
+        baseElementContents,
+        attribute ShowDays { xsd:boolean }?,
+        attribute ShowHours { xsd:boolean }?,
+        attribute ShowMinutes { xsd:boolean }?,
+        attribute ShowSeconds { xsd:boolean }?,
+        element MinimumDay { xsd:integer }?,
+        element MaximumDay { xsd:integer }?,
+        element MinimumHours { xsd:integer }?,
+        element MaximumHours { xsd:integer }?,
+        element MinimumMinutes { xsd:integer }?,
+        element MaximumMinutes { xsd:integer }?,
+        element MinimumSeconds { xsd:integer }?,
+        element MaximumSeconds { xsd:integer }?,
+        element ConditionalProperties { durationConditionalProperty+ }?
+    }
 Choice =
     element Choice {
         element Value { xsd:token },
@@ -202,10 +222,11 @@ Choice =
         element VoiceCommand { text }?,
         attribute IsDefault { "true" | "false" }?,
         element ReportText { text }?,
-        Diagrams?
+        Diagrams?,
+        CodableConcept?,
+        element References { Citation+ }?
     }
-ChoiceInfo = element ChoiceInfo {
-Choice+ }
+ChoiceInfo = element ChoiceInfo { Choice+ }
 imageMapStyleAttributes =
     attribute Outline { text }?,
     attribute HoverFill { text }?,
@@ -228,44 +249,44 @@ ChoiceDataElement =
     element ChoiceDataElement {
         attribute AllowFreetext { "true" | "false" }?,
         baseElementContents,
-        ChoiceInfo,        
+        ChoiceInfo,
         ImageMap?,
         element ConditionalProperties { choiceConditionalProperty+ }?
     }
 MultiChoiceDataElement =
-    element MultiChoiceDataElement { 
-    attribute AllowFreetext { "true" | "false" }?,
-    baseElementContents, 
-    ChoiceInfo,    
-    ImageMap?,
-    element ConditionalProperties { choiceConditionalProperty+ }?
+    element MultiChoiceDataElement {
+        attribute AllowFreetext { "true" | "false" }?,
+        baseElementContents,
+        ChoiceInfo,
+        ImageMap?,
+        element ConditionalProperties { choiceConditionalProperty+ }?
     }
-    
- SectionIf =
+SectionIf =
     element SectionIf {
         attribute DataElementId { xsd:IDREF },
         TextTemplateContent?
     }?
-    
- SectionIfNot =
+SectionIfNot =
     element SectionIfNot {
         attribute DataElementId { xsd:IDREF },
         TextTemplateContent
     }?
-    
 # Start of next section (RULES)
 ConditionType = AndCondition | OrCondition | NotCondition | SectionIf | SectionIfNot
 ConditionType |= EqualCondition | GreaterThanCondition | LessThanCondition | NotEqualCondition
 ConditionType |= GreaterThanOrEqualsCondition | LessThanOrEqualsCondition
-ConditionType |= ContainsCondition | HasAnyNChoicesCondition 
-AndCondition = element AndCondition { 
-#ConditionType, 
-ConditionType+}
-OrCondition = element OrCondition { 
-#ConditionType, 
-ConditionType+}
-NotCondition = element NotCondition { ConditionType+  }
-
+ConditionType |= ContainsCondition | HasAnyNChoicesCondition
+AndCondition =
+    element AndCondition {
+        # ConditionType, 
+        ConditionType+
+    }
+OrCondition =
+    element OrCondition {
+        # ConditionType, 
+        ConditionType+
+    }
+NotCondition = element NotCondition { ConditionType+ }
 dataElementIdAttribute = attribute DataElementId { xsd:IDREF }
 comparisonConditionContents =
     dataElementIdAttribute,
@@ -299,80 +320,82 @@ ChoiceRef =
         attribute ChoiceValue { xsd:token },
         empty
     }
-#branchModifiers =
-    # element RequiredDataElements { DataElementRef+ }?, 
-   # element NotRelevantDataElements { DataElementRef+ }?
+# branchModifiers =
+# element RequiredDataElements { DataElementRef+ }?, 
+# element NotRelevantDataElements { DataElementRef+ }?
 # element RelevantDataElements { DataElementRef+ }?,
 # element NotValidChoices { ChoiceRef+ }?
-
 DecisionPoint =
     element DecisionPoint {
         attribute Id { xsd:ID },
         element Label { text },
-        element Description { text }?,       
+        element Description { text }?,
         Branch,
         element DefaultBranch {
             element Label { text }?,
-           # branchModifiers,
+            # branchModifiers,
             (EndPointRef | DecisionPoint)
         }?
     }
-    
- Branch =
- element Branch {
-            element Label { text }?,
-            ConditionType?,
-            (EndPointRef | DecisionPoint | 
-            #TextTemplateContent |
-            ReportText
-            #Text
-            )?,
-            Branch?
-        }+  
-        
+Branch =
+    element Branch {
+        element Label { text }?,
+        ConditionType?,
+        (EndPointRef
+         | DecisionPoint
+         | # TextTemplateContent |
+           ReportText)
+        # Text
+        ?,
+        Branch?
+    }+
 # Begin ENDPOINTS Section
 EndPointRef =
     element EndPointRef {
         attribute EndPointId { xsd:IDREF },
         attribute DiagramId { xsd:IDREF }?,
         element Label { text }?,
-        element Description { text }?       
-        }
- 
-EndPoints = 
+        element Description { text }?
+    }
+EndPoints =
     element EndPoints {
-        element TemplatePartial{
+        element TemplatePartial {
             attribute Id { xsd:ID },
             Branch
         }*,
-         element EndPoint {
+        element EndPoint {
             attribute Id { xsd:ID },
-            element Label { text }?,              
+            element Label { text }?,
             Diagnosis?,
-            #ReportTexts,
+            # ReportTexts,
             SetValues?,
             ReportSections,
             ActionableFinding?,
             ImagingFollowup?
-         }+
+        }+
     }
-    
- ReportSections = element ReportSections { ReportSection+ }
- ReportSection = element ReportSection { sectionIdAttr, Branch }
- 
- ReportText = element ReportText {
-     attribute Type { "PlainText" | "InsertPartialTemplate" |  "InsertDataElementValue" | "Newline" | "Tab" | "Space"},
-     attribute Value { text }?,
-     text
- }+
-
-#ReportTexts = element ReportTexts { ReportText+ }
-#ReportText = element ReportText { sectionIdAttr, Branch }+
-
+ReportSections = element ReportSections { ReportSection+ }
+ReportSection = element ReportSection { sectionIdAttr, Branch }
+ReportText =
+    element ReportText {
+        attribute Type {
+            "PlainText"
+            | "InsertPartialTemplate"
+            | "InsertDataElementValue"
+            | "Newline"
+            | "Tab"
+            | "Space"
+        },
+        attribute Value { text }?,
+        text
+    }+
+# ReportTexts = element ReportTexts { ReportText+ }
+# ReportText = element ReportText { sectionIdAttr, Branch }+
 sectionIdAttr =
-    attribute SectionId { "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation" },
-    attribute SubSectionName {text}?
-    
+    attribute SectionId {
+        "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation"
+    },
+    attribute SubSectionName { text }?
 recommendationBase =
     element ClinicalCondition { text }?,
     element References { Citation+ }?,
@@ -396,18 +419,12 @@ ActionableFinding =
         attribute Category { text },
         empty
     }
-
-SetValues = element SetValues {
-    SetDataElementValue +
-    }
-
+SetValues = element SetValues { SetDataElementValue+ }
 SetDataElementValue =
-    element SetDataElementValue{
-        attribute DataElementId {xsd:IDREF},
-        attribute Value {text}
+    element SetDataElementValue {
+        attribute DataElementId { xsd:IDREF },
+        attribute Value { text }
     }
-
-
 Exam =
     element Exam {
         attribute Code { text },
@@ -415,19 +432,12 @@ Exam =
         attribute Modality { text },
         attribute BodyRegion { text },
         text
-    } 
-
-#Text = element Texts { element Text {TextTemplateContent}+ }
-
+    }
+# Text = element Texts { element Text {TextTemplateContent}+ }
 TextTemplateContent = (text | templateTags)*
-
-NewLine = element NewLine {empty}
-
-templateTags =
-   InsertValue | InsertPartial | PlainText | NewLine
-
-PlainText = element PlainText{ text }
-
+NewLine = element NewLine { empty }
+templateTags = InsertValue | InsertPartial | PlainText | NewLine
+PlainText = element PlainText { text }
 InsertValue =
     element InsertValue {
         attribute DataElementId { xsd:IDREF },

@@ -1,16 +1,17 @@
-start = Metadata
+﻿start = Metadata
 Metadata =
     element Metadata {
         element Label { text },
         element ID { text },
         element SchemaVersion { text },
         element ModuleVersion { text },
-        element CreatedDate { xsd:date},
-        element LastModifiedDate {xsd:date},
-        element ApprovedBy{ text }?,
-        element ReviewedBy{ text }?,
-        element DevelopedBy{ text }?,
-		CodableConcept?,
+        element CreatedDate { xsd:date },
+        element LastModifiedDate { xsd:date },
+        element ApprovedBy { text }?,
+        element ReviewedBy { text }?,
+        element DevelopedBy { text }?,
+        CodableConcept?,
+        authors?,
         element Info {
             element Description { text }?,
             element References { Citation+ }?,
@@ -61,28 +62,58 @@ Metadata =
         }?,
         element VoiceActivation {
             element VoiceCommandPhrase { text }+
-        }?		
+        }?
     }
-    
-    CodableConcept = element CodableConcept{
-    attribute Name {text } ,
-    Coding+
+authors = element authors { person*, org* }
+person =
+    element person {
+        element name { text },
+        (element orcid_id { text }?
+         & element twitter_handle { text }*
+         & element url { text }*
+         & element role { "author" | "editor" | "translator" | "reviewer" | "contributor" }*)
     }
-    
-    Coding = element Coding{
-         element System { attribute Value{"https://www.radelement.org/set" | 
-                                            "https://www.radelement.org/element" | 
-                                            "http://loinc.org" | 
-                                            "http://snomed.info/sct" | 
-                                            "http://www.ncbi.nlm.nih.gov/pubmed"} },
-         element Version { attribute Value{text}},
-         element Code { attribute Value{xsd:token}},
-         element Display { attribute Value{text}},
-         element UserSelected { attribute Value{"true" | "false"}} ?,
-         element Url { attribute Value{text}} ?
+org =
+    element organization {
+        element name { text }
+        & element abbreviation { text }?
+        & element url { xsd:anyURI }?
+        & element comment { text }?
+        & element role { "contributor" | "sponsor" | "translator" | "reviewer" | "author" }*
+    }
+CodableConcept =
+    element CodableConcept {
+        attribute Name { text },
+        Coding+
+    }
+Coding =
+    element Coding {
+        element System {
+            attribute Value {
+                "https://www.radelement.org/set"
+                | "https://www.radelement.org/element"
+                | "http://loinc.org"
+                | "http://snomed.info/sct"
+                | "http://www.ncbi.nlm.nih.gov/pubmed"
+            }
+        },
+        element Version {
+            attribute Value { text }
+        },
+        element Code {
+            attribute Value { xsd:token }
+        },
+        element Display {
+            attribute Value { text }
+        },
+        element UserSelected {
+            attribute Value { "true" | "false" }
+        }?,
+        element Url {
+            attribute Value { text }
+        }?
     }+
-    
-    Diagrams =
+Diagrams =
     element Diagrams {
         element Diagram {
             attribute Id { xsd:ID }?,
@@ -92,18 +123,14 @@ Metadata =
             attribute IsKeyDiagram { "true" | "false" }?
         }+
     }
-    
-    Citation =
+Citation =
     element Citation {
         Coding?,
         attribute Url { xsd:anyURI }?,
-        element Description {text}
+        element Description { text }
     }+
-    
-    Diagnosis = element Diagnosis { codeAttrs, text }
-    
-    codingSystemAttr = attribute CodingSystem { text }
-    
-    codeAttrs =
+Diagnosis = element Diagnosis { codeAttrs, text }
+codingSystemAttr = attribute CodingSystem { text }
+codeAttrs =
     codingSystemAttr?,
     attribute Code { xsd:token }
