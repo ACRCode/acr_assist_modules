@@ -14,7 +14,6 @@ codeAttrs =
     codingSystemAttr?,
     attribute Code { xsd:token }
 Diagnosis = element Diagnosis { codeAttrs, text }
-# Exam = element Exam { codeAttrs, text } #this is not being used anywhere, but should be used in Followup Exams
 Modality = element Modality { codeAttrs }
 BodyRegion = element BodyRegion { codeAttrs }
 imageElements =
@@ -132,6 +131,7 @@ baseConditionalPropertyContents =
     element DisplaySequence { xsd:integer }?
 choiceConditionalProperty =
     element ConditionalProperty { baseConditionalPropertyContents, (ChoiceNotRelevant?)+ }
+    
 numericConditionalProperty =
     element ConditionalProperty {
         baseConditionalPropertyContents,
@@ -191,11 +191,10 @@ IntegerDataElement =
 DateTimeDataElement =
     element DateTimeDataElement {
         (baseElementContents,
-         element ConditionalProperties { datetimeConditionalProperty+ }?)
-        # element Format { text }
-        
+         element ConditionalProperties { datetimeConditionalProperty+ }?)        
     }
-# DurationDataElement = 
+    
+ 
 TimeSpanDataElement =
     element TimeSpanDataElement {
         baseElementContents,
@@ -213,6 +212,7 @@ TimeSpanDataElement =
         element MaximumSeconds { xsd:integer }?,
         element ConditionalProperties { durationConditionalProperty+ }?
     }
+    
 Choice =
     element Choice {
         element Value { xsd:token },
@@ -270,6 +270,7 @@ SectionIfNot =
         attribute DataElementId { xsd:IDREF },
         TextTemplateContent
     }?
+    
 # Start of next section (RULES)
 ConditionType = AndCondition | OrCondition | NotCondition | SectionIf | SectionIfNot
 ConditionType |= EqualCondition | GreaterThanCondition | LessThanCondition | NotEqualCondition
@@ -277,12 +278,10 @@ ConditionType |= GreaterThanOrEqualsCondition | LessThanOrEqualsCondition
 ConditionType |= ContainsCondition | HasAnyNChoicesCondition
 AndCondition =
     element AndCondition {
-        # ConditionType, 
         ConditionType+
     }
 OrCondition =
     element OrCondition {
-        # ConditionType, 
         ConditionType+
     }
 NotCondition = element NotCondition { ConditionType+ }
@@ -307,7 +306,7 @@ ContainsCondition =
         attribute ComparisonValue { xsd:token }
     }
 Rules = element Rules { DecisionPoint }
-# { branchModifiers, DecisionPoint }
+
 DataElementRef =
     element DataElementRef {
         attribute DataElementId { xsd:IDREF },
@@ -319,11 +318,7 @@ ChoiceRef =
         attribute ChoiceValue { xsd:token },
         empty
     }
-# branchModifiers =
-# element RequiredDataElements { DataElementRef+ }?, 
-# element NotRelevantDataElements { DataElementRef+ }?
-# element RelevantDataElements { DataElementRef+ }?,
-# element NotValidChoices { ChoiceRef+ }?
+
 DecisionPoint =
     element DecisionPoint {
         attribute Id { xsd:ID },
@@ -331,8 +326,7 @@ DecisionPoint =
         element Description { text }?,
         Branch,
         element DefaultBranch {
-            element Label { text }?,
-            # branchModifiers,
+            element Label { text }?,            
             (EndPointRef | DecisionPoint)
         }?
     }
@@ -342,12 +336,11 @@ Branch =
         ConditionType?,
         (EndPointRef
          | DecisionPoint
-         | # TextTemplateContent |
-           ReportText)
-        # Text
+         | ReportText)
         ?,
         Branch?
     }+
+    
 # Begin ENDPOINTS Section
 EndPointRef =
     element EndPointRef {
@@ -386,8 +379,7 @@ ReportText =
         attribute Value { text }?,
         text
     }+
-# ReportTexts = element ReportTexts { ReportText+ }
-# ReportText = element ReportText { sectionIdAttr, Branch }+
+
 sectionIdAttr =
     attribute SectionId {
         "findings" | "impression" | "recommendation" | "impressionRecommendation" | "citation"
@@ -424,7 +416,7 @@ Exam =
         attribute BodyRegion { text },
         text
     }
-# Text = element Texts { element Text {TextTemplateContent}+ }
+
 TextTemplateContent = (text | templateTags)*
 NewLine = element NewLine { empty }
 templateTags = InsertValue | InsertPartial | PlainText | NewLine
