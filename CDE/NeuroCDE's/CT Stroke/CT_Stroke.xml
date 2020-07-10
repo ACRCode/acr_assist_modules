@@ -45,35 +45,6 @@
         <ApplicableSexes Value="Both" />
     </Metadata>
     <DataElements>
-        <IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7" Unit="">
-            <CodableConcept Name="midlineshift in mm">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE165" />
-                    <Display Value="RDE165" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE165" />
-                </Coding>
-            </CodableConcept>
-            <Label>midlineshift in mm</Label>
-            <Hint>midlineshift in mm</Hint>
-            <Maximum>1</Maximum>
-        </IntegerDataElement>
-        <IntegerDataElement Id="ASPECTSclassification" IsRequired="true" DisplaySequence="15" Unit="">
-            <CodableConcept Name="ASPECTS classification">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE173" />
-                    <Display Value="RDE173" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE173" />
-                </Coding>
-            </CodableConcept>
-            <Label>ASPECTS classification</Label>
-            <Hint>ASPECTS classification</Hint>
-        </IntegerDataElement>
         <ChoiceDataElement Id="Hyperacutesigns" IsRequired="true" DisplaySequence="1">
             <CodableConcept Name="Hyperacute signs">
                 <Coding>
@@ -95,6 +66,46 @@
                 <Choice>
                     <Value>no</Value>
                     <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="2">
+            <CodableConcept Name="Location">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE160" />
+                    <Display Value="RDE160" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE160" />
+                </Coding>
+            </CodableConcept>
+            <Label>Location</Label>
+            <Hint>Location</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>right frontal</Value>
+                    <Label>right frontal</Label>
+                </Choice>
+                <Choice>
+                    <Value>temporal</Value>
+                    <Label>temporal</Label>
+                </Choice>
+                <Choice>
+                    <Value>parietal</Value>
+                    <Label>parietal</Label>
+                </Choice>
+                <Choice>
+                    <Value>right frontal</Value>
+                    <Label>right frontal</Label>
+                </Choice>
+                <Choice>
+                    <Value>temporal</Value>
+                    <Label>temporal</Label>
+                </Choice>
+                <Choice>
+                    <Value>parietal</Value>
+                    <Label>parietal</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
@@ -226,6 +237,21 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
+        <IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7" Unit="">
+            <CodableConcept Name="Midline shift">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE165" />
+                    <Display Value="RDE165" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE165" />
+                </Coding>
+            </CodableConcept>
+            <Label>Midline shift</Label>
+            <Hint>midlineshift in mm</Hint>
+            <Maximum>1</Maximum>
+        </IntegerDataElement>
         <ChoiceDataElement Id="Herniation" IsRequired="true" DisplaySequence="8">
             <CodableConcept Name="Herniation">
                 <Coding>
@@ -406,46 +432,20 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="2">
-            <CodableConcept Name="Location">
+        <IntegerDataElement Id="ASPECTSclassification" IsRequired="true" DisplaySequence="15" Unit="">
+            <CodableConcept Name="ASPECTS classification">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
-                    <Code Value="RDE160" />
-                    <Display Value="RDE160" />
+                    <Code Value="RDE173" />
+                    <Display Value="RDE173" />
                     <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE160" />
+                    <Url Value="http://radelement.org/element/RDE173" />
                 </Coding>
             </CodableConcept>
-            <Label>Location</Label>
-            <Hint>Location</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>right frontal</Value>
-                    <Label>right frontal</Label>
-                </Choice>
-                <Choice>
-                    <Value>temporal</Value>
-                    <Label>temporal</Label>
-                </Choice>
-                <Choice>
-                    <Value>parietal</Value>
-                    <Label>parietal</Label>
-                </Choice>
-                <Choice>
-                    <Value>right frontal</Value>
-                    <Label>right frontal</Label>
-                </Choice>
-                <Choice>
-                    <Value>temporal</Value>
-                    <Label>temporal</Label>
-                </Choice>
-                <Choice>
-                    <Value>parietal</Value>
-                    <Label>parietal</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
+            <Label>ASPECTS classification</Label>
+            <Hint>ASPECTS classification</Hint>
+        </IntegerDataElement>
     </DataElements>
     <Rules>
         <DecisionPoint Id="macrodp">
