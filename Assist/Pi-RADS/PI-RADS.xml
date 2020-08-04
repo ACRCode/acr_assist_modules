@@ -55,13 +55,13 @@
 		
 		
 		<IntegerDataElement IsRequired="true" Id="nodulenumber_1" DisplaySequence="1">
-					<Label>What is the nodule number?</Label>
+					<Label>(1) What is the nodule number?</Label>
 					<Minimum>1</Minimum>
 					<Maximum>6</Maximum>	
 		</IntegerDataElement>
 
 		<ChoiceDataElement Id="Zoneselection_1" IsRequired="true" DisplaySequence="2">
-			<Label>What is the dominant zone of the lesion?</Label>
+			<Label>(1) What is the dominant zone of the lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -83,7 +83,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_1" IsRequired="true" DisplaySequence="3">
-			<Label>Is there any other zone involvement?</Label>
+			<Label>(1) Is there any other zone involvement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -130,7 +130,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Index_1" IsRequired="true" DisplaySequence="4">
-			<Label>Is this the index lesion?</Label>
+			<Label>(1) Is this the index lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -144,14 +144,14 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="Diameter_1" IsRequired="true" DisplaySequence="5">
-			<Label>Diameter of the lesion in cm</Label>
+			<Label>(1) Diameter of the lesion in cm</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
 		</NumericDataElement>
 
 
 		<ChoiceDataElement Id="DWI_1" IsRequired="true" DisplaySequence="6">
-			<Label>Diffusion-Weighted Imaging</Label>
+			<Label>(1) Diffusion-Weighted Imaging</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -200,7 +200,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WPZ_1" IsRequired="true" DisplaySequence="7">
-			<Label>T2 Weighted Pulse Sequences for Peripheral Zone</Label>
+			<Label>(1) T2 Weighted Pulse Sequences for Peripheral Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -232,7 +232,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WTZ_1" IsRequired="true" DisplaySequence="8">
-			<Label>T2 Weighted Pulse Sequences for Transition Zone</Label>
+			<Label>(1) T2 Weighted Pulse Sequences for Transition Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -264,7 +264,7 @@
 		</ChoiceDataElement>			
 
 		<ChoiceDataElement Id="DCE_1" IsRequired="true" DisplaySequence="9">
-			<Label>Dynamic Contrast Enhanced MRI</Label>
+			<Label>(1) Dynamic Contrast Enhanced MRI</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -303,7 +303,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="nodulequestion_1" IsRequired="true" DisplaySequence="10">
-			<Label>Are there any additional lesions?</Label>
+			<Label>(1) Are there any additional lesions?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -348,7 +348,7 @@
 		<!-- Nodule 2 -->
           
          <IntegerDataElement  IsRequired="false" Id="nodulenumber_2" DisplaySequence="11">
-					<Label>What is the nodule number?</Label>
+					<Label>(2) What is the nodule number?</Label>
 					<Minimum>1</Minimum>
 					<Maximum>6</Maximum>				
 		             <ConditionalProperties>	
@@ -360,7 +360,7 @@
 		</IntegerDataElement>
 
 		<ChoiceDataElement Id="Zoneselection_2" IsRequired="true" DisplaySequence="12">
-			<Label>What is the dominant zone of the lesion?</Label>
+			<Label>(2) What is the dominant zone of the lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -392,7 +392,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_2" IsRequired="true" DisplaySequence="13">
-			<Label>Is there any other zone involvement?</Label>
+			<Label>(2) Is there any other zone involvement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -442,7 +442,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Index_2" IsRequired="true" DisplaySequence="14">
-			<Label>Is this the index lesion?</Label>
+			<Label>(2) Is this the index lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -462,7 +462,7 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="Diameter_2" IsRequired="true" DisplaySequence="15">
-			<Label>Diameter of the lesion in cm</Label>
+			<Label>(2) Diameter of the lesion in cm</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
 			<ConditionalProperties>	
@@ -475,7 +475,7 @@
 
 
 		<ChoiceDataElement Id="DWI_2" IsRequired="true" DisplaySequence="16">
-			<Label>Diffusion-Weighted Imaging</Label>
+			<Label>(2) Diffusion-Weighted Imaging</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -528,7 +528,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WPZ_2" IsRequired="true" DisplaySequence="17">
-			<Label>T2 Weighted Pulse Sequences for Peripheral Zone</Label>
+			<Label>(2) T2 Weighted Pulse Sequences for Peripheral Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -564,7 +564,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WTZ_2" IsRequired="true" DisplaySequence="18">
-			<Label>T2 Weighted Pulse Sequences for Transition Zone</Label>
+			<Label>(2) T2 Weighted Pulse Sequences for Transition Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -600,7 +600,7 @@
 		</ChoiceDataElement>			
 
 		<ChoiceDataElement Id="DCE_2" IsRequired="true" DisplaySequence="19">
-			<Label>Dynamic Contrast Enhanced MRI</Label>
+			<Label>(2) Dynamic Contrast Enhanced MRI</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -643,7 +643,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="nodulequestion_2" IsRequired="true" DisplaySequence="20">
-			<Label>Are there any additional lesions?</Label>
+			<Label>(2) Are there any additional lesions?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -691,7 +691,7 @@
 
 		<!-- Nodule 3 -->
         <IntegerDataElement IsRequired="true" Id="nodulenumber_3" DisplaySequence="21">
-					<Label>What is the nodule number?</Label>
+					<Label>(3) What is the nodule number?</Label>
 					<Minimum>1</Minimum>
 					<Maximum>6</Maximum>		
 			<ConditionalProperties>
@@ -707,7 +707,7 @@
 
 
 		<ChoiceDataElement Id="Zoneselection_3" IsRequired="true" DisplaySequence="22">
-			<Label>What is the dominant zone of the lesion?</Label>
+			<Label>(3) What is the dominant zone of the lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -735,7 +735,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_3" IsRequired="true" DisplaySequence="23">
-			<Label>Is there any other zone involvement?</Label>
+			<Label>(3) Is there any other zone involvement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -785,7 +785,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Index_3" IsRequired="true" DisplaySequence="24">
-			<Label>Is this the index lesion?</Label>
+			<Label>(3) Is this the index lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -805,7 +805,7 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="Diameter_3" IsRequired="true" DisplaySequence="25">
-			<Label>Diameter of the lesion in cm</Label>
+			<Label>(3) Diameter of the lesion in cm</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
@@ -818,7 +818,7 @@
 
 
 		<ChoiceDataElement Id="DWI_3" IsRequired="true" DisplaySequence="26">
-			<Label>Diffusion-Weighted Imaging</Label>
+			<Label>(3) Diffusion-Weighted Imaging</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -871,7 +871,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WPZ_3" IsRequired="true" DisplaySequence="27">
-			<Label>T2 Weighted Pulse Sequences for Peripheral Zone</Label>
+			<Label>(3) T2 Weighted Pulse Sequences for Peripheral Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -907,7 +907,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WTZ_3" IsRequired="true" DisplaySequence="28">
-			<Label>T2 Weighted Pulse Sequences for Transition Zone</Label>
+			<Label>(3) T2 Weighted Pulse Sequences for Transition Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -943,7 +943,7 @@
 		</ChoiceDataElement>			
 
 		<ChoiceDataElement Id="DCE_3" IsRequired="true" DisplaySequence="29">
-			<Label>Dynamic Contrast Enhanced MRI</Label>
+			<Label>(3) Dynamic Contrast Enhanced MRI</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -988,7 +988,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="nodulequestion_3" IsRequired="true" DisplaySequence="30">
-			<Label>Are there any additional lesions?</Label>
+			<Label>(3) Are there any additional lesions?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -1038,7 +1038,7 @@
 		<!-- Nodule 4 -->
 		 
 		<IntegerDataElement  IsRequired="true" Id="nodulenumber_4" DisplaySequence="31" >
-					<Label>What is the nodule number?</Label>
+					<Label>(4) What is the nodule number?</Label>
 					<Minimum>1</Minimum>
 					<Maximum>6</Maximum>
 			<ConditionalProperties>
@@ -1056,7 +1056,7 @@
 		
 
 		<ChoiceDataElement Id="Zoneselection_4" IsRequired="true" DisplaySequence="32">
-			<Label>What is the dominant zone of the lesion?</Label>
+			<Label>(4) What is the dominant zone of the lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -1084,7 +1084,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_4" IsRequired="true" DisplaySequence="33">
-			<Label>Is there any other zone involvement?</Label>
+			<Label>(4) Is there any other zone involvement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -1136,7 +1136,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Index_4" IsRequired="true" DisplaySequence="34">
-			<Label>Is this the index lesion?</Label>
+			<Label>(4) Is this the index lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -1156,7 +1156,7 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="Diameter_4" IsRequired="true" DisplaySequence="35">
-			<Label>Diameter of the lesion in cm</Label>
+			<Label>(4) Diameter of the lesion in cm</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
@@ -1169,7 +1169,7 @@
 
 
 		<ChoiceDataElement Id="DWI_4" IsRequired="true" DisplaySequence="36">
-			<Label>Diffusion-Weighted Imaging</Label>
+			<Label>(4) Diffusion-Weighted Imaging</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -1223,7 +1223,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WPZ_4" IsRequired="true" DisplaySequence="37">
-			<Label>T2 Weighted Pulse Sequences for Peripheral Zone</Label>
+			<Label>(4) T2 Weighted Pulse Sequences for Peripheral Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -1261,7 +1261,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WTZ_4" IsRequired="true" DisplaySequence="38">
-			<Label>T2 Weighted Pulse Sequences for Transition Zone</Label>
+			<Label>(4) T2 Weighted Pulse Sequences for Transition Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -1299,7 +1299,7 @@
 		</ChoiceDataElement>			
 
 		<ChoiceDataElement Id="DCE_4" IsRequired="true" DisplaySequence="39">
-			<Label>Dynamic Contrast Enhanced MRI</Label>
+			<Label>(4) Dynamic Contrast Enhanced MRI</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -1344,7 +1344,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="nodulequestion_4" IsRequired="true" DisplaySequence="40">
-			<Label>Are there any additional lesions?</Label>
+			<Label>(4) Are there any additional lesions?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -1393,7 +1393,7 @@
 
 		<!-- Nodule 5 -->
         <IntegerDataElement DisplaySequence="41" IsRequired="true" Id="nodulenumber_5">
-					<Label>What is the nodule number?</Label>
+					<Label>(5) What is the nodule number?</Label>
 					<Minimum>1</Minimum>
 					<Maximum>6</Maximum>
 			<ConditionalProperties>
@@ -1411,7 +1411,7 @@
 
 
 		<ChoiceDataElement Id="Zoneselection_5" IsRequired="true" DisplaySequence="42">
-			<Label>What is the dominant zone of the lesion?</Label>
+			<Label>(5) What is the dominant zone of the lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -1439,7 +1439,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Other_zones_5" IsRequired="true" DisplaySequence="43">
-			<Label>Is there any other zone involvement?</Label>
+			<Label>(5) Is there any other zone involvement?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>PZ</Value>
@@ -1491,7 +1491,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="Index_5" IsRequired="true" DisplaySequence="44">
-			<Label>Is this the index lesion?</Label>
+			<Label>(5) Is this the index lesion?</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>Y</Value>
@@ -1511,7 +1511,7 @@
 		</ChoiceDataElement>
 
 		<NumericDataElement Id="Diameter_5" IsRequired="true" DisplaySequence="45">
-			<Label>Diameter of the lesion in cm</Label>
+			<Label>(5) Diameter of the lesion in cm</Label>
 			<Minimum>0.1</Minimum>
 			<Maximum>15.0</Maximum>
 			<ConditionalProperties>
@@ -1524,7 +1524,7 @@
 
 
 		<ChoiceDataElement Id="DWI_5" IsRequired="true" DisplaySequence="46">
-			<Label>Diffusion-Weighted Imaging</Label>
+			<Label>(5) Diffusion-Weighted Imaging</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -1577,7 +1577,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WPZ_5" IsRequired="true" DisplaySequence="47">
-			<Label>T2 Weighted Pulse Sequences for Peripheral Zone</Label>
+			<Label>(5) T2 Weighted Pulse Sequences for Peripheral Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -1615,7 +1615,7 @@
 		</ChoiceDataElement>
 
 		<ChoiceDataElement Id="T2WTZ_5" IsRequired="true" DisplaySequence="48">
-			<Label>T2 Weighted Pulse Sequences for Transition Zone</Label>
+			<Label>(5) T2 Weighted Pulse Sequences for Transition Zone</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
@@ -1653,7 +1653,7 @@
 		</ChoiceDataElement>			
 
 		<ChoiceDataElement Id="DCE_5" IsRequired="true" DisplaySequence="49">
-			<Label>Dynamic Contrast Enhanced MRI</Label>
+			<Label>(5) Dynamic Contrast Enhanced MRI</Label>
 			<ChoiceInfo>
 				<Choice>
 					<Value>1</Value>
