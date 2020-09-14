@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
     <Metadata>
-        <Label>Epidural Spinal CC</Label>
+        <Label>Epidural Spinal Cord Compression (ESCC)</Label>
         <ID>EpiduralSpinal</ID>
         <SchemaVersion>2.0</SchemaVersion>
         <ModuleVersion>2.0</ModuleVersion>
         <CreatedDate>2018-12-31</CreatedDate>
-        <LastModifiedDate>2020-07-10</LastModifiedDate>
+        <LastModifiedDate>2020-08-3</LastModifiedDate>
         <ApprovedBy>American College of Radiology</ApprovedBy>
         <ReviewedBy>American College of Radiology</ReviewedBy>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <DevelopedBy>Wende Gibbs MD</DevelopedBy>
         <CodableConcept Name="codableConcept_EpiduralSpinal">
             <Coding>
                 <System Value="RadElement" />
@@ -21,7 +21,7 @@
             </Coding>
         </CodableConcept>
         <Info>
-            <Description>This module describes the Common Data elements and Macros for Epidural Spinal</Description>
+            <Description>This module describes the Common Data elements and Macros for Epidural Spinal Cord Compression and SINS</Description>
             <References>
                 <Citation Url="http://radelement.org/set/RDES21"> CDE URL </Citation>
             </References>
@@ -32,9 +32,9 @@
                 </Diagram>
             </Diagrams>
             <Contact>
-                <Name>ACR Assist</Name>
+                <Name>Wende Gibbs MD</Name>
                 <Email>acr-assist@acr.org</Email>
-                <Institution>American College of Radiology</Institution>
+                <Institution>American Society of Neuroradiology ASNR</Institution>
             </Contact>
         </Info>
         <ReportCitationText>Epidural Spinal</ReportCitationText>
@@ -53,7 +53,6 @@
         <VoiceActivation />
     </Metadata>
     <DataElements>
-        <GlobalValue Id="conditionConst">10</GlobalValue>
         <ChoiceDataElement Id="spinallevel" IsRequired="true" DisplaySequence="1">
             <CodableConcept Name="spinallevel">
                 <Coding>
@@ -234,7 +233,7 @@
             </ChoiceInfo>
         </ChoiceDataElement>
         <ChoiceDataElement Id="POSTERIORELEMENTS" IsRequired="true" DisplaySequence="6">
-            <CodableConcept Name="POSTERIORELEMENTS">
+            <CodableConcept Name="POSTERIOR ELEMENTS">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
@@ -251,8 +250,8 @@
                     <Label>None</Label>
                 </Choice>
                 <Choice>
-                    <Value>unilteral</Value>
-                    <Label>Unilteral</Label>
+                    <Value>Unilateral</Value>
+                    <Label>Unilateral</Label>
                 </Choice>
                 <Choice>
                     <Value>bilateral</Value>
@@ -324,7 +323,7 @@
             </ChoiceInfo>
         </ChoiceDataElement>
         <ChoiceDataElement Id="CompressionGrade" IsRequired="true" DisplaySequence="8">
-            <CodableConcept Name="CompressionGrade">
+            <CodableConcept Name="Compression grade">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
@@ -351,6 +350,14 @@
                 <Choice>
                     <Value>3</Value>
                     <Label>3</Label>
+                </Choice>
+                <Choice>
+                    <Value>1c</Value>
+                    <Label>1c</Label>
+                </Choice>
+                <Choice>
+                    <Value>0</Value>
+                    <Label>0</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
