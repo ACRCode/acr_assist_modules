@@ -45,71 +45,21 @@
         <ApplicableSexes Value="Both" />
     </Metadata>
     <DataElements>
-        <ChoiceDataElement Id="Hyperacutesigns" IsRequired="true" DisplaySequence="1">
-            <CodableConcept Name="Hyperacute signs">
+        <IntegerDataElement Id="ASPECTSclassification" IsRequired="true" DisplaySequence="1" Unit="">
+            <CodableConcept Name="ASPECTS classification">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
-                    <Code Value="RDE159" />
-                    <Display Value="RDE159" />
+                    <Code Value="RDE173" />
+                    <Display Value="RDE173" />
                     <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE159" />
+                    <Url Value="http://radelement.org/element/RDE173" />
                 </Coding>
             </CodableConcept>
-            <Label>Hyperacute signs</Label>
-            <Hint>Hyperacute signs</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>yes</Value>
-                    <Label>yes</Label>
-                </Choice>
-                <Choice>
-                    <Value>no</Value>
-                    <Label>no</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="2">
-            <CodableConcept Name="Location">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE160" />
-                    <Display Value="RDE160" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE160" />
-                </Coding>
-            </CodableConcept>
-            <Label>Location</Label>
-            <Hint>Location</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>right frontal</Value>
-                    <Label>right frontal</Label>
-                </Choice>
-                <Choice>
-                    <Value>temporal</Value>
-                    <Label>temporal</Label>
-                </Choice>
-                <Choice>
-                    <Value>parietal</Value>
-                    <Label>parietal</Label>
-                </Choice>
-                <Choice>
-                    <Value>right frontal</Value>
-                    <Label>right frontal</Label>
-                </Choice>
-                <Choice>
-                    <Value>temporal</Value>
-                    <Label>temporal</Label>
-                </Choice>
-                <Choice>
-                    <Value>parietal</Value>
-                    <Label>parietal</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="vascularterritory" IsRequired="true" DisplaySequence="3">
+            <Label>ASPECTS classification</Label>
+            <Hint>ASPECTS classification</Hint>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="vascularterritory" IsRequired="true" DisplaySequence="2">
             <CodableConcept Name="Vascular Territory">
                 <Coding>
                     <System Value="RadElement" />
@@ -161,55 +111,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="hemorrhagicconversion" IsRequired="true" DisplaySequence="4">
-            <CodableConcept Name="Hemorrhagic conversion">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE162" />
-                    <Display Value="RDE162" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE162" />
-                </Coding>
-            </CodableConcept>
-            <Label>Hemorrhagic conversion</Label>
-            <Hint>Hemorrhagic conversion</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>yes</Value>
-                    <Label>yes</Label>
-                </Choice>
-                <Choice>
-                    <Value>no</Value>
-                    <Label>no</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="5">
-            <CodableConcept Name="Mass effect">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE163" />
-                    <Display Value="RDE163" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE163" />
-                </Coding>
-            </CodableConcept>
-            <Label>Mass effect</Label>
-            <Hint>Mass effect</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>yes</Value>
-                    <Label>yes</Label>
-                </Choice>
-                <Choice>
-                    <Value>no</Value>
-                    <Label>no</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="vascularmechanismpattern" IsRequired="true" DisplaySequence="6">
+        <ChoiceDataElement Id="vascularmechanismpattern" IsRequired="true" DisplaySequence="3">
             <CodableConcept Name="Vascular Mechanism/Pattern">
                 <Coding>
                     <System Value="RadElement" />
@@ -234,6 +136,94 @@
                 <Choice>
                     <Value>borderzone ischemia</Value>
                     <Label>borderzone ischemia</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="hemorrhagicconversion" IsRequired="true" DisplaySequence="4">
+            <CodableConcept Name="Hemorrhagic conversion">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE162" />
+                    <Display Value="RDE162" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE162" />
+                </Coding>
+            </CodableConcept>
+            <Label>Hemorrhagic conversion</Label>
+            <Hint>Hemorrhagic conversion</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="anatomiclocation" IsRequired="true" DisplaySequence="5">
+            <CodableConcept Name="Location">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE160" />
+                    <Display Value="RDE160" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE160" />
+                </Coding>
+            </CodableConcept>
+            <Label>Location</Label>
+            <Hint>Location</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>right frontal</Value>
+                    <Label>right frontal</Label>
+                </Choice>
+                <Choice>
+                    <Value>temporal</Value>
+                    <Label>temporal</Label>
+                </Choice>
+                <Choice>
+                    <Value>parietal</Value>
+                    <Label>parietal</Label>
+                </Choice>
+                <Choice>
+                    <Value>right frontal</Value>
+                    <Label>right frontal</Label>
+                </Choice>
+                <Choice>
+                    <Value>temporal</Value>
+                    <Label>temporal</Label>
+                </Choice>
+                <Choice>
+                    <Value>parietal</Value>
+                    <Label>parietal</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="6">
+            <CodableConcept Name="Mass effect">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE163" />
+                    <Display Value="RDE163" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE163" />
+                </Coding>
+            </CodableConcept>
+            <Label>Mass effect</Label>
+            <Hint>Mass effect</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
@@ -280,30 +270,6 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="hyperdense" IsRequired="true" DisplaySequence="9">
-            <CodableConcept Name="Hyperdense vessel?">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE167" />
-                    <Display Value="RDE167" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE167" />
-                </Coding>
-            </CodableConcept>
-            <Label>Hyperdense vessel?</Label>
-            <Hint>Hyperdense vessel?</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>yes</Value>
-                    <Label>yes</Label>
-                </Choice>
-                <Choice>
-                    <Value>no</Value>
-                    <Label>no</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
         <ChoiceDataElement Id="hyperdensesign" IsRequired="true" DisplaySequence="10">
             <CodableConcept Name="Hyperdense Sign">
                 <Coding>
@@ -336,31 +302,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="arterialcalcification" IsRequired="true" DisplaySequence="11">
-            <CodableConcept Name="Arterial calcification">
-                <Coding>
-                    <System Value="RadElement" />
-                    <Version Value="1.0" />
-                    <Code Value="RDE169" />
-                    <Display Value="RDE169" />
-                    <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE169" />
-                </Coding>
-            </CodableConcept>
-            <Label>Arterial calcification</Label>
-            <Hint>Arterial calcification</Hint>
-            <ChoiceInfo>
-                <Choice>
-                    <Value>yes</Value>
-                    <Label>yes</Label>
-                </Choice>
-                <Choice>
-                    <Value>no</Value>
-                    <Label>no</Label>
-                </Choice>
-            </ChoiceInfo>
-        </ChoiceDataElement>
-        <ChoiceDataElement Id="venousthrombus" IsRequired="true" DisplaySequence="12">
+        <ChoiceDataElement Id="venousthrombus" IsRequired="true" DisplaySequence="11">
             <CodableConcept Name="Venous thrombus">
                 <Coding>
                     <System Value="RadElement" />
@@ -384,7 +326,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="sinuslocation" IsRequired="true" DisplaySequence="13">
+        <ChoiceDataElement Id="sinuslocation" IsRequired="true" DisplaySequence="12">
             <CodableConcept Name="Sinus location">
                 <Coding>
                     <System Value="RadElement" />
@@ -408,7 +350,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <ChoiceDataElement Id="hydrocephalus" IsRequired="true" DisplaySequence="14">
+        <ChoiceDataElement Id="hydrocephalus" IsRequired="true" DisplaySequence="13">
             <CodableConcept Name="Hydrocephalus">
                 <Coding>
                     <System Value="RadElement" />
@@ -432,20 +374,54 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <IntegerDataElement Id="ASPECTSclassification" IsRequired="true" DisplaySequence="15" Unit="">
-            <CodableConcept Name="ASPECTS classification">
+        <ChoiceDataElement Id="Hyperacutesigns" IsRequired="true" DisplaySequence="14">
+            <CodableConcept Name="Hyperacute signs">
                 <Coding>
                     <System Value="RadElement" />
                     <Version Value="1.0" />
-                    <Code Value="RDE173" />
-                    <Display Value="RDE173" />
+                    <Code Value="RDE159" />
+                    <Display Value="RDE159" />
                     <UserSelected Value="true" />
-                    <Url Value="http://radelement.org/element/RDE173" />
+                    <Url Value="http://radelement.org/element/RDE159" />
                 </Coding>
             </CodableConcept>
-            <Label>ASPECTS classification</Label>
-            <Hint>ASPECTS classification</Hint>
-        </IntegerDataElement>
+            <Label>Hyperacute signs</Label>
+            <Hint>Hyperacute signs</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="arterialcalcification" IsRequired="true" DisplaySequence="15">
+            <CodableConcept Name="Arterial calcification">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE169" />
+                    <Display Value="RDE169" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE169" />
+                </Coding>
+            </CodableConcept>
+            <Label>Arterial calcification</Label>
+            <Hint>Arterial calcification</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
     </DataElements>
     <Rules>
         <DecisionPoint Id="macrodp">
