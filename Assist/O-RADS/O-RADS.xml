@@ -181,8 +181,8 @@
                     <Label>Does not exert mass effect</Label>
                 </Choice>
                 <Choice>
-                    <Value>septations</Value>
-                    <Label>Contains septations</Label>
+                    <Value>septation(s)</Value>
+                    <Label>Contains septation(s)</Label>
                 </Choice>
                 <Choice>
                     <Value>feature4</Value>
@@ -211,7 +211,7 @@
             <ChoiceInfo>
                 <Choice>
                     <Value>incomplete_septation</Value>
-                    <Label>Incomplete septation</Label>
+                    <Label>Incomplete septation(s)</Label>
                 </Choice>
                 <Choice>
                     <Value>tubular</Value>
@@ -297,12 +297,12 @@
                 </Choice>
                 <Choice>
                     <Value>cystic</Value>
-                    <Label>Cystic (uni/multilocular +/- solid component)</Label>
+                    <Label>Cystic (uni/multilocular +/- solid component(s))</Label>
                     <ReportText>cystic</ReportText>
                 </Choice>
                 <Choice>
                     <Value>solid</Value>
-                    <Label>solid/solid-appearing (≥ 80% solid)</Label>
+                    <Label>Solid/solid-appearing (≥ 80% solid)</Label>
                     <ReportText>solid/solid-appearing</ReportText>
                 </Choice>
             </ChoiceInfo>
@@ -430,7 +430,7 @@
         </MultiChoiceDataElement>
         <ChoiceDataElement Id="cystic_lesion" IsRequired="true" DisplaySequence="12">
             <Label>Cystic lesion</Label>
-            <Hint>   *NOTE: A unilocular cyst may contain an incomplete septation
+            <Hint>   *NOTE: A unilocular cyst may contain an incomplete septation(s)
 **NOTE: Focal wall irregularity &lt; 3 mm in height, and blood or dermoid contents are NOT considered a “solid component” 
 </Hint>
             <ChoiceInfo>
@@ -466,7 +466,7 @@
                 <Choice>
                     <Value>with_solid</Value>
                     <Label>With solid component</Label>
-                    <ReportText>with solid component</ReportText>
+                    <ReportText>with solid component(s)</ReportText>
                 </Choice>
             </ChoiceInfo>
             <ConditionalProperties>
@@ -530,7 +530,7 @@
             </ConditionalProperties>
         </ChoiceDataElement>
         <ChoiceDataElement Id="inner_wall_multi" IsRequired="true" DisplaySequence="14">
-            <Label>Inner Wall  +/- septations</Label>
+            <Label>Inner Wall  +/- septation(s)</Label>
             <Hint>*NOTE: An incomplete septation alone is NOT considered an irregular inner margin and would still qualify as smooth as long as no focal wall thickening is present
 </Hint>
             <Diagrams>
@@ -755,23 +755,23 @@
             <ChoiceInfo>
                 <Choice>
                     <Value>score_1</Value>
-                    <Label>1 (No flow)</Label>
+                    <Label>1 (no flow)</Label>
                     <ReportText>color score 1 (no flow)</ReportText>
                 </Choice>
                 <Choice>
                     <Value>score_2</Value>
-                    <Label>2 (Minimal flow)</Label>
+                    <Label>2 (minimal flow)</Label>
                     <ReportText>color score 2 (minimal flow - hypovascular)</ReportText>
                 </Choice>
                 <Choice>
                     <Value>score_3</Value>
-                    <Label>3 (Moderate flow)</Label>
+                    <Label>3 (moderate flow)</Label>
                     <ReportText>color score 3 (moderate flow)</ReportText>
                 </Choice>
                 <Choice>
                     <Value>score_4</Value>
-                    <Label>4 (Very strong flow)</Label>
-                    <ReportText>color score 4 (Very strong flow)</ReportText>
+                    <Label>4 (very strong flow)</Label>
+                    <ReportText>color score 4 (very strong flow)</ReportText>
                 </Choice>
             </ChoiceInfo>
             <ConditionalProperties>
@@ -1837,7 +1837,7 @@
             </Branch>
             <Branch>
                 <ContainsCondition DataElementId="Peritoneal_features" ComparisonValue="septations" />
-                <ReportText Type="PlainText">contains septations</ReportText>
+                <ReportText Type="PlainText">contains septation(s)</ReportText>
             </Branch>
             <Branch>
                 <AndCondition>
@@ -1874,7 +1874,7 @@
         <TemplatePartial Id="Hydrosalpinx_features_computed_value_tp">
             <Branch>
                 <ContainsCondition DataElementId="Hydrosalpinx_features" ComparisonValue="incomplete_septation" />
-                <ReportText Type="PlainText">incomplete septation</ReportText>
+                <ReportText Type="PlainText">incomplete septation(s)</ReportText>
             </Branch>
             <Branch>
                 <AndCondition>
@@ -2320,7 +2320,7 @@
                         <NotEqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple" />
                     </OrCondition>
                 </AndCondition>
-                <ReportText Type="PlainText"> without solid component</ReportText>
+                <ReportText Type="PlainText"> without solid component(s)</ReportText>
             </Branch>
             <Branch>
                 <AndCondition>
@@ -2331,7 +2331,7 @@
                         <NotEqualCondition DataElementId="inner_content" ComparisonValue="anechoic_simple" />
                     </OrCondition>
                 </AndCondition>
-                <ReportText Type="PlainText"> with solid component</ReportText>
+                <ReportText Type="PlainText"> with solid component(s)</ReportText>
             </Branch>
             <Branch>
                 <SectionIf DataElementId="Extraovarian_lesion_type" />
