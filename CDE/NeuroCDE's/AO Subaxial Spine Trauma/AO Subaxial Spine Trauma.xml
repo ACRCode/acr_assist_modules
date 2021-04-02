@@ -1,201 +1,199 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ReportingModule>
-  <Metadata>
-    <Label>AO Subaxial Spine Trauma</Label>
-    <ID>AO_Subaxial_Spine_Trauma</ID>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ModuleVersion>1.0</ModuleVersion>
-    <CreatedDate>2019-10-15</CreatedDate>
-    <LastModifiedDate>2019-10-15</LastModifiedDate>
-    <DevelopedBy>American Society of Neuroradiology (ASNR)</DevelopedBy>
-    <CodableConcept Name="codableConcept_AO_Subaxial_Spine_Trauma">
-      <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
-        <Code Value="RDES87" />
-        <Display Value="RDES87" />
-        <UserSelected Value="false" />
-        <Url Value="http://radelement.org/set/RDES87" />
-      </Coding>
-    </CodableConcept>
-    <Info>
-      <Description>AO Subaxial Spine Trauma</Description>
-      <References>
-        <Citation PubmedId="25716661" Url="https://www.researchgate.net/profile/Luiz_Vialle/publication/272837861_AOSpine_Subaxial_Cervical_Spine_Injury_Classification_System/links/54f49fd40cf2eed5d73505bc.pdf">AOSpine subaxial cervical spine injury classification system.
+    <Metadata>
+        <Label>AO Subaxial Spine Trauma</Label>
+        <ID>AO_Subaxial_Spine_Trauma</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2019-10-15</CreatedDate>
+        <LastModifiedDate>2020-12-14</LastModifiedDate>
+        <DevelopedBy>American Society of Neuroradiology (ASNR)</DevelopedBy>
+        <CodableConcept Name="Codable_Concept_AO Subaxial Spine Trauma">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES87" />
+                <Display Value="RDES87" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES87" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>AO Subaxial Spine Trauma</Description>
+            <References>
+                <Citation Url="https://www.researchgate.net/profile/Luiz_Vialle/publication/272837861_AOSpine_Subaxial_Cervical_Spine_Injury_Classification_System/links/54f49fd40cf2eed5d73505bc.pdf">
+                    <Description>AOSpine subaxial cervical spine injury classification system.
+Vaccaro AR, Koerner JD, Radcliff KE, Oner FC, Reinhold M, Schnake KJ, Kandziora F, Fehlings MG, Dvorak MF, Aarabi B, Rajasekaran S, Schroeder GD, Kepler CK, Vialle LR.
+Eur Spine J. 2016 Jul;25(7):2173-84. doi: 10.1007/s00586-015-3831-3. Epub 2015 Feb 26.</Description>AOSpine subaxial cervical spine injury classification system.
 Vaccaro AR, Koerner JD, Radcliff KE, Oner FC, Reinhold M, Schnake KJ, Kandziora F, Fehlings MG, Dvorak MF, Aarabi B, Rajasekaran S, Schroeder GD, Kepler CK, Vialle LR.
 Eur Spine J. 2016 Jul;25(7):2173-84. doi: 10.1007/s00586-015-3831-3. Epub 2015 Feb 26.</Citation>
-      </References>
-      <Diagrams>
-        <Diagram DisplaySequence="1" IsKeyDiagram="false">
-          <Location>image.png</Location>
-          <Label>image</Label>
-        </Diagram>
-      </Diagrams>
-      <Contact>
-        <Name>Adam Flanders MD</Name>
-        <Institution>American Society of Neuroradiology (ASNR)</Institution>
-      </Contact>
-    </Info>
-    <Ontology>
-      <AnatomicRegions />
-      <PossibleDiagnoses />
-    </Ontology>
-    <ApplicableExams>
-      <ApplicableExamCategory Axis="Modality">CT</ApplicableExamCategory>
-      <ApplicableExamCategory Axis="Anatomy">Cervical spine</ApplicableExamCategory>
-    </ApplicableExams>
-    <ApplicableSexes Value="Male" />
-    <ApplicableAgeGroups />
-    <TextCues>
-      <ContextPhrases />
-      <KeyWords />
-      <NegationPhrases />
-    </TextCues>
-    <VoiceActivation />
-  </Metadata>
-  <DataElements>
-    <MultiChoiceDataElement Id="TypeACompression_0" IsRequired="true" DisplaySequence="1">
-      <CodableConcept Name="codableConcept_RDES87_TypeACompression_0">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE371" />
-          <Display Value="RDE371" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE371" />
-        </Coding>
-      </CodableConcept>
-      <Label>Type A: Compression</Label>
-      <Hint>A1	wedge, no post wall
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="false">
+                    <Location>image.png</Location>
+                    <Label>image</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>Adam Flanders MD</Name>
+                <Institution>American Society of Neuroradiology (ASNR)</Institution>
+            </Contact>
+        </Info>
+        <ApplicableExams>
+            <ApplicableExamCategory Axis="Modality">CT</ApplicableExamCategory>
+            <ApplicableExamCategory Axis="Anatomy">Cervical spine</ApplicableExamCategory>
+        </ApplicableExams>
+        <ApplicableSexes Value="Male" />
+        <Specialties>
+            <Specialty>
+                <Name>Neuroradiology</Name>
+                <Abbreviation>NR</Abbreviation>
+            </Specialty>
+        </Specialties>
+    </Metadata>
+    <DataElements>
+        <MultiChoiceDataElement Id="TypeACompression_0" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="codableConcept_RDES87_TypeACompression_0">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE371" />
+                    <Display Value="RDE371" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE371" />
+                </Coding>
+            </CodableConcept>
+            <Label>Type A: Compression</Label>
+            <Hint>A1	wedge, no post wall
 A2	split, both endplates
 A3	partial burst-post wall + 1 endplate
 A4	burst - post wall + both endplates</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>A1</Value>
-          <Label>A1</Label>
-        </Choice>
-        <Choice>
-          <Value>A2</Value>
-          <Label>A2</Label>
-        </Choice>
-        <Choice>
-          <Value>A3</Value>
-          <Label>A3</Label>
-        </Choice>
-        <Choice>
-          <Value>A4</Value>
-          <Label>A4</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <MultiChoiceDataElement Id="TypeBTensionbandinjury_1" IsRequired="true" DisplaySequence="2">
-      <CodableConcept Name="codableConcept_RDES87_TypeBTensionbandinjury_1">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE372" />
-          <Display Value="RDE372" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE372" />
-        </Coding>
-      </CodableConcept>
-      <Label>Type B: Tension band injury</Label>
-      <Hint>B1	transosseous
+            <ChoiceInfo>
+                <Choice>
+                    <Value>A1</Value>
+                    <Label>A1</Label>
+                </Choice>
+                <Choice>
+                    <Value>A2</Value>
+                    <Label>A2</Label>
+                </Choice>
+                <Choice>
+                    <Value>A3</Value>
+                    <Label>A3</Label>
+                </Choice>
+                <Choice>
+                    <Value>A4</Value>
+                    <Label>A4</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <MultiChoiceDataElement Id="TypeBTensionbandinjury_1" IsRequired="true" DisplaySequence="2">
+            <CodableConcept Name="codableConcept_RDES87_TypeBTensionbandinjury_1">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE372" />
+                    <Display Value="RDE372" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE372" />
+                </Coding>
+            </CodableConcept>
+            <Label>Type B: Tension band injury</Label>
+            <Hint>B1	transosseous
 B2	Post tension band (hyperflexion)
 B3	anterior tension band (hyperextension)</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>B1</Value>
-          <Label>B1</Label>
-        </Choice>
-        <Choice>
-          <Value>B2</Value>
-          <Label>B2</Label>
-        </Choice>
-        <Choice>
-          <Value>B3</Value>
-          <Label>B3</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <MultiChoiceDataElement Id="TypeCSubluxationtranslation_2" IsRequired="true" DisplaySequence="3">
-      <CodableConcept Name="codableConcept_RDES87_TypeCSubluxationtranslation_2">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE373" />
-          <Display Value="RDE373" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE373" />
-        </Coding>
-      </CodableConcept>
-      <Label>Type C: Subluxation, translation</Label>
-      <Hint>Facets:	
+            <ChoiceInfo>
+                <Choice>
+                    <Value>B1</Value>
+                    <Label>B1</Label>
+                </Choice>
+                <Choice>
+                    <Value>B2</Value>
+                    <Label>B2</Label>
+                </Choice>
+                <Choice>
+                    <Value>B3</Value>
+                    <Label>B3</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <MultiChoiceDataElement Id="TypeCSubluxationtranslation_2" IsRequired="true" DisplaySequence="3">
+            <CodableConcept Name="codableConcept_RDES87_TypeCSubluxationtranslation_2">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE373" />
+                    <Display Value="RDE373" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE373" />
+                </Coding>
+            </CodableConcept>
+            <Label>Type C: Subluxation, translation</Label>
+            <Hint>Facets:	
 F1	nondisplaced, less than 1cm height, &lt;  40% lateral mass
 F2	displaced, &gt; 40% LM
 F3	floating LM (pedicolaminar)
 F4	subluxed, perched, dislocated
 BL	bilateral</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>F1</Value>
-          <Label>F1</Label>
-        </Choice>
-        <Choice>
-          <Value>F2</Value>
-          <Label>F2</Label>
-        </Choice>
-        <Choice>
-          <Value>F3</Value>
-          <Label>F3</Label>
-        </Choice>
-        <Choice>
-          <Value>F4</Value>
-          <Label>F4</Label>
-        </Choice>
-        <Choice>
-          <Value>BL</Value>
-          <Label>BL</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-    <MultiChoiceDataElement Id="Modifier_3" IsRequired="true" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_RDES87_Modifier_3">
-        <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
-          <Code Value="RDE374" />
-          <Display Value="RDE374" />
-          <UserSelected Value="false" />
-          <Url Value="http://radelement.org/element/RDE374" />
-        </Coding>
-      </CodableConcept>
-      <Label>Modifier</Label>
-      <Hint>M1	unclear integrity of PLC
+            <ChoiceInfo>
+                <Choice>
+                    <Value>F1</Value>
+                    <Label>F1</Label>
+                </Choice>
+                <Choice>
+                    <Value>F2</Value>
+                    <Label>F2</Label>
+                </Choice>
+                <Choice>
+                    <Value>F3</Value>
+                    <Label>F3</Label>
+                </Choice>
+                <Choice>
+                    <Value>F4</Value>
+                    <Label>F4</Label>
+                </Choice>
+                <Choice>
+                    <Value>BL</Value>
+                    <Label>BL</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <MultiChoiceDataElement Id="Modifier_3" IsRequired="true" DisplaySequence="4">
+            <CodableConcept Name="codableConcept_RDES87_Modifier_3">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE374" />
+                    <Display Value="RDE374" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE374" />
+                </Coding>
+            </CodableConcept>
+            <Label>Modifier</Label>
+            <Hint>M1	unclear integrity of PLC
 M2	Significant disc herniation
 M3	bone disease with ankylosis:  Ank Spond, DISH
 M4	Vertebral artery injury</Hint>
-      <ChoiceInfo>
-        <Choice>
-          <Value>M1</Value>
-          <Label>M1</Label>
-        </Choice>
-        <Choice>
-          <Value>M2</Value>
-          <Label>M2</Label>
-        </Choice>
-        <Choice>
-          <Value>M3</Value>
-          <Label>M3</Label>
-        </Choice>
-        <Choice>
-          <Value>M4</Value>
-          <Label>M4</Label>
-        </Choice>
-      </ChoiceInfo>
-    </MultiChoiceDataElement>
-  </DataElements>
-  <Rules />
-  <EndPoints />
+            <ChoiceInfo>
+                <Choice>
+                    <Value>M1</Value>
+                    <Label>M1</Label>
+                </Choice>
+                <Choice>
+                    <Value>M2</Value>
+                    <Label>M2</Label>
+                </Choice>
+                <Choice>
+                    <Value>M3</Value>
+                    <Label>M3</Label>
+                </Choice>
+                <Choice>
+                    <Value>M4</Value>
+                    <Label>M4</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
 </ReportingModule>
