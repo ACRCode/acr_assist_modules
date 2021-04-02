@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Epidural Spinal Cord Compression (ESCC)</Label>
+        <ID>EpiduralSpinal</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>2.0</ModuleVersion>
+        <CreatedDate>2018-12-31</CreatedDate>
+        <LastModifiedDate>2020-12-14</LastModifiedDate>
+        <ApprovedBy>American College of Radiology</ApprovedBy>
+        <ReviewedBy>American College of Radiology</ReviewedBy>
+        <DevelopedBy>Wende Gibbs MD</DevelopedBy>
+        <CodableConcept Name="Codable_Concept_Epidural Spinal Cord Compression (ESCC)">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES21" />
+                <Display Value="RDES21" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES21" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>This module describes the Common Data elements and Macros for Epidural Spinal Cord Compression and SINS</Description>
+            <References>
+                <Citation Url="http://radelement.org/set/RDES21">
+                    <Description> CDE URL </Description> CDE URL </Citation>
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="true">
+                    <Location>keydiagram.jpg</Location>
+                    <Label>Epidural Spinal Key image</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>Wende Gibbs MD</Name>
+                <Email>acr-assist@acr.org</Email>
+                <Institution>American Society of Neuroradiology ASNR</Institution>
+            </Contact>
+        </Info>
+        <ReportCitationText>Epidural Spinal</ReportCitationText>
+        <ApplicableSexes Value="Both" />
+        <Specialties>
+            <Specialty>
+                <Name>Neuroradiology</Name>
+                <Abbreviation>NR</Abbreviation>
+            </Specialty>
+        </Specialties>
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="spinallevel" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="spinallevel">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE151" />
+                    <Display Value="RDE151" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE151" />
+                </Coding>
+            </CodableConcept>
+            <Label>Spinal Level</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>T1</Value>
+                    <Label>T1</Label>
+                </Choice>
+                <Choice>
+                    <Value>T2</Value>
+                    <Label>T2</Label>
+                </Choice>
+                <Choice>
+                    <Value>T3</Value>
+                    <Label>T3</Label>
+                </Choice>
+                <Choice>
+                    <Value>T4</Value>
+                    <Label>T4</Label>
+                </Choice>
+                <Choice>
+                    <Value>T5</Value>
+                    <Label>T5</Label>
+                </Choice>
+                <Choice>
+                    <Value>T6</Value>
+                    <Label>T6</Label>
+                </Choice>
+                <Choice>
+                    <Value>T7</Value>
+                    <Label>T7</Label>
+                </Choice>
+                <Choice>
+                    <Value>T8</Value>
+                    <Label>T8</Label>
+                </Choice>
+                <Choice>
+                    <Value>T9</Value>
+                    <Label>T9</Label>
+                </Choice>
+                <Choice>
+                    <Value>T10</Value>
+                    <Label>T10</Label>
+                </Choice>
+                <Choice>
+                    <Value>T11</Value>
+                    <Label>T11</Label>
+                </Choice>
+                <Choice>
+                    <Value>T12</Value>
+                    <Label>T12</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="LOCATION" IsRequired="true" DisplaySequence="2">
+            <CodableConcept Name="LOCATION">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE152" />
+                    <Display Value="RDE152" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE152" />
+                </Coding>
+            </CodableConcept>
+            <Label>LOCATION</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>rigidspine</Value>
+                    <Label>Rigid spine</Label>
+                </Choice>
+                <Choice>
+                    <Value>semi-rigidspine</Value>
+                    <Label>Semi-rigid spine</Label>
+                </Choice>
+                <Choice>
+                    <Value>mobilespine</Value>
+                    <Label>Mobile spine</Label>
+                </Choice>
+                <Choice>
+                    <Value>junctionalspine</Value>
+                    <Label>Junctional Spine</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="LESIONQUALITY" IsRequired="true" DisplaySequence="3">
+            <CodableConcept Name="LESIONQUALITY">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE153" />
+                    <Display Value="RDE153" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE153" />
+                </Coding>
+            </CodableConcept>
+            <Label>LESION QUALITY</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>blastic</Value>
+                    <Label>Blastic</Label>
+                </Choice>
+                <Choice>
+                    <Value>mixed</Value>
+                    <Label>Mixed</Label>
+                </Choice>
+                <Choice>
+                    <Value>lytic</Value>
+                    <Label>Lytic</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="ALIGNMENT" IsRequired="true" DisplaySequence="4">
+            <CodableConcept Name="ALIGNMENT">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE154" />
+                    <Display Value="RDE154" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE154" />
+                </Coding>
+            </CodableConcept>
+            <Label>ALIGNMENT</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>normal</Value>
+                    <Label>Normal</Label>
+                </Choice>
+                <Choice>
+                    <Value>preserved</Value>
+                    <Label>Preserved</Label>
+                </Choice>
+                <Choice>
+                    <Value>deformity</Value>
+                    <Label>Deformity</Label>
+                </Choice>
+                <Choice>
+                    <Value>subluxation</Value>
+                    <Label>Subluxation</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="COLLAPSE" IsRequired="true" DisplaySequence="5">
+            <CodableConcept Name="COLLAPSE">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE155" />
+                    <Display Value="RDE155" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE155" />
+                </Coding>
+            </CodableConcept>
+            <Label>COLLAPSE</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>none</Value>
+                    <Label>None</Label>
+                </Choice>
+                <Choice>
+                    <Value>lessthan50</Value>
+                    <Label>less than 50%</Label>
+                </Choice>
+                <Choice>
+                    <Value>more than 50% body involved</Value>
+                    <Label>More than 50% body involved</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="POSTERIORELEMENTS" IsRequired="true" DisplaySequence="6">
+            <CodableConcept Name="POSTERIOR ELEMENTS">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE156" />
+                    <Display Value="RDE156" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE156" />
+                </Coding>
+            </CodableConcept>
+            <Label>POSTERIOR ELEMENTS</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>none</Value>
+                    <Label>None</Label>
+                </Choice>
+                <Choice>
+                    <Value>Unilateral</Value>
+                    <Label>Unilateral</Label>
+                </Choice>
+                <Choice>
+                    <Value>bilateral</Value>
+                    <Label>Bilateral</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="levelofgreatestcompression" IsRequired="true" DisplaySequence="7">
+            <CodableConcept Name="levelofgreatestcompression">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE157" />
+                    <Display Value="RDE157" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE157" />
+                </Coding>
+            </CodableConcept>
+            <Label>Level of greatest compression</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>T1</Value>
+                    <Label>T1</Label>
+                </Choice>
+                <Choice>
+                    <Value>T2</Value>
+                    <Label>T2</Label>
+                </Choice>
+                <Choice>
+                    <Value>T3</Value>
+                    <Label>T3</Label>
+                </Choice>
+                <Choice>
+                    <Value>T4</Value>
+                    <Label>T4</Label>
+                </Choice>
+                <Choice>
+                    <Value>T5</Value>
+                    <Label>T5</Label>
+                </Choice>
+                <Choice>
+                    <Value>T6</Value>
+                    <Label>T6</Label>
+                </Choice>
+                <Choice>
+                    <Value>T7</Value>
+                    <Label>T7</Label>
+                </Choice>
+                <Choice>
+                    <Value>T8</Value>
+                    <Label>T8</Label>
+                </Choice>
+                <Choice>
+                    <Value>T9</Value>
+                    <Label>T9</Label>
+                </Choice>
+                <Choice>
+                    <Value>T10</Value>
+                    <Label>T10</Label>
+                </Choice>
+                <Choice>
+                    <Value>T11</Value>
+                    <Label>T11</Label>
+                </Choice>
+                <Choice>
+                    <Value>T12</Value>
+                    <Label>T12</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="CompressionGrade" IsRequired="true" DisplaySequence="8">
+            <CodableConcept Name="Compression grade">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE158" />
+                    <Display Value="RDE158" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE158" />
+                </Coding>
+            </CodableConcept>
+            <Label>Compression grade</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>1a</Value>
+                    <Label>1a</Label>
+                </Choice>
+                <Choice>
+                    <Value>1b</Value>
+                    <Label>1b</Label>
+                </Choice>
+                <Choice>
+                    <Value>2</Value>
+                    <Label>2</Label>
+                </Choice>
+                <Choice>
+                    <Value>3</Value>
+                    <Label>3</Label>
+                </Choice>
+                <Choice>
+                    <Value>1c</Value>
+                    <Label>1c</Label>
+                </Choice>
+                <Choice>
+                    <Value>0</Value>
+                    <Label>0</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="macrodp">
+            <Label>Macro Banch</Label>
+            <Branch>
+                <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+                <EndPointRef EndPointId="macroEndpoint" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="macroEndpoint">
+            <Label>A</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <SectionIf DataElementId="spinallevel" />
+                        <ReportText Type="PlainText">Spinal Level: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="spinallevel" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="LOCATION" />
+                        <ReportText Type="PlainText">Location: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="LOCATION" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="LESIONQUALITY" />
+                        <ReportText Type="PlainText">Lesion quality: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="LESIONQUALITY" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="ALIGNMENT" />
+                        <ReportText Type="PlainText">Alignment: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="ALIGNMENT" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="COLLAPSE" />
+                        <ReportText Type="PlainText">Collapse: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="COLLAPSE" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="POSTERIORELEMENTS" />
+                        <ReportText Type="PlainText">Posterior elements: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="POSTERIORELEMENTS" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="levelofgreatestcompression" />
+                        <ReportText Type="PlainText">Level of greatest compression: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="levelofgreatestcompression" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="CompressionGrade" />
+                        <ReportText Type="PlainText">Compression grade: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="CompressionGrade" />
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
+</ReportingModule>
