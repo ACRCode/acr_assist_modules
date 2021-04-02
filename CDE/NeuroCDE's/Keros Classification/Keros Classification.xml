@@ -6,50 +6,59 @@
         <SchemaVersion>2.0</SchemaVersion>
         <ModuleVersion>1.0</ModuleVersion>
         <CreatedDate>2020-01-27</CreatedDate>
-        <LastModifiedDate>2020-01-27</LastModifiedDate>
-        <DevelopedBy>Adam Flanders</DevelopedBy>
-        <CodableConcept />
+        <LastModifiedDate>2020-12-14</LastModifiedDate>
+        <DevelopedBy>Adam Flanders MD</DevelopedBy>
         <Info>
             <Description>Keros Classification</Description>
-            <References />
-            <Diagrams />
+            <References>
+                <Citation>
+                    <Coding>
+                        <System Value="http://www.ncbi.nlm.nih.gov/pubmed" />
+                        <Code Value="14032071" />
+                        <Display Value="14032071" />
+                    </Coding>
+                    <Description>[On the practical value of differences in the level of the lamina cribrosa of the ethmoid].</Description>
+                </Citation>
+            </References>
             <Contact>
-                <Name>Adam Flanders</Name>
-                <Institution>American College of Radiology</Institution>
+                <Name>Adam Flanders MD</Name>
+                <Institution>American Society of Neuroradiology (ASNR)</Institution>
             </Contact>
         </Info>
-        <Ontology>
-            <AnatomicRegions />
-            <PossibleDiagnoses />
-        </Ontology>
         <ApplicableExams>
             <ApplicableExamCategory Axis="Modality">CT</ApplicableExamCategory>
             <ApplicableExamCategory Axis="Anatomy">SINUS, ETHMOID</ApplicableExamCategory>
         </ApplicableExams>
         <ApplicableSexes Value="Male" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
+        <Specialties>
+            <Specialty>
+                <Name>Head and Neck</Name>
+                <Abbreviation>HN</Abbreviation>
+            </Specialty>
+        </Specialties>
     </Metadata>
     <DataElements>
         <MultiChoiceDataElement Id="KerosType_0" DisplaySequence="1">
             <Label>Keros Type</Label>
-            <Hint>The Keros classification is a method of classifying the depth of the olfactory fossa. The ethmoid labyrinth is covered by the fovea ethmoidalis of the frontal bone and separates the ethmoidal cells from the anterior cranial fossa.</Hint>
+            <Hint>The Keros classification is a method of classifying the depth of the olfactory fossa on a coronal CT image through the cribiform plate.  When the vertical depth of the fossa is less than 4 mm, it is designated as a Type I.  A Type II is 4-7 mm in depth and a Type III is &gt; 7 mm.
+</Hint>
+            <Diagrams>
+                <Diagram Id="1607977884365" DisplaySequence="1">
+                    <Location>Keros Classification.jpg</Location>
+                    <Label>Keros Classification</Label>
+                </Diagram>
+            </Diagrams>
             <ChoiceInfo>
                 <Choice>
-                    <Value>TypeI(0-3mm)</Value>
+                    <Value>I</Value>
                     <Label>Type I (0 - 3 mm)</Label>
                 </Choice>
                 <Choice>
-                    <Value>TypeII(3.1-7mm)</Value>
-                    <Label>Type II (3.1 - 7 mm)</Label>
+                    <Value>II</Value>
+                    <Label>Type II (4 - 7 mm)</Label>
                 </Choice>
                 <Choice>
-                    <Value>TypeIII(&gt;7mm)</Value>
+                    <Value>III</Value>
                     <Label>Type III (&gt; 7mm)</Label>
                 </Choice>
             </ChoiceInfo>
