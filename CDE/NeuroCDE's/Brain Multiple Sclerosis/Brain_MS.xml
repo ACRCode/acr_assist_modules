@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Brain Multiple Sclerosis</Label>
+        <ID>Brain_MS</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>2.0</ModuleVersion>
+        <CreatedDate>2018-12-31</CreatedDate>
+        <LastModifiedDate>2021-03-25</LastModifiedDate>
+        <ApprovedBy>American College of Radiology</ApprovedBy>
+        <ReviewedBy>American College of Radiology</ReviewedBy>
+        <DevelopedBy>Eric Schwartz MD</DevelopedBy>
+        <CodableConcept Name="Codable_Concept_Brain Multiple Sclerosis">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES20" />
+                <Display Value="RDES20" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES20" />
+            </Coding>
+        </CodableConcept>
+        <authors>
+            <organization>
+                <name>American Society of Neuroradiology</name>
+                <abbreviation>ASNR</abbreviation>
+                <url>https://asnr.org</url>
+                <role>contributor</role>
+            </organization>
+        </authors>
+        <Info>
+            <Description>This module describes the Common Data elements and Macros for Brain MS</Description>
+            <References>
+                <Citation Url="http://radelement.org/set/RDES20">
+                    <Description> CDE URL </Description> CDE URL </Citation>
+            </References>
+            <Contact>
+                <Name>Eric Schwartz MD</Name>
+                <Email>acr-assist@acr.org</Email>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <ReportCitationText>Brain MS</ReportCitationText>
+        <ApplicableSexes Value="Both" />
+        <Specialties>
+            <Specialty>
+                <Name>Neuroradiology</Name>
+                <Abbreviation>NR</Abbreviation>
+            </Specialty>
+        </Specialties>
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="supratentoriallesionnumber" IsRequired="true" DisplaySequence="2">
+            <CodableConcept Name="supratentoriallesionnumber">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE143" />
+                    <Display Value="RDE143" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE143" />
+                </Coding>
+            </CodableConcept>
+            <Label>Supratentorial lesion number</Label>
+            <Hint>Use 0-10 scale</Hint>
+            <Minimum>1</Minimum>
+            <Maximum>10</Maximum>
+        </IntegerDataElement>
+        <MultiChoiceDataElement Id="supratentoriallesionlocations" IsRequired="true" DisplaySequence="4">
+            <CodableConcept Name="supratentoriallesionlocations">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE144" />
+                    <Display Value="RDE144" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE144" />
+                </Coding>
+            </CodableConcept>
+            <Label>Supratentorial lesion locations</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>frontal</Value>
+                    <Label>frontal</Label>
+                </Choice>
+                <Choice>
+                    <Value>parietal</Value>
+                    <Label>parietal</Label>
+                </Choice>
+                <Choice>
+                    <Value>temporal</Value>
+                    <Label>temporal</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <MultiChoiceDataElement Id="lesionlocationsubtype" IsRequired="true" DisplaySequence="5">
+            <CodableConcept Name="lesionlocationsubtype">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE145" />
+                    <Display Value="RDE145" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE145" />
+                </Coding>
+            </CodableConcept>
+            <Label>Lesion location subtype</Label>
+            <Hint>DIS criteria</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>juxtacortical</Value>
+                    <Label>juxtacortical</Label>
+                </Choice>
+                <Choice>
+                    <Value>periventricular</Value>
+                    <Label>periventricular</Label>
+                </Choice>
+                <Choice>
+                    <Value>other</Value>
+                    <Label>other</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <IntegerDataElement Id="infratentoriallesionnumber" IsRequired="true" DisplaySequence="6">
+            <CodableConcept Name="infratentoriallesionnumber">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE146" />
+                    <Display Value="RDE146" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE146" />
+                </Coding>
+            </CodableConcept>
+            <Label>Infratentorial lesion number</Label>
+            <Hint>Use 0-10 scale</Hint>
+            <Minimum>1</Minimum>
+            <Maximum>10</Maximum>
+        </IntegerDataElement>
+        <MultiChoiceDataElement Id="infratentoriallocations" IsRequired="true" DisplaySequence="7">
+            <CodableConcept Name="infratentoriallocations">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE147" />
+                    <Display Value="RDE147" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE147" />
+                </Coding>
+            </CodableConcept>
+            <Label>Infratentorial locations</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>midbrain</Value>
+                    <Label>midbrain</Label>
+                </Choice>
+                <Choice>
+                    <Value>leftpons</Value>
+                    <Label>left pons</Label>
+                </Choice>
+                <Choice>
+                    <Value>rightpons</Value>
+                    <Label>right pons</Label>
+                </Choice>
+                <Choice>
+                    <Value>leftbrachiumpontis</Value>
+                    <Label>left brachium pontis</Label>
+                </Choice>
+                <Choice>
+                    <Value>rightbrachiumpontis</Value>
+                    <Label>right brachium pontis</Label>
+                </Choice>
+                <Choice>
+                    <Value>rightcerebellum</Value>
+                    <Label>right cerebellum</Label>
+                </Choice>
+                <Choice>
+                    <Value>leftcerebellum</Value>
+                    <Label>left cerebellum</Label>
+                </Choice>
+            </ChoiceInfo>
+        </MultiChoiceDataElement>
+        <ChoiceDataElement Id="cervico-medullary" IsRequired="true" DisplaySequence="9">
+            <CodableConcept Name="cervico-medullary">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE148" />
+                    <Display Value="RDE148" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE148" />
+                </Coding>
+            </CodableConcept>
+            <Label>Cervico-medullary</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="10">
+            <CodableConcept Name="masseffect">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE149" />
+                    <Display Value="RDE149" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE149" />
+                </Coding>
+            </CodableConcept>
+            <Label>Mass effect</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="BlackHolesT1hypointense" IsRequired="true" DisplaySequence="11">
+            <CodableConcept Name="BlackHolesT1hypointense">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE150" />
+                    <Display Value="RDE150" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE150" />
+                </Coding>
+            </CodableConcept>
+            <Label>Black holes T1 hypointense</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="macrodp">
+            <Label>Macro Banch</Label>
+            <Branch>
+                <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+                <EndPointRef EndPointId="macroEndpoint" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <TemplatePartial Id="ExamPartial">
+            <Branch>
+                <ReportText Type="PlainText">EXAM TYPE: BRAIN MRI W/WO CONTRAST</ReportText>
+                <ReportText Type="Newline" />
+                <ReportText Type="PlainText">EXAM DATE AND TIME: 5/9/2018 1:30 PM EDT</ReportText>
+                <ReportText Type="Newline" />
+                <ReportText Type="PlainText">INDICATION: r/o demyelinating disease </ReportText>
+                <ReportText Type="Newline" />
+                <ReportText Type="PlainText">COMPARISON: NONE </ReportText>
+                <ReportText Type="Newline" />
+            </Branch>
+        </TemplatePartial>
+        <EndPoint Id="macroEndpoint">
+            <Label>A</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <ReportText Type="InsertPartialTemplate" Value="ExamPartial" />
+                        <ReportText Type="Newline" />
+                        <ReportText Type="PlainText">CDE Report text: </ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="supratentoriallesionnumber" />
+                        <ReportText Type="PlainText">Supratentorially, there are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="supratentoriallesionnumber" />
+                        <ReportText Type="PlainText"> T2/FLAIR hyperintensites in cerebral white matter including both </ReportText>
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="supratentoriallesionlocations" />
+                            <SectionIf DataElementId="supratentoriallesionnumber" />
+                        </AndCondition>
+                        <ReportText Type="InsertDataElementValue" Value="supratentoriallesionlocations" />
+                        <ReportText Type="PlainText"> lobes.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="lesionlocationsubtype" />
+                        <ReportText Type="PlainText">These lesions are primarily </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="lesionlocationsubtype" />
+                        <ReportText Type="PlainText">.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="infratentoriallesionnumber" />
+                        <ReportText Type="PlainText">Infratentorially, there are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="infratentoriallesionnumber" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="infratentoriallocations" />
+                        <ReportText Type="PlainText"> T2/FLAIR hyperintensities in brainstem including </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="infratentoriallocations" />
+                        <ReportText Type="PlainText">.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="cervico-medullary" />
+                            <EqualCondition DataElementId="cervico-medullary" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">Additional lesions are not visualized in the upper cervical spinal cord.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="cervico-medullary" />
+                            <NotEqualCondition DataElementId="cervico-medullary" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">Additional lesions are visualized in the upper cervical spinal cord.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="masseffect" />
+                            <EqualCondition DataElementId="masseffect" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">There is no associated mass effect.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="masseffect" />
+                            <NotEqualCondition DataElementId="masseffect" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">There is associated mass effect.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="BlackHolesT1hypointense" />
+                            <EqualCondition DataElementId="BlackHolesT1hypointense" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">There are no black holes present in the parietal white matter.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="BlackHolesT1hypointense" />
+                            <NotEqualCondition DataElementId="BlackHolesT1hypointense" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">There are black holes present in the parietal white matter.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
+</ReportingModule>
