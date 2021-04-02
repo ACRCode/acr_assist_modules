@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Pituitary Microadenoma</Label>
+        <ID>PituitaryMicroadenoma_Nodes</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>2.0</ModuleVersion>
+        <CreatedDate>2018-12-31</CreatedDate>
+        <LastModifiedDate>2020-12-14</LastModifiedDate>
+        <ApprovedBy>American College of Radiology</ApprovedBy>
+        <ReviewedBy>American College of Radiology</ReviewedBy>
+        <DevelopedBy>Virginia Hill MD</DevelopedBy>
+        <CodableConcept Name="Codable_Concept_Pituitary Microadenoma">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES23" />
+                <Display Value="RDES23" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES23" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>This module describes the Common Data elements and Macros for Pituitary Microadenoma</Description>
+            <References>
+                <Citation Url="http://radelement.org/set/RDES23">
+                    <Description> CDE URL </Description> CDE URL </Citation>
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="true">
+                    <Location>keydiagram.jpg</Location>
+                    <Label>Pituitary Microadenoma key image</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>Virginia Hill MD</Name>
+                <Email>acr-assist@acr.org</Email>
+                <Institution>American Society of Neuroradiology (ASNR)</Institution>
+            </Contact>
+        </Info>
+        <ReportCitationText>Pituitary Microadenoma</ReportCitationText>
+        <ApplicableSexes Value="Both" />
+        <Specialties>
+            <Specialty>
+                <Name>Neuroradiology</Name>
+                <Abbreviation>NR</Abbreviation>
+            </Specialty>
+        </Specialties>
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="focalmass" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="focalmass">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE174" />
+                    <Display Value="RDE174" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE174" />
+                </Coding>
+            </CodableConcept>
+            <Label>Focal Mass</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="sidedness" IsRequired="true" DisplaySequence="2">
+            <CodableConcept Name="sidedness">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE175" />
+                    <Display Value="RDE175" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE175" />
+                </Coding>
+            </CodableConcept>
+            <Label>Sidedness</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>left</Value>
+                    <Label>left</Label>
+                </Choice>
+                <Choice>
+                    <Value>right</Value>
+                    <Label>right</Label>
+                </Choice>
+                <Choice>
+                    <Value>central</Value>
+                    <Label>central</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <IntegerDataElement Id="Maximumdimension" IsRequired="true" DisplaySequence="3">
+            <CodableConcept Name="Maximumdimension">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE176" />
+                    <Display Value="RDE176" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE176" />
+                </Coding>
+            </CodableConcept>
+            <Label>Maximum dimension (in mm)</Label>
+            <Minimum>1</Minimum>
+            <Maximum>1000</Maximum>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="BoCdeIdrs" IsRequired="true" DisplaySequence="4">
+            <CodableConcept Name="BoCdeIdrs">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE177" />
+                    <Display Value="RDE177" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE177" />
+                </Coding>
+            </CodableConcept>
+            <Label>Borders</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>welldefined</Value>
+                    <Label>well defined</Label>
+                </Choice>
+                <Choice>
+                    <Value>IIIdefined</Value>
+                    <Label>iII defined</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="t1hyperintensity" IsRequired="true" DisplaySequence="5">
+            <CodableConcept Name="T1 Hyperintensity">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE178" />
+                    <Display Value="RDE178" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE178" />
+                </Coding>
+            </CodableConcept>
+            <Label>T1 Hyperintensity</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yeshyperintense-fat</Value>
+                    <Label>hyperintense-fat</Label>
+                </Choice>
+                <Choice>
+                    <Value>isointense</Value>
+                    <Label>isointense</Label>
+                </Choice>
+                <Choice>
+                    <Value>yeshyperintense-nonfat</Value>
+                    <Label>hyperintense-non fat</Label>
+                </Choice>
+                <Choice>
+                    <Value>yesheterogeneous</Value>
+                    <Label>heterogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="t1signalpostcontrast" IsRequired="true" DisplaySequence="7">
+            <CodableConcept Name="t1signalpostcontrast">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE179" />
+                    <Display Value="RDE179" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE179" />
+                </Coding>
+            </CodableConcept>
+            <Label>T1 signal postcontrast</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>hypoenhancing</Value>
+                    <Label>hypoenhancing</Label>
+                </Choice>
+                <Choice>
+                    <Value>isointense</Value>
+                    <Label>isointense</Label>
+                </Choice>
+                <Choice>
+                    <Value>hyperenhancing</Value>
+                    <Label>hyperenhancing</Label>
+                </Choice>
+                <Choice>
+                    <Value>heterogeneous</Value>
+                    <Label>heterogeneous</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="locationofinfundibulum" IsRequired="true" DisplaySequence="8">
+            <CodableConcept Name="locationofinfundibulum">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE180" />
+                    <Display Value="RDE180" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE180" />
+                </Coding>
+            </CodableConcept>
+            <Label>Location of Infundibulum</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>midline</Value>
+                    <Label>midline</Label>
+                </Choice>
+                <Choice>
+                    <Value>left</Value>
+                    <Label>left</Label>
+                </Choice>
+                <Choice>
+                    <Value>anterior</Value>
+                    <Label>anterior</Label>
+                </Choice>
+                <Choice>
+                    <Value>posterior</Value>
+                    <Label>posterior</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="InfundibulumMorphology" IsRequired="true" DisplaySequence="9">
+            <CodableConcept Name="InfundibulumMorphology">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE181" />
+                    <Display Value="RDE181" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE181" />
+                </Coding>
+            </CodableConcept>
+            <Label>Infundibulum Morphology</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>normal</Value>
+                    <Label>normal</Label>
+                </Choice>
+                <Choice>
+                    <Value>enlarged</Value>
+                    <Label>enlarged</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Infundibulumenhancement" IsRequired="true" DisplaySequence="10">
+            <CodableConcept Name="Infundibulumenhancement">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE182" />
+                    <Display Value="RDE182" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE182" />
+                </Coding>
+            </CodableConcept>
+            <Label>Infundibulum enhancement</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Presenceofposteriorhypophysisbrightspot" IsRequired="true" DisplaySequence="11">
+            <CodableConcept Name="Presenceofposteriorhypophysisbrightspot">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE183" />
+                    <Display Value="RDE183" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE183" />
+                </Coding>
+            </CodableConcept>
+            <Label>Presence of posterior hypophysis bright spot</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>yes</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="confidenceindiagnosis" IsRequired="true" DisplaySequence="12">
+            <CodableConcept Name="confidenceindiagnosis">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE184" />
+                    <Display Value="RDE184" />
+                    <UserSelected Value="true" />
+                    <Url Value="http://radelement.org/element/RDE184" />
+                </Coding>
+            </CodableConcept>
+            <Label>Confidence in diagnosis</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>veryconfident</Value>
+                    <Label>1-Very Confident</Label>
+                </Choice>
+                <Choice>
+                    <Value>somewhatconfident</Value>
+                    <Label>2-Somewhat confident</Label>
+                </Choice>
+                <Choice>
+                    <Value>probable</Value>
+                    <Label>3-probable</Label>
+                </Choice>
+                <Choice>
+                    <Value>somewhatlikely</Value>
+                    <Label>4-Somewhat likely</Label>
+                </Choice>
+                <Choice>
+                    <Value>possible</Value>
+                    <Label>5-Possible</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="macrodp">
+            <Label>Macro Banch</Label>
+            <Branch>
+                <EqualCondition DataElementId="conditionConst" ComparisonValue="10" />
+                <EndPointRef EndPointId="macroEndpoint" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="macroEndpoint">
+            <Label>A</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="focalmass" />
+                            <SectionIf DataElementId="sidedness" />
+                            <EqualCondition DataElementId="focalmass" ComparisonValue="yes" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">A focal mass is present at the </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="sidedness" />
+                        <ReportText Type="PlainText"> aspect of the pituitary. </ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="focalmass" />
+                            <SectionIf DataElementId="sidedness" />
+                            <EqualCondition DataElementId="focalmass" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText">A focal mass is not present at the </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="sidedness" />
+                        <ReportText Type="PlainText"> aspect of the pituitary. </ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="Maximumdimension" />
+                        <ReportText Type="PlainText">Maximum dimension is </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="Maximumdimension" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="BoCdeIdrs" />
+                        <ReportText Type="PlainText">The lesion borders are </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="BoCdeIdrs" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="t1hyperintensity" />
+                        <ReportText Type="PlainText">Without contrast, relative to the normal pituitary, the lesion is T1 </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="t1hyperintensity" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="t1signalpostcontrast" />
+                        <ReportText Type="PlainText">Following infusion of contrast, the lesion relative to the normal pituitary is </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="t1signalpostcontrast" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="locationofinfundibulum" />
+                        <ReportText Type="PlainText">The infundibulum is </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="locationofinfundibulum" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="InfundibulumMorphology" />
+                        <ReportText Type="PlainText"> and size is </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="InfundibulumMorphology" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="Infundibulumenhancement" />
+                            <EqualCondition DataElementId="Infundibulumenhancement" ComparisonValue="yes" />
+                        </AndCondition>
+                        <ReportText Type="Newline" />
+                        <ReportText Type="PlainText"> The infundibulum enhances</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="Infundibulumenhancement" />
+                            <EqualCondition DataElementId="Infundibulumenhancement" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="Newline" />
+                        <ReportText Type="PlainText"> The infundibulum does not enhance</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="Presenceofposteriorhypophysisbrightspot" />
+                            <EqualCondition DataElementId="Presenceofposteriorhypophysisbrightspot" ComparisonValue="yes" />
+                        </AndCondition>
+                        <ReportText Type="PlainText"> The posterior neurohypophysis bright spot is present.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <AndCondition>
+                            <SectionIf DataElementId="Presenceofposteriorhypophysisbrightspot" />
+                            <EqualCondition DataElementId="Presenceofposteriorhypophysisbrightspot" ComparisonValue="no" />
+                        </AndCondition>
+                        <ReportText Type="PlainText"> The posterior neurohypophysis bright spot is not present.</ReportText>
+                        <ReportText Type="Newline" />
+                    </Branch>
+                    <Branch>
+                        <SectionIf DataElementId="confidenceindiagnosis" />
+                        <ReportText Type="PlainText"> Confidence in diagnosis is: </ReportText>
+                        <ReportText Type="InsertDataElementValue" Value="confidenceindiagnosis" />
+                        <ReportText Type="Newline" />
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
+</ReportingModule>
