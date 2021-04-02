@@ -6,11 +6,11 @@
         <SchemaVersion>2.0</SchemaVersion>
         <ModuleVersion>2.0</ModuleVersion>
         <CreatedDate>2018-12-31</CreatedDate>
-        <LastModifiedDate>2020-01-21</LastModifiedDate>
+        <LastModifiedDate>2020-12-14</LastModifiedDate>
         <ApprovedBy>American College of Radiology</ApprovedBy>
         <ReviewedBy>American College of Radiology</ReviewedBy>
-        <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept Name="codableConcept_CT_Stroke">
+        <DevelopedBy>Sameer Ansari MD</DevelopedBy>
+        <CodableConcept Name="Codable_Concept_CT Stroke">
             <Coding>
                 <System Value="RadElement" />
                 <Version Value="1.0" />
@@ -23,29 +23,32 @@
         <Info>
             <Description>This module describes the Common Data elements and Macros for CT stroke</Description>
             <References>
-                <Citation Url="http://radelement.org/set/RDES22"> CDE URL </Citation>
+                <Citation Url="http://radelement.org/set/RDES22">
+                    <Description> CDE URL </Description> CDE URL </Citation>
             </References>
             <Diagrams>
-                <Diagram DisplaySequence="1" IsKeyDiagram="true">
-                    <Location>keydiagram.jpg</Location>
-                    <Label>CT Stroke key image</Label>
-                </Diagram>
-                <Diagram DisplaySequence="2">
-                    <Location>ctstrokesupportingdiagram.jpg</Location>
-                    <Label>CT Stroke supporting diagram</Label>
+                <Diagram Id="1607975674554" DisplaySequence="1" IsKeyDiagram="false">
+                    <Location>ASPECTS.jpg</Location>
+                    <Label>ASPECTS Score</Label>
                 </Diagram>
             </Diagrams>
             <Contact>
-                <Name>Adam Flanders, MD</Name>
+                <Name>Sameer Ansari MD</Name>
                 <Email>acr-assist@acr.org</Email>
-                <Institution>American College of Radiology</Institution>
+                <Institution>American Society of Neuroradiology (ASNR)</Institution>
             </Contact>
         </Info>
         <ReportCitationText>CT Stroke</ReportCitationText>
         <ApplicableSexes Value="Both" />
+        <Specialties>
+            <Specialty>
+                <Name>Neuroradiology</Name>
+                <Abbreviation>NR</Abbreviation>
+            </Specialty>
+        </Specialties>
     </Metadata>
     <DataElements>
-        <IntegerDataElement Id="ASPECTSclassification" IsRequired="true" DisplaySequence="1" Unit="">
+        <IntegerDataElement Id="ASPECTSclassification" IsRequired="true" DisplaySequence="1">
             <CodableConcept Name="ASPECTS classification">
                 <Coding>
                     <System Value="RadElement" />
@@ -58,6 +61,20 @@
             </CodableConcept>
             <Label>ASPECTS classification</Label>
             <Hint>ASPECTS classification</Hint>
+            <Diagrams>
+                <Diagram Id="1607975702728" DisplaySequence="1">
+                    <Location>ASPECTS.jpg</Location>
+                    <Label>ASPECTS Score</Label>
+                </Diagram>
+            </Diagrams>
+            <Specialties>
+                <Specialty>
+                    <Name>Neuroradiology</Name>
+                    <Abbreviation>NR</Abbreviation>
+                </Specialty>
+            </Specialties>
+            <Minimum>1</Minimum>
+            <Maximum>10</Maximum>
         </IntegerDataElement>
         <ChoiceDataElement Id="vascularterritory" IsRequired="true" DisplaySequence="2">
             <CodableConcept Name="Vascular Territory">
@@ -227,7 +244,7 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
-        <IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7" Unit="">
+        <IntegerDataElement Id="midlineshift" IsRequired="true" DisplaySequence="7">
             <CodableConcept Name="Midline shift">
                 <Coding>
                     <System Value="RadElement" />
