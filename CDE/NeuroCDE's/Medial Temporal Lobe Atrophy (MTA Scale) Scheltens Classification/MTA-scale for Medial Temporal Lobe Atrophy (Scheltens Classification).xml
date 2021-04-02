@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Medial Temporal Lobe Atrophy (MTA Scale) Scheltens Classification</Label>
+        <ID>MTA-scale_for_Medial_Temporal_Lobe_Atrophy_(Scheltens_Classification)</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <CreatedDate>2020-01-04</CreatedDate>
+        <LastModifiedDate>2021-03-25</LastModifiedDate>
+        <DevelopedBy>Wende Gibbs MD</DevelopedBy>
+        <CodableConcept Name="Codable_Concept_Medial Temporal Lobe Atrophy (MTA Scale) Scheltens Classification">
+            <Coding>
+                <System Value="RadElement" />
+                <Version Value="1.0" />
+                <Code Value="RDES151" />
+                <Display Value="RDES151" />
+                <UserSelected Value="false" />
+                <Url Value="http://radelement.org/set/RDES151" />
+            </Coding>
+        </CodableConcept>
+        <Info>
+            <Description>MTA-scale for Medial Temporal Lobe Atrophy (Scheltens Classification)</Description>
+            <References>
+                <Citation>
+                    <Description>J Neurol Neurosurg Psychiatry
+, 55 (10), 967-72  Oct 1992
+Atrophy of Medial Temporal Lobes on MRI in "Probable" Alzheimer's Disease and Normal Ageing: Diagnostic Value and Neuropsychological Correlates
+
+P Scheltens  1 , D Leys, F Barkhof, D Huglo, H C Weinstein, P Vermersch, M Kuiper, M Steinling, E C Wolters, J Valk
+Affiliations  expand
+PMID: 1431963  PMCID: PMC1015202  DOI: 10.1136/jnnp.55.10.967</Description>J Neurol Neurosurg Psychiatry
+, 55 (10), 967-72  Oct 1992
+Atrophy of Medial Temporal Lobes on MRI in "Probable" Alzheimer's Disease and Normal Ageing: Diagnostic Value and Neuropsychological Correlates
+
+P Scheltens  1 , D Leys, F Barkhof, D Huglo, H C Weinstein, P Vermersch, M Kuiper, M Steinling, E C Wolters, J Valk
+Affiliations  expand
+PMID: 1431963  PMCID: PMC1015202  DOI: 10.1136/jnnp.55.10.967</Citation>
+                <Citation>
+                    <Description>Eur Radiol. 2018 Apr;28(4):1739-1747. doi: 10.1007/s00330-017-5103-6. Epub 2017 Nov 9.
+Medial temporal lobe atrophy ratings in a large 75-year-old population-based cohort: gender-corrected and education-corrected normative data.
+
+Velickaite V1, Ferreira D2, Cavallin L3, Lind L4, Ahlström H4, Kilander L5, Westman E2, Larsson EM4.</Description>Eur Radiol. 2018 Apr;28(4):1739-1747. doi: 10.1007/s00330-017-5103-6. Epub 2017 Nov 9.
+Medial temporal lobe atrophy ratings in a large 75-year-old population-based cohort: gender-corrected and education-corrected normative data.
+
+Velickaite V1, Ferreira D2, Cavallin L3, Lind L4, Ahlström H4, Kilander L5, Westman E2, Larsson EM4.</Citation>
+            </References>
+            <Diagrams>
+                <Diagram DisplaySequence="1" IsKeyDiagram="false">
+                    <Location>MTA_scale.jpg</Location>
+                    <Label>MTA_scale</Label>
+                </Diagram>
+                <Diagram Id="1607983844160" DisplaySequence="2">
+                    <Location>MTA scale.jpg</Location>
+                    <Label>MTA scale</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>Wende Gibbs MD</Name>
+                <Institution>The American Society of Neuroradiology (ASNR)</Institution>
+            </Contact>
+        </Info>
+        <ApplicableExams>
+            <ApplicableExamCategory Axis="Modality">MRI BRAIN</ApplicableExamCategory>
+            <ApplicableExamCategory Axis="Anatomy">Temporal lobe</ApplicableExamCategory>
+        </ApplicableExams>
+        <TextCues>
+            <KeyWords>
+                <KeyWord>epilepsy</KeyWord>
+                <KeyWord>seizure</KeyWord>
+                <KeyWord>mesial temporal sclerosis</KeyWord>
+            </KeyWords>
+        </TextCues>
+        <Specialties>
+            <Specialty>
+                <Name>Neuroradiology</Name>
+                <Abbreviation>NR</Abbreviation>
+            </Specialty>
+        </Specialties>
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="MTAScale_0" IsRequired="true" DisplaySequence="1">
+            <CodableConcept Name="codableConcept_MTAScale_0">
+                <Coding>
+                    <System Value="RadElement" />
+                    <Version Value="1.0" />
+                    <Code Value="RDE1004" />
+                    <Display Value="RDE1004" />
+                    <UserSelected Value="false" />
+                    <Url Value="http://radelement.org/element/RDE1004" />
+                </Coding>
+            </CodableConcept>
+            <Label>MTA Scale</Label>
+            <Hint>The MTA-score (Scheltens) should be rated on coronal T1-weighted images. on a slice through the corpus of the hippocampus (level of the anterior pons).
+
+ 
+
+The scale  is based on a visual score of the width of the choroid fissure, the width of the temporal horn, and the height of the hippocampal formation.
+
+score 0: no atrophy
+score 1: only widening of choroid fissure
+score 2: also widening of temporal horn of lateral ventricle
+score 3: moderate loss of hippocampal volume (decrease in height)
+score 4: severe volume loss of hippocampus
+ 
+
+&lt; 75 years: score 2 or more is abnormal.
+
+&gt; 75 years: score 3 or more is abnormal.
+</Hint>
+            <Diagrams>
+                <Diagram>
+                    <Location>MTA_scale.jpg</Location>
+                    <Label>MTA_scale</Label>
+                </Diagram>
+            </Diagrams>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>0</Value>
+                    <Label>MTA0</Label>
+                </Choice>
+                <Choice>
+                    <Value>1</Value>
+                    <Label>MTA1</Label>
+                </Choice>
+                <Choice>
+                    <Value>2</Value>
+                    <Label>MTA2</Label>
+                </Choice>
+                <Choice>
+                    <Value>3</Value>
+                    <Label>MTA3</Label>
+                </Choice>
+                <Choice>
+                    <Value>4</Value>
+                    <Label>MTA4</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>
