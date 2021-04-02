@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Pituitary Macroadenoma</Label>
+        <ID>Pituitary_macradenoma</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>1.0</ModuleVersion>
+        <LastModifiedDate>2020-12-14</LastModifiedDate>
+        <DevelopedBy>Aparna Singhal  MD</DevelopedBy>
+        <authors>
+            <person>
+                <name>Virginia Hill MD</name>
+                <role>contributor</role>
+            </person>
+        </authors>
+        <Info>
+            <Description>Pituitary macroadenoma</Description>
+            <References>
+                <Citation>
+                    <Description>Invasion of the cavernous sinus space in pituitary adenomas: endoscopic verification and its correlation with an MRI-based classification
+Micko ASG, Wöhrer A, Wolfsberger S, Knosp E. J Neurosurg 122:803–811, 2015.</Description>Invasion of the cavernous sinus space in pituitary adenomas: endoscopic verification and its correlation with an MRI-based classification
+Micko ASG, Wöhrer A, Wolfsberger S, Knosp E. J Neurosurg 122:803–811, 2015.</Citation>
+            </References>
+            <Contact>
+                <Name>Aparna Singhal  MD</Name>
+                <Institution>American Society of Neuroradiology (ASNR)</Institution>
+            </Contact>
+        </Info>
+        <Specialties>
+            <Specialty>
+                <Name>Neuroradiology</Name>
+                <Abbreviation>NR</Abbreviation>
+            </Specialty>
+        </Specialties>
+    </Metadata>
+    <DataElements>
+        <ChoiceDataElement Id="FocalMass" DisplaySequence="1">
+            <CodableConcept Name="Focal Mass">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE174" />
+                    <Display Value="RDE174" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>Focal Mass</Label>
+            <Hint>Focal Mass</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Yes</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>No</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Sidedness" DisplaySequence="2">
+            <CodableConcept Name="Sidedness">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE175" />
+                    <Display Value="RDE175" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>Sidedness</Label>
+            <Hint>Sidedness</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>left</Value>
+                    <Label>left</Label>
+                </Choice>
+                <Choice>
+                    <Value>right</Value>
+                    <Label>right</Label>
+                </Choice>
+                <Choice>
+                    <Value>central</Value>
+                    <Label>central</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Borders" DisplaySequence="3">
+            <CodableConcept Name="Borders">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE177" />
+                    <Display Value="RDE177" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>Borders</Label>
+            <Hint>Borders</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>well defined</Value>
+                    <Label>well defined</Label>
+                </Choice>
+                <Choice>
+                    <Value>iII defined</Value>
+                    <Label>iII defined</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="T1Hyperinsensitivity" DisplaySequence="4">
+            <CodableConcept Name="T1 Hyperintensity">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE178" />
+                    <Display Value="RDE178" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>T1 Hyperintensity</Label>
+            <Hint>T1 Hyperinsensitivity</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>hyperintense-fat</Value>
+                    <Label>hyperintense-fat</Label>
+                </Choice>
+                <Choice>
+                    <Value>isointense</Value>
+                    <Label>isointense</Label>
+                </Choice>
+                <Choice>
+                    <Value>hyperintense-non fat</Value>
+                    <Label>hyperintense-non fat</Label>
+                </Choice>
+                <Choice>
+                    <Value>heterogeneous</Value>
+                    <Label>heterogeneous</Label>
+                </Choice>
+                <Choice>
+                    <Value>no</Value>
+                    <Label>no</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="T2intensity" DisplaySequence="5">
+            <Label>T2 intensity</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>hyperintense</Value>
+                    <Label>hyperintense</Label>
+                </Choice>
+                <Choice>
+                    <Value>heterogeneously hyperintense</Value>
+                    <Label>heterogeneously hyperintense</Label>
+                </Choice>
+                <Choice>
+                    <Value>hypointense</Value>
+                    <Label>hypointense</Label>
+                </Choice>
+                <Choice>
+                    <Value>isointense</Value>
+                    <Label>isointense</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="T1signalpostcontrast" DisplaySequence="6">
+            <CodableConcept Name="T1 signal postcontrast">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE179" />
+                    <Display Value="RDE179" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>T1 signal postcontrast</Label>
+            <Hint>T1 signal postcontrast</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>hypoenhancing</Value>
+                    <Label>hypoenhancing</Label>
+                </Choice>
+                <Choice>
+                    <Value>isointense</Value>
+                    <Label>isointense</Label>
+                </Choice>
+                <Choice>
+                    <Value>hyperenhancing</Value>
+                    <Label>hyperenhancing</Label>
+                </Choice>
+                <Choice>
+                    <Value>heterogeneous</Value>
+                    <Label>heterogeneous</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <IntegerDataElement Id="Maximumdimension" DisplaySequence="7">
+            <Label>Maximum dimension</Label>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Suprasellarextension" DisplaySequence="8">
+            <Label>Suprasellar extension</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>is present anteriorly</Value>
+                    <Label>is present anteriorly</Label>
+                </Choice>
+                <Choice>
+                    <Value>is present posteriorly</Value>
+                    <Label>is present posteriorly</Label>
+                </Choice>
+                <Choice>
+                    <Value>is present on the left</Value>
+                    <Label>is present on the left</Label>
+                </Choice>
+                <Choice>
+                    <Value>is present on the right</Value>
+                    <Label>is present on the right</Label>
+                </Choice>
+                <Choice>
+                    <Value>is not present</Value>
+                    <Label>is not present</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Suprasellarextensionconfiguration" DisplaySequence="9">
+            <Label>Suprasellar extension configuration</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>a snowman configuration (extends through the diaphragma sella)</Value>
+                    <Label>a snowman configuration</Label>
+                </Choice>
+                <Choice>
+                    <Value>dural extension</Value>
+                    <Label>dural extension</Label>
+                </Choice>
+                <Choice>
+                    <Value>NA</Value>
+                    <Label>NA</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="SuprastellarextensioninrelationtoChiasm" DisplaySequence="10">
+            <Label>Suprastellar extension in relation to Chiasm</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>prechiasmatic</Value>
+                    <Label>prechiasmatic</Label>
+                </Choice>
+                <Choice>
+                    <Value>postchiasmatic</Value>
+                    <Label>postchiasmatic</Label>
+                </Choice>
+                <Choice>
+                    <Value>NA</Value>
+                    <Label>NA</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="CN2" DisplaySequence="11">
+            <Label>CN2</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>is compressed</Value>
+                    <Label>is compressed</Label>
+                </Choice>
+                <Choice>
+                    <Value>is not compressed</Value>
+                    <Label>is not compressed</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="SiteofCN2compression" DisplaySequence="12">
+            <Label>Site of CN2 compression</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>optic chiasm</Value>
+                    <Label>optic chiasm</Label>
+                </Choice>
+                <Choice>
+                    <Value>cisternal segment</Value>
+                    <Label>cisternal segment</Label>
+                </Choice>
+                <Choice>
+                    <Value>optic radiation</Value>
+                    <Label>optic radiation</Label>
+                </Choice>
+                <Choice>
+                    <Value>NA</Value>
+                    <Label>NA</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Opticpathwaysignal" DisplaySequence="13">
+            <Label>Optic pathway signal</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>demonstrates abnormal signal</Value>
+                    <Label>demonstrates abnormal signal</Label>
+                </Choice>
+                <Choice>
+                    <Value>does not demonstrate abnormal signal</Value>
+                    <Label>does not demonstrate abnormal signal</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Cavernoussinusextension" DisplaySequence="14">
+            <Label>Cavernous sinus extension</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>is present</Value>
+                    <Label>is present</Label>
+                </Choice>
+                <Choice>
+                    <Value>is absent</Value>
+                    <Label>is absent</Label>
+                </Choice>
+                <Choice>
+                    <Value>NA</Value>
+                    <Label>NA</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Cavernoussinusextensiongrade" DisplaySequence="15">
+            <Label>Cavernous sinus extension grade</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>medial to the cavernous internal carotid artery/extends up to the midpoint of the cavernous ICA (Knosp Grade 1)</Value>
+                    <Label>Knosp Grade 1</Label>
+                </Choice>
+                <Choice>
+                    <Value>extends beyond the midpoint of the cavernous ICA but not beyond the lateral margin of the cavernous ICA (Knosp Grade 2)</Value>
+                    <Label>Knosp Grade 2</Label>
+                </Choice>
+                <Choice>
+                    <Value>extends beyond the lateral aspect of the cavernous ICA into the superior cavernous sinus compartment (Knosp Grade 3A)</Value>
+                    <Label>Knosp Grade 3A</Label>
+                </Choice>
+                <Choice>
+                    <Value>extends beyond the lateral aspect of the cavernous ICA into the inferior cavernous sinus compartment (Knosp Grade 3B)</Value>
+                    <Label>Knosp Grade 3B</Label>
+                </Choice>
+                <Choice>
+                    <Value>encases the cavernous ICA (Knosp Grade 4)</Value>
+                    <Label>Knosp Grade 4</Label>
+                </Choice>
+                <Choice>
+                    <Value>NA</Value>
+                    <Label>NA</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="ICApatency" DisplaySequence="16">
+            <Label>ICA patency</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>patent</Value>
+                    <Label>Patent</Label>
+                </Choice>
+                <Choice>
+                    <Value>not patent</Value>
+                    <Label>not patent</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Sphenoidsinusextension" DisplaySequence="17">
+            <Label>Sphenoid sinus extension</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>extends into the sphenoid sinus</Value>
+                    <Label>extends into the sphenoid sinus</Label>
+                </Choice>
+                <Choice>
+                    <Value>does not extend into the sphenoid sinus</Value>
+                    <Label>does not extend into the sphenoid sinus</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Clivusextension" DisplaySequence="18">
+            <Label>Clivus extension</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>extends into the clivus</Value>
+                    <Label>extends into the clivus</Label>
+                </Choice>
+                <Choice>
+                    <Value>does not extend into the clivus</Value>
+                    <Label>does not extend into the clivus</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="LocationofInfundibulum" DisplaySequence="19">
+            <CodableConcept Name="Location of Infundibulum">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE180" />
+                    <Display Value="RDE180" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>Location of Infundibulum</Label>
+            <Hint>Location of Infundibulum</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>midline</Value>
+                    <Label>midline</Label>
+                </Choice>
+                <Choice>
+                    <Value>left</Value>
+                    <Label>left</Label>
+                </Choice>
+                <Choice>
+                    <Value>anterior</Value>
+                    <Label>anterior</Label>
+                </Choice>
+                <Choice>
+                    <Value>posterior</Value>
+                    <Label>posterior</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="InfundibulumMorphology" DisplaySequence="20">
+            <CodableConcept Name="Infundibulum Morphology">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE181" />
+                    <Display Value="RDE181" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>Infundibulum Morphology</Label>
+            <Hint>Infundibulum Morphology</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>normal</Value>
+                    <Label>normal</Label>
+                </Choice>
+                <Choice>
+                    <Value>enlarged</Value>
+                    <Label>enlarged</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Infundibulumenhancement" DisplaySequence="21">
+            <CodableConcept Name="Infundibulum enhancement">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE182" />
+                    <Display Value="RDE182" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>Infundibulum enhancement</Label>
+            <Hint>Infundibulum enhancement</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Yes</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>No</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Presenceofposteriorhypophysisbrightspot" DisplaySequence="22">
+            <CodableConcept Name="Presence of posterior hypophysis bright spot">
+                <Coding>
+                    <System Value="https://www.radelement.org/home/elements/element" />
+                    <Version Value="" />
+                    <Code Value="RDE183" />
+                    <Display Value="RDE183" />
+                    <UserSelected Value="" />
+                    <Url Value="" />
+                </Coding>
+            </CodableConcept>
+            <Label>Presence of posterior hypophysis bright spot</Label>
+            <Hint>Presence of posterior hypophysis bright spot</Hint>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Yes</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>No</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules />
+    <EndPoints />
+</ReportingModule>
