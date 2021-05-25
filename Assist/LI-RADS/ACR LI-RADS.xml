@@ -6,17 +6,17 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ModuleVersion>2.0</ModuleVersion>
     <CreatedDate>2018-12-31</CreatedDate>
-    <LastModifiedDate>2020-03-06</LastModifiedDate>
+    <LastModifiedDate>2020-03-6</LastModifiedDate>
     <ApprovedBy>American College of Radiology</ApprovedBy>
     <ReviewedBy>American College of Radiology</ReviewedBy>
     <DevelopedBy>American College of Radiology</DevelopedBy>
     <CodableConcept Name="codableConcept_ACR_LI_RADS">
       <Coding>
-        <System Value="RadElement" />
-        <Version Value="1.0" />
+        <System Value="https://www.radelement.org/home/sets/set" />
+        <Version />
         <Code Value="RDES154" />
         <Display Value="RDES154" />
-        <Url Value="https://www.radelement.org/home/sets/set/RDES154" />
+        <UserSelected />
       </Coding>
     </CodableConcept>
     <Info>
@@ -61,10 +61,10 @@
     <ReportCitationText />
     <Ontology>
       <AnatomicRegions CodingSystem="http://radlex.org/">
-        <Region Code="RID58">Liver</Region>
+        <Region Code="RID58" Url="">Liver</Region>
       </AnatomicRegions>
       <PossibleDiagnoses>
-        <Diagnosis Code="RID4271">Hepatocellular carcinoma</Diagnosis>
+        <Diagnosis Code="RID4271" Url="">Hepatocellular carcinoma</Diagnosis>
       </PossibleDiagnoses>
     </Ontology>
     <ApplicableExams>
@@ -97,11 +97,11 @@
     <IntegerDataElement Id="observationnumber" IsRequired="true" DisplaySequence="2">
       <CodableConcept Name="codableConcept_observationnumber">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1050" />
           <Display Value="RDE1050" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1050" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Observation#</Label>
@@ -110,37 +110,37 @@
     <IntegerDataElement Id="seriesnumber" IsRequired="true" DisplaySequence="3">
       <CodableConcept Name="codableConcept_seriesnumber">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1051" />
           <Display Value="RDE1051" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1051" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Series#</Label>
       <Minimum>1</Minimum>
     </IntegerDataElement>
     <IntegerDataElement Id="imagenumber" IsRequired="true" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_imagenumber">        
+      <CodableConcept Name="codableConcept_imagenumber">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1052" />
           <Display Value="RDE1052" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1052" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Image#</Label>
       <Minimum>1</Minimum>
     </IntegerDataElement>
     <ChoiceDataElement Id="segmentlocation" IsRequired="true" DisplaySequence="5" AllowFreetext="true">
-      <CodableConcept Name="codableConcept_segmentlocation">       
+      <CodableConcept Name="codableConcept_segmentlocation">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1053" />
           <Display Value="RDE1053" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1053" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Location</Label>
@@ -236,11 +236,11 @@
     <ChoiceDataElement Id="observationinPatient" IsRequired="true" DisplaySequence="6">
       <CodableConcept Name="codableConcept_observationinPatient">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1054" />
           <Display Value="RDE1054" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1054" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Observation in high-risk patient</Label>
@@ -264,11 +264,11 @@
     <MultiChoiceDataElement Id="TreatmentMethod" IsRequired="true" DisplaySequence="7" AllowFreetext="true">
       <CodableConcept Name="codableConcept_TreatmentMethod">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1055" />
           <Display Value="RDE1055" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1055" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Treatment method (pick all that apply)</Label>
@@ -323,11 +323,11 @@
     <ChoiceDataElement Id="pretreatmentCategory" IsRequired="true" DisplaySequence="8" AllowFreetext="true">
       <CodableConcept Name="codableConcept_pretreatmentCategory">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1056" />
           <Display Value="RDE1056" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1056" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>What is the pretreatment category?</Label>
@@ -386,11 +386,11 @@
     <ChoiceDataElement Id="pretreatmentsizeCategory" IsRequired="true" DisplaySequence="9">
       <CodableConcept Name="codableConcept_pretreatmentsizeCategory">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1057" />
           <Display Value="RDE1057" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1057" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>What is the pretreatment size?</Label>
@@ -423,11 +423,11 @@
     <NumericDataElement Id="pretreatmentsize" IsRequired="true" DisplaySequence="10" Unit="mm">
       <CodableConcept Name="codableConcept_pretreatmentsize">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1058" />
           <Display Value="RDE1058" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1058" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Pretreatment size</Label>
@@ -454,11 +454,11 @@
     <ChoiceDataElement Id="untreatedobservation" IsRequired="true" DisplaySequence="11">
       <CodableConcept Name="codableConcept_untreatedobservation">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1059" />
           <Display Value="RDE1059" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1059" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Untreated observation without pathologic proof in patient at high-risk for HCC</Label>
@@ -550,11 +550,11 @@
     <MultiChoiceDataElement Id="lrnc_category" IsRequired="true" DisplaySequence="12" AllowFreetext="true">
       <CodableConcept Name="codableConcept_lrnc_category">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1060" />
           <Display Value="RDE1060" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1060" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>What is the reason for LR-NC category?</Label>
@@ -587,13 +587,13 @@
       </ConditionalProperties>
     </MultiChoiceDataElement>
     <ChoiceDataElement Id="treatedobservation" IsRequired="true" DisplaySequence="12">
-      <CodableConcept Name="codableConcept_treatedobservation">       
+      <CodableConcept Name="codableConcept_treatedobservation">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1061" />
           <Display Value="RDE1061" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1061" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Treated observation features</Label>
@@ -627,11 +627,11 @@
     <ChoiceDataElement Id="LR1Features" IsRequired="false" DisplaySequence="13" AllowFreetext="true">
       <CodableConcept Name="codableConcept_LR1Features">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1062" />
           <Display Value="RDE1062" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1062" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>LR-1 diagnosis</Label>
@@ -699,11 +699,11 @@
     <ChoiceDataElement Id="LR2features" IsRequired="false" DisplaySequence="14" AllowFreetext="true">
       <CodableConcept Name="codableConcept_LR2features">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1063" />
           <Display Value="RDE1063" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1063" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>LR-2 diagnosis</Label>
@@ -777,13 +777,13 @@
       </ConditionalProperties>
     </ChoiceDataElement>
     <ChoiceDataElement Id="lesionalenhancement" IsRequired="true" DisplaySequence="17">
-      <CodableConcept Name="codableConcept_lesionalenhancement">      
+      <CodableConcept Name="codableConcept_lesionalenhancement">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1064" />
           <Display Value="RDE1064" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1064" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Is there posttreatment lesion enhancement?</Label>
@@ -817,11 +817,11 @@
     <ChoiceDataElement Id="enhancementisexpectedpattern" IsRequired="true" DisplaySequence="18">
       <CodableConcept Name="codableConcept_enhancementisexpectedpattern">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1065" />
           <Display Value="RDE1065" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1065" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Is enhancement in treatment-specific pattern?</Label>
@@ -874,11 +874,11 @@
     <ChoiceDataElement Id="irregular_enhancing_tissue" IsRequired="true" DisplaySequence="19">
       <CodableConcept Name="codableConcept_irregular_enhancing_tissue">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1066" />
           <Display Value="RDE1066" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1066" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Is there nodular, mass-like or irregular enhancing tissue?</Label>
@@ -935,11 +935,11 @@
     <MultiChoiceDataElement Id="patternofenhancement" DisplaySequence="20">
       <CodableConcept Name="codableConcept_patternofenhancement">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1067" />
           <Display Value="RDE1067" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1067" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Pattern of enhancement (pick all that apply)</Label>
@@ -1016,11 +1016,11 @@
     <NumericDataElement Id="sizeoftheenhancementComponents" IsRequired="true" DisplaySequence="21">
       <CodableConcept Name="codableConcept_sizeoftheenhancementComponents">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1068" />
           <Display Value="RDE1068" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1068" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Size of largest enhancing component (in mm)</Label>
@@ -1066,11 +1066,11 @@
     <MultiChoiceDataElement Id="WhichVein" IsRequired="true" DisplaySequence="22" AllowFreetext="true">
       <CodableConcept Name="codableConcept_WhichVein">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1069" />
           <Display Value="RDE1069" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1069" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>What vein or veins?</Label>
@@ -1127,11 +1127,11 @@
     <ChoiceDataElement Id="IsTIVcontiguouswithaparenchymalmass" IsRequired="true" DisplaySequence="23">
       <CodableConcept Name="codableConcept_IsTIVcontiguouswithaparenchymalmass">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1070" />
           <Display Value="RDE1070" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1070" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Is TIV contiguous with a parenchymal mass?</Label>
@@ -1169,11 +1169,11 @@
     <ChoiceDataElement Id="Isparenchymalmasstargetoid" IsRequired="true" DisplaySequence="25">
       <CodableConcept Name="codableConcept_Isparenchymalmasstargetoid">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1071" />
           <Display Value="RDE1071" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1071" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Is parenchymal mass targetoid?</Label>
@@ -1219,11 +1219,11 @@
     <MultiChoiceDataElement Id="lrmtargetoidmass" IsRequired="true" DisplaySequence="28">
       <CodableConcept Name="codableConcept_lrmtargetoidmass">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1072" />
           <Display Value="RDE1072" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1072" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Targetoid LR-M features (any of the following)</Label>
@@ -1293,11 +1293,11 @@
     <NumericDataElement Id="diameter" IsRequired="true" DisplaySequence="30">
       <CodableConcept Name="codableConcept_diameter">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1073" />
           <Display Value="RDE1073" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1073" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Observation size (mm)</Label>
@@ -1342,11 +1342,11 @@
     <NumericDataElement Id="parenchymal_mass_size" IsRequired="true" DisplaySequence="30">
       <CodableConcept Name="codableConcept_parenchymal_mass_size">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1074" />
           <Display Value="RDE1074" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1074" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Parenchymal mass size (mm)</Label>
@@ -1390,11 +1390,11 @@
     <ChoiceDataElement Id="arterialEnhancement" IsRequired="true" DisplaySequence="31">
       <CodableConcept Name="codableConcept_arterialEnhancement">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1075" />
           <Display Value="RDE1075" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1075" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Nonrim arterial phase hyperenhancement</Label>
@@ -1455,11 +1455,11 @@
     <ChoiceDataElement Id="washout" IsRequired="true" DisplaySequence="32">
       <CodableConcept Name="codableConcept_washout">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1076" />
           <Display Value="RDE1076" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1076" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Nonperipheral "washout"</Label>
@@ -1517,11 +1517,11 @@
     <ChoiceDataElement Id="capsule" IsRequired="true" DisplaySequence="33">
       <CodableConcept Name="codableConcept_capsule">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1077" />
           <Display Value="RDE1077" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1077" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Enhancing "capsule"</Label>
@@ -1583,11 +1583,11 @@
     <ChoiceDataElement Id="prior_ct_mri" IsRequired="true" DisplaySequence="35">
       <CodableConcept Name="codableConcept_prior_ct_mri">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1078" />
           <Display Value="RDE1078" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1078" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Were there any prior CT or MRI?</Label>
@@ -1636,11 +1636,11 @@
     <ChoiceDataElement Id="prior_observation" IsRequired="true" DisplaySequence="36">
       <CodableConcept Name="codableConcept_prior_observation">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1079" />
           <Display Value="RDE1079" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1079" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Was the observation seen on the prior study?</Label>
@@ -1696,11 +1696,11 @@
     <NumericDataElement Id="recent_study_size" IsRequired="true" DisplaySequence="37">
       <CodableConcept Name="codableConcept_recent_study_size">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1080" />
           <Display Value="RDE1080" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1080" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>What was the size on the prior most recent study (mm)? </Label>
@@ -1755,11 +1755,11 @@
     <ChoiceDataElement Id="prior_ct_mri_6months" IsRequired="true" DisplaySequence="38">
       <CodableConcept Name="codableConcept_prior_ct_mri_6months">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1081" />
           <Display Value="RDE1081" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1081" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Was there CT or MRI within the past six months?</Label>
@@ -1822,11 +1822,11 @@
     <ChoiceDataElement Id="prior_ct_mri_6months_size_50percent_increase" IsRequired="true" DisplaySequence="39">
       <CodableConcept Name="codableConcept_prior_ct_mri_6months_size_50percent_increase">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1082" />
           <Display Value="RDE1082" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1082" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Has the observation demonstrated &gt;=50% size increase in ≤6 months any time in the past?</Label>
@@ -1889,13 +1889,13 @@
       </ConditionalProperties>
     </ChoiceDataElement>
     <MultiChoiceDataElement Id="lrmnontargetoidmass" IsRequired="true" DisplaySequence="41" AllowFreetext="true">
-      <CodableConcept Name="codableConcept_lrmnontargetoidmass">       
+      <CodableConcept Name="codableConcept_lrmnontargetoidmass">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1083" />
           <Display Value="RDE1083" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1083" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Nontargetoid LR-M features (any of the following)</Label>
@@ -1948,13 +1948,13 @@
       </ConditionalProperties>
     </MultiChoiceDataElement>
     <ChoiceDataElement Id="adjustcategorybasedonAncillary" DisplaySequence="42">
-      <CodableConcept Name="codableConcept_adjustcategorybasedonAncillary">       
+      <CodableConcept Name="codableConcept_adjustcategorybasedonAncillary">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1084" />
           <Display Value="RDE1084" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1084" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>Do you want to adjust category based on ancillary features? </Label>
@@ -2005,13 +2005,13 @@
       </ConditionalProperties>
     </ChoiceDataElement>
     <MultiChoiceDataElement Id="ancillaryFavoringMalignancy" DisplaySequence="43">
-      <CodableConcept Name="codableConcept_ancillaryFavoringMalignancy">        
+      <CodableConcept Name="codableConcept_ancillaryFavoringMalignancy">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1085" />
           <Display Value="RDE1085" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1085" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>What ancillary features of malignancy are present? (pick all that apply)</Label>
@@ -2143,11 +2143,11 @@
     <MultiChoiceDataElement Id="ancillaryFavoringBenignity" DisplaySequence="44">
       <CodableConcept Name="codableConcept_ancillaryFavoringBenignity">
         <Coding>
-          <System Value="RadElement" />
-          <Version Value="1.0" />
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
           <Code Value="RDE1086" />
           <Display Value="RDE1086" />
-          <Url Value="https://www.radelement.org/home/elements/element/RDE1086" />
+          <UserSelected />
         </Coding>
       </CodableConcept>
       <Label>What ancillary features of benignity are present? (pick all that apply)</Label>
