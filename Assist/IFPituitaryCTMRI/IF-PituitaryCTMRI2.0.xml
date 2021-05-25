@@ -2,28 +2,32 @@
 <?xml-model href="../../ACRAssist_xml_schema_beta2.0.rnc" type="application/relax-ng-compact-syntax"?>
 <ReportingModule>
 	<Metadata>
-		<Label>IF-Pituitary CT MRI</Label>
-		<ID>ACR_IF-PituitaryCTMRI</ID>
+		<Label>Incidental Pituitary Lesion</Label>
+		<ID>ACR_IF-Pituitary</ID>
 		<SchemaVersion>2.0</SchemaVersion>
 		<ModuleVersion>1.0</ModuleVersion>
-		<CreatedDate>2018-06-20</CreatedDate>
-    	<LastModifiedDate>2018-11-30</LastModifiedDate>
+		<CreatedDate>2020-10-20</CreatedDate>
+    	<LastModifiedDate>2020-10-20</LastModifiedDate>
 		<ApprovedBy>American College of Radiology</ApprovedBy>
 		<ReviewedBy>American College of Radiology</ReviewedBy>
 		<DevelopedBy>American College of Radiology</DevelopedBy>
 		<!-- <RadElementSetID>MID2244</RadElementSetID> -->
 		<Info>
-			<Description>IF-Pituitary Findings for CT or MRI</Description>
+			<Description>Incidental Pituitary Lesion</Description>
 			<References>
 			    <Citation Url="IF-Pituitary CT MRI">
-                IF-Pituitary CT MRI</Citation>
+                Incidental Pituitary Lesion</Citation>
                 <Citation Url="https://www.jacr.org/article/S1546-1440(18)30379-X/fulltext">
                 ACR Assist</Citation>
 			</References>
 			<Diagrams>
 				<Diagram DisplaySequence="1" IsKeyDiagram="true">
 					<Location>keyimage.jpg</Location>
-					<Label>IF-PituitaryCTMRI</Label>
+					<Label>IFPituitaryLeison</Label>
+				</Diagram>
+				<Diagram DisplaySequence="2" IsKeyDiagram="true">
+					<Location>keyimage1.jpg</Location>
+					<Label>IFPituitaryLeison</Label>
 				</Diagram>
 			</Diagrams>
 			<Contact>
@@ -40,7 +44,7 @@
 	<DataElements>
 	
 		<ChoiceDataElement Id="typeofcyst" IsRequired="true" DisplaySequence="1">
-			<Label>Composition of Cyst</Label>
+			<Label>Composition of Lesion</Label>
 			<Hint> If the composition of the lesion cannot be determined, it should be managed as if solid</Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -49,188 +53,664 @@
 				</Choice>
 				<Choice>
 					<Value>mixed</Value>
-					<Label>Solid or Mixed-solid Cystic</Label>
+					<Label>Mixed-Solid Cystic</Label>
+				</Choice>
+				<Choice>
+					<Value>solid</Value>
+					<Label>Solid</Label>
+				</Choice>
+				<Choice>
+					<Value>cannotassess</Value>
+					<Label>Cannot Assess</Label>
 				</Choice>
 			</ChoiceInfo>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement Id="mixedcystsize" IsRequired="true" DisplaySequence="2">
-			<Label>Size of Mixed-Solid Cyst</Label>
-			<Hint>Consider the possibility of a pseudolesion given the lesion's size. Pseudolesions require no further management.</Hint>
-			<ChoiceInfo>
-				<Choice>
-					<Value>lessthan5mm</Value>
-					<Label>Less than 5mm</Label>	
-				</Choice>
-				<Choice>
-					<Value>between5and10mm</Value>
-					<Label>5-10mm</Label>	
-				</Choice>
-				<Choice>
-					<Value>greaterthan10mm</Value>
-					<Label>Greater than 10mm</Label>	
-				</Choice>
-			</ChoiceInfo>
-			<ConditionalProperties>
-				<ConditionalProperty>					
-					<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/> 
-					<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>	
-		</ChoiceDataElement>	
-		
-		<ChoiceDataElement Id="masseffect" IsRequired="true" DisplaySequence="3">
-			<Label>Has Mass Effect and/or Has Invasion into surrounding structures?</Label>
-			<Hint>Invasion into surrounding Structures include Optic Chiasm, Optic Nerve and Cavernous Sinus</Hint>
+		<ChoiceDataElement Id="expectancy" DisplaySequence="2">
+			<Label>Does the patient have limted life expectancy?</Label>
+				
 			<ChoiceInfo>
 				<Choice>
 					<Value>yes</Value>
 					<Label>Yes</Label>	
 				</Choice>
-				<Choice>
+				<Choice IsDefault="true">
 					<Value>no</Value>
 					<Label>No</Label>	
 				</Choice>
 			</ChoiceInfo>
+			
 			<ConditionalProperties>
 				<ConditionalProperty>
 				<OrCondition>
-					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm"/> 
-					<EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm"/> 					
-				</OrCondition>	
-				<IsRelevant>false</IsRelevant>
-				</ConditionalProperty>
-			</ConditionalProperties>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="solid"/>
+				</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			 </ConditionalProperties> 
 		</ChoiceDataElement>
 		
-		
+		    <NumericDataElement Id="cystsize" DisplaySequence="3" Unit="mm">
+      <Label>Enter the size of the Cyst </Label>
+	  <Hint>Not entering the size of the Cyst means it is considered as Cannot be Assesed</Hint>
+	  <ConditionalProperties>
+				<ConditionalProperty>
+				<OrCondition>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="solid"/>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed"/>
+				</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			 </ConditionalProperties> 
+    </NumericDataElement>
+	
+	<NumericDataElement Id="cystsize1"  IsRequired="true" DisplaySequence="4" Unit="mm">
+      <Label>Enter the size of the Cyst </Label>
+	  <Hint>Not entering the size of the Cyst means it is considered as Cannot be Assesed</Hint>
+	  <ConditionalProperties>
+				<ConditionalProperty>
+				<OrCondition>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst"/>
+					<EqualCondition DataElementId="typeofcyst" ComparisonValue="cannotassess"/>
+				</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>				
+			 </ConditionalProperties> 
+    </NumericDataElement>
+				
+		<MultiChoiceDataElement Id="surrounding" DisplaySequence="5">
+			<Label>Surrounding structures?</Label>
+			<Hint>Invasion into surrounding Structures include Optic Chiasm, Optic Nerve and Cavernous Sinus</Hint>
+			<ChoiceInfo>
+				<Choice>
+					<Value>masseffect</Value>
+					<Label>Mass effect</Label>	
+				</Choice>
+				<Choice>
+					<Value>invasion</Value>
+					<Label>Invasion</Label>	
+				</Choice>
+			</ChoiceInfo>
+		</MultiChoiceDataElement>
 	</DataElements>	
 	
 <Rules>
    <DecisionPoint Id="incidentalpituitary">
-      <Label>IncidentalCTMRI</Label>
+      <Label>IncidentalLeison</Label>
       <Branch>
          <Label>Simple</Label>
-         <EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst" />
          <DecisionPoint Id="Simple">
             <Label>Simple nomass</Label>
-            <Branch>
-               <Label>Simple no mass</Label>
-               <AndCondition>
-                  <EqualCondition DataElementId="masseffect" ComparisonValue="no" />
-               </AndCondition>
-               <EndPointRef EndPointId="NoFurtherEvaluation" />
-            </Branch>
-            <Branch>
-               <Label>Simple cyst yes mass</Label>
-               <AndCondition>
-                  <EqualCondition DataElementId="masseffect" ComparisonValue="yes" />
-               </AndCondition>
-               <EndPointRef EndPointId="referral" />
+			 <Branch>
+               <Label>simplenopick</Label>
+			   <EqualCondition DataElementId="typeofcyst" ComparisonValue="simplecyst" />
+               <EndPointRef EndPointId="simplenopick" />
             </Branch>
          </DecisionPoint>
       </Branch>
-      <Branch>
-         <Label>Mixed yes mass</Label>
-         <AndCondition>
-            <EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed" />
-            <EqualCondition DataElementId="mixedcystsize" ComparisonValue="lessthan5mm" />
-         </AndCondition>
-         <EndPointRef EndPointId="Nofurtherimgaing" />
+	  
+	  <Branch>
+         <Label>Cannot Assess </Label>
+		 <AndCondition>
+         <EqualCondition DataElementId="typeofcyst" ComparisonValue="cannotassess" />
+		  </AndCondition>
+         <DecisionPoint Id="Cannotassess">
+            <Label>Cannot Assess</Label>
+			<Branch>
+               <Label>Cannot Assess no</Label>
+               <AndCondition>
+                   <EqualCondition DataElementId="expectancy" ComparisonValue="no" />
+               </AndCondition>
+               <EndPointRef EndPointId="cannotasses" />
+            </Branch>
+            <Branch>
+               <Label>Cannot Assess yes</Label>
+               <AndCondition>
+				   <EqualCondition DataElementId="expectancy" ComparisonValue="yes" />
+               </AndCondition>
+               <EndPointRef EndPointId="cannotasses" />
+            </Branch>
+         </DecisionPoint>
       </Branch>
-      <Branch>
-         <Label>Mixed no mass</Label>
-         <AndCondition>
-            <EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed" />
-            <EqualCondition DataElementId="mixedcystsize" ComparisonValue="between5and10mm" />
-         </AndCondition>
-         <EndPointRef EndPointId="Nofurtherimgaingabove5" />
+	  
+	  <Branch>
+         <Label>Mixed Solid</Label>
+		 <AndCondition>
+         <EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed" />
+		  </AndCondition>
+         <DecisionPoint Id="mixedsolid">
+            <Label>mixedsolid</Label>
+			<Branch>
+               <Label>mixedsolid less10</Label>
+               <AndCondition>
+                   <LessThanOrEqualsCondition DataElementId="cystsize1" ComparisonValue="10" />
+               </AndCondition>
+               <EndPointRef EndPointId="mixedsolidless" />
+            </Branch>
+            <Branch>
+               <Label>mixedsolid 10</Label>
+               <AndCondition>
+				   <GreaterThanCondition DataElementId="cystsize1" ComparisonValue="10" />
+               </AndCondition>
+               <EndPointRef EndPointId="mixedsolid10" />
+            </Branch>
+         </DecisionPoint>
       </Branch>
-      <Branch>
-         <Label>Mixed with mass</Label>
-         <AndCondition>
-            <EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed" />
-            <EqualCondition DataElementId="mixedcystsize" ComparisonValue="greaterthan10mm" />
-            <EqualCondition DataElementId="masseffect" ComparisonValue="yes" />
+	  
+	  <Branch>
+         <Label>Solid</Label>
+		 <AndCondition>
+         <EqualCondition DataElementId="typeofcyst" ComparisonValue="solid" />
+		  </AndCondition>
+         <DecisionPoint Id="solid">
+            <Label>solidless</Label>
+			<Branch>
+               <Label>solidless10</Label>
+               <AndCondition>
+                   <LessThanOrEqualsCondition DataElementId="cystsize1" ComparisonValue="10" />
+               </AndCondition>
+               <EndPointRef EndPointId="solidless" />
+            </Branch>
+            <Branch>
+               <Label>solid10</Label>
+               <AndCondition>
+				   <GreaterThanCondition DataElementId="cystsize1" ComparisonValue="10" />
+               </AndCondition>
+               <EndPointRef EndPointId="solid10" />
+            </Branch>
+         </DecisionPoint>
+      </Branch>
 
-         </AndCondition>
-         <EndPointRef EndPointId="referral" />
-      </Branch>
-      <Branch>
-         <Label>Mixed with no mass</Label>
-         <AndCondition>
-            <EqualCondition DataElementId="typeofcyst" ComparisonValue="mixed" />
-            <EqualCondition DataElementId="mixedcystsize" ComparisonValue="greaterthan10mm" />
-            <EqualCondition DataElementId="masseffect" ComparisonValue="no" />
-
-         </AndCondition>
-         <EndPointRef EndPointId="recommend" />
-      </Branch>
    </DecisionPoint>
 </Rules>
 	
 	<EndPoints>
+		<TemplatePartial Id="surroundingstructures">
+			<Branch>
+				<EqualCondition DataElementId="surrounding" ComparisonValue="masseffect" />
+				<NotEqualCondition DataElementId="surrounding" ComparisonValue="invasion" />
+				<ReportText Type="PlainText">with mass effect</ReportText>
+			</Branch>
+			<Branch>
+				<EqualCondition DataElementId="surrounding" ComparisonValue="invasion" />
+				<NotEqualCondition DataElementId="surrounding" ComparisonValue="masseffect" />
+				<ReportText Type="PlainText">with invasion into surrounding structures</ReportText>
+			</Branch>
+			<Branch>
+				<AndCondition>
+				<EqualCondition DataElementId="surrounding" ComparisonValue="invasion" />
+				<EqualCondition DataElementId="surrounding" ComparisonValue="masseffect" />
+				</AndCondition>
+				<ReportText Type="PlainText">with mass effect and invasion into surrounding structures</ReportText>
+			</Branch>
+		</TemplatePartial>
 		
-		<EndPoint Id="NoFurtherEvaluation">
-		 <Label>NoFurtherEvaluation</Label>
+		
+		<EndPoint Id="simplenopick">
+		 <Label>simplenopick</Label>
 		 <ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">No Further Evaluation</ReportText>
+					<ReportText Type="PlainText">There is a </ReportText>
 				</Branch>
-			</ReportSection>
-		</ReportSections>
-		</EndPoint>
-		
-		<EndPoint Id="referral">
-		<Label>Referral</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">Referral for endocrine and/or neurosurgical management</ReportText>
+					<SectionIf DataElementId="cystsize"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
 				</Branch>
-			</ReportSection>
-		</ReportSections>
-		</EndPoint>
-		
-		<EndPoint Id="Nofurtherimgaing">
-		<Label>Nofurtherimgaing</Label>
-		<ReportSections>
-			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">No further imaging</ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Correlate with history of pituitary hypersecretion.</ReportText>
+					<ReportText Type="PlainText">cystic lesion in the  pituitary gland </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="ImpressionRecommendation">
+				<Branch>
+					<ReportText Type="PlainText">Simple </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+						<ReportText Type="PlainText">pituitary cyst </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.Recommend referral for endocrine and/or neurosurgical management.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Impression">
+				<Branch>
+					<ReportText Type="PlainText">Simple </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+						<ReportText Type="PlainText">pituitary cyst </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+				<ReportSection SectionId="Recommendation">
+				<Branch>
+					<ReportText Type="PlainText">Recommend referral for endocrine and/or neurosurgical management.</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
 		</EndPoint>
 		
-	   <EndPoint Id="Nofurtherimgaingabove5">
-		<Label>Nofurtherimgaingabove5</Label>
+		<EndPoint Id="cannotasses">
+		 <Label>cannotasses</Label>
 		 <ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">No further imaging</ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+					<ReportText Type="PlainText">There is a </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">indeterminate lesion in the  pituitary gland </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">. </ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="ImpressionRecommendation">
+				<Branch>
+					<ReportText Type="PlainText">Indeterminate lesion  </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize"/>
+					<ReportText Type="PlainText">with </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="cystsize"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">in the pituitary gland  </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="expectancy"  ComparisonValue="no" />
+					<ReportText Type="PlainText">.Recommend characterization with pituitary MRI.</ReportText>
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="expectancy"  ComparisonValue="yes" />
+					<ReportText Type="PlainText">.No further imaging followup is recommended.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Impression">
+				<Branch>
+					<ReportText Type="PlainText">Indeterminate lesion  </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize"/>
+					<ReportText Type="PlainText">with </ReportText>
+					<ReportText Type="InsertDataElementValue" Value="cystsize"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">in the pituitary gland </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<EqualCondition DataElementId="expectancy"  ComparisonValue="no" />
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Recommendation">
+				<Branch>
+					<EqualCondition DataElementId="expectancy"  ComparisonValue="no" />
+					<ReportText Type="PlainText">Recommend characterization with pituitary MRI.</ReportText>
 				</Branch>
 			</ReportSection>
 		</ReportSections>
 		</EndPoint>
 		
-	   <EndPoint Id="recommend">
-		<Label>recommend</Label>
-		<ReportSections>
+		<EndPoint Id="mixedsolidless">
+		 <Label>mixedsolidless</Label>
+		 <ReportSections>
 			<ReportSection SectionId="findings">
 				<Branch>
-					<ReportText Type="PlainText">Recommend endocrine function tests</ReportText>
-					<ReportText Type="Newline"/>
-					<ReportText Type="PlainText">6-12 month follow-up pituitary MRI.</ReportText>
+					<ReportText Type="PlainText">There is a </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">mixed solid cystic lesion in the  pituitary gland </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
 				</Branch>
 			</ReportSection>
-		</ReportSections>
+			<ReportSection SectionId="ImpressionRecommendation">
+				<Branch>
+					<ReportText Type="PlainText">Mixed solid-cystic </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.Recommend correlating with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Impression">
+				<Branch>
+					<ReportText Type="PlainText">Mixed solid-cystic </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Recommendation">
+				<Branch>
+					<ReportText Type="PlainText">Recommend correlating with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+				</Branch>
+			</ReportSection>
+			</ReportSections>
 		</EndPoint>
 		
+		<EndPoint Id="mixedsolid10">
+		 <Label>mixedsolid10</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">There is a </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">mixed solid cystic lesion in the  pituitary gland </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="ImpressionRecommendation">
+				<Branch>
+					<ReportText Type="PlainText">Mixed solid-cystic </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<SectionIfNot DataElementId="surrounding"/>
+					<ReportText Type="PlainText">.Recommend 6-12 months follow-up pituatry MRI and referral for endocrine function. </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="PlainText">.Recommend referral for endocrine and/or neurosurgical management. </ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Impression">
+				<Branch>
+					<ReportText Type="PlainText">Mixed solid-cystic  </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Recommendation">
+				<Branch>
+					<SectionIfNot DataElementId="surrounding"/>
+					<ReportText Type="PlainText">Recommend 6-12 months follow-up pituatry MRI and referral for endocrine function.</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="PlainText">Recommend referral for endocrine and/or neurosurgical management.</ReportText>
+				</Branch>
+			</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="solidless">
+		 <Label>solidless</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">There is a </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">solid lesion in the  pituitary gland </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="ImpressionRecommendation">
+				<Branch>
+					<ReportText Type="PlainText">Solid </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<SectionIfNot DataElementId="surrounding"/>
+					<ReportText Type="PlainText">.No further imaging recommended. Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="PlainText">.ASK SME ABOUT SURROUNDING SELECTION.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Impression">
+				<Branch>
+					<ReportText Type="PlainText">Solid </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Recommendation">
+				<Branch>
+					<SectionIfNot DataElementId="surrounding"/>
+					<ReportText Type="PlainText">No further imaging recommended. Correlate with history of pituitary hypersecretion and consider endocrine function tests.</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="PlainText">ASK SME ABOUT SURROUNDING SELECTION.</ReportText>
+				</Branch>
+			</ReportSection>
+			</ReportSections>
+		</EndPoint>
+		
+		<EndPoint Id="solid10">
+		 <Label>solid10</Label>
+		 <ReportSections>
+			<ReportSection SectionId="findings">
+				<Branch>
+					<ReportText Type="PlainText">There is a </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">solid lesion in the  pituitary gland </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="ImpressionRecommendation">
+				<Branch>
+					<ReportText Type="PlainText">Solid </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<SectionIfNot DataElementId="surrounding"/>
+					<ReportText Type="PlainText">.Recommend 6-12 months follow-up pituitary MRI and referral for endocrine function tests.</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="PlainText">.Recommend referral for endocrine and/or neurosurgical management.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Impression">
+				<Branch>
+					<ReportText Type="PlainText">Solid </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="cystsize1"/>
+					<ReportText Type="InsertDataElementValue" Value="cystsize1"></ReportText>
+					<ReportText Type="PlainText"> mm </ReportText>
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">pituitary lesion </ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="InsertPartialTemplate"  Value="surroundingstructures"> </ReportText> 
+				</Branch>
+				<Branch>
+					<ReportText Type="PlainText">.</ReportText>
+				</Branch>
+			</ReportSection>
+			<ReportSection SectionId="Recommendation">
+				<Branch>
+					<SectionIfNot DataElementId="surrounding"/>
+					<ReportText Type="PlainText">Recommend 6-12 months follow-up pituitary MRI and referral for endocrine function tests.</ReportText>
+				</Branch>
+				<Branch>
+					<SectionIf DataElementId="surrounding"/>
+					<ReportText Type="PlainText">Recommend referral for endocrine and/or neurosurgical management.</ReportText>
+				</Branch>
+			</ReportSection>
+			</ReportSections>
+		</EndPoint>		
 	</EndPoints>	
 	</ReportingModule>
