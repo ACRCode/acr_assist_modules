@@ -1,109 +1,500 @@
 {
-  
-  "module_name": "ACR PituitaryCTMRI",
+  "module_name": "Incidental Pituitary Lesion",
   "module_version": "1.0",
   "scenarios": [
-    
-
     {
-      "scenario_id": "PituitaryFDGPET_1",
+      "scenario_id": "ACR_IF-Pituitary_1",
       "inputs": [
-  
+	     
         {
           "dataelement_id": "typeofcyst",
-          "dataelement_value": "simplecyst"
+          "dataelement_value": "simplecyst",
+          "dataelement_display_value": "Simple Cyst"
         },
-
+        {
+          "dataelement_id": "surrounding",
+          "dataelement_value": "masseffect",
+          "dataelement_display_value": "Mass effect"
+        },
 		{
-          "dataelement_id": "masseffect",
-          "dataelement_value": "no"
+          "dataelement_id": "cystsize",
+          "dataelement_value": 1,
+          "dataelement_display_value": 1
+          
         }
+      ]
+    },
+	{
+      "scenario_id": "ACR_IF-Pituitary_2",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "simplecyst",
+          "dataelement_display_value": "Simple Cyst"
+        },
+        
+		{
+          "dataelement_id": "cystsize",
+          "dataelement_value": 1,
+          "dataelement_display_value": 1
+          
+        }
+      ]
+    },
+    {
+      "scenario_id": "ACR_IF-Pituitary_3",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "simplecyst",
+          "dataelement_display_value": "Simple Cyst"
+        },
+        {
+          "dataelement_id": "surrounding",
+          "dataelement_value": "invasion",
+          "dataelement_display_value": "Invasion"
+        }
+      ]
+    },
+	 {
+      "scenario_id": "ACR_IF-Pituitary_4",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "simplecyst",
+          "dataelement_display_value": "Simple Cyst"
+        },
+		{
+          "dataelement_id": "cystsize",
+          "dataelement_value": 1,
+          "dataelement_display_value": 1
+          
+        },
+        {
+          "dataelement_id": "surrounding",
+          "dataelement_value": ["masseffect","invasion"],
+          "dataelement_display_value": "Mass effect,Invasion"
+        }
+		
 		
       ]
     },
-   {
-      "scenario_id": "PituitaryFDGPET_2",
+    {
+      "scenario_id": "ACR_IF-Pituitary_5",
       "inputs": [
-
         {
           "dataelement_id": "typeofcyst",
-          "dataelement_value": "simplecyst"
+          "dataelement_value": "cannotassess",
+          "dataelement_display_value": "Cannot Assess"
         },
-
-		{
-          "dataelement_id": "masseffect",
-          "dataelement_value": "yes"
+        {
+          "dataelement_id": "expectancy",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
         }
       ]
     },
-   {
-      "scenario_id": "PituitaryFDGPET_3",
+	 {
+      "scenario_id": "ACR_IF-Pituitary_6",
       "inputs": [
-
         {
           "dataelement_id": "typeofcyst",
-          "dataelement_value": "mixed"
+          "dataelement_value": "cannotassess",
+          "dataelement_display_value": "Cannot Assess"
         },
-		{
-          "dataelement_id": "mixedcystsize",
-          "dataelement_value": "lessthan5mm"
-        }
-
-      ]
-    },
-	{
-      "scenario_id": "PituitaryFDGPET_4",
-      "inputs": [
-
         {
-          "dataelement_id": "typeofcyst",
-          "dataelement_value": "mixed"
+          "dataelement_id": "expectancy",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		 {
+          "dataelement_id": "surrounding",
+          "dataelement_value": "invasion",
+          "dataelement_display_value": "Invasion"
         },
 		{
-          "dataelement_id": "mixedcystsize",
-          "dataelement_value": "between5and10mm"
+          "dataelement_id": "cystsize",
+          "dataelement_value": 1,
+          "dataelement_display_value": 1
+          
         }
       ]
     },
 	{
-      "scenario_id": "PituitaryFDGPET_5",
+      "scenario_id": "ACR_IF-Pituitary_7",
       "inputs": [
-
         {
           "dataelement_id": "typeofcyst",
-          "dataelement_value": "mixed"
+          "dataelement_value": "cannotassess",
+          "dataelement_display_value": "Cannot Assess"
         },
         {
-          "dataelement_id": "mixedcystsize",
-          "dataelement_value": "greaterthan10mm"
+          "dataelement_id": "expectancy",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		 {
+          "dataelement_id": "surrounding",
+          "dataelement_value": ["masseffect","invasion"],
+          "dataelement_display_value": "Mass effect,Invasion"
         },
 		{
-          "dataelement_id": "masseffect",
-          "dataelement_value": "no"
+          "dataelement_id": "cystsize",
+          "dataelement_value": 1,
+          "dataelement_display_value": 1
+          
         }
-
       ]
     },
-
-	{
-      "scenario_id": "PituitaryFDGPET_6",
+    {
+      "scenario_id": "ACR_IF-Pituitary_8",
       "inputs": [
-
         {
           "dataelement_id": "typeofcyst",
-          "dataelement_value": "mixed"
+          "dataelement_value": "cannotassess",
+          "dataelement_display_value": "Cannot Assess"
         },
         {
-          "dataelement_id": "mixedcystsize",
-          "dataelement_value": "greaterthan10mm"
+          "dataelement_id": "expectancy",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+		  
+		
+      ]
+    },
+	{
+      "scenario_id": "ACR_IF-Pituitary_9",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "cannotassess",
+          "dataelement_display_value": "Cannot Assess"
+        },
+        {
+          "dataelement_id": "expectancy",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		  {
+          "dataelement_id": "surrounding",
+          "dataelement_value": "masseffect",
+          "dataelement_display_value": "Mass effect"
         },
 		{
-          "dataelement_id": "masseffect",
-          "dataelement_value": "yes"
+          "dataelement_id": "cystsize",
+          "dataelement_value": 1,
+          "dataelement_display_value": 1
+          
+        }
+		
+		
+      ]
+    },
+	{
+      "scenario_id": "ACR_IF-Pituitary_10",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "cannotassess",
+          "dataelement_display_value": "Cannot Assess"
+        },
+        {
+          "dataelement_id": "expectancy",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		  {
+          "dataelement_id": "surrounding",
+          "dataelement_value": ["masseffect","invasion"],
+          "dataelement_display_value": "Mass effect,Invasion"
+        }
+				
+      ]
+    },
+    {
+      "scenario_id": "ACR_IF-Pituitary_11",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed",
+          "dataelement_display_value": "Mixed-Solid Cystic"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 4.0,
+          "dataelement_display_value": 4.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        }
+      ]
+    },
+	{
+      "scenario_id": "ACR_IF-Pituitary_12",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed",
+          "dataelement_display_value": "Mixed-Solid Cystic"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 3.0,
+          "dataelement_display_value": 3.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        },
+		{
+          "dataelement_id": "surrounding",
+          "dataelement_value": "masseffect",
+          "dataelement_display_value": "Mass effect"
+        }
+      ]
+    },
+    {
+      "scenario_id": "ACR_IF-Pituitary_13",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed",
+          "dataelement_display_value": "Mixed-Solid Cystic"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 9,
+          "dataelement_display_value": 9,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 10.0
+          }
+        }
+      ]
+    },
+	 {
+      "scenario_id": "ACR_IF-Pituitary_14",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed",
+          "dataelement_display_value": "Mixed-Solid Cystic"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 10,
+          "dataelement_display_value": 10,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 10.0
+          }
+        },
+		{
+          "dataelement_id": "surrounding",
+          "dataelement_value": ["masseffect","invasion"],
+          "dataelement_display_value": "Mass effect,Invasion"
+        }
+      ]
+    },
+    {
+      "scenario_id": "ACR_IF-Pituitary_15",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed",
+          "dataelement_display_value": "Mixed-Solid Cystic"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 11.0,
+          "dataelement_display_value": 11.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        }
+      ]
+    },
+	{
+      "scenario_id": "ACR_IF-Pituitary_16",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "mixed",
+          "dataelement_display_value": "Mixed-Solid Cystic"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 12.0,
+          "dataelement_display_value": 12.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        },
+       {
+          "dataelement_id": "surrounding",
+          "dataelement_value": "invasion",
+          "dataelement_display_value": "Invasion"
+        }
+      ]
+    },
+    
+    {
+      "scenario_id": "ACR_IF-Pituitary_17",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 4.0,
+          "dataelement_display_value": 4.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        }
+      ]
+    },
+	{
+      "scenario_id": "ACR_IF-Pituitary_18",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 3.0,
+          "dataelement_display_value": 3.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        },
+		{
+          "dataelement_id": "surrounding",
+          "dataelement_value": "masseffect",
+          "dataelement_display_value": "Mass effect"
+        }
+      ]
+    },
+    {
+      "scenario_id": "ACR_IF-Pituitary_19",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 9,
+          "dataelement_display_value": 9,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 10.0
+          }
+        }
+      ]
+    },
+	{
+      "scenario_id": "ACR_IF-Pituitary_20",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 10,
+          "dataelement_display_value": 10,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 10.0
+          }
+        },
+		{
+          "dataelement_id": "surrounding",
+          "dataelement_value": ["masseffect","invasion"],
+          "dataelement_display_value": "Mass effect,Invasion"
+        }
+      ]
+    },
+    {
+      "scenario_id": "ACR_IF-Pituitary_21",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 11.0,
+          "dataelement_display_value": 11.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        }
+      ]
+    },
+	 {
+      "scenario_id": "ACR_IF-Pituitary_22",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 12.0,
+          "dataelement_display_value": 12.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        },
+        {
+          "dataelement_id": "surrounding",
+          "dataelement_value": "invasion",
+          "dataelement_display_value": "Invasion"
+        },
+      ]
+    },
+  
+	 {
+      "scenario_id": "ACR_IF-Pituitary_23",
+      "inputs": [
+        {
+          "dataelement_id": "typeofcyst",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid Cyst"
+        },
+        {
+          "dataelement_id": "cystsize1",
+          "dataelement_value": 12.0,
+          "dataelement_display_value": 12.0,
+          "range": {
+            "Minimum": -3.4028235E+38,
+            "Maximum": 3.4028235E+38
+          }
+        },
+        {
+          "dataelement_id": "surrounding",
+          "dataelement_value": ["masseffect","invasion"],
+          "dataelement_display_value": "Mass effect,Invasion"
         }
       ]
     }
-
-	
-   ]	
+  ]
 }
