@@ -1,0 +1,5991 @@
+{
+  "module_name": "PI-RADS",
+  "module_version": "1.0",
+  "scenarios": [
+    {
+      "scenario_id": "PI-RADS_1",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ",
+          "dataelement_display_value": "peripheral zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal)"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+   
+    {
+      "scenario_id": "PI-RADS_2",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "midgland",
+          "dataelement_display_value": "Midgland"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ",
+          "dataelement_display_value": "peripheral zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear/wedge shaped hypointense on ADC and/or linear/wedge shaped hyperintense on high b-value DWI</Label>"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal)"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+
+    {
+      "scenario_id": "PI-RADS_3",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ",
+          "dataelement_display_value": "peripheral zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal)"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	
+    {
+      "scenario_id": "PI-RADS_4",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "midgland",
+          "dataelement_display_value": "Midgland"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ",
+          "dataelement_display_value": "peripheral zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal)"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously with enhancement of adjacent normal prostatic tissues, and; corresponds to suspicious finding on T2W and/or DWI"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+    {
+      "scenario_id": "PI-RADS_5",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ",
+          "dataelement_display_value": "peripheral zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal)"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	
+    {
+      "scenario_id": "PI-RADS_6",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ",
+          "dataelement_display_value": "peripheral zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posterolateral",
+          "dataelement_display_value": "posterolateral"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal)"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	
+	{
+      "scenario_id": "PI-RADS_7",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posterior",
+          "dataelement_display_value": "posterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_8",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "midgland",
+          "dataelement_display_value": "Midgland"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posterior",
+          "dataelement_display_value": "posterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_9",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posterior",
+          "dataelement_display_value": "posterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Normal appearing TZ rare or a round, completely encapsulated nodule typical nodule"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously with enhancement of adjacent normal prostatic tissues, and; corresponds to suspicious finding on T2W and/or DWI"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+		{
+      "scenario_id": "PI-RADS_10",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+	{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posterior",
+          "dataelement_display_value": "posterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_11",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "midgland",
+          "dataelement_display_value": "Midgland"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posterior",
+          "dataelement_display_value": "posterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_12",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_13",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "midgland",
+          "dataelement_display_value": "Midgland"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_14",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_15",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+       {
+          "dataelement_id": "level_1",
+          "dataelement_value": "midgland",
+          "dataelement_display_value": "Midgland"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &lt; 1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_16",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	 {
+      "scenario_id": "PI-RADS_17",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "right",
+          "dataelement_display_value": "Right"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DWI",
+          "dataelement_display_value": "Peripheral Zone without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_18",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "midgland",
+          "dataelement_display_value": "Midgland"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DWI",
+          "dataelement_display_value": "Peripheral Zone without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear or wedge-shaped hypointensity or diffuse mild hypointensity, usually indistinct margin"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_19",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DWI",
+          "dataelement_display_value": "Peripheral Zone without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity or non-circumscribed, rounded, moderate hypointensity. Includes other that do not qualify as 2, 4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_20",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+       {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DWI",
+          "dataelement_display_value": "Peripheral Zone without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity or non-circumscribed, rounded, moderate hypointensity. Includes other that do not qualify as 2, 4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously "
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_21",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DWI",
+          "dataelement_display_value": "Peripheral Zone without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Circumscribed, homogeneous moderate hypointense focus/mass confined to prostate and  &lt; 1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously "
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_22",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DWI",
+          "dataelement_display_value": "Peripheral Zone without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Circumscribed, homogeneous moderate hypointense focus/mass confined to prostate and  &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously "
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_23",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DWI",
+          "dataelement_display_value": "Transition Zones without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Normal appearing TZ rare or a round, completely encapsulated nodule typical nodule"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_24",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DWI",
+          "dataelement_display_value": "Transition Zones without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_25",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DWI",
+          "dataelement_display_value": "Transition Zones without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_26",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DWI",
+          "dataelement_display_value": "Transition Zones without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously "
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_27",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DWI",
+          "dataelement_display_value": "Transition Zones without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &lt; 1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously "
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_28",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DWI",
+          "dataelement_display_value": "Transition Zones without adequate DWI"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posteromedial",
+          "dataelement_display_value": "posteromedial"
+        },
+		
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "6",
+          "dataelement_display_value": "6 - Not adequate"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously "
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_29",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Uniform hyperintense signal intensity(normal"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_30",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear/wedge shaped hypointense on ADC and/or linear/wedge shaped hyperintense on high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear or wedge-shaped hypointensity or diffuse mild hypointensity, usually indistinct margin"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_31",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear or wedge-shaped hypointensity or diffuse mild hypointensity, usually indistinct margin"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_32",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear or wedge-shaped hypointensity or diffuse mild hypointensity, usually indistinct margin"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_33",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear or wedge-shaped hypointensity or diffuse mild hypointensity, usually indistinct margin"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_34",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity or non-circumscribed, rounded, moderate hypointensity. Includes other that do not qualify as 2, 4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_35",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posteromedial",
+          "dataelement_display_value": "posteromedial"
+        },
+		
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity or non-circumscribed, rounded, moderate hypointensity. Includes other that do not qualify as 2, 4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_36",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity or non-circumscribed, rounded, moderate hypointensity. Includes other that do not qualify as 2, 4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_37",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posteromedial",
+          "dataelement_display_value": "posteromedial"
+        },
+		
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Circumscribed, homogeneous moderate hypointense focus/mass confined to prostate and  &lt; 1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_38",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "PZ_NO_DCE",
+          "dataelement_display_value": "Peripheral Zone without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WPZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Circumscribed, homogeneous moderate hypointense focus/mass confined to prostate and  &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_39",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posteromedial",
+          "dataelement_display_value": "posteromedial"
+        },
+		
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - Normal appearing TZ rare or a round, completely encapsulated nodule typical nodule"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "men_with_negative_findings",
+          "dataelement_display_value": "Men with negative findings at prior systematic transrectal US-guided biopsy at persistent risk"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_40",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+	{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear/wedge shaped hypointense on ADC and/or linear/wedge shaped hyperintense on high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_41",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_42",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posteromedial",
+          "dataelement_display_value": "posteromedial"
+        },
+		
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_43",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "posteromedial",
+          "dataelement_display_value": "posteromedial"
+        },
+		
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Mostly encapsulated nodule or a homogeneous circumscribed nodule without encapsulation atypical nodule or a homogeneous mildly hypointense area between nodules"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_44",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_45",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_46",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "base",
+          "dataelement_display_value": "Base"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Heterogeneous signal intensity with obscured margins. Includes others that do not qualify as 2,4, or 5"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_47",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "CZ",
+          "dataelement_display_value": "Central Zone"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "0.5",
+          "dataelement_display_value": "0.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &lt; 1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_48",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "bilateral",
+          "dataelement_display_value": "Bilateral"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ_NO_DCE",
+          "dataelement_display_value": "Transition Zones without adequate DCE"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "AFS",
+          "dataelement_display_value": "Anterior Fibromuscular Stroma"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "Anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "Y",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+		{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Not adequate"
+        },
+		
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "Men_at_persistent_risk",
+          "dataelement_display_value": "Men at persistent risk with negative findings or nonexplanatory histology at MRDB without systematic biopsy cores"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_49",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors11",
+          "dataelement_display_value": "Invasion of the seminal vesicle"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_50",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors2",
+          "dataelement_display_value": "Bulges “capsule” of the prostate"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_51",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Linear/wedge shaped hypointense on ADC and/or linear/wedge shaped hyperintense on high b-value DWI"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors2",
+          "dataelement_display_value": "Bulges “capsule” of the prostate"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_52",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "3",
+          "dataelement_display_value": "3 - Focal (discrete and different from the background) hypointense on ADC and/or focal hyperintense on high b-value DWI; may be markedly hypointense on ADC or markedly hyperintense on high b-value DWI, but not both"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors2",
+          "dataelement_display_value": "Bulges “capsule” of the prostate"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_53",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "4",
+          "dataelement_display_value": "4 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &lt;1.5cm in greatest dimension"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors2",
+          "dataelement_display_value": "Bulges “capsule” of the prostate"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_54",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Focal markedly hypontense on ADC and markedly hyperintense on high b-value DWI; &gt;1.5cm in greatest dimension or definite extraprostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors2",
+          "dataelement_display_value": "Bulges “capsule” of the prostate"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_55",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors2",
+          "dataelement_display_value": "Bulges “capsule” of the prostate"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_56",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "2",
+          "dataelement_display_value": "2 - Focal, and, earlier than or contemporaneously with enhancement of adjacent normal prostatic tissues, and; corresponds to suspicious finding on T2W and/or DWI"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors11",
+          "dataelement_display_value": "Invasion of the seminal vesicle"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "PI-RADS_57",
+      "inputs": [
+        {
+          "dataelement_id": "nodulenumber_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1"
+        },
+		{
+          "dataelement_id": "series_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+        {
+          "dataelement_id": "image_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1",
+		  "range": {
+            "Minimum": 1,
+            "Maximum": 100
+          }
+        },
+		{
+          "dataelement_id": "side_1",
+          "dataelement_value": "left",
+          "dataelement_display_value": "Left"
+        },
+		
+        {
+          "dataelement_id": "level_1",
+          "dataelement_value": "apex",
+          "dataelement_display_value": "apeX"
+        },
+		{
+          "dataelement_id": "Zoneselection_1",
+          "dataelement_value": "TZ",
+          "dataelement_display_value": "Transition Zone"
+        },
+		{
+          "dataelement_id": "Other_zones_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Position_1",
+          "dataelement_value": "anterior",
+          "dataelement_display_value": "anterior"
+        },
+		{
+          "dataelement_id": "Index_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "Diameter_1",
+          "dataelement_value": "1.5",
+          "dataelement_display_value": "1.5",
+		  "range": {
+            "Minimum": 0.1,
+            "Maximum": 15.0
+          }
+        },
+			{
+          "dataelement_id": "staging_descriptors_present_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "T2WTZ_1",
+          "dataelement_value": "5",
+          "dataelement_display_value": "5 - Lenticular or non-circumscribed, homogeneous, moderately hypointense, and &gt; = 1.5cm in greatest dimension or definite extra prostatic extension/invasive behavior"
+        },
+		{
+          "dataelement_id": "DWI_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No Abnormality (i.e.Normal) of ADC and high b-value DWI</Label>"
+        },
+		{
+          "dataelement_id": "DCE_1",
+          "dataelement_value": "1",
+          "dataelement_display_value": "1 - No early or contemporaneous enhancement; or diffuse multifocal enhancement not corresponding to a focal finding on T2W and/or DWI or focal enhancement corresponding to a lesion demonstrating features of BPH on T2WI (including features of extruded BPH in the PZ)"
+        },
+		{
+          "dataelement_id": "staging_descriptors_1",
+          "dataelement_value": "descriptors11",
+          "dataelement_display_value": "Invasion of the seminal vesicle"
+        },
+		{
+          "dataelement_id": "patient_group",
+          "dataelement_value": "biopsy_naive_men",
+          "dataelement_display_value": "Biopsy-naive men"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "N",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "include_PiRADS_Category",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        }
+     ]
+    }
+ ]
+}
