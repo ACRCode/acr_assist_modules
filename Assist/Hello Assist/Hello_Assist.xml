@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportingModule>
+    <Metadata>
+        <Label>Hello Assist</Label>
+        <ID>Hello Assist</ID>
+        <SchemaVersion>2.0</SchemaVersion>
+        <ModuleVersion>2.0</ModuleVersion>
+        <CreatedDate>2018-12-31</CreatedDate>
+        <LastModifiedDate>2021-01-11</LastModifiedDate>
+        <ApprovedBy>American College of Radiology</ApprovedBy>
+        <ReviewedBy>American College of Radiology</ReviewedBy>
+        <DevelopedBy>American College of Radiology</DevelopedBy>
+        <authors>
+            <person>
+                <name>kabra, smita</name>
+                <role>reviewer</role>
+            </person>
+        </authors>
+        <Info>
+            <Description>Hello Assist level determination</Description>
+            <References>
+                <Citation Url="https://nrdr.acr.org/lirads/">
+                    <Description>
+                ACR Hello Assist</Description>
+                ACR Hello Assist</Citation>
+            </References>
+            <Diagrams>
+                <Diagram Id="KeyDiagram" DisplaySequence="1" IsKeyDiagram="true">
+                    <Location>KeyDiagram.jpg</Location>
+                    <Label>Hello Assist1</Label>
+                </Diagram>
+                <Diagram Id="KeyDiagramBranch_1" DisplaySequence="2" IsKeyDiagram="true">
+                    <Location>KeyDiagramBranch_1.gif</Location>
+                    <Label>Hello Assist Branch 1</Label>
+                </Diagram>
+                <Diagram Id="KeyDiagramBranch_2" DisplaySequence="3" IsKeyDiagram="true">
+                    <Location>KeyDiagramBranch_2.gif</Location>
+                    <Label>Hello Assist Branch 2</Label>
+                </Diagram>
+            </Diagrams>
+            <Contact>
+                <Name>ACR Assist</Name>
+                <Email>acr-assist@acr.org</Email>
+                <Institution>American College of Radiology</Institution>
+            </Contact>
+        </Info>
+        <ReportCitationText>Hello Assist</ReportCitationText>
+        <ApplicableSexes Value="Both" />
+    </Metadata>
+    <DataElements>
+        <IntegerDataElement Id="observationnumber" IsRequired="true" DisplaySequence="1">
+            <Label>Observation number</Label>
+            <Minimum>1</Minimum>
+        </IntegerDataElement>
+        <ChoiceDataElement Id="Location" IsRequired="true" DisplaySequence="2">
+            <Label>Location</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>1</Value>
+                    <Label>1-Upper left quadrant</Label>
+                </Choice>
+                <Choice>
+                    <Value>2</Value>
+                    <Label>2-Upper right quadrant</Label>
+                </Choice>
+                <Choice>
+                    <Value>3</Value>
+                    <Label>3-Lower left quadrant</Label>
+                </Choice>
+                <Choice>
+                    <Value>4</Value>
+                    <Label>4-Lower right quadrant</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Size" IsRequired="true" DisplaySequence="3">
+            <Label>Size</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>1</Value>
+                    <Label>&lt; 4mm</Label>
+                </Choice>
+                <Choice>
+                    <Value>2</Value>
+                    <Label> ≥ 4mm</Label>
+                </Choice>
+            </ChoiceInfo>
+        </ChoiceDataElement>
+        <ChoiceDataElement Id="Enhancement" IsRequired="true" DisplaySequence="4">
+            <Label>Enhancement present</Label>
+            <ChoiceInfo>
+                <Choice>
+                    <Value>Y</Value>
+                    <Label>Yes</Label>
+                </Choice>
+                <Choice>
+                    <Value>N</Value>
+                    <Label>No</Label>
+                </Choice>
+            </ChoiceInfo>
+            <ConditionalProperties>
+                <ConditionalProperty>
+                    <EqualCondition DataElementId="Size" ComparisonValue="1" />
+                    <IsRelevant>false</IsRelevant>
+                </ConditionalProperty>
+            </ConditionalProperties>
+        </ChoiceDataElement>
+    </DataElements>
+    <Rules>
+        <DecisionPoint Id="HelloAssist">
+            <Label>Hello Assist</Label>
+            <Branch>
+                <Label>No follow-up required</Label>
+                <AndCondition>
+                    <EqualCondition DataElementId="Size" ComparisonValue="1" />
+                </AndCondition>
+                <EndPointRef EndPointId="NoFU" DiagramId="KeyDiagramBranch_1" />
+            </Branch>
+            <Branch>
+                <Label>Follow-up is recommended in 6 months</Label>
+                <AndCondition>
+                    <EqualCondition DataElementId="Size" ComparisonValue="2" />
+                    <EqualCondition DataElementId="Enhancement" ComparisonValue="N" />
+                </AndCondition>
+                <EndPointRef EndPointId="moFU" DiagramId="KeyDiagramBranch_3" />
+            </Branch>
+            <Branch>
+                <Label>Schedule an immediate follow-up</Label>
+                <AndCondition>
+                    <EqualCondition DataElementId="Size" ComparisonValue="2" />
+                    <EqualCondition DataElementId="Enhancement" ComparisonValue="Y" />
+                </AndCondition>
+                <EndPointRef EndPointId="mustFU" DiagramId="KeyDiagramBranch_2" />
+            </Branch>
+        </DecisionPoint>
+    </Rules>
+    <EndPoints>
+        <EndPoint Id="NoFU">
+            <Label>No F/U</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <ReportText Type="PlainText">No follow-up required</ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+        <EndPoint Id="moFU">
+            <Label>F/U in 6mo</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <ReportText Type="PlainText">Follow-up is recommended in 6 months</ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+        <EndPoint Id="mustFU">
+            <Label>Immediate f/u</Label>
+            <ReportSections>
+                <ReportSection SectionId="findings">
+                    <Branch>
+                        <ReportText Type="PlainText">Schedule an immediate follow-up</ReportText>
+                    </Branch>
+                </ReportSection>
+            </ReportSections>
+        </EndPoint>
+    </EndPoints>
+</ReportingModule>
