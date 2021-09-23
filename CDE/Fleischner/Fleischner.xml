@@ -8,11 +8,8 @@
         <CreatedDate>2019-10-09</CreatedDate>
         <LastModifiedDate>2019-10-9</LastModifiedDate>
         <DevelopedBy>American College of Radiology</DevelopedBy>
-        <CodableConcept />
         <Info>
             <Description>Fleischner</Description>
-            <References />
-            <Diagrams />
             <Contact>
                 <Name>Smita K</Name>
                 <Institution>American College of Radiology</Institution>
@@ -22,27 +19,9 @@
             <AnatomicRegions />
             <PossibleDiagnoses />
         </Ontology>
-        <ApplicableExams />
         <ApplicableSexes Value="Both" />
-        <ApplicableAgeGroups />
-        <TextCues>
-            <ContextPhrases />
-            <KeyWords />
-            <NegationPhrases />
-        </TextCues>
-        <VoiceActivation />
     </Metadata>
     <DataElements>
-        <IntegerDataElement Id="Nodulesize" IsRequired="true" DisplaySequence="3" Unit="mm">
-            <Label>Nodule size</Label>
-            <Hint>size in mm</Hint>
-        </IntegerDataElement>
-        <IntegerDataElement Id="Series" DisplaySequence="7">
-            <Label>Series</Label>
-        </IntegerDataElement>
-        <IntegerDataElement Id="Image" DisplaySequence="8">
-            <Label>Image</Label>
-        </IntegerDataElement>
         <ChoiceDataElement Id="Plurality" IsRequired="true" DisplaySequence="1">
             <Label>Plurality</Label>
             <ChoiceInfo>
@@ -73,6 +52,10 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
+        <IntegerDataElement Id="Nodulesize" IsRequired="true" DisplaySequence="3" Unit="mm">
+            <Label>Nodule size</Label>
+            <Hint>size in mm</Hint>
+        </IntegerDataElement>
         <ChoiceDataElement Id="Location" IsRequired="true" DisplaySequence="4">
             <Label>Location</Label>
             <ChoiceInfo>
@@ -124,6 +107,12 @@
                 </Choice>
             </ChoiceInfo>
         </ChoiceDataElement>
+        <IntegerDataElement Id="Series" DisplaySequence="7">
+            <Label>Series</Label>
+        </IntegerDataElement>
+        <IntegerDataElement Id="Image" DisplaySequence="8">
+            <Label>Image</Label>
+        </IntegerDataElement>
     </DataElements>
     <Rules />
     <EndPoints />
