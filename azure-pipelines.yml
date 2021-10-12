@@ -1,0 +1,156 @@
+
+
+
+
+trigger:
+    - master
+
+
+resources:
+  repositories:
+  
+  - repository: azureSharedTemplates
+    type: github
+    endpoint: ACRCode
+    name: ACRCode/ADOCS-templates
+    branch: master
+  #2) this repository is for AWS Cloudformation Template and Azure ARM
+  #https://github.com/ACRCode/InfrastructureAsCode
+  #Optional: only if current project need to use cloudformation templates from share repo
+  - repository: InfrastureAsCode
+    type: github
+    endpoint: ACRCode
+    name: ACRCode/InfrastructureAsCode
+    branch: main
+
+#variables:
+# variable group defined in Azure DevOps Library
+# Optional: only when project has variable group defined in Library
+  #- group: Project Variable
+
+#ADOCS requires pipeline yaml file extending from shared template created by ADOCS team
+# You should provide parameters defined in shared template (shared-template.yml) as show below
+extends:
+  template: shared-template.yml@azureSharedTemplates #Refer to the resources section repo 1)
+  # Below are parameters needed for shared template
+  parameters:
+    #parameters to set build version
+    buildVersionMajor: 1
+    buildVersionMinor: 0
+    buildPoolImage: 'windows-latest'
+    #Required
+    #Provide tasks which will be executed for build process
+    #Below is an example of tasks for .net Core project
+    buildSteps:
+      - checkout: self      
+
+     
+
+      # #Restore  
+
+      # - task: DotNetCoreCLI@2
+      #   displayName: 'Restore Nuget Packages'
+      #   inputs:
+      #     command: 'restore'
+      #     projects: 'Acr.Assist.AuditTrail.sln'
+      #     feedsToUse: 'select'
+      #     noCache: true
+
+     
+
+      # #Build
+
+      # - task: DotNetCoreCLI@2
+      #   displayName: Build the .net Core project
+      #   inputs:
+      #     command: 'build'
+      #     arguments: '--configuration Release'
+      #     projects: 'Acr.Assist.AuditTrail.API/Acr.Assist.AuditTrail.API.csproj'
+
+     
+      #Run Unit Tests
+
+      # - task: DotNetCoreCLI@2
+      #   displayName: 'Run Unit Tests'
+      #   continueOnError: true
+      #   inputs:
+      #    command: 'test'
+      #    projects: 'Acr.Assist.Modules.Service.Tests/Acr.Assist.Modules.Service.Tests.csproj' 
+      #    publishTestResults: true
+
+      #Run Integrarion Tests
+
+      # - task: DotNetCoreCLI@2
+      #   displayName: 'Run Integration Tests'
+      #   continueOnError: true
+      #   inputs:
+      #    command: 'test'
+      #    projects: 'Acr.Assist.Modules.Integrations.Tests/Acr.Assist.Modules.Integrations.Tests.csproj' 
+      #    publishTestResults: true
+
+      #Publish   
+
+      # - task: DotNetCoreCLI@2
+      #   displayName: Publish the .net Core project
+      #   inputs:
+      #     command: 'publish'
+      #     publishWebProjects: false
+      #     projects: 'Acr.Assist.AuditTrail.API/Acr.Assist.AuditTrail.API.csproj'
+      #     arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)'
+      #     modifyOutputPath: false
+
+      #Publish Artifacts to Pipeline
+      
+      - task: PublishPipelineArtifact@1
+        inputs:
+          targetPath: '$(Build.ArtifactStagingDirectory)'
+          artifact: 'modules'
+          publishLocation: 'pipeline'
+
+
+
+       #Create nuspec file 
+      
+      - task: CmdLine@2
+        displayName: Create nuget spec file .nuspec
+        inputs:
+           script: 'nuget.exe spec Acr.Assist.Modules'
+           workingDirectory: '$(Build.ArtifactStagingDirectory)'
+
+      
+      
+      #Create Package
+
+      - task: NuGetCommand@2
+        displayName: Pack Nuget package
+        inputs:
+          command: 'pack'
+          packagesToPack: '$(Build.ArtifactStagingDirectory)/*.nuspec'
+          packDestination: '$(Build.SourcesDirectory)/nupkg'
+          versioningScheme: 'byEnvVar'
+          versionEnvVar: 'BUILD_BUILDNUMBER'
+
+      #Push Package
+
+      - task: NuGetCommand@2
+        inputs:
+           command: 'push'
+           packagesToPush: '$(Build.SourcesDirectory)/nupkg/*.nupkg;!$(Build.SourcesDirectory)/nupkg/**/*.symbols.nupkg'
+           nuGetFeedType: 'external'
+           publishFeedCredentials: 'ACR Nexus with ApiKey-ACR Assist' 
+
+      #Run Checkmarx and IQ scan
+
+    securityScanAgentPool: 'Local Agents'
+    runCheckMarxScan: flase
+    CheckmarxServiceConnection: 'ACR Checkmarx'
+    CheckmarxProject: 'Assist_AuditTrail_Microservice'
+    CheckmarxCustomPreset: 'ACR Default'
+    CheckmarxFullTeamName: 'CxServer\SOC\ACR\All\Informatics\Assist'
+    CheckmarxFolderExclusion: 'cvs, .svn, .hg , .git, .bzr, bin , obj,  backup, .idea, node_modules'
+    runIQScan: false
+    NexusServiceConnection: 'ACR Nexus IQ'
+    NexusAppId: 'ACR_Assist_AuditTrail_Microservice'
+    NexusScanStage: 'Build'
+    ArtifactsForNexusScan: '' 
+    NexusScanTarget: '$(Build.SourcesDirectory)/Nexus/**/**.zip'
