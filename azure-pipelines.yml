@@ -104,7 +104,7 @@ extends:
       - task: CopyFiles@2
         inputs:
           SourceFolder: 'D:\a\1\s'
-          Contents: '**'
+          Contents: '**\Assist/AdrenalCT\**'
           TargetFolder: '$(Build.ArtifactStagingDirectory)'
       - task: PublishPipelineArtifact@1
         inputs:
