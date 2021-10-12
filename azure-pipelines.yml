@@ -98,9 +98,14 @@ extends:
       #     projects: 'Acr.Assist.AuditTrail.API/Acr.Assist.AuditTrail.API.csproj'
       #     arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)'
       #     modifyOutputPath: false
-
+      
       #Publish Artifacts to Pipeline
       
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: 'D:\a\1\s'
+          Contents: '**'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
       - task: PublishPipelineArtifact@1
         inputs:
           targetPath: '$(Build.ArtifactStagingDirectory)'
