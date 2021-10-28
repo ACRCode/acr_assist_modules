@@ -3,39 +3,238 @@
   "module_version": "1.1",
   "scenarios": [
     {
-      "scenario_id": "Lung-RADS_1.1_1",
+      "scenario_id": "Lung-RADS_2.0_1",
       "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baseline",
+          "dataelement_display_value": "Baseline with no comparison"
+        },
         {
           "dataelement_id": "evaluate_1",
-          "dataelement_value": "no",
+          "dataelement_value": "No",
+          "dataelement_display_value": "Cannot be fully evaluated"
+        },
+		{
+          "dataelement_id": "reason1",
+          "dataelement_value": "respiratorymotion",
+          "dataelement_display_value": "Respiratory motion"
+        }
+      ]
+    },
+   {
+      "scenario_id": "Lung-RADS_2.0_2",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "Cannot be fully evaluated"
+        },
+		{
+          "dataelement_id": "reason",
+          "dataelement_value": "incomplete",
+          "dataelement_display_value": "Incomplete"
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_3",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "No",
+          "dataelement_display_value": "Cannot be fully evaluated"
+        },
+		{
+          "dataelement_id": "reason",
+          "dataelement_value": "unavailable",
+          "dataelement_display_value": "unavailable priors"
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_4",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baseline",
+          "dataelement_display_value": "Baseline with no comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "No",
           "dataelement_display_value": "No"
         }
       ]
     },
-   
+   {
+      "scenario_id": "Lung-RADS_2.0_5",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_6",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_7",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baseline",
+          "dataelement_display_value": "Baseline with no comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+   {
+      "scenario_id": "Lung-RADS_2.0_8",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_9",
+      "inputs": [
+	  {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        }
+      ]
+    },
+	
     {
-      "scenario_id": "Lung-RADS_1.1_2",
+      "scenario_id": "Lung-RADS_2.0_10",
       "inputs": [
 	   
-	    {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baseline",
+          "dataelement_display_value": "Baseline with no comparison"
         },
-        
-		{
+        {
           "dataelement_id": "evaluate_1",
           "dataelement_value": "Yes",
           "dataelement_display_value": "Yes"
         },
 		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        
+		
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
           "dataelement_id": "unit_1",
           "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
+          "dataelement_display_value": "Mean Diameter"
         },
+		
 		{
           "dataelement_id": "size_mm_1",
            "dataelement_value": "1",
@@ -45,19 +244,42 @@
 					}
         },
 		
-		{
-          "dataelement_id": "composition_1",
-          "dataelement_value": "solid",
-          "dataelement_display_value": "Solid"
-        },
+		
+		
 		
 		{
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "Cat2PerifissuralNodule",
-          "dataelement_display_value": "2: Perifissural Nodule: <10 mm(523.6mm³) "
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
         },
 		{
-          "dataelement_id": "significantAdditionalFindings_1",
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "Cat2PerifissuralNodule",
+          "dataelement_display_value": "2: Perifissural Nodule: &lt;10 mm(523.6mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
           "dataelement_value": [
 						"Aorticaneurysm",
 						"Coronary"
@@ -65,676 +287,3349 @@
         }
       ]
     },
-    {
-      "scenario_id": "Lung-RADS_1.1_3",
+	
+	{
+      "scenario_id": "Lung-RADS_2.0_11",
       "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
+	   
+	   
         
-		{
+ {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
           "dataelement_id": "evaluate_1",
           "dataelement_value": "Yes",
           "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
         },
 		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
           "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
+           "dataelement_value": "3",
           "range": {
 						"minimum": 0,
 						"maximum": 100
 					}
         },
 		
-	     
+		
+		
+		
 		{
-          "dataelement_id": "composition_1",
-          "dataelement_value": "solid",
-          "dataelement_display_value": "Solid"
+          "dataelement_id": "series_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
         },
-	  
-        {
-          "dataelement_id": "baseCategory_1",
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "unchanged",
+          "dataelement_display_value": "Unchanged"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
           "dataelement_value": "cat2SolidNodule",
-          "dataelement_display_value": "2: Sol <6 mm (113.1 mm³)/ new <4 mm ( 33.5 mm³) "
+          "dataelement_display_value": "2: Sol &lt;6 mm (113.1 mm³)/ new &lt;4 mm ( 33.5 mm³)"
         },
 		{
-          "dataelement_id": "significantAdditionalFindings_1",
+          "dataelement_id": "significantAdditionalFindings_6",
           "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
+						"Massmediastinum",
+						"Massliver"
 					]
         }
-      ]
-    },
-	
-	{
-      "scenario_id": "Lung-RADS_1.1_4",
-      "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
-        },
-		{
-          "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 100
-					}
-        },
 		
-	     
-		{
-          "dataelement_id": "composition_1",
-          "dataelement_value": "solid",
-          "dataelement_display_value": "Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat2NodulesUnchanged",
-          "dataelement_display_value": "2: Category 3 or 4 stable >=3 months"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
-					]
-        }
-      ]
-    },
-	
-	{
-      "scenario_id": "Lung-RADS_1.1_5",
-      "inputs": [
-	  
-	    {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
-        },
-		{
-          "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 100
-					}
-        },
 		
-	  
-	    {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "solid",
-          "dataelement_display_value": "Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat3SolidNodule",
-          "dataelement_display_value": "3: Sol >=6 to <8mm(> 113.1 to < 268.1 mm³) / new 4 mm to<6mm(> 33.5 to < 113.1 mm³)"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
-					]
-        }
-      ]
-    },
-	
-	{
-      "scenario_id": "Lung-RADS_1.1_6",
-      "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
-        },
-		{
-          "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 100
-					}
-        },
 		
-	  
-	    {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "solid",
-          "dataelement_display_value": "Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat4ASolidNodule",
-          "dataelement_display_value": "4A: Sol >=8 to <15mm (>= 268.1 to < 1767.1 mm³)/ growing <8mm (268.1mm³)/ new 6 to <8 mm(113.1 to <268.1 mm³)"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
-					]
-        }
-      ]
-    },
-	
-	 {
-      "scenario_id": "Lung-RADS_1.1_7",
-      "inputs": [
-	      {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
-        },
-		{
-          "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 100
-					}
-        },
-		
-	  
-	     {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "solid",
-          "dataelement_display_value": "Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat4BSolidNodule",
-          "dataelement_display_value": "4B: Sol >=15 mm (1767.1 mm³)/ new\tor growing, and >=8mm(268.1 mm³)"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
-					]
-        }
       ]
     },
 	{
-      "scenario_id": "Lung-RADS_1.1_8",
+      "scenario_id": "Lung-RADS_2.0_12",
       "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
-        },
-		{
-          "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 100
-					}
-        },
-		
-        
-		{
-          "dataelement_id": "composition_1",
-          "dataelement_value": "part_solid",
-          "dataelement_display_value": "Part Solid"
-        },
-		
-		{
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "Cat2PerifissuralNodule",
-          "dataelement_display_value": "2: Perifissural Nodule: <10 mm(523.6mm³) "
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
-					]
-        }
-      ]
-    },
-    {
-      "scenario_id": "Lung-RADS_1.1_9",
-      "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
-        },
-		{
-          "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 100
-					}
-        },
-		
-	  
-	    {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "part_solid",
-          "dataelement_display_value": "Part Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat2PartSolidNodule",
-          "dataelement_display_value": "2: Part-sol <6mm (113.1 mm³) total diameter on baseline screening"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
-					]
-        }
-      ]
-    },
-	
-	{
-      "scenario_id": "Lung-RADS_1.1_10",
-      "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm",
-          "dataelement_display_value": "mm"
-        },
-		{
-          "dataelement_id": "size_mm_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 100
-					}
-        },
-		
-	     
-		{
-          "dataelement_id": "composition_1",
-          "dataelement_value": "part_solid",
-          "dataelement_display_value": "Part Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat2NodulesUnchanged",
-          "dataelement_display_value": "2: Category 3 or 4 stable >=3 months"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Coronary"
-					]
-        }
-      ]
-    },
-	
-	{
-      "scenario_id": "Lung-RADS_1.1_11",
-      "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm3",
-          "dataelement_display_value": "mm3"
-        },
-		{
-          "dataelement_id": "size_mm3_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 1000000
-					}
-        },
-		
-	  
-	    {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "part_solid",
-          "dataelement_display_value": "Part Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat3PartSolidNodule",
-          "dataelement_display_value": "3: Part-sol >6 mm (>113.1mm³) with sol <6mm(<113.1mm³) / new <6mm(<113.1mm³) total diameter"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"Aorticaneurysm",
-						"Pulmonary"
-					]
-        }
-      ]
-    },
-	{
-      "scenario_id": "Lung-RADS_1.1_12",
-      "inputs": [
-	      {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm3",
-          "dataelement_display_value": "mm3"
-        },
-		{
-          "dataelement_id": "size_mm3_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 1000000
-					}
-        },
-		
+	   
 	    
-		 {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "part_solid",
-          "dataelement_display_value": "Part Solid"
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
         },
         {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat4APartSolidNodule",
-          "dataelement_display_value": "4A: Part-sol>6mm(113,1mm³) with solid component >=6 mm to <8 mm(113.1 to 268.1 mm³)/ with a new or growing <4 mm (<33.5 mm³)solid component"
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "significantAdditionalFindings_1",
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "4",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "4",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "4",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightmiddlelobe",
+          "dataelement_display_value": "Right Middle Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "unchanged",
+          "dataelement_display_value": "Unchanged"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2PartSolidNodule",
+          "dataelement_display_value": "2: Part-sol &lt;6mm (113.1 mm³) total diameter on baseline screening"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_13",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "5",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "5",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "5",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NonSolidNodule",
+          "dataelement_display_value": "2: GGN &lt;30mm (14137.2 mm³)/ &gt;=30mm(14137.2 mm³) slow grow"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_14",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "lingula",
+          "dataelement_display_value": "Lingula"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NodulesUnchanged",
+          "dataelement_display_value": "2: Category 3 or 4 stable &gt;=3 months"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
           "dataelement_value": [
 						"Pulmonary",
-						"Coronary"
+						"Massneck"
 					]
         }
       ]
     },
-	
 	{
-      "scenario_id": "Lung-RADS_1.1_13",
+      "scenario_id": "Lung-RADS_2.0_15",
       "inputs": [
-	      {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
+	   
+	    
         
 		{
-          "dataelement_id": "evaluate_1",
-          "dataelement_value": "Yes",
-          "dataelement_display_value": "Yes"
-        },
-		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm3",
-          "dataelement_display_value": "mm3"
-        },
-		{
-          "dataelement_id": "size_mm3_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 1000000
-					}
-        },
-		
-	  
-	     {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "part_solid",
-          "dataelement_display_value": "Part Solid"
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
         },
         {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat4BPartSolidNodule",
-          "dataelement_display_value": "4B: Part-sol with a solid component >= 8 mm (268.1 mm³)/ a new or growing >= 4 mm (33.5 mm³) solid component"
-        },
-		{
-          "dataelement_id": "significantAdditionalFindings_1",
-          "dataelement_value": [
-						"ILD",
-						"Coronary"
-					]
-        }
-      ]
-    },
-	
-	{
-      "scenario_id": "Lung-RADS_1.1_14",
-      "inputs": [
-	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
-        },
-        
-		{
           "dataelement_id": "evaluate_1",
           "dataelement_value": "Yes",
           "dataelement_display_value": "Yes"
         },
 		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3SolidNodule",
+          "dataelement_display_value": "3: Sol &gt;=6 to &lt;8mm(&gt; 113.1 to &lt; 268.1 mm³) / new 4 mm to&lt;6mm(&gt; 33.5 to &lt; 113.1 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Pulmonary",
+						"Massneck"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_16",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
           "dataelement_id": "unit_1",
           "dataelement_value": "mm3",
-          "dataelement_display_value": "mm3"
+          "dataelement_display_value": "Volume"
         },
+		
 		{
           "dataelement_id": "size_mm3_1",
            "dataelement_value": "1",
           "range": {
 						"minimum": 0,
-						"maximum": 1000000
+						"maximum": 100
 					}
         },
 		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3PartSolidNodule",
+          "dataelement_display_value": "3: Part-sol &gt;6 mm (&gt;113.1mm³) with sol &lt;6mm(&lt;113.1mm³) / new &lt;6mm(&lt;113.1mm³) total diameter"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_17",
+      "inputs": [
+	   
+	    
         
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "4",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "4",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3NonSolidNodule",
+          "dataelement_display_value": "3: GGN &gt;=30mm(&gt; 14137.2 mm³) on baseline CT or new"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Massmediastinum",
+						"Massliver"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_18",
+      "inputs": [
+	   
+	   
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "5",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "5",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat4ASolidNodule",
+          "dataelement_display_value": "4A: Sol &gt;=8 to &lt;15mm (&gt;= 268.1 to &lt; 1767.1 mm³)/ growing &lt;8mm (268.1mm³)/ new 6 to &lt;8 mm(113.1 to &lt;268.1 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        },
+		{
+          "dataelement_id": "pickrecommendation4a",
+          "dataelement_value": ["3 month LDCT","PET/CT (given a nodule with a solid component >= 8 mm)"]
+          
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_19",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "lingula",
+          "dataelement_display_value": "Lingula"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat4APartSolidNodule",
+          "dataelement_display_value": "4A: Part-sol&gt;=6mm(113,1mm³) with solid component &gt;=6 mm to &lt;8 mm(113.1 to 268.1 mm³)/ with a new or growing &lt;4 mm (&lt;33.5 mm³)solid component"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Pulmonary",
+						"Massneck"
+					]
+        },
+		{
+          "dataelement_id": "pickrecommendation4a",
+          "dataelement_value": ["3 month LDCT","PET/CT (given a nodule with a solid component >= 8 mm)"]
+          
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_20",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat4BSolidNodule",
+          "dataelement_display_value": "4Bsolid nodule"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        },
+		{
+          "dataelement_id": "pickrecommendation4b",
+          "dataelement_value": ["1 month LDCT (for a new finding that may be potentially infectious or inflammatory)","3 month LDCT"],
+          "dataelement_display_value": "1 month LDCT (for a new finding that may be potentially infectious or inflammatory),3 month LDCT"
+        }
+      ]
+    },
+	
+	{
+      "scenario_id": "Lung-RADS_2.0_21",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "lingula",
+          "dataelement_display_value": "Lingula"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat4XMalignancy",
+          "dataelement_display_value": "4X:Category 3 or 4 nodules with additional features or imaging findings that increases the suspicion of malignancy"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Massmediastinum",
+						"Massliver"
+					]
+        },
+		{
+          "dataelement_id": "pickrecommendation4x",
+          "dataelement_value": "PET/CT (given a nodule with a solid component >= 8 mm)",
+          "dataelement_display_value": "PET/CT (given a nodule with a solid component >= 8 mm)"
+        }
+      ]
+    },
+	
+	{
+      "scenario_id": "Lung-RADS_2.0_22",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
 		{
           "dataelement_id": "composition_1",
           "dataelement_value": "non_solid",
           "dataelement_display_value": "Non Solid"
         },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
 		
 		{
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "Cat2PerifissuralNodule",
-          "dataelement_display_value": "2: Perifissural Nodule: <10 mm(523.6mm³) "
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
         },
 		{
-          "dataelement_id": "significantAdditionalFindings_1",
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "Cat2PerifissuralNodule",
+          "dataelement_display_value": "2: Perifissural Nodule: &lt;10 mm(523.6mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
           "dataelement_value": [
 						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_23",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2SolidNodule",
+          "dataelement_display_value": "2: Sol &lt;6 mm (113.1 mm³)/ new &lt;4 mm ( 33.5 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_24",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2PartSolidNodule",
+          "dataelement_display_value": "2: Part-sol &lt;6mm (113.1 mm³) total diameter on baseline screening"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_25",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NonSolidNodule",
+          "dataelement_display_value": "2: GGN &lt;30mm (14137.2 mm³)/ &gt;=30mm(14137.2 mm³) slow grow"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Pulmonary",
+						"Massneck"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_26",
+      "inputs": [
+	   
+	    
+        
+		{
+          "dataelement_id": "baseline",
+          "dataelement_value": "baselinewith",
+          "dataelement_display_value": "Baseline with comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "lingula",
+          "dataelement_display_value": "Lingula"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NodulesUnchanged",
+          "dataelement_display_value": "2: Category 3 or 4 stable &gt;=3 months"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_27",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "2",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3SolidNodule",
+          "dataelement_display_value": "3: Sol &gt;=6 to &lt;8mm(&gt; 113.1 to &lt; 268.1 mm³) / new 4 mm to&lt;6mm(&gt; 33.5 to &lt; 113.1 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_28",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3PartSolidNodule",
+          "dataelement_display_value": "3: Part-sol &gt;6 mm (&gt;113.1mm³) with sol &lt;6mm(&lt;113.1mm³) / new &lt;6mm(&lt;113.1mm³) total diameter"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_29",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3NonSolidNodule",
+          "dataelement_display_value": "3: GGN &gt;=30mm(&gt; 14137.2 mm³) on baseline CT or new"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	
+	{
+      "scenario_id": "Lung-RADS_2.0_30",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "Cat2PerifissuralNodule",
+          "dataelement_display_value": "2: Perifissural Nodule: &lt;10 mm(523.6mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Massmediastinum",
+						"Massliver"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_31",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2SolidNodule",
+          "dataelement_display_value": "2: Sol &lt;6 mm (113.1 mm³)/ new &lt;4 mm ( 33.5 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_32",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2PartSolidNodule",
+          "dataelement_display_value": "2: Part-sol &lt;6mm (113.1 mm³) total diameter on baseline screening"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Pulmonary",
+						"Massneck"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_33",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NonSolidNodule",
+          "dataelement_display_value": "2: GGN &lt;30mm (14137.2 mm³)/ &gt;=30mm(14137.2 mm³) slow grow"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_34",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		{
+          "dataelement_id": "size_mm3_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NodulesUnchanged",
+          "dataelement_display_value": "2: Category 3 or 4 stable &gt;=3 months"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_35",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3SolidNodule",
+          "dataelement_display_value": "3: Sol &gt;=6 to &lt;8mm(&gt; 113.1 to &lt; 268.1 mm³) / new 4 mm to&lt;6mm(&gt; 33.5 to &lt; 113.1 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_36",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm3",
+          "dataelement_display_value": "Volume"
+        },
+		
+		
+		{
+          "dataelement_id": "size_mm3_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm3_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3PartSolidNodule",
+          "dataelement_display_value": "3: Part-sol &gt;6 mm (&gt;113.1mm³) with sol &lt;6mm(&lt;113.1mm³) / new &lt;6mm(&lt;113.1mm³) total diameter"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Massmediastinum",
+						"Massliver"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_37",
+      "inputs": [
+	   
+	    
+        
+		 {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "3",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3NonSolidNodule",
+          "dataelement_display_value": "3: GGN &gt;=30mm(&gt; 14137.2 mm³) on baseline CT or new"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	
+	
+	
+	
+	{
+      "scenario_id": "Lung-RADS_2.0_38",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "Cat2PerifissuralNodule",
+          "dataelement_display_value": "2: Perifissural Nodule: &lt;10 mm(523.6mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Masskidneys",
 						"ILD"
 					]
         }
       ]
     },
-    {
-      "scenario_id": "Lung-RADS_2.0_15",
+	{
+      "scenario_id": "Lung-RADS_2.0_39",
       "inputs": [
-	      {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
         },
-        
-		{
+        {
           "dataelement_id": "evaluate_1",
           "dataelement_value": "Yes",
           "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm3",
-          "dataelement_display_value": "mm3"
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "size_mm3_1",
-           "dataelement_value": "1",
-          "range": {
-						"minimum": 0,
-						"maximum": 1000000
-					}
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
         },
-		
-	  
-	     {
+		{
           "dataelement_id": "composition_1",
           "dataelement_value": "non_solid",
           "dataelement_display_value": "Non Solid"
         },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat2NonSolidNodule",
-          "dataelement_display_value": "2: GGN <30mm (14137.2 mm³)/ >=30mm(14137.2 mm³) slow grow"
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
         },
 		{
-          "dataelement_id": "significantAdditionalFindings_1",
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightlowerlobe",
+          "dataelement_display_value": "Right Lower Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2SolidNodule",
+          "dataelement_display_value": "2: Sol &lt;6 mm (113.1 mm³)/ new &lt;4 mm ( 33.5 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
           "dataelement_value": [
-						"Mass",
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_40",
+      "inputs": [
+	   
+	    {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "smaller",
+          "dataelement_display_value": "Smaller"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2PartSolidNodule",
+          "dataelement_display_value": "2: Part-sol &lt;6mm (113.1 mm³) total diameter on baseline screening"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_41",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "unchanged",
+          "dataelement_display_value": "Unchanged"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NonSolidNodule",
+          "dataelement_display_value": "2: GGN &lt;30mm (14137.2 mm³)/ &gt;=30mm(14137.2 mm³) slow grow"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_42",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "unchanged",
+          "dataelement_display_value": "Unchanged"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NodulesUnchanged",
+          "dataelement_display_value": "2: Category 3 or 4 stable &gt;=3 months"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Pulmonary",
+						"Massneck"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_43",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "unchanged",
+          "dataelement_display_value": "Unchanged"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3SolidNodule",
+          "dataelement_display_value": "3: Sol &gt;=6 to &lt;8mm(&gt; 113.1 to &lt; 268.1 mm³) / new 4 mm to&lt;6mm(&gt; 33.5 to &lt; 113.1 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Pulmonary",
+						"Massneck"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_44",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "unchanged",
+          "dataelement_display_value": "Unchanged"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3PartSolidNodule",
+          "dataelement_display_value": "3: Part-sol &gt;6 mm (&gt;113.1mm³) with sol &lt;6mm(&lt;113.1mm³) / new &lt;6mm(&lt;113.1mm³) total diameter"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_45",
+      "inputs": [
+	   
+	    {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "non_solid",
+          "dataelement_display_value": "Non Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "unchanged",
+          "dataelement_display_value": "Unchanged"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3NonSolidNodule",
+          "dataelement_display_value": "3: GGN &gt;=30mm(&gt; 14137.2 mm³) on baseline CT or new"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
 						"Coronary"
 					]
         }
@@ -742,108 +3637,1082 @@
     },
 	
 	{
-      "scenario_id": "Lung-RADS_1.1_16",
+      "scenario_id": "Lung-RADS_2.0_46",
       "inputs": [
-	      {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
         },
-        
-		{
+        {
           "dataelement_id": "evaluate_1",
           "dataelement_value": "Yes",
           "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm3",
-          "dataelement_display_value": "mm3"
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "size_mm3_1",
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
            "dataelement_value": "1",
           "range": {
 						"minimum": 0,
-						"maximum": 1000000
+						"maximum": 100
 					}
         },
-		
-	     
-		 {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "non_solid",
-          "dataelement_display_value": "Non Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat2NodulesUnchanged",
-          "dataelement_display_value": "2: Category 3 or 4 stable >=3 months"
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
         },
 		{
-          "dataelement_id": "significantAdditionalFindings_1",
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "Cat2PerifissuralNodule",
+          "dataelement_display_value": "2: Perifissural Nodule: &lt;10 mm(523.6mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
           "dataelement_value": [
-						"Aorticaneurysm",
-						"Mass"
+						"Pulmonary",
+						"Massneck"
 					]
         }
       ]
     },
-    
-    
-    
-    {
-      "scenario_id": "Lung-RADS_1.1_17",
+	{
+      "scenario_id": "Lung-RADS_2.0_47",
       "inputs": [
+	   
 	     {
-          "dataelement_id": "image_1",
-          "dataelement_value": "1",
-          "range": {
-						"minimum": 1,
-						"maximum": 100
-					}
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
         },
-        
-		{
+        {
           "dataelement_id": "evaluate_1",
           "dataelement_value": "Yes",
           "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "unit_1",
-          "dataelement_value": "mm3",
-          "dataelement_display_value": "mm3"
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
         },
 		{
-          "dataelement_id": "size_mm3_1",
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
            "dataelement_value": "1",
           "range": {
 						"minimum": 0,
-						"maximum": 1000000
+						"maximum": 100
 					}
         },
-			  
-	    {
-          "dataelement_id": "composition_1",
-          "dataelement_value": "non_solid",
-          "dataelement_display_value": "Non Solid"
-        },
-        {
-          "dataelement_id": "baseCategory_1",
-          "dataelement_value": "cat3NonSolidNodule",
-          "dataelement_display_value": "3: GGN >=30mm(> 14137.2 mm³) on baseline CT or new"
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
         },
 		{
-          "dataelement_id": "significantAdditionalFindings_1",
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightlowerlobe",
+          "dataelement_display_value": "Right Lower Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2SolidNodule",
+          "dataelement_display_value": "2: Sol &lt;6 mm (113.1 mm³)/ new &lt;4 mm ( 33.5 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
           "dataelement_value": [
-						"Pulmonary",
-						"Mass"
+						"Masskidneys",
+						"ILD"
 					]
         }
       ]
-    }
-  ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_48",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "new",
+          "dataelement_display_value": "New"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2PartSolidNodule",
+          "dataelement_display_value": "2: Part-sol &lt;6mm (113.1 mm³) total diameter on baseline screening"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_49",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NonSolidNodule",
+          "dataelement_display_value": "2: GGN &lt;30mm (14137.2 mm³)/ &gt;=30mm(14137.2 mm³) slow grow"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Masskidneys",
+						"ILD"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_50",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat2NodulesUnchanged",
+          "dataelement_display_value": "2: Category 3 or 4 stable &gt;=3 months"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_51",
+      "inputs": [
+	   
+	    {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightlowerlobe",
+          "dataelement_display_value": "Right Lower Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3SolidNodule",
+          "dataelement_display_value": "3: Sol &gt;=6 to &lt;8mm(&gt; 113.1 to &lt; 268.1 mm³) / new 4 mm to&lt;6mm(&gt; 33.5 to &lt; 113.1 mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Masskidneys",
+						"ILD"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_52",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3PartSolidNodule",
+          "dataelement_display_value": "3: Part-sol &gt;6 mm (&gt;113.1mm³) with sol &lt;6mm(&lt;113.1mm³) / new &lt;6mm(&lt;113.1mm³) total diameter"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Pulmonary",
+						"Massneck"
+					]
+        }
+      ]
+    },
+	{
+      "scenario_id": "Lung-RADS_2.0_53",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "annual",
+          "dataelement_display_value": "Annual screen or Follow-up CT"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "part_solid",
+          "dataelement_display_value": "Part Solid"
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "size_mm_1o",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "partsize_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "lingula",
+          "dataelement_display_value": "Lingula"
+        },
+		{
+          "dataelement_id": "nodule1_behavior",
+          "dataelement_value": "growing",
+          "dataelement_display_value": "Growing"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "no",
+          "dataelement_display_value": "No"
+        },
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "cat3NonSolidNodule",
+          "dataelement_display_value": "3: GGN &gt;=30mm(&gt; 14137.2 mm³) on baseline CT or new"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	 {
+      "scenario_id": "Lung-RADS_2.0_54",
+      "inputs": [
+	   
+	     {
+          "dataelement_id": "baseline",
+          "dataelement_value": "baseline",
+          "dataelement_display_value": "Baseline with no comparison"
+        },
+        {
+          "dataelement_id": "evaluate_1",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "evaluate",
+          "dataelement_value": "Yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "specific",
+          "dataelement_value": "No",
+          "dataelement_display_value": "No"
+        },
+        
+		
+		{
+          "dataelement_id": "composition_1",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_1",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_1",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_1",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodulequestion_1",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "composition_2",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_2",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_2",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_2",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_2",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_2",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodulequestion_2",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "composition_3",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_3",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_3",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_3",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_3",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_3",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodulequestion_3",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "composition_4",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_4",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_4",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_4",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_4",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_4",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodulequestion_4",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "composition_5",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_5",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_5",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_5",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_5",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_5",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		{
+          "dataelement_id": "nodulequestion_5",
+          "dataelement_value": "yes",
+          "dataelement_display_value": "Yes"
+        },
+		{
+          "dataelement_id": "composition_6",
+          "dataelement_value": "solid",
+          "dataelement_display_value": "Solid"
+        },
+		{
+          "dataelement_id": "unit_6",
+          "dataelement_value": "mm",
+          "dataelement_display_value": "Mean Diameter"
+        },
+		
+		{
+          "dataelement_id": "size_mm_6",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		
+		
+		
+		
+		{
+          "dataelement_id": "series_6",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "image_6",
+           "dataelement_value": "1",
+          "range": {
+						"minimum": 0,
+						"maximum": 100
+					}
+        },
+		{
+          "dataelement_id": "locationquestion_6",
+          "dataelement_value": "rightupperlobe",
+          "dataelement_display_value": "Right Upper Lobe"
+        },
+		
+		
+		{
+          "dataelement_id": "baseCategory_6",
+          "dataelement_value": "Cat2PerifissuralNodule",
+          "dataelement_display_value": "2: Perifissural Nodule: &lt;10 mm(523.6mm³)"
+        },
+		{
+          "dataelement_id": "significantAdditionalFindings_6",
+          "dataelement_value": [
+						"Aorticaneurysm",
+						"Coronary"
+					]
+        }
+      ]
+    },
+	]
 }
