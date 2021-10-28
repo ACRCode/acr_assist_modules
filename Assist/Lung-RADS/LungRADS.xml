@@ -28,7 +28,7 @@
       </References>
       <Diagrams>
         <Diagram>
-        	<Location>keyimage_keyimage.jpg</Location>
+          <Location>keyimage.jpg</Location>
           <Label>ACR Lung Imaging Reporting and Data System (Lung-RADS) Assessment Categories</Label>
         </Diagram>
       </Diagrams>
@@ -59,7 +59,26 @@
 
   <DataElements>  
 	<!-- Nodule 1 dataelements -->
-	  <ChoiceDataElement Id="evaluate_1" IsRequired="true" DisplaySequence="1">
+	
+	<ChoiceDataElement Id="baseline" IsRequired="true" DisplaySequence="1">
+      <Label>What type of screen study? </Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>baseline</Value>
+          <Label>Baseline with no comparison</Label>
+        </Choice>
+		<Choice>
+          <Value>baselinewith</Value>
+          <Label>Baseline with comparison</Label>
+        </Choice>
+        <Choice>
+			<Value>annual</Value>
+          <Label>Annual screen or Follow-up CT</Label>
+        </Choice>
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	  <ChoiceDataElement Id="evaluate_1" IsRequired="true" DisplaySequence="2">
       <CodableConcept Name="codableConcept_evaluate_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -69,25 +88,7 @@
           <UserSelected />
         </Coding>
       </CodableConcept>
-      <Label>Can this lung image be fully evaluated?</Label>
-      <ChoiceInfo>
-        <Choice>
-          <Value>Yes</Value>
-          <Label>Nodules to describe</Label>
-        </Choice>
-		  <Choice>
-          <Value>negative</Value>
-          <Label>Is there a negative screen</Label>
-        </Choice>
-        <Choice>
-			<Value>No</Value><!--How to type cube?-->
-          <Label>Cannot be fully evaluated</Label>
-        </Choice>
-      </ChoiceInfo>
-    </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="negativescreen" IsRequired="true" DisplaySequence="2">
-      <Label>Are there any non-calcified nodules 4mm or larger?</Label>
+      <Label>Are the lungs able to be fully evaluated?</Label>
       <ChoiceInfo>
         <Choice>
           <Value>Yes</Value>
@@ -96,21 +97,94 @@
         <Choice>
 			<Value>No</Value><!--How to type cube?-->
           <Label>No</Label>
+        </Choice>cat1NoEvaluationEp_1
+      </ChoiceInfo>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="evaluate" IsRequired="true" DisplaySequence="3">
+      <Label>Are there any lung nodules?</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Yes</Value>
+          <Label>Yes</Label>
+        </Choice>
+        <Choice>
+			<Value>No</Value>
+          <Label>No</Label>
         </Choice>
       </ChoiceInfo>
-	    <ConditionalProperties>
+	  	  <ConditionalProperties>
+	  <ConditionalProperty>
+	  <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+	  </ConditionalProperty>
+	  </ConditionalProperties> 
+    </ChoiceDataElement>
+	
+	
+	
+	<ChoiceDataElement Id="specific" IsRequired="true" DisplaySequence="4">
+      <Label>Do all the nodules contain specific calicfications such as complete,central,popcorn,concentric rings or contains fat?</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>Yes</Value>
+          <Label>Yes</Label>
+        </Choice>
+        <Choice>
+			<Value>No</Value>
+          <Label>No</Label>
+        </Choice>
+      </ChoiceInfo>
+	  <ConditionalProperties>
+	  <ConditionalProperty>
+	  <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+	  </ConditionalProperty>
+	  <ConditionalProperty>
+	  <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+	  </ConditionalProperty>
+	  </ConditionalProperties> 
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="unit_1" IsRequired="true" DisplaySequence="5">
+      <CodableConcept Name="codableConcept_unit_1">
+        <Coding>
+          <System Value="https://www.radelement.org/home/elements/element" />
+          <Version />
+          <Code Value="RDE1045" />
+          <Display Value="RDE1045" />
+          <UserSelected />
+        </Coding>
+      </CodableConcept>
+      <Label> Are all nodules measured as Mean Diameter or Volume?</Label>
+      <ChoiceInfo>
+        <Choice IsDefault="true">
+          <Value>mm</Value>
+          <Label>Mean Diameter</Label>
+        </Choice>
+        <Choice>
+		   <Value>mm3</Value><!--How to type cube?-->
+          <Label>Volume</Label>
+        </Choice>
+      </ChoiceInfo>
+      <ConditionalProperties>
         <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 		 <ConditionalProperty>
-          <EqualCondition DataElementId="evaluate_1" ComparisonValue="Yes" />
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty> 
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
       </ConditionalProperties>
     </ChoiceDataElement>
-	
-	<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="3">
+
+	<ChoiceDataElement Id="composition_1" IsRequired="true" DisplaySequence="6">
       <CodableConcept Name="codableConcept_composition_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -140,46 +214,19 @@
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+	    <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty> 
 		<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
       </ConditionalProperties>
     </ChoiceDataElement>
-    <ChoiceDataElement Id="unit_1" IsRequired="true" DisplaySequence="4">
-      <CodableConcept Name="codableConcept_unit_1">
-        <Coding>
-          <System Value="https://www.radelement.org/home/elements/element" />
-          <Version />
-          <Code Value="RDE1045" />
-          <Display Value="RDE1045" />
-          <UserSelected />
-        </Coding>
-      </CodableConcept>
-      <Label> Nodule 1: Is this Nodule measured as Mean Diameter or  Volume?</Label>
-      <ChoiceInfo>
-        <Choice IsDefault="true">
-          <Value>mm</Value>
-          <Label>Mean Diameter</Label>
-        </Choice>
-        <Choice>
-		   <Value>mm3</Value><!--How to type cube?-->
-          <Label>Volume</Label>
-        </Choice>
-      </ChoiceInfo>
-      <ConditionalProperties>
-        <ConditionalProperty>
-          <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
-		<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
-      </ConditionalProperties>
-    </ChoiceDataElement>
+    
 		<!--Enter size need to be modified-->
-	<IntegerDataElement DisplaySequence="5" IsRequired="true" Unit="mm" Id="size_mm_1" >	
+	<IntegerDataElement DisplaySequence="7" IsRequired="true" Unit="mm" Id="size_mm_1" >	
       <CodableConcept Name="codableConcept_size_mm_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -200,19 +247,27 @@
         <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>	
+		<ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 		<ConditionalProperty>
           <EqualCondition DataElementId="composition_1" ComparisonValue="part_solid" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
-		<ConditionalProperty>
+	<!-- 	<ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
       </ConditionalProperties>
     </IntegerDataElement>
 	
-	<IntegerDataElement DisplaySequence="6" IsRequired="true" Unit="mm" Id="size_mm_1o" >	
+	<IntegerDataElement DisplaySequence="8" IsRequired="true" Unit="mm" Id="size_mm_1o" >	
       <CodableConcept Name="codableConcept_size_mm_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -234,6 +289,14 @@
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 		 <ConditionalProperty>
           <EqualCondition DataElementId="composition_1" ComparisonValue="solid" />
           <IsRelevant>false</IsRelevant>
@@ -242,14 +305,14 @@
           <EqualCondition DataElementId="composition_1" ComparisonValue="non_solid" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
-		<ConditionalProperty>
+		<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
       </ConditionalProperties>
     </IntegerDataElement>
 	
-	<IntegerDataElement DisplaySequence="7" IsRequired="true" Unit="mm" Id="partsize_mm_1" >	
+	<IntegerDataElement DisplaySequence="9" IsRequired="true" Unit="mm" Id="partsize_mm_1" >	
       <Label>Nodule 1: Mean Diameter of the Solid component</Label>
       <Minimum>0</Minimum>
       <Maximum>100</Maximum>
@@ -262,6 +325,14 @@
 			<EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 		 <ConditionalProperty>
           <EqualCondition DataElementId="composition_1" ComparisonValue="solid" />
           <IsRelevant>false</IsRelevant>
@@ -270,20 +341,28 @@
           <EqualCondition DataElementId="composition_1" ComparisonValue="non_solid" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
-		<ConditionalProperty>
+		<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
       </ConditionalProperties>
     </IntegerDataElement>
 	
-    <NumericDataElement Id="size_mm3_1" IsRequired="true" DisplaySequence="8" Unit="mm³">
+    <NumericDataElement Id="size_mm3_1" IsRequired="true" DisplaySequence="10" Unit="mm³">
       <Label>Nodule 1: Volume </Label>
       <Minimum>0</Minimum>
       <Maximum>1000000</Maximum>
       <ConditionalProperties>
         <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
         <ConditionalProperty>
@@ -294,14 +373,14 @@
           <EqualCondition DataElementId="composition_1" ComparisonValue="part_solid" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
-		<ConditionalProperty>
+		<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
     </NumericDataElement>
 	
-	  <NumericDataElement Id="size_mm3_1o" IsRequired="true" DisplaySequence="9" Unit="mm³">
+	  <NumericDataElement Id="size_mm3_1o" IsRequired="true" DisplaySequence="11" Unit="mm³">
       <Label>Nodule 1: Overall Volume </Label>
       <Minimum>0</Minimum>
       <Maximum>1000000</Maximum>
@@ -310,6 +389,14 @@
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
         <ConditionalProperty>
           <EqualCondition DataElementId="unit_1" ComparisonValue="mm" />
           <IsRelevant>false</IsRelevant>
@@ -322,14 +409,10 @@
           <EqualCondition DataElementId="composition_1" ComparisonValue="non_solid" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
-		<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
     </NumericDataElement>
 	
-	 <NumericDataElement Id="partsize_mm3_1" IsRequired="true" DisplaySequence="10" Unit="mm³">
+	 <NumericDataElement Id="partsize_mm3_1" IsRequired="true" DisplaySequence="12" Unit="mm³">
       <Label>Nodule 1: Volume of the Solid Component </Label>
       <Minimum>0</Minimum>
       <Maximum>1000000</Maximum>
@@ -338,6 +421,14 @@
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
         <ConditionalProperty>
           <EqualCondition DataElementId="unit_1" ComparisonValue="mm" />
           <IsRelevant>false</IsRelevant>
@@ -350,28 +441,28 @@
           <EqualCondition DataElementId="composition_1" ComparisonValue="non_solid" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
-		<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
     </NumericDataElement>
 	
-	<IntegerDataElement Id="series_1" IsRequired="false" DisplaySequence="11">
+	<IntegerDataElement Id="series_1" IsRequired="false" DisplaySequence="13">
 		<Label>Nodule 1: Series best seen</Label>
 		<ConditionalProperties>
         <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 		<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
       </ConditionalProperties>
 	</IntegerDataElement>
 	
-    <IntegerDataElement Id="image_1" IsRequired="false" DisplaySequence="12">
+    <IntegerDataElement Id="image_1" IsRequired="false" DisplaySequence="14">
       <CodableConcept Name="codableConcept_image_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -387,8 +478,12 @@
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 		<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
       </ConditionalProperties>
@@ -396,7 +491,7 @@
 	
 	
 	
-	<ChoiceDataElement DisplaySequence="13" IsRequired="true" Id="locationquestion_1">		
+	<ChoiceDataElement DisplaySequence="15" IsRequired="true" Id="locationquestion_1">		
 			<Label>Nodule 1: Location of the Nodule</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -417,7 +512,7 @@
 				</Choice>
 				<Choice>
 					<Value>leftmiddlelobe</Value>
-					<Label>Left Middle Lobe</Label>
+					<Label>Left Lower Lobe</Label>
 				</Choice>
 				<Choice>
 					<Value>lingula</Value>
@@ -429,14 +524,58 @@
 					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
+					 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement DisplaySequence="14" IsRequired="true" Id="nodulequestion_1">		
+		<ChoiceDataElement DisplaySequence="16" IsRequired="true" Id="nodule1_behavior">
+		<Label>Nodule 1: Behavior</Label>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>unchanged</Value>
+					<Label>Unchanged</Label>
+				</Choice>
+				<Choice>
+					<Value>new</Value>
+					<Label>New</Label>
+				</Choice>
+				<Choice>
+					<Value>growing</Value>
+					<Label>Growing</Label>
+				</Choice>
+				<Choice>
+					<Value>smaller</Value>
+					<Label>Smaller</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+					 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="baseline" ComparisonValue="baseline" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement DisplaySequence="17" IsRequired="true" Id="nodulequestion_1">		
 			<Label>Other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -453,13 +592,18 @@
 					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
+					 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement DisplaySequence="15" IsRequired="true" Id="composition_2">
+		
+		<ChoiceDataElement DisplaySequence="18" IsRequired="true" Id="composition_2">
 			<Label>Nodule 2: Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -483,14 +627,10 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>			
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement DisplaySequence="16" IsRequired="true" Id="unit_2">
+		<!-- <ChoiceDataElement DisplaySequence="19" IsRequired="true" Id="unit_2">
 			<Label>Nodule 2: Is this Nodule measured as Mean Diameter or  Volume?</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
@@ -498,7 +638,7 @@
 					<Label>Mean Diameter</Label>
 				</Choice>
 				<Choice>
-					<Value>mm3</Value><!--How to type cube?-->
+					<Value>mm3</Value>
 					<Label>Volume</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -511,15 +651,11 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>		
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement> -->
 
-		<IntegerDataElement DisplaySequence="17" IsRequired="true" Unit="mm" Id="size_mm_2" >		
+		<IntegerDataElement DisplaySequence="20" IsRequired="true" Unit="mm" Id="size_mm_2" >		
 			<Label>Nodule 2: Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -529,7 +665,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_2" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -540,14 +676,10 @@
 					<EqualCondition DataElementId="composition_2" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<IntegerDataElement DisplaySequence="18" IsRequired="true" Unit="mm" Id="size_mm_2o" >		
+		<IntegerDataElement DisplaySequence="21" IsRequired="true" Unit="mm" Id="size_mm_2o" >		
 			<Label>Nodule 2: Overall Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -557,7 +689,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_2" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -572,14 +704,10 @@
 					<EqualCondition DataElementId="composition_2" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<IntegerDataElement DisplaySequence="19" IsRequired="true" Unit="mm" Id="partsize_mm_2" >		
+		<IntegerDataElement DisplaySequence="22" IsRequired="true" Unit="mm" Id="partsize_mm_2" >		
 			<Label>Nodule 2: Mean Diameter of the Solid Component</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -589,7 +717,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_2" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -604,14 +732,10 @@
 					<EqualCondition DataElementId="composition_2" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 
-		<NumericDataElement DisplaySequence="20" IsRequired="true" Unit="mm³" Id="size_mm3_2" >		
+		<NumericDataElement DisplaySequence="23" IsRequired="true" Unit="mm³" Id="size_mm3_2" >		
 			<Label>Nodule 2: Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -625,21 +749,17 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_2" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<EqualCondition DataElementId="composition_2" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-		<NumericDataElement DisplaySequence="21" IsRequired="true" Unit="mm³" Id="size_mm3_2o" >		
+		<NumericDataElement DisplaySequence="24" IsRequired="true" Unit="mm³" Id="size_mm3_2o" >		
 			<Label>Nodule 2: Overall Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -653,7 +773,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_2" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -664,14 +784,10 @@
 					<EqualCondition DataElementId="composition_2" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-		<NumericDataElement DisplaySequence="22" IsRequired="true" Unit="mm³" Id="partsize_mm3_2" >		
+		<NumericDataElement DisplaySequence="25" IsRequired="true" Unit="mm³" Id="partsize_mm3_2" >		
 			<Label>Nodule 2: Volume of the Solid Component </Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -685,7 +801,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_2" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -696,14 +812,10 @@
 					<EqualCondition DataElementId="composition_2" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-		<IntegerDataElement Id="series_2" IsRequired="false" DisplaySequence="23">
+		<IntegerDataElement Id="series_2" IsRequired="false" DisplaySequence="26">
 		<Label>Nodule 2: Series best seen</Label>
 		<ConditionalProperties>
 		 <ConditionalProperty>
@@ -714,15 +826,11 @@
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
 			</ConditionalProperties>
 	</IntegerDataElement>
 		
 		
-		  <IntegerDataElement Id="image_2" IsRequired="false" DisplaySequence="24">
+		  <IntegerDataElement Id="image_2" IsRequired="false" DisplaySequence="27">
       <CodableConcept Name="codableConcept_image_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -741,16 +849,12 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 	</IntegerDataElement>
 
 		
-		<ChoiceDataElement DisplaySequence="25" IsRequired="true" Id="locationquestion_2">		
+		<ChoiceDataElement DisplaySequence="28" IsRequired="true" Id="locationquestion_2">		
 			<Label>	Nodule 2: Location of the Nodule</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -787,14 +891,50 @@
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement DisplaySequence="26" IsRequired="true" Id="nodulequestion_2">		
+		<ChoiceDataElement DisplaySequence="29" IsRequired="true" Id="nodule2_behavior">
+		<Label>Nodule 2: Behavior</Label>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>unchanged</Value>
+					<Label>Unchanged</Label>
+				</Choice>
+				<Choice>
+					<Value>new</Value>
+					<Label>New</Label>
+				</Choice>
+				<Choice>
+					<Value>growing</Value>
+					<Label>Growing</Label>
+				</Choice>
+				<Choice>
+					<Value>smaller</Value>
+					<Label>Smaller</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+				<ConditionalProperty>
+					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="baseline" ComparisonValue="baseline" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement DisplaySequence="30" IsRequired="true" Id="nodulequestion_2">		
 			<Label>Other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -814,11 +954,7 @@
 				<ConditionalProperty>
 					<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
@@ -826,7 +962,7 @@
 
 		<!--Nodule 3 DataElements-->
 		
-		<ChoiceDataElement DisplaySequence="27" IsRequired="true" Id="composition_3">
+		<ChoiceDataElement DisplaySequence="31" IsRequired="true" Id="composition_3">
 			<Label>Nodue 3: Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -853,14 +989,11 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement DisplaySequence="28" IsRequired="true" Id="unit_3">
+		
+		<!-- <ChoiceDataElement DisplaySequence="32" IsRequired="true" Id="unit_3">
 			<Label>Nodule 3: Is this Nodule measured as Mean Diameter or  Volume?</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
@@ -868,7 +1001,7 @@
 					<Label>Mean Diameter</Label>
 				</Choice>
 				<Choice>
-					<Value>mm3</Value><!--How to type cube?-->
+					<Value>mm3</Value>
 					<Label>Volume</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -883,15 +1016,11 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>			
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement> -->
 
-		<IntegerDataElement DisplaySequence="29" IsRequired="true" Unit="mm" Id="size_mm_3" >		
+		<IntegerDataElement DisplaySequence="33" IsRequired="true" Unit="mm" Id="size_mm_3" >		
 			<Label>Nodule 3: Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -901,7 +1030,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_3" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -915,14 +1044,10 @@
 					<EqualCondition DataElementId="composition_3" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-			<IntegerDataElement DisplaySequence="30" IsRequired="true" Unit="mm" Id="size_mm_3o" >		
+			<IntegerDataElement DisplaySequence="34" IsRequired="true" Unit="mm" Id="size_mm_3o" >		
 			<Label>Nodule 3: Overall Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -932,7 +1057,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_3" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -950,14 +1075,10 @@
 					<EqualCondition DataElementId="composition_3" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<IntegerDataElement DisplaySequence="31" IsRequired="true" Unit="mm" Id="partsize_mm_3" >		
+		<IntegerDataElement DisplaySequence="35" IsRequired="true" Unit="mm" Id="partsize_mm_3" >		
 			<Label>Nodule 3: Mean Diameter of the Solid Component</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -967,7 +1088,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_3" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -985,14 +1106,10 @@
 					<EqualCondition DataElementId="composition_3" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 
-		<NumericDataElement DisplaySequence="32" IsRequired="true" Unit="mm³" Id="size_mm3_3" >		
+		<NumericDataElement DisplaySequence="36" IsRequired="true" Unit="mm³" Id="size_mm3_3" >		
 			<Label>Nodule 3: Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1009,21 +1126,17 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_3" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<EqualCondition DataElementId="composition_3" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-			<NumericDataElement DisplaySequence="33" IsRequired="true" Unit="mm³" Id="size_mm3_3o" >		
+			<NumericDataElement DisplaySequence="37" IsRequired="true" Unit="mm³" Id="size_mm3_3o" >		
 			<Label>Nodule 3: Overall Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1040,7 +1153,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_3" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1051,14 +1164,10 @@
 					<EqualCondition DataElementId="composition_3" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-		<NumericDataElement DisplaySequence="34" IsRequired="true" Unit="mm³" Id="partsize_mm3_3" >		
+		<NumericDataElement DisplaySequence="38" IsRequired="true" Unit="mm³" Id="partsize_mm3_3" >		
 			<Label>Nodule 3: Volume of the Solid Component</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1075,7 +1184,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_3" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1086,14 +1195,10 @@
 					<EqualCondition DataElementId="composition_3" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-			<IntegerDataElement Id="series_3" IsRequired="false" DisplaySequence="35">
+			<IntegerDataElement Id="series_3" IsRequired="false" DisplaySequence="39">
 		<Label>Nodule 3: Series best seen</Label>
 		<ConditionalProperties>
 		 <ConditionalProperty>
@@ -1106,15 +1211,11 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>			
 			</ConditionalProperties>
 	</IntegerDataElement>
 	
-		<IntegerDataElement Id="image_3" IsRequired="false" DisplaySequence="36">
+		<IntegerDataElement Id="image_3" IsRequired="false" DisplaySequence="40">
       <CodableConcept Name="codableConcept_image_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -1136,17 +1237,13 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 	</IntegerDataElement>
 
 		
 
-		<ChoiceDataElement DisplaySequence="37" IsRequired="true" Id="locationquestion_3">		
+		<ChoiceDataElement DisplaySequence="41" IsRequired="true" Id="locationquestion_3">		
 			<Label>Nodule 3: Location of the Nodule</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1186,14 +1283,53 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</ChoiceDataElement>
+		
+		<ChoiceDataElement DisplaySequence="42" IsRequired="true" Id="nodule3_behavior">
+		<Label>Nodule 3: Behavior</Label>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>unchanged</Value>
+					<Label>Unchanged</Label>
+				</Choice>
+				<Choice>
+					<Value>new</Value>
+					<Label>New</Label>
+				</Choice>
+				<Choice>
+					<Value>growing</Value>
+					<Label>Growing</Label>
+				</Choice>
+				<Choice>
+					<Value>smaller</Value>
+					<Label>Smaller</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+					<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>	
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="baseline" ComparisonValue="baseline" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		</ConditionalProperties>
+		</ChoiceDataElement>
 
-	<ChoiceDataElement DisplaySequence="38" IsRequired="true" Id="nodulequestion_3">		
+	<ChoiceDataElement DisplaySequence="43" IsRequired="true" Id="nodulequestion_3">		
 			<Label>Other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1216,18 +1352,14 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
 		
 		<!--  Nodule 4 DataElements -->
 		
-		<ChoiceDataElement DisplaySequence="39" IsRequired="true" Id="composition_4">
+		<ChoiceDataElement DisplaySequence="44" IsRequired="true" Id="composition_4">
 			<Label>Nodue 4: Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1255,15 +1387,11 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement DisplaySequence="40" IsRequired="true" Id="unit_4">
+		<!-- <ChoiceDataElement DisplaySequence="45" IsRequired="true" Id="unit_4">
 			<Label>Nodule 4: Is this Nodule measured as Mean Diameter or  Volume?</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
@@ -1271,7 +1399,7 @@
 					<Label>Mean Diameter</Label>
 				</Choice>
 				<Choice>
-					<Value>mm3</Value><!--How to type cube?-->
+					<Value>mm3</Value>
 					<Label>Volume</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -1287,15 +1415,11 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement> -->
 
-		<IntegerDataElement DisplaySequence="41" IsRequired="true" Unit="mm" Id="size_mm_4" >		
+		<IntegerDataElement DisplaySequence="46" IsRequired="true" Unit="mm" Id="size_mm_4" >		
 			<Label>Nodule 4: Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -1305,7 +1429,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_4" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1320,14 +1444,10 @@
 					<EqualCondition DataElementId="composition_4" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-				<IntegerDataElement DisplaySequence="42" IsRequired="true" Unit="mm" Id="size_mm_4o" >		
+				<IntegerDataElement DisplaySequence="47" IsRequired="true" Unit="mm" Id="size_mm_4o" >		
 			<Label>Nodule 4: Overall Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -1337,7 +1457,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_4" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1356,14 +1476,10 @@
 					<EqualCondition DataElementId="composition_4" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<IntegerDataElement DisplaySequence="43" IsRequired="true" Unit="mm" Id="partsize_mm_4" >		
+		<IntegerDataElement DisplaySequence="48" IsRequired="true" Unit="mm" Id="partsize_mm_4" >		
 			<Label>Nodule 4: Mean Diameter of the Solid Component</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -1373,7 +1489,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_4" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1392,14 +1508,10 @@
 					<EqualCondition DataElementId="composition_4" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties>
 		</IntegerDataElement>
 
-		<NumericDataElement DisplaySequence="44" IsRequired="true" Unit="mm³" Id="size_mm3_4" >		
+		<NumericDataElement DisplaySequence="49" IsRequired="true" Unit="mm³" Id="size_mm3_4" >		
 			<Label>Nodule 4: Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1417,21 +1529,17 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_4" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 					<ConditionalProperty>
 					<EqualCondition DataElementId="composition_4" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-			<NumericDataElement DisplaySequence="45" IsRequired="true" Unit="mm³" Id="size_mm3_4o" >		
+			<NumericDataElement DisplaySequence="50" IsRequired="true" Unit="mm³" Id="size_mm3_4o" >		
 			<Label>Nodule 4: Overall Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1449,7 +1557,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_4" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 					<ConditionalProperty>
@@ -1460,14 +1568,10 @@
 					<EqualCondition DataElementId="composition_4" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-		<NumericDataElement DisplaySequence="46" IsRequired="true" Unit="mm³" Id="partsize_mm3_4" >		
+		<NumericDataElement DisplaySequence="51" IsRequired="true" Unit="mm³" Id="partsize_mm3_4" >		
 			<Label>Nodule 4: Volume of the Solid Component</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1485,7 +1589,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_4" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1496,14 +1600,10 @@
 					<EqualCondition DataElementId="composition_4" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-				<IntegerDataElement Id="series_4" IsRequired="false" DisplaySequence="47">
+				<IntegerDataElement Id="series_4" IsRequired="false" DisplaySequence="52">
 		<Label>Nodule 4: Series best seen</Label>
 		<ConditionalProperties>
 		<ConditionalProperty>
@@ -1517,15 +1617,11 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>			
 			</ConditionalProperties>
 	</IntegerDataElement>
 		
-		<IntegerDataElement Id="image_4" IsRequired="false" DisplaySequence="48">
+		<IntegerDataElement Id="image_4" IsRequired="false" DisplaySequence="53">
       <CodableConcept Name="codableConcept_image_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -1548,16 +1644,12 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 	</IntegerDataElement> 
 
 	
-		<ChoiceDataElement DisplaySequence="49" IsRequired="true" Id="locationquestion_4">		
+		<ChoiceDataElement DisplaySequence="54" IsRequired="true" Id="locationquestion_4">		
 			<Label>Nodule 4: Location of the Nodule</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1597,15 +1689,55 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
+		
+		<ChoiceDataElement DisplaySequence="55" IsRequired="true" Id="nodule4_behavior">
+		<Label>Nodule 4: Behavior</Label>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>unchanged</Value>
+					<Label>Unchanged</Label>
+				</Choice>
+				<Choice>
+					<Value>new</Value>
+					<Label>New</Label>
+				</Choice>
+				<Choice>
+					<Value>growing</Value>
+					<Label>Growing</Label>
+				</Choice>
+				<Choice>
+					<Value>smaller</Value>
+					<Label>Smaller</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+					<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="baseline" ComparisonValue="baseline" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		</ConditionalProperties>
+		</ChoiceDataElement>
 
-		<ChoiceDataElement DisplaySequence="50" IsRequired="true" Id="nodulequestion_4">		
+		<ChoiceDataElement DisplaySequence="56" IsRequired="true" Id="nodulequestion_4">		
 			<Label>Other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1629,11 +1761,7 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
-				</ConditionalProperty>	
-<ConditionalProperty>
-          <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
-          <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+				</ConditionalProperty>				
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -1641,7 +1769,7 @@
 		
 		<!--Nodule 5 DataElements-->
 		
-		<ChoiceDataElement DisplaySequence="51" IsRequired="true" Id="composition_5">
+		<ChoiceDataElement DisplaySequence="57" IsRequired="true" Id="composition_5">
 			<Label>Nodue 5: Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -1673,7 +1801,7 @@
 				</ConditionalProperty>		
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement DisplaySequence="52" IsRequired="true" Id="unit_5">
+		<!-- <ChoiceDataElement DisplaySequence="58" IsRequired="true" Id="unit_5">
 			<Label>Nodule 5: Is this Nodule measured as Mean Diameter or  Volume?</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
@@ -1681,7 +1809,7 @@
 					<Label>Mean Diameter</Label>
 				</Choice>
 				<Choice>
-					<Value>mm3</Value><!--How to type cube?-->
+					<Value>mm3</Value>
 					<Label>Volume</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -1699,14 +1827,14 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-<ConditionalProperty>
+ <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty>	 		
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement> -->
 
-		<IntegerDataElement DisplaySequence="53" IsRequired="true" Unit="mm" Id="size_mm_5" >		
+		<IntegerDataElement DisplaySequence="59" IsRequired="true" Unit="mm" Id="size_mm_5" >		
 			<Label>Nodule 5: Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -1716,7 +1844,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_5" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1732,14 +1860,14 @@
 					<EqualCondition DataElementId="composition_5" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
+			<!-- 	<ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-			<IntegerDataElement DisplaySequence="54" IsRequired="true" Unit="mm" Id="size_mm_5o" >		
+			<IntegerDataElement DisplaySequence="60" IsRequired="true" Unit="mm" Id="size_mm_5o" >		
 			<Label>Nodule 5: Overall Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -1749,7 +1877,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_5" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1769,14 +1897,14 @@
 					<EqualCondition DataElementId="composition_5" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+			<!-- 	<ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<IntegerDataElement DisplaySequence="55" IsRequired="true" Unit="mm" Id="partsize_mm_5" >		
+		<IntegerDataElement DisplaySequence="61" IsRequired="true" Unit="mm" Id="partsize_mm_5" >		
 			<Label>Nodule 5: Mean Diameter of the Solid Nodule</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -1786,7 +1914,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_5" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1806,14 +1934,14 @@
 					<EqualCondition DataElementId="composition_5" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties>
 		</IntegerDataElement>
 
-		<NumericDataElement DisplaySequence="56" IsRequired="true" Unit="mm³" Id="size_mm3_5" >		
+		<NumericDataElement DisplaySequence="62" IsRequired="true" Unit="mm³" Id="size_mm3_5" >		
 			<Label>Nodule 5: Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1832,21 +1960,21 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_5" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<EqualCondition DataElementId="composition_5" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-			<NumericDataElement DisplaySequence="57" IsRequired="true" Unit="mm³" Id="size_mm3_5o" >		
+			<NumericDataElement DisplaySequence="63" IsRequired="true" Unit="mm³" Id="size_mm3_5o" >		
 			<Label>Nodule 5: Overall Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1865,7 +1993,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_5" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1876,14 +2004,14 @@
 					<EqualCondition DataElementId="composition_5" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 
-	<NumericDataElement DisplaySequence="58" IsRequired="true" Unit="mm³" Id="partsize_mm3_5" >		
+	<NumericDataElement DisplaySequence="64" IsRequired="true" Unit="mm³" Id="partsize_mm3_5" >		
 			<Label>Nodule 5: Volume of the Solid Nodule</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -1902,7 +2030,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_5" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -1913,14 +2041,14 @@
 					<EqualCondition DataElementId="composition_5" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-				<IntegerDataElement Id="series_5" IsRequired="false" DisplaySequence="59">
+				<IntegerDataElement Id="series_5" IsRequired="false" DisplaySequence="65">
 		<Label>Nodule 5: Series best seen</Label>
 		<ConditionalProperties>
 		 <ConditionalProperty>
@@ -1936,14 +2064,14 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty> -->				
 			</ConditionalProperties>
 	</IntegerDataElement>
 		
-		<IntegerDataElement Id="image_5" IsRequired="false" DisplaySequence="60">
+		<IntegerDataElement Id="image_5" IsRequired="false" DisplaySequence="66">
       <CodableConcept Name="codableConcept_image_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -1968,17 +2096,17 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty>	 -->			
 			</ConditionalProperties>
 	</IntegerDataElement>
 
 	
 		
 			
-		<ChoiceDataElement DisplaySequence="61" IsRequired="true" Id="locationquestion_5">		
+		<ChoiceDataElement DisplaySequence="67" IsRequired="true" Id="locationquestion_5">		
 			<Label>Nodule 5: Location of the Nodule</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -2020,14 +2148,59 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty>	 -->			
 			</ConditionalProperties>
 		</ChoiceDataElement>
 		
-		<ChoiceDataElement DisplaySequence="62" IsRequired="true" Id="nodulequestion_5">		
+		<ChoiceDataElement DisplaySequence="68" IsRequired="true" Id="nodule5_behavior">
+		<Label>Nodule 5: Behavior</Label>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>unchanged</Value>
+					<Label>Unchanged</Label>
+				</Choice>
+				<Choice>
+					<Value>new</Value>
+					<Label>New</Label>
+				</Choice>
+				<Choice>
+					<Value>growing</Value>
+					<Label>Growing</Label>
+				</Choice>
+				<Choice>
+					<Value>smaller</Value>
+					<Label>Smaller</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+				<ConditionalProperty>
+					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+					<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="baseline" ComparisonValue="baseline" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		</ConditionalProperties>
+		</ChoiceDataElement>
+		
+		<ChoiceDataElement DisplaySequence="69" IsRequired="true" Id="nodulequestion_5">		
 			<Label>Other nodules present?</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -2053,10 +2226,10 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty>	 -->			
 			</ConditionalProperties>
 		</ChoiceDataElement>
 
@@ -2064,7 +2237,7 @@
 
 	<!--Nodule 6 DataElemtents-->
 	
-	<ChoiceDataElement DisplaySequence="63" IsRequired="true" Id="composition_6">
+	<ChoiceDataElement DisplaySequence="70" IsRequired="true" Id="composition_6">
 			<Label>Nodue 6: Composition</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -2095,13 +2268,13 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty> -->				
 			</ConditionalProperties>
 		</ChoiceDataElement>
-		<ChoiceDataElement DisplaySequence="64" IsRequired="true" Id="unit_6">
+		<!-- <ChoiceDataElement DisplaySequence="71" IsRequired="true" Id="unit_6">
 			<Label>Nodule 6: Is this Nodule measured as Mean Diameter or  Volume?</Label>
 			<ChoiceInfo>
 				<Choice IsDefault="true">
@@ -2109,7 +2282,7 @@
 					<Label>Mean Diameter</Label>
 				</Choice>
 				<Choice>
-					<Value>mm3</Value><!--How to type cube?-->
+					<Value>mm3</Value>
 					<Label>Volume</Label>
 				</Choice>
 			</ChoiceInfo>
@@ -2128,14 +2301,14 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-<ConditionalProperty>
+ <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>				
 			</ConditionalProperties>
-		</ChoiceDataElement>
+		</ChoiceDataElement> -->
 
-		<IntegerDataElement DisplaySequence="65" IsRequired="true" Unit="mm" Id="size_mm_6" >		
+		<IntegerDataElement DisplaySequence="72" IsRequired="true" Unit="mm" Id="size_mm_6" >		
 			<Label>Nodule 6: Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -2145,7 +2318,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_6" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -2162,14 +2335,14 @@
 					<EqualCondition DataElementId="composition_6" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
+	<!-- 			<ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-			<IntegerDataElement DisplaySequence="66" IsRequired="true" Unit="mm" Id="size_mm_6o" >		
+			<IntegerDataElement DisplaySequence="73" IsRequired="true" Unit="mm" Id="size_mm_6o" >		
 			<Label>Nodule 6: Overall Mean Diameter</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -2179,7 +2352,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_6" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -2200,14 +2373,14 @@
 					<EqualCondition DataElementId="composition_6" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+			<!-- 	<ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties>
 		</IntegerDataElement>
 		
-		<IntegerDataElement DisplaySequence="67" IsRequired="true" Unit="mm" Id="partsize_mm_6" >		
+		<IntegerDataElement DisplaySequence="74" IsRequired="true" Unit="mm" Id="partsize_mm_6" >		
 			<Label>Nodule 6: Mean Diameter of the Solid Nodule</Label>
 			<Minimum>0</Minimum>
 			<Maximum>100</Maximum>
@@ -2217,7 +2390,7 @@
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_6" ComparisonValue="mm3"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm3"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -2238,14 +2411,14 @@
 					<EqualCondition DataElementId="composition_6" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties>
 		</IntegerDataElement>
 
-		<NumericDataElement DisplaySequence="68" IsRequired="true" Unit="mm³" Id="size_mm3_6" >		
+		<NumericDataElement DisplaySequence="75" IsRequired="true" Unit="mm³" Id="size_mm3_6" >		
 			<Label>Nodule 6: Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -2265,21 +2438,21 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_6" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
 					<EqualCondition DataElementId="composition_6" ComparisonValue="part_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-				<NumericDataElement DisplaySequence="69" IsRequired="true" Unit="mm³" Id="size_mm3_6o" >		
+				<NumericDataElement DisplaySequence="76" IsRequired="true" Unit="mm³" Id="size_mm3_6o" >		
 			<Label>Nodule 6: Overall Volume</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -2299,7 +2472,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_6" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -2310,15 +2483,15 @@
 					<EqualCondition DataElementId="composition_6" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 
 
-		<NumericDataElement DisplaySequence="70" IsRequired="true" Unit="mm³" Id="partsize_mm3_6" >		
+		<NumericDataElement DisplaySequence="77" IsRequired="true" Unit="mm³" Id="partsize_mm3_6" >		
 			<Label>Nodule 6: Volume of the Solid Nodule</Label>
 			<Minimum>0</Minimum>
 			<Maximum>1000000</Maximum>	
@@ -2338,7 +2511,7 @@
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
 				<ConditionalProperty>
-					<EqualCondition  DataElementId="unit_6" ComparisonValue="mm"/>
+					<EqualCondition  DataElementId="unit_1" ComparisonValue="mm"/>
 					<IsRelevant>false</IsRelevant>
 				</ConditionalProperty>
 				<ConditionalProperty>
@@ -2349,14 +2522,14 @@
 					<EqualCondition DataElementId="composition_6" ComparisonValue="non_solid"/>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-				<ConditionalProperty>
+				<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>
+        </ConditionalProperty> -->
 			</ConditionalProperties><!--The doctor caculated as 1000500, I don't know which one should we keep 100*100*100-->
 		</NumericDataElement>
 		
-				<IntegerDataElement Id="series_6" IsRequired="false" DisplaySequence="71">
+				<IntegerDataElement Id="series_6" IsRequired="false" DisplaySequence="78">
 		<Label>Nodule 6 : Series best seen</Label>
 	<ConditionalProperties>
 	 <ConditionalProperty>
@@ -2373,14 +2546,14 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty> -->				
 			</ConditionalProperties>
 	</IntegerDataElement>
 
-		<IntegerDataElement Id="image_6" IsRequired="false" DisplaySequence="72">
+		<IntegerDataElement Id="image_6" IsRequired="false" DisplaySequence="79">
       <CodableConcept Name="codableConcept_image_1">
         <Coding>
           <System Value="https://www.radelement.org/home/elements/element" />
@@ -2406,16 +2579,16 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty>	 -->			
 			</ConditionalProperties>
 	</IntegerDataElement>	
 
 		
 		
-		<ChoiceDataElement DisplaySequence="73" IsRequired="true" Id="locationquestion_6">		
+		<ChoiceDataElement DisplaySequence="80" IsRequired="true" Id="locationquestion_6">		
 			<Label>Nodule 6: Location of the Nodule</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -2458,23 +2631,65 @@
 					</OrCondition>
 					<IsRelevant>false</IsRelevant>					
 				</ConditionalProperty>	
-<ConditionalProperty>
+<!-- <ConditionalProperty>
           <EqualCondition DataElementId="negativescreen" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>				
+        </ConditionalProperty>	 -->			
 			</ConditionalProperties>
 		</ChoiceDataElement>
+		
+		<ChoiceDataElement DisplaySequence="81" IsRequired="true" Id="nodule6_behavior">
+		<Label>Nodule 6: Behavior</Label>
+			<ChoiceInfo>
+				<Choice IsDefault="true">
+					<Value>unchanged</Value>
+					<Label>Unchanged</Label>
+				</Choice>
+				<Choice>
+					<Value>new</Value>
+					<Label>New</Label>
+				</Choice>
+				<Choice>
+					<Value>growing</Value>
+					<Label>Growing</Label>
+				</Choice>
+				<Choice>
+					<Value>smaller</Value>
+					<Label>Smaller</Label>
+				</Choice>
+			</ChoiceInfo>
+			<ConditionalProperties>
+		<ConditionalProperty>
+					<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
+					<IsRelevant>false</IsRelevant>
+				</ConditionalProperty>
+					<ConditionalProperty>
+					<OrCondition>
+						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="no"/>
+						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="no"/>
+					</OrCondition>
+					<IsRelevant>false</IsRelevant>					
+				</ConditionalProperty>		
+		<ConditionalProperty>
+          <EqualCondition DataElementId="baseline" ComparisonValue="baseline" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		</ConditionalProperties>
+		</ChoiceDataElement>
 
-		<ChoiceDataElement  DisplaySequence="74" IsRequired= "true" Id="baseCategory_6">
+		<ChoiceDataElement  DisplaySequence="82" IsRequired= "true" Id="baseCategory_6">
 			<Label>Category of findings</Label>
 			<ChoiceInfo>
 				<!-- Category 0-->
 				
-				<Choice>
+<!-- 				<Choice>
 					<Value>cat0NoEvaluation</Value>
 					<Label>0: Lungs cannot be evaluated</Label>
 					<Hint>Part or all of lungs cannot be evaluated</Hint>
-				</Choice>
+				</Choice> -->
 			
 				<!-- Category 2-->
 				<Choice>
@@ -2560,7 +2775,7 @@
 			</ChoiceInfo>
 
 			<ImageMap> <!--? What's the image Map used for--><!--How -->
-				<Location>keyimage_keyimage.jpg</Location>
+				<Location>keyimage.jpg</Location>
 				<Map>
 				
 					<Area Shape="rect" Coords="27,120,547,162" ChoiceValue="cat0NoEvaluation"/>
@@ -2585,6 +2800,14 @@
 					<ConditionalProperties>
 			 <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
 			</ConditionalProperties>
@@ -2629,7 +2852,7 @@
 	
 	
 
-		<ComputedDataElement Id="consolidatedCategory_6" DisplaySequence="75" ><!--deleted the displaySequence-->
+		<ComputedDataElement Id="consolidatedCategory_6" DisplaySequence="83" ><!--deleted the displaySequence-->
 			<Label>Suggested Recommendation</Label>
 			<DecisionPoint>
 				<Branch>
@@ -2690,11 +2913,19 @@
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
+			 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 			</ConditionalProperties>
 		</ComputedDataElement>
 		
-		<MultiChoiceDataElement Id="pickrecommendation" DisplaySequence="76">
-		<Label>Pick Recommendations</Label>
+		<MultiChoiceDataElement Id="pickrecommendation" DisplaySequence="84">
+		<Label>Recommendations</Label>
 			<ChoiceInfo>
 				<Choice>
 				<Value>Obtain prior outside imaging for comparison</Value>
@@ -2726,6 +2957,14 @@
         </ConditionalProperty>	
  <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>	
+	 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
+<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>		
 			</ConditionalProperties>
@@ -2793,7 +3032,7 @@
 			</ConditionalProperties>
 		</MultiChoiceDataElement> -->
 		
-		<MultiChoiceDataElement Id="pickrecommendation4a" DisplaySequence="77">
+		<MultiChoiceDataElement Id="pickrecommendation4a" DisplaySequence="85">
 		<Label>Pick Recommendations</Label>
 			<ChoiceInfo>
 				<Choice>
@@ -2826,20 +3065,24 @@
  <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>	
+	 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>	
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
         </ConditionalProperty>		
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="pickrecommendation4b" DisplaySequence="78">
+		<MultiChoiceDataElement Id="pickrecommendation4b" DisplaySequence="86">
 		<Label>Pick Recommendations</Label>
 			<ChoiceInfo>
 				<Choice>
 				<Value>1 month LDCT (for a new finding that may be potentially infectious or inflammatory)</Value>
 					<Label>1 month LDCT (for a new finding that may be potentially infectious or inflammatory)</Label>
-				</Choice>
-				<Choice>
-				<Value>3 month LDCT</Value>
-					<Label>3 month LDCT</Label>
 				</Choice>
 				<Choice>
 				<Value>PET/CT (given a nodule with a solid component >= 8 mm)</Value>
@@ -2875,16 +3118,24 @@
  <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>		
+        </ConditionalProperty>
+	 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>	
+			<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 		
-		<MultiChoiceDataElement Id="pickrecommendation4x" DisplaySequence="79">
+		<MultiChoiceDataElement Id="pickrecommendation4x" DisplaySequence="87">
 		<Label>Pick Recommendations</Label>
 			<ChoiceInfo>
 				<Choice>
-				<Value>3 month LDCT</Value>
-					<Label>3 month LDCT</Label>
+				<Value>1 month LDCT (for a new finding that may be potentially infectious or inflammatory)</Value>
+					<Label>1 month LDCT (for a new finding that may be potentially infectious or inflammatory)</Label>
 				</Choice>
 				<Choice>
 				<Value>PET/CT (given a nodule with a solid component >= 8 mm)</Value>
@@ -2921,7 +3172,15 @@
  <ConditionalProperty>
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
-        </ConditionalProperty>		
+        </ConditionalProperty>	
+	 <ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>	
+			<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 			</ConditionalProperties>
 		</MultiChoiceDataElement>
 		
@@ -2936,8 +3195,8 @@
 		
 		
 			
-		<MultiChoiceDataElement DisplaySequence="80" Id="significantAdditionalFindings_6" AllowFreetext="true">
-			<Label>Are there any potential significant findings?</Label>
+		<MultiChoiceDataElement DisplaySequence="88" Id="significantAdditionalFindings_6" AllowFreetext="true">
+			<Label>Potentially significant findings?</Label>
 			<Hint>Shortlist of findings </Hint>
 			<ChoiceInfo>
 				<Choice>
@@ -2978,12 +3237,72 @@
           <EqualCondition DataElementId="evaluate_1" ComparisonValue="No" />
           <IsRelevant>false</IsRelevant>
         </ConditionalProperty>
-					<ConditionalProperty>
-						<EqualCondition  DataElementId="evaluate_1" ComparisonValue="No"/>
-						<IsRelevant>false</IsRelevant>
-					</ConditionalProperty>				
+		<ConditionalProperty>
+          <EqualCondition DataElementId="evaluate" ComparisonValue="No" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>	
+		<ConditionalProperty>
+          <EqualCondition DataElementId="specific" ComparisonValue="Yes" />
+          <IsRelevant>false</IsRelevant>
+        </ConditionalProperty>
 			</ConditionalProperties>
 		</MultiChoiceDataElement>	
+		
+		
+		<ChoiceDataElement Id="reason" IsRequired="true" DisplaySequence="89">
+      <Label>Study limitations</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>respiratorymotion</Value>
+          <Label>Respiratory motion</Label>
+        </Choice>
+		  <Choice>
+          <Value>incomplete</Value>
+          <Label>Incomplete field of view</Label>
+        </Choice>
+        <Choice>
+			<Value>unavailable</Value><!--How to type cube?-->
+          <Label>Unavailable priors</Label>
+        </Choice>
+      </ChoiceInfo>
+	  <ConditionalProperties>
+	  <ConditionalProperty>
+	  <EqualCondition  DataElementId="evaluate_1" ComparisonValue="Yes"/>
+	<IsRelevant>false</IsRelevant>
+	  </ConditionalProperty>
+	  <ConditionalProperty>
+	  <EqualCondition DataElementId="baseline" ComparisonValue="baseline"/>
+	<IsRelevant>false</IsRelevant>
+	  </ConditionalProperty>
+	  </ConditionalProperties>
+    </ChoiceDataElement>
+	
+	<ChoiceDataElement Id="reason1" IsRequired="true" DisplaySequence="90">
+      <Label>Study limitations</Label>
+      <ChoiceInfo>
+        <Choice>
+          <Value>respiratorymotion</Value>
+          <Label>respiratory motion</Label>
+        </Choice>
+		  <Choice>
+          <Value>incomplete</Value>
+          <Label>incomplete field of view</Label>
+        </Choice>
+      </ChoiceInfo>
+	  <ConditionalProperties>
+	  <ConditionalProperty>
+	  <EqualCondition  DataElementId="evaluate_1" ComparisonValue="Yes"/>
+	<IsRelevant>false</IsRelevant>
+	  </ConditionalProperty>
+	  <ConditionalProperty>
+		<OrCondition>
+	  <EqualCondition DataElementId="baseline" ComparisonValue="baselinewith"/>
+	  <EqualCondition DataElementId="baseline" ComparisonValue="annual"/>
+	  </OrCondition>
+	<IsRelevant>false</IsRelevant>
+	  </ConditionalProperty>
+	  </ConditionalProperties>
+    </ChoiceDataElement>
 	<!--Calculate Final Category-->
 		<ComputedDataElement Id="FinalCategory">
 			<DecisionPoint>
@@ -3078,18 +3397,33 @@
 				<EndPointRef EndPointId="cat0NoEvaluationEp_1"/>
 			</Branch>
 			
+			
+			<Branch>
+				<Label>1: Lungs cannot be evaluated</Label>
+				<AndCondition>
+				<EqualCondition DataElementId="evaluate_1" ComparisonValue="Yes"/>
+				<EqualCondition DataElementId="evaluate" ComparisonValue="No"/>
+				</AndCondition>
+				<EndPointRef EndPointId="cat1NoEvaluationEp_1"/>
+			</Branch>
+			
+			<Branch>
+				<Label>1: Lungs cannot be evaluated</Label>
+				<AndCondition>
+				<EqualCondition DataElementId="evaluate_1" ComparisonValue="Yes"/>
+				<EqualCondition DataElementId="evaluate" ComparisonValue="Yes"/>
+				<EqualCondition DataElementId="specific" ComparisonValue="Yes"/>
+				</AndCondition>
+				<EndPointRef EndPointId="cat1NoEvaluationEp_2"/>
+			</Branch>
+			
 			<Branch>
 				<Label>Nodule Findings</Label>
-				<AndCondition>
-				<OrCondition>
-						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="Yes" />
 						 <AndCondition>
-						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
-						 <EqualCondition DataElementId="negativescreen" ComparisonValue="Yes" /> 
+						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="Yes" />
+						 <EqualCondition DataElementId="evaluate" ComparisonValue="Yes" />
+						 <EqualCondition DataElementId="specific" ComparisonValue="No" />
 						 </AndCondition>
-				</OrCondition>
-				
-				</AndCondition>
 				<EndPointRef EndPointId="NoduleEp_1"/>
 			</Branch>
 		
@@ -3201,7 +3535,7 @@
 		<TemplatePartial Id="imagecomposition_1">
 			<Branch>
 				<ReportText Type="InsertDataElementValue" Value="composition_1"></ReportText>
-				<ReportText Type="PlainText">,</ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 			</Branch>
 		</TemplatePartial>
 
@@ -3209,14 +3543,12 @@
 		<TemplatePartial Id="imagesize_1">
 			<Branch>
 				<SectionIf DataElementId="size_mm_1"></SectionIf>
-				<ReportText Type="PlainText"> Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_1"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm_1o"></SectionIf>
-				<ReportText Type="PlainText"> Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_1o"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 				
@@ -3225,14 +3557,12 @@
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_1"></SectionIf>
-				<ReportText Type="PlainText"> Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_1"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_1o"></SectionIf>
-				<ReportText Type="PlainText"> Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_1o"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3241,14 +3571,14 @@
 		<TemplatePartial Id="imagepartsize_1">
 			<Branch>
 				<SectionIf DataElementId="partsize_mm_1"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm_1"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="partsize_mm3_1"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm3_1"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3256,8 +3586,19 @@
 
 			<TemplatePartial Id="nodulelocation_1">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Location: </ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="locationquestion_1"></ReportText>
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="nodulebehavior_1">
+			<Branch>
+				<OrCondition>
+				<EqualCondition DataElementId="baseline" ComparisonValue="baselinewith"/> 
+				<EqualCondition DataElementId="baseline" ComparisonValue="annual"/> 
+				</OrCondition>
+				<ReportText Type="InsertDataElementValue" Value="nodule1_behavior"></ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 			</Branch>
 		</TemplatePartial>
 		
@@ -3265,7 +3606,7 @@
 		<Branch>
 						<SectionIf DataElementId="significantAdditionalFindings_6"> </SectionIf>
 						<ReportText Type="Newline"></ReportText>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 		</Branch>	
@@ -3278,9 +3619,50 @@
 			<ReportSections>   			
 				<ReportSection SectionId="Impression">
 					<Branch>
-						<ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated.</ReportText>
+						<ReportText Type="PlainText"> ACR Lung-Rads: Category 0</ReportText>
+						<ReportText Type="Newline"></ReportText>
+						<ReportText Type="PlainText"> Part or all of the lungs cannot be evaluated due to </ReportText>
+						<ReportText Type="InsertDataElementValue" Value="reason" />
+						<ReportText Type="InsertDataElementValue" Value="reason1" />
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText"> Additional lung cancer screening CT images may be needed.</ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>    
+		</EndPoint>
+		
+		<EndPoint Id="cat1NoEvaluationEp_1">
+			<Label>B</Label>
+			<ReportSections>   			
+				<ReportSection SectionId="Impression">
+					<Branch>
+						<ReportText Type="PlainText"> ACR Lung-Rads: Category 1</ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Continue annual screening with LDCT in 12 months. </ReportText>
+					</Branch>
+				</ReportSection>
+			</ReportSections>    
+		</EndPoint>
+		
+		<EndPoint Id="cat1NoEvaluationEp_2">
+			<Label>B</Label>
+			<ReportSections>   			
+				<ReportSection SectionId="Impression">
+					<Branch>
+						<ReportText Type="PlainText"> ACR Lung-Rads: Category 1</ReportText>
+					</Branch>
+				</ReportSection>
+				<ReportSection SectionId="Recommendation">
+					<Branch>
+						<ReportText Type="PlainText">Continue annual screening with LDCT in 12 months.</ReportText>
+				</Branch>
 				</ReportSection>
 			</ReportSections>    
 		</EndPoint>
@@ -3312,7 +3694,6 @@
 		<TemplatePartial Id="imagesize_2">
 			<Branch>
 				<SectionIf DataElementId="size_mm_2"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_2"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 				
@@ -3320,7 +3701,6 @@
 			
 				<Branch>
 				<SectionIf DataElementId="size_mm_2o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_2o"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 				
@@ -3328,7 +3708,6 @@
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_2"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_2"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 				
@@ -3337,7 +3716,6 @@
 				
 			<Branch>
 				<SectionIf DataElementId="size_mm3_2o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_2o"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 				
@@ -3347,14 +3725,14 @@
 		<TemplatePartial Id="imagepartsize_2">
 			<Branch>
 				<SectionIf DataElementId="partsize_mm_2"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm_2"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="partsize_mm3_2"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm3_2"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3362,8 +3740,19 @@
 
 			<TemplatePartial Id="nodulelocation_2">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Location: </ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="locationquestion_2"></ReportText>
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="nodulebehavior_2">
+			<Branch>
+				<OrCondition>
+				<EqualCondition DataElementId="baseline" ComparisonValue="baselinewith"/> 
+				<EqualCondition DataElementId="baseline" ComparisonValue="annual"/> 
+				</OrCondition>
+				<ReportText Type="InsertDataElementValue" Value="nodule2_behavior"></ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 			</Branch>
 		</TemplatePartial>
 
@@ -3387,14 +3776,12 @@
 		<TemplatePartial Id="imagesize_3">
 			<Branch>
 				<SectionIf DataElementId="size_mm_3"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_3"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm_3o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_3o"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 				
@@ -3402,7 +3789,6 @@
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_3"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_3"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 				
@@ -3410,7 +3796,6 @@
 			
 				<Branch>
 				<SectionIf DataElementId="size_mm3_3o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_3o"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 
@@ -3420,14 +3805,14 @@
 			<TemplatePartial Id="imagepartsize_3">
 			<Branch>
 				<SectionIf DataElementId="partsize_mm_3"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm_3"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="partsize_mm3_3"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm3_3"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3435,8 +3820,19 @@
 
 			<TemplatePartial Id="nodulelocation_3">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Location: </ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="locationquestion_3"></ReportText>
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="nodulebehavior_3">
+			<Branch>
+				<OrCondition>
+				<EqualCondition DataElementId="baseline" ComparisonValue="baselinewith"/> 
+				<EqualCondition DataElementId="baseline" ComparisonValue="annual"/> 
+				</OrCondition>
+				<ReportText Type="InsertDataElementValue" Value="nodule3_behavior"></ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 			</Branch>
 		</TemplatePartial>
 
@@ -3462,14 +3858,12 @@
 		<TemplatePartial Id="imagesize_4">
 			<Branch>
 				<SectionIf DataElementId="size_mm_4"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_4"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 				<Branch>
 				<SectionIf DataElementId="size_mm_4o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_4o"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
@@ -3483,7 +3877,6 @@
 			
 				<Branch>
 				<SectionIf DataElementId="size_mm3_4o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_4o"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3492,14 +3885,14 @@
 		<TemplatePartial Id="imagepartsize_4">
 			<Branch>
 				<SectionIf DataElementId="partsize_mm_4"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm_4"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="partsize_mm3_4"></SectionIf>
-				<ReportText Type="PlainText">Part Solid size: </ReportText>
+				<ReportText Type="PlainText">Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm3_4"></ReportText>
 				<ReportText Type="PlainText"> mm³ </ReportText>
 			</Branch>
@@ -3507,8 +3900,19 @@
 
 			<TemplatePartial Id="nodulelocation_4">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Location: </ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="locationquestion_4"></ReportText>
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="nodulebehavior_4">
+			<Branch>
+				<OrCondition>
+				<EqualCondition DataElementId="baseline" ComparisonValue="baselinewith"/> 
+				<EqualCondition DataElementId="baseline" ComparisonValue="annual"/> 
+				</OrCondition>
+				<ReportText Type="InsertDataElementValue" Value="nodule4_behavior"></ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 			</Branch>
 		</TemplatePartial>
 		
@@ -3532,14 +3936,12 @@
 		<TemplatePartial Id="imagesize_5">
 			<Branch>
 				<SectionIf DataElementId="size_mm_5"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_5"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm_5o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_5o"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
@@ -3547,14 +3949,12 @@
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_5"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_5"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_5o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_5o"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3563,14 +3963,14 @@
 		<TemplatePartial Id="imagepartsize_5">
 			<Branch>
 				<SectionIf DataElementId="partsize_mm_5"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm_5"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="partsize_mm3_5"></SectionIf>
-				<ReportText Type="PlainText">Part Solid size: </ReportText>
+				<ReportText Type="PlainText">Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm3_5"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3578,8 +3978,19 @@
 
 			<TemplatePartial Id="nodulelocation_5">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Location: </ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="locationquestion_5"></ReportText>
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="nodulebehavior_5">
+			<Branch>
+				<OrCondition>
+				<EqualCondition DataElementId="baseline" ComparisonValue="baselinewith"/> 
+				<EqualCondition DataElementId="baseline" ComparisonValue="annual"/> 
+				</OrCondition>
+				<ReportText Type="InsertDataElementValue" Value="nodule5_behavior"></ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 			</Branch>
 		</TemplatePartial>
 		
@@ -3604,28 +4015,24 @@
 		<TemplatePartial Id="imagesize_6">
 			<Branch>
 				<SectionIf DataElementId="size_mm_6"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_6"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 				<Branch>
 				<SectionIf DataElementId="size_mm_6o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm_6o"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_6"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_6"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="size_mm3_6o"></SectionIf>
-				<ReportText Type="PlainText">Size: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="size_mm3_6o"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3634,14 +4041,14 @@
 				<TemplatePartial Id="imagepartsize_6">
 			<Branch>
 				<SectionIf DataElementId="partsize_mm_6"></SectionIf>
-				<ReportText Type="PlainText">, Part Solid size: </ReportText>
+				<ReportText Type="PlainText">, Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm_6"></ReportText>
 				<ReportText Type="PlainText"> mm</ReportText>
 			</Branch>
 			
 			<Branch>
 				<SectionIf DataElementId="partsize_mm3_6"></SectionIf>
-				<ReportText Type="PlainText">Part Solid size: </ReportText>
+				<ReportText Type="PlainText">Part Solid: </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="partsize_mm3_6"></ReportText>
 				<ReportText Type="PlainText"> mm³</ReportText>
 			</Branch>
@@ -3649,8 +4056,19 @@
 
 			<TemplatePartial Id="nodulelocation_6">
 			<Branch>
-				<ReportText Type="PlainText">Nodule Location: </ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 				<ReportText Type="InsertDataElementValue" Value="locationquestion_6"></ReportText>
+			</Branch>
+		</TemplatePartial>
+		
+		<TemplatePartial Id="nodulebehavior_6">
+			<Branch>
+				<OrCondition>
+				<EqualCondition DataElementId="baseline" ComparisonValue="baselinewith"/> 
+				<EqualCondition DataElementId="baseline" ComparisonValue="annual"/> 
+				</OrCondition>
+				<ReportText Type="InsertDataElementValue" Value="nodule6_behavior"></ReportText>
+				<ReportText Type="PlainText">, </ReportText>
 			</Branch>
 		</TemplatePartial>
 		
@@ -3730,14 +4148,14 @@
 				<ReportSection SectionId="Findings">
 					<Branch>
 						<ReportText Type="PlainText"> Nodule 1: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodulebehavior_1"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="imagecomposition_1"></ReportText>	
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_1"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagepartsize_1"></ReportText>
-						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="nodulelocation_1"></ReportText>	
 						<ReportText Type="PlainText"> (series </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="series_1"></ReportText>
-						<ReportText Type="PlainText"> ,image  </ReportText>
+						<ReportText Type="PlainText"> , image  </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="image_1"></ReportText>
 						<ReportText Type="PlainText">). </ReportText>
 					</Branch>	
@@ -3745,14 +4163,14 @@
 						<EqualCondition DataElementId="nodulequestion_1" ComparisonValue="yes" />
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText"> Nodule 2: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodulebehavior_2"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagecomposition_2"></ReportText>						
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_2"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagepartsize_2"></ReportText>
-						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="nodulelocation_2"></ReportText>	
 						<ReportText Type="PlainText"> (series </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="series_2"></ReportText>
-						<ReportText Type="PlainText"> ,image  </ReportText>
+						<ReportText Type="PlainText"> , image  </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="image_2"></ReportText>
 						<ReportText Type="PlainText">). </ReportText>	
 					</Branch>	
@@ -3760,14 +4178,14 @@
 						<EqualCondition DataElementId="nodulequestion_2" ComparisonValue="yes" />
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText"> Nodule 3: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodulebehavior_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagecomposition_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_3"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagepartsize_3"></ReportText>
-						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="nodulelocation_3"></ReportText>	
 						<ReportText Type="PlainText"> (series </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="series_3"></ReportText>
-						<ReportText Type="PlainText"> ,image  </ReportText>
+						<ReportText Type="PlainText"> , image  </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="image_3"></ReportText>
 						<ReportText Type="PlainText">). </ReportText>	
 					</Branch>
@@ -3775,10 +4193,10 @@
 						<EqualCondition DataElementId="nodulequestion_3" ComparisonValue="yes" />
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText"> Nodule 4: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodulebehavior_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagecomposition_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_4"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagepartsize_4"></ReportText>
-						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="nodulelocation_4"></ReportText>	
 						<ReportText Type="PlainText"> (series </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="series_4"></ReportText>
@@ -3790,14 +4208,14 @@
 						<EqualCondition DataElementId="nodulequestion_4" ComparisonValue="yes" />
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText"> Nodule 5: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodulebehavior_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagecomposition_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_5"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagepartsize_5"></ReportText>
-						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="nodulelocation_5"></ReportText>	
 						<ReportText Type="PlainText"> (series </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="series_5"></ReportText>
-						<ReportText Type="PlainText"> ,image  </ReportText>
+						<ReportText Type="PlainText"> , image  </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="image_5"></ReportText>
 						<ReportText Type="PlainText">). </ReportText>
 					</Branch>	
@@ -3805,14 +4223,14 @@
 						<EqualCondition DataElementId="nodulequestion_5" ComparisonValue="yes" />
 						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="PlainText"> Nodule 6: </ReportText>
+						<ReportText Type="InsertPartialTemplate" Value="nodulebehavior_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagecomposition_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagesize_6"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="imagepartsize_6"></ReportText>
-						<ReportText Type="Newline"></ReportText>
 						<ReportText Type="InsertPartialTemplate" Value="nodulelocation_6"></ReportText>	
 						<ReportText Type="PlainText"> (series </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="series_6"></ReportText>
-						<ReportText Type="PlainText"> ,image  </ReportText>
+						<ReportText Type="PlainText"> , image  </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="image_6"></ReportText>
 						<ReportText Type="PlainText">). </ReportText>	
 					</Branch>	
@@ -3848,7 +4266,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -3879,7 +4297,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 					</Branch>
 				</ReportSection>	
@@ -3916,7 +4334,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -3943,7 +4361,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 					</Branch>
 				</ReportSection>
@@ -3979,7 +4397,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4007,7 +4425,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 					</Branch>
 				</ReportSection>	
@@ -4043,7 +4461,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4072,7 +4490,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 					
 					</Branch>
@@ -4109,7 +4527,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4137,7 +4555,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 			
 					</Branch>
@@ -4174,7 +4592,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4202,7 +4620,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 					</Branch>
 				</ReportSection>	
@@ -4239,7 +4657,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4268,7 +4686,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 		
 					</Branch>
@@ -4305,7 +4723,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4333,7 +4751,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 			
 					</Branch>
@@ -4370,7 +4788,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4398,7 +4816,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 			
 					</Branch>
@@ -4436,7 +4854,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4465,7 +4883,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 			
 					</Branch>
@@ -4504,7 +4922,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4534,7 +4952,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 	
 					</Branch>
@@ -4556,7 +4974,7 @@
 			<Label> impressionrecommendation </Label>
 			
 			<ReportSections>  
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="ImpressionRecommendation">
 					<Branch>	
 						<OrCondition>
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
@@ -4572,7 +4990,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4601,7 +5019,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 			
 					</Branch>
@@ -4638,7 +5056,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4666,7 +5084,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 					</Branch>
 				</ReportSection>	
@@ -4687,7 +5105,7 @@
 			<Label> impressionrecommendation </Label>
 			
 			<ReportSections>  
-				<ReportSection SectionId="Impression">
+				<ReportSection SectionId="ImpressionRecommendation">
 					<Branch>
 						<OrCondition>
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
@@ -4702,7 +5120,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 						<ReportText Type="Newline"></ReportText>
 					</Branch>
@@ -4730,7 +5148,7 @@
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="yes" />
 						 <EqualCondition DataElementId="evaluate_1" ComparisonValue="negative" />
 						 </OrCondition>
-						<ReportText Type="PlainText">Other potential significant findings are : </ReportText>
+						<ReportText Type="PlainText">Other potential significant findings : </ReportText>
 						<ReportText Type="InsertDataElementValue" Value="significantAdditionalFindings_6"></ReportText>
 			
 					</Branch>
